@@ -1,5 +1,7 @@
 setup.py
 pygbif/__init__.py
+pygbif/gbifutils.py
+pygbif/names.py
 pygbif/search.py
 pygbif.egg-info/PKG-INFO
 pygbif.egg-info/SOURCES.txt
