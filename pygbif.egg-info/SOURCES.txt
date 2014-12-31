@@ -1,5 +1,6 @@
 setup.py
 pygbif/__init__.py
+pygbif/gbifissues.py
 pygbif/gbifutils.py
 pygbif/names.py
 pygbif/search.py
