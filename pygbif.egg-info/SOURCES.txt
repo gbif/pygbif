@@ -1,0 +1,8 @@
+setup.py
+pygbif/__init__.py
+pygbif/search.py
+pygbif.egg-info/PKG-INFO
+pygbif.egg-info/SOURCES.txt
+pygbif.egg-info/dependency_links.txt
+pygbif.egg-info/requires.txt
+pygbif.egg-info/top_level.txt
