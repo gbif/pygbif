@@ -1,4 +1,4 @@
-import
+import re
 
 def occ_issues_lookup(issue=None, code=None):
     '''

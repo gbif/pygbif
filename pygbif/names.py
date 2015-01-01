@@ -48,8 +48,10 @@ def name_backbone(name, rank=None, kingdom=None, phylum=None, clazz=None,
   pygbif.name_backbone(name='Poa', kingdom='plants', verbose=True, strict=False)
   pygbif.name_backbone(name='Helianthus annuus', kingdom='plants', verbose=True, strict=True)
 
-  # Non-existent name - returns list of lenght 3 stating no match
+  # Non-existent name
   pygbif.name_backbone(name='Aso')
+
+  # Multiple equal matches
   pygbif.name_backbone(name='Oenante')
   '''
   url = baseurl + 'species/match'
@@ -58,12 +60,81 @@ def name_backbone(name, rank=None, kingdom=None, phylum=None, clazz=None,
          'strict': strict, 'verbose': verbose, 'offset': start, 'limit': limit}
   tt = gbif_GET(url, args, **kwargs)
   return tt
-  # if verbose:
-  #   alt = do.call(rbind.fill, lapply(tt$alternatives, backbone_parser))
-  #   dat = data.frame(tt[!names(tt) %in% c("alternatives","note")], stringsAsFactors=False)
-  #   structure(list(data=dat, alternatives=alt), note=tt$note)
-  # else:
-  #   structure(tt[!names(tt) %in% c("alternatives","note")], note=tt$note)
+
+def name_suggest(q=None, datasetKey=None, rank=None, fields=None, start=None, limit=100, **kwargs):
+  '''
+  A quick and simple autocomplete service that returns up to 20 name usages by
+  doing prefix matching against the scientific name. Results are ordered by relevance.
+
+  References: http://www.gbif.org/developer/species#searching
+
+  :param q: (character, required) Simple search parameter. The value for this parameter can be a
+     simple word or a phrase. Wildcards can be added to the simple word parameters only,
+     e.g. q=*puma*
+  :param datasetKey: (character) Filters by the checklist dataset key (a uuid, see examples)
+  :param rank: (character) A taxonomic rank. One of class, cultivar, cultivar_group, domain, family,
+     form, genus, informal, infrageneric_name, infraorder, infraspecific_name,
+     infrasubspecific_name, kingdom, order, phylum, section, series, species, strain, subclass,
+     subfamily, subform, subgenus, subkingdom, suborder, subphylum, subsection, subseries,
+     subspecies, subtribe, subvariety, superclass, superfamily, superorder, superphylum,
+     suprageneric_name, tribe, unranked, or variety.
+  :param fields: (character) Fields to return in output data.frame (simply prunes columns off)
+
+  Usage:
+  pygbif.name_suggest(q='Puma concolor')
+  pygbif.name_suggest(q='Puma')
+  pygbif.name_suggest(q='Puma', rank="genus")
+  pygbif.name_suggest(q='Puma', rank="subspecies")
+  pygbif.name_suggest(q='Puma', rank="species")
+  pygbif.name_suggest(q='Puma', rank="infraspecific_name")
+
+  pygbif.name_suggest(q='Puma', limit=2)
+  pygbif.name_suggest(q='Puma', fields=['key','canonicalName'])
+  pygbif.name_suggest(q='Puma', fields=['key','canonicalName','higherClassificationMap'])
+  '''
+  url = baseurl + 'species/suggest'
+  args = {'q':q, 'rank':rank, 'offset':start, 'limit':limit}
+  tt = gbif_GET(url, args, **kwargs)
+
+  if fields is None:
+    toget = ["key","canonicalName","rank"]
+  else:
+    toget = fields
+
+  buck = []
+  for x in toget:
+    buck.append(filter(lambda x: x is True, [x==toget[0] for x in suggestfields()]))
+
+  if len(buck) == 0:
+    raise NoResultException("some fields are not valid")
+
+  if fields is not None:
+    tmp1 = filter(None, [x=="higherClassificationMap" for x in fields])
+  else:
+    tmp1 = None
+
+  if tmp1 is not None:
+    hier = [ x['higherClassificationMap'] for x in tt ]
+    [ x.pop('higherClassificationMap') for x in tt ]
+    return {'data': tt, 'hierarchy': hier}
+  else:
+    out = []
+    for x in tt:
+      out.append(dict(zip(toget, [x[y] for y in toget])))
+    return out
+
+def suggestfields():
+  '''
+  Fields available in `gbif_suggest()` function
+  '''
+  return ["key","datasetTitle","datasetKey","nubKey","parentKey","parent",
+    "kingdom","phylum","class","order","family","genus","species",
+    "kingdomKey","phylumKey","classKey","orderKey","familyKey","genusKey",
+    "speciesKey","species","canonicalName","authorship",
+    "accordingTo","nameType","taxonomicStatus","rank","numDescendants",
+    "numOccurrences","sourceId","nomenclaturalStatus","threatStatuses",
+    "synonym","higherClassificationMap"]
+
 
 if __name__ == "__main__":
     import doctest

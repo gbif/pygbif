@@ -13,5 +13,5 @@ pygbif is a Python client for GBIF. Example usage:
 '''
 
 from .search import search
-from .names import name_backbone
+from .names import name_backbone, name_suggest
 from .gbifissues import occ_issues_lookup
