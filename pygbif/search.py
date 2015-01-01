@@ -16,7 +16,7 @@ def search(taxonKey, limit=5, offset=1, **kwargs):
   Usage:
   # Search by species name, using `name_backbone()` to get key
   key = pygbif.name_suggest(q='Helianthus annuus', rank='species')['key']
-  pygbif.search(taxonKey=key, limit=2)
+  pygbif.search(taxonKey=key[0]['key'], limit=2)
 
   # Return 20 results, this is the default by the way
   pygbif.search(taxonKey=key, limit=20)
