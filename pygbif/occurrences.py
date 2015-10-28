@@ -8,13 +8,13 @@ class Occ(object):
     '''
     Occ: occurrences search class
     '''
-    def __init__(self, base_url = "http://api.gbif.org/v1/", taxonKey, limit=5, offset=1, **kwargs):
+    def __init__(self, base_url = "http://api.gbif.org/v1/", taxonKey = None, limit = 5, offset = 1, **kwargs):
         self.base_url = base_url
         self.taxonKey = taxonKey
         self.limit = limit
         self.offset = offset
 
-    def search2(self, taxonKey, limit=5, offset=1, **kwargs):
+    def search2(self, taxonKey = None, limit=5, offset=1, **kwargs):
         '''
         Search GBIF occurrences
 
