@@ -54,7 +54,7 @@ def name_backbone(name, rank=None, kingdom=None, phylum=None, clazz=None,
   # Multiple equal matches
   pygbif.name_backbone(name='Oenante')
   '''
-  url = baseurl + 'species/match'
+  url = gbif_baseurl + 'species/match'
   args = {'name': name, 'rank': rank, 'kingdom': kingdom, 'phylum': phylum,
          'class': clazz, 'order': order, 'family': family, 'genus': genus,
          'strict': strict, 'verbose': verbose, 'offset': start, 'limit': limit}
@@ -92,7 +92,7 @@ def name_suggest(q=None, datasetKey=None, rank=None, fields=None, start=None, li
   pygbif.name_suggest(q='Puma', fields=['key','canonicalName'])
   pygbif.name_suggest(q='Puma', fields=['key','canonicalName','higherClassificationMap'])
   '''
-  url = baseurl + 'species/suggest'
+  url = gbif_baseurl + 'species/suggest'
   args = {'q':q, 'rank':rank, 'offset':start, 'limit':limit}
   tt = gbif_GET(url, args, **kwargs)
 

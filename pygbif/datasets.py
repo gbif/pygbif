@@ -19,7 +19,7 @@ def dataset_metrics(uuid, **kwargs):
 		 '66dd0960-2d7d-46ee-a491-87b9adcfe7b1'])
 	'''
 	def getdata(x, **kwargs):
-		url = baseurl + 'dataset/' + x + '/metrics'
+		url = gbif_baseurl + 'dataset/' + x + '/metrics'
 		return gbif_GET(url, {}, **kwargs)
 
 	if len2(uuid) == 1:
@@ -70,17 +70,17 @@ def datasets(data = 'all', type = None, uuid = None, query = None, id = None,
 
 		if uuid is None:
 			if x is 'all':
-				url = baseurl + 'dataset'
+				url = gbif_baseurl + 'dataset'
 			else:
 				if id is not None and x is 'metadata':
-					url = baseurl + 'dataset/metadata/' + id + '/document'
+					url = gbif_baseurl + 'dataset/metadata/' + id + '/document'
 				else:
-					url = baseurl + 'dataset/' + x
+					url = gbif_baseurl + 'dataset/' + x
 		else:
 			if x is 'all':
-				url = baseurl + 'dataset/' + uuid
+				url = gbif_baseurl + 'dataset/' + uuid
 			else:
-				url = baseurl + 'dataset/' + uuid + '/' + x
+				url = gbif_baseurl + 'dataset/' + uuid + '/' + x
 
 		res = gbif_GET(url, args, **kwargs)
 		# return {'meta': get_meta(res), 'data': parse_results(res, uuid)}
