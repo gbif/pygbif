@@ -62,14 +62,7 @@ def datasets(data = 'all', type = None, uuid = None, query = None, id = None,
 									'identifier', 'tag', 'machinetag', 'comment',
 									'constituents', 'document', 'metadata', 'deleted',
 									'duplicate', 'subDataset', 'withNoEndpoint']
-	if len2(data) == 1:
-		testdata = [data]
-	else:
-		testdata = data
-
-	for x in testdata:
-		if x not in data_choices:
-			raise TypeError(x + ' not one of the choices')
+	check_data(data, data_choices)
 
 	def getdata(x, uuid, args, **kwargs):
 		if x not in ['all','deleted','duplicate','subDataset','withNoEndpoint'] and uuid is None:
@@ -98,6 +91,16 @@ def datasets(data = 'all', type = None, uuid = None, query = None, id = None,
 		return getdata(data, uuid, args, **kwargs)
 	else:
 		return [getdata(x, uuid, args, **kwargs) for x in data]
+
+def check_data(x,y):
+	if len2(x) == 1:
+		testdata = [x]
+	else:
+		testdata = x
+
+	for z in testdata:
+		if z not in y:
+			raise TypeError(z + ' not one of the choices')
 
 def get_meta(x):
   if has_meta(x):
