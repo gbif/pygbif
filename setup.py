@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='pygbif',
-	version='0.0.2',
+	version='0.0.3.9000',
 	description='Python client for GBIF',
     author='Scott Chamberlain',
     author_email='myrmecocystus@gmail.com',
