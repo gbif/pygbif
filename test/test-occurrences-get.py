@@ -1,4 +1,4 @@
-"""Tests for occurrences module of pygbif"""
+"""Tests for occurrences module - get methods"""
 import os
 from pygbif import occurrences
 
