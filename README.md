@@ -1,6 +1,8 @@
 pygbif
 =======
 
+[![Build Status](https://travis-ci.org/sckott/pygbif.svg)](https://travis-ci.org/sckott/pygbif)
+
 Python client for the [GBIF API](http://www.gbif.org/developer/summary)
 
 Other GBIF clients:
@@ -13,19 +15,21 @@ Other GBIF clients:
 [sudo] pip install git+git://github.com/sckott/pygbif.git#egg=pygbif
 ```
 
-## Datasets
+## Registry module
 
 ```python
-pygbif.dataset_metrics(uuid='3f8a1297-3259-4700-91fc-acc4170b27ce')
+from pygbif import registry
+registry.dataset_metrics(uuid='3f8a1297-3259-4700-91fc-acc4170b27ce')
 ```
 
-## Taxonomic Names
+## Species module
 
 ```python
-pygbif.name_suggest(q='Puma concolor')
+from pygbif import species
+species.name_suggest(q='Puma concolor')
 ```
 
-## Occurrence data
+## Occurrences module
 
 ```python
 from pygbif import occurrences
