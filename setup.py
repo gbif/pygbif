@@ -7,6 +7,6 @@ setup(name='pygbif',
     author_email='myrmecocystus@gmail.com',
     url='http://github.com/sckott/pygbif',
     packages=['pygbif'],
-    install_requires=['requests>2.0',
-                      'pandas>0.1'],
+    install_requires=['requests>2.7',
+                      'simplejson>3.8'],
     )
