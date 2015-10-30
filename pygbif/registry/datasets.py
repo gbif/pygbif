@@ -1,7 +1,5 @@
-import sys
-import json
-from simplejson import JSONDecodeError
-from gbifutils import *
+from ..gbifutils import *
+from .registry_utils import *
 
 def dataset_metrics(uuid, **kwargs):
 	'''
@@ -13,10 +11,10 @@ def dataset_metrics(uuid, **kwargs):
 	References: http://www.gbif.org/developer/registry#datasetMetrics
 
 	Usage:
-	pygbif.dataset_metrics(uuid='3f8a1297-3259-4700-91fc-acc4170b27ce')
-	pygbif.dataset_metrics(uuid='66dd0960-2d7d-46ee-a491-87b9adcfe7b1')
-	pygbif.dataset_metrics(uuid=['3f8a1297-3259-4700-91fc-acc4170b27ce',
-		 '66dd0960-2d7d-46ee-a491-87b9adcfe7b1'])
+	>>> from pygbif import registry
+	>>> registry.dataset_metrics(uuid='3f8a1297-3259-4700-91fc-acc4170b27ce')
+	>>> registry.dataset_metrics(uuid='66dd0960-2d7d-46ee-a491-87b9adcfe7b1')
+	>>> registry.dataset_metrics(uuid=['3f8a1297-3259-4700-91fc-acc4170b27ce', '66dd0960-2d7d-46ee-a491-87b9adcfe7b1'])
 	'''
 	def getdata(x, **kwargs):
 		url = gbif_baseurl + 'dataset/' + x + '/metrics'
@@ -26,12 +24,6 @@ def dataset_metrics(uuid, **kwargs):
 		return getdata(uuid)
 	else:
 		return [getdata(x) for x in uuid]
-
-def len2(x):
-	if x.__class__ is str:
-		return len([x])
-	else:
-		return len(x)
 
 def datasets(data = 'all', type = None, uuid = None, query = None, id = None,
 							limit = 100, start = None, **kwargs):
@@ -48,14 +40,15 @@ def datasets(data = 'all', type = None, uuid = None, query = None, id = None,
 	References http://www.gbif.org/developer/registry#datasets
 
 	Usage:
-	pygbif.datasets(limit=5)
-	pygbif.datasets(type="OCCURRENCE")
-	pygbif.datasets(uuid="a6998220-7e3a-485d-9cd6-73076bd85657")
-	pygbif.datasets(data='contact', uuid="a6998220-7e3a-485d-9cd6-73076bd85657")
-	pygbif.datasets(data='metadata', uuid="a6998220-7e3a-485d-9cd6-73076bd85657")
-	pygbif.datasets(data='metadata', uuid="a6998220-7e3a-485d-9cd6-73076bd85657", id=598)
-	pygbif.datasets(data=['deleted','duplicate'])
-	pygbif.datasets(data=['deleted','duplicate'], limit=1)
+	>>> from pygbif import registry
+	>>> registry.datasets(limit=5)
+	>>> registry.datasets(type="OCCURRENCE")
+	>>> registry.datasets(uuid="a6998220-7e3a-485d-9cd6-73076bd85657")
+	>>> registry.datasets(data='contact', uuid="a6998220-7e3a-485d-9cd6-73076bd85657")
+	>>> registry.datasets(data='metadata', uuid="a6998220-7e3a-485d-9cd6-73076bd85657")
+	>>> registry.datasets(data='metadata', uuid="a6998220-7e3a-485d-9cd6-73076bd85657", id=598)
+	>>> registry.datasets(data=['deleted','duplicate'])
+	>>> registry.datasets(data=['deleted','duplicate'], limit=1)
 	'''
 	args = {'q': query, 'limit': limit, 'offset': start}
 	data_choices = ['all', 'organization', 'contact', 'endpoint',
@@ -91,26 +84,6 @@ def datasets(data = 'all', type = None, uuid = None, query = None, id = None,
 		return getdata(data, uuid, args, **kwargs)
 	else:
 		return [getdata(x, uuid, args, **kwargs) for x in data]
-
-def check_data(x,y):
-	if len2(x) == 1:
-		testdata = [x]
-	else:
-		testdata = x
-
-	for z in testdata:
-		if z not in y:
-			raise TypeError(z + ' not one of the choices')
-
-def get_meta(x):
-  if has_meta(x):
-  	return [x[y] for y in ['offset','limit','endOfRecords']]
-  else:
-  	return None
-
-def has_meta(x):
-	tmp = [y in x.keys() for y in ['offset','limit','endOfRecords']]
-	return True in tmp
 
 if __name__ == "__main__":
     import doctest

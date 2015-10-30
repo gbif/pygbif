@@ -1,7 +1,5 @@
-import sys
-import json
-from simplejson import JSONDecodeError
-from gbifutils import *
+from ..gbifutils import *
+from .registry_utils import *
 
 def nodes(data = 'all', uuid = None, query = None, identifier = None,
   identifierType = None, limit = 100, start = None, isocode = None, **kwargs):
@@ -17,10 +15,11 @@ def nodes(data = 'all', uuid = None, query = None, identifier = None,
   References http://www.gbif.org/developer/registry#nodes
 
   Usage:
-  pygbif.nodes(limit=5)
-  pygbif.nodes(uuid="1193638d-32d1-43f0-a855-8727c94299d8")
-  pygbif.nodes(data='identifier', uuid="03e816b3-8f58-49ae-bc12-4e18b358d6d9")
-  pygbif.nodes(data=['identifier','organization','comment'], uuid="03e816b3-8f58-49ae-bc12-4e18b358d6d9")
+  >>> from pygbif import registry
+  >>> registry.nodes(limit=5)
+  >>> registry.nodes(uuid="1193638d-32d1-43f0-a855-8727c94299d8")
+  >>> registry.nodes(data='identifier', uuid="03e816b3-8f58-49ae-bc12-4e18b358d6d9")
+  >>> registry.nodes(data=['identifier','organization','comment'], uuid="03e816b3-8f58-49ae-bc12-4e18b358d6d9")
 
   uuids = ["8cb55387-7802-40e8-86d6-d357a583c596","02c40d2a-1cba-4633-90b7-e36e5e97aba8",
   "7a17efec-0a6a-424c-b743-f715852c3c1f","b797ce0f-47e6-4231-b048-6b62ca3b0f55",

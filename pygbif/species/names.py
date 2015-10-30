@@ -1,7 +1,4 @@
-import sys
-import json
-from simplejson import JSONDecodeError
-from gbifutils import *
+from ..gbifutils import *
 
 def name_backbone(name, rank=None, kingdom=None, phylum=None, clazz=None,
   order=None, family=None, genus=None, strict=False, verbose=False,
@@ -37,22 +34,23 @@ def name_backbone(name, rank=None, kingdom=None, phylum=None, clazz=None,
   reference: http://www.gbif.org/developer/species#searching
 
   Usage:
-  pygbif.name_backbone(name='Helianthus annuus', kingdom='plants')
-  pygbif.name_backbone(name='Helianthus', rank='genus', kingdom='plants')
-  pygbif.name_backbone(name='Poa', rank='genus', family='Poaceae')
-
-  # Verbose - gives back alternatives
-  pygbif.name_backbone(name='Helianthus annuus', kingdom='plants', verbose=True)
-
-  # Strictness
-  pygbif.name_backbone(name='Poa', kingdom='plants', verbose=True, strict=False)
-  pygbif.name_backbone(name='Helianthus annuus', kingdom='plants', verbose=True, strict=True)
-
-  # Non-existent name
-  pygbif.name_backbone(name='Aso')
-
-  # Multiple equal matches
-  pygbif.name_backbone(name='Oenante')
+  >>> from pygbif import species
+  >>> species.name_backbone(name='Helianthus annuus', kingdom='plants')
+  >>> species.name_backbone(name='Helianthus', rank='genus', kingdom='plants')
+  >>> species.name_backbone(name='Poa', rank='genus', family='Poaceae')
+  >>>
+  >>> # Verbose - gives back alternatives
+  >>> species.name_backbone(name='Helianthus annuus', kingdom='plants', verbose=True)
+  >>>
+  >>> # Strictness
+  >>> species.name_backbone(name='Poa', kingdom='plants', verbose=True, strict=False)
+  >>> species.name_backbone(name='Helianthus annuus', kingdom='plants', verbose=True, strict=True)
+  >>>
+  >>> # Non-existent name
+  >>> species.name_backbone(name='Aso')
+  >>>
+  >>> # Multiple equal matches
+  >>> species.name_backbone(name='Oenante')
   '''
   url = gbif_baseurl + 'species/match'
   args = {'name': name, 'rank': rank, 'kingdom': kingdom, 'phylum': phylum,
@@ -81,16 +79,16 @@ def name_suggest(q=None, datasetKey=None, rank=None, fields=None, start=None, li
   :param fields: (character) Fields to return in output data.frame (simply prunes columns off)
 
   Usage:
-  pygbif.name_suggest(q='Puma concolor')
-  pygbif.name_suggest(q='Puma')
-  pygbif.name_suggest(q='Puma', rank="genus")
-  pygbif.name_suggest(q='Puma', rank="subspecies")
-  pygbif.name_suggest(q='Puma', rank="species")
-  pygbif.name_suggest(q='Puma', rank="infraspecific_name")
-
-  pygbif.name_suggest(q='Puma', limit=2)
-  pygbif.name_suggest(q='Puma', fields=['key','canonicalName'])
-  pygbif.name_suggest(q='Puma', fields=['key','canonicalName','higherClassificationMap'])
+  >>> from pygbif import species
+  >>> species.name_suggest(q='Puma concolor')
+  >>> species.name_suggest(q='Puma')
+  >>> species.name_suggest(q='Puma', rank="genus")
+  >>> species.name_suggest(q='Puma', rank="subspecies")
+  >>> species.name_suggest(q='Puma', rank="species")
+  >>> species.name_suggest(q='Puma', rank="infraspecific_name")
+  >>> species.name_suggest(q='Puma', limit=2)
+  >>> species.name_suggest(q='Puma', fields=['key','canonicalName'])
+  >>> species.name_suggest(q='Puma', fields=['key','canonicalName','higherClassificationMap'])
   '''
   url = gbif_baseurl + 'species/suggest'
   args = {'q':q, 'rank':rank, 'offset':start, 'limit':limit}
