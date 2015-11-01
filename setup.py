@@ -1,14 +1,14 @@
 from setuptools import setup
 
 setup(name='pygbif',
-	version='0.0.5.9000',
+	version='0.0.5.9500',
 	description='Python client for GBIF',
   author='Scott Chamberlain',
   author_email='myrmecocystus@gmail.com',
   url='http://github.com/sckott/pygbif',
   license="MIT",
   packages=['pygbif'],
-  install_requires=['requests>2.7'],
+  install_requires=['requests>2.7', 'shapely>=1.5.13'],
   classifiers=(
     'Development Status :: 3 - Alpha',
     'Intended Audience :: Science/Research',
