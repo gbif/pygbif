@@ -1,3 +1,5 @@
+.. _occurrences:
+
 occurrences module
 ===========================
 
@@ -21,3 +23,5 @@ Example Usage
     occurrences.search(taxonKey = 3329049)
     occurrences.get(taxonKey = 252408386)
     occurrences.count(isGeoreferenced = True)
+
+.. py:module:: pygbif

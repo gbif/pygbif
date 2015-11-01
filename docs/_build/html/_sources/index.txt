@@ -5,15 +5,22 @@ Low-level client for the GBIF API.
 
 `pygbif` is split up into modules for each of the major groups of API methods.
 
-* Registry - Datasets, Nodes, Installations, Networks, Organizations
-* Species - Taxonomic names
-* Occurrences - Occurrence data, including the download API
-
-You can import the entire library, or each module individually as needed.
+* Registry - Datasets, Nodes, Installations, Networks, Organizations - `Registry API Docs`_
+* Species - Taxonomic names - `Species API Docs`_
+* Occurrences - Occurrence data, including the download API - `Occurrences API Docs`_
 
 Note that GBIF maps API_ is not included in `pygbif`.
 
 .. _API: http://www.gbif.org/developer/maps
+
+Other GBIF clients:
+
+* R: rgbif_
+
+.. _rgbif: https://github.com/ropensci/rgbif
+.. _Registry API Docs: http://www.gbif.org/developer/registry
+.. _Species API Docs: http://www.gbif.org/developer/species
+.. _Occurrences API Docs: http://www.gbif.org/developer/occurrences
 
 Installation
 -------------
@@ -25,6 +32,14 @@ Installation
 
 Example Usage
 -------------
+
+You can import the entire library
+
+::
+
+    import pygbif
+
+Or each module individually as needed.
 
 ::
 
