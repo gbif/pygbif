@@ -24,6 +24,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="pygbif 0.0.5.9500 documentation" href="#" />
+    <link rel="next" title="occurrences module" href="occurrences.html" />
    
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
@@ -38,211 +39,64 @@
             
   <div class="section" id="python-gbif-client">
 <h1>Python GBIF Client<a class="headerlink" href="#python-gbif-client" title="Permalink to this headline">¶</a></h1>
-<p>Low-level client for the GBIF API. Its goal is to provide common
-ground for all Elasticsearch-related code in Python; because of this it tries
-to be opinion-free and very extendable.</p>
-<p>For a more high level client library with more limited scope, have a look at
-<a class="reference external" href="http://elasticsearch-dsl.rtfd.org/">elasticsearch-dsl</a> - it is a more pythonic library sitting on top of
-<code class="docutils literal"><span class="pre">elasticsearch-py</span></code>.</p>
-<div class="section" id="compatibility">
-<h2>Compatibility<a class="headerlink" href="#compatibility" title="Permalink to this headline">¶</a></h2>
-<p>The library is compatible with all Elasticsearch versions since <code class="docutils literal"><span class="pre">0.90.x</span></code> but you
-<strong>have to use a matching major version</strong>:</p>
-<p>For <strong>Elasticsearch 2.0</strong> and later, use the major version 2 (<code class="docutils literal"><span class="pre">2.x.y</span></code>) of the
-library.</p>
-<p>For <strong>Elasticsearch 1.0</strong> and later, use the major version 1 (<code class="docutils literal"><span class="pre">1.x.y</span></code>) of the
-library.</p>
-<p>For <strong>Elasticsearch 0.90.x</strong>, use a version from <code class="docutils literal"><span class="pre">0.4.x</span></code> releases of the
-library.</p>
-<p>The recommended way to set your requirements in your <cite>setup.py</cite> or
-<cite>requirements.txt</cite> is:</p>
-<div class="highlight-python"><div class="highlight"><pre># Elasticsearch 2.x
-elasticsearch&gt;=2.0.0,&lt;3.0.0
-
-# Elasticsearch 1.x
-elasticsearch&gt;=1.0.0,&lt;2.0.0
-
-# Elasticsearch 0.90.x
-elasticsearch&lt;1.0.0
+<p>Low-level client for the GBIF API.</p>
+<p><cite>pygbif</cite> is split up into modules for each of the major groups of API methods.</p>
+<ul class="simple">
+<li>Registry - Datasets, Nodes, Installations, Networks, Organizations</li>
+<li>Species - Taxonomic names</li>
+<li>Occurrences - Occurrence data, including the download API</li>
+</ul>
+<p>You can import the entire library, or each module individually as needed.</p>
+<p>Note that GBIF maps <a class="reference external" href="http://www.gbif.org/developer/maps">API</a> is not included in <cite>pygbif</cite>.</p>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><div class="highlight"><pre>pip install pygbif
 </pre></div>
 </div>
-<p>The development is happening on <code class="docutils literal"><span class="pre">master</span></code> and <code class="docutils literal"><span class="pre">1.x</span></code> branches, respectively.</p>
 </div>
 <div class="section" id="example-usage">
 <h2>Example Usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
-<span class="kn">from</span> <span class="nn">elasticsearch</span> <span class="kn">import</span> <span class="n">Elasticsearch</span>
-<span class="n">es</span> <span class="o">=</span> <span class="n">Elasticsearch</span><span class="p">()</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="c">## Registry module</span>
+<span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">registry</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">dataset_metrics</span><span class="p">(</span><span class="n">uuid</span><span class="o">=</span><span class="s">&#39;3f8a1297-3259-4700-91fc-acc4170b27ce&#39;</span><span class="p">)</span>
 
-<span class="n">doc</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s">&#39;author&#39;</span><span class="p">:</span> <span class="s">&#39;kimchy&#39;</span><span class="p">,</span>
-    <span class="s">&#39;text&#39;</span><span class="p">:</span> <span class="s">&#39;Elasticsearch: cool. bonsai cool.&#39;</span><span class="p">,</span>
-    <span class="s">&#39;timestamp&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">(),</span>
-<span class="p">}</span>
-<span class="n">res</span> <span class="o">=</span> <span class="n">es</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s">&quot;test-index&quot;</span><span class="p">,</span> <span class="n">doc_type</span><span class="o">=</span><span class="s">&#39;tweet&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">body</span><span class="o">=</span><span class="n">doc</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="s">&#39;created&#39;</span><span class="p">])</span>
+<span class="c">## Species module</span>
+<span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">species</span>
+<span class="n">species</span><span class="o">.</span><span class="n">name_suggest</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="s">&#39;Puma concolor&#39;</span><span class="p">)</span>
 
-<span class="n">res</span> <span class="o">=</span> <span class="n">es</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s">&quot;test-index&quot;</span><span class="p">,</span> <span class="n">doc_type</span><span class="o">=</span><span class="s">&#39;tweet&#39;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="s">&#39;_source&#39;</span><span class="p">])</span>
-
-<span class="n">es</span><span class="o">.</span><span class="n">indices</span><span class="o">.</span><span class="n">refresh</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s">&quot;test-index&quot;</span><span class="p">)</span>
-
-<span class="n">res</span> <span class="o">=</span> <span class="n">es</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="s">&quot;test-index&quot;</span><span class="p">,</span> <span class="n">body</span><span class="o">=</span><span class="p">{</span><span class="s">&quot;query&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s">&quot;match_all&quot;</span><span class="p">:</span> <span class="p">{}}})</span>
-<span class="k">print</span><span class="p">(</span><span class="s">&quot;Got </span><span class="si">%d</span><span class="s"> Hits:&quot;</span> <span class="o">%</span> <span class="n">res</span><span class="p">[</span><span class="s">&#39;hits&#39;</span><span class="p">][</span><span class="s">&#39;total&#39;</span><span class="p">])</span>
-<span class="k">for</span> <span class="n">hit</span> <span class="ow">in</span> <span class="n">res</span><span class="p">[</span><span class="s">&#39;hits&#39;</span><span class="p">][</span><span class="s">&#39;hits&#39;</span><span class="p">]:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">&quot;</span><span class="si">%(timestamp)s</span><span class="s"> </span><span class="si">%(author)s</span><span class="s">: </span><span class="si">%(text)s</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">hit</span><span class="p">[</span><span class="s">&quot;_source&quot;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="features">
-<h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
-<p>This client was designed as very thin wrapper around Elasticseach&#8217;s REST API to
-allow for maximum flexibility. This means that there are no opinions in this
-client; it also means that some of the APIs are a little cumbersome to use from
-Python. We have created some <span class="xref std std-ref">helpers</span> to help with this issue.</p>
-<div class="section" id="persistent-connections">
-<h3>Persistent Connections<a class="headerlink" href="#persistent-connections" title="Permalink to this headline">¶</a></h3>
-<p><code class="docutils literal"><span class="pre">elasticsearch-py</span></code> uses persistent connections inside of individual connection
-pools (one per each configured or sniffed node). Out of the box you can choose
-to use <code class="docutils literal"><span class="pre">http</span></code>, <code class="docutils literal"><span class="pre">thrift</span></code> or an experimental <code class="docutils literal"><span class="pre">memcached</span></code> protocol to
-communicate with the elasticsearch nodes. See <span class="xref std std-ref">transports</span> for more
-information.</p>
-<p>The transport layer will create an instance of the selected connection class
-per node and keep track of the health of individual nodes - if a node becomes
-unresponsive (throwing exceptions while connecting to it) it&#8217;s put on a timeout
-by the <code class="xref py py-class docutils literal"><span class="pre">ConnectionPool</span></code> class and only returned to the
-circulation after the timeout is over (or when no live nodes are left). By
-default nodes are randomized before being passed into the pool and round-robin
-strategy is used for load balancing.</p>
-<p>You can customize this behavior by passing parameters to the
-<span class="xref std std-ref">connection_api</span> (all keyword arguments to the
-<code class="xref py py-class docutils literal"><span class="pre">Elasticsearch</span></code> class will be passed through). If what
-you want to accomplish is not supported you should be able to create a subclass
-of the relevant component and pass it in as a parameter to be used instead of
-the default implementation.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Since we use persistent connections throughout the client it means that the
-client doesn&#8217;t tolerate <code class="docutils literal"><span class="pre">fork</span></code> very well. If your application calls for
-multiple processes make sure you create a fresh client after call to
-<code class="docutils literal"><span class="pre">fork</span></code>.</p>
-</div>
-</div>
-<div class="section" id="automatic-retries">
-<h3>Automatic Retries<a class="headerlink" href="#automatic-retries" title="Permalink to this headline">¶</a></h3>
-<p>If a connection to a node fails due to connection issues (raises
-<code class="xref py py-class docutils literal"><span class="pre">ConnectionError</span></code>) it is considered in faulty state. It
-will be placed on hold for <code class="docutils literal"><span class="pre">dead_timeout</span></code> seconds and the request will be
-retried on another node. If a connection fails multiple times in a row the
-timeout will get progressively larger to avoid hitting a node that&#8217;s, by all
-indication, down. If no live connection is availible, the connection that has
-the smallest timeout will be used.</p>
-<p>By default retries are not triggered by a timeout
-(<code class="xref py py-class docutils literal"><span class="pre">ConnectionTimeout</span></code>), set <code class="docutils literal"><span class="pre">retry_on_timeout</span></code> to
-<code class="docutils literal"><span class="pre">True</span></code> to also retry on timeouts.</p>
-</div>
-<div class="section" id="sniffing">
-<span id="id1"></span><h3>Sniffing<a class="headerlink" href="#sniffing" title="Permalink to this headline">¶</a></h3>
-<p>The client can be configured to inspect the cluster state to get a list of
-nodes upon startup, periodically and/or on failure. See
-<code class="xref py py-class docutils literal"><span class="pre">Transport</span></code> parameters for details.</p>
-<p>Some example configurations:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">elasticsearch</span> <span class="kn">import</span> <span class="n">Elasticsearch</span>
-
-<span class="c"># by default we don&#39;t sniff, ever</span>
-<span class="n">es</span> <span class="o">=</span> <span class="n">Elasticsearch</span><span class="p">()</span>
-
-<span class="c"># you can specify to sniff on startup to inspect the cluster and load</span>
-<span class="c"># balance across all nodes</span>
-<span class="n">es</span> <span class="o">=</span> <span class="n">Elasticsearch</span><span class="p">([</span><span class="s">&quot;seed1&quot;</span><span class="p">,</span> <span class="s">&quot;seed2&quot;</span><span class="p">],</span> <span class="n">sniff_on_start</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-
-<span class="c"># you can also sniff periodically and/or after failure:</span>
-<span class="n">es</span> <span class="o">=</span> <span class="n">Elasticsearch</span><span class="p">([</span><span class="s">&quot;seed1&quot;</span><span class="p">,</span> <span class="s">&quot;seed2&quot;</span><span class="p">],</span> <span class="n">sniff_on_start</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">sniff_on_connection_fail</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">sniffer_timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="ssl-and-authentication">
-<h3>SSL and Authentication<a class="headerlink" href="#ssl-and-authentication" title="Permalink to this headline">¶</a></h3>
-<p>You can configure the client to use <code class="docutils literal"><span class="pre">SSL</span></code> for connecting to your
-elasticsearch cluster, including certificate verification and http auth:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">elasticsearch</span> <span class="kn">import</span> <span class="n">Elasticsearch</span>
-
-<span class="c"># you can use RFC-1738 to specify the url</span>
-<span class="n">es</span> <span class="o">=</span> <span class="n">Elasticsearch</span><span class="p">([</span><span class="s">&#39;https://user:secret@localhost:443&#39;</span><span class="p">])</span>
-
-<span class="c"># ... or specify common parameters as kwargs</span>
-
-<span class="c"># use certifi for CA certificates</span>
-<span class="kn">import</span> <span class="nn">certifi</span>
-
-<span class="n">es</span> <span class="o">=</span> <span class="n">Elasticsearch</span><span class="p">(</span>
-    <span class="p">[</span><span class="s">&#39;localhost&#39;</span><span class="p">,</span> <span class="s">&#39;otherhost&#39;</span><span class="p">],</span>
-    <span class="n">http_auth</span><span class="o">=</span><span class="p">(</span><span class="s">&#39;user&#39;</span><span class="p">,</span> <span class="s">&#39;secret&#39;</span><span class="p">),</span>
-    <span class="n">port</span><span class="o">=</span><span class="mi">443</span><span class="p">,</span>
-    <span class="n">use_ssl</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
-    <span class="n">verify_certs</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
-    <span class="n">ca_certs</span><span class="o">=</span><span class="n">certifi</span><span class="o">.</span><span class="n">where</span><span class="p">(),</span>
-<span class="p">)</span>
-</pre></div>
-</div>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">By default SSL certificates won&#8217;t be verified, pass in
-<code class="docutils literal"><span class="pre">verify_certs=True</span></code> to make sure your certificates will get verified. The
-client doesn&#8217;t ship with any CA certificates; easiest way to obtain the
-common set is by using the <a class="reference external" href="http://certifi.io/">certifi</a> package (as shown above).</p>
-</div>
-<p>See class <code class="xref py py-class docutils literal"><span class="pre">Urllib3HttpConnection</span></code> for detailed
-description of the options.</p>
-</div>
-<div class="section" id="logging">
-<h3>Logging<a class="headerlink" href="#logging" title="Permalink to this headline">¶</a></h3>
-<p><code class="docutils literal"><span class="pre">elasticsearch-py</span></code> uses the standard <a class="reference external" href="http://docs.python.org/3.3/library/logging.html">logging library</a> from python to define
-two loggers: <code class="docutils literal"><span class="pre">elasticsearch</span></code> and <code class="docutils literal"><span class="pre">elasticsearch.trace</span></code>. <code class="docutils literal"><span class="pre">elasticsearch</span></code>
-is used by the client to log standard activity, depending on the log level.
-<code class="docutils literal"><span class="pre">elasticsearch.trace</span></code> can be used to log requests to the server in the form
-of <code class="docutils literal"><span class="pre">curl</span></code> commands using pretty-printed json that can then be executed from
-command line. If the trace logger has not been configured already it is set to
-<cite>propagate=False</cite> so it needs to be activated separately.</p>
-</div>
-</div>
-<div class="section" id="environment-considerations">
-<h2>Environment considerations<a class="headerlink" href="#environment-considerations" title="Permalink to this headline">¶</a></h2>
-<p>When using the client there are several limitations of your environment that
-could come into play.</p>
-<p>When using an http load balancer you cannot use the <a class="reference internal" href="#sniffing"><span>Sniffing</span></a>
-functionality - the cluster would supply the client with IP addresses to
-directly cnnect to the cluster, circumventing the load balancer. Depending on
-your configuration this might be something you don&#8217;t want or break completely.</p>
-<p>In some environments (notably on Google App Engine) your http requests might be
-restricted so that <code class="docutils literal"><span class="pre">GET</span></code> requests won&#8217;t accept body. In that case use the
-<code class="docutils literal"><span class="pre">send_get_body_as</span></code> parameter of <code class="xref py py-class docutils literal"><span class="pre">Transport</span></code> to send all
-bodies via post:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">elasticsearch</span> <span class="kn">import</span> <span class="n">Elasticsearch</span>
-<span class="n">es</span> <span class="o">=</span> <span class="n">Elasticsearch</span><span class="p">(</span><span class="n">send_get_body_as</span><span class="o">=</span><span class="s">&#39;POST&#39;</span><span class="p">)</span>
+<span class="c">## Occurrences module</span>
+<span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">occurrences</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">taxonKey</span> <span class="o">=</span> <span class="mi">3329049</span><span class="p">)</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">taxonKey</span> <span class="o">=</span> <span class="mi">252408386</span><span class="p">)</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">isGeoreferenced</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="contents">
 <h2>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
-<ul class="simple">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="occurrences.html">occurrences module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="occurrences.html#load">Load</a></li>
+<li class="toctree-l2"><a class="reference internal" href="occurrences.html#example-usage">Example Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="registry.html">registry module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="registry.html#load">Load</a></li>
+<li class="toctree-l2"><a class="reference internal" href="registry.html#example-usage">Example Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="species.html">species module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="species.html#load">Load</a></li>
+<li class="toctree-l2"><a class="reference internal" href="species.html#example-usage">Example Usage</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 <div class="section" id="license">
 <h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
-<p>Copyright 2013 Elasticsearch</p>
-<p>Licensed under the Apache License, Version 2.0 (the &#8220;License&#8221;);
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at</p>
-<blockquote>
-<div><a class="reference external" href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a></div></blockquote>
-<p>Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an &#8220;AS IS&#8221; BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.</p>
+<p>MIT</p>
 </div>
 <div class="section" id="indices-and-tables">
 <h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h2>
@@ -263,17 +117,8 @@ limitations under the License.</p>
   <h3><a href="#">Table Of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Python GBIF Client</a><ul>
-<li><a class="reference internal" href="#compatibility">Compatibility</a></li>
+<li><a class="reference internal" href="#installation">Installation</a></li>
 <li><a class="reference internal" href="#example-usage">Example Usage</a></li>
-<li><a class="reference internal" href="#features">Features</a><ul>
-<li><a class="reference internal" href="#persistent-connections">Persistent Connections</a></li>
-<li><a class="reference internal" href="#automatic-retries">Automatic Retries</a></li>
-<li><a class="reference internal" href="#sniffing">Sniffing</a></li>
-<li><a class="reference internal" href="#ssl-and-authentication">SSL and Authentication</a></li>
-<li><a class="reference internal" href="#logging">Logging</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#environment-considerations">Environment considerations</a></li>
 <li><a class="reference internal" href="#contents">Contents</a></li>
 <li><a class="reference internal" href="#license">License</a></li>
 <li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
@@ -284,6 +129,7 @@ limitations under the License.</p>
 <h3>Related Topics</h3>
 <ul>
   <li><a href="#">Documentation overview</a><ul>
+      <li>Next: <a href="occurrences.html" title="next chapter">occurrences module</a></li>
   </ul></li>
 </ul>
 </div>
