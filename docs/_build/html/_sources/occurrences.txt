@@ -25,3 +25,7 @@ Example Usage
     occurrences.count(isGeoreferenced = True)
 
 .. py:module:: pygbif
+
+
+.. automodule:: pygbif.occurrences
+   :members:
