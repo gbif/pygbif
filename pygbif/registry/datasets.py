@@ -50,7 +50,7 @@ def datasets(data = 'all', type = None, uuid = None, query = None, id = None,
 	>>> registry.datasets(data=['deleted','duplicate'])
 	>>> registry.datasets(data=['deleted','duplicate'], limit=1)
 	'''
-	args = {'q': query, 'limit': limit, 'offset': start}
+	args = {'q': query, 'type': type, 'limit': limit, 'offset': start}
 	data_choices = ['all', 'organization', 'contact', 'endpoint',
 									'identifier', 'tag', 'machinetag', 'comment',
 									'constituents', 'document', 'metadata', 'deleted',
