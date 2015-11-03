@@ -141,21 +141,20 @@ def search(taxonKey=None, scientificName=None, country=None,
     >>> # Search on a bounding box
     >>> ## in well known text format
     >>> occurrences.search(geometry='POLYGON((30.1 10.1, 10 20, 20 40, 40 40, 30.1 10.1))', limit=20)
+    >>> from pygbif import species
     >>> key = species.name_suggest(q='Aesculus hippocastanum')[0]['key']
     >>> occurrences.search(taxonKey=key, geometry='POLYGON((30.1 10.1, 10 20, 20 40, 40 40, 30.1 10.1))', limit=20)
     >>>
     >>> # Search on country
-    >>> occurrences.search(country='US', fields=['name','country'], limit=20)
-    >>> isocodes[grep("France", isocodes$name],"code"]
-    >>> occurrences.search(country='FR', fields=['name','country'], limit=20)
-    >>> occurrences.search(country='DE', fields=['name','country'], limit=20)
-    >>> occurrences.search(country=['US','DE'], fields=['name','country'], limit=20)
+    >>> occurrences.search(country='US', limit=20)
+    >>> occurrences.search(country='FR', limit=20)
+    >>> occurrences.search(country='DE', limit=20)
     >>>
     >>> # Get only occurrences with lat/long data
-    >>> occurrences.search(taxonKey=key, hasCoordinate=TRUE, limit=20)
+    >>> occurrences.search(taxonKey=key, hasCoordinate=True, limit=20)
     >>>
     >>> # Get only occurrences that were recorded as living specimens
-    >>> occurrences.search(taxonKey=key, basisOfRecord="LIVING_SPECIMEN", hasCoordinate=TRUE, limit=20)
+    >>> occurrences.search(taxonKey=key, basisOfRecord="LIVING_SPECIMEN", hasCoordinate=True, limit=20)
     >>>
     >>> # Get occurrences for a particular eventDate
     >>> occurrences.search(taxonKey=key, eventDate="2013", limit=20)
@@ -163,31 +162,29 @@ def search(taxonKey=None, scientificName=None, country=None,
     >>> occurrences.search(taxonKey=key, month="6", limit=20)
     >>>
     >>> # Get occurrences based on depth
-    >>> key = name_backbone(name='Salmo salar', kingdom='animals')$speciesKey
+    >>> key = species.name_backbone(name='Salmo salar', kingdom='animals')['usageKey']
     >>> occurrences.search(taxonKey=key, depth="5", limit=20)
     >>>
     >>> # Get occurrences based on elevation
-    >>> key = name_backbone(name='Puma concolor', kingdom='animals')$speciesKey
-    >>> occurrences.search(taxonKey=key, elevation=50, hasCoordinate=TRUE, limit=20)
+    >>> key = species.name_backbone(name='Puma concolor', kingdom='animals')['usageKey']
+    >>> occurrences.search(taxonKey=key, elevation=50, hasCoordinate=True, limit=20)
     >>>
     >>> # Get occurrences based on institutionCode
     >>> occurrences.search(institutionCode="TLMF", limit=20)
-    >>> occurrences.search(institutionCode=["TLMF","ArtDatabanken"], limit=20)
     >>>
     >>> # Get occurrences based on collectionCode
     >>> occurrences.search(collectionCode="Floristic Databases MV - Higher Plants", limit=20)
-    >>> occurrences.search(collectionCode=["Floristic Databases MV - Higher Plants","Artport"])
     >>>
     >>> # Get only those occurrences with spatial issues
-    >>> occurrences.search(taxonKey=key, hasGeospatialIssue=TRUE, limit=20)
+    >>> occurrences.search(taxonKey=key, hasGeospatialIssue=True, limit=20)
     >>>
     >>> # Search using a query string
-    >>> occurrences.search(search="kingfisher", limit=20)
+    >>> occurrences.search(q="kingfisher", limit=20)
     >>>
     >>> # Range queries
     >>> ## See Detail for parameters that support range queries
-    >>> occurrences.search(depth='50,100') # this is a range depth, with lower/upper limits in character string
-    >>> occurrences.search(depth=[50,100]) # this is not a range search, but does two searches for each depth
+    >>> ### this is a range depth, with lower/upper limits in character string
+    >>> occurrences.search(depth='50,100')
     >>>
     >>> ## Range search with year
     >>> occurrences.search(year='1999,2000', limit=20)
@@ -197,50 +194,39 @@ def search(taxonKey=None, scientificName=None, country=None,
     >>>
     >>> # Search by specimen type status
     >>> ## Look for possible values of the typeStatus parameter looking at the typestatus dataset
-    >>> occurrences.search(typeStatus = 'allotype', fields = ['name','typeStatus'))
+    >>> occurrences.search(typeStatus = 'allotype')
     >>>
     >>> # Search by specimen record number
     >>> ## This is the record number of the person/group that submitted the data, not GBIF's numbers
     >>> ## You can see that many different groups have record number 1, so not super helpful
-    >>> occurrences.search(recordNumber = 1, fields = ['name','recordNumber','recordedBy'])
+    >>> occurrences.search(recordNumber = 1)
     >>>
     >>> # Search by last time interpreted: Date the record was last modified in GBIF
     >>> ## The lastInterpreted parameter accepts ISO 8601 format dates, including
     >>> ## yyyy, yyyy-MM, yyyy-MM-dd, or MM-dd. Range queries are accepted for lastInterpreted
-    >>> occurrences.search(lastInterpreted = '2014-04-02', fields = ['name','lastInterpreted'])
+    >>> occurrences.search(lastInterpreted = '2014-04-01')
     >>>
     >>> # Search by continent
     >>> ## One of africa, antarctica, asia, europe, north_america, oceania, or south_america
-    >>> occurrences.search(continent = 'south_america', return = 'meta')
-    >>> occurrences.search(continent = 'africa', return = 'meta')
-    >>> occurrences.search(continent = 'oceania', return = 'meta')
-    >>> occurrences.search(continent = 'antarctica', return = 'meta')
+    >>> occurrences.search(continent = 'south_america')
+    >>> occurrences.search(continent = 'africa')
+    >>> occurrences.search(continent = 'oceania')
+    >>> occurrences.search(continent = 'antarctica')
     >>>
     >>> # Search for occurrences with images
-    >>> occurrences.search(mediatype = 'StillImage', return='media')
-    >>> occurrences.search(mediatype = 'MovingImage', return='media')
-    >>> occurrences.search(mediatype = 'Sound', return='media')
+    >>> occurrences.search(mediatype = 'StillImage')
+    >>> occurrences.search(mediatype = 'MovingImage')
+    >>> x = occurrences.search(mediatype = 'Sound')
+    >>> [z['media'] for z in x['results']]
     >>>
-    >>> # Query based on issues - see Details for options
-    >>> ## one issue
-    >>> occurrences.search(taxonKey=1, issue='DEPTH_UNLIKELY', fields =
-    >>>    ['name','key','decimalLatitude','decimalLongitude','depth'))
-    >>> ## two issues
+    >>> # Query based on issues
+    >>> occurrences.search(taxonKey=1, issue='DEPTH_UNLIKELY')
     >>> occurrences.search(taxonKey=1, issue=['DEPTH_UNLIKELY','COORDINATE_ROUNDED'])
     >>> # Show all records in the Arizona State Lichen Collection that cant be matched to the GBIF
     >>> # backbone properly:
-    >>> occurrences.search(datasetKey='84c0e1a0-f762-11e1-a439-00145eb45e9a',
-    >>>    issue=['TAXON_MATCH_NONE','TAXON_MATCH_HIGHERRANK'])
-    >>>
-    >>> # If you try multiple values for two different parameters you are wacked on the hand
-    >>> # occurrences.search(taxonKey=[2482598,2492010], collectorName=["smith","BJ Stacey"))
-    >>>
-    >>> # Get a lot of data, here 1500 records for Helianthus annuus
-    >>> # out = occurrences.search(taxonKey=key, limit=1500, return="data")
-    >>> # nrow(out)
+    >>> occurrences.search(datasetKey='84c0e1a0-f762-11e1-a439-00145eb45e9a', issue=['TAXON_MATCH_NONE','TAXON_MATCH_HIGHERRANK'])
     >>>
     >>> # If you pass in an invalid polygon you get hopefully informative errors
-    >>>
     >>> ### the WKT string is fine, but GBIF says bad polygon
     >>> wkt = 'POLYGON((-178.59375 64.83258989321493,-165.9375 59.24622380205539,
     >>> -147.3046875 59.065977905449806,-130.78125 51.04484764446178,-125.859375 36.70806354647625,
@@ -252,9 +238,10 @@ def search(taxonKey=None, scientificName=None, country=None,
     >>> 127.96875 15.077427674847987,127.96875 23.689804541429606,139.921875 32.06861069132688,
     >>> 149.4140625 42.65416193033991,159.2578125 48.3160811030533,168.3984375 57.019804336633165,
     >>> 178.2421875 59.95776046458139,-179.6484375 61.16708631440347,-178.59375 64.83258989321493))'
+    >>> occurrences.search(geometry = wkt)
     '''
     url = gbif_baseurl + 'occurrence/search'
-    out = gbif_search_GET(url, {'taxonKey': taxonKey, 'scientificName': scientificName,
+    out = gbif_GET(url, {'taxonKey': taxonKey, 'scientificName': scientificName,
         'country': country, 'publishingCountry': publishingCountry,
         'hasCoordinate': hasCoordinate, 'typeStatus': typeStatus,
         'recordNumber': recordNumber, 'lastInterpreted': lastInterpreted,
