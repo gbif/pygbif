@@ -85,7 +85,7 @@ def search(taxonKey=None, scientificName=None, country=None,
     :param limit: [Fixnum] Number of results to return.
     :param offset: [Fixnum] Start at record X
 
-    :return: Object response class, light wrapper around a dict
+    :return: A dictionary, of results
 
     Usage
     >>> from pygbif import occurrences

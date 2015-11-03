@@ -1,46 +1,46 @@
 from ..gbifutils import *
 
-def get(taxonKey, **kwargs):
+def get(key, **kwargs):
     '''
     Gets details for a single, interpreted occurrence
 
     :param key: [Fixnum] A GBIF occurrence key
-    :return: Object response class, light wrapper around a dict
+    :return: A dictionary, of results
 
     Usage
     >>> from pygbif import occurrences
-    >>> occurrences.get(taxonKey = 252408386)
+    >>> occurrences.get(key = 252408386)
     '''
-    url = gbif_baseurl + 'occurrence/' + str(taxonKey)
+    url = gbif_baseurl + 'occurrence/' + str(key)
     out = gbif_GET(url, {}, **kwargs)
     return out
 
-def get_verbatim(taxonKey, **kwargs):
+def get_verbatim(key, **kwargs):
     '''
     Gets a verbatim occurrence record without any interpretation
 
     :param key: [Fixnum] A GBIF occurrence key
-    :return: Object response class, light wrapper around a dict
+    :return: A dictionary, of results
 
     Usage
     >>> from pygbif import occurrences
-    >>> occurrences.get_verbatim(taxonKey = 252408386)
+    >>> occurrences.get_verbatim(key = 252408386)
     '''
-    url = gbif_baseurl + 'occurrence/' + str(taxonKey) + '/verbatim'
+    url = gbif_baseurl + 'occurrence/' + str(key) + '/verbatim'
     out = gbif_GET(url, {}, **kwargs)
     return out
 
-def get_fragment(taxonKey, **kwargs):
+def get_fragment(key, **kwargs):
     '''
     Get a single occurrence fragment in its raw form (xml or json)
 
     :param key: [Fixnum] A GBIF occurrence key
-    :return: Object response class, light wrapper around a dict
+    :return: A dictionary, of results
 
     Usage
     >>> from pygbif import occurrences
-    >>> occurrences.get_fragment(taxonKey = 1052909293)
+    >>> occurrences.get_fragment(key = 1052909293)
     '''
-    url = gbif_baseurl + 'occurrence/' + str(taxonKey) + '/fragment'
+    url = gbif_baseurl + 'occurrence/' + str(key) + '/fragment'
     out = gbif_GET(url, {}, **kwargs)
     return out
