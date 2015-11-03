@@ -3,6 +3,7 @@ pygbif
 
 [![Build Status](https://travis-ci.org/sckott/pygbif.svg)](https://travis-ci.org/sckott/pygbif)
 [![Coverage Status](https://coveralls.io/repos/sckott/pygbif/badge.svg?branch=master&service=github)](https://coveralls.io/github/sckott/pygbif?branch=master)
+[![Docs](https://readthedocs.org/projects/pygbif/badge/?version=latest)](http://pygbif.rtfd.org/)
 
 Python client for the [GBIF API](http://www.gbif.org/developer/summary)
 
