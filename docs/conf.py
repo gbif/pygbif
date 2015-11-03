@@ -22,7 +22,7 @@ import shlex
 sys.path.insert(0, os.path.abspath('..'))
 
 from pygbif import occurrences
-import shapely
+from shapely import geometry
 # sys.path.insert(0, os.path.abspath('../pygbif'))
 # sys.path.insert(0, os.path.abspath('../../pygbif/occurrences'))
 # sys.path.append(os.path.join(os.path.dirname(__name__), '..'))
@@ -40,6 +40,8 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.autodoc'
 ]
+
+autodoc_mock_imports = ['shapely', 'requests']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
