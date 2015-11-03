@@ -11,18 +11,18 @@ def test_datasets_limit():
     "registry.datasets - limit param"
     res = registry.datasets(limit=1)
     assert dict == res.__class__
-    assert 1 == len(res['results'])
+    assert 1 == len(res['data'])
 
     res = registry.datasets(limit=3)
     assert dict == res.__class__
-    assert 3 == len(res['results'])
+    assert 3 == len(res['data'])
 
 def test_datasets_type():
     "registry.datasets - type param"
     res = registry.datasets(type="OCCURRENCE")
-    vv = [ x['type'] for x in res['results'] ]
+    vv = [ x['type'] for x in res['data'] ]
     assert dict == res.__class__
-    assert 100 == len(res['results'])
+    assert 100 == len(res['data'])
     assert 'OCCURRENCE' == list(set(vv))[0]
 
 def test_dataset_metrics():
