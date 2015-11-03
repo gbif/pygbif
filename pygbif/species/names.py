@@ -6,23 +6,23 @@ def name_backbone(name, rank=None, kingdom=None, phylum=None, clazz=None,
   '''
   Lookup names in the GBIF backbone taxonomy.
 
-  :param name: (character) Full scientific name potentially with authorship (required)
-  :param rank: (character) The rank given as our rank enum. (optional)
-  :param kingdom: (character) If provided default matching will also try to match against this
+  :param name: [str] Full scientific name potentially with authorship (required)
+  :param rank: [str] The rank given as our rank enum. (optional)
+  :param kingdom: [str] If provided default matching will also try to match against this
      if no direct match is found for the name alone. (optional)
-  :param phylum: (character) If provided default matching will also try to match against this
+  :param phylum: [str] If provided default matching will also try to match against this
      if no direct match is found for the name alone. (optional)
-  :param class: (character) If provided default matching will also try to match against this
+  :param class: [str] If provided default matching will also try to match against this
      if no direct match is found for the name alone. (optional)
-  :param order: (character) If provided default matching will also try to match against this
+  :param order: [str] If provided default matching will also try to match against this
      if no direct match is found for the name alone. (optional)
-  :param family: (character) If provided default matching will also try to match against this
+  :param family: [str] If provided default matching will also try to match against this
      if no direct match is found for the name alone. (optional)
-  :param genus: (character) If provided default matching will also try to match against this
+  :param genus: [str] If provided default matching will also try to match against this
      if no direct match is found for the name alone. (optional)
-  :param strict: (logical) If True it (fuzzy) matches only the given name, but never a
+  :param strict: [bool] If True it (fuzzy) matches only the given name, but never a
      taxon in the upper classification (optional)
-  :param verbose: (logical) If True show alternative matches considered which had been rejected.
+  :param verbose: [bool] If True show alternative matches considered which had been rejected.
 
   A list for a single taxon with many slots (with verbose=False - default), or a
   list of length two, first element for the suggested taxon match, and a data.frame
@@ -66,60 +66,37 @@ def name_suggest(q=None, datasetKey=None, rank=None, fields=None, start=None, li
 
   References: http://www.gbif.org/developer/species#searching
 
-  :param q: (character, required) Simple search parameter. The value for this parameter can be a
+  :param q: [str] Simple search parameter. The value for this parameter can be a
      simple word or a phrase. Wildcards can be added to the simple word parameters only,
-     e.g. q=*puma*
-  :param datasetKey: (character) Filters by the checklist dataset key (a uuid, see examples)
-  :param rank: (character) A taxonomic rank. One of class, cultivar, cultivar_group, domain, family,
+     e.g. q=*puma* (Required)
+  :param datasetKey: [str] Filters by the checklist dataset key (a uuid, see examples)
+  :param rank: [str] A taxonomic rank. One of class, cultivar, cultivar_group, domain, family,
      form, genus, informal, infrageneric_name, infraorder, infraspecific_name,
      infrasubspecific_name, kingdom, order, phylum, section, series, species, strain, subclass,
      subfamily, subform, subgenus, subkingdom, suborder, subphylum, subsection, subseries,
      subspecies, subtribe, subvariety, superclass, superfamily, superorder, superphylum,
      suprageneric_name, tribe, unranked, or variety.
-  :param fields: (character) Fields to return in output data.frame (simply prunes columns off)
+
+  :return: A dictionary, of results
 
   Usage:
   >>> from pygbif import species
   >>> species.name_suggest(q='Puma concolor')
-  >>> species.name_suggest(q='Puma')
+  >>> x = species.name_suggest(q='Puma')
+  >>> x['data']
+  >>> x['hierarchy']
   >>> species.name_suggest(q='Puma', rank="genus")
   >>> species.name_suggest(q='Puma', rank="subspecies")
   >>> species.name_suggest(q='Puma', rank="species")
   >>> species.name_suggest(q='Puma', rank="infraspecific_name")
   >>> species.name_suggest(q='Puma', limit=2)
-  >>> species.name_suggest(q='Puma', fields=['key','canonicalName'])
-  >>> species.name_suggest(q='Puma', fields=['key','canonicalName','higherClassificationMap'])
   '''
   url = gbif_baseurl + 'species/suggest'
   args = {'q':q, 'rank':rank, 'offset':start, 'limit':limit}
   tt = gbif_GET(url, args, **kwargs)
-
-  if fields is None:
-    toget = ["key","canonicalName","rank"]
-  else:
-    toget = fields
-
-  buck = []
-  for x in toget:
-    buck.append(filter(lambda x: x is True, [x==toget[0] for x in suggestfields()]))
-
-  if len(buck) == 0:
-    raise NoResultException("some fields are not valid")
-
-  if fields is not None:
-    tmp1 = filter(None, [x=="higherClassificationMap" for x in fields])
-  else:
-    tmp1 = None
-
-  if tmp1 is not None:
-    hier = [ x['higherClassificationMap'] for x in tt ]
-    [ x.pop('higherClassificationMap') for x in tt ]
-    return {'data': tt, 'hierarchy': hier}
-  else:
-    out = []
-    for x in tt:
-      out.append(dict(zip(toget, [x[y] for y in toget])))
-    return out
+  hier = [ x['higherClassificationMap'] for x in tt ]
+  [ x.pop('higherClassificationMap') for x in tt ]
+  return {'data': tt, 'hierarchy': hier}
 
 def suggestfields():
   '''
