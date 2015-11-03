@@ -143,9 +143,6 @@ def search(taxonKey=None, scientificName=None, country=None,
     >>> occurrences.search(geometry='POLYGON((30.1 10.1, 10 20, 20 40, 40 40, 30.1 10.1))', limit=20)
     >>> key = species.name_suggest(q='Aesculus hippocastanum')[0]['key']
     >>> occurrences.search(taxonKey=key, geometry='POLYGON((30.1 10.1, 10 20, 20 40, 40 40, 30.1 10.1))', limit=20)
-    >>> ## or using bounding box, converted to WKT internally
-    >>> ### doesn't work yet
-    >>> occurrences.search(geometry=[-125.0,38.4,-121.8,40.9], limit=20)
     >>>
     >>> # Search on country
     >>> occurrences.search(country='US', fields=['name','country'], limit=20)
@@ -234,24 +231,6 @@ def search(taxonKey=None, scientificName=None, country=None,
     >>> # backbone properly:
     >>> occurrences.search(datasetKey='84c0e1a0-f762-11e1-a439-00145eb45e9a',
     >>>    issue=['TAXON_MATCH_NONE','TAXON_MATCH_HIGHERRANK'])
-    >>>
-    >>> # Parsing output by issue
-    >>> (res = occurrences.search(geometry='POLYGON((30.1 10.1, 10 20, 20 40, 40 40, 30.1 10.1))', limit = 50))
-    >>> ## what do issues mean, can print whole table, or search for matches
-    >>> head(gbif_issues())
-    >>> gbif_issues()[ gbif_issues()$code %in% ['cdround','cudc','gass84','txmathi'], ]
-    >>> ## or parse issues in various ways
-    >>> ### remove data rows with certain issue classes
-    >>> library('magrittr')
-    >>> res %>% occ_issues(gass84)
-    >>> ### split issues into separate columns
-    >>> res %>% occ_issues(mutate = "split")
-    >>> ### expand issues to more descriptive names
-    >>> res %>% occ_issues(mutate = "expand")
-    >>> ### split and expand
-    >>> res %>% occ_issues(mutate = "split_expand")
-    >>> ### split, expand, and remove an issue class
-    >>> res %>% occ_issues(-cudc, mutate = "split_expand")
     >>>
     >>> # If you try multiple values for two different parameters you are wacked on the hand
     >>> # occurrences.search(taxonKey=[2482598,2492010], collectorName=["smith","BJ Stacey"))

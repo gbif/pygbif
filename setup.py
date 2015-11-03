@@ -8,7 +8,7 @@ setup(name='pygbif',
   url='http://github.com/sckott/pygbif',
   license="MIT",
   packages=['pygbif'],
-  install_requires=['requests>2.7', 'shapely>=1.5.13'],
+  install_requires=['requests>2.7'],
   classifiers=(
     'Development Status :: 3 - Alpha',
     'Intended Audience :: Science/Research',
