@@ -76,8 +76,7 @@ def datasets(data = 'all', type = None, uuid = None, query = None, id = None,
 				url = gbif_baseurl + 'dataset/' + uuid + '/' + x
 
 		res = gbif_GET(url, args, **kwargs)
-		# return {'meta': get_meta(res), 'data': parse_results(res, uuid)}
-		return res
+		return {'meta': get_meta(res), 'data': parse_results(res, uuid)}
 
 	# Get data
 	if len2(data) ==1:
