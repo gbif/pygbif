@@ -22,6 +22,7 @@ import shlex
 sys.path.insert(0, os.path.abspath('..'))
 
 from pygbif import occurrences
+import shapely
 # sys.path.insert(0, os.path.abspath('../pygbif'))
 # sys.path.insert(0, os.path.abspath('../../pygbif/occurrences'))
 # sys.path.append(os.path.join(os.path.dirname(__name__), '..'))

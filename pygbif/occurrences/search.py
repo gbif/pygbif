@@ -1,5 +1,4 @@
 from ..gbifutils import *
-from shapely.geometry import box
 
 def search(taxonKey=None, scientificName=None, country=None,
     publishingCountry=None, hasCoordinate=None, typeStatus=None,
