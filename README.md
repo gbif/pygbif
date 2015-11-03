@@ -13,6 +13,14 @@ Other GBIF clients:
 
 ## Installation
 
+Stable from pypi
+
+```
+pip install pygbif
+```
+
+Development version
+
 ```
 [sudo] pip install git+git://github.com/sckott/pygbif.git#egg=pygbif
 ```
