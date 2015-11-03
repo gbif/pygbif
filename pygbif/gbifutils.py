@@ -1,4 +1,5 @@
 import requests
+import shapely
 from shapely import geometry
 
 class NoResultException(Exception):
