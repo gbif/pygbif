@@ -84,7 +84,3 @@ def datasets(data = 'all', type = None, uuid = None, query = None, id = None,
 		return getdata(data, uuid, args, **kwargs)
 	else:
 		return [getdata(x, uuid, args, **kwargs) for x in data]
-
-if __name__ == "__main__":
-    import doctest
-    doctest.testmod()

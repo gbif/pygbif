@@ -32,7 +32,7 @@ def nodes(data = 'all', uuid = None, query = None, identifier = None,
   "109aea14-c252-4a85-96e2-f5f4d5d088f4","169eb292-376b-4cc6-8e31-9c2c432de0ad",
   "1e789bc9-79fc-4e60-a49e-89dfc45a7188","1f94b3ca-9345-4d65-afe2-4bace93aa0fe"]
 
-  [pygbif.nodes(x, data='identifier')$data for x in uuids]
+  [ registry.nodes(data='identifier', uuid=x) for x in uuids ]
   '''
   args = {'q': query, 'limit': limit, 'offset': start}
   data_choices = ['all', 'organization', 'endpoint',
@@ -59,14 +59,10 @@ def nodes(data = 'all', uuid = None, query = None, identifier = None,
         url = gbif_baseurl + 'node/' + uuid + '/' + x
 
     res = gbif_GET(url, args, **kwargs)
-    {'meta': get_meta(res), 'data': parse_results(res, uuid)}
+    return {'meta': get_meta(res), 'data': parse_results(res, uuid)}
 
   # Get data
   if len2(data) == 1:
     return getdata(data, uuid, args, **kwargs)
   else:
     return [getdata(x, uuid, args, **kwargs) for x in data]
-
-if __name__ == "__main__":
-    import doctest
-    doctest.testmod()
