@@ -1,4 +1,5 @@
 from setuptools import setup
+from setuptools import find_packages
 
 setup(name='pygbif',
 	version='0.1.0',
@@ -7,7 +8,8 @@ setup(name='pygbif',
   author_email='myrmecocystus@gmail.com',
   url='http://github.com/sckott/pygbif',
   license="MIT",
-  packages=['pygbif'],
+  # packages=['pygbif'],
+  packages = find_packages(exclude=['test-*']),
   install_requires=['requests>2.7'],
   classifiers=(
     'Development Status :: 3 - Alpha',
