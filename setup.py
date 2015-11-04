@@ -2,7 +2,7 @@ import codecs
 from setuptools import setup
 from setuptools import find_packages
 
-with codecs.open('README.md', 'r', 'utf-8') as f:
+with codecs.open('README.rst', 'r', 'utf-8') as f:
     readme = f.read()
 
 with codecs.open('CHANGES.txt', 'r', 'utf-8') as f:
