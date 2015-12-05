@@ -23,4 +23,7 @@ def stopifnot(x):
   if x != 'application/json':
     raise NoResultException("content-type did not = application/json")
 
+def stop(x):
+  raise ValueError(x)
+
 gbif_baseurl = "http://api.gbif.org/v1/"

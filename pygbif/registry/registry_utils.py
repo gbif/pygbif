@@ -12,7 +12,7 @@ def check_data(x,y):
 
 	for z in testdata:
 		if z not in y:
-			raise TypeError(z + ' not one of the choices')
+			raise TypeError(z + ' is not one of the choices')
 
 def get_meta(x):
   if has_meta(x):

@@ -41,7 +41,7 @@ def nodes(data = 'all', uuid = None, query = None, identifier = None,
   check_data(data, data_choices)
 
   def getdata(x, uuid, args, **kwargs):
-    if data is not 'all' and uuid is None:
+    if x is not 'all' and uuid is None:
       stop('You must specify a uuid if data does not equal "all"')
 
     if uuid is None:
