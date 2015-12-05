@@ -34,7 +34,7 @@ pygbif is a Python client for GBIF. Example usage:
 >>> occurrences.search(geometry='POLYGON((30.1 10.1, 10 20, 20 40, 40 40, 30.1 10.1))', limit=20)
 '''
 
-__version__ = '0.1.1.9500'
+__version__ = '0.1.2'
 __title__ = 'pygbif'
 __author__ = 'Scott Chamberlain'
 __license__ = 'MIT'
