@@ -6,6 +6,8 @@ pygbif
 Python client for the `GBIF API
 <http://www.gbif.org/developer/summary>`__.
 
+`Source on GitHub at sckott/pygbif <https://github.com/sckott/pygbif>`__
+
 Other GBIF clients:
 
 * R: `rgbif`, `ropensci/rgbif <https://github.com/ropensci/rgbif>`__

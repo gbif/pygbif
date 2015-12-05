@@ -3,7 +3,10 @@ Python GBIF Client
 
 |pypi| |docs| |travis| |coverage|
 
-Low-level client for the GBIF API.
+Python client for the `GBIF API
+<http://www.gbif.org/developer/summary>`__.
+
+`Source on GitHub at sckott/pygbif <https://github.com/sckott/pygbif>`__
 
 `pygbif` is split up into modules for each of the major groups of API methods.
 
