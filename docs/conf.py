@@ -21,6 +21,7 @@ import shlex
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 sys.path.insert(0, os.path.abspath('..'))
 
+import pygbif
 from pygbif import occurrences
 
 # -- General configuration ------------------------------------------------
