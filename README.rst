@@ -1,14 +1,7 @@
 pygbif
 =======
 
-.. image:: https://travis-ci.org/sckott/pygbif.svg
-   :target: https://travis-ci.org/sckott/pygbif
-
-.. image:: https://coveralls.io/repos/sckott/pygbif/badge.svg?branch=master&service=github
-   :target: https://coveralls.io/github/sckott/pygbif?branch=master
-
-.. image:: https://readthedocs.org/projects/pygbif/badge/?version=latest
-   :target: http://pygbif.rtfd.org/
+|pypi| |docs| |travis| |coverage|
 
 Python client for the `GBIF API
 <http://www.gbif.org/developer/summary>`__.
@@ -73,3 +66,15 @@ Meta
 
 * License: MIT, see `LICENSE file <LICENSE>`__
 * Please note that this project is released with a `Contributor Code of Conduct <CONDUCT.md>`__. By participating in this project you agree to abide by its terms.
+
+.. |pypi| image:: https://img.shields.io/pypi/v/habanero.svg
+   :target: https://pypi.python.org/pypi/habanero
+
+.. |docs| image:: https://readthedocs.org/projects/pygbif/badge/?version=latest
+   :target: http://pygbif.rtfd.org/
+
+.. |travis| image:: https://travis-ci.org/sckott/pygbif.svg
+   :target: https://travis-ci.org/sckott/pygbif
+
+.. |coverage| image:: https://coveralls.io/repos/sckott/pygbif/badge.svg?branch=master&service=github
+   :target: https://coveralls.io/github/sckott/pygbif?branch=master

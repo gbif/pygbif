@@ -1,6 +1,8 @@
 Python GBIF Client
 ===========================
 
+|pypi| |docs| |travis| |coverage|
+
 Low-level client for the GBIF API.
 
 `pygbif` is split up into modules for each of the major groups of API methods.
@@ -30,32 +32,49 @@ Installation
     pip install pygbif
 
 
-Example Usage
--------------
+Registry module
+===============
 
-You can import the entire library
+.. code-block:: python
 
-::
-
-    import pygbif
-
-Or each module individually as needed.
-
-::
-
-    ## Registry module
     from pygbif import registry
     registry.dataset_metrics(uuid='3f8a1297-3259-4700-91fc-acc4170b27ce')
 
-    ## Species module
+Species module
+===============
+
+.. code-block:: python
+
     from pygbif import species
     species.name_suggest(q='Puma concolor')
 
-    ## Occurrences module
+Occurrences module
+==================
+
+.. code-block:: python
+
     from pygbif import occurrences
     occurrences.search(taxonKey = 3329049)
     occurrences.get(taxonKey = 252408386)
     occurrences.count(isGeoreferenced = True)
+
+Meta
+====
+
+* License: MIT, see `LICENSE file <LICENSE>`__
+* Please note that this project is released with a `Contributor Code of Conduct <CONDUCT.md>`__. By participating in this project you agree to abide by its terms.
+
+.. |pypi| image:: https://img.shields.io/pypi/v/habanero.svg
+   :target: https://pypi.python.org/pypi/habanero
+
+.. |docs| image:: https://readthedocs.org/projects/pygbif/badge/?version=latest
+   :target: http://pygbif.rtfd.org/
+
+.. |travis| image:: https://travis-ci.org/sckott/pygbif.svg
+   :target: https://travis-ci.org/sckott/pygbif
+
+.. |coverage| image:: https://coveralls.io/repos/sckott/pygbif/badge.svg?branch=master&service=github
+   :target: https://coveralls.io/github/sckott/pygbif?branch=master
 
 
 Contents
@@ -67,6 +86,7 @@ Contents
    occurrences
    registry
    species
+   changelog_link
 
 License
 -------
