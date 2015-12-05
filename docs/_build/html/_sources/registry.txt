@@ -1,20 +1,12 @@
+.. _registry:
+
 registry module
-===========================
+===============
 
-* datasets
-* nodes
+.. py:module:: pygbif
 
-Load
--------------
-
-::
-
-    from pygbif import registry
-
-
-Example Usage
--------------
-
-::
-
-    registry.dataset_metrics(uuid='3f8a1297-3259-4700-91fc-acc4170b27ce')
+.. automethod:: registry.datasets
+.. automethod:: registry.dataset_metrics
+.. automethod:: registry.installations
+.. automethod:: registry.networks
+.. automethod:: registry.nodes

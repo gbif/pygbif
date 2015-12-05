@@ -1,0 +1,279 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pygbif.registry.datasets &mdash; pygbif 0.1.1.9500 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="pygbif 0.1.1.9500 documentation" href="../../../index.html"/>
+        <link rel="up" title="Module code" href="../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> pygbif
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.1.9500
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../occurrences.html">occurrences module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../registry.html">registry module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../species.html">species module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog_link.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">pygbif</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      
+    <li>pygbif.registry.datasets</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pygbif.registry.datasets</h1><div class="highlight"><pre>
+<span class="kn">from</span> <span class="nn">..gbifutils</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.registry_utils</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">def</span> <span class="nf">dataset_metrics</span><span class="p">(</span><span class="n">uuid</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+	<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">	Get details on a GBIF dataset.</span>
+
+<span class="sd">	:param uuid: (character) One or more dataset UUIDs. See examples.</span>
+
+<span class="sd">	References: http://www.gbif.org/developer/registry#datasetMetrics</span>
+
+<span class="sd">	Usage::</span>
+
+<span class="sd">			from pygbif import registry</span>
+<span class="sd">			registry.dataset_metrics(uuid=&#39;3f8a1297-3259-4700-91fc-acc4170b27ce&#39;)</span>
+<span class="sd">			registry.dataset_metrics(uuid=&#39;66dd0960-2d7d-46ee-a491-87b9adcfe7b1&#39;)</span>
+<span class="sd">			registry.dataset_metrics(uuid=[&#39;3f8a1297-3259-4700-91fc-acc4170b27ce&#39;, &#39;66dd0960-2d7d-46ee-a491-87b9adcfe7b1&#39;])</span>
+<span class="sd">	&#39;&#39;&#39;</span>
+	<span class="k">def</span> <span class="nf">getdata</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s">&#39;dataset/&#39;</span> <span class="o">+</span> <span class="n">x</span> <span class="o">+</span> <span class="s">&#39;/metrics&#39;</span>
+		<span class="k">return</span> <span class="n">gbif_GET</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="p">{},</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+	<span class="k">if</span> <span class="n">len2</span><span class="p">(</span><span class="n">uuid</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+		<span class="k">return</span> <span class="n">getdata</span><span class="p">(</span><span class="n">uuid</span><span class="p">)</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="k">return</span> <span class="p">[</span><span class="n">getdata</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">uuid</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">datasets</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="s">&#39;all&#39;</span><span class="p">,</span> <span class="nb">type</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">uuid</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">query</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="nb">id</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+							<span class="n">limit</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">start</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+	<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">	Search for datasets and dataset metadata.</span>
+
+<span class="sd">	:param data: The type of data to get. Default is all data.</span>
+<span class="sd">	:param type: Type of dataset, options include OCCURRENCE, etc.</span>
+<span class="sd">	:param uuid: UUID of the data node provider. This must be specified if data</span>
+<span class="sd">		 is anything other than &#39;all&#39;.</span>
+<span class="sd">	:param query: Query term(s). Only used when data=&#39;all&#39;</span>
+<span class="sd">	:param id: A metadata document id.</span>
+
+<span class="sd">	References http://www.gbif.org/developer/registry#datasets</span>
+
+<span class="sd">	Usage::</span>
+
+<span class="sd">			from pygbif import registry</span>
+<span class="sd">			registry.datasets(limit=5)</span>
+<span class="sd">			registry.datasets(type=&quot;OCCURRENCE&quot;)</span>
+<span class="sd">			registry.datasets(uuid=&quot;a6998220-7e3a-485d-9cd6-73076bd85657&quot;)</span>
+<span class="sd">			registry.datasets(data=&#39;contact&#39;, uuid=&quot;a6998220-7e3a-485d-9cd6-73076bd85657&quot;)</span>
+<span class="sd">			registry.datasets(data=&#39;metadata&#39;, uuid=&quot;a6998220-7e3a-485d-9cd6-73076bd85657&quot;)</span>
+<span class="sd">			registry.datasets(data=&#39;metadata&#39;, uuid=&quot;a6998220-7e3a-485d-9cd6-73076bd85657&quot;, id=598)</span>
+<span class="sd">			registry.datasets(data=[&#39;deleted&#39;,&#39;duplicate&#39;])</span>
+<span class="sd">			registry.datasets(data=[&#39;deleted&#39;,&#39;duplicate&#39;], limit=1)</span>
+<span class="sd">	&#39;&#39;&#39;</span>
+	<span class="n">args</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;q&#39;</span><span class="p">:</span> <span class="n">query</span><span class="p">,</span> <span class="s">&#39;type&#39;</span><span class="p">:</span> <span class="nb">type</span><span class="p">,</span> <span class="s">&#39;limit&#39;</span><span class="p">:</span> <span class="n">limit</span><span class="p">,</span> <span class="s">&#39;offset&#39;</span><span class="p">:</span> <span class="n">start</span><span class="p">}</span>
+	<span class="n">data_choices</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;all&#39;</span><span class="p">,</span> <span class="s">&#39;organization&#39;</span><span class="p">,</span> <span class="s">&#39;contact&#39;</span><span class="p">,</span> <span class="s">&#39;endpoint&#39;</span><span class="p">,</span>
+									<span class="s">&#39;identifier&#39;</span><span class="p">,</span> <span class="s">&#39;tag&#39;</span><span class="p">,</span> <span class="s">&#39;machinetag&#39;</span><span class="p">,</span> <span class="s">&#39;comment&#39;</span><span class="p">,</span>
+									<span class="s">&#39;constituents&#39;</span><span class="p">,</span> <span class="s">&#39;document&#39;</span><span class="p">,</span> <span class="s">&#39;metadata&#39;</span><span class="p">,</span> <span class="s">&#39;deleted&#39;</span><span class="p">,</span>
+									<span class="s">&#39;duplicate&#39;</span><span class="p">,</span> <span class="s">&#39;subDataset&#39;</span><span class="p">,</span> <span class="s">&#39;withNoEndpoint&#39;</span><span class="p">]</span>
+	<span class="n">check_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">data_choices</span><span class="p">)</span>
+
+	<span class="k">def</span> <span class="nf">getdata</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">uuid</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+		<span class="k">if</span> <span class="n">x</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&#39;all&#39;</span><span class="p">,</span><span class="s">&#39;deleted&#39;</span><span class="p">,</span><span class="s">&#39;duplicate&#39;</span><span class="p">,</span><span class="s">&#39;subDataset&#39;</span><span class="p">,</span><span class="s">&#39;withNoEndpoint&#39;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">uuid</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+			<span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s">&#39;You must specify a uuid if data does not equal all and data does not equal of deleted, duplicate, subDataset, or withNoEndpoint&#39;</span><span class="p">)</span>
+
+		<span class="k">if</span> <span class="n">uuid</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="s">&#39;all&#39;</span><span class="p">:</span>
+				<span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s">&#39;dataset&#39;</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="k">if</span> <span class="nb">id</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">x</span> <span class="ow">is</span> <span class="s">&#39;metadata&#39;</span><span class="p">:</span>
+					<span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s">&#39;dataset/metadata/&#39;</span> <span class="o">+</span> <span class="nb">id</span> <span class="o">+</span> <span class="s">&#39;/document&#39;</span>
+				<span class="k">else</span><span class="p">:</span>
+					<span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s">&#39;dataset/&#39;</span> <span class="o">+</span> <span class="n">x</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="s">&#39;all&#39;</span><span class="p">:</span>
+				<span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s">&#39;dataset/&#39;</span> <span class="o">+</span> <span class="n">uuid</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s">&#39;dataset/&#39;</span> <span class="o">+</span> <span class="n">uuid</span> <span class="o">+</span> <span class="s">&#39;/&#39;</span> <span class="o">+</span> <span class="n">x</span>
+
+		<span class="n">res</span> <span class="o">=</span> <span class="n">gbif_GET</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+		<span class="k">return</span> <span class="p">{</span><span class="s">&#39;meta&#39;</span><span class="p">:</span> <span class="n">get_meta</span><span class="p">(</span><span class="n">res</span><span class="p">),</span> <span class="s">&#39;data&#39;</span><span class="p">:</span> <span class="n">parse_results</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">uuid</span><span class="p">)}</span>
+
+	<span class="c"># Get data</span>
+	<span class="k">if</span> <span class="n">len2</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+		<span class="k">return</span> <span class="n">getdata</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">uuid</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="k">return</span> <span class="p">[</span><span class="n">getdata</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">uuid</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Scott Chamberlain.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.1.1.9500',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

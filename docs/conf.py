@@ -22,7 +22,6 @@ import shlex
 sys.path.insert(0, os.path.abspath('..'))
 
 import pygbif
-from pygbif import occurrences
 
 # -- General configuration ------------------------------------------------
 

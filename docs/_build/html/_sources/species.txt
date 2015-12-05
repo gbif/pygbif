@@ -1,20 +1,10 @@
+.. _species:
+
 species module
 ===========================
 
-* name_suggest
-* name_backbone
+.. py:module:: pygbif
 
-Load
--------------
+.. automethod:: species.name_backbone
+.. automethod:: species.name_suggest
 
-::
-
-    from pygbif import species
-
-
-Example Usage
--------------
-
-::
-
-    species.name_suggest(q='Puma concolor')

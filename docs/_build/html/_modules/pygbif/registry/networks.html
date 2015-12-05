@@ -1,0 +1,241 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pygbif.registry.networks &mdash; pygbif 0.1.1.9500 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="pygbif 0.1.1.9500 documentation" href="../../../index.html"/>
+        <link rel="up" title="Module code" href="../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> pygbif
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.1.9500
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../occurrences.html">occurrences module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../registry.html">registry module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../species.html">species module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog_link.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">pygbif</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      
+    <li>pygbif.registry.networks</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pygbif.registry.networks</h1><div class="highlight"><pre>
+<span class="kn">from</span> <span class="nn">..gbifutils</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.registry_utils</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="k">def</span> <span class="nf">networks</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="s">&#39;all&#39;</span><span class="p">,</span> <span class="n">uuid</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">query</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">identifier</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+  <span class="n">identifierType</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">limit</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">start</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+  <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">  Networks metadata.</span>
+
+<span class="sd">  :param data: The type of data to get. Default is all data.</span>
+<span class="sd">  :param uuid: UUID of the data network provider. This must be specified if data</span>
+<span class="sd">     is anything other than &#39;all&#39;.</span>
+<span class="sd">  :param query: Query networks. Only used when data=&#39;all&#39;. Ignored otherwise.</span>
+
+<span class="sd">  References: http://www.gbif.org/developer/registry#networks</span>
+
+<span class="sd">  :return: A dict</span>
+
+<span class="sd">  Usage::</span>
+
+<span class="sd">      from pygbif import registry</span>
+<span class="sd">      registry.networks(limit=5)</span>
+<span class="sd">      registry.networks(uuid=&#39;16ab5405-6c94-4189-ac71-16ca3b753df7&#39;)</span>
+<span class="sd">      registry.networks(data=&#39;endpoint&#39;, uuid=&#39;16ab5405-6c94-4189-ac71-16ca3b753df7&#39;)</span>
+<span class="sd">  &#39;&#39;&#39;</span>
+  <span class="n">args</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;q&#39;</span><span class="p">:</span> <span class="n">query</span><span class="p">,</span> <span class="s">&#39;limit&#39;</span><span class="p">:</span> <span class="n">limit</span><span class="p">,</span> <span class="s">&#39;offset&#39;</span><span class="p">:</span> <span class="n">start</span><span class="p">}</span>
+  <span class="n">data_choices</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;all&#39;</span><span class="p">,</span> <span class="s">&#39;contact&#39;</span><span class="p">,</span> <span class="s">&#39;endpoint&#39;</span><span class="p">,</span> <span class="s">&#39;identifier&#39;</span><span class="p">,</span>
+    <span class="s">&#39;tag&#39;</span><span class="p">,</span> <span class="s">&#39;machineTag&#39;</span><span class="p">,</span> <span class="s">&#39;comment&#39;</span><span class="p">,</span> <span class="s">&#39;constituents&#39;</span><span class="p">]</span>
+  <span class="n">check_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">data_choices</span><span class="p">)</span>
+
+  <span class="k">def</span> <span class="nf">getdata</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">uuid</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="ow">not</span> <span class="s">&#39;all&#39;</span> <span class="ow">and</span> <span class="n">uuid</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+      <span class="n">stop</span><span class="p">(</span><span class="s">&#39;You must specify a uuid if data does not equal &quot;all&quot;&#39;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">uuid</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+      <span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s">&#39;network&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+      <span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="s">&#39;all&#39;</span><span class="p">:</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s">&#39;network/&#39;</span> <span class="o">+</span> <span class="n">uuid</span>
+      <span class="k">else</span><span class="p">:</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s">&#39;network/&#39;</span> <span class="o">+</span> <span class="n">uuid</span> <span class="o">+</span> <span class="s">&#39;/&#39;</span> <span class="o">+</span> <span class="n">x</span>
+
+    <span class="n">res</span> <span class="o">=</span> <span class="n">gbif_GET</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s">&#39;meta&#39;</span><span class="p">:</span> <span class="n">get_meta</span><span class="p">(</span><span class="n">res</span><span class="p">),</span> <span class="s">&#39;data&#39;</span><span class="p">:</span> <span class="n">parse_results</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">uuid</span><span class="p">)}</span>
+
+  <span class="k">if</span> <span class="n">len2</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="k">return</span> <span class="n">getdata</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">uuid</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">getdata</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">uuid</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, Scott Chamberlain.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.1.1.9500',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

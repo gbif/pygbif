@@ -83,11 +83,7 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="occurrences.html">occurrences module</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">registry module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#load">Load</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#example-usage">Example Usage</a></li>
-</ul>
-</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">registry module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="species.html">species module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="changelog_link.html">Changelog</a></li>
 </ul>
@@ -134,24 +130,181 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="registry-module">
-<h1>registry module<a class="headerlink" href="#registry-module" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li>datasets</li>
-<li>nodes</li>
+  <div class="section" id="module-pygbif">
+<span id="registry-module"></span><span id="registry"></span><h1>registry module<a class="headerlink" href="#module-pygbif" title="Permalink to this headline">¶</a></h1>
+<dl class="method">
+<dt id="pygbif.registry.datasets">
+<code class="descclassname">registry.</code><code class="descname">datasets</code><span class="sig-paren">(</span><em>data='all'</em>, <em>type=None</em>, <em>uuid=None</em>, <em>query=None</em>, <em>id=None</em>, <em>limit=100</em>, <em>start=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.registry.datasets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Search for datasets and dataset metadata.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>data</strong> &#8211; The type of data to get. Default is all data.</li>
+<li><strong>type</strong> &#8211; Type of dataset, options include OCCURRENCE, etc.</li>
+<li><strong>uuid</strong> &#8211; UUID of the data node provider. This must be specified if data
+is anything other than &#8216;all&#8217;.</li>
+<li><strong>query</strong> &#8211; Query term(s). Only used when data=&#8217;all&#8217;</li>
+<li><strong>id</strong> &#8211; A metadata document id.</li>
 </ul>
-<div class="section" id="load">
-<h2>Load<a class="headerlink" href="#load" title="Permalink to this headline">¶</a></h2>
+</td>
+</tr>
+</tbody>
+</table>
+<p>References <a class="reference external" href="http://www.gbif.org/developer/registry#datasets">http://www.gbif.org/developer/registry#datasets</a></p>
+<p>Usage:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">registry</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">datasets</span><span class="p">(</span><span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">datasets</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s">&quot;OCCURRENCE&quot;</span><span class="p">)</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">datasets</span><span class="p">(</span><span class="n">uuid</span><span class="o">=</span><span class="s">&quot;a6998220-7e3a-485d-9cd6-73076bd85657&quot;</span><span class="p">)</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">datasets</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="s">&#39;contact&#39;</span><span class="p">,</span> <span class="n">uuid</span><span class="o">=</span><span class="s">&quot;a6998220-7e3a-485d-9cd6-73076bd85657&quot;</span><span class="p">)</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">datasets</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="s">&#39;metadata&#39;</span><span class="p">,</span> <span class="n">uuid</span><span class="o">=</span><span class="s">&quot;a6998220-7e3a-485d-9cd6-73076bd85657&quot;</span><span class="p">)</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">datasets</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="s">&#39;metadata&#39;</span><span class="p">,</span> <span class="n">uuid</span><span class="o">=</span><span class="s">&quot;a6998220-7e3a-485d-9cd6-73076bd85657&quot;</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="mi">598</span><span class="p">)</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">datasets</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;deleted&#39;</span><span class="p">,</span><span class="s">&#39;duplicate&#39;</span><span class="p">])</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">datasets</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;deleted&#39;</span><span class="p">,</span><span class="s">&#39;duplicate&#39;</span><span class="p">],</span> <span class="n">limit</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="example-usage">
-<h2>Example Usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">registry</span><span class="o">.</span><span class="n">dataset_metrics</span><span class="p">(</span><span class="n">uuid</span><span class="o">=</span><span class="s">&#39;3f8a1297-3259-4700-91fc-acc4170b27ce&#39;</span><span class="p">)</span>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygbif.registry.dataset_metrics">
+<code class="descclassname">registry.</code><code class="descname">dataset_metrics</code><span class="sig-paren">(</span><em>uuid</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.registry.dataset_metrics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get details on a GBIF dataset.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>uuid</strong> &#8211; (character) One or more dataset UUIDs. See examples.</td>
+</tr>
+</tbody>
+</table>
+<p>References: <a class="reference external" href="http://www.gbif.org/developer/registry#datasetMetrics">http://www.gbif.org/developer/registry#datasetMetrics</a></p>
+<p>Usage:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">registry</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">dataset_metrics</span><span class="p">(</span><span class="n">uuid</span><span class="o">=</span><span class="s">&#39;3f8a1297-3259-4700-91fc-acc4170b27ce&#39;</span><span class="p">)</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">dataset_metrics</span><span class="p">(</span><span class="n">uuid</span><span class="o">=</span><span class="s">&#39;66dd0960-2d7d-46ee-a491-87b9adcfe7b1&#39;</span><span class="p">)</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">dataset_metrics</span><span class="p">(</span><span class="n">uuid</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;3f8a1297-3259-4700-91fc-acc4170b27ce&#39;</span><span class="p">,</span> <span class="s">&#39;66dd0960-2d7d-46ee-a491-87b9adcfe7b1&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygbif.registry.installations">
+<code class="descclassname">registry.</code><code class="descname">installations</code><span class="sig-paren">(</span><em>data='all'</em>, <em>uuid=None</em>, <em>query=None</em>, <em>identifier=None</em>, <em>identifierType=None</em>, <em>limit=100</em>, <em>start=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.registry.installations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Installations metadata.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>data</strong> &#8211; The type of data to get. Default is all data. If not &#8216;all&#8217;, then one
+or more of &#8216;contact&#8217;, &#8216;endpoint&#8217;, &#8216;dataset&#8217;, &#8216;comment&#8217;, &#8216;deleted&#8217;, &#8216;nonPublishing&#8217;.</li>
+<li><strong>uuid</strong> &#8211; UUID of the data node provider. This must be specified if data
+is anything other than &#8216;all&#8217;.</li>
+<li><strong>query</strong> &#8211; Query nodes. Only used when data=&#8217;all&#8217;. Ignored otherwise.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>References: <a class="reference external" href="http://www.gbif.org/developer/registry#installations">http://www.gbif.org/developer/registry#installations</a></p>
+<p>Usage:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">registry</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">installations</span><span class="p">(</span><span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">installations</span><span class="p">(</span><span class="n">query</span><span class="o">=</span><span class="s">&quot;france&quot;</span><span class="p">)</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">installations</span><span class="p">(</span><span class="n">uuid</span><span class="o">=</span><span class="s">&quot;b77901f9-d9b0-47fa-94e0-dd96450aa2b4&quot;</span><span class="p">)</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">installations</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="s">&#39;contact&#39;</span><span class="p">,</span> <span class="n">uuid</span><span class="o">=</span><span class="s">&quot;b77901f9-d9b0-47fa-94e0-dd96450aa2b4&quot;</span><span class="p">)</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">installations</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="s">&#39;contact&#39;</span><span class="p">,</span> <span class="n">uuid</span><span class="o">=</span><span class="s">&quot;2e029a0c-87af-42e6-87d7-f38a50b78201&quot;</span><span class="p">)</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">installations</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="s">&#39;endpoint&#39;</span><span class="p">,</span> <span class="n">uuid</span><span class="o">=</span><span class="s">&quot;b77901f9-d9b0-47fa-94e0-dd96450aa2b4&quot;</span><span class="p">)</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">installations</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="s">&#39;dataset&#39;</span><span class="p">,</span> <span class="n">uuid</span><span class="o">=</span><span class="s">&quot;b77901f9-d9b0-47fa-94e0-dd96450aa2b4&quot;</span><span class="p">)</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">installations</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="s">&#39;deleted&#39;</span><span class="p">)</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">installations</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="s">&#39;deleted&#39;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">installations</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;deleted&#39;</span><span class="p">,</span><span class="s">&#39;nonPublishing&#39;</span><span class="p">],</span> <span class="n">limit</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">installations</span><span class="p">(</span><span class="n">identifierType</span><span class="o">=</span><span class="s">&#39;DOI&#39;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
 </div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygbif.registry.networks">
+<code class="descclassname">registry.</code><code class="descname">networks</code><span class="sig-paren">(</span><em>data='all'</em>, <em>uuid=None</em>, <em>query=None</em>, <em>identifier=None</em>, <em>identifierType=None</em>, <em>limit=100</em>, <em>start=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.registry.networks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Networks metadata.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>data</strong> &#8211; The type of data to get. Default is all data.</li>
+<li><strong>uuid</strong> &#8211; UUID of the data network provider. This must be specified if data
+is anything other than &#8216;all&#8217;.</li>
+<li><strong>query</strong> &#8211; Query networks. Only used when data=&#8217;all&#8217;. Ignored otherwise.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>References: <a class="reference external" href="http://www.gbif.org/developer/registry#networks">http://www.gbif.org/developer/registry#networks</a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A dict</td>
+</tr>
+</tbody>
+</table>
+<p>Usage:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">registry</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">networks</span><span class="p">(</span><span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">networks</span><span class="p">(</span><span class="n">uuid</span><span class="o">=</span><span class="s">&#39;16ab5405-6c94-4189-ac71-16ca3b753df7&#39;</span><span class="p">)</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">networks</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="s">&#39;endpoint&#39;</span><span class="p">,</span> <span class="n">uuid</span><span class="o">=</span><span class="s">&#39;16ab5405-6c94-4189-ac71-16ca3b753df7&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygbif.registry.nodes">
+<code class="descclassname">registry.</code><code class="descname">nodes</code><span class="sig-paren">(</span><em>data='all'</em>, <em>uuid=None</em>, <em>query=None</em>, <em>identifier=None</em>, <em>identifierType=None</em>, <em>limit=100</em>, <em>start=None</em>, <em>isocode=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.registry.nodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Nodes metadata.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>data</strong> &#8211; The type of data to get. Default is all data.</li>
+<li><strong>uuid</strong> &#8211; UUID of the data node provider. This must be specified if data
+is anything other than &#8216;all&#8217;.</li>
+<li><strong>query</strong> &#8211; Query nodes. Only used when data=&#8217;all&#8217;</li>
+<li><strong>isocode</strong> &#8211; A 2 letter country code. Only used if data=&#8217;country&#8217;.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>References <a class="reference external" href="http://www.gbif.org/developer/registry#nodes">http://www.gbif.org/developer/registry#nodes</a></p>
+<p>Usage:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">registry</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">uuid</span><span class="o">=</span><span class="s">&quot;1193638d-32d1-43f0-a855-8727c94299d8&quot;</span><span class="p">)</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="s">&#39;identifier&#39;</span><span class="p">,</span> <span class="n">uuid</span><span class="o">=</span><span class="s">&quot;03e816b3-8f58-49ae-bc12-4e18b358d6d9&quot;</span><span class="p">)</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;identifier&#39;</span><span class="p">,</span><span class="s">&#39;organization&#39;</span><span class="p">,</span><span class="s">&#39;comment&#39;</span><span class="p">],</span> <span class="n">uuid</span><span class="o">=</span><span class="s">&quot;03e816b3-8f58-49ae-bc12-4e18b358d6d9&quot;</span><span class="p">)</span>
+
+<span class="n">uuids</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;8cb55387-7802-40e8-86d6-d357a583c596&quot;</span><span class="p">,</span><span class="s">&quot;02c40d2a-1cba-4633-90b7-e36e5e97aba8&quot;</span><span class="p">,</span>
+<span class="s">&quot;7a17efec-0a6a-424c-b743-f715852c3c1f&quot;</span><span class="p">,</span><span class="s">&quot;b797ce0f-47e6-4231-b048-6b62ca3b0f55&quot;</span><span class="p">,</span>
+<span class="s">&quot;1193638d-32d1-43f0-a855-8727c94299d8&quot;</span><span class="p">,</span><span class="s">&quot;d3499f89-5bc0-4454-8cdb-60bead228a6d&quot;</span><span class="p">,</span>
+<span class="s">&quot;cdc9736d-5ff7-4ece-9959-3c744360cdb3&quot;</span><span class="p">,</span><span class="s">&quot;a8b16421-d80b-4ef3-8f22-098b01a89255&quot;</span><span class="p">,</span>
+<span class="s">&quot;8df8d012-8e64-4c8a-886e-521a3bdfa623&quot;</span><span class="p">,</span><span class="s">&quot;b35cf8f1-748d-467a-adca-4f9170f20a4e&quot;</span><span class="p">,</span>
+<span class="s">&quot;03e816b3-8f58-49ae-bc12-4e18b358d6d9&quot;</span><span class="p">,</span><span class="s">&quot;073d1223-70b1-4433-bb21-dd70afe3053b&quot;</span><span class="p">,</span>
+<span class="s">&quot;07dfe2f9-5116-4922-9a8a-3e0912276a72&quot;</span><span class="p">,</span><span class="s">&quot;086f5148-c0a8-469b-84cc-cce5342f9242&quot;</span><span class="p">,</span>
+<span class="s">&quot;0909d601-bda2-42df-9e63-a6d51847ebce&quot;</span><span class="p">,</span><span class="s">&quot;0e0181bf-9c78-4676-bdc3-54765e661bb8&quot;</span><span class="p">,</span>
+<span class="s">&quot;109aea14-c252-4a85-96e2-f5f4d5d088f4&quot;</span><span class="p">,</span><span class="s">&quot;169eb292-376b-4cc6-8e31-9c2c432de0ad&quot;</span><span class="p">,</span>
+<span class="s">&quot;1e789bc9-79fc-4e60-a49e-89dfc45a7188&quot;</span><span class="p">,</span><span class="s">&quot;1f94b3ca-9345-4d65-afe2-4bace93aa0fe&quot;</span><span class="p">]</span>
+
+<span class="p">[</span> <span class="n">registry</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="s">&#39;identifier&#39;</span><span class="p">,</span> <span class="n">uuid</span><span class="o">=</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">uuids</span> <span class="p">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
 </div>
 
 

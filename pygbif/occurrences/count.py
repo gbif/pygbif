@@ -18,12 +18,13 @@ def count(taxonKey=None, basisOfRecord=None, country=None, isGeoreferenced=None,
 
     :return: dict
 
-    Usage
-    >>> from pygbif import occurrences
-    >>> occurrences.count(taxonKey = 3329049)
-    >>> occurrences.count(country = 'CA')
-    >>> occurrences.count(isGeoreferenced = True)
-    >>> occurrences.count(basisOfRecord = 'OBSERVATION')
+    Usage::
+
+        from pygbif import occurrences
+        occurrences.count(taxonKey = 3329049)
+        occurrences.count(country = 'CA')
+        occurrences.count(isGeoreferenced = True)
+        occurrences.count(basisOfRecord = 'OBSERVATION')
     '''
     url = gbif_baseurl + 'occurrence/count'
     out = gbif_GET(url, {'taxonKey': taxonKey, 'basisOfRecord': basisOfRecord, 'country': country,
@@ -38,9 +39,10 @@ def count_basisofrecord(**kwargs):
 
     :return: dict
 
-    Usage
-    >>> from pygbif import occurrences
-    >>> occurrences.count_basisofrecord()
+    Usage::
+
+            from pygbif import occurrences
+            occurrences.count_basisofrecord()
     '''
     url = gbif_baseurl + 'occurrence/counts/basisOfRecord'
     out = gbif_GET(url, {}, **kwargs)
@@ -50,13 +52,14 @@ def count_year(year, **kwargs):
     '''
     Lists occurrence counts by year
 
-    :param year: [int] year range, e.g., "1990,2000". Does not support ranges
-    like "*,2010"
+    :param year: [int] year range, e.g., "1990,2000". Does not support ranges like "asterisk,2010"
+
     :return: dict
 
-    Usage
-    >>> from pygbif import occurrences
-    >>> occurrences.count_year(year = '1990,2000')
+    Usage::
+
+            from pygbif import occurrences
+            occurrences.count_year(year = '1990,2000')
     '''
     url = gbif_baseurl + 'occurrence/counts/year'
     out = gbif_GET(url, {'year': year}, **kwargs)
@@ -68,11 +71,13 @@ def count_datasets(taxonKey = None, country = None, **kwargs):
 
     :param taxonKey: [int] Taxon key
     :param country: [str] A country, two letter code
+
     :return: dict
 
-    Usage
-    >>> from pygbif import occurrences
-    >>> occurrences.count_datasets(country = "DE")
+    Usage::
+
+            from pygbif import occurrences
+            occurrences.count_datasets(country = "DE")
     '''
     url = gbif_baseurl + 'occurrence/counts/datasets'
     out = gbif_GET(url, {'taxonKey': taxonKey, 'country': country}, **kwargs)
@@ -83,11 +88,13 @@ def count_countries(publishingCountry, **kwargs):
     Lists occurrence counts for all countries covered by the data published by the given country
 
     :param publishingCountry: [str] A two letter country code
+
     :return: dict
 
-    Usage
-    >>> from pygbif import occurrences
-    >>> occurrences.count_countries(publishingCountry = "DE")
+    Usage::
+
+            from pygbif import occurrences
+            occurrences.count_countries(publishingCountry = "DE")
     '''
     url = gbif_baseurl + 'occurrence/counts/countries'
     out = gbif_GET(url, {'publishingCountry': publishingCountry}, **kwargs)
@@ -98,11 +105,13 @@ def count_publishingcountries(country, **kwargs):
     Lists occurrence counts for all countries that publish data about the given country
 
     :param country: [str] A country, two letter code
+
     :return: dict
 
-    Usage
-    >>> from pygbif import occurrences
-    >>> occurrences.count_publishingcountries(country = "DE")
+    Usage::
+
+            from pygbif import occurrences
+            occurrences.count_publishingcountries(country = "DE")
     '''
     url = gbif_baseurl + 'occurrence/counts/publishingCountries'
     out = gbif_GET(url, {"country": country}, **kwargs)
@@ -114,9 +123,10 @@ def count_schema(**kwargs):
 
     :return: dict
 
-    Usage
-    >>> from pygbif import occurrences
-    >>> occurrences.count_schema()
+    Usage::
+
+            from pygbif import occurrences
+            occurrences.count_schema()
     '''
     url = gbif_baseurl + 'occurrence/count/schema'
     out = gbif_GET(url, {}, **kwargs)

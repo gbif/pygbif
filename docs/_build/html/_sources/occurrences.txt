@@ -1,31 +1,18 @@
 .. _occurrences:
 
 occurrences module
-===========================
-
-* count
-* get
-* search
-
-Load
--------------
-
-::
-
-    from pygbif import occurrences
-
-
-Example Usage
--------------
-
-::
-
-    occurrences.search(taxonKey = 3329049)
-    occurrences.get(taxonKey = 252408386)
-    occurrences.count(isGeoreferenced = True)
+==================
 
 .. py:module:: pygbif
 
-
-.. automodule:: pygbif.occurrences
-   :members:
+.. automethod:: occurrences.search
+.. automethod:: occurrences.get
+.. automethod:: occurrences.get_verbatim
+.. automethod:: occurrences.get_fragment
+.. automethod:: occurrences.count
+.. automethod:: occurrences.count_basisofrecord
+.. automethod:: occurrences.count_year
+.. automethod:: occurrences.count_datasets
+.. automethod:: occurrences.count_countries
+.. automethod:: occurrences.count_schema
+.. automethod:: occurrences.count_publishingcountries

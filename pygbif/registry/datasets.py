@@ -6,15 +6,15 @@ def dataset_metrics(uuid, **kwargs):
 	Get details on a GBIF dataset.
 
 	:param uuid: (character) One or more dataset UUIDs. See examples.
-	:param **kwargs: Further named parameters.
 
 	References: http://www.gbif.org/developer/registry#datasetMetrics
 
-	Usage:
-	>>> from pygbif import registry
-	>>> registry.dataset_metrics(uuid='3f8a1297-3259-4700-91fc-acc4170b27ce')
-	>>> registry.dataset_metrics(uuid='66dd0960-2d7d-46ee-a491-87b9adcfe7b1')
-	>>> registry.dataset_metrics(uuid=['3f8a1297-3259-4700-91fc-acc4170b27ce', '66dd0960-2d7d-46ee-a491-87b9adcfe7b1'])
+	Usage::
+
+			from pygbif import registry
+			registry.dataset_metrics(uuid='3f8a1297-3259-4700-91fc-acc4170b27ce')
+			registry.dataset_metrics(uuid='66dd0960-2d7d-46ee-a491-87b9adcfe7b1')
+			registry.dataset_metrics(uuid=['3f8a1297-3259-4700-91fc-acc4170b27ce', '66dd0960-2d7d-46ee-a491-87b9adcfe7b1'])
 	'''
 	def getdata(x, **kwargs):
 		url = gbif_baseurl + 'dataset/' + x + '/metrics'
@@ -39,16 +39,17 @@ def datasets(data = 'all', type = None, uuid = None, query = None, id = None,
 
 	References http://www.gbif.org/developer/registry#datasets
 
-	Usage:
-	>>> from pygbif import registry
-	>>> registry.datasets(limit=5)
-	>>> registry.datasets(type="OCCURRENCE")
-	>>> registry.datasets(uuid="a6998220-7e3a-485d-9cd6-73076bd85657")
-	>>> registry.datasets(data='contact', uuid="a6998220-7e3a-485d-9cd6-73076bd85657")
-	>>> registry.datasets(data='metadata', uuid="a6998220-7e3a-485d-9cd6-73076bd85657")
-	>>> registry.datasets(data='metadata', uuid="a6998220-7e3a-485d-9cd6-73076bd85657", id=598)
-	>>> registry.datasets(data=['deleted','duplicate'])
-	>>> registry.datasets(data=['deleted','duplicate'], limit=1)
+	Usage::
+
+			from pygbif import registry
+			registry.datasets(limit=5)
+			registry.datasets(type="OCCURRENCE")
+			registry.datasets(uuid="a6998220-7e3a-485d-9cd6-73076bd85657")
+			registry.datasets(data='contact', uuid="a6998220-7e3a-485d-9cd6-73076bd85657")
+			registry.datasets(data='metadata', uuid="a6998220-7e3a-485d-9cd6-73076bd85657")
+			registry.datasets(data='metadata', uuid="a6998220-7e3a-485d-9cd6-73076bd85657", id=598)
+			registry.datasets(data=['deleted','duplicate'])
+			registry.datasets(data=['deleted','duplicate'], limit=1)
 	'''
 	args = {'q': query, 'type': type, 'limit': limit, 'offset': start}
 	data_choices = ['all', 'organization', 'contact', 'endpoint',

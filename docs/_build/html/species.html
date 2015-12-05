@@ -84,11 +84,7 @@
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="occurrences.html">occurrences module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="registry.html">registry module</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">species module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#load">Load</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#example-usage">Example Usage</a></li>
-</ul>
-</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">species module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="changelog_link.html">Changelog</a></li>
 </ul>
 
@@ -134,24 +130,111 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="species-module">
-<h1>species module<a class="headerlink" href="#species-module" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li>name_suggest</li>
-<li>name_backbone</li>
+  <div class="section" id="module-pygbif">
+<span id="species-module"></span><span id="species"></span><h1>species module<a class="headerlink" href="#module-pygbif" title="Permalink to this headline">¶</a></h1>
+<dl class="method">
+<dt id="pygbif.species.name_backbone">
+<code class="descclassname">species.</code><code class="descname">name_backbone</code><span class="sig-paren">(</span><em>name</em>, <em>rank=None</em>, <em>kingdom=None</em>, <em>phylum=None</em>, <em>clazz=None</em>, <em>order=None</em>, <em>family=None</em>, <em>genus=None</em>, <em>strict=False</em>, <em>verbose=False</em>, <em>start=None</em>, <em>limit=100</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.species.name_backbone" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lookup names in the GBIF backbone taxonomy.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>name</strong> &#8211; [str] Full scientific name potentially with authorship (required)</li>
+<li><strong>rank</strong> &#8211; [str] The rank given as our rank enum. (optional)</li>
+<li><strong>kingdom</strong> &#8211; [str] If provided default matching will also try to match against this
+if no direct match is found for the name alone. (optional)</li>
+<li><strong>phylum</strong> &#8211; [str] If provided default matching will also try to match against this
+if no direct match is found for the name alone. (optional)</li>
+<li><strong>class</strong> &#8211; [str] If provided default matching will also try to match against this
+if no direct match is found for the name alone. (optional)</li>
+<li><strong>order</strong> &#8211; [str] If provided default matching will also try to match against this
+if no direct match is found for the name alone. (optional)</li>
+<li><strong>family</strong> &#8211; [str] If provided default matching will also try to match against this
+if no direct match is found for the name alone. (optional)</li>
+<li><strong>genus</strong> &#8211; [str] If provided default matching will also try to match against this
+if no direct match is found for the name alone. (optional)</li>
+<li><strong>strict</strong> &#8211; [bool] If True it (fuzzy) matches only the given name, but never a
+taxon in the upper classification (optional)</li>
+<li><strong>verbose</strong> &#8211; [bool] If True show alternative matches considered which had been rejected.</li>
 </ul>
-<div class="section" id="load">
-<h2>Load<a class="headerlink" href="#load" title="Permalink to this headline">¶</a></h2>
+</td>
+</tr>
+</tbody>
+</table>
+<p>A list for a single taxon with many slots (with verbose=False - default), or a
+list of length two, first element for the suggested taxon match, and a data.frame
+with alternative name suggestions resulting from fuzzy matching (with verbose=True).</p>
+<p>If you don&#8217;t get a match GBIF gives back a list of length 3 with slots synonym,
+confidence, and matchType=&#8217;NONE&#8217;.</p>
+<p>reference: <a class="reference external" href="http://www.gbif.org/developer/species#searching">http://www.gbif.org/developer/species#searching</a></p>
+<p>Usage:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">species</span>
+<span class="n">species</span><span class="o">.</span><span class="n">name_backbone</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;Helianthus annuus&#39;</span><span class="p">,</span> <span class="n">kingdom</span><span class="o">=</span><span class="s">&#39;plants&#39;</span><span class="p">)</span>
+<span class="n">species</span><span class="o">.</span><span class="n">name_backbone</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;Helianthus&#39;</span><span class="p">,</span> <span class="n">rank</span><span class="o">=</span><span class="s">&#39;genus&#39;</span><span class="p">,</span> <span class="n">kingdom</span><span class="o">=</span><span class="s">&#39;plants&#39;</span><span class="p">)</span>
+<span class="n">species</span><span class="o">.</span><span class="n">name_backbone</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;Poa&#39;</span><span class="p">,</span> <span class="n">rank</span><span class="o">=</span><span class="s">&#39;genus&#39;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s">&#39;Poaceae&#39;</span><span class="p">)</span>
+
+<span class="c"># Verbose - gives back alternatives</span>
+<span class="n">species</span><span class="o">.</span><span class="n">name_backbone</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;Helianthus annuus&#39;</span><span class="p">,</span> <span class="n">kingdom</span><span class="o">=</span><span class="s">&#39;plants&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="c"># Strictness</span>
+<span class="n">species</span><span class="o">.</span><span class="n">name_backbone</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;Poa&#39;</span><span class="p">,</span> <span class="n">kingdom</span><span class="o">=</span><span class="s">&#39;plants&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">species</span><span class="o">.</span><span class="n">name_backbone</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;Helianthus annuus&#39;</span><span class="p">,</span> <span class="n">kingdom</span><span class="o">=</span><span class="s">&#39;plants&#39;</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="c"># Non-existent name</span>
+<span class="n">species</span><span class="o">.</span><span class="n">name_backbone</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;Aso&#39;</span><span class="p">)</span>
+
+<span class="c"># Multiple equal matches</span>
+<span class="n">species</span><span class="o">.</span><span class="n">name_backbone</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;Oenante&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="example-usage">
-<h2>Example Usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">species</span><span class="o">.</span><span class="n">name_suggest</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="s">&#39;Puma concolor&#39;</span><span class="p">)</span>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygbif.species.name_suggest">
+<code class="descclassname">species.</code><code class="descname">name_suggest</code><span class="sig-paren">(</span><em>q=None</em>, <em>datasetKey=None</em>, <em>rank=None</em>, <em>fields=None</em>, <em>start=None</em>, <em>limit=100</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.species.name_suggest" title="Permalink to this definition">¶</a></dt>
+<dd><p>A quick and simple autocomplete service that returns up to 20 name usages by
+doing prefix matching against the scientific name. Results are ordered by relevance.</p>
+<p>References: <a class="reference external" href="http://www.gbif.org/developer/species#searching">http://www.gbif.org/developer/species#searching</a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>q</strong> &#8211; [str] Simple search parameter. The value for this parameter can be a
+simple word or a phrase. Wildcards can be added to the simple word parameters only,
+e.g. q=*puma* (Required)</li>
+<li><strong>datasetKey</strong> &#8211; [str] Filters by the checklist dataset key (a uuid, see examples)</li>
+<li><strong>rank</strong> &#8211; [str] A taxonomic rank. One of class, cultivar, cultivar_group, domain, family,
+form, genus, informal, infrageneric_name, infraorder, infraspecific_name,
+infrasubspecific_name, kingdom, order, phylum, section, series, species, strain, subclass,
+subfamily, subform, subgenus, subkingdom, suborder, subphylum, subsection, subseries,
+subspecies, subtribe, subvariety, superclass, superfamily, superorder, superphylum,
+suprageneric_name, tribe, unranked, or variety.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A dictionary, of results</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Usage:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">species</span>
+<span class="n">species</span><span class="o">.</span><span class="n">name_suggest</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="s">&#39;Puma concolor&#39;</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">species</span><span class="o">.</span><span class="n">name_suggest</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="s">&#39;Puma&#39;</span><span class="p">)</span>
+<span class="n">x</span><span class="p">[</span><span class="s">&#39;data&#39;</span><span class="p">]</span>
+<span class="n">x</span><span class="p">[</span><span class="s">&#39;hierarchy&#39;</span><span class="p">]</span>
+<span class="n">species</span><span class="o">.</span><span class="n">name_suggest</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="s">&#39;Puma&#39;</span><span class="p">,</span> <span class="n">rank</span><span class="o">=</span><span class="s">&quot;genus&quot;</span><span class="p">)</span>
+<span class="n">species</span><span class="o">.</span><span class="n">name_suggest</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="s">&#39;Puma&#39;</span><span class="p">,</span> <span class="n">rank</span><span class="o">=</span><span class="s">&quot;subspecies&quot;</span><span class="p">)</span>
+<span class="n">species</span><span class="o">.</span><span class="n">name_suggest</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="s">&#39;Puma&#39;</span><span class="p">,</span> <span class="n">rank</span><span class="o">=</span><span class="s">&quot;species&quot;</span><span class="p">)</span>
+<span class="n">species</span><span class="o">.</span><span class="n">name_suggest</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="s">&#39;Puma&#39;</span><span class="p">,</span> <span class="n">rank</span><span class="o">=</span><span class="s">&quot;infraspecific_name&quot;</span><span class="p">)</span>
+<span class="n">species</span><span class="o">.</span><span class="n">name_suggest</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="s">&#39;Puma&#39;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
+</dd></dl>
+
 </div>
 
 
