@@ -50,3 +50,6 @@ def get_fragment(key, **kwargs):
     url = gbif_baseurl + 'occurrence/' + str(key) + '/fragment'
     out = gbif_GET(url, {}, **kwargs)
     return out
+
+def get_url():
+    'http://www.gbif.org/occurrence/' + x

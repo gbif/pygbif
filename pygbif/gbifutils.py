@@ -1,4 +1,5 @@
 import requests
+import pygbif
 
 class NoResultException(Exception):
     pass
@@ -14,7 +15,8 @@ def gbif_search_GET(url, args, **kwargs):
   return out.json()
 
 def gbif_GET(url, args, **kwargs):
-  out = requests.get(url, params=args, **kwargs)
+  headers = {'user-agent': 'python-requests/' + requests.__version__ + ',pygbif/' + pygbif.__version__}
+  out = requests.get(url, params=args, headers=headers, **kwargs)
   out.raise_for_status()
   stopifnot(out.headers['content-type'])
   return out.json()
