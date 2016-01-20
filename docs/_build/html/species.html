@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>species module &mdash; pygbif 0.1.3.9000 documentation</title>
+  <title>species module &mdash; pygbif 0.1.3.9500 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="pygbif 0.1.3.9000 documentation" href="index.html"/>
+    <link rel="top" title="pygbif 0.1.3.9500 documentation" href="index.html"/>
         <link rel="next" title="Changelog" href="changelog_link.html"/>
         <link rel="prev" title="registry module" href="registry.html"/> 
 
@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                0.1.3.9000
+                0.1.3.9500
               </div>
             
           
@@ -235,6 +235,29 @@ suprageneric_name, tribe, unranked, or variety.</li>
 </div>
 </dd></dl>
 
+<dl class="method">
+<dt id="pygbif.species.name_parser">
+<code class="descclassname">species.</code><code class="descname">name_parser</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.species.name_parser" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse taxon names using the GBIF name parser</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; [str] A character vector of scientific names. (required)</td>
+</tr>
+</tbody>
+</table>
+<p>reference: <a class="reference external" href="http://www.gbif.org/developer/species#parser">http://www.gbif.org/developer/species#parser</a></p>
+<p>Usage:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">species</span>
+<span class="n">species</span><span class="o">.</span><span class="n">name_parser</span><span class="p">(</span><span class="s">&#39;x Agropogon littoralis&#39;</span><span class="p">)</span>
+<span class="n">species</span><span class="o">.</span><span class="n">name_parser</span><span class="p">([</span><span class="s">&#39;Arrhenatherum elatius var. elatius&#39;</span><span class="p">,</span>
+  <span class="s">&#39;Secale cereale subsp. cereale&#39;</span><span class="p">,</span> <span class="s">&#39;Secale cereale ssp. cereale&#39;</span><span class="p">,</span>
+  <span class="s">&#39;Vanessa atalanta (Linnaeus, 1758)&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
 </div>
 
 
@@ -278,7 +301,7 @@ suprageneric_name, tribe, unranked, or variety.</li>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.1.3.9000',
+            VERSION:'0.1.3.9500',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
