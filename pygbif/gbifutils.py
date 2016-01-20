@@ -15,8 +15,14 @@ def gbif_search_GET(url, args, **kwargs):
   return out.json()
 
 def gbif_GET(url, args, **kwargs):
-  headers = {'user-agent': 'python-requests/' + requests.__version__ + ',pygbif/' + pygbif.__version__}
-  out = requests.get(url, params=args, headers=headers, **kwargs)
+  out = requests.get(url, params=args, headers=make_ua(), **kwargs)
+  out.raise_for_status()
+  stopifnot(out.headers['content-type'])
+  return out.json()
+
+def gbif_POST(url, body, **kwargs):
+  head = make_ua()
+  out = requests.post(url, json=body, headers=head, **kwargs)
   out.raise_for_status()
   stopifnot(out.headers['content-type'])
   return out.json()
@@ -27,5 +33,8 @@ def stopifnot(x):
 
 def stop(x):
   raise ValueError(x)
+
+def make_ua():
+  return {'user-agent': 'python-requests/' + requests.__version__ + ',pygbif/' + pygbif.__version__}
 
 gbif_baseurl = "http://api.gbif.org/v1/"
