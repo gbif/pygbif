@@ -37,4 +37,10 @@ def stop(x):
 def make_ua():
   return {'user-agent': 'python-requests/' + requests.__version__ + ',pygbif/' + pygbif.__version__}
 
+def is_none(x):
+  return x.__class__.__name__ == 'NoneType'
+
+def is_not_none(x):
+  return x.__class__.__name__ != 'NoneType'
+
 gbif_baseurl = "http://api.gbif.org/v1/"
