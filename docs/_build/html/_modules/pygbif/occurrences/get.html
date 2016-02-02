@@ -145,7 +145,7 @@
 <span class="sd">        from pygbif import occurrences</span>
 <span class="sd">        occurrences.get(key = 252408386)</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s">&#39;occurrence/&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s1">&#39;occurrence/&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
     <span class="n">out</span> <span class="o">=</span> <span class="n">gbif_GET</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="p">{},</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">out</span>
 
@@ -162,7 +162,7 @@
 <span class="sd">        from pygbif import occurrences</span>
 <span class="sd">        occurrences.get_verbatim(key = 252408386)</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s">&#39;occurrence/&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#39;/verbatim&#39;</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s1">&#39;occurrence/&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/verbatim&#39;</span>
     <span class="n">out</span> <span class="o">=</span> <span class="n">gbif_GET</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="p">{},</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">out</span>
 
@@ -179,12 +179,12 @@
 <span class="sd">        from pygbif import occurrences</span>
 <span class="sd">        occurrences.get_fragment(key = 1052909293)</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s">&#39;occurrence/&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#39;/fragment&#39;</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s1">&#39;occurrence/&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/fragment&#39;</span>
     <span class="n">out</span> <span class="o">=</span> <span class="n">gbif_GET</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="p">{},</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">out</span>
 
 <span class="k">def</span> <span class="nf">get_url</span><span class="p">():</span>
-    <span class="s">&#39;http://www.gbif.org/occurrence/&#39;</span> <span class="o">+</span> <span class="n">x</span>
+    <span class="s1">&#39;http://www.gbif.org/occurrence/&#39;</span> <span class="o">+</span> <span class="n">x</span>
 </pre></div>
 
            </div>

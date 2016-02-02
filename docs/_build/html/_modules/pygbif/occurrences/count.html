@@ -158,11 +158,11 @@
 <span class="sd">        occurrences.count(isGeoreferenced = True)</span>
 <span class="sd">        occurrences.count(basisOfRecord = &#39;OBSERVATION&#39;)</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s">&#39;occurrence/count&#39;</span>
-    <span class="n">out</span> <span class="o">=</span> <span class="n">gbif_GET</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;taxonKey&#39;</span><span class="p">:</span> <span class="n">taxonKey</span><span class="p">,</span> <span class="s">&#39;basisOfRecord&#39;</span><span class="p">:</span> <span class="n">basisOfRecord</span><span class="p">,</span> <span class="s">&#39;country&#39;</span><span class="p">:</span> <span class="n">country</span><span class="p">,</span>
-        <span class="s">&#39;isGeoreferenced&#39;</span><span class="p">:</span> <span class="n">isGeoreferenced</span><span class="p">,</span> <span class="s">&#39;datasetKey&#39;</span><span class="p">:</span> <span class="n">datasetKey</span><span class="p">,</span>
-        <span class="s">&#39;publishingCountry&#39;</span><span class="p">:</span> <span class="n">publishingCountry</span><span class="p">,</span> <span class="s">&#39;typeStatus&#39;</span><span class="p">:</span> <span class="n">typeStatus</span><span class="p">,</span>
-        <span class="s">&#39;issue&#39;</span><span class="p">:</span> <span class="n">issue</span><span class="p">,</span> <span class="s">&#39;year&#39;</span><span class="p">:</span> <span class="n">year</span><span class="p">},</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s1">&#39;occurrence/count&#39;</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">gbif_GET</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;taxonKey&#39;</span><span class="p">:</span> <span class="n">taxonKey</span><span class="p">,</span> <span class="s1">&#39;basisOfRecord&#39;</span><span class="p">:</span> <span class="n">basisOfRecord</span><span class="p">,</span> <span class="s1">&#39;country&#39;</span><span class="p">:</span> <span class="n">country</span><span class="p">,</span>
+        <span class="s1">&#39;isGeoreferenced&#39;</span><span class="p">:</span> <span class="n">isGeoreferenced</span><span class="p">,</span> <span class="s1">&#39;datasetKey&#39;</span><span class="p">:</span> <span class="n">datasetKey</span><span class="p">,</span>
+        <span class="s1">&#39;publishingCountry&#39;</span><span class="p">:</span> <span class="n">publishingCountry</span><span class="p">,</span> <span class="s1">&#39;typeStatus&#39;</span><span class="p">:</span> <span class="n">typeStatus</span><span class="p">,</span>
+        <span class="s1">&#39;issue&#39;</span><span class="p">:</span> <span class="n">issue</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="n">year</span><span class="p">},</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">out</span>
 
 <span class="k">def</span> <span class="nf">count_basisofrecord</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -176,7 +176,7 @@
 <span class="sd">            from pygbif import occurrences</span>
 <span class="sd">            occurrences.count_basisofrecord()</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s">&#39;occurrence/counts/basisOfRecord&#39;</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s1">&#39;occurrence/counts/basisOfRecord&#39;</span>
     <span class="n">out</span> <span class="o">=</span> <span class="n">gbif_GET</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="p">{},</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">out</span>
 
@@ -193,8 +193,8 @@
 <span class="sd">            from pygbif import occurrences</span>
 <span class="sd">            occurrences.count_year(year = &#39;1990,2000&#39;)</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s">&#39;occurrence/counts/year&#39;</span>
-    <span class="n">out</span> <span class="o">=</span> <span class="n">gbif_GET</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;year&#39;</span><span class="p">:</span> <span class="n">year</span><span class="p">},</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s1">&#39;occurrence/counts/year&#39;</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">gbif_GET</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="n">year</span><span class="p">},</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">out</span>
 
 <span class="k">def</span> <span class="nf">count_datasets</span><span class="p">(</span><span class="n">taxonKey</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">country</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -211,8 +211,8 @@
 <span class="sd">            from pygbif import occurrences</span>
 <span class="sd">            occurrences.count_datasets(country = &quot;DE&quot;)</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s">&#39;occurrence/counts/datasets&#39;</span>
-    <span class="n">out</span> <span class="o">=</span> <span class="n">gbif_GET</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;taxonKey&#39;</span><span class="p">:</span> <span class="n">taxonKey</span><span class="p">,</span> <span class="s">&#39;country&#39;</span><span class="p">:</span> <span class="n">country</span><span class="p">},</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s1">&#39;occurrence/counts/datasets&#39;</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">gbif_GET</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;taxonKey&#39;</span><span class="p">:</span> <span class="n">taxonKey</span><span class="p">,</span> <span class="s1">&#39;country&#39;</span><span class="p">:</span> <span class="n">country</span><span class="p">},</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">out</span>
 
 <span class="k">def</span> <span class="nf">count_countries</span><span class="p">(</span><span class="n">publishingCountry</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -228,8 +228,8 @@
 <span class="sd">            from pygbif import occurrences</span>
 <span class="sd">            occurrences.count_countries(publishingCountry = &quot;DE&quot;)</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s">&#39;occurrence/counts/countries&#39;</span>
-    <span class="n">out</span> <span class="o">=</span> <span class="n">gbif_GET</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="p">{</span><span class="s">&#39;publishingCountry&#39;</span><span class="p">:</span> <span class="n">publishingCountry</span><span class="p">},</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s1">&#39;occurrence/counts/countries&#39;</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">gbif_GET</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;publishingCountry&#39;</span><span class="p">:</span> <span class="n">publishingCountry</span><span class="p">},</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">out</span>
 
 <span class="k">def</span> <span class="nf">count_publishingcountries</span><span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -245,8 +245,8 @@
 <span class="sd">            from pygbif import occurrences</span>
 <span class="sd">            occurrences.count_publishingcountries(country = &quot;DE&quot;)</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s">&#39;occurrence/counts/publishingCountries&#39;</span>
-    <span class="n">out</span> <span class="o">=</span> <span class="n">gbif_GET</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="p">{</span><span class="s">&quot;country&quot;</span><span class="p">:</span> <span class="n">country</span><span class="p">},</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s1">&#39;occurrence/counts/publishingCountries&#39;</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">gbif_GET</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;country&quot;</span><span class="p">:</span> <span class="n">country</span><span class="p">},</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">out</span>
 
 <span class="k">def</span> <span class="nf">count_schema</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -260,7 +260,7 @@
 <span class="sd">            from pygbif import occurrences</span>
 <span class="sd">            occurrences.count_schema()</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s">&#39;occurrence/count/schema&#39;</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s1">&#39;occurrence/count/schema&#39;</span>
     <span class="n">out</span> <span class="o">=</span> <span class="n">gbif_GET</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="p">{},</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">out</span>
 </pre></div>

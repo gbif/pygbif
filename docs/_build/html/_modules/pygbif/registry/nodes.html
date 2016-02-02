@@ -133,7 +133,7 @@
 <span class="kn">from</span> <span class="nn">..gbifutils</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">.registry_utils</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="k">def</span> <span class="nf">nodes</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="s">&#39;all&#39;</span><span class="p">,</span> <span class="n">uuid</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">query</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">identifier</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
+<span class="k">def</span> <span class="nf">nodes</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">uuid</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">query</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">identifier</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
   <span class="n">identifierType</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">limit</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">start</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">isocode</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
   <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">  Nodes metadata.</span>
@@ -167,34 +167,34 @@
 
 <span class="sd">      [ registry.nodes(data=&#39;identifier&#39;, uuid=x) for x in uuids ]</span>
 <span class="sd">  &#39;&#39;&#39;</span>
-  <span class="n">args</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;q&#39;</span><span class="p">:</span> <span class="n">query</span><span class="p">,</span> <span class="s">&#39;limit&#39;</span><span class="p">:</span> <span class="n">limit</span><span class="p">,</span> <span class="s">&#39;offset&#39;</span><span class="p">:</span> <span class="n">start</span><span class="p">}</span>
-  <span class="n">data_choices</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;all&#39;</span><span class="p">,</span> <span class="s">&#39;organization&#39;</span><span class="p">,</span> <span class="s">&#39;endpoint&#39;</span><span class="p">,</span>
-     <span class="s">&#39;identifier&#39;</span><span class="p">,</span> <span class="s">&#39;tag&#39;</span><span class="p">,</span> <span class="s">&#39;machineTag&#39;</span><span class="p">,</span> <span class="s">&#39;comment&#39;</span><span class="p">,</span>
-     <span class="s">&#39;pendingEndorsement&#39;</span><span class="p">,</span> <span class="s">&#39;country&#39;</span><span class="p">,</span> <span class="s">&#39;dataset&#39;</span><span class="p">,</span> <span class="s">&#39;installation&#39;</span><span class="p">]</span>
+  <span class="n">args</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;q&#39;</span><span class="p">:</span> <span class="n">query</span><span class="p">,</span> <span class="s1">&#39;limit&#39;</span><span class="p">:</span> <span class="n">limit</span><span class="p">,</span> <span class="s1">&#39;offset&#39;</span><span class="p">:</span> <span class="n">start</span><span class="p">}</span>
+  <span class="n">data_choices</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="s1">&#39;organization&#39;</span><span class="p">,</span> <span class="s1">&#39;endpoint&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;identifier&#39;</span><span class="p">,</span> <span class="s1">&#39;tag&#39;</span><span class="p">,</span> <span class="s1">&#39;machineTag&#39;</span><span class="p">,</span> <span class="s1">&#39;comment&#39;</span><span class="p">,</span>
+     <span class="s1">&#39;pendingEndorsement&#39;</span><span class="p">,</span> <span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="s1">&#39;dataset&#39;</span><span class="p">,</span> <span class="s1">&#39;installation&#39;</span><span class="p">]</span>
   <span class="n">check_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">data_choices</span><span class="p">)</span>
 
   <span class="k">def</span> <span class="nf">getdata</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">uuid</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="ow">not</span> <span class="s">&#39;all&#39;</span> <span class="ow">and</span> <span class="n">uuid</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-      <span class="n">stop</span><span class="p">(</span><span class="s">&#39;You must specify a uuid if data does not equal &quot;all&quot;&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="ow">not</span> <span class="s1">&#39;all&#39;</span> <span class="ow">and</span> <span class="n">uuid</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+      <span class="n">stop</span><span class="p">(</span><span class="s1">&#39;You must specify a uuid if data does not equal &quot;all&quot;&#39;</span><span class="p">)</span>
 
     <span class="k">if</span> <span class="n">uuid</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
-      <span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="s">&#39;all&#39;</span><span class="p">:</span>
-        <span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s">&#39;node&#39;</span>
+      <span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="s1">&#39;all&#39;</span><span class="p">:</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s1">&#39;node&#39;</span>
       <span class="k">else</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">isocode</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">x</span> <span class="ow">is</span> <span class="s">&#39;country&#39;</span><span class="p">:</span>
-          <span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s">&#39;node/country/&#39;</span> <span class="o">+</span> <span class="n">isocode</span>
+        <span class="k">if</span> <span class="n">isocode</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span> <span class="ow">and</span> <span class="n">x</span> <span class="ow">is</span> <span class="s1">&#39;country&#39;</span><span class="p">:</span>
+          <span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s1">&#39;node/country/&#39;</span> <span class="o">+</span> <span class="n">isocode</span>
         <span class="k">else</span><span class="p">:</span>
-          <span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s">&#39;node/&#39;</span> <span class="o">+</span> <span class="n">x</span>
+          <span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s1">&#39;node/&#39;</span> <span class="o">+</span> <span class="n">x</span>
     <span class="k">else</span><span class="p">:</span>
-      <span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="s">&#39;all&#39;</span><span class="p">:</span>
-        <span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s">&#39;node/&#39;</span> <span class="o">+</span> <span class="n">uuid</span>
+      <span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="s1">&#39;all&#39;</span><span class="p">:</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s1">&#39;node/&#39;</span> <span class="o">+</span> <span class="n">uuid</span>
       <span class="k">else</span><span class="p">:</span>
-        <span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s">&#39;node/&#39;</span> <span class="o">+</span> <span class="n">uuid</span> <span class="o">+</span> <span class="s">&#39;/&#39;</span> <span class="o">+</span> <span class="n">x</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s1">&#39;node/&#39;</span> <span class="o">+</span> <span class="n">uuid</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="n">x</span>
 
     <span class="n">res</span> <span class="o">=</span> <span class="n">gbif_GET</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-    <span class="k">return</span> <span class="p">{</span><span class="s">&#39;meta&#39;</span><span class="p">:</span> <span class="n">get_meta</span><span class="p">(</span><span class="n">res</span><span class="p">),</span> <span class="s">&#39;data&#39;</span><span class="p">:</span> <span class="n">parse_results</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">uuid</span><span class="p">)}</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;meta&#39;</span><span class="p">:</span> <span class="n">get_meta</span><span class="p">(</span><span class="n">res</span><span class="p">),</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="n">parse_results</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">uuid</span><span class="p">)}</span>
 
-  <span class="c"># Get data</span>
+  <span class="c1"># Get data</span>
   <span class="k">if</span> <span class="n">len2</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
     <span class="k">return</span> <span class="n">getdata</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">uuid</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
   <span class="k">else</span><span class="p">:</span>
