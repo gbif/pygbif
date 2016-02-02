@@ -16,3 +16,6 @@ occurrences module
 .. automethod:: occurrences.count_countries
 .. automethod:: occurrences.count_schema
 .. automethod:: occurrences.count_publishingcountries
+.. automethod:: occurrences.download_meta
+.. automethod:: occurrences.download_list
+.. automethod:: occurrences.download_get

@@ -20,6 +20,18 @@ def gbif_GET(url, args, **kwargs):
   stopifnot(out.headers['content-type'])
   return out.json()
 
+def gbif_GET_write(url, path, **kwargs):
+  out = requests.get(url, headers=make_ua(), stream=True, **kwargs)
+  ctype = 'application/octet-stream; qs=0.5'
+  if out.headers['content-type'] != ctype:
+    raise NoResultException("content-type did not = '%s'" % ctype)
+  if out.status_code == 200:
+    with open(path, 'wb') as f:
+      for chunk in out.iter_content(chunk_size = 1024):
+        if chunk:
+          f.write(chunk)
+  return path
+
 def gbif_POST(url, body, **kwargs):
   head = make_ua()
   out = requests.post(url, json=body, headers=head, **kwargs)

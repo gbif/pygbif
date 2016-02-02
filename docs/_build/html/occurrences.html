@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>occurrences module &mdash; pygbif 0.1.3.9500 documentation</title>
+  <title>occurrences module &mdash; pygbif 0.1.3.9599 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="pygbif 0.1.3.9500 documentation" href="index.html"/>
+    <link rel="top" title="pygbif 0.1.3.9599 documentation" href="index.html"/>
         <link rel="next" title="registry module" href="registry.html"/>
         <link rel="prev" title="Python GBIF Client" href="index.html"/> 
 
@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                0.1.3.9500
+                0.1.3.9599
               </div>
             
           
@@ -467,9 +467,9 @@ occurrences.search(geometry = wkt)
 <p>Usage:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">occurrences</span>
 <span class="n">occurrences</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">taxonKey</span> <span class="o">=</span> <span class="mi">3329049</span><span class="p">)</span>
-<span class="n">occurrences</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">country</span> <span class="o">=</span> <span class="s">&#39;CA&#39;</span><span class="p">)</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">country</span> <span class="o">=</span> <span class="s1">&#39;CA&#39;</span><span class="p">)</span>
 <span class="n">occurrences</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">isGeoreferenced</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
-<span class="n">occurrences</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">basisOfRecord</span> <span class="o">=</span> <span class="s">&#39;OBSERVATION&#39;</span><span class="p">)</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">basisOfRecord</span> <span class="o">=</span> <span class="s1">&#39;OBSERVATION&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -509,7 +509,7 @@ occurrences.search(geometry = wkt)
 </table>
 <p>Usage:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">occurrences</span>
-<span class="n">occurrences</span><span class="o">.</span><span class="n">count_year</span><span class="p">(</span><span class="n">year</span> <span class="o">=</span> <span class="s">&#39;1990,2000&#39;</span><span class="p">)</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">count_year</span><span class="p">(</span><span class="n">year</span> <span class="o">=</span> <span class="s1">&#39;1990,2000&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -535,7 +535,7 @@ occurrences.search(geometry = wkt)
 </table>
 <p>Usage:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">occurrences</span>
-<span class="n">occurrences</span><span class="o">.</span><span class="n">count_datasets</span><span class="p">(</span><span class="n">country</span> <span class="o">=</span> <span class="s">&quot;DE&quot;</span><span class="p">)</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">count_datasets</span><span class="p">(</span><span class="n">country</span> <span class="o">=</span> <span class="s2">&quot;DE&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -556,7 +556,7 @@ occurrences.search(geometry = wkt)
 </table>
 <p>Usage:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">occurrences</span>
-<span class="n">occurrences</span><span class="o">.</span><span class="n">count_countries</span><span class="p">(</span><span class="n">publishingCountry</span> <span class="o">=</span> <span class="s">&quot;DE&quot;</span><span class="p">)</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">count_countries</span><span class="p">(</span><span class="n">publishingCountry</span> <span class="o">=</span> <span class="s2">&quot;DE&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -596,7 +596,94 @@ occurrences.search(geometry = wkt)
 </table>
 <p>Usage:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">occurrences</span>
-<span class="n">occurrences</span><span class="o">.</span><span class="n">count_publishingcountries</span><span class="p">(</span><span class="n">country</span> <span class="o">=</span> <span class="s">&quot;DE&quot;</span><span class="p">)</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">count_publishingcountries</span><span class="p">(</span><span class="n">country</span> <span class="o">=</span> <span class="s2">&quot;DE&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygbif.occurrences.download_meta">
+<code class="descclassname">occurrences.</code><code class="descname">download_meta</code><span class="sig-paren">(</span><em>key</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.download_meta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieves the occurrence download metadata by its unique key.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>key</strong> &#8211; A key generated from a request, like that from <cite>download</cite></li>
+<li><strong>**kwargs</strong> &#8211; <p>Further named arguments passed on to <cite>requests.get</cite></p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Usage:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">occurrences</span> <span class="k">as</span> <span class="n">occ</span>
+<span class="n">occ</span><span class="o">.</span><span class="n">download_meta</span><span class="p">(</span><span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;0003970-140910143529206&quot;</span><span class="p">)</span>
+<span class="n">occ</span><span class="o">.</span><span class="n">download_meta</span><span class="p">(</span><span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;0000099-140929101555934&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygbif.occurrences.download_list">
+<code class="descclassname">occurrences.</code><code class="descname">download_list</code><span class="sig-paren">(</span><em>user=None</em>, <em>pwd=None</em>, <em>limit=20</em>, <em>start=0</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.download_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Lists the downloads created by a user.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>user</strong> &#8211; A user name, look at env var &#8220;GBIF_USER&#8221; first</li>
+<li><strong>pwd</strong> &#8211; Your password, look at env var &#8220;GBIF_PWD&#8221; first</li>
+<li><strong>limit</strong> &#8211; Number of records to return. Default: 20</li>
+<li><strong>start</strong> &#8211; Record number to start at. Default: 0</li>
+<li><strong>**kwargs</strong> &#8211; <p>Further named arguments passed on to <cite>requests.get</cite></p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Usage:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">occurrences</span> <span class="k">as</span> <span class="n">occ</span>
+<span class="n">occ</span><span class="o">.</span><span class="n">download_list</span><span class="p">(</span><span class="n">user</span> <span class="o">=</span> <span class="s2">&quot;sckott&quot;</span><span class="p">)</span>
+<span class="n">occ</span><span class="o">.</span><span class="n">download_list</span><span class="p">(</span><span class="n">user</span> <span class="o">=</span> <span class="s2">&quot;sckott&quot;</span><span class="p">,</span> <span class="n">limit</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">occ</span><span class="o">.</span><span class="n">download_list</span><span class="p">(</span><span class="n">user</span> <span class="o">=</span> <span class="s2">&quot;sckott&quot;</span><span class="p">,</span> <span class="n">start</span> <span class="o">=</span> <span class="mi">21</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygbif.occurrences.download_get">
+<code class="descclassname">occurrences.</code><code class="descname">download_get</code><span class="sig-paren">(</span><em>key</em>, <em>path='.'</em>, <em>overwrite=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.download_get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a download from GBIF.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>key</strong> &#8211; A key generated from a request, like that from <cite>download</cite></li>
+<li><strong>path</strong> &#8211; Path to write zip file to. Default: <cite>&#8221;.&#8221;</cite>, with a <cite>.zip</cite>
+appended to the end.</li>
+<li><strong>**kwargs</strong> &#8211; <p>Further named arguments passed on to <cite>requests.get</cite></p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Downloads the zip file to a directory you specify on your machine.
+We stream the zip data to a file. This function only downloads the file.
+See <cite>download_import</cite> to open a downloaded file in Python. The speed of this
+function is of course proportional to the size of the file to download, and affected
+by your internet connection speed. For example, a 58 MB file on my machine took
+about 26 seconds.</p>
+<p>Usage:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">occurrences</span> <span class="k">as</span> <span class="n">occ</span>
+<span class="n">occ</span><span class="o">.</span><span class="n">download_get</span><span class="p">(</span><span class="s2">&quot;0000066-140928181241064&quot;</span><span class="p">)</span>
+<span class="n">occ</span><span class="o">.</span><span class="n">download_get</span><span class="p">(</span><span class="s2">&quot;0003983-140910143529206&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -644,7 +731,7 @@ occurrences.search(geometry = wkt)
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.1.3.9500',
+            VERSION:'0.1.3.9599',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

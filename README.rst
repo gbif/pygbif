@@ -58,10 +58,14 @@ Occurrences module
 
 .. code-block:: python
 
-		from pygbif import occurrences
-		occurrences.search(taxonKey = 3329049)
-		occurrences.get(taxonKey = 252408386)
-		occurrences.count(isGeoreferenced = True)
+		from pygbif import occurrences as occ
+		occ.search(taxonKey = 3329049)
+		occ.get(taxonKey = 252408386)
+		occ.count(isGeoreferenced = True)
+		occ.download_list(user = "sckott", limit = 5)
+    occ.download_meta(key = "0000099-140929101555934")
+    occ.download_get("0000099-140929101555934")
+
 
 Meta
 ====

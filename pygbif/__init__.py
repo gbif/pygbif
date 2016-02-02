@@ -36,12 +36,12 @@ Usage::
 		occurrences.search(geometry='POLYGON((30.1 10.1, 10 20, 20 40, 40 40, 30.1 10.1))', limit=20)
 '''
 
-__version__ = '0.1.3.9500'
+__version__ = '0.1.3.9599'
 __title__ = 'pygbif'
 __author__ = 'Scott Chamberlain'
 __license__ = 'MIT'
 
-from .occurrences import search, get, count
+from .occurrences import search, get, count, download
 from .species import names,name_parser
 from .registry import datasets, nodes
 from .gbifissues import occ_issues_lookup
