@@ -25,7 +25,7 @@ Development version
 
 .. code-block:: console
 
-		[sudo] pip install git+git://github.com/sckott/pygbif.git#egg=pygbif
+    [sudo] pip install git+git://github.com/sckott/pygbif.git#egg=pygbif
 
 `pygbif` is split up into modules for each of the major groups of API methods.
 
@@ -42,27 +42,27 @@ Registry module
 
 .. code-block:: python
 
-		from pygbif import registry
-		registry.dataset_metrics(uuid='3f8a1297-3259-4700-91fc-acc4170b27ce')
+    from pygbif import registry
+    registry.dataset_metrics(uuid='3f8a1297-3259-4700-91fc-acc4170b27ce')
 
 Species module
 ===============
 
 .. code-block:: python
 
-		from pygbif import species
-		species.name_suggest(q='Puma concolor')
+    from pygbif import species
+    species.name_suggest(q='Puma concolor')
 
 Occurrences module
 ==================
 
 .. code-block:: python
 
-		from pygbif import occurrences as occ
-		occ.search(taxonKey = 3329049)
-		occ.get(taxonKey = 252408386)
-		occ.count(isGeoreferenced = True)
-		occ.download_list(user = "sckott", limit = 5)
+    from pygbif import occurrences as occ
+    occ.search(taxonKey = 3329049)
+    occ.get(taxonKey = 252408386)
+    occ.count(isGeoreferenced = True)
+    occ.download_list(user = "sckott", limit = 5)
     occ.download_meta(key = "0000099-140929101555934")
     occ.download_get("0000099-140929101555934")
 
