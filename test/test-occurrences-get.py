@@ -6,7 +6,7 @@ def test_get():
     "occurrences.get - basic test"
     res = occurrences.get(key = 252408386)
     assert 'dict' == res.__class__.__name__
-    assert 30 == len(res)
+    assert len(res) > 30
     assert 252408386 == res['key']
 
 def test_get_verbatim():

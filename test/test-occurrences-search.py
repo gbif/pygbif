@@ -6,18 +6,19 @@ def test_search():
     "occurrences.search - basic test"
     res = occurrences.search(taxonKey = 3329049)
     assert 'dict' == res.__class__.__name__
-    assert 5 == len(res)
-    assert [u'count', u'endOfRecords', u'limit', u'results', u'offset'] == res.keys()
+    assert 6 == len(res)
+    assert [u'count', u'facets', u'results', u'endOfRecords', u'limit', u'offset'] == res.keys()
 
 def test_search_():
     "occurrences.search - diff taxonKey"
-    res = occurrences.search(taxonKey = 252408386)
+    res = occurrences.search(taxonKey = 2431762)
     assert 'dict' == res.__class__.__name__
-    assert 24 == len(res)
-    assert 252408386 == res['key']
+    assert 6 == len(res)
+    assert 2431762 == res['results'][0]['taxonKey']
 
 def test_search_():
     "occurrences.search - diff taxonKey2"
-    res = occurrences.search(taxonKey = 1052909293)
+    res = occurrences.search(taxonKey = 2683264)
     assert 'dict' == res.__class__.__name__
-    assert 5 == len(res)
+    assert 6 == len(res)
+    assert 2683264 == res['results'][0]['taxonKey']

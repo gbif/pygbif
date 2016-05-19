@@ -14,4 +14,4 @@ def test_name_backbone_multiple_matches():
     res = species.name_backbone(name='Aso')
     assert dict == res.__class__
     assert 4 == len(res)
-    assert 'Multiple equal matches for Aso' == res['note']
+    assert 'No match because of too little confidence' == res['note']
