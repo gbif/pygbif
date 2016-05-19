@@ -8,7 +8,7 @@ def test_nodes():
     assert dict == res.__class__
     assert 2 == len(res)
     assert 100 == len(res['data'])
-    assert ['meta', 'data'] == res.keys()
+    assert ['data', 'meta'] == sorted(res.keys())
 
 def test_nodes_limit():
     "limit param in registry.nodes"

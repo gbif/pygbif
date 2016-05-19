@@ -2,12 +2,14 @@
 import os
 from pygbif import occurrences
 
+keyz = ['count', 'facets', 'results', 'endOfRecords', 'limit', 'offset']
+
 def test_search():
     "occurrences.search - basic test"
     res = occurrences.search(taxonKey = 3329049)
     assert 'dict' == res.__class__.__name__
     assert 6 == len(res)
-    assert [u'count', u'facets', u'results', u'endOfRecords', u'limit', u'offset'] == res.keys()
+    assert sorted(keyz) == sorted(res.keys())
 
 def test_search_():
     "occurrences.search - diff taxonKey"
