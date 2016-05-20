@@ -13,3 +13,6 @@
 
 # Build output
 /build/
+
+.tox
+.coverage
