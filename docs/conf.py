@@ -53,7 +53,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'pygbif'
-copyright = u'2015, Scott Chamberlain'
+copyright = u'2016, Scott Chamberlain'
 author = u'Scott Chamberlain'
 
 # The version info for the project you're documenting, acts as replacement for

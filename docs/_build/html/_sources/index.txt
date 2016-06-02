@@ -62,7 +62,7 @@ Occurrences module
     occ.count(isGeoreferenced = True)
     occ.download_list(user = "sckott", limit = 5)
     occ.download_meta(key = "0000099-140929101555934")
-    occ.download_get("0000099-140929101555934")
+    occ.download_get("0000066-140928181241064")
 
 Meta
 ====

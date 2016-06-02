@@ -185,13 +185,16 @@ def download_get(key, path=".", overwrite=False, **kwargs):
     occ.download_get("0003983-140910143529206")
   '''
   meta = pygbif.occurrences.download_meta(key)
-  print('Download file size: %s bytes' % meta['size'])
-  url = 'http://api.gbif.org/v1/occurrence/download/request/' + key
-  path = "%s/%s.zip" % (path, key)
-  res = gbif_GET_write(url, path, **kwargs)
-  # options(gbifdownloadpath = path)
-  print( "On disk at " + path )
-  return {'path': path, 'size': meta['size'], 'key': key}
+  if meta['status'] != 'SUCCEEDED':
+    raise Exception('download "%s" not of status SUCCEEDED' % key)
+  else:
+    print('Download file size: %s bytes' % meta['size'])
+    url = 'http://api.gbif.org/v1/occurrence/download/request/' + key
+    path = "%s/%s.zip" % (path, key)
+    res = gbif_GET_write(url, path, **kwargs)
+    # options(gbifdownloadpath = path)
+    print( "On disk at " + path )
+    return {'path': path, 'size': meta['size'], 'key': key}
 
 
 # helper functions
@@ -202,9 +205,9 @@ def rg_POST(url, req, user, pwd, **kwargs):
   }
   r = requests.post(url, data = json.dumps(req), headers = heads, auth = auth.HTTPBasicAuth(user, pwd))
   if r.status_code > 203:
-    raise 'error: ' + r.content
+    raise Exception('error: ' + r.content)
   if r.headers()['Content-Type'] == 'application/json':
-    raise 'not of type json'
+    raise Exception('not of type json')
 
   return r.json()
 
