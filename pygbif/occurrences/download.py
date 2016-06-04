@@ -116,7 +116,7 @@ def download_meta(key, **kwargs):
   '''
   Retrieves the occurrence download metadata by its unique key.
 
-  :param key: A key generated from a request, like that from `download`
+  :param key: [str] A key generated from a request, like that from `download`
   :param **kwargs: Further named arguments passed on to `requests.get`
 
   Usage::
@@ -132,10 +132,10 @@ def download_list(user=None, pwd=None, limit = 20, start = 0, **kwargs):
   '''
   Lists the downloads created by a user.
 
-  :param user: A user name, look at env var "GBIF_USER" first
-  :param pwd: Your password, look at env var "GBIF_PWD" first
-  :param limit: Number of records to return. Default: 20
-  :param start: Record number to start at. Default: 0
+  :param user: [str] A user name, look at env var "GBIF_USER" first
+  :param pwd: [str] Your password, look at env var "GBIF_PWD" first
+  :param limit: [int] Number of records to return. Default: 20
+  :param start: [int] Record number to start at. Default: 0
   :param **kwargs: Further named arguments passed on to `requests.get`
 
   Usage::
@@ -166,8 +166,8 @@ def download_get(key, path=".", overwrite=False, **kwargs):
   '''
   Get a download from GBIF.
 
-  :param key: A key generated from a request, like that from `download`
-  :param path: Path to write zip file to. Default: `"."`, with a `.zip`
+  :param key: [str] A key generated from a request, like that from `download`
+  :param path: [str] Path to write zip file to. Default: `"."`, with a `.zip`
     appended to the end.
   :param **kwargs: Further named arguments passed on to `requests.get`
 

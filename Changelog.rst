@@ -1,8 +1,9 @@
 Changelog
 =======
 
-0.1.4 (2016-06-01)
+0.1.4 (2016-06-02)
 --------------------
+- Changed default `limit` value to 300 for `occurrences.search` method
 - Added more registry methods (#11)
 - Fixed wheel to be universal for 2 and 3 (#10)
 - Improved documentation a lot, autodoc methods now

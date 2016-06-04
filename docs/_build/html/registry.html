@@ -141,12 +141,12 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>data</strong> &#8211; The type of data to get. Default is all data.</li>
-<li><strong>type</strong> &#8211; Type of dataset, options include OCCURRENCE, etc.</li>
-<li><strong>uuid</strong> &#8211; UUID of the data node provider. This must be specified if data
+<li><strong>data</strong> &#8211; [str] The type of data to get. Default: &#8216;all&#8217;</li>
+<li><strong>type</strong> &#8211; [str] Type of dataset, options include &#8216;OCCURRENCE&#8217;, etc.</li>
+<li><strong>uuid</strong> &#8211; [str] UUID of the data node provider. This must be specified if data
 is anything other than &#8216;all&#8217;.</li>
-<li><strong>query</strong> &#8211; Query term(s). Only used when data=&#8217;all&#8217;</li>
-<li><strong>id</strong> &#8211; A metadata document id.</li>
+<li><strong>query</strong> &#8211; [str] Query term(s). Only used when <cite>data = &#8216;all&#8217;</cite></li>
+<li><strong>id</strong> &#8211; [int] A metadata document id.</li>
 </ul>
 </td>
 </tr>
@@ -175,7 +175,7 @@ is anything other than &#8216;all&#8217;.</li>
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>uuid</strong> &#8211; (character) One or more dataset UUIDs. See examples.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>uuid</strong> &#8211; [str] One or more dataset UUIDs. See examples.</td>
 </tr>
 </tbody>
 </table>
@@ -198,11 +198,11 @@ is anything other than &#8216;all&#8217;.</li>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>data</strong> &#8211; The type of data to get. Default is all data. If not &#8216;all&#8217;, then one
+<li><strong>data</strong> &#8211; [str] The type of data to get. Default is all data. If not &#8216;all&#8217;, then one
 or more of &#8216;contact&#8217;, &#8216;endpoint&#8217;, &#8216;dataset&#8217;, &#8216;comment&#8217;, &#8216;deleted&#8217;, &#8216;nonPublishing&#8217;.</li>
-<li><strong>uuid</strong> &#8211; UUID of the data node provider. This must be specified if data
+<li><strong>uuid</strong> &#8211; [str] UUID of the data node provider. This must be specified if data
 is anything other than &#8216;all&#8217;.</li>
-<li><strong>query</strong> &#8211; Query nodes. Only used when data=&#8217;all&#8217;. Ignored otherwise.</li>
+<li><strong>query</strong> &#8211; [str] Query nodes. Only used when <cite>data=&#8217;all&#8217;</cite>. Ignored otherwise.</li>
 </ul>
 </td>
 </tr>
@@ -235,10 +235,10 @@ is anything other than &#8216;all&#8217;.</li>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>data</strong> &#8211; The type of data to get. Default is all data.</li>
-<li><strong>uuid</strong> &#8211; UUID of the data network provider. This must be specified if data
+<li><strong>data</strong> &#8211; [str] The type of data to get. Default: &#8216;all&#8217;</li>
+<li><strong>uuid</strong> &#8211; [str] UUID of the data network provider. This must be specified if data
 is anything other than &#8216;all&#8217;.</li>
-<li><strong>query</strong> &#8211; Query networks. Only used when data=&#8217;all&#8217;. Ignored otherwise.</li>
+<li><strong>query</strong> &#8211; [str] Query networks. Only used when <cite>data = &#8216;all&#8217;</cite>. Ignored otherwise.</li>
 </ul>
 </td>
 </tr>
@@ -271,11 +271,11 @@ is anything other than &#8216;all&#8217;.</li>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>data</strong> &#8211; The type of data to get. Default is all data.</li>
-<li><strong>uuid</strong> &#8211; UUID of the data node provider. This must be specified if data
+<li><strong>data</strong> &#8211; [str] The type of data to get. Default: &#8216;all&#8217;</li>
+<li><strong>uuid</strong> &#8211; [str] UUID of the data node provider. This must be specified if data
 is anything other than &#8216;all&#8217;.</li>
-<li><strong>query</strong> &#8211; Query nodes. Only used when data=&#8217;all&#8217;</li>
-<li><strong>isocode</strong> &#8211; A 2 letter country code. Only used if data=&#8217;country&#8217;.</li>
+<li><strong>query</strong> &#8211; [str] Query nodes. Only used when <cite>data = &#8216;all&#8217;</cite></li>
+<li><strong>isocode</strong> &#8211; [str] A 2 letter country code. Only used if <cite>data = &#8216;country&#8217;</cite>.</li>
 </ul>
 </td>
 </tr>

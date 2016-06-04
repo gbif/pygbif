@@ -6,11 +6,11 @@ def installations(data = 'all', uuid = None, query = None, identifier = None,
   '''
   Installations metadata.
 
-  :param data: The type of data to get. Default is all data. If not 'all', then one
+  :param data: [str] The type of data to get. Default is all data. If not 'all', then one
      or more of 'contact', 'endpoint', 'dataset', 'comment', 'deleted', 'nonPublishing'.
-  :param uuid: UUID of the data node provider. This must be specified if data
+  :param uuid: [str] UUID of the data node provider. This must be specified if data
      is anything other than 'all'.
-  :param query: Query nodes. Only used when data='all'. Ignored otherwise.
+  :param query: [str] Query nodes. Only used when `data='all'`. Ignored otherwise.
 
   References: http://www.gbif.org/developer/registry#installations
 

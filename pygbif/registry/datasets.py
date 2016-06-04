@@ -5,7 +5,7 @@ def dataset_metrics(uuid, **kwargs):
 	'''
 	Get details on a GBIF dataset.
 
-	:param uuid: (character) One or more dataset UUIDs. See examples.
+	:param uuid: [str] One or more dataset UUIDs. See examples.
 
 	References: http://www.gbif.org/developer/registry#datasetMetrics
 
@@ -30,12 +30,12 @@ def datasets(data = 'all', type = None, uuid = None, query = None, id = None,
 	'''
 	Search for datasets and dataset metadata.
 
-	:param data: The type of data to get. Default is all data.
-	:param type: Type of dataset, options include OCCURRENCE, etc.
-	:param uuid: UUID of the data node provider. This must be specified if data
+	:param data: [str] The type of data to get. Default: 'all'
+	:param type: [str] Type of dataset, options include 'OCCURRENCE', etc.
+	:param uuid: [str] UUID of the data node provider. This must be specified if data
 		 is anything other than 'all'.
-	:param query: Query term(s). Only used when data='all'
-	:param id: A metadata document id.
+	:param query: [str] Query term(s). Only used when `data = 'all'`
+	:param id: [int] A metadata document id.
 
 	References http://www.gbif.org/developer/registry#datasets
 

@@ -6,11 +6,11 @@ def nodes(data = 'all', uuid = None, query = None, identifier = None,
   '''
   Nodes metadata.
 
-  :param data: The type of data to get. Default is all data.
-  :param uuid: UUID of the data node provider. This must be specified if data
+  :param data: [str] The type of data to get. Default: 'all'
+  :param uuid: [str] UUID of the data node provider. This must be specified if data
      is anything other than 'all'.
-  :param query: Query nodes. Only used when data='all'
-  :param isocode: A 2 letter country code. Only used if data='country'.
+  :param query: [str] Query nodes. Only used when `data = 'all'`
+  :param isocode: [str] A 2 letter country code. Only used if `data = 'country'`.
 
   References http://www.gbif.org/developer/registry#nodes
 

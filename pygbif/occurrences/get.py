@@ -4,7 +4,7 @@ def get(key, **kwargs):
     '''
     Gets details for a single, interpreted occurrence
 
-    :param key: [Fixnum] A GBIF occurrence key
+    :param key: [int] A GBIF occurrence key
 
     :return: A dictionary, of results
 
@@ -21,7 +21,7 @@ def get_verbatim(key, **kwargs):
     '''
     Gets a verbatim occurrence record without any interpretation
 
-    :param key: [Fixnum] A GBIF occurrence key
+    :param key: [int] A GBIF occurrence key
 
     :return: A dictionary, of results
 
@@ -38,7 +38,7 @@ def get_fragment(key, **kwargs):
     '''
     Get a single occurrence fragment in its raw form (xml or json)
 
-    :param key: [Fixnum] A GBIF occurrence key
+    :param key: [int] A GBIF occurrence key
 
     :return: A dictionary, of results
 

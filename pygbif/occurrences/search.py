@@ -8,19 +8,19 @@ def search(taxonKey=None, scientificName=None, country=None,
     decimalLatitude=None, decimalLongitude=None, elevation=None,
     depth=None, institutionCode=None, collectionCode=None,
     hasGeospatialIssue=None, issue=None, q=None, mediatype=None,
-    limit=500, offset=0, **kwargs):
+    limit=300, offset=0, **kwargs):
     '''
     Search GBIF occurrences
 
-    :param taxonKey: [Fixnum] A GBIF occurrence identifier
-    :param scientificName: A scientific name from the GBIF backbone. All included and synonym taxa are included in the search.
-    :param datasetKey: The occurrence dataset key (a uuid)
-    :param catalogNumber: An identifier of any form assigned by the source within a physical collection or digital dataset for the record which may not unique, but should be fairly unique in combination with the institution and collection code.
-    :param recordedBy: The person who recorded the occurrence.
-    :param collectionCode: An identifier of any form assigned by the source to identify the physical collection or digital dataset uniquely within the text of an institution.
-    :param institutionCode: An identifier of any form assigned by the source to identify the institution the record belongs to. Not guaranteed to be que.
-    :param country: The 2-letter country code (as per ISO-3166-1) of the country in which the occurrence was recorded. See here http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2}
-    :param basisOfRecord: Basis of record, as defined in our BasisOfRecord enum here http://gbif.github.io/gbif-api/apidocs/org/gbif/api/vocabulary/BasisOfRecord.html Acceptable values are:
+    :param taxonKey: [int] A GBIF occurrence identifier
+    :param scientificName: [str] A scientific name from the GBIF backbone. All included and synonym taxa are included in the search.
+    :param datasetKey: [str] The occurrence dataset key (a uuid)
+    :param catalogNumber: [str] An identifier of any form assigned by the source within a physical collection or digital dataset for the record which may not unique, but should be fairly unique in combination with the institution and collection code.
+    :param recordedBy: [str] The person who recorded the occurrence.
+    :param collectionCode: [str] An identifier of any form assigned by the source to identify the physical collection or digital dataset uniquely within the text of an institution.
+    :param institutionCode: [str] An identifier of any form assigned by the source to identify the institution the record belongs to. Not guaranteed to be que.
+    :param country: [str] The 2-letter country code (as per ISO-3166-1) of the country in which the occurrence was recorded. See here http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2}
+    :param basisOfRecord: [str] Basis of record, as defined in our BasisOfRecord enum here http://gbif.github.io/gbif-api/apidocs/org/gbif/api/vocabulary/BasisOfRecord.html Acceptable values are:
 
      - FOSSIL_SPECIMEN An occurrence record describing a fossilized specimen.
      - HUMAN_OBSERVATION An occurrence record describing an observation made by one or more people.
@@ -31,56 +31,53 @@ def search(taxonKey=None, scientificName=None, country=None,
      - PRESERVED_SPECIMEN An occurrence record describing a preserved specimen.
      - UNKNOWN Unknown basis for the record.
 
-    :param eventDate: Occurrence date in ISO 8601 format: yyyy, yyyy-MM, yyyy-MM-dd, or
+    :param eventDate: [date] Occurrence date in ISO 8601 format: yyyy, yyyy-MM, yyyy-MM-dd, or
        MM-dd. Supports range queries, smaller,larger (e.g., '1990,1991', whereas '1991,1990'
        wouldn't work)
-    :param year: The 4 digit year. A year of 98 will be interpreted as AD 98. Supports range queries,
+    :param year: [int] The 4 digit year. A year of 98 will be interpreted as AD 98. Supports range queries,
        smaller,larger (e.g., '1990,1991', whereas '1991,1990' wouldn't work)
-    :param month: The month of the year, starting with 1 for January. Supports range queries,
+    :param month: [int] The month of the year, starting with 1 for January. Supports range queries,
        smaller,larger (e.g., '1,2', whereas '2,1' wouldn't work)
-    :param q: Query terms. The value for this parameter can be a simple word or a phrase.
-    :param decimalLatitude: Latitude in decimals between -90 and 90 based on WGS 84.
+    :param q: [str] Query terms. The value for this parameter can be a simple word or a phrase.
+    :param decimalLatitude: [float] Latitude in decimals between -90 and 90 based on WGS 84.
        Supports range queries, smaller,larger (e.g., '25,30', whereas '30,25' wouldn't work)
-    :param decimalLongitude: Longitude in decimals between -180 and 180 based on WGS 84.
+    :param decimalLongitude: [float] Longitude in decimals between -180 and 180 based on WGS 84.
        Supports range queries (e.g., '-0.4,-0.2', whereas '-0.2,-0.4' wouldn't work).
-    :param publishingCountry: The 2-letter country code (as per ISO-3166-1) of the
+    :param publishingCountry: [str] The 2-letter country code (as per ISO-3166-1) of the
        country in which the occurrence was recorded.
-    :param elevation: Elevation in meters above sea level. Supports range queries, smaller,larger
+    :param elevation: [int/str] Elevation in meters above sea level. Supports range queries, smaller,larger
        (e.g., '5,30', whereas '30,5' wouldn't work)
-    :param depth: Depth in meters relative to elevation. For example 10 meters below a
+    :param depth: [int/str] Depth in meters relative to elevation. For example 10 meters below a
        lake surface with given elevation. Supports range queries, smaller,larger (e.g., '5,30',
        whereas '30,5' wouldn't work)
-    :param geometry: Searches for occurrences inside a polygon described in Well Known
+    :param geometry: [str] Searches for occurrences inside a polygon described in Well Known
        Text (WKT) format. A WKT shape written as either POINT, LINESTRING, LINEARRING
        or POLYGON. Example of a polygon: ((30.1 10.1, 20, 20 40, 40 40, 30.1 10.1)) would be queried as http://bit.ly/1BzNwDq}.
-    :param hasGeospatialIssue: (logical) Includes/excludes occurrence records which contain spatial
+    :param hasGeospatialIssue: [bool] Includes/excludes occurrence records which contain spatial
        issues (as determined in our record interpretation), i.e. \code{hasGeospatialIssue=TRUE}
        returns only those records with spatial issues while \code{hasGeospatialIssue=FALSE} includes
        only records without spatial issues. The absence of this parameter returns any
        record with or without spatial issues.
-    :param issue: (character) One or more of many possible issues with each occurrence record. See
+    :param issue: [str] One or more of many possible issues with each occurrence record. See
        Details. Issues passed to this parameter filter results by the issue.
     :param hasCoordinate: (logical) Return only occurence records with lat/long data (TRUE) or
        all records (FALSE, default).
-    :param typeStatus: Type status of the specimen. One of many options. See ?typestatus
-    :param recordNumber: Number recorded by collector of the data, different from GBIF record
+    :param typeStatus: [str] Type status of the specimen. One of many options. See ?typestatus
+    :param recordNumber: [int] Number recorded by collector of the data, different from GBIF record
        number. See http://rs.tdwg.org/dwc/terms/#recordNumber} for more info
-    :param lastInterpreted: Date the record was last modified in GBIF, in ISO 8601 format:
+    :param lastInterpreted: [date] Date the record was last modified in GBIF, in ISO 8601 format:
        yyyy, yyyy-MM, yyyy-MM-dd, or MM-dd.  Supports range queries, smaller,larger (e.g.,
        '1990,1991', whereas '1991,1990' wouldn't work)
-    :param continent: Continent. One of africa, antarctica, asia, europe, north_america
+    :param continent: [str] Continent. One of africa, antarctica, asia, europe, north_america
        (North America includes the Caribbean and reachies down and includes Panama), oceania,
        or south_america
-    :param fields: (character) Default ('all') returns all fields. 'minimal' returns just taxon name,
+    :param fields: [str] Default ('all') returns all fields. 'minimal' returns just taxon name,
        key, latitude, and longitute. Or specify each field you want returned by name, e.g.
        fields = c('name','latitude','elevation').
-    :param return: One of data, hier, meta, or all. If data, a data.frame with the
-       data. hier returns the classifications in a list for each record. meta
-       returns the metadata for the entire call. all gives all data back in a list.
-    :param mediatype: Media type. Default is NULL, so no filtering on mediatype. Options:
-       NULL, 'MovingImage', 'Sound', and 'StillImage'.``
-    :param limit: [Fixnum] Number of results to return.
-    :param offset: [Fixnum] Start at record X
+    :param mediatype: [str] Media type. Default is NULL, so no filtering on mediatype. Options:
+       NULL, 'MovingImage', 'Sound', and 'StillImage'
+    :param limit: [int] Number of results to return. Default: 300
+    :param offset: [int] Record to start at. Default: 0
 
     :return: A dictionary, of results
 

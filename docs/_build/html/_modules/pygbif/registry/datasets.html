@@ -137,7 +137,7 @@
 	<span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">	Get details on a GBIF dataset.</span>
 
-<span class="sd">	:param uuid: (character) One or more dataset UUIDs. See examples.</span>
+<span class="sd">	:param uuid: [str] One or more dataset UUIDs. See examples.</span>
 
 <span class="sd">	References: http://www.gbif.org/developer/registry#datasetMetrics</span>
 
@@ -162,12 +162,12 @@
 	<span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">	Search for datasets and dataset metadata.</span>
 
-<span class="sd">	:param data: The type of data to get. Default is all data.</span>
-<span class="sd">	:param type: Type of dataset, options include OCCURRENCE, etc.</span>
-<span class="sd">	:param uuid: UUID of the data node provider. This must be specified if data</span>
+<span class="sd">	:param data: [str] The type of data to get. Default: &#39;all&#39;</span>
+<span class="sd">	:param type: [str] Type of dataset, options include &#39;OCCURRENCE&#39;, etc.</span>
+<span class="sd">	:param uuid: [str] UUID of the data node provider. This must be specified if data</span>
 <span class="sd">		 is anything other than &#39;all&#39;.</span>
-<span class="sd">	:param query: Query term(s). Only used when data=&#39;all&#39;</span>
-<span class="sd">	:param id: A metadata document id.</span>
+<span class="sd">	:param query: [str] Query term(s). Only used when `data = &#39;all&#39;`</span>
+<span class="sd">	:param id: [int] A metadata document id.</span>
 
 <span class="sd">	References http://www.gbif.org/developer/registry#datasets</span>
 

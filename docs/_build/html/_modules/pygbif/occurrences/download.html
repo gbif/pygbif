@@ -248,7 +248,7 @@
   <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">  Retrieves the occurrence download metadata by its unique key.</span>
 
-<span class="sd">  :param key: A key generated from a request, like that from `download`</span>
+<span class="sd">  :param key: [str] A key generated from a request, like that from `download`</span>
 <span class="sd">  :param **kwargs: Further named arguments passed on to `requests.get`</span>
 
 <span class="sd">  Usage::</span>
@@ -264,10 +264,10 @@
   <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">  Lists the downloads created by a user.</span>
 
-<span class="sd">  :param user: A user name, look at env var &quot;GBIF_USER&quot; first</span>
-<span class="sd">  :param pwd: Your password, look at env var &quot;GBIF_PWD&quot; first</span>
-<span class="sd">  :param limit: Number of records to return. Default: 20</span>
-<span class="sd">  :param start: Record number to start at. Default: 0</span>
+<span class="sd">  :param user: [str] A user name, look at env var &quot;GBIF_USER&quot; first</span>
+<span class="sd">  :param pwd: [str] Your password, look at env var &quot;GBIF_PWD&quot; first</span>
+<span class="sd">  :param limit: [int] Number of records to return. Default: 20</span>
+<span class="sd">  :param start: [int] Record number to start at. Default: 0</span>
 <span class="sd">  :param **kwargs: Further named arguments passed on to `requests.get`</span>
 
 <span class="sd">  Usage::</span>
@@ -298,8 +298,8 @@
   <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">  Get a download from GBIF.</span>
 
-<span class="sd">  :param key: A key generated from a request, like that from `download`</span>
-<span class="sd">  :param path: Path to write zip file to. Default: `&quot;.&quot;`, with a `.zip`</span>
+<span class="sd">  :param key: [str] A key generated from a request, like that from `download`</span>
+<span class="sd">  :param path: [str] Path to write zip file to. Default: `&quot;.&quot;`, with a `.zip`</span>
 <span class="sd">    appended to the end.</span>
 <span class="sd">  :param **kwargs: Further named arguments passed on to `requests.get`</span>
 

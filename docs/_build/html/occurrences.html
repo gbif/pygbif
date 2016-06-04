@@ -134,22 +134,22 @@
 <span id="occurrences-module"></span><span id="occurrences"></span><h1>occurrences module<a class="headerlink" href="#module-pygbif" title="Permalink to this headline">¶</a></h1>
 <dl class="method">
 <dt id="pygbif.occurrences.search">
-<code class="descclassname">occurrences.</code><code class="descname">search</code><span class="sig-paren">(</span><em>taxonKey=None</em>, <em>scientificName=None</em>, <em>country=None</em>, <em>publishingCountry=None</em>, <em>hasCoordinate=None</em>, <em>typeStatus=None</em>, <em>recordNumber=None</em>, <em>lastInterpreted=None</em>, <em>continent=None</em>, <em>geometry=None</em>, <em>recordedBy=None</em>, <em>basisOfRecord=None</em>, <em>datasetKey=None</em>, <em>eventDate=None</em>, <em>catalogNumber=None</em>, <em>year=None</em>, <em>month=None</em>, <em>decimalLatitude=None</em>, <em>decimalLongitude=None</em>, <em>elevation=None</em>, <em>depth=None</em>, <em>institutionCode=None</em>, <em>collectionCode=None</em>, <em>hasGeospatialIssue=None</em>, <em>issue=None</em>, <em>q=None</em>, <em>mediatype=None</em>, <em>limit=500</em>, <em>offset=0</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.search" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">occurrences.</code><code class="descname">search</code><span class="sig-paren">(</span><em>taxonKey=None</em>, <em>scientificName=None</em>, <em>country=None</em>, <em>publishingCountry=None</em>, <em>hasCoordinate=None</em>, <em>typeStatus=None</em>, <em>recordNumber=None</em>, <em>lastInterpreted=None</em>, <em>continent=None</em>, <em>geometry=None</em>, <em>recordedBy=None</em>, <em>basisOfRecord=None</em>, <em>datasetKey=None</em>, <em>eventDate=None</em>, <em>catalogNumber=None</em>, <em>year=None</em>, <em>month=None</em>, <em>decimalLatitude=None</em>, <em>decimalLongitude=None</em>, <em>elevation=None</em>, <em>depth=None</em>, <em>institutionCode=None</em>, <em>collectionCode=None</em>, <em>hasGeospatialIssue=None</em>, <em>issue=None</em>, <em>q=None</em>, <em>mediatype=None</em>, <em>limit=300</em>, <em>offset=0</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.search" title="Permalink to this definition">¶</a></dt>
 <dd><p>Search GBIF occurrences</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>taxonKey</strong> &#8211; [Fixnum] A GBIF occurrence identifier</li>
-<li><strong>scientificName</strong> &#8211; A scientific name from the GBIF backbone. All included and synonym taxa are included in the search.</li>
-<li><strong>datasetKey</strong> &#8211; The occurrence dataset key (a uuid)</li>
-<li><strong>catalogNumber</strong> &#8211; An identifier of any form assigned by the source within a physical collection or digital dataset for the record which may not unique, but should be fairly unique in combination with the institution and collection code.</li>
-<li><strong>recordedBy</strong> &#8211; The person who recorded the occurrence.</li>
-<li><strong>collectionCode</strong> &#8211; An identifier of any form assigned by the source to identify the physical collection or digital dataset uniquely within the text of an institution.</li>
-<li><strong>institutionCode</strong> &#8211; An identifier of any form assigned by the source to identify the institution the record belongs to. Not guaranteed to be que.</li>
-<li><strong>country</strong> &#8211; The 2-letter country code (as per ISO-3166-1) of the country in which the occurrence was recorded. See here <a class="reference external" href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2</a>}</li>
-<li><strong>basisOfRecord</strong> &#8211; <p>Basis of record, as defined in our BasisOfRecord enum here <a class="reference external" href="http://gbif.github.io/gbif-api/apidocs/org/gbif/api/vocabulary/BasisOfRecord.html">http://gbif.github.io/gbif-api/apidocs/org/gbif/api/vocabulary/BasisOfRecord.html</a> Acceptable values are:</p>
+<li><strong>taxonKey</strong> &#8211; [int] A GBIF occurrence identifier</li>
+<li><strong>scientificName</strong> &#8211; [str] A scientific name from the GBIF backbone. All included and synonym taxa are included in the search.</li>
+<li><strong>datasetKey</strong> &#8211; [str] The occurrence dataset key (a uuid)</li>
+<li><strong>catalogNumber</strong> &#8211; [str] An identifier of any form assigned by the source within a physical collection or digital dataset for the record which may not unique, but should be fairly unique in combination with the institution and collection code.</li>
+<li><strong>recordedBy</strong> &#8211; [str] The person who recorded the occurrence.</li>
+<li><strong>collectionCode</strong> &#8211; [str] An identifier of any form assigned by the source to identify the physical collection or digital dataset uniquely within the text of an institution.</li>
+<li><strong>institutionCode</strong> &#8211; [str] An identifier of any form assigned by the source to identify the institution the record belongs to. Not guaranteed to be que.</li>
+<li><strong>country</strong> &#8211; [str] The 2-letter country code (as per ISO-3166-1) of the country in which the occurrence was recorded. See here <a class="reference external" href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2</a>}</li>
+<li><strong>basisOfRecord</strong> &#8211; <p>[str] Basis of record, as defined in our BasisOfRecord enum here <a class="reference external" href="http://gbif.github.io/gbif-api/apidocs/org/gbif/api/vocabulary/BasisOfRecord.html">http://gbif.github.io/gbif-api/apidocs/org/gbif/api/vocabulary/BasisOfRecord.html</a> Acceptable values are:</p>
 <ul>
 <li>FOSSIL_SPECIMEN An occurrence record describing a fossilized specimen.</li>
 <li>HUMAN_OBSERVATION An occurrence record describing an observation made by one or more people.</li>
@@ -161,56 +161,53 @@
 <li>UNKNOWN Unknown basis for the record.</li>
 </ul>
 </li>
-<li><strong>eventDate</strong> &#8211; Occurrence date in ISO 8601 format: yyyy, yyyy-MM, yyyy-MM-dd, or
+<li><strong>eventDate</strong> &#8211; [date] Occurrence date in ISO 8601 format: yyyy, yyyy-MM, yyyy-MM-dd, or
 MM-dd. Supports range queries, smaller,larger (e.g., &#8216;1990,1991&#8217;, whereas &#8216;1991,1990&#8217;
 wouldn&#8217;t work)</li>
-<li><strong>year</strong> &#8211; The 4 digit year. A year of 98 will be interpreted as AD 98. Supports range queries,
+<li><strong>year</strong> &#8211; [int] The 4 digit year. A year of 98 will be interpreted as AD 98. Supports range queries,
 smaller,larger (e.g., &#8216;1990,1991&#8217;, whereas &#8216;1991,1990&#8217; wouldn&#8217;t work)</li>
-<li><strong>month</strong> &#8211; The month of the year, starting with 1 for January. Supports range queries,
+<li><strong>month</strong> &#8211; [int] The month of the year, starting with 1 for January. Supports range queries,
 smaller,larger (e.g., &#8216;1,2&#8217;, whereas &#8216;2,1&#8217; wouldn&#8217;t work)</li>
-<li><strong>q</strong> &#8211; Query terms. The value for this parameter can be a simple word or a phrase.</li>
-<li><strong>decimalLatitude</strong> &#8211; Latitude in decimals between -90 and 90 based on WGS 84.
+<li><strong>q</strong> &#8211; [str] Query terms. The value for this parameter can be a simple word or a phrase.</li>
+<li><strong>decimalLatitude</strong> &#8211; [float] Latitude in decimals between -90 and 90 based on WGS 84.
 Supports range queries, smaller,larger (e.g., &#8216;25,30&#8217;, whereas &#8216;30,25&#8217; wouldn&#8217;t work)</li>
-<li><strong>decimalLongitude</strong> &#8211; Longitude in decimals between -180 and 180 based on WGS 84.
+<li><strong>decimalLongitude</strong> &#8211; [float] Longitude in decimals between -180 and 180 based on WGS 84.
 Supports range queries (e.g., &#8216;-0.4,-0.2&#8217;, whereas &#8216;-0.2,-0.4&#8217; wouldn&#8217;t work).</li>
-<li><strong>publishingCountry</strong> &#8211; The 2-letter country code (as per ISO-3166-1) of the
+<li><strong>publishingCountry</strong> &#8211; [str] The 2-letter country code (as per ISO-3166-1) of the
 country in which the occurrence was recorded.</li>
-<li><strong>elevation</strong> &#8211; Elevation in meters above sea level. Supports range queries, smaller,larger
+<li><strong>elevation</strong> &#8211; [int/str] Elevation in meters above sea level. Supports range queries, smaller,larger
 (e.g., &#8216;5,30&#8217;, whereas &#8216;30,5&#8217; wouldn&#8217;t work)</li>
-<li><strong>depth</strong> &#8211; Depth in meters relative to elevation. For example 10 meters below a
+<li><strong>depth</strong> &#8211; [int/str] Depth in meters relative to elevation. For example 10 meters below a
 lake surface with given elevation. Supports range queries, smaller,larger (e.g., &#8216;5,30&#8217;,
 whereas &#8216;30,5&#8217; wouldn&#8217;t work)</li>
-<li><strong>geometry</strong> &#8211; Searches for occurrences inside a polygon described in Well Known
+<li><strong>geometry</strong> &#8211; [str] Searches for occurrences inside a polygon described in Well Known
 Text (WKT) format. A WKT shape written as either POINT, LINESTRING, LINEARRING
 or POLYGON. Example of a polygon: ((30.1 10.1, 20, 20 40, 40 40, 30.1 10.1)) would be queried as <a class="reference external" href="http://bit.ly/1BzNwDq">http://bit.ly/1BzNwDq</a>}.</li>
-<li><strong>hasGeospatialIssue</strong> &#8211; (logical) Includes/excludes occurrence records which contain spatial
+<li><strong>hasGeospatialIssue</strong> &#8211; [bool] Includes/excludes occurrence records which contain spatial
 issues (as determined in our record interpretation), i.e. code{hasGeospatialIssue=TRUE}
 returns only those records with spatial issues while code{hasGeospatialIssue=FALSE} includes
 only records without spatial issues. The absence of this parameter returns any
 record with or without spatial issues.</li>
-<li><strong>issue</strong> &#8211; (character) One or more of many possible issues with each occurrence record. See
+<li><strong>issue</strong> &#8211; [str] One or more of many possible issues with each occurrence record. See
 Details. Issues passed to this parameter filter results by the issue.</li>
 <li><strong>hasCoordinate</strong> &#8211; (logical) Return only occurence records with lat/long data (TRUE) or
 all records (FALSE, default).</li>
-<li><strong>typeStatus</strong> &#8211; Type status of the specimen. One of many options. See ?typestatus</li>
-<li><strong>recordNumber</strong> &#8211; Number recorded by collector of the data, different from GBIF record
+<li><strong>typeStatus</strong> &#8211; [str] Type status of the specimen. One of many options. See ?typestatus</li>
+<li><strong>recordNumber</strong> &#8211; [int] Number recorded by collector of the data, different from GBIF record
 number. See <a class="reference external" href="http://rs.tdwg.org/dwc/terms/#recordNumber">http://rs.tdwg.org/dwc/terms/#recordNumber</a>} for more info</li>
-<li><strong>lastInterpreted</strong> &#8211; Date the record was last modified in GBIF, in ISO 8601 format:
+<li><strong>lastInterpreted</strong> &#8211; [date] Date the record was last modified in GBIF, in ISO 8601 format:
 yyyy, yyyy-MM, yyyy-MM-dd, or MM-dd.  Supports range queries, smaller,larger (e.g.,
 &#8216;1990,1991&#8217;, whereas &#8216;1991,1990&#8217; wouldn&#8217;t work)</li>
-<li><strong>continent</strong> &#8211; Continent. One of africa, antarctica, asia, europe, north_america
+<li><strong>continent</strong> &#8211; [str] Continent. One of africa, antarctica, asia, europe, north_america
 (North America includes the Caribbean and reachies down and includes Panama), oceania,
 or south_america</li>
-<li><strong>fields</strong> &#8211; (character) Default (&#8216;all&#8217;) returns all fields. &#8216;minimal&#8217; returns just taxon name,
+<li><strong>fields</strong> &#8211; [str] Default (&#8216;all&#8217;) returns all fields. &#8216;minimal&#8217; returns just taxon name,
 key, latitude, and longitute. Or specify each field you want returned by name, e.g.
 fields = c(&#8216;name&#8217;,&#8217;latitude&#8217;,&#8217;elevation&#8217;).</li>
-<li><strong>return</strong> &#8211; One of data, hier, meta, or all. If data, a data.frame with the
-data. hier returns the classifications in a list for each record. meta
-returns the metadata for the entire call. all gives all data back in a list.</li>
-<li><strong>mediatype</strong> &#8211; Media type. Default is NULL, so no filtering on mediatype. Options:
-NULL, &#8216;MovingImage&#8217;, &#8216;Sound&#8217;, and &#8216;StillImage&#8217;.``</li>
-<li><strong>limit</strong> &#8211; [Fixnum] Number of results to return.</li>
-<li><strong>offset</strong> &#8211; [Fixnum] Start at record X</li>
+<li><strong>mediatype</strong> &#8211; [str] Media type. Default is NULL, so no filtering on mediatype. Options:
+NULL, &#8216;MovingImage&#8217;, &#8216;Sound&#8217;, and &#8216;StillImage&#8217;</li>
+<li><strong>limit</strong> &#8211; [int] Number of results to return. Default: 300</li>
+<li><strong>offset</strong> &#8211; [int] Record to start at. Default: 0</li>
 </ul>
 </td>
 </tr>
@@ -383,7 +380,7 @@ occurrences.search(geometry = wkt)
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>key</strong> &#8211; [Fixnum] A GBIF occurrence key</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>key</strong> &#8211; [int] A GBIF occurrence key</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A dictionary, of results</td>
 </tr>
@@ -404,7 +401,7 @@ occurrences.search(geometry = wkt)
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>key</strong> &#8211; [Fixnum] A GBIF occurrence key</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>key</strong> &#8211; [int] A GBIF occurrence key</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A dictionary, of results</td>
 </tr>
@@ -425,7 +422,7 @@ occurrences.search(geometry = wkt)
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>key</strong> &#8211; [Fixnum] A GBIF occurrence key</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>key</strong> &#8211; [int] A GBIF occurrence key</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A dictionary, of results</td>
 </tr>
@@ -610,7 +607,7 @@ occurrences.search(geometry = wkt)
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>key</strong> &#8211; A key generated from a request, like that from <cite>download</cite></li>
+<li><strong>key</strong> &#8211; [str] A key generated from a request, like that from <cite>download</cite></li>
 <li><strong>**kwargs</strong> &#8211; <p>Further named arguments passed on to <cite>requests.get</cite></p>
 </li>
 </ul>
@@ -635,10 +632,10 @@ occurrences.search(geometry = wkt)
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>user</strong> &#8211; A user name, look at env var &#8220;GBIF_USER&#8221; first</li>
-<li><strong>pwd</strong> &#8211; Your password, look at env var &#8220;GBIF_PWD&#8221; first</li>
-<li><strong>limit</strong> &#8211; Number of records to return. Default: 20</li>
-<li><strong>start</strong> &#8211; Record number to start at. Default: 0</li>
+<li><strong>user</strong> &#8211; [str] A user name, look at env var &#8220;GBIF_USER&#8221; first</li>
+<li><strong>pwd</strong> &#8211; [str] Your password, look at env var &#8220;GBIF_PWD&#8221; first</li>
+<li><strong>limit</strong> &#8211; [int] Number of records to return. Default: 20</li>
+<li><strong>start</strong> &#8211; [int] Record number to start at. Default: 0</li>
 <li><strong>**kwargs</strong> &#8211; <p>Further named arguments passed on to <cite>requests.get</cite></p>
 </li>
 </ul>
@@ -664,8 +661,8 @@ occurrences.search(geometry = wkt)
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>key</strong> &#8211; A key generated from a request, like that from <cite>download</cite></li>
-<li><strong>path</strong> &#8211; Path to write zip file to. Default: <cite>&#8221;.&#8221;</cite>, with a <cite>.zip</cite>
+<li><strong>key</strong> &#8211; [str] A key generated from a request, like that from <cite>download</cite></li>
+<li><strong>path</strong> &#8211; [str] Path to write zip file to. Default: <cite>&#8221;.&#8221;</cite>, with a <cite>.zip</cite>
 appended to the end.</li>
 <li><strong>**kwargs</strong> &#8211; <p>Further named arguments passed on to <cite>requests.get</cite></p>
 </li>
