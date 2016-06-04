@@ -6,7 +6,7 @@
 pygbif library
 ~~~~~~~~~~~~~~~~~~~~~
 
-pygbif is a Python client for GBIF.
+pygbif is a Python client for the Global Biodiversity Information Facility (GBIF) API.
 
 Usage::
 
