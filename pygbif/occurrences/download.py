@@ -1,6 +1,11 @@
-from ..gbifutils import *
 import os
+import re
+import json
+import pprint
 from requests import auth
+
+from ..gbifutils import *
+
 
 # def download(*arg, type="and", user = ENV("GBIF_USER"), pwd = ENV("GBIF_PWD"),
 #    email, **kwargs):
@@ -112,82 +117,199 @@ from requests import auth
 #     out = rg_POST(url, req, user, pwd, **kwargs)
 #     return [out, user, email]
 
+class GBIFDownload(object):
+
+    def __init__(self, creator, email, polygon=None):
+        """class to setup a JSON doc with the query and POST a request
+
+        All predicates (default key-value or iterative based on a list of
+        values) are combined with an AND statement. Iterative predicates are
+        creating a subset equal statements combined with OR
+
+        :param creator: User name.
+        :param email: user email
+        :param polygon: Polygon of points to extract data from
+        """
+        self.predicates = []
+
+        self.url = 'http://api.gbif.org/v1/occurrence/download/request'
+        self.header = {'accept': 'application/json',
+                       'content-type': 'application/json',
+                       'user-agent': ''.join(['python-requests/',
+                                              requests.__version__,
+                                              ',pygbif/',
+                                              pygbif.__version__
+                                              ])
+                       }
+
+        self.payload = {'creator': creator,
+                        'notification_address': [email],
+                        'send_notification': 'true',
+                        'created': datetime.date.today().year,
+                        'predicate': {
+                            'type': 'and',
+                            'predicates': self.predicates
+                            }
+                        }
+
+        # prepare the geometry polygon constructions
+        if polygon:
+            self.add_geometry(polygon)
+
+    def add_predicate(self, key, value, predicate_type='equals'):
+        """
+        add key, value, type combination of a predicate
+
+        :param key: query KEY parameter
+        :param value: the value used in the predicate
+        :param predicate_type: the type of predicate (e.g. equals)
+        """
+        self.predicates.append({'type': predicate_type,
+                                'key': key,
+                                'value': value
+                                })
+
+    @staticmethod
+    def _extract_values(values_list):
+        """extract values from either file or list
+
+        :param values_list: list or file name (str) with list of values
+        """
+        values = []
+        # check if file or list of values to iterate
+        if isinstance(values_list, str):
+            with open(values_list) as ff:
+                reading = csv.reader(ff)
+                for j in reading:
+                    values.append(j[0])
+        elif isinstance(values_list, list):
+            values = values_list
+        else:
+            raise Exception("input datatype not supported.")
+        return values
+
+    def add_iterative_predicate(self, key, values_list):
+        """add an iterative predicate with a key and set of values
+        which it can be equal to in and or function
+
+        :param key: API key to use for the query.
+        :param values_list: Filename or list containing the taxon keys to be searched.
+
+        """
+        values = self._extract_values(values_list)
+
+        predicate = {'type': 'equals', 'key': key, 'value': None}
+        predicates = []
+        while values:
+            predicate['value'] = values.pop()
+            predicates.append(predicate.copy())
+        self.predicates.append({'type': 'or', 'predicates': predicates})
+
+    def add_geometry(self, polygon, geom_type='within'):
+        """add a geometry type of predicate
+
+        :param polygon: In this format 'POLYGON((x1 y1, x2 y2, x3 y3,... xn yn))'
+        :param geom_type: type of predicate, e.g. within
+        :return:
+        """
+        self.predicates.append({'type': geom_type, 'geometry': polygon})
+
+    def post_download(self, user, pwd):
+        """
+
+        :param user: Username
+        :param pwd: password
+        :return:
+        """
+
+        pprint.pprint(self.payload)
+        r = requests.post(self.url,
+                          auth = auth.HTTPBasicAuth(user, pwd),
+                          data=json.dumps(self.payload),
+                          headers=self.header)
+
+        if r.status_code > 203:
+            raise Exception('error: ' + r.content)
+        if r.headers()['Content-Type'] == 'application/json':
+            raise Exception('not of type json')
+        return r.json()
+
 def download_meta(key, **kwargs):
-  '''
-  Retrieves the occurrence download metadata by its unique key.
+    """
+    Retrieves the occurrence download metadata by its unique key.
 
-  :param key: [str] A key generated from a request, like that from `download`
-  :param **kwargs: Further named arguments passed on to `requests.get`
+    :param key: [str] A key generated from a request, like that from `download`
+    :param **kwargs: Further named arguments passed on to `requests.get`
 
-  Usage::
+    Usage::
 
       from pygbif import occurrences as occ
       occ.download_meta(key = "0003970-140910143529206")
       occ.download_meta(key = "0000099-140929101555934")
-  '''
-  url = 'http://api.gbif.org/v1/occurrence/download/' + key
-  return gbif_GET(url, {}, **kwargs)
+    """
+    url = 'http://api.gbif.org/v1/occurrence/download/' + key
+    return gbif_GET(url, {}, **kwargs)
 
-def download_list(user=None, pwd=None, limit = 20, start = 0, **kwargs):
-  '''
-  Lists the downloads created by a user.
+def download_list(user=None, pwd=None, limit=20, start=0, **kwargs):
+    """
+    Lists the downloads created by a user.
 
-  :param user: [str] A user name, look at env var "GBIF_USER" first
-  :param pwd: [str] Your password, look at env var "GBIF_PWD" first
-  :param limit: [int] Number of records to return. Default: 20
-  :param start: [int] Record number to start at. Default: 0
-  :param **kwargs: Further named arguments passed on to `requests.get`
+    :param user: [str] A user name, look at env var "GBIF_USER" first
+    :param pwd: [str] Your password, look at env var "GBIF_PWD" first
+    :param limit: [int] Number of records to return. Default: 20
+    :param start: [int] Record number to start at. Default: 0
+    :param **kwargs: Further named arguments passed on to `requests.get`
 
-  Usage::
+    Usage::
 
       from pygbif import occurrences as occ
       occ.download_list(user = "sckott")
       occ.download_list(user = "sckott", limit = 5)
       occ.download_list(user = "sckott", start = 21)
-  '''
-  if is_none(user):
+    """
+    if is_none(user):
     user = os.environ.get('GBIF_USER')
     if is_none(user):
       stop('user not supplied and no entry for GBIF_USER')
 
-  if is_none(pwd):
+    if is_none(pwd):
     pwd = os.environ.get('GBIF_PWD')
     if is_none(pwd):
       stop('pwd not supplied and no entry for GBIF_PWD')
 
-  url = 'http://api.gbif.org/v1/occurrence/download/user/' + user
-  args = {'limit': limit, 'offset': start}
-  res = gbif_GET(url, args, auth=(user, pwd))
-  return {'meta': {'offset': res['offset'], 'limit': res['limit'],
+    url = 'http://api.gbif.org/v1/occurrence/download/user/' + user
+    args = {'limit': limit, 'offset': start}
+    res = gbif_GET(url, args, auth=(user, pwd))
+    return {'meta': {'offset': res['offset'], 'limit': res['limit'],
     'endofrecords': res['endOfRecords'], 'count': res['count']},
-   'results': res['results']}
+    'results': res['results']}
 
 def download_get(key, path=".", overwrite=False, **kwargs):
-  '''
-  Get a download from GBIF.
+    """
+    Get a download from GBIF.
 
-  :param key: [str] A key generated from a request, like that from `download`
-  :param path: [str] Path to write zip file to. Default: `"."`, with a `.zip`
+    :param key: [str] A key generated from a request, like that from `download`
+    :param path: [str] Path to write zip file to. Default: `"."`, with a `.zip`
     appended to the end.
-  :param **kwargs: Further named arguments passed on to `requests.get`
+    :param **kwargs: Further named arguments passed on to `requests.get`
 
-  Downloads the zip file to a directory you specify on your machine.
-  We stream the zip data to a file. This function only downloads the file.
-  See `download_import` to open a downloaded file in Python. The speed of this
-  function is of course proportional to the size of the file to download, and affected
-  by your internet connection speed. For example, a 58 MB file on my machine took
-  about 26 seconds.
+    Downloads the zip file to a directory you specify on your machine.
+    We stream the zip data to a file. This function only downloads the file.
+    See `download_import` to open a downloaded file in Python. The speed of this
+    function is of course proportional to the size of the file to download, and affected
+    by your internet connection speed. For example, a 58 MB file on my machine took
+    about 26 seconds.
 
-  Usage::
+    Usage::
 
     from pygbif import occurrences as occ
     occ.download_get("0000066-140928181241064")
     occ.download_get("0003983-140910143529206")
-  '''
-  meta = pygbif.occurrences.download_meta(key)
-  if meta['status'] != 'SUCCEEDED':
-    raise Exception('download "%s" not of status SUCCEEDED' % key)
-  else:
+    """
+    meta = pygbif.occurrences.download_meta(key)
+    if meta['status'] != 'SUCCEEDED':
+        raise Exception('download "%s" not of status SUCCEEDED' % key)
+    else:
     print('Download file size: %s bytes' % meta['size'])
     url = 'http://api.gbif.org/v1/occurrence/download/request/' + key
     path = "%s/%s.zip" % (path, key)
@@ -197,19 +319,7 @@ def download_get(key, path=".", overwrite=False, **kwargs):
     return {'path': path, 'size': meta['size'], 'key': key}
 
 
-# helper functions
-def rg_POST(url, req, user, pwd, **kwargs):
-  heads = {'accept': 'application/json',
-    'content-type': 'application/json',
-    'user-agent': 'python-requests/' + requests.__version__ + ',pygbif/' + pygbif.__version__
-  }
-  r = requests.post(url, data = json.dumps(req), headers = heads, auth = auth.HTTPBasicAuth(user, pwd))
-  if r.status_code > 203:
-    raise Exception('error: ' + r.content)
-  if r.headers()['Content-Type'] == 'application/json':
-    raise Exception('not of type json')
 
-  return r.json()
 
 # def rg_POST(url, req, user, pwd, callopts):
 #   tmp = requests.post(url, config = c(
@@ -231,15 +341,15 @@ def rg_POST(url, req, user, pwd, **kwargs):
 # }
 
 def parse_args(x):
-  tmp = re.split('\s', x)
-  type = operator_lkup.get(tmp[1])
-  key = key_lkup.get(tmp[0])
-  return {'type': type, 'key': key, 'value': tmp[2]}
+    tmp = re.split('\s', x)
+    type = operator_lkup.get(tmp[1])
+    key = key_lkup.get(tmp[0])
+    return {'type': type, 'key': key, 'value': tmp[2]}
 
-operator_lkup = {'=': 'equals', '&': 'and', '|': 'or',
-    '<': 'lessThan', '<=': 'lessThanOrEquals', '>': 'greaterThan',
-    '>=': 'greaterThanOrEquals', '!': 'not',
-    'in': 'in', 'within': 'within', 'like': 'like'}
+operator_lkup = {'=': 'equals', '&': 'and', '|': 'or', '<': 'lessThan',
+                 '<=': 'lessThanOrEquals', '>': 'greaterThan',
+                 '>=': 'greaterThanOrEquals', '!': 'not',
+                 'in': 'in', 'within': 'within', 'like': 'like'}
 
 key_lkup = {'taxonKey': 'TAXON_KEY', 'scientificName': 'SCIENTIFIC_NAME', 'country': 'COUNTRY',
      'publishingCountry': 'PUBLISHING_COUNTRY', 'hasCoordinate': 'HAS_COORDINATE',
