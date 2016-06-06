@@ -256,7 +256,7 @@ class GBIFDownload(object):
     def add_geometry(self, polygon, geom_type='within'):
         """add a geometry type of predicate
 
-        :param polygon: In this format 'POLYGON((x1 y1, x2 y2, x3 y3,... xn yn))'
+        :param polygon: In this format 'POLYGON((x1 y1, x2 y2,... xn yn))'
         :param geom_type: type of predicate, e.g. within
         :return:
         """
@@ -284,10 +284,11 @@ class GBIFDownload(object):
 
 def download_meta(key, **kwargs):
     """
-    Retrieves the occurrence download metadata by its unique key.
+    Retrieves the occurrence download metadata by its unique key. Further
+    named arguments passed on to `requests.get` can be included as additional
+    arguments
 
     :param key: [str] A key generated from a request, like that from `download`
-    :param **kwargs: Further named arguments passed on to `requests.get`
 
     Usage::
 
@@ -358,7 +359,7 @@ def download_get(key, path=".", *args, **kwargs):
         print('Download file size: %s bytes' % meta['size'])
         url = 'http://api.gbif.org/v1/occurrence/download/request/' + key
         path = "%s/%s.zip" % (path, key)
-        res = gbif_GET_write(url, path, *args, **kwargs)
+        gbif_GET_write(url, path, *args, **kwargs)
         # options(gbifdownloadpath = path)
         print("On disk at " + path)
         return {'path': path, 'size': meta['size'], 'key': key}
