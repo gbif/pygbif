@@ -167,6 +167,7 @@ class GBIFDownload(object):
                             'predicates': self.predicates
                             }
                         }
+        self.request_id = None
 
         # prepare the geometry polygon constructions
         if polygon:
@@ -262,24 +263,27 @@ class GBIFDownload(object):
         """
         self.predicates.append({'type': geom_type, 'geometry': polygon})
 
-    def post_download(self, user, pwd):
+    def post_download(self, user=None, pwd=None):
         """
 
         :param user: Username
         :param pwd: password
         :return:
         """
-        pprint.pprint(self.payload)
+        user = _check_environ('GBIF_USER', user)
+        pwd = _check_environ('GBIF_PWD', pwd)
+
+        #pprint.pprint(self.payload)
         r = requests.post(self.url,
                           auth=auth.HTTPBasicAuth(user, pwd),
                           data=json.dumps(self.payload),
                           headers=self.header)
-
         if r.status_code > 203:
             raise Exception('error: ' + r.content)
-        if r.headers()['Content-Type'] == 'application/json':
-            raise Exception('not of type json')
-        return r.json()
+        else:
+            self.request_id = r.text
+            print('Your download key is ', self.request_id)
+        return self.request_id
 
 
 def download_meta(key, **kwargs):
