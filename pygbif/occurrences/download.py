@@ -115,18 +115,20 @@ def download(*args, user=None, pwd=None,
                           type='or')
     """
 
-    _check_environ('GBIF_USER', user)
-    _check_environ('GBIF_PWD', pwd)
-    _check_environ('GBIF_EMAIL', email)
+    user = _check_environ('GBIF_USER', user)
+    pwd = _check_environ('GBIF_PWD', pwd)
+    email = _check_environ('GBIF_EMAIL', email)
 
     keyval = [_parse_args(z) for z in args]
 
-    # USE GBIFDownload class
-    #TODO
+    # USE GBIFDownload class to set up the predicates
+    req = GBIFDownload(user, email, main_pred_type=pred_type)
+    for predicate in keyval:
+        req.add_predicate(predicate['key'],
+                          predicate['value'],
+                          predicate['type'])
 
-
-
-    out = rg_POST(url, req, user, pwd, **kwargs)
+    out = req.post_download(user, pwd)
     return [out, user, email]
 
 
@@ -314,8 +316,8 @@ def download_list(user=None, pwd=None, limit=20, start=0):
       occ.download_list(user = "sckott", start = 21)
     """
 
-    _check_environ('GBIF_USER', user)
-    _check_environ('GBIF_PWD', pwd)
+    user = _check_environ('GBIF_USER', user)
+    pwd = _check_environ('GBIF_PWD', pwd)
 
     url = 'http://api.gbif.org/v1/occurrence/download/user/' + user
     args = {'limit': limit, 'offset': start}
