@@ -17,7 +17,7 @@ def _parse_args(x):
 
 
 def _check_environ(variable, value):
-    """check if a variable is added to the environmental variables"""
+    """check if a variable is present in the environmental variables"""
     if is_not_none(value):
         return value
     else:
@@ -132,7 +132,7 @@ def download(*args, user=None, pwd=None,
 
 class GBIFDownload(object):
 
-    def __init__(self, creator, email, polygon=None):
+    def __init__(self, creator, email, polygon=None, main_pred_type='and'):
         """class to setup a JSON doc with the query and POST a request
 
         All predicates (default key-value or iterative based on a list of
@@ -144,6 +144,7 @@ class GBIFDownload(object):
         :param polygon: Polygon of points to extract data from
         """
         self.predicates = []
+        self._main_pred_type = main_pred_type
 
         self.url = 'http://api.gbif.org/v1/occurrence/download/request'
         self.header = {'accept': 'application/json',
@@ -160,7 +161,7 @@ class GBIFDownload(object):
                         'send_notification': 'true',
                         'created': datetime.date.today().year,
                         'predicate': {
-                            'type': 'and',
+                            'type': self.main_pred_type,
                             'predicates': self.predicates
                             }
                         }
@@ -168,6 +169,26 @@ class GBIFDownload(object):
         # prepare the geometry polygon constructions
         if polygon:
             self.add_geometry(polygon)
+
+    @property
+    def main_pred_type(self):
+        """get main predicate combination type"""
+        return self._main_pred_type
+
+    @chunk_size.setter
+    def main_pred_type(self, value):
+        """set main predicate combination type
+
+        :param value: (character) One of equals (=), and (&), or (|),
+            lessThan (<), lessThanOrEquals (<=), greaterThan (>),
+            greaterThanOrEquals (>=), in, within, not (!), like
+        """
+        if value not in operators:
+            value = operator_lkup.get(value)
+        if value:
+            self._main_pred_type = value
+        else:
+            raise Exception("main predicate combiner not a valid operator")
 
     def add_predicate(self, key, value, predicate_type='equals'):
         """
@@ -327,6 +348,10 @@ def download_get(key, path=".", *args, **kwargs):
         # options(gbifdownloadpath = path)
         print("On disk at " + path)
         return {'path': path, 'size': meta['size'], 'key': key}
+
+operators = ['equals', 'and', 'or', 'lessThan', 'lessThanOrEquals',
+             'greaterThan', 'greaterThanOrEquals', 'in', 'within',
+             'not', 'like']
 
 operator_lkup = {'=': 'equals', '&': 'and', '|': 'or', '<': 'lessThan',
                  '<=': 'lessThanOrEquals', '>': 'greaterThan',
