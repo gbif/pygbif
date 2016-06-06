@@ -16,6 +16,20 @@ def _parse_args(x):
     return {'type': pred_type, 'key': key, 'value': tmp[2]}
 
 
+def _check_environ(variable, value):
+    """check if a variable is added to the environmental variables"""
+    if is_not_none(value):
+        return value
+    else:
+        value = os.environ.get(variable)
+        if is_none(value):
+            stop(''.join([variable,
+                          ' not supplied and no entry in environmental \
+                           variables']))
+        else:
+            return value
+
+
 def download(*args, user=None, pwd=None,
              email=None, pred_type='and'):
     """
@@ -101,9 +115,9 @@ def download(*args, user=None, pwd=None,
                           type='or')
     """
 
-    user = os.environ["GBIF_USER"]
-    pwd = os.environ["GBIF_PWD"]
-    email = os.environ["GBIF_EMAIL"]
+    _check_environ('GBIF_USER', user)
+    _check_environ('GBIF_PWD', pwd)
+    _check_environ('GBIF_EMAIL', email)
 
     keyval = [_parse_args(z) for z in args]
 
@@ -266,15 +280,9 @@ def download_list(user=None, pwd=None, limit=20, start=0):
       occ.download_list(user = "sckott", limit = 5)
       occ.download_list(user = "sckott", start = 21)
     """
-    if is_none(user):
-        user = os.environ.get('GBIF_USER')
-        if is_none(user):
-            stop('user not supplied and no entry for GBIF_USER')
 
-    if is_none(pwd):
-        pwd = os.environ.get('GBIF_PWD')
-        if is_none(pwd):
-            stop('pwd not supplied and no entry for GBIF_PWD')
+    _check_environ('GBIF_USER', user)
+    _check_environ('GBIF_PWD', pwd)
 
     url = 'http://api.gbif.org/v1/occurrence/download/user/' + user
     args = {'limit': limit, 'offset': start}
