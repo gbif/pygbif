@@ -1,121 +1,120 @@
 import os
 import re
+import csv
 import json
+import datetime
 import pprint
 from requests import auth
 
 from ..gbifutils import *
 
 
-# def download(*arg, type="and", user = ENV("GBIF_USER"), pwd = ENV("GBIF_PWD"),
-#    email, **kwargs):
-#    '''
-#    Spin up a download request for GBIF occurrence data.
+def _parse_args(x):
+    tmp = re.split('\s', x)
+    pred_type = operator_lkup.get(tmp[1])
+    key = key_lkup.get(tmp[0])
+    return {'type': pred_type, 'key': key, 'value': tmp[2]}
 
-#    :param ...: One or more of query arguments to kick of a download job. See Details.
-#    :param type: (charcter) One of equals (=), and (&), or (|), lessThan (<), lessThanOrEquals (<=),
-#     greaterThan (>), greaterThanOrEquals (>=), in, within, not (!), like
-#    :param user: (character) User name within GBIF's website. Required. Set in your env
-#     vars with the option `GBIF_USER`
-#    :param pwd: (character) User password within GBIF's website. Required. Set in your env
-#     vars with the option `GBIF_PWD`
-#    :param email: (character) Email address to recieve download notice done email. Required.
-#     Set in your env vars with the option `GBIF_EMAIL`
-#    :param **kwargs: Further named arguments passed on to `requests.post`
 
-#     Argument passed have to be passed as character (e.g., 'country = US'), with a space
-#     between key ('country'), operator ('='), and value ('US'). See the `type` parameter for
-#     possible options for the operator.  This character string is parsed internally.
+def download(*args, user=None, pwd=None,
+             email=None, pred_type='and'):
+    """
+    Spin up a download request for GBIF occurrence data.
 
-#     Acceptable arguments to `...` are:
+    :param args: One or more of query arguments to kick of a download job.
+        See Details.
+    :param pred_type: (character) One of equals (=), and (&), or (|),
+        lessThan (<), lessThanOrEquals (<=), greaterThan (>),
+        greaterThanOrEquals (>=), in, within, not (!), like
+    :param user: (character) User name within GBIF's website.
+        Required. Set in your env vars with the option `GBIF_USER`
+    :param pwd: (character) User password within GBIF's website. Required.
+        Set in your env vars with the option `GBIF_PWD`
+    :param email: (character) Email address to recieve download notice done
+        email. Required. Set in your env vars with the option `GBIF_EMAIL`
 
-#      - taxonKey = 'TAXON_KEY'
-#      - scientificName = 'SCIENTIFIC_NAME'
-#      - country = 'COUNTRY'
-#      - publishingCountry = 'PUBLISHING_COUNTRY'
-#      - hasCoordinate = 'HAS_COORDINATE'
-#      - hasGeospatialIssue = 'HAS_GEOSPATIAL_ISSUE'
-#      - typeStatus = 'TYPE_STATUS'
-#      - recordNumber = 'RECORD_NUMBER'
-#      - lastInterpreted = 'LAST_INTERPRETED'
-#      - continent = 'CONTINENT'
-#      - geometry = 'GEOMETRY'
-#      - basisOfRecord = 'BASIS_OF_RECORD'
-#      - datasetKey = 'DATASET_KEY'
-#      - eventDate = 'EVENT_DATE'
-#      - catalogNumber = 'CATALOG_NUMBER'
-#      - year = 'YEAR'
-#      - month = 'MONTH'
-#      - decimalLatitude = 'DECIMAL_LATITUDE'
-#      - decimalLongitude = 'DECIMAL_LONGITUDE'
-#      - elevation = 'ELEVATION'
-#      - depth = 'DEPTH'
-#      - institutionCode = 'INSTITUTION_CODE'
-#      - collectionCode = 'COLLECTION_CODE'
-#      - issue = 'ISSUE'
-#      - mediatype = 'MEDIA_TYPE'
-#      - recordedBy = 'RECORDED_BY'
+    Argument passed have to be passed as character (e.g., 'country = US'),
+    with a space between key ('country'), operator ('='), and value ('US').
+    See the `type` parameter for possible options for the operator.
+    This character string is parsed internally.
 
-#     See the API docs http://www.gbif.org/developer/occurrence#download for
-#     more info, and the predicates docs http://www.gbif.org/developer/occurrence#predicates
+    Acceptable arguments to `...` (args) are:
 
-#     :return: A dictionary, of results
+     - taxonKey = 'TAXON_KEY'
+     - scientificName = 'SCIENTIFIC_NAME'
+     - country = 'COUNTRY'
+     - publishingCountry = 'PUBLISHING_COUNTRY'
+     - hasCoordinate = 'HAS_COORDINATE'
+     - hasGeospatialIssue = 'HAS_GEOSPATIAL_ISSUE'
+     - typeStatus = 'TYPE_STATUS'
+     - recordNumber = 'RECORD_NUMBER'
+     - lastInterpreted = 'LAST_INTERPRETED'
+     - continent = 'CONTINENT'
+     - geometry = 'GEOMETRY'
+     - basisOfRecord = 'BASIS_OF_RECORD'
+     - datasetKey = 'DATASET_KEY'
+     - eventDate = 'EVENT_DATE'
+     - catalogNumber = 'CATALOG_NUMBER'
+     - year = 'YEAR'
+     - month = 'MONTH'
+     - decimalLatitude = 'DECIMAL_LATITUDE'
+     - decimalLongitude = 'DECIMAL_LONGITUDE'
+     - elevation = 'ELEVATION'
+     - depth = 'DEPTH'
+     - institutionCode = 'INSTITUTION_CODE'
+     - collectionCode = 'COLLECTION_CODE'
+     - issue = 'ISSUE'
+     - mediatype = 'MEDIA_TYPE'
+     - recordedBy = 'RECORDED_BY'
 
-#     Usage::
+    See the API docs http://www.gbif.org/developer/occurrence#download
+    for more info, and the predicates docs
+    http://www.gbif.org/developer/occurrence#predicates
 
-#         from pygbif import occurrences as occ
-#         occ.download(args = ["basisOfRecord = LITERATURE", 'decimalLatitude > 50'])
-#         occ.download(args = ['decimalLatitude > 50'])
+    :return: A dictionary, of results
 
-#         occ.download("basisOfRecord = LITERATURE")
-#         occ.download('taxonKey = 3119195')
-#         occ.download('decimalLatitude > 50')
-#         occ.download('elevation >= 9000')
-#         occ.download('decimalLatitude >= 65')
-#         occ.download("country = US")
-#         occ.download("institutionCode = TLMF")
-#         occ.download("catalogNumber = Bird.27847588")
+    Usage::
 
-#         res = occ.download('taxonKey = 7264332', 'hasCoordinate = TRUE')
+        from pygbif import occurrences as occ
+        occ.download(args = ['basisOfRecord = LITERATURE',
+                             'decimalLatitude > 50'])
+        occ.download(args = ['decimalLatitude > 50'])
 
-#         # pass output to download_meta for more information
-#         occ.download_meta(occ.download('decimalLatitude > 75'))
+        occ.download('basisOfRecord = LITERATURE')
+        occ.download('taxonKey = 3119195')
+        occ.download('decimalLatitude > 50')
+        occ.download('elevation >= 9000')
+        occ.download('decimalLatitude >= 65')
+        occ.download('country = US')
+        occ.download('institutionCode = TLMF')
+        occ.download('catalogNumber = Bird.27847588')
 
-#         # Multiple queries
-#         gg = occ.download('decimalLatitude >= 65', 'decimalLatitude <= -65', type="or")
-#         gg = occ.download('depth = 80', 'taxonKey = 2343454', type="or")
-#     '''
-#     url = gbif_baseurl + 'occurrence/download/request'
+        res = occ.download('taxonKey = 7264332', 'hasCoordinate = TRUE')
 
-#     user = os.environ["GBIF_USER"]
-#     pwd = os.environ["GBIF_PWD"]
-#     email = os.environ["GBIF_EMAIL"]
+        # pass output to download_meta for more information
+        occ.download_meta(occ.download('decimalLatitude > 75'))
 
-#     keyval = [ parse_args(z) for z in args ]
+        # Multiple queries
+        gg = occ.download('decimalLatitude >= 65',
+                          'decimalLatitude <= -65', type='or')
+        gg = occ.download('depth = 80', 'taxonKey = 2343454',
+                          type='or')
+    """
 
-#     if len(keyval) > 1:
-#       req = {'creator': user,
-#            'notification_address': email,
-#            'predicate': {'type': type, 'predicates': keyval}}
-#     else:
-#       if type == "within" or "within" in [ s['type'] for s in keyval ]:
-#         req = {'creator': user,
-#              'notification_address': email,
-#              'predicate': {
-#                'type': keyval[0]['type'],
-#                'value': keyval[0]['value']
-#              }}
-#         req['predicate'][keyval[0]['key'].lower()] = req['predicate'].pop('value')
-#       else:
-#         req = {'creator': user,
-#            'notification_address': email,
-#            'predicate': {
-#               'type': keyval[0]['type'],
-#               'key': keyval[0]['key'],
-#               'value': keyval[0]['value']}}
+    user = os.environ["GBIF_USER"]
+    pwd = os.environ["GBIF_PWD"]
+    email = os.environ["GBIF_EMAIL"]
 
-#     out = rg_POST(url, req, user, pwd, **kwargs)
-#     return [out, user, email]
+    keyval = [_parse_args(z) for z in args]
+
+    # USE GBIFDownload class
+    #TODO
+
+
+
+    out = rg_POST(url, req, user, pwd, **kwargs)
+    return [out, user, email]
+
 
 class GBIFDownload(object):
 
@@ -221,10 +220,9 @@ class GBIFDownload(object):
         :param pwd: password
         :return:
         """
-
         pprint.pprint(self.payload)
         r = requests.post(self.url,
-                          auth = auth.HTTPBasicAuth(user, pwd),
+                          auth=auth.HTTPBasicAuth(user, pwd),
                           data=json.dumps(self.payload),
                           headers=self.header)
 
@@ -233,6 +231,7 @@ class GBIFDownload(object):
         if r.headers()['Content-Type'] == 'application/json':
             raise Exception('not of type json')
         return r.json()
+
 
 def download_meta(key, **kwargs):
     """
@@ -250,7 +249,8 @@ def download_meta(key, **kwargs):
     url = 'http://api.gbif.org/v1/occurrence/download/' + key
     return gbif_GET(url, {}, **kwargs)
 
-def download_list(user=None, pwd=None, limit=20, start=0, **kwargs):
+
+def download_list(user=None, pwd=None, limit=20, start=0):
     """
     Lists the downloads created by a user.
 
@@ -258,7 +258,6 @@ def download_list(user=None, pwd=None, limit=20, start=0, **kwargs):
     :param pwd: [str] Your password, look at env var "GBIF_PWD" first
     :param limit: [int] Number of records to return. Default: 20
     :param start: [int] Record number to start at. Default: 0
-    :param **kwargs: Further named arguments passed on to `requests.get`
 
     Usage::
 
@@ -268,23 +267,26 @@ def download_list(user=None, pwd=None, limit=20, start=0, **kwargs):
       occ.download_list(user = "sckott", start = 21)
     """
     if is_none(user):
-    user = os.environ.get('GBIF_USER')
-    if is_none(user):
-      stop('user not supplied and no entry for GBIF_USER')
+        user = os.environ.get('GBIF_USER')
+        if is_none(user):
+            stop('user not supplied and no entry for GBIF_USER')
 
     if is_none(pwd):
-    pwd = os.environ.get('GBIF_PWD')
-    if is_none(pwd):
-      stop('pwd not supplied and no entry for GBIF_PWD')
+        pwd = os.environ.get('GBIF_PWD')
+        if is_none(pwd):
+            stop('pwd not supplied and no entry for GBIF_PWD')
 
     url = 'http://api.gbif.org/v1/occurrence/download/user/' + user
     args = {'limit': limit, 'offset': start}
     res = gbif_GET(url, args, auth=(user, pwd))
-    return {'meta': {'offset': res['offset'], 'limit': res['limit'],
-    'endofrecords': res['endOfRecords'], 'count': res['count']},
-    'results': res['results']}
+    return {'meta': {'offset': res['offset'],
+                     'limit': res['limit'],
+                     'endofrecords': res['endOfRecords'],
+                     'count': res['count']},
+            'results': res['results']}
 
-def download_get(key, path=".", overwrite=False, **kwargs):
+
+def download_get(key, path=".", *args, **kwargs):
     """
     Get a download from GBIF.
 
@@ -310,53 +312,41 @@ def download_get(key, path=".", overwrite=False, **kwargs):
     if meta['status'] != 'SUCCEEDED':
         raise Exception('download "%s" not of status SUCCEEDED' % key)
     else:
-    print('Download file size: %s bytes' % meta['size'])
-    url = 'http://api.gbif.org/v1/occurrence/download/request/' + key
-    path = "%s/%s.zip" % (path, key)
-    res = gbif_GET_write(url, path, **kwargs)
-    # options(gbifdownloadpath = path)
-    print( "On disk at " + path )
-    return {'path': path, 'size': meta['size'], 'key': key}
-
-
-
-
-# def rg_POST(url, req, user, pwd, callopts):
-#   tmp = requests.post(url, config = c(
-#     content_type_json(),
-#     accept_json(),
-#     authenticate(user = user, password = pwd),
-#     callopts), body = jsonlite::toJSON(req),
-#     make_rgbif_ua())
-#   if (tmp$status_code > 203) stop(content(tmp, as = "text"), call. = FALSE)
-#   stopifnot(tmp$header$`content-type` == 'application/json')
-#   content(tmp, as = "text")
-
-# print.download = function(x, ...) {
-#   stopifnot(is(x, 'download'))
-#   cat("<<gbif download>>", "\n", sep = "")
-#   cat("  Username: ", attr(x, "user"), "\n", sep = "")
-#   cat("  E-mail: ", attr(x, "email"), "\n", sep = "")
-#   cat("  Download key: ", x, "\n", sep = "")
-# }
-
-def parse_args(x):
-    tmp = re.split('\s', x)
-    type = operator_lkup.get(tmp[1])
-    key = key_lkup.get(tmp[0])
-    return {'type': type, 'key': key, 'value': tmp[2]}
+        print('Download file size: %s bytes' % meta['size'])
+        url = 'http://api.gbif.org/v1/occurrence/download/request/' + key
+        path = "%s/%s.zip" % (path, key)
+        res = gbif_GET_write(url, path, *args, **kwargs)
+        # options(gbifdownloadpath = path)
+        print("On disk at " + path)
+        return {'path': path, 'size': meta['size'], 'key': key}
 
 operator_lkup = {'=': 'equals', '&': 'and', '|': 'or', '<': 'lessThan',
                  '<=': 'lessThanOrEquals', '>': 'greaterThan',
                  '>=': 'greaterThanOrEquals', '!': 'not',
                  'in': 'in', 'within': 'within', 'like': 'like'}
 
-key_lkup = {'taxonKey': 'TAXON_KEY', 'scientificName': 'SCIENTIFIC_NAME', 'country': 'COUNTRY',
-     'publishingCountry': 'PUBLISHING_COUNTRY', 'hasCoordinate': 'HAS_COORDINATE',
-     'hasGeospatialIssue': 'HAS_GEOSPATIAL_ISSUE', 'typeStatus': 'TYPE_STATUS',
-     'recordNumber': 'RECORD_NUMBER', 'lastInterpreted': 'LAST_INTERPRETED', 'continent': 'CONTINENT',
-     'geometry': 'GEOMETRY', 'basisOfRecord': 'BASIS_OF_RECORD', 'datasetKey': 'DATASET_KEY',
-     'eventDate': 'EVENT_DATE', 'catalogNumber': 'CATALOG_NUMBER', 'year': 'YEAR', 'month': 'MONTH',
-     'decimalLatitude': 'DECIMAL_LATITUDE', 'decimalLongitude': 'DECIMAL_LONGITUDE', 'elevation': 'ELEVATION',
-     'depth': 'DEPTH', 'institutionCode': 'INSTITUTION_CODE', 'collectionCode': 'COLLECTION_CODE',
-     'issue': 'ISSUE', 'mediatype': 'MEDIA_TYPE', 'recordedBy': 'RECORDED_BY'}
+key_lkup = {'taxonKey': 'TAXON_KEY',
+            'scientificName': 'SCIENTIFIC_NAME',
+            'country': 'COUNTRY',
+            'publishingCountry': 'PUBLISHING_COUNTRY',
+            'hasCoordinate': 'HAS_COORDINATE',
+            'hasGeospatialIssue': 'HAS_GEOSPATIAL_ISSUE',
+            'typeStatus': 'TYPE_STATUS',
+            'recordNumber': 'RECORD_NUMBER',
+            'lastInterpreted': 'LAST_INTERPRETED',
+            'continent': 'CONTINENT',
+            'geometry': 'GEOMETRY',
+            'basisOfRecord': 'BASIS_OF_RECORD',
+            'datasetKey': 'DATASET_KEY',
+            'eventDate': 'EVENT_DATE',
+            'catalogNumber': 'CATALOG_NUMBER',
+            'year': 'YEAR', 'month': 'MONTH',
+            'decimalLatitude': 'DECIMAL_LATITUDE',
+            'decimalLongitude': 'DECIMAL_LONGITUDE',
+            'elevation': 'ELEVATION',
+            'depth': 'DEPTH',
+            'institutionCode': 'INSTITUTION_CODE',
+            'collectionCode': 'COLLECTION_CODE',
+            'issue': 'ISSUE',
+            'mediatype': 'MEDIA_TYPE',
+            'recordedBy': 'RECORDED_BY'}
