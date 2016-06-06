@@ -129,7 +129,7 @@ def download(*args, user=None, pwd=None,
                           predicate['type'])
 
     out = req.post_download(user, pwd)
-    return [out, user, email]
+    return (out, user, email)
 
 
 class GBIFDownload(object):
@@ -279,11 +279,23 @@ class GBIFDownload(object):
                           data=json.dumps(self.payload),
                           headers=self.header)
         if r.status_code > 203:
-            raise Exception('error: ' + r.content)
+            raise Exception('error: ' + r.text +
+                            ', with error status code ' +
+                            str(r.status_code) +
+                            'check your number of active downloads.')
         else:
             self.request_id = r.text
             print('Your download key is ', self.request_id)
         return self.request_id
+
+    def get_status(self):
+        """get the current download status"""
+        return get_download_status(self.request_id)
+
+
+def get_download_status(request_key):
+    """get the current download status"""
+    return download_meta(request_key).get('status')
 
 
 def download_meta(key, **kwargs):
