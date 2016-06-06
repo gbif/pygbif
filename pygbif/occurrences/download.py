@@ -24,8 +24,8 @@ def _check_environ(variable, value):
         value = os.environ.get(variable)
         if is_none(value):
             stop(''.join([variable,
-                          ' not supplied and no entry in environmental \
-                           variables']))
+                          """ not supplied and no entry in environmental 
+                           variables"""]))
         else:
             return value
 
@@ -37,49 +37,49 @@ def download(*args, user=None, pwd=None,
 
     :param args: One or more of query arguments to kick of a download job.
         See Details.
-    :param pred_type: (character) One of equals (=), and (&), or (|),
-        lessThan (<), lessThanOrEquals (<=), greaterThan (>),
-        greaterThanOrEquals (>=), in, within, not (!), like
+    :param pred_type: (character) One of ``equals`` (``=``), ``and`` (``&``), ``or`` (``|``),
+        ``lessThan`` (``<``), ``lessThanOrEquals`` (``<=``), ``greaterThan`` (``>``),
+        ``greaterThanOrEquals`` (``>=``), ``in``, ``within``, ``not`` (``!``), ``like``
     :param user: (character) User name within GBIF's website.
-        Required. Set in your env vars with the option `GBIF_USER`
+        Required. Set in your env vars with the option ``GBIF_USER``
     :param pwd: (character) User password within GBIF's website. Required.
-        Set in your env vars with the option `GBIF_PWD`
+        Set in your env vars with the option ``GBIF_PWD``
     :param email: (character) Email address to recieve download notice done
-        email. Required. Set in your env vars with the option `GBIF_EMAIL`
+        email. Required. Set in your env vars with the option ``GBIF_EMAIL``
 
-    Argument passed have to be passed as character (e.g., 'country = US'),
-    with a space between key ('country'), operator ('='), and value ('US').
-    See the `type` parameter for possible options for the operator.
+    Argument passed have to be passed as character (e.g., ``country = US``),
+    with a space between key (``country``), operator (``=``), and value (``US``).
+    See the ``type`` parameter for possible options for the operator.
     This character string is parsed internally.
 
-    Acceptable arguments to `...` (args) are:
+    Acceptable arguments to ``...`` (args) are:
 
-     - taxonKey = 'TAXON_KEY'
-     - scientificName = 'SCIENTIFIC_NAME'
-     - country = 'COUNTRY'
-     - publishingCountry = 'PUBLISHING_COUNTRY'
-     - hasCoordinate = 'HAS_COORDINATE'
-     - hasGeospatialIssue = 'HAS_GEOSPATIAL_ISSUE'
-     - typeStatus = 'TYPE_STATUS'
-     - recordNumber = 'RECORD_NUMBER'
-     - lastInterpreted = 'LAST_INTERPRETED'
-     - continent = 'CONTINENT'
-     - geometry = 'GEOMETRY'
-     - basisOfRecord = 'BASIS_OF_RECORD'
-     - datasetKey = 'DATASET_KEY'
-     - eventDate = 'EVENT_DATE'
-     - catalogNumber = 'CATALOG_NUMBER'
-     - year = 'YEAR'
-     - month = 'MONTH'
-     - decimalLatitude = 'DECIMAL_LATITUDE'
-     - decimalLongitude = 'DECIMAL_LONGITUDE'
-     - elevation = 'ELEVATION'
-     - depth = 'DEPTH'
-     - institutionCode = 'INSTITUTION_CODE'
-     - collectionCode = 'COLLECTION_CODE'
-     - issue = 'ISSUE'
-     - mediatype = 'MEDIA_TYPE'
-     - recordedBy = 'RECORDED_BY'
+     - taxonKey = ``TAXON_KEY``
+     - scientificName = ``SCIENTIFIC_NAME``
+     - country = ``COUNTRY``
+     - publishingCountry = ``PUBLISHING_COUNTRY``
+     - hasCoordinate = ``HAS_COORDINATE``
+     - hasGeospatialIssue = ``HAS_GEOSPATIAL_ISSUE``
+     - typeStatus = ``TYPE_STATUS``
+     - recordNumber = ``RECORD_NUMBER``
+     - lastInterpreted = ``LAST_INTERPRETED``
+     - continent = ``CONTINENT``
+     - geometry = ``GEOMETRY``
+     - basisOfRecord = ``BASIS_OF_RECORD``
+     - datasetKey = ``DATASET_KEY``
+     - eventDate = ``EVENT_DATE``
+     - catalogNumber = ``CATALOG_NUMBER``
+     - year = ``YEAR``
+     - month = ``MONTH``
+     - decimalLatitude = ``DECIMAL_LATITUDE``
+     - decimalLongitude = ``DECIMAL_LONGITUDE``
+     - elevation = ``ELEVATION``
+     - depth = ``DEPTH``
+     - institutionCode = ``INSTITUTION_CODE``
+     - collectionCode = ``COLLECTION_CODE``
+     - issue = ``ISSUE``
+     - mediatype = ``MEDIA_TYPE``
+     - recordedBy = ``RECORDED_BY``
 
     See the API docs http://www.gbif.org/developer/occurrence#download
     for more info, and the predicates docs
@@ -181,9 +181,9 @@ class GBIFDownload(object):
     def main_pred_type(self, value):
         """set main predicate combination type
 
-        :param value: (character) One of equals (=), and (&), or (|),
-            lessThan (<), lessThanOrEquals (<=), greaterThan (>),
-            greaterThanOrEquals (>=), in, within, not (!), like
+        :param value: (character) One of ``equals`` (``=``), ``and`` (``&``), ``or`` (``|``),
+        ``lessThan`` (``<``), ``lessThanOrEquals`` (``<=``), ``greaterThan`` (``>``),
+        ``greaterThanOrEquals`` (``>=``), ``in``, ``within``, ``not`` (``!``), ``like``
         """
         if value not in operators:
             value = operator_lkup.get(value)
@@ -198,7 +198,7 @@ class GBIFDownload(object):
 
         :param key: query KEY parameter
         :param value: the value used in the predicate
-        :param predicate_type: the type of predicate (e.g. equals)
+        :param predicate_type: the type of predicate (e.g. ``equals``)
         """
         if predicate_type not in operators:
             predicate_type = operator_lkup.get(predicate_type)
@@ -232,10 +232,10 @@ class GBIFDownload(object):
     def add_iterative_predicate(self, key, values_list):
         """add an iterative predicate with a key and set of values
         which it can be equal to in and or function.
-        The individual predicates are specified with the type 'equals' and
-        combined with a type 'or'.
+        The individual predicates are specified with the type ``equals`` and
+        combined with a type ``or``.
 
-        The main reason for this addition is the inability of using 'in' as
+        The main reason for this addition is the inability of using ``in`` as
         predicate type wfor multiple taxon_key values
         (cfr. http://dev.gbif.org/issues/browse/POR-2753)
 
@@ -256,8 +256,8 @@ class GBIFDownload(object):
     def add_geometry(self, polygon, geom_type='within'):
         """add a geometry type of predicate
 
-        :param polygon: In this format 'POLYGON((x1 y1, x2 y2,... xn yn))'
-        :param geom_type: type of predicate, e.g. within
+        :param polygon: In this format ``POLYGON((x1 y1, x2 y2,... xn yn))``
+        :param geom_type: type of predicate, e.g. ``within``
         :return:
         """
         self.predicates.append({'type': geom_type, 'geometry': polygon})
@@ -266,7 +266,7 @@ class GBIFDownload(object):
         """
 
         :param user: Username
-        :param pwd: password
+        :param pwd: Password
         :return:
         """
         pprint.pprint(self.payload)
@@ -285,10 +285,10 @@ class GBIFDownload(object):
 def download_meta(key, **kwargs):
     """
     Retrieves the occurrence download metadata by its unique key. Further
-    named arguments passed on to `requests.get` can be included as additional
+    named arguments passed on to ``requests.get`` can be included as additional
     arguments
 
-    :param key: [str] A key generated from a request, like that from `download`
+    :param key: [str] A key generated from a request, like that from ``download``
 
     Usage::
 
@@ -304,10 +304,10 @@ def download_list(user=None, pwd=None, limit=20, start=0):
     """
     Lists the downloads created by a user.
 
-    :param user: [str] A user name, look at env var "GBIF_USER" first
-    :param pwd: [str] Your password, look at env var "GBIF_PWD" first
-    :param limit: [int] Number of records to return. Default: 20
-    :param start: [int] Record number to start at. Default: 0
+    :param user: [str] A user name, look at env var ``GBIF_USER`` first
+    :param pwd: [str] Your password, look at env var ``GBIF_PWD`` first
+    :param limit: [int] Number of records to return. Default: ``20``
+    :param start: [int] Record number to start at. Default: ``0``
 
     Usage::
 
@@ -334,23 +334,22 @@ def download_get(key, path=".", *args, **kwargs):
     """
     Get a download from GBIF.
 
-    :param key: [str] A key generated from a request, like that from `download`
-    :param path: [str] Path to write zip file to. Default: `"."`, with a `.zip`
-    appended to the end.
-    :param **kwargs: Further named arguments passed on to `requests.get`
+    :param key: [str] A key generated from a request, like that from ``download``
+    :param path: [str] Path to write zip file to. Default: ``"."``, with a ``.zip`` appended to the end.
+    :param **kwargs: Further named arguments passed on to ``requests.get``
 
     Downloads the zip file to a directory you specify on your machine.
     We stream the zip data to a file. This function only downloads the file.
-    See `download_import` to open a downloaded file in Python. The speed of this
+    See ``download_import`` to open a downloaded file in Python. The speed of this
     function is of course proportional to the size of the file to download, and affected
     by your internet connection speed. For example, a 58 MB file on my machine took
     about 26 seconds.
 
     Usage::
 
-    from pygbif import occurrences as occ
-    occ.download_get("0000066-140928181241064")
-    occ.download_get("0003983-140910143529206")
+      from pygbif import occurrences as occ
+      occ.download_get("0000066-140928181241064")
+      occ.download_get("0003983-140910143529206")
     """
     meta = pygbif.occurrences.download_meta(key)
     if meta['status'] != 'SUCCEEDED':

@@ -130,7 +130,7 @@
            <div itemprop="articleBody">
             
   <h1>Source code for pygbif.registry.networks</h1><div class="highlight"><pre>
-<span class="kn">from</span> <span class="nn">..gbifutils</span> <span class="kn">import</span> <span class="o">*</span>
+<span></span><span class="kn">from</span> <span class="nn">..gbifutils</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">.registry_utils</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="k">def</span> <span class="nf">networks</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">uuid</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">query</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span> <span class="n">identifier</span> <span class="o">=</span> <span class="bp">None</span><span class="p">,</span>
@@ -138,10 +138,10 @@
   <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">  Networks metadata.</span>
 
-<span class="sd">  :param data: [str] The type of data to get. Default: &#39;all&#39;</span>
+<span class="sd">  :param data: [str] The type of data to get. Default: ``all``</span>
 <span class="sd">  :param uuid: [str] UUID of the data network provider. This must be specified if data</span>
-<span class="sd">     is anything other than &#39;all&#39;.</span>
-<span class="sd">  :param query: [str] Query networks. Only used when `data = &#39;all&#39;`. Ignored otherwise.</span>
+<span class="sd">     is anything other than ``all``.</span>
+<span class="sd">  :param query: [str] Query networks. Only used when ``data = &#39;all&#39;``. Ignored otherwise.</span>
 
 <span class="sd">  References: http://www.gbif.org/developer/registry#networks</span>
 
@@ -178,6 +178,7 @@
     <span class="k">return</span> <span class="n">getdata</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">uuid</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
   <span class="k">else</span><span class="p">:</span>
     <span class="k">return</span> <span class="p">[</span><span class="n">getdata</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">uuid</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span>
+
 </pre></div>
 
            </div>

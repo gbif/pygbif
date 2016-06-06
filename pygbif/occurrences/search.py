@@ -19,65 +19,65 @@ def search(taxonKey=None, scientificName=None, country=None,
     :param recordedBy: [str] The person who recorded the occurrence.
     :param collectionCode: [str] An identifier of any form assigned by the source to identify the physical collection or digital dataset uniquely within the text of an institution.
     :param institutionCode: [str] An identifier of any form assigned by the source to identify the institution the record belongs to. Not guaranteed to be que.
-    :param country: [str] The 2-letter country code (as per ISO-3166-1) of the country in which the occurrence was recorded. See here http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2}
+    :param country: [str] The 2-letter country code (as per ISO-3166-1) of the country in which the occurrence was recorded. See here http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
     :param basisOfRecord: [str] Basis of record, as defined in our BasisOfRecord enum here http://gbif.github.io/gbif-api/apidocs/org/gbif/api/vocabulary/BasisOfRecord.html Acceptable values are:
 
-     - FOSSIL_SPECIMEN An occurrence record describing a fossilized specimen.
-     - HUMAN_OBSERVATION An occurrence record describing an observation made by one or more people.
-     - LITERATURE An occurrence record based on literature alone.
-     - LIVING_SPECIMEN An occurrence record describing a living specimen, e.g.
-     - MACHINE_OBSERVATION An occurrence record describing an observation made by a machine.
-     - OBSERVATION An occurrence record describing an observation.
-     - PRESERVED_SPECIMEN An occurrence record describing a preserved specimen.
-     - UNKNOWN Unknown basis for the record.
+     - ``FOSSIL_SPECIMEN`` An occurrence record describing a fossilized specimen.
+     - ``HUMAN_OBSERVATION`` An occurrence record describing an observation made by one or more people.
+     - ``LITERATURE`` An occurrence record based on literature alone.
+     - ``LIVING_SPECIMEN`` An occurrence record describing a living specimen, e.g.
+     - ``MACHINE_OBSERVATION`` An occurrence record describing an observation made by a machine.
+     - ``OBSERVATION`` An occurrence record describing an observation.
+     - ``PRESERVED_SPECIMEN`` An occurrence record describing a preserved specimen.
+     - ``UNKNOWN`` Unknown basis for the record.
 
     :param eventDate: [date] Occurrence date in ISO 8601 format: yyyy, yyyy-MM, yyyy-MM-dd, or
-       MM-dd. Supports range queries, smaller,larger (e.g., '1990,1991', whereas '1991,1990'
+       MM-dd. Supports range queries, smaller,larger (e.g., ``1990,1991``, whereas ``1991,1990``
        wouldn't work)
     :param year: [int] The 4 digit year. A year of 98 will be interpreted as AD 98. Supports range queries,
-       smaller,larger (e.g., '1990,1991', whereas '1991,1990' wouldn't work)
+       smaller,larger (e.g., ``1990,1991``, whereas ``1991,1990`` wouldn't work)
     :param month: [int] The month of the year, starting with 1 for January. Supports range queries,
-       smaller,larger (e.g., '1,2', whereas '2,1' wouldn't work)
+       smaller,larger (e.g., ``1,2``, whereas ``2,1`` wouldn't work)
     :param q: [str] Query terms. The value for this parameter can be a simple word or a phrase.
     :param decimalLatitude: [float] Latitude in decimals between -90 and 90 based on WGS 84.
-       Supports range queries, smaller,larger (e.g., '25,30', whereas '30,25' wouldn't work)
+       Supports range queries, smaller,larger (e.g., ``25,30``, whereas ``30,25`` wouldn't work)
     :param decimalLongitude: [float] Longitude in decimals between -180 and 180 based on WGS 84.
-       Supports range queries (e.g., '-0.4,-0.2', whereas '-0.2,-0.4' wouldn't work).
+       Supports range queries (e.g., ``-0.4,-0.2``, whereas ``-0.2,-0.4`` wouldn't work).
     :param publishingCountry: [str] The 2-letter country code (as per ISO-3166-1) of the
        country in which the occurrence was recorded.
     :param elevation: [int/str] Elevation in meters above sea level. Supports range queries, smaller,larger
-       (e.g., '5,30', whereas '30,5' wouldn't work)
+       (e.g., ``5,30``, whereas ``30,5`` wouldn't work)
     :param depth: [int/str] Depth in meters relative to elevation. For example 10 meters below a
-       lake surface with given elevation. Supports range queries, smaller,larger (e.g., '5,30',
-       whereas '30,5' wouldn't work)
+       lake surface with given elevation. Supports range queries, smaller,larger (e.g., ``5,30``,
+       whereas ``30,5`` wouldn't work)
     :param geometry: [str] Searches for occurrences inside a polygon described in Well Known
        Text (WKT) format. A WKT shape written as either POINT, LINESTRING, LINEARRING
-       or POLYGON. Example of a polygon: ((30.1 10.1, 20, 20 40, 40 40, 30.1 10.1)) would be queried as http://bit.ly/1BzNwDq}.
+       or POLYGON. Example of a polygon: ``((30.1 10.1, 20, 20 40, 40 40, 30.1 10.1))`` would be queried as http://bit.ly/1BzNwDq.
     :param hasGeospatialIssue: [bool] Includes/excludes occurrence records which contain spatial
-       issues (as determined in our record interpretation), i.e. \code{hasGeospatialIssue=TRUE}
-       returns only those records with spatial issues while \code{hasGeospatialIssue=FALSE} includes
+       issues (as determined in our record interpretation), i.e. ``hasGeospatialIssue=TRUE``
+       returns only those records with spatial issues while ``hasGeospatialIssue=FALSE`` includes
        only records without spatial issues. The absence of this parameter returns any
        record with or without spatial issues.
     :param issue: [str] One or more of many possible issues with each occurrence record. See
        Details. Issues passed to this parameter filter results by the issue.
-    :param hasCoordinate: (logical) Return only occurence records with lat/long data (TRUE) or
-       all records (FALSE, default).
+    :param hasCoordinate: (logical) Return only occurence records with lat/long data (``TRUE``) or
+       all records (``FALSE``, default).
     :param typeStatus: [str] Type status of the specimen. One of many options. See ?typestatus
     :param recordNumber: [int] Number recorded by collector of the data, different from GBIF record
        number. See http://rs.tdwg.org/dwc/terms/#recordNumber} for more info
     :param lastInterpreted: [date] Date the record was last modified in GBIF, in ISO 8601 format:
        yyyy, yyyy-MM, yyyy-MM-dd, or MM-dd.  Supports range queries, smaller,larger (e.g.,
-       '1990,1991', whereas '1991,1990' wouldn't work)
-    :param continent: [str] Continent. One of africa, antarctica, asia, europe, north_america
-       (North America includes the Caribbean and reachies down and includes Panama), oceania,
-       or south_america
-    :param fields: [str] Default ('all') returns all fields. 'minimal' returns just taxon name,
-       key, latitude, and longitute. Or specify each field you want returned by name, e.g.
-       fields = c('name','latitude','elevation').
-    :param mediatype: [str] Media type. Default is NULL, so no filtering on mediatype. Options:
-       NULL, 'MovingImage', 'Sound', and 'StillImage'
-    :param limit: [int] Number of results to return. Default: 300
-    :param offset: [int] Record to start at. Default: 0
+       ``1990,1991``, whereas ``1991,1990`` wouldn't work)
+    :param continent: [str] Continent. One of ``africa``, ``antarctica``, ``asia``, ``europe``, ``north_america``
+       (North America includes the Caribbean and reachies down and includes Panama), ``oceania``,
+       or ``south_america``
+    :param fields: [str] Default (``all``) returns all fields. ``minimal`` returns just taxon name,
+       key, latitude, and longitude. Or specify each field you want returned by name, e.g.
+       ``fields = c('name','latitude','elevation')``.
+    :param mediatype: [str] Media type. Default is ``NULL``, so no filtering on mediatype. Options:
+       ``NULL``, ``MovingImage``, ``Sound``, and ``StillImage``
+    :param limit: [int] Number of results to return. Default: ``300``
+    :param offset: [int] Record to start at. Default: ``0``
 
     :return: A dictionary, of results
 

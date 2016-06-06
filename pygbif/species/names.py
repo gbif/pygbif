@@ -24,12 +24,12 @@ def name_backbone(name, rank=None, kingdom=None, phylum=None, clazz=None,
      taxon in the upper classification (optional)
   :param verbose: [bool] If True show alternative matches considered which had been rejected.
 
-  A list for a single taxon with many slots (with verbose=False - default), or a
+  A list for a single taxon with many slots (with ``verbose=False`` - default), or a
   list of length two, first element for the suggested taxon match, and a data.frame
-  with alternative name suggestions resulting from fuzzy matching (with verbose=True).
+  with alternative name suggestions resulting from fuzzy matching (with ``verbose=True``).
 
   If you don't get a match GBIF gives back a list of length 3 with slots synonym,
-  confidence, and matchType='NONE'.
+  confidence, and ``matchType='NONE'``.
 
   reference: http://www.gbif.org/developer/species#searching
 
@@ -69,14 +69,14 @@ def name_suggest(q=None, datasetKey=None, rank=None, fields=None, start=None, li
 
   :param q: [str] Simple search parameter. The value for this parameter can be a
      simple word or a phrase. Wildcards can be added to the simple word parameters only,
-     e.g. q=*puma* (Required)
+     e.g. ``q=*puma*`` (Required)
   :param datasetKey: [str] Filters by the checklist dataset key (a uuid, see examples)
-  :param rank: [str] A taxonomic rank. One of class, cultivar, cultivar_group, domain, family,
-     form, genus, informal, infrageneric_name, infraorder, infraspecific_name,
-     infrasubspecific_name, kingdom, order, phylum, section, series, species, strain, subclass,
-     subfamily, subform, subgenus, subkingdom, suborder, subphylum, subsection, subseries,
-     subspecies, subtribe, subvariety, superclass, superfamily, superorder, superphylum,
-     suprageneric_name, tribe, unranked, or variety.
+  :param rank: [str] A taxonomic rank. One of ``class``, ``cultivar``, ``cultivar_group``, ``domain``, ``family``,
+     ``form``, ``genus``, ``informal``, ``infrageneric_name``, ``infraorder``, ``infraspecific_name``,
+     ``infrasubspecific_name``, ``kingdom``, ``order``, ``phylum``, ``section``, ``series``, ``species``, ``strain``, ``subclass``,
+     ``subfamily``, ``subform``, ``subgenus``, ``subkingdom``, ``suborder``, ``subphylum``, ``subsection``, ``subseries``,
+     ``subspecies``, ``subtribe``, ``subvariety``, ``superclass``, ``superfamily``, ``superorder``, ``superphylum``,
+     ``suprageneric_name``, ``tribe``, ``unranked``, or ``variety``.
 
   :return: A dictionary, of results
 
@@ -110,67 +110,67 @@ def name_suggest(q=None, datasetKey=None, rank=None, fields=None, start=None, li
 #   This service uses fuzzy lookup so that you can put in partial names and
 #   you should get back those things that match. See examples below.
 
-#   Faceting: If `facet=FALSE` or left to the default (NULL), no faceting is done. And therefore,
-#   all parameters with facet in their name are ignored (facetOnly, facetMincount, facetMultiselect).
+#   Faceting: If ``facet=FALSE`` or left to the default (``NULL``), no faceting is done. And therefore,
+#   all parameters with facet in their name are ignored (``facetOnly``, ``facetMincount``, ``facetMultiselect``).
 
 #   :param query: [str] Query term(s) for full text search (optional)
-#   :param rank: [str] CLASS, CULTIVAR, CULTIVAR_GROUP, DOMAIN, FAMILY, FORM, GENUS, INFORMAL,
-#      INFRAGENERIC_NAME, INFRAORDER, INFRASPECIFIC_NAME, INFRASUBSPECIFIC_NAME, KINGDOM,
-#      ORDER, PHYLUM, SECTION, SERIES, SPECIES, STRAIN, SUBCLASS, SUBFAMILY, SUBFORM,
-#      SUBGENUS, SUBKINGDOM, SUBORDER, SUBPHYLUM, SUBSECTION, SUBSERIES, SUBSPECIES,
-#      SUBTRIBE, SUBVARIETY, SUPERCLASS, SUPERFAMILY, SUPERORDER, SUPERPHYLUM,
-#      SUPRAGENERIC_NAME, TRIBE, UNRANKED, VARIETY (optional)
+#   :param rank: [str] ``CLASS``, ``CULTIVAR``, ``CULTIVAR_GROUP``, ``DOMAIN``, ``FAMILY``,
+#      ``FORM``, ``GENUS``, ``INFORMAL``, ``INFRAGENERIC_NAME``, ``INFRAORDER``, ``INFRASPECIFIC_NAME``,
+#      ``INFRASUBSPECIFIC_NAME``, ``KINGDOM``, ``ORDER``, ``PHYLUM``, ``SECTION``, ``SERIES``, ``SPECIES``, ``STRAIN``, ``SUBCLASS``,
+#      ``SUBFAMILY``, ``SUBFORM``, ``SUBGENUS``, ``SUBKINGDOM``, ``SUBORDER``, ``SUBPHYLUM``, ``SUBSECTION``, ``SUBSERIES``,
+#      ``SUBSPECIES``, ``SUBTRIBE``, ``SUBVARIETY``, ``SUPERCLASS``, ``SUPERFAMILY``, ``SUPERORDER``, ``SUPERPHYLUM``,
+#      ``SUPRAGENERIC_NAME``, ``TRIBE``, ``UNRANKED``, ``VARIETY`` (optional)
 #   :param verbose: [bool] If True show alternative matches considered which had been rejected.
 #   :param higherTaxonKey: [str] Filters by any of the higher Linnean rank keys. Note this
 #       is within the respective checklist and not searching nub keys across all checklists (optional)
 #   :param status: [str] (optional) Filters by the taxonomic status as one of:
-#     - ACCEPTED
-#     - DETERMINATION_SYNONYM Used for unknown child taxa referred to via spec, ssp, ...
-#     - DOUBTFUL Treated as accepted, but doubtful whether this is correct.
-#     - HETEROTYPIC_SYNONYM More specific subclass of SYNONYM.
-#     - HOMOTYPIC_SYNONYM More specific subclass of SYNONYM.
-#     - INTERMEDIATE_RANK_SYNONYM Used in nub only.
-#     - MISAPPLIED More specific subclass of SYNONYM.
-#     - PROPARTE_SYNONYM More specific subclass of SYNONYM.
-#     - SYNONYM A general synonym, the exact type is unknown.
-#   :param isExtinct: [bool] Filters by extinction status (e.g. isExtinct=TRUE)
-#   :param habitat: [str] Filters by habitat. One of: marine, freshwater, or
-#       terrestrial (optional)
+#     - ``ACCEPTED``
+#     - ``DETERMINATION_SYNONYM`` Used for unknown child taxa referred to via spec, ssp, ...
+#     - ``DOUBTFUL`` Treated as accepted, but doubtful whether this is correct.
+#     - ``HETEROTYPIC_SYNONYM`` More specific subclass of ``SYNONYM``.
+#     - ``HOMOTYPIC_SYNONYM`` More specific subclass of ``SYNONYM``.
+#     - ``INTERMEDIATE_RANK_SYNONYM`` Used in nub only.
+#     - ``MISAPPLIED`` More specific subclass of ``SYNONYM``.
+#     - ``PROPARTE_SYNONYM`` More specific subclass of ``SYNONYM``.
+#     - ``SYNONYM`` A general synonym, the exact type is unknown.
+#   :param isExtinct: [bool] Filters by extinction status (e.g. ``isExtinct=TRUE``)
+#   :param habitat: [str] Filters by habitat. One of: ``marine``, ``freshwater``, or
+#       ``terrestrial`` (optional)
 #   :param nameType: [str] (optional) Filters by the name type as one of:
-#     - BLACKLISTED surely not a scientific name.
-#     - CANDIDATUS Candidatus is a component of the taxonomic name for a bacterium
+#     - ``BLACKLISTED`` surely not a scientific name.
+#     - ``CANDIDATUS`` Candidatus is a component of the taxonomic name for a bacterium
 #     that cannot be maintained in a Bacteriology Culture Collection.
-#     - CULTIVAR a cultivated plant name.
-#     - DOUBTFUL doubtful whether this is a scientific name at all.
-#     - HYBRID a hybrid formula (not a hybrid name).
-#     - INFORMAL a scientific name with some informal addition like "cf." or
+#     - ``CULTIVAR`` a cultivated plant name.
+#     - ``DOUBTFUL`` doubtful whether this is a scientific name at all.
+#     - ``HYBRID`` a hybrid formula (not a hybrid name).
+#     - ``INFORMAL`` a scientific name with some informal addition like "cf." or
 #     indetermined like Abies spec.
-#     - SCINAME a scientific name which is not well formed.
-#     - VIRUS a virus name.
-#     - WELLFORMED a well formed scientific name according to present nomenclatural rules.
+#     - ``SCINAME`` a scientific name which is not well formed.
+#     - ``VIRUS`` a virus name.
+#     - ``WELLFORMED`` a well formed scientific name according to present nomenclatural rules.
 #   :param datasetKey: [str] Filters by the dataset's key (a uuid) (optional)
 #   :param nomenclaturalStatus: [str] Not yet implemented, but will eventually allow for
 #       filtering by a nomenclatural status enum
-#   :param limit: [fixnum] Number of records to return. Maximum: 1000. (optional)
+#   :param limit: [fixnum] Number of records to return. Maximum: ``1000``. (optional)
 #   :param start: [fixnum] Record number to start at. (optional)
 #   :param facet: [str] A list of facet names used to retrieve the 100 most frequent values
-#       for a field. Allowed facets are: datasetKey, higherTaxonKey, rank, status,
-#       isExtinct, habitat, and nameType. Additionally threat and nomenclaturalStatus
+#       for a field. Allowed facets are: ``datasetKey``, ``higherTaxonKey``, ``rank``, ``status``,
+#       ``isExtinct``, ``habitat``, and ``nameType``. Additionally ``threat`` and ``nomenclaturalStatus``
 #       are legal values but not yet implemented, so data will not yet be returned for them. (optional)
 #   :param facetMincount: [str] Used in combination with the facet parameter. Set
-#       facetMincount={#} to exclude facets with a count less than {#}, e.g.
-#       http://bit.ly/1bMdByP only shows the type value 'ACCEPTED' because the other
+#       ``facetMincount={#}`` to exclude facets with a count less than {#}, e.g.
+#       http://bit.ly/1bMdByP only shows the type value ``ACCEPTED`` because the other
 #       statuses have counts less than 7,000,000 (optional)
 #   :param facetMultiselect: [bool] Used in combination with the facet parameter. Set
-#       \code{facetMultiselect=TRUE} to still return counts for values that are not currently
+#       ``facetMultiselect=TRUE`` to still return counts for values that are not currently
 #       filtered, e.g. http://bit.ly/19YLXPO still shows all status values even though
-#       status is being filtered by \code{status=ACCEPTED} (optional)
-#   :param type: [str] Type of name. One of occurrence, checklist, or metadata. (optional)
-#   :param hl: [bool] Set \code{hl=TRUE} to highlight terms matching the query when in fulltext
-#       search fields. The highlight will be an emphasis tag of class 'gbifH1' e.g.
-#       \code{query='plant', hl=TRUE}. Fulltext search fields include: title, keyword, country,
-#       publishing country, publishing organization title, hosting organization title, and
-#       description. One additional full text field is searched which includes information from
+#       status is being filtered by ``status=ACCEPTED`` (optional)
+#   :param type: [str] Type of name. One of ``occurrence``, ``checklist``, or ``metadata``. (optional)
+#   :param hl: [bool] Set ``hl=TRUE`` to highlight terms matching the query when in fulltext
+#       search fields. The highlight will be an emphasis tag of class ``gbifH1`` e.g.
+#       ``query='plant', hl=TRUE``. Fulltext search fields include: ``title``, ``keyword``, ``country``,
+#       ``publishing country``, ``publishing organization title``, ``hosting organization title``, and
+#       ``description``. One additional full text field is searched which includes information from
 #       metadata documents, but the text of this field is not returned in the response. (optional)
 
 #   :return: A dictionary, of results
@@ -308,7 +308,7 @@ def name_suggest(q=None, datasetKey=None, rank=None, fields=None, start=None, li
 
 def suggestfields():
   '''
-  Fields available in `gbif_suggest()` function
+  Fields available in ``gbif_suggest()`` function
   '''
   return ["key","datasetTitle","datasetKey","nubKey","parentKey","parent",
     "kingdom","phylum","class","order","family","genus","species",
