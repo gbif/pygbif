@@ -175,7 +175,7 @@ class GBIFDownload(object):
         """get main predicate combination type"""
         return self._main_pred_type
 
-    @chunk_size.setter
+    @main_pred_type.setter
     def main_pred_type(self, value):
         """set main predicate combination type
 
@@ -198,10 +198,15 @@ class GBIFDownload(object):
         :param value: the value used in the predicate
         :param predicate_type: the type of predicate (e.g. equals)
         """
-        self.predicates.append({'type': predicate_type,
-                                'key': key,
-                                'value': value
-                                })
+        if predicate_type not in operators:
+            predicate_type = operator_lkup.get(predicate_type)
+        if predicate_type:
+            self.predicates.append({'type': predicate_type,
+                                    'key': key,
+                                    'value': value
+                                    })
+        else:
+            raise Exception("predicate type not a valid operator")
 
     @staticmethod
     def _extract_values(values_list):
