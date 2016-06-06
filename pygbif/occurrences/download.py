@@ -129,7 +129,7 @@ def download(*args, user=None, pwd=None,
                           predicate['type'])
 
     out = req.post_download(user, pwd)
-    return [out, user, email]
+    return (out, user, email)
 
 
 class GBIFDownload(object):
@@ -167,6 +167,7 @@ class GBIFDownload(object):
                             'predicates': self.predicates
                             }
                         }
+        self.request_id = None
 
         # prepare the geometry polygon constructions
         if polygon:
@@ -262,24 +263,39 @@ class GBIFDownload(object):
         """
         self.predicates.append({'type': geom_type, 'geometry': polygon})
 
-    def post_download(self, user, pwd):
+    def post_download(self, user=None, pwd=None):
         """
 
         :param user: Username
         :param pwd: Password
         :return:
         """
-        pprint.pprint(self.payload)
+        user = _check_environ('GBIF_USER', user)
+        pwd = _check_environ('GBIF_PWD', pwd)
+
+        #pprint.pprint(self.payload)
         r = requests.post(self.url,
                           auth=auth.HTTPBasicAuth(user, pwd),
                           data=json.dumps(self.payload),
                           headers=self.header)
-
         if r.status_code > 203:
-            raise Exception('error: ' + r.content)
-        if r.headers()['Content-Type'] == 'application/json':
-            raise Exception('not of type json')
-        return r.json()
+            raise Exception('error: ' + r.text +
+                            ', with error status code ' +
+                            str(r.status_code) +
+                            'check your number of active downloads.')
+        else:
+            self.request_id = r.text
+            print('Your download key is ', self.request_id)
+        return self.request_id
+
+    def get_status(self):
+        """get the current download status"""
+        return get_download_status(self.request_id)
+
+
+def get_download_status(request_key):
+    """get the current download status"""
+    return download_meta(request_key).get('status')
 
 
 def download_meta(key, **kwargs):
