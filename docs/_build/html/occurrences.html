@@ -600,18 +600,19 @@ key, latitude, and longitude. Or specify each field you want returned by name, e
 
 <dl class="method">
 <dt id="pygbif.occurrences.download">
-<code class="descclassname">occurrences.</code><code class="descname">download</code><span class="sig-paren">(</span><em>*args</em>, <em>*</em>, <em>user=None</em>, <em>pwd=None</em>, <em>email=None</em>, <em>pred_type='and'</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.download" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">occurrences.</code><code class="descname">download</code><span class="sig-paren">(</span><em>queries</em>, <em>user=None</em>, <em>pwd=None</em>, <em>email=None</em>, <em>pred_type='and'</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.download" title="Permalink to this definition">¶</a></dt>
 <dd><p>Spin up a download request for GBIF occurrence data.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>args</strong> &#8211; One or more of query arguments to kick of a download job.
+<li><strong>queries</strong> (<em>str or list</em>) &#8211; One or more of query arguments to kick of a download job.
 See Details.</li>
-<li><strong>pred_type</strong> &#8211; (character) One of <code class="docutils literal"><span class="pre">equals</span></code> (<code class="docutils literal"><span class="pre">=</span></code>), <code class="docutils literal"><span class="pre">and</span></code> (<code class="docutils literal"><span class="pre">&amp;</span></code>), <code class="docutils literal"><span class="pre">or</span></code> (<code class="docutils literal"><span class="pre">|</span></code>),
-<code class="docutils literal"><span class="pre">lessThan</span></code> (<code class="docutils literal"><span class="pre">&lt;</span></code>), <code class="docutils literal"><span class="pre">lessThanOrEquals</span></code> (<code class="docutils literal"><span class="pre">&lt;=</span></code>), <code class="docutils literal"><span class="pre">greaterThan</span></code> (<code class="docutils literal"><span class="pre">&gt;</span></code>),
-<code class="docutils literal"><span class="pre">greaterThanOrEquals</span></code> (<code class="docutils literal"><span class="pre">&gt;=</span></code>), <code class="docutils literal"><span class="pre">in</span></code>, <code class="docutils literal"><span class="pre">within</span></code>, <code class="docutils literal"><span class="pre">not</span></code> (<code class="docutils literal"><span class="pre">!</span></code>), <code class="docutils literal"><span class="pre">like</span></code></li>
+<li><strong>pred_type</strong> &#8211; (character) One of <code class="docutils literal"><span class="pre">equals</span></code> (<code class="docutils literal"><span class="pre">=</span></code>), <code class="docutils literal"><span class="pre">and</span></code> (<code class="docutils literal"><span class="pre">&amp;</span></code>),
+<cite>or`</cite> (<code class="docutils literal"><span class="pre">|</span></code>), <code class="docutils literal"><span class="pre">lessThan</span></code> (<code class="docutils literal"><span class="pre">&lt;</span></code>), <code class="docutils literal"><span class="pre">lessThanOrEquals</span></code> (<code class="docutils literal"><span class="pre">&lt;=</span></code>),
+<code class="docutils literal"><span class="pre">greaterThan</span></code> (<code class="docutils literal"><span class="pre">&gt;</span></code>), <code class="docutils literal"><span class="pre">greaterThanOrEquals</span></code> (<code class="docutils literal"><span class="pre">&gt;=</span></code>),
+<code class="docutils literal"><span class="pre">in</span></code>, <code class="docutils literal"><span class="pre">within</span></code>, <code class="docutils literal"><span class="pre">not</span></code> (<code class="docutils literal"><span class="pre">!</span></code>), <code class="docutils literal"><span class="pre">like</span></code></li>
 <li><strong>user</strong> &#8211; (character) User name within GBIF&#8217;s website.
 Required. Set in your env vars with the option <code class="docutils literal"><span class="pre">GBIF_USER</span></code></li>
 <li><strong>pwd</strong> &#8211; (character) User password within GBIF&#8217;s website. Required.
@@ -671,9 +672,6 @@ for more info, and the predicates docs
 </table>
 <p>Usage:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span> <span class="k">as</span> <span class="n">occ</span>
-<span class="n">occ</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;basisOfRecord = LITERATURE&#39;</span><span class="p">,</span>
-                     <span class="s1">&#39;decimalLatitude &gt; 50&#39;</span><span class="p">])</span>
-<span class="n">occ</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="n">args</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;decimalLatitude &gt; 50&#39;</span><span class="p">])</span>
 
 <span class="n">occ</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;basisOfRecord = LITERATURE&#39;</span><span class="p">)</span>
 <span class="n">occ</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;taxonKey = 3119195&#39;</span><span class="p">)</span>
@@ -684,15 +682,15 @@ for more info, and the predicates docs
 <span class="n">occ</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;institutionCode = TLMF&#39;</span><span class="p">)</span>
 <span class="n">occ</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;catalogNumber = Bird.27847588&#39;</span><span class="p">)</span>
 
-<span class="n">res</span> <span class="o">=</span> <span class="n">occ</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;taxonKey = 7264332&#39;</span><span class="p">,</span> <span class="s1">&#39;hasCoordinate = TRUE&#39;</span><span class="p">)</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">occ</span><span class="o">.</span><span class="n">download</span><span class="p">([</span><span class="s1">&#39;taxonKey = 7264332&#39;</span><span class="p">,</span> <span class="s1">&#39;hasCoordinate = TRUE&#39;</span><span class="p">])</span>
 
 <span class="c1"># pass output to download_meta for more information</span>
 <span class="n">occ</span><span class="o">.</span><span class="n">download_meta</span><span class="p">(</span><span class="n">occ</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;decimalLatitude &gt; 75&#39;</span><span class="p">))</span>
 
 <span class="c1"># Multiple queries</span>
-<span class="n">gg</span> <span class="o">=</span> <span class="n">occ</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;decimalLatitude &gt;= 65&#39;</span><span class="p">,</span>
-                  <span class="s1">&#39;decimalLatitude &lt;= -65&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;or&#39;</span><span class="p">)</span>
-<span class="n">gg</span> <span class="o">=</span> <span class="n">occ</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;depth = 80&#39;</span><span class="p">,</span> <span class="s1">&#39;taxonKey = 2343454&#39;</span><span class="p">,</span>
+<span class="n">gg</span> <span class="o">=</span> <span class="n">occ</span><span class="o">.</span><span class="n">download</span><span class="p">([</span><span class="s1">&#39;decimalLatitude &gt;= 65&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;decimalLatitude &lt;= -65&#39;</span><span class="p">],</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;or&#39;</span><span class="p">)</span>
+<span class="n">gg</span> <span class="o">=</span> <span class="n">occ</span><span class="o">.</span><span class="n">download</span><span class="p">([</span><span class="s1">&#39;depth = 80&#39;</span><span class="p">,</span> <span class="s1">&#39;taxonKey = 2343454&#39;</span><span class="p">],</span>
                   <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;or&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -749,7 +747,7 @@ arguments</p>
 
 <dl class="method">
 <dt id="pygbif.occurrences.download_get">
-<code class="descclassname">occurrences.</code><code class="descname">download_get</code><span class="sig-paren">(</span><em>key</em>, <em>path='.'</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.download_get" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">occurrences.</code><code class="descname">download_get</code><span class="sig-paren">(</span><em>key</em>, <em>path='.'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.download_get" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a download from GBIF.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -766,11 +764,11 @@ arguments</p>
 </tbody>
 </table>
 <p>Downloads the zip file to a directory you specify on your machine.
-We stream the zip data to a file. This function only downloads the file.
-See <code class="docutils literal"><span class="pre">download_import</span></code> to open a downloaded file in Python. The speed of this
-function is of course proportional to the size of the file to download, and affected
-by your internet connection speed. For example, a 58 MB file on my machine took
-about 26 seconds.</p>
+We stream the zip data to a file. This function only downloads the file.</p>
+<p>See <code class="docutils literal"><span class="pre">download_import</span></code> to open a downloaded file in Python. The speed of 
+this function is of course proportional to the size of the file to 
+download, and affected by your internet connection speed. For example, 
+a 58 MB file on my machine took about 26 seconds.</p>
 <p>Usage:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span> <span class="k">as</span> <span class="n">occ</span>
 <span class="n">occ</span><span class="o">.</span><span class="n">download_get</span><span class="p">(</span><span class="s2">&quot;0000066-140928181241064&quot;</span><span class="p">)</span>
