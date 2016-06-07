@@ -130,7 +130,7 @@
            <div itemprop="articleBody">
             
   <h1>Source code for pygbif.occurrences.count</h1><div class="highlight"><pre>
-<span class="kn">from</span> <span class="nn">..gbifutils</span> <span class="kn">import</span> <span class="o">*</span>
+<span></span><span class="kn">from</span> <span class="nn">..gbifutils</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="k">def</span> <span class="nf">count</span><span class="p">(</span><span class="n">taxonKey</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">basisOfRecord</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">country</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">isGeoreferenced</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
     <span class="n">datasetKey</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">publishingCountry</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">typeStatus</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
@@ -184,7 +184,7 @@
     <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Lists occurrence counts by year</span>
 
-<span class="sd">    :param year: [int] year range, e.g., &quot;1990,2000&quot;. Does not support ranges like &quot;asterisk,2010&quot;</span>
+<span class="sd">    :param year: [int] year range, e.g., ``1990,2000``. Does not support ranges like ``asterisk,2010``</span>
 
 <span class="sd">    :return: dict</span>
 

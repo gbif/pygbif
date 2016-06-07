@@ -130,7 +130,7 @@
            <div itemprop="articleBody">
             
   <h1>Source code for pygbif.registry.datasets</h1><div class="highlight"><pre>
-<span class="kn">from</span> <span class="nn">..gbifutils</span> <span class="kn">import</span> <span class="o">*</span>
+<span></span><span class="kn">from</span> <span class="nn">..gbifutils</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">.registry_utils</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="k">def</span> <span class="nf">dataset_metrics</span><span class="p">(</span><span class="n">uuid</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -162,11 +162,11 @@
 	<span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">	Search for datasets and dataset metadata.</span>
 
-<span class="sd">	:param data: [str] The type of data to get. Default: &#39;all&#39;</span>
-<span class="sd">	:param type: [str] Type of dataset, options include &#39;OCCURRENCE&#39;, etc.</span>
+<span class="sd">	:param data: [str] The type of data to get. Default: ``all``</span>
+<span class="sd">	:param type: [str] Type of dataset, options include ``OCCURRENCE``, etc.</span>
 <span class="sd">	:param uuid: [str] UUID of the data node provider. This must be specified if data</span>
-<span class="sd">		 is anything other than &#39;all&#39;.</span>
-<span class="sd">	:param query: [str] Query term(s). Only used when `data = &#39;all&#39;`</span>
+<span class="sd">		 is anything other than ``all``.</span>
+<span class="sd">	:param query: [str] Query term(s). Only used when ``data = &#39;all&#39;``</span>
 <span class="sd">	:param id: [int] A metadata document id.</span>
 
 <span class="sd">	References http://www.gbif.org/developer/registry#datasets</span>

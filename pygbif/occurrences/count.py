@@ -52,7 +52,7 @@ def count_year(year, **kwargs):
     '''
     Lists occurrence counts by year
 
-    :param year: [int] year range, e.g., "1990,2000". Does not support ranges like "asterisk,2010"
+    :param year: [int] year range, e.g., ``1990,2000``. Does not support ranges like ``asterisk,2010``
 
     :return: dict
 
