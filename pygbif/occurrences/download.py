@@ -3,7 +3,6 @@ import re
 import csv
 import json
 import datetime
-import pprint
 from requests import auth
 
 from ..gbifutils import *
@@ -122,19 +121,20 @@ def download(*args, user=None, pwd=None,
     keyval = [_parse_args(z) for z in args]
 
     # USE GBIFDownload class to set up the predicates
-    req = GBIFDownload(user, email, main_pred_type=pred_type)
+    req = GbifDownload(user, email)
+    req.main_pred_type = pred_type
     for predicate in keyval:
         req.add_predicate(predicate['key'],
                           predicate['value'],
                           predicate['type'])
 
     out = req.post_download(user, pwd)
-    return (out, user, email)
+    return out, user, email
 
 
-class GBIFDownload(object):
+class GbifDownload(object):
 
-    def __init__(self, creator, email, polygon=None, main_pred_type='and'):
+    def __init__(self, creator, email, polygon=None):
         """class to setup a JSON doc with the query and POST a request
 
         All predicates (default key-value or iterative based on a list of
@@ -146,7 +146,7 @@ class GBIFDownload(object):
         :param polygon: Polygon of points to extract data from
         """
         self.predicates = []
-        self._main_pred_type = main_pred_type
+        self._main_pred_type = 'and'
 
         self.url = 'http://api.gbif.org/v1/occurrence/download/request'
         self.header = {'accept': 'application/json',
@@ -163,7 +163,7 @@ class GBIFDownload(object):
                         'send_notification': 'true',
                         'created': datetime.date.today().year,
                         'predicate': {
-                            'type': self.main_pred_type,
+                            'type': self._main_pred_type,
                             'predicates': self.predicates
                             }
                         }
@@ -190,6 +190,7 @@ class GBIFDownload(object):
             value = operator_lkup.get(value)
         if value:
             self._main_pred_type = value
+            self.payload['predicate']['type'] = self._main_pred_type
         else:
             raise Exception("main predicate combiner not a valid operator")
 
@@ -273,7 +274,7 @@ class GBIFDownload(object):
         user = _check_environ('GBIF_USER', user)
         pwd = _check_environ('GBIF_PWD', pwd)
 
-        #pprint.pprint(self.payload)
+        # pprint.pprint(self.payload)
         r = requests.post(self.url,
                           auth=auth.HTTPBasicAuth(user, pwd),
                           data=json.dumps(self.payload),
@@ -346,7 +347,7 @@ def download_list(user=None, pwd=None, limit=20, start=0):
             'results': res['results']}
 
 
-def download_get(key, path=".", *args, **kwargs):
+def download_get(key, path=".", **kwargs):
     """
     Get a download from GBIF.
 
@@ -357,10 +358,10 @@ def download_get(key, path=".", *args, **kwargs):
 
     Downloads the zip file to a directory you specify on your machine.
     We stream the zip data to a file. This function only downloads the file.
-    See `download_import` to open a downloaded file in Python. The speed of this
-    function is of course proportional to the size of the file to download, and affected
-    by your internet connection speed. For example, a 58 MB file on my machine took
-    about 26 seconds.
+    See `download_import` to open a downloaded file in Python. The speed of
+    this function is of course proportional to the size of the file to
+    download, and affected by your internet connection speed. For example,
+    a 58 MB file on my machine took about 26 seconds.
 
     Usage::
 
@@ -375,7 +376,7 @@ def download_get(key, path=".", *args, **kwargs):
         print('Download file size: %s bytes' % meta['size'])
         url = 'http://api.gbif.org/v1/occurrence/download/request/' + key
         path = "%s/%s.zip" % (path, key)
-        gbif_GET_write(url, path, *args, **kwargs)
+        gbif_GET_write(url, path, **kwargs)
         # options(gbifdownloadpath = path)
         print("On disk at " + path)
         return {'path': path, 'size': meta['size'], 'key': key}
