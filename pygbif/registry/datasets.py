@@ -30,11 +30,11 @@ def datasets(data = 'all', type = None, uuid = None, query = None, id = None,
 	'''
 	Search for datasets and dataset metadata.
 
-	:param data: [str] The type of data to get. Default: 'all'
-	:param type: [str] Type of dataset, options include 'OCCURRENCE', etc.
+	:param data: [str] The type of data to get. Default: ``all``
+	:param type: [str] Type of dataset, options include ``OCCURRENCE``, etc.
 	:param uuid: [str] UUID of the data node provider. This must be specified if data
-		 is anything other than 'all'.
-	:param query: [str] Query term(s). Only used when `data = 'all'`
+		 is anything other than ``all``.
+	:param query: [str] Query term(s). Only used when ``data = 'all'``
 	:param id: [int] A metadata document id.
 
 	References http://www.gbif.org/developer/registry#datasets

@@ -6,10 +6,10 @@ def networks(data = 'all', uuid = None, query = None, identifier = None,
   '''
   Networks metadata.
 
-  :param data: [str] The type of data to get. Default: 'all'
+  :param data: [str] The type of data to get. Default: ``all``
   :param uuid: [str] UUID of the data network provider. This must be specified if data
-     is anything other than 'all'.
-  :param query: [str] Query networks. Only used when `data = 'all'`. Ignored otherwise.
+     is anything other than ``all``.
+  :param query: [str] Query networks. Only used when ``data = 'all'``. Ignored otherwise.
 
   References: http://www.gbif.org/developer/registry#networks
 
