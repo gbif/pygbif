@@ -133,9 +133,18 @@ class TestDownload(unittest.TestCase):
                               'type': 'equals',
                               'value': 'LITERATURE'})
 
+    def test_single_predicate_list(self):
+        dl_key, payload = download(['decimalLatitude > 50'], user="dummy",
+                                   email="dummy", pwd="dummy")
+
+        self.assertDictEqual(payload["predicate"]["predicates"][0],
+                             {'key': 'DECIMAL_LATITUDE',
+                              'type': 'greaterThan',
+                              'value': '50'})
+
     def test_multiple_predicates(self):
-        dl_key, payload = download('taxonKey = 7264332',
-                                   'hasCoordinate = TRUE',
+        dl_key, payload = download(['taxonKey = 7264332',
+                                   'hasCoordinate = TRUE'],
                                    user="dummy", email="dummy", pwd="dummy")
         temp_pred = payload["predicate"]["predicates"]
         self.assertIsInstance(temp_pred, list)
@@ -148,8 +157,8 @@ class TestDownload(unittest.TestCase):
                           set(['key', 'type', 'value']))
 
     def test_alternative_main_type(self):
-        dl_key, payload = download('depth = 80',
-                                   'taxonKey = 2343454',
+        dl_key, payload = download(['depth = 80',
+                                   'taxonKey = 2343454'],
                                    pred_type='or',
                                    user="dummy",
                                    email="dummy",

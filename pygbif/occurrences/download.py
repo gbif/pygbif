@@ -29,16 +29,18 @@ def _check_environ(variable, value):
             return value
 
 
-def download(*args, user=None, pwd=None,
+def download(queries, user=None, pwd=None,
              email=None, pred_type='and'):
     """
     Spin up a download request for GBIF occurrence data.
 
-    :param args: One or more of query arguments to kick of a download job.
+    :param queries: One or more of query arguments to kick of a download job.
         See Details.
-    :param pred_type: (character) One of ``equals`` (``=``), ``and`` (``&``), ``or`` (``|``),
-        ``lessThan`` (``<``), ``lessThanOrEquals`` (``<=``), ``greaterThan`` (``>``),
-        ``greaterThanOrEquals`` (``>=``), ``in``, ``within``, ``not`` (``!``), ``like``
+    :type queries: str or list
+    :param pred_type: (character) One of ``equals`` (``=``), ``and`` (``&``),
+        `or`` (``|``), ``lessThan`` (``<``), ``lessThanOrEquals`` (``<=``),
+        ``greaterThan`` (``>``), ``greaterThanOrEquals`` (``>=``),
+        ``in``, ``within``, ``not`` (``!``), ``like``
     :param user: (character) User name within GBIF's website.
         Required. Set in your env vars with the option ``GBIF_USER``
     :param pwd: (character) User password within GBIF's website. Required.
@@ -99,15 +101,15 @@ def download(*args, user=None, pwd=None,
         occ.download('institutionCode = TLMF')
         occ.download('catalogNumber = Bird.27847588')
 
-        res = occ.download('taxonKey = 7264332', 'hasCoordinate = TRUE')
+        res = occ.download(['taxonKey = 7264332', 'hasCoordinate = TRUE'])
 
         # pass output to download_meta for more information
         occ.download_meta(occ.download('decimalLatitude > 75'))
 
         # Multiple queries
-        gg = occ.download('decimalLatitude >= 65',
-                          'decimalLatitude <= -65', type='or')
-        gg = occ.download('depth = 80', 'taxonKey = 2343454',
+        gg = occ.download(['decimalLatitude >= 65',
+                          'decimalLatitude <= -65'], type='or')
+        gg = occ.download(['depth = 80', 'taxonKey = 2343454'],
                           type='or')
     """
 
@@ -115,7 +117,10 @@ def download(*args, user=None, pwd=None,
     pwd = _check_environ('GBIF_PWD', pwd)
     email = _check_environ('GBIF_EMAIL', email)
 
-    keyval = [_parse_args(z) for z in args]
+    if isinstance(queries, str):
+        queries = [queries]
+
+    keyval = [_parse_args(z) for z in queries]
 
     # USE GBIFDownload class to set up the predicates
     req = GbifDownload(user, email)
