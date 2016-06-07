@@ -89,9 +89,6 @@ def download(*args, user=None, pwd=None,
     Usage::
 
         from pygbif import occurrences as occ
-        occ.download(args = ['basisOfRecord = LITERATURE',
-                             'decimalLatitude > 50'])
-        occ.download(args = ['decimalLatitude > 50'])
 
         occ.download('basisOfRecord = LITERATURE')
         occ.download('taxonKey = 3119195')
@@ -129,7 +126,7 @@ def download(*args, user=None, pwd=None,
                           predicate['type'])
 
     out = req.post_download(user, pwd)
-    return out, user, email
+    return out, req.payload
 
 
 class GbifDownload(object):

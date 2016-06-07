@@ -1,6 +1,21 @@
+
+import time
+import requests
 import unittest
 
-from pygbif.occurrences.download import GbifDownload
+from pygbif.occurrences.download import GbifDownload, download
+
+
+class DummyClass(object):
+    """A dummy response as given by the requests.post, which can be used
+    to mock the posting of requests"""
+    text = '0003970-140910143529206'
+    status_code = 201
+
+
+def dummypost(*args, **kwargs):
+    """function ot mock the usage of the requests.post functionality"""
+    return DummyClass()
 
 
 class TestGbifClass(unittest.TestCase):
@@ -79,3 +94,67 @@ class TestGbifClass(unittest.TestCase):
         req.add_predicate("YEAR", "2000", ">=")
         self.assertEqual(req.payload["predicate"]["predicates"][0]["type"],
                          "greaterThanOrEquals")
+
+    # mocking the request service
+    requests.post = dummypost
+
+    def test_post_download(self):
+        req = GbifDownload("name", "email")
+        req.add_iterative_predicate('BASIS_OF_RECORD',
+                                    ['FOSSIL_SPECIMEN', 'LITERATURE'])
+        dl_key = req.post_download("name", "pwd")
+        if not dl_key:
+            raise KeyError("You might have too many downloads running at the \
+                            same time. Check your downloads page!")
+
+        while req.get_status() in ['PREPARING', 'RUNNING']:
+            print('Preparing ...')
+            time.sleep(10)
+        self.assertIn(req.get_status(), ['SUCCEEDED', 'KILLED'])
+
+
+class TestDownload(unittest.TestCase):
+
+    # mocking the request service
+    requests.post = dummypost
+
+    def test_single_predicate(self):
+        dl_key, payload = download('decimalLatitude > 50', user="dummy",
+                                   email="dummy", pwd="dummy")
+        self.assertDictEqual(payload["predicate"]["predicates"][0],
+                             {'key': 'DECIMAL_LATITUDE',
+                              'type': 'greaterThan',
+                              'value': '50'})
+
+        dl_key, payload = download('basisOfRecord = LITERATURE', user="dummy",
+                                   email="dummy", pwd="dummy")
+        self.assertDictEqual(payload["predicate"]["predicates"][0],
+                             {'key': 'BASIS_OF_RECORD',
+                              'type': 'equals',
+                              'value': 'LITERATURE'})
+
+    def test_multiple_predicates(self):
+        dl_key, payload = download('taxonKey = 7264332',
+                                   'hasCoordinate = TRUE',
+                                   user="dummy", email="dummy", pwd="dummy")
+        temp_pred = payload["predicate"]["predicates"]
+        self.assertIsInstance(temp_pred, list)
+        self.assertEquals(len(temp_pred), 2)
+        self.assertIsInstance(temp_pred[0], dict)
+        self.assertIsInstance(temp_pred[1], dict)
+        self.assertEquals(set(list(temp_pred[0].keys())),
+                          set(['key', 'type', 'value']))
+        self.assertEquals(set(list(temp_pred[1].keys())),
+                          set(['key', 'type', 'value']))
+
+    def test_alternative_main_type(self):
+        dl_key, payload = download('depth = 80',
+                                   'taxonKey = 2343454',
+                                   pred_type='or',
+                                   user="dummy",
+                                   email="dummy",
+                                   pwd="dummy")
+
+        self.assertEqual(payload["predicate"]["type"], 'or')
+
+
