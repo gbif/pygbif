@@ -130,7 +130,7 @@
            <div itemprop="articleBody">
             
   <h1>Source code for pygbif.species.names</h1><div class="highlight"><pre>
-<span class="kn">from</span> <span class="nn">..gbifutils</span> <span class="kn">import</span> <span class="o">*</span>
+<span></span><span class="kn">from</span> <span class="nn">..gbifutils</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="k">def</span> <span class="nf">name_backbone</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">rank</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">kingdom</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">phylum</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">clazz</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
   <span class="n">order</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">genus</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
@@ -156,12 +156,12 @@
 <span class="sd">     taxon in the upper classification (optional)</span>
 <span class="sd">  :param verbose: [bool] If True show alternative matches considered which had been rejected.</span>
 
-<span class="sd">  A list for a single taxon with many slots (with verbose=False - default), or a</span>
+<span class="sd">  A list for a single taxon with many slots (with ``verbose=False`` - default), or a</span>
 <span class="sd">  list of length two, first element for the suggested taxon match, and a data.frame</span>
-<span class="sd">  with alternative name suggestions resulting from fuzzy matching (with verbose=True).</span>
+<span class="sd">  with alternative name suggestions resulting from fuzzy matching (with ``verbose=True``).</span>
 
 <span class="sd">  If you don&#39;t get a match GBIF gives back a list of length 3 with slots synonym,</span>
-<span class="sd">  confidence, and matchType=&#39;NONE&#39;.</span>
+<span class="sd">  confidence, and ``matchType=&#39;NONE&#39;``.</span>
 
 <span class="sd">  reference: http://www.gbif.org/developer/species#searching</span>
 
@@ -201,14 +201,14 @@
 
 <span class="sd">  :param q: [str] Simple search parameter. The value for this parameter can be a</span>
 <span class="sd">     simple word or a phrase. Wildcards can be added to the simple word parameters only,</span>
-<span class="sd">     e.g. q=*puma* (Required)</span>
+<span class="sd">     e.g. ``q=*puma*`` (Required)</span>
 <span class="sd">  :param datasetKey: [str] Filters by the checklist dataset key (a uuid, see examples)</span>
-<span class="sd">  :param rank: [str] A taxonomic rank. One of class, cultivar, cultivar_group, domain, family,</span>
-<span class="sd">     form, genus, informal, infrageneric_name, infraorder, infraspecific_name,</span>
-<span class="sd">     infrasubspecific_name, kingdom, order, phylum, section, series, species, strain, subclass,</span>
-<span class="sd">     subfamily, subform, subgenus, subkingdom, suborder, subphylum, subsection, subseries,</span>
-<span class="sd">     subspecies, subtribe, subvariety, superclass, superfamily, superorder, superphylum,</span>
-<span class="sd">     suprageneric_name, tribe, unranked, or variety.</span>
+<span class="sd">  :param rank: [str] A taxonomic rank. One of ``class``, ``cultivar``, ``cultivar_group``, ``domain``, ``family``,</span>
+<span class="sd">     ``form``, ``genus``, ``informal``, ``infrageneric_name``, ``infraorder``, ``infraspecific_name``,</span>
+<span class="sd">     ``infrasubspecific_name``, ``kingdom``, ``order``, ``phylum``, ``section``, ``series``, ``species``, ``strain``, ``subclass``,</span>
+<span class="sd">     ``subfamily``, ``subform``, ``subgenus``, ``subkingdom``, ``suborder``, ``subphylum``, ``subsection``, ``subseries``,</span>
+<span class="sd">     ``subspecies``, ``subtribe``, ``subvariety``, ``superclass``, ``superfamily``, ``superorder``, ``superphylum``,</span>
+<span class="sd">     ``suprageneric_name``, ``tribe``, ``unranked``, or ``variety``.</span>
 
 <span class="sd">  :return: A dictionary, of results</span>
 
@@ -242,67 +242,67 @@
 <span class="c1">#   This service uses fuzzy lookup so that you can put in partial names and</span>
 <span class="c1">#   you should get back those things that match. See examples below.</span>
 
-<span class="c1">#   Faceting: If `facet=FALSE` or left to the default (NULL), no faceting is done. And therefore,</span>
-<span class="c1">#   all parameters with facet in their name are ignored (facetOnly, facetMincount, facetMultiselect).</span>
+<span class="c1">#   Faceting: If ``facet=FALSE`` or left to the default (``NULL``), no faceting is done. And therefore,</span>
+<span class="c1">#   all parameters with facet in their name are ignored (``facetOnly``, ``facetMincount``, ``facetMultiselect``).</span>
 
 <span class="c1">#   :param query: [str] Query term(s) for full text search (optional)</span>
-<span class="c1">#   :param rank: [str] CLASS, CULTIVAR, CULTIVAR_GROUP, DOMAIN, FAMILY, FORM, GENUS, INFORMAL,</span>
-<span class="c1">#      INFRAGENERIC_NAME, INFRAORDER, INFRASPECIFIC_NAME, INFRASUBSPECIFIC_NAME, KINGDOM,</span>
-<span class="c1">#      ORDER, PHYLUM, SECTION, SERIES, SPECIES, STRAIN, SUBCLASS, SUBFAMILY, SUBFORM,</span>
-<span class="c1">#      SUBGENUS, SUBKINGDOM, SUBORDER, SUBPHYLUM, SUBSECTION, SUBSERIES, SUBSPECIES,</span>
-<span class="c1">#      SUBTRIBE, SUBVARIETY, SUPERCLASS, SUPERFAMILY, SUPERORDER, SUPERPHYLUM,</span>
-<span class="c1">#      SUPRAGENERIC_NAME, TRIBE, UNRANKED, VARIETY (optional)</span>
+<span class="c1">#   :param rank: [str] ``CLASS``, ``CULTIVAR``, ``CULTIVAR_GROUP``, ``DOMAIN``, ``FAMILY``,</span>
+<span class="c1">#      ``FORM``, ``GENUS``, ``INFORMAL``, ``INFRAGENERIC_NAME``, ``INFRAORDER``, ``INFRASPECIFIC_NAME``,</span>
+<span class="c1">#      ``INFRASUBSPECIFIC_NAME``, ``KINGDOM``, ``ORDER``, ``PHYLUM``, ``SECTION``, ``SERIES``, ``SPECIES``, ``STRAIN``, ``SUBCLASS``,</span>
+<span class="c1">#      ``SUBFAMILY``, ``SUBFORM``, ``SUBGENUS``, ``SUBKINGDOM``, ``SUBORDER``, ``SUBPHYLUM``, ``SUBSECTION``, ``SUBSERIES``,</span>
+<span class="c1">#      ``SUBSPECIES``, ``SUBTRIBE``, ``SUBVARIETY``, ``SUPERCLASS``, ``SUPERFAMILY``, ``SUPERORDER``, ``SUPERPHYLUM``,</span>
+<span class="c1">#      ``SUPRAGENERIC_NAME``, ``TRIBE``, ``UNRANKED``, ``VARIETY`` (optional)</span>
 <span class="c1">#   :param verbose: [bool] If True show alternative matches considered which had been rejected.</span>
 <span class="c1">#   :param higherTaxonKey: [str] Filters by any of the higher Linnean rank keys. Note this</span>
 <span class="c1">#       is within the respective checklist and not searching nub keys across all checklists (optional)</span>
 <span class="c1">#   :param status: [str] (optional) Filters by the taxonomic status as one of:</span>
-<span class="c1">#     - ACCEPTED</span>
-<span class="c1">#     - DETERMINATION_SYNONYM Used for unknown child taxa referred to via spec, ssp, ...</span>
-<span class="c1">#     - DOUBTFUL Treated as accepted, but doubtful whether this is correct.</span>
-<span class="c1">#     - HETEROTYPIC_SYNONYM More specific subclass of SYNONYM.</span>
-<span class="c1">#     - HOMOTYPIC_SYNONYM More specific subclass of SYNONYM.</span>
-<span class="c1">#     - INTERMEDIATE_RANK_SYNONYM Used in nub only.</span>
-<span class="c1">#     - MISAPPLIED More specific subclass of SYNONYM.</span>
-<span class="c1">#     - PROPARTE_SYNONYM More specific subclass of SYNONYM.</span>
-<span class="c1">#     - SYNONYM A general synonym, the exact type is unknown.</span>
-<span class="c1">#   :param isExtinct: [bool] Filters by extinction status (e.g. isExtinct=TRUE)</span>
-<span class="c1">#   :param habitat: [str] Filters by habitat. One of: marine, freshwater, or</span>
-<span class="c1">#       terrestrial (optional)</span>
+<span class="c1">#     - ``ACCEPTED``</span>
+<span class="c1">#     - ``DETERMINATION_SYNONYM`` Used for unknown child taxa referred to via spec, ssp, ...</span>
+<span class="c1">#     - ``DOUBTFUL`` Treated as accepted, but doubtful whether this is correct.</span>
+<span class="c1">#     - ``HETEROTYPIC_SYNONYM`` More specific subclass of ``SYNONYM``.</span>
+<span class="c1">#     - ``HOMOTYPIC_SYNONYM`` More specific subclass of ``SYNONYM``.</span>
+<span class="c1">#     - ``INTERMEDIATE_RANK_SYNONYM`` Used in nub only.</span>
+<span class="c1">#     - ``MISAPPLIED`` More specific subclass of ``SYNONYM``.</span>
+<span class="c1">#     - ``PROPARTE_SYNONYM`` More specific subclass of ``SYNONYM``.</span>
+<span class="c1">#     - ``SYNONYM`` A general synonym, the exact type is unknown.</span>
+<span class="c1">#   :param isExtinct: [bool] Filters by extinction status (e.g. ``isExtinct=TRUE``)</span>
+<span class="c1">#   :param habitat: [str] Filters by habitat. One of: ``marine``, ``freshwater``, or</span>
+<span class="c1">#       ``terrestrial`` (optional)</span>
 <span class="c1">#   :param nameType: [str] (optional) Filters by the name type as one of:</span>
-<span class="c1">#     - BLACKLISTED surely not a scientific name.</span>
-<span class="c1">#     - CANDIDATUS Candidatus is a component of the taxonomic name for a bacterium</span>
+<span class="c1">#     - ``BLACKLISTED`` surely not a scientific name.</span>
+<span class="c1">#     - ``CANDIDATUS`` Candidatus is a component of the taxonomic name for a bacterium</span>
 <span class="c1">#     that cannot be maintained in a Bacteriology Culture Collection.</span>
-<span class="c1">#     - CULTIVAR a cultivated plant name.</span>
-<span class="c1">#     - DOUBTFUL doubtful whether this is a scientific name at all.</span>
-<span class="c1">#     - HYBRID a hybrid formula (not a hybrid name).</span>
-<span class="c1">#     - INFORMAL a scientific name with some informal addition like &quot;cf.&quot; or</span>
+<span class="c1">#     - ``CULTIVAR`` a cultivated plant name.</span>
+<span class="c1">#     - ``DOUBTFUL`` doubtful whether this is a scientific name at all.</span>
+<span class="c1">#     - ``HYBRID`` a hybrid formula (not a hybrid name).</span>
+<span class="c1">#     - ``INFORMAL`` a scientific name with some informal addition like &quot;cf.&quot; or</span>
 <span class="c1">#     indetermined like Abies spec.</span>
-<span class="c1">#     - SCINAME a scientific name which is not well formed.</span>
-<span class="c1">#     - VIRUS a virus name.</span>
-<span class="c1">#     - WELLFORMED a well formed scientific name according to present nomenclatural rules.</span>
+<span class="c1">#     - ``SCINAME`` a scientific name which is not well formed.</span>
+<span class="c1">#     - ``VIRUS`` a virus name.</span>
+<span class="c1">#     - ``WELLFORMED`` a well formed scientific name according to present nomenclatural rules.</span>
 <span class="c1">#   :param datasetKey: [str] Filters by the dataset&#39;s key (a uuid) (optional)</span>
 <span class="c1">#   :param nomenclaturalStatus: [str] Not yet implemented, but will eventually allow for</span>
 <span class="c1">#       filtering by a nomenclatural status enum</span>
-<span class="c1">#   :param limit: [fixnum] Number of records to return. Maximum: 1000. (optional)</span>
+<span class="c1">#   :param limit: [fixnum] Number of records to return. Maximum: ``1000``. (optional)</span>
 <span class="c1">#   :param start: [fixnum] Record number to start at. (optional)</span>
 <span class="c1">#   :param facet: [str] A list of facet names used to retrieve the 100 most frequent values</span>
-<span class="c1">#       for a field. Allowed facets are: datasetKey, higherTaxonKey, rank, status,</span>
-<span class="c1">#       isExtinct, habitat, and nameType. Additionally threat and nomenclaturalStatus</span>
+<span class="c1">#       for a field. Allowed facets are: ``datasetKey``, ``higherTaxonKey``, ``rank``, ``status``,</span>
+<span class="c1">#       ``isExtinct``, ``habitat``, and ``nameType``. Additionally ``threat`` and ``nomenclaturalStatus``</span>
 <span class="c1">#       are legal values but not yet implemented, so data will not yet be returned for them. (optional)</span>
 <span class="c1">#   :param facetMincount: [str] Used in combination with the facet parameter. Set</span>
-<span class="c1">#       facetMincount={#} to exclude facets with a count less than {#}, e.g.</span>
-<span class="c1">#       http://bit.ly/1bMdByP only shows the type value &#39;ACCEPTED&#39; because the other</span>
+<span class="c1">#       ``facetMincount={#}`` to exclude facets with a count less than {#}, e.g.</span>
+<span class="c1">#       http://bit.ly/1bMdByP only shows the type value ``ACCEPTED`` because the other</span>
 <span class="c1">#       statuses have counts less than 7,000,000 (optional)</span>
 <span class="c1">#   :param facetMultiselect: [bool] Used in combination with the facet parameter. Set</span>
-<span class="c1">#       \code{facetMultiselect=TRUE} to still return counts for values that are not currently</span>
+<span class="c1">#       ``facetMultiselect=TRUE`` to still return counts for values that are not currently</span>
 <span class="c1">#       filtered, e.g. http://bit.ly/19YLXPO still shows all status values even though</span>
-<span class="c1">#       status is being filtered by \code{status=ACCEPTED} (optional)</span>
-<span class="c1">#   :param type: [str] Type of name. One of occurrence, checklist, or metadata. (optional)</span>
-<span class="c1">#   :param hl: [bool] Set \code{hl=TRUE} to highlight terms matching the query when in fulltext</span>
-<span class="c1">#       search fields. The highlight will be an emphasis tag of class &#39;gbifH1&#39; e.g.</span>
-<span class="c1">#       \code{query=&#39;plant&#39;, hl=TRUE}. Fulltext search fields include: title, keyword, country,</span>
-<span class="c1">#       publishing country, publishing organization title, hosting organization title, and</span>
-<span class="c1">#       description. One additional full text field is searched which includes information from</span>
+<span class="c1">#       status is being filtered by ``status=ACCEPTED`` (optional)</span>
+<span class="c1">#   :param type: [str] Type of name. One of ``occurrence``, ``checklist``, or ``metadata``. (optional)</span>
+<span class="c1">#   :param hl: [bool] Set ``hl=TRUE`` to highlight terms matching the query when in fulltext</span>
+<span class="c1">#       search fields. The highlight will be an emphasis tag of class ``gbifH1`` e.g.</span>
+<span class="c1">#       ``query=&#39;plant&#39;, hl=TRUE``. Fulltext search fields include: ``title``, ``keyword``, ``country``,</span>
+<span class="c1">#       ``publishing country``, ``publishing organization title``, ``hosting organization title``, and</span>
+<span class="c1">#       ``description``. One additional full text field is searched which includes information from</span>
 <span class="c1">#       metadata documents, but the text of this field is not returned in the response. (optional)</span>
 
 <span class="c1">#   :return: A dictionary, of results</span>
@@ -440,7 +440,7 @@
 
 <span class="k">def</span> <span class="nf">suggestfields</span><span class="p">():</span>
   <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">  Fields available in `gbif_suggest()` function</span>
+<span class="sd">  Fields available in ``gbif_suggest()`` function</span>
 <span class="sd">  &#39;&#39;&#39;</span>
   <span class="k">return</span> <span class="p">[</span><span class="s2">&quot;key&quot;</span><span class="p">,</span><span class="s2">&quot;datasetTitle&quot;</span><span class="p">,</span><span class="s2">&quot;datasetKey&quot;</span><span class="p">,</span><span class="s2">&quot;nubKey&quot;</span><span class="p">,</span><span class="s2">&quot;parentKey&quot;</span><span class="p">,</span><span class="s2">&quot;parent&quot;</span><span class="p">,</span>
     <span class="s2">&quot;kingdom&quot;</span><span class="p">,</span><span class="s2">&quot;phylum&quot;</span><span class="p">,</span><span class="s2">&quot;class&quot;</span><span class="p">,</span><span class="s2">&quot;order&quot;</span><span class="p">,</span><span class="s2">&quot;family&quot;</span><span class="p">,</span><span class="s2">&quot;genus&quot;</span><span class="p">,</span><span class="s2">&quot;species&quot;</span><span class="p">,</span>

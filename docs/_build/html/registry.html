@@ -83,7 +83,7 @@
             
                 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="occurrences.html">occurrences module</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">registry module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">registry module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="species.html">species module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="changelog_link.html">Changelog</a></li>
 </ul>
@@ -108,7 +108,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -141,11 +141,11 @@
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>data</strong> &#8211; [str] The type of data to get. Default: &#8216;all&#8217;</li>
-<li><strong>type</strong> &#8211; [str] Type of dataset, options include &#8216;OCCURRENCE&#8217;, etc.</li>
+<li><strong>data</strong> &#8211; [str] The type of data to get. Default: <code class="docutils literal"><span class="pre">all</span></code></li>
+<li><strong>type</strong> &#8211; [str] Type of dataset, options include <code class="docutils literal"><span class="pre">OCCURRENCE</span></code>, etc.</li>
 <li><strong>uuid</strong> &#8211; [str] UUID of the data node provider. This must be specified if data
-is anything other than &#8216;all&#8217;.</li>
-<li><strong>query</strong> &#8211; [str] Query term(s). Only used when <cite>data = &#8216;all&#8217;</cite></li>
+is anything other than <code class="docutils literal"><span class="pre">all</span></code>.</li>
+<li><strong>query</strong> &#8211; [str] Query term(s). Only used when <code class="docutils literal"><span class="pre">data</span> <span class="pre">=</span> <span class="pre">'all'</span></code></li>
 <li><strong>id</strong> &#8211; [int] A metadata document id.</li>
 </ul>
 </td>
@@ -154,7 +154,7 @@ is anything other than &#8216;all&#8217;.</li>
 </table>
 <p>References <a class="reference external" href="http://www.gbif.org/developer/registry#datasets">http://www.gbif.org/developer/registry#datasets</a></p>
 <p>Usage:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">registry</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">registry</span>
 <span class="n">registry</span><span class="o">.</span><span class="n">datasets</span><span class="p">(</span><span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">registry</span><span class="o">.</span><span class="n">datasets</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;OCCURRENCE&quot;</span><span class="p">)</span>
 <span class="n">registry</span><span class="o">.</span><span class="n">datasets</span><span class="p">(</span><span class="n">uuid</span><span class="o">=</span><span class="s2">&quot;a6998220-7e3a-485d-9cd6-73076bd85657&quot;</span><span class="p">)</span>
@@ -181,7 +181,7 @@ is anything other than &#8216;all&#8217;.</li>
 </table>
 <p>References: <a class="reference external" href="http://www.gbif.org/developer/registry#datasetMetrics">http://www.gbif.org/developer/registry#datasetMetrics</a></p>
 <p>Usage:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">registry</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">registry</span>
 <span class="n">registry</span><span class="o">.</span><span class="n">dataset_metrics</span><span class="p">(</span><span class="n">uuid</span><span class="o">=</span><span class="s1">&#39;3f8a1297-3259-4700-91fc-acc4170b27ce&#39;</span><span class="p">)</span>
 <span class="n">registry</span><span class="o">.</span><span class="n">dataset_metrics</span><span class="p">(</span><span class="n">uuid</span><span class="o">=</span><span class="s1">&#39;66dd0960-2d7d-46ee-a491-87b9adcfe7b1&#39;</span><span class="p">)</span>
 <span class="n">registry</span><span class="o">.</span><span class="n">dataset_metrics</span><span class="p">(</span><span class="n">uuid</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;3f8a1297-3259-4700-91fc-acc4170b27ce&#39;</span><span class="p">,</span> <span class="s1">&#39;66dd0960-2d7d-46ee-a491-87b9adcfe7b1&#39;</span><span class="p">])</span>
@@ -198,11 +198,11 @@ is anything other than &#8216;all&#8217;.</li>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>data</strong> &#8211; [str] The type of data to get. Default is all data. If not &#8216;all&#8217;, then one
-or more of &#8216;contact&#8217;, &#8216;endpoint&#8217;, &#8216;dataset&#8217;, &#8216;comment&#8217;, &#8216;deleted&#8217;, &#8216;nonPublishing&#8217;.</li>
+<li><strong>data</strong> &#8211; [str] The type of data to get. Default is all data. If not <code class="docutils literal"><span class="pre">all</span></code>, then one
+or more of <code class="docutils literal"><span class="pre">contact</span></code>, <code class="docutils literal"><span class="pre">endpoint</span></code>, <code class="docutils literal"><span class="pre">dataset</span></code>, <code class="docutils literal"><span class="pre">comment</span></code>, <code class="docutils literal"><span class="pre">deleted</span></code>, <code class="docutils literal"><span class="pre">nonPublishing</span></code>.</li>
 <li><strong>uuid</strong> &#8211; [str] UUID of the data node provider. This must be specified if data
-is anything other than &#8216;all&#8217;.</li>
-<li><strong>query</strong> &#8211; [str] Query nodes. Only used when <cite>data=&#8217;all&#8217;</cite>. Ignored otherwise.</li>
+is anything other than <code class="docutils literal"><span class="pre">all</span></code>.</li>
+<li><strong>query</strong> &#8211; [str] Query nodes. Only used when <code class="docutils literal"><span class="pre">data='all'</span></code>. Ignored otherwise.</li>
 </ul>
 </td>
 </tr>
@@ -210,7 +210,7 @@ is anything other than &#8216;all&#8217;.</li>
 </table>
 <p>References: <a class="reference external" href="http://www.gbif.org/developer/registry#installations">http://www.gbif.org/developer/registry#installations</a></p>
 <p>Usage:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">registry</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">registry</span>
 <span class="n">registry</span><span class="o">.</span><span class="n">installations</span><span class="p">(</span><span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">registry</span><span class="o">.</span><span class="n">installations</span><span class="p">(</span><span class="n">query</span><span class="o">=</span><span class="s2">&quot;france&quot;</span><span class="p">)</span>
 <span class="n">registry</span><span class="o">.</span><span class="n">installations</span><span class="p">(</span><span class="n">uuid</span><span class="o">=</span><span class="s2">&quot;b77901f9-d9b0-47fa-94e0-dd96450aa2b4&quot;</span><span class="p">)</span>
@@ -235,10 +235,10 @@ is anything other than &#8216;all&#8217;.</li>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>data</strong> &#8211; [str] The type of data to get. Default: &#8216;all&#8217;</li>
+<li><strong>data</strong> &#8211; [str] The type of data to get. Default: <code class="docutils literal"><span class="pre">all</span></code></li>
 <li><strong>uuid</strong> &#8211; [str] UUID of the data network provider. This must be specified if data
-is anything other than &#8216;all&#8217;.</li>
-<li><strong>query</strong> &#8211; [str] Query networks. Only used when <cite>data = &#8216;all&#8217;</cite>. Ignored otherwise.</li>
+is anything other than <code class="docutils literal"><span class="pre">all</span></code>.</li>
+<li><strong>query</strong> &#8211; [str] Query networks. Only used when <code class="docutils literal"><span class="pre">data</span> <span class="pre">=</span> <span class="pre">'all'</span></code>. Ignored otherwise.</li>
 </ul>
 </td>
 </tr>
@@ -254,7 +254,7 @@ is anything other than &#8216;all&#8217;.</li>
 </tbody>
 </table>
 <p>Usage:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">registry</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">registry</span>
 <span class="n">registry</span><span class="o">.</span><span class="n">networks</span><span class="p">(</span><span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">registry</span><span class="o">.</span><span class="n">networks</span><span class="p">(</span><span class="n">uuid</span><span class="o">=</span><span class="s1">&#39;16ab5405-6c94-4189-ac71-16ca3b753df7&#39;</span><span class="p">)</span>
 <span class="n">registry</span><span class="o">.</span><span class="n">networks</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="s1">&#39;endpoint&#39;</span><span class="p">,</span> <span class="n">uuid</span><span class="o">=</span><span class="s1">&#39;16ab5405-6c94-4189-ac71-16ca3b753df7&#39;</span><span class="p">)</span>
@@ -271,11 +271,11 @@ is anything other than &#8216;all&#8217;.</li>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>data</strong> &#8211; [str] The type of data to get. Default: &#8216;all&#8217;</li>
+<li><strong>data</strong> &#8211; [str] The type of data to get. Default: <code class="docutils literal"><span class="pre">all</span></code></li>
 <li><strong>uuid</strong> &#8211; [str] UUID of the data node provider. This must be specified if data
-is anything other than &#8216;all&#8217;.</li>
-<li><strong>query</strong> &#8211; [str] Query nodes. Only used when <cite>data = &#8216;all&#8217;</cite></li>
-<li><strong>isocode</strong> &#8211; [str] A 2 letter country code. Only used if <cite>data = &#8216;country&#8217;</cite>.</li>
+is anything other than <code class="docutils literal"><span class="pre">all</span></code>.</li>
+<li><strong>query</strong> &#8211; [str] Query nodes. Only used when <code class="docutils literal"><span class="pre">data</span> <span class="pre">=</span> <span class="pre">'all'</span></code></li>
+<li><strong>isocode</strong> &#8211; [str] A 2 letter country code. Only used if <code class="docutils literal"><span class="pre">data</span> <span class="pre">=</span> <span class="pre">'country'</span></code>.</li>
 </ul>
 </td>
 </tr>
@@ -283,7 +283,7 @@ is anything other than &#8216;all&#8217;.</li>
 </table>
 <p>References <a class="reference external" href="http://www.gbif.org/developer/registry#nodes">http://www.gbif.org/developer/registry#nodes</a></p>
 <p>Usage:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">registry</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">registry</span>
 <span class="n">registry</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">registry</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">uuid</span><span class="o">=</span><span class="s2">&quot;1193638d-32d1-43f0-a855-8727c94299d8&quot;</span><span class="p">)</span>
 <span class="n">registry</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="s1">&#39;identifier&#39;</span><span class="p">,</span> <span class="n">uuid</span><span class="o">=</span><span class="s2">&quot;03e816b3-8f58-49ae-bc12-4e18b358d6d9&quot;</span><span class="p">)</span>
