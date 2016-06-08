@@ -484,18 +484,17 @@
 <span class="k">def</span> <span class="nf">download_get</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Get a download from GBIF.</span>
-
+<span class="sd">    </span>
 <span class="sd">    :param key: [str] A key generated from a request, like that from ``download``</span>
 <span class="sd">    :param path: [str] Path to write zip file to. Default: ``&quot;.&quot;``, with a ``.zip`` appended to the end.</span>
 <span class="sd">    :param **kwargs: Further named arguments passed on to ``requests.get``</span>
-
-<span class="sd">    Downloads the zip file to a directory you specify on your machine.</span>
-<span class="sd">    We stream the zip data to a file. This function only downloads the file.</span>
 <span class="sd">    </span>
-<span class="sd">    See ``download_import`` to open a downloaded file in Python. The speed of </span>
-<span class="sd">    this function is of course proportional to the size of the file to </span>
-<span class="sd">    download, and affected by your internet connection speed. For example, </span>
-<span class="sd">    a 58 MB file on my machine took about 26 seconds.</span>
+<span class="sd">    Downloads the zip file to a directory you specify on your machine. </span>
+<span class="sd">    The speed of this function is of course proportional to the size of the </span>
+<span class="sd">    file to download, and affected by your internet connection speed.</span>
+<span class="sd">    </span>
+<span class="sd">    This function only downloads the file. To open and read it, see </span>
+<span class="sd">    https://github.com/BelgianBiodiversityPlatform/python-dwca-reader</span>
 
 <span class="sd">    Usage::</span>
 

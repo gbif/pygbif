@@ -352,18 +352,17 @@ def download_list(user=None, pwd=None, limit=20, start=0):
 def download_get(key, path=".", **kwargs):
     """
     Get a download from GBIF.
-
+    
     :param key: [str] A key generated from a request, like that from ``download``
     :param path: [str] Path to write zip file to. Default: ``"."``, with a ``.zip`` appended to the end.
     :param **kwargs: Further named arguments passed on to ``requests.get``
-
-    Downloads the zip file to a directory you specify on your machine.
-    We stream the zip data to a file. This function only downloads the file.
     
-    See ``download_import`` to open a downloaded file in Python. The speed of 
-    this function is of course proportional to the size of the file to 
-    download, and affected by your internet connection speed. For example, 
-    a 58 MB file on my machine took about 26 seconds.
+    Downloads the zip file to a directory you specify on your machine. 
+    The speed of this function is of course proportional to the size of the 
+    file to download, and affected by your internet connection speed.
+    
+    This function only downloads the file. To open and read it, see 
+    https://github.com/BelgianBiodiversityPlatform/python-dwca-reader
 
     Usage::
 
