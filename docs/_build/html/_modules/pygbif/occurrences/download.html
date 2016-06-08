@@ -130,258 +130,425 @@
            <div itemprop="articleBody">
             
   <h1>Source code for pygbif.occurrences.download</h1><div class="highlight"><pre>
-<span class="kn">from</span> <span class="nn">..gbifutils</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">import</span> <span class="nn">os</span>
+<span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
 <span class="kn">from</span> <span class="nn">requests</span> <span class="kn">import</span> <span class="n">auth</span>
 
-<span class="c1"># def download(*arg, type=&quot;and&quot;, user = ENV(&quot;GBIF_USER&quot;), pwd = ENV(&quot;GBIF_PWD&quot;),</span>
-<span class="c1">#    email, **kwargs):</span>
-<span class="c1">#    &#39;&#39;&#39;</span>
-<span class="c1">#    Spin up a download request for GBIF occurrence data.</span>
+<span class="kn">from</span> <span class="nn">..gbifutils</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="c1">#    :param ...: One or more of query arguments to kick of a download job. See Details.</span>
-<span class="c1">#    :param type: (charcter) One of equals (=), and (&amp;), or (|), lessThan (&lt;), lessThanOrEquals (&lt;=),</span>
-<span class="c1">#     greaterThan (&gt;), greaterThanOrEquals (&gt;=), in, within, not (!), like</span>
-<span class="c1">#    :param user: (character) User name within GBIF&#39;s website. Required. Set in your env</span>
-<span class="c1">#     vars with the option `GBIF_USER`</span>
-<span class="c1">#    :param pwd: (character) User password within GBIF&#39;s website. Required. Set in your env</span>
-<span class="c1">#     vars with the option `GBIF_PWD`</span>
-<span class="c1">#    :param email: (character) Email address to recieve download notice done email. Required.</span>
-<span class="c1">#     Set in your env vars with the option `GBIF_EMAIL`</span>
-<span class="c1">#    :param **kwargs: Further named arguments passed on to `requests.post`</span>
 
-<span class="c1">#     Argument passed have to be passed as character (e.g., &#39;country = US&#39;), with a space</span>
-<span class="c1">#     between key (&#39;country&#39;), operator (&#39;=&#39;), and value (&#39;US&#39;). See the `type` parameter for</span>
-<span class="c1">#     possible options for the operator.  This character string is parsed internally.</span>
+<span class="k">def</span> <span class="nf">_parse_args</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">tmp</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;\s&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+    <span class="n">pred_type</span> <span class="o">=</span> <span class="n">operator_lkup</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="n">key_lkup</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="n">pred_type</span><span class="p">,</span> <span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="n">key</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="n">tmp</span><span class="p">[</span><span class="mi">2</span><span class="p">]}</span>
 
-<span class="c1">#     Acceptable arguments to `...` are:</span>
 
-<span class="c1">#      - taxonKey = &#39;TAXON_KEY&#39;</span>
-<span class="c1">#      - scientificName = &#39;SCIENTIFIC_NAME&#39;</span>
-<span class="c1">#      - country = &#39;COUNTRY&#39;</span>
-<span class="c1">#      - publishingCountry = &#39;PUBLISHING_COUNTRY&#39;</span>
-<span class="c1">#      - hasCoordinate = &#39;HAS_COORDINATE&#39;</span>
-<span class="c1">#      - hasGeospatialIssue = &#39;HAS_GEOSPATIAL_ISSUE&#39;</span>
-<span class="c1">#      - typeStatus = &#39;TYPE_STATUS&#39;</span>
-<span class="c1">#      - recordNumber = &#39;RECORD_NUMBER&#39;</span>
-<span class="c1">#      - lastInterpreted = &#39;LAST_INTERPRETED&#39;</span>
-<span class="c1">#      - continent = &#39;CONTINENT&#39;</span>
-<span class="c1">#      - geometry = &#39;GEOMETRY&#39;</span>
-<span class="c1">#      - basisOfRecord = &#39;BASIS_OF_RECORD&#39;</span>
-<span class="c1">#      - datasetKey = &#39;DATASET_KEY&#39;</span>
-<span class="c1">#      - eventDate = &#39;EVENT_DATE&#39;</span>
-<span class="c1">#      - catalogNumber = &#39;CATALOG_NUMBER&#39;</span>
-<span class="c1">#      - year = &#39;YEAR&#39;</span>
-<span class="c1">#      - month = &#39;MONTH&#39;</span>
-<span class="c1">#      - decimalLatitude = &#39;DECIMAL_LATITUDE&#39;</span>
-<span class="c1">#      - decimalLongitude = &#39;DECIMAL_LONGITUDE&#39;</span>
-<span class="c1">#      - elevation = &#39;ELEVATION&#39;</span>
-<span class="c1">#      - depth = &#39;DEPTH&#39;</span>
-<span class="c1">#      - institutionCode = &#39;INSTITUTION_CODE&#39;</span>
-<span class="c1">#      - collectionCode = &#39;COLLECTION_CODE&#39;</span>
-<span class="c1">#      - issue = &#39;ISSUE&#39;</span>
-<span class="c1">#      - mediatype = &#39;MEDIA_TYPE&#39;</span>
-<span class="c1">#      - recordedBy = &#39;RECORDED_BY&#39;</span>
+<span class="k">def</span> <span class="nf">_check_environ</span><span class="p">(</span><span class="n">variable</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;check if a variable is present in the environmental variables&quot;&quot;&quot;</span>
+    <span class="k">if</span> <span class="n">is_not_none</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">value</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">value</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">is_none</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+            <span class="n">stop</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">variable</span><span class="p">,</span>
+                          <span class="sd">&quot;&quot;&quot; not supplied and no entry in environmental </span>
+<span class="sd">                           variables&quot;&quot;&quot;</span><span class="p">]))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">value</span>
 
-<span class="c1">#     See the API docs http://www.gbif.org/developer/occurrence#download for</span>
-<span class="c1">#     more info, and the predicates docs http://www.gbif.org/developer/occurrence#predicates</span>
 
-<span class="c1">#     :return: A dictionary, of results</span>
+<span class="k">def</span> <span class="nf">download</span><span class="p">(</span><span class="n">queries</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">pwd</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+             <span class="n">email</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">pred_type</span><span class="o">=</span><span class="s1">&#39;and&#39;</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Spin up a download request for GBIF occurrence data.</span>
 
-<span class="c1">#     Usage::</span>
+<span class="sd">    :param queries: One or more of query arguments to kick of a download job.</span>
+<span class="sd">        See Details.</span>
+<span class="sd">    :type queries: str or list</span>
+<span class="sd">    :param pred_type: (character) One of ``equals`` (``=``), ``and`` (``&amp;``),</span>
+<span class="sd">        `or`` (``|``), ``lessThan`` (``&lt;``), ``lessThanOrEquals`` (``&lt;=``),</span>
+<span class="sd">        ``greaterThan`` (``&gt;``), ``greaterThanOrEquals`` (``&gt;=``),</span>
+<span class="sd">        ``in``, ``within``, ``not`` (``!``), ``like``</span>
+<span class="sd">    :param user: (character) User name within GBIF&#39;s website.</span>
+<span class="sd">        Required. Set in your env vars with the option ``GBIF_USER``</span>
+<span class="sd">    :param pwd: (character) User password within GBIF&#39;s website. Required.</span>
+<span class="sd">        Set in your env vars with the option ``GBIF_PWD``</span>
+<span class="sd">    :param email: (character) Email address to recieve download notice done</span>
+<span class="sd">        email. Required. Set in your env vars with the option ``GBIF_EMAIL``</span>
 
-<span class="c1">#         from pygbif import occurrences as occ</span>
-<span class="c1">#         occ.download(args = [&quot;basisOfRecord = LITERATURE&quot;, &#39;decimalLatitude &gt; 50&#39;])</span>
-<span class="c1">#         occ.download(args = [&#39;decimalLatitude &gt; 50&#39;])</span>
+<span class="sd">    Argument passed have to be passed as character (e.g., ``country = US``),</span>
+<span class="sd">    with a space between key (``country``), operator (``=``), and value (``US``).</span>
+<span class="sd">    See the ``type`` parameter for possible options for the operator.</span>
+<span class="sd">    This character string is parsed internally.</span>
 
-<span class="c1">#         occ.download(&quot;basisOfRecord = LITERATURE&quot;)</span>
-<span class="c1">#         occ.download(&#39;taxonKey = 3119195&#39;)</span>
-<span class="c1">#         occ.download(&#39;decimalLatitude &gt; 50&#39;)</span>
-<span class="c1">#         occ.download(&#39;elevation &gt;= 9000&#39;)</span>
-<span class="c1">#         occ.download(&#39;decimalLatitude &gt;= 65&#39;)</span>
-<span class="c1">#         occ.download(&quot;country = US&quot;)</span>
-<span class="c1">#         occ.download(&quot;institutionCode = TLMF&quot;)</span>
-<span class="c1">#         occ.download(&quot;catalogNumber = Bird.27847588&quot;)</span>
+<span class="sd">    Acceptable arguments to ``...`` (args) are:</span>
 
-<span class="c1">#         res = occ.download(&#39;taxonKey = 7264332&#39;, &#39;hasCoordinate = TRUE&#39;)</span>
+<span class="sd">     - taxonKey = ``TAXON_KEY``</span>
+<span class="sd">     - scientificName = ``SCIENTIFIC_NAME``</span>
+<span class="sd">     - country = ``COUNTRY``</span>
+<span class="sd">     - publishingCountry = ``PUBLISHING_COUNTRY``</span>
+<span class="sd">     - hasCoordinate = ``HAS_COORDINATE``</span>
+<span class="sd">     - hasGeospatialIssue = ``HAS_GEOSPATIAL_ISSUE``</span>
+<span class="sd">     - typeStatus = ``TYPE_STATUS``</span>
+<span class="sd">     - recordNumber = ``RECORD_NUMBER``</span>
+<span class="sd">     - lastInterpreted = ``LAST_INTERPRETED``</span>
+<span class="sd">     - continent = ``CONTINENT``</span>
+<span class="sd">     - geometry = ``GEOMETRY``</span>
+<span class="sd">     - basisOfRecord = ``BASIS_OF_RECORD``</span>
+<span class="sd">     - datasetKey = ``DATASET_KEY``</span>
+<span class="sd">     - eventDate = ``EVENT_DATE``</span>
+<span class="sd">     - catalogNumber = ``CATALOG_NUMBER``</span>
+<span class="sd">     - year = ``YEAR``</span>
+<span class="sd">     - month = ``MONTH``</span>
+<span class="sd">     - decimalLatitude = ``DECIMAL_LATITUDE``</span>
+<span class="sd">     - decimalLongitude = ``DECIMAL_LONGITUDE``</span>
+<span class="sd">     - elevation = ``ELEVATION``</span>
+<span class="sd">     - depth = ``DEPTH``</span>
+<span class="sd">     - institutionCode = ``INSTITUTION_CODE``</span>
+<span class="sd">     - collectionCode = ``COLLECTION_CODE``</span>
+<span class="sd">     - issue = ``ISSUE``</span>
+<span class="sd">     - mediatype = ``MEDIA_TYPE``</span>
+<span class="sd">     - recordedBy = ``RECORDED_BY``</span>
 
-<span class="c1">#         # pass output to download_meta for more information</span>
-<span class="c1">#         occ.download_meta(occ.download(&#39;decimalLatitude &gt; 75&#39;))</span>
+<span class="sd">    See the API docs http://www.gbif.org/developer/occurrence#download</span>
+<span class="sd">    for more info, and the predicates docs</span>
+<span class="sd">    http://www.gbif.org/developer/occurrence#predicates</span>
 
-<span class="c1">#         # Multiple queries</span>
-<span class="c1">#         gg = occ.download(&#39;decimalLatitude &gt;= 65&#39;, &#39;decimalLatitude &lt;= -65&#39;, type=&quot;or&quot;)</span>
-<span class="c1">#         gg = occ.download(&#39;depth = 80&#39;, &#39;taxonKey = 2343454&#39;, type=&quot;or&quot;)</span>
-<span class="c1">#     &#39;&#39;&#39;</span>
-<span class="c1">#     url = gbif_baseurl + &#39;occurrence/download/request&#39;</span>
+<span class="sd">    :return: A dictionary, of results</span>
 
-<span class="c1">#     user = os.environ[&quot;GBIF_USER&quot;]</span>
-<span class="c1">#     pwd = os.environ[&quot;GBIF_PWD&quot;]</span>
-<span class="c1">#     email = os.environ[&quot;GBIF_EMAIL&quot;]</span>
+<span class="sd">    Usage::</span>
 
-<span class="c1">#     keyval = [ parse_args(z) for z in args ]</span>
+<span class="sd">        from pygbif import occurrences as occ</span>
 
-<span class="c1">#     if len(keyval) &gt; 1:</span>
-<span class="c1">#       req = {&#39;creator&#39;: user,</span>
-<span class="c1">#            &#39;notification_address&#39;: email,</span>
-<span class="c1">#            &#39;predicate&#39;: {&#39;type&#39;: type, &#39;predicates&#39;: keyval}}</span>
-<span class="c1">#     else:</span>
-<span class="c1">#       if type == &quot;within&quot; or &quot;within&quot; in [ s[&#39;type&#39;] for s in keyval ]:</span>
-<span class="c1">#         req = {&#39;creator&#39;: user,</span>
-<span class="c1">#              &#39;notification_address&#39;: email,</span>
-<span class="c1">#              &#39;predicate&#39;: {</span>
-<span class="c1">#                &#39;type&#39;: keyval[0][&#39;type&#39;],</span>
-<span class="c1">#                &#39;value&#39;: keyval[0][&#39;value&#39;]</span>
-<span class="c1">#              }}</span>
-<span class="c1">#         req[&#39;predicate&#39;][keyval[0][&#39;key&#39;].lower()] = req[&#39;predicate&#39;].pop(&#39;value&#39;)</span>
-<span class="c1">#       else:</span>
-<span class="c1">#         req = {&#39;creator&#39;: user,</span>
-<span class="c1">#            &#39;notification_address&#39;: email,</span>
-<span class="c1">#            &#39;predicate&#39;: {</span>
-<span class="c1">#               &#39;type&#39;: keyval[0][&#39;type&#39;],</span>
-<span class="c1">#               &#39;key&#39;: keyval[0][&#39;key&#39;],</span>
-<span class="c1">#               &#39;value&#39;: keyval[0][&#39;value&#39;]}}</span>
+<span class="sd">        occ.download(&#39;basisOfRecord = LITERATURE&#39;)</span>
+<span class="sd">        occ.download(&#39;taxonKey = 3119195&#39;)</span>
+<span class="sd">        occ.download(&#39;decimalLatitude &gt; 50&#39;)</span>
+<span class="sd">        occ.download(&#39;elevation &gt;= 9000&#39;)</span>
+<span class="sd">        occ.download(&#39;decimalLatitude &gt;= 65&#39;)</span>
+<span class="sd">        occ.download(&#39;country = US&#39;)</span>
+<span class="sd">        occ.download(&#39;institutionCode = TLMF&#39;)</span>
+<span class="sd">        occ.download(&#39;catalogNumber = Bird.27847588&#39;)</span>
 
-<span class="c1">#     out = rg_POST(url, req, user, pwd, **kwargs)</span>
-<span class="c1">#     return [out, user, email]</span>
+<span class="sd">        res = occ.download([&#39;taxonKey = 7264332&#39;, &#39;hasCoordinate = TRUE&#39;])</span>
+
+<span class="sd">        # pass output to download_meta for more information</span>
+<span class="sd">        occ.download_meta(occ.download(&#39;decimalLatitude &gt; 75&#39;))</span>
+
+<span class="sd">        # Multiple queries</span>
+<span class="sd">        gg = occ.download([&#39;decimalLatitude &gt;= 65&#39;,</span>
+<span class="sd">                          &#39;decimalLatitude &lt;= -65&#39;], type=&#39;or&#39;)</span>
+<span class="sd">        gg = occ.download([&#39;depth = 80&#39;, &#39;taxonKey = 2343454&#39;],</span>
+<span class="sd">                          type=&#39;or&#39;)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">user</span> <span class="o">=</span> <span class="n">_check_environ</span><span class="p">(</span><span class="s1">&#39;GBIF_USER&#39;</span><span class="p">,</span> <span class="n">user</span><span class="p">)</span>
+    <span class="n">pwd</span> <span class="o">=</span> <span class="n">_check_environ</span><span class="p">(</span><span class="s1">&#39;GBIF_PWD&#39;</span><span class="p">,</span> <span class="n">pwd</span><span class="p">)</span>
+    <span class="n">email</span> <span class="o">=</span> <span class="n">_check_environ</span><span class="p">(</span><span class="s1">&#39;GBIF_EMAIL&#39;</span><span class="p">,</span> <span class="n">email</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">queries</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">queries</span> <span class="o">=</span> <span class="p">[</span><span class="n">queries</span><span class="p">]</span>
+
+    <span class="n">keyval</span> <span class="o">=</span> <span class="p">[</span><span class="n">_parse_args</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="n">queries</span><span class="p">]</span>
+
+    <span class="c1"># USE GBIFDownload class to set up the predicates</span>
+    <span class="n">req</span> <span class="o">=</span> <span class="n">GbifDownload</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">email</span><span class="p">)</span>
+    <span class="n">req</span><span class="o">.</span><span class="n">main_pred_type</span> <span class="o">=</span> <span class="n">pred_type</span>
+    <span class="k">for</span> <span class="n">predicate</span> <span class="ow">in</span> <span class="n">keyval</span><span class="p">:</span>
+        <span class="n">req</span><span class="o">.</span><span class="n">add_predicate</span><span class="p">(</span><span class="n">predicate</span><span class="p">[</span><span class="s1">&#39;key&#39;</span><span class="p">],</span>
+                          <span class="n">predicate</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">],</span>
+                          <span class="n">predicate</span><span class="p">[</span><span class="s1">&#39;type&#39;</span><span class="p">])</span>
+
+    <span class="n">out</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="n">post_download</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">pwd</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">out</span><span class="p">,</span> <span class="n">req</span><span class="o">.</span><span class="n">payload</span>
+
+
+<span class="k">class</span> <span class="nc">GbifDownload</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">creator</span><span class="p">,</span> <span class="n">email</span><span class="p">,</span> <span class="n">polygon</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;class to setup a JSON doc with the query and POST a request</span>
+
+<span class="sd">        All predicates (default key-value or iterative based on a list of</span>
+<span class="sd">        values) are combined with an AND statement. Iterative predicates are</span>
+<span class="sd">        creating a subset equal statements combined with OR</span>
+
+<span class="sd">        :param creator: User name.</span>
+<span class="sd">        :param email: user email</span>
+<span class="sd">        :param polygon: Polygon of points to extract data from</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">predicates</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_main_pred_type</span> <span class="o">=</span> <span class="s1">&#39;and&#39;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://api.gbif.org/v1/occurrence/download/request&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">header</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;accept&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;content-type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;user-agent&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="s1">&#39;python-requests/&#39;</span><span class="p">,</span>
+                                              <span class="n">requests</span><span class="o">.</span><span class="n">__version__</span><span class="p">,</span>
+                                              <span class="s1">&#39;,pygbif/&#39;</span><span class="p">,</span>
+                                              <span class="n">pygbif</span><span class="o">.</span><span class="n">__version__</span>
+                                              <span class="p">])</span>
+                       <span class="p">}</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">payload</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;creator&#39;</span><span class="p">:</span> <span class="n">creator</span><span class="p">,</span>
+                        <span class="s1">&#39;notification_address&#39;</span><span class="p">:</span> <span class="p">[</span><span class="n">email</span><span class="p">],</span>
+                        <span class="s1">&#39;send_notification&#39;</span><span class="p">:</span> <span class="s1">&#39;true&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;created&#39;</span><span class="p">:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span><span class="o">.</span><span class="n">year</span><span class="p">,</span>
+                        <span class="s1">&#39;predicate&#39;</span><span class="p">:</span> <span class="p">{</span>
+                            <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">_main_pred_type</span><span class="p">,</span>
+                            <span class="s1">&#39;predicates&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">predicates</span>
+                            <span class="p">}</span>
+                        <span class="p">}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">request_id</span> <span class="o">=</span> <span class="bp">None</span>
+
+        <span class="c1"># prepare the geometry polygon constructions</span>
+        <span class="k">if</span> <span class="n">polygon</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">add_geometry</span><span class="p">(</span><span class="n">polygon</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">main_pred_type</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;get main predicate combination type&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_main_pred_type</span>
+
+    <span class="nd">@main_pred_type.setter</span>
+    <span class="k">def</span> <span class="nf">main_pred_type</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;set main predicate combination type</span>
+
+<span class="sd">        :param value: (character) One of ``equals`` (``=``), ``and`` (``&amp;``), ``or`` (``|``),</span>
+<span class="sd">        ``lessThan`` (``&lt;``), ``lessThanOrEquals`` (``&lt;=``), ``greaterThan`` (``&gt;``),</span>
+<span class="sd">        ``greaterThanOrEquals`` (``&gt;=``), ``in``, ``within``, ``not`` (``!``), ``like``</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">value</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">operators</span><span class="p">:</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">operator_lkup</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">value</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">value</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_main_pred_type</span> <span class="o">=</span> <span class="n">value</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">payload</span><span class="p">[</span><span class="s1">&#39;predicate&#39;</span><span class="p">][</span><span class="s1">&#39;type&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_main_pred_type</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;main predicate combiner not a valid operator&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">add_predicate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">predicate_type</span><span class="o">=</span><span class="s1">&#39;equals&#39;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        add key, value, type combination of a predicate</span>
+
+<span class="sd">        :param key: query KEY parameter</span>
+<span class="sd">        :param value: the value used in the predicate</span>
+<span class="sd">        :param predicate_type: the type of predicate (e.g. ``equals``)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">predicate_type</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">operators</span><span class="p">:</span>
+            <span class="n">predicate_type</span> <span class="o">=</span> <span class="n">operator_lkup</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">predicate_type</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">predicate_type</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">predicates</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="n">predicate_type</span><span class="p">,</span>
+                                    <span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="n">key</span><span class="p">,</span>
+                                    <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="n">value</span>
+                                    <span class="p">})</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;predicate type not a valid operator&quot;</span><span class="p">)</span>
+
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_extract_values</span><span class="p">(</span><span class="n">values_list</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;extract values from either file or list</span>
+
+<span class="sd">        :param values_list: list or file name (str) with list of values</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">values</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="c1"># check if file or list of values to iterate</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">values_list</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">values_list</span><span class="p">)</span> <span class="k">as</span> <span class="n">ff</span><span class="p">:</span>
+                <span class="n">reading</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">ff</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">reading</span><span class="p">:</span>
+                    <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">j</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">values_list</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="n">values</span> <span class="o">=</span> <span class="n">values_list</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;input datatype not supported.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">values</span>
+
+    <span class="k">def</span> <span class="nf">add_iterative_predicate</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">values_list</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;add an iterative predicate with a key and set of values</span>
+<span class="sd">        which it can be equal to in and or function.</span>
+<span class="sd">        The individual predicates are specified with the type ``equals`` and</span>
+<span class="sd">        combined with a type ``or``.</span>
+
+<span class="sd">        The main reason for this addition is the inability of using ``in`` as</span>
+<span class="sd">        predicate type wfor multiple taxon_key values</span>
+<span class="sd">        (cfr. http://dev.gbif.org/issues/browse/POR-2753)</span>
+
+<span class="sd">        :param key: API key to use for the query.</span>
+<span class="sd">        :param values_list: Filename or list containing the taxon keys to be s</span>
+<span class="sd">            searched.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">values</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_extract_values</span><span class="p">(</span><span class="n">values_list</span><span class="p">)</span>
+
+        <span class="n">predicate</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;equals&#39;</span><span class="p">,</span> <span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="n">key</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">}</span>
+        <span class="n">predicates</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">while</span> <span class="n">values</span><span class="p">:</span>
+            <span class="n">predicate</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">values</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+            <span class="n">predicates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">predicate</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">predicates</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;or&#39;</span><span class="p">,</span> <span class="s1">&#39;predicates&#39;</span><span class="p">:</span> <span class="n">predicates</span><span class="p">})</span>
+
+    <span class="k">def</span> <span class="nf">add_geometry</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">polygon</span><span class="p">,</span> <span class="n">geom_type</span><span class="o">=</span><span class="s1">&#39;within&#39;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;add a geometry type of predicate</span>
+
+<span class="sd">        :param polygon: In this format ``POLYGON((x1 y1, x2 y2,... xn yn))``</span>
+<span class="sd">        :param geom_type: type of predicate, e.g. ``within``</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">predicates</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="n">geom_type</span><span class="p">,</span> <span class="s1">&#39;geometry&#39;</span><span class="p">:</span> <span class="n">polygon</span><span class="p">})</span>
+
+    <span class="k">def</span> <span class="nf">post_download</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">pwd</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        :param user: Username</span>
+<span class="sd">        :param pwd: Password</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">user</span> <span class="o">=</span> <span class="n">_check_environ</span><span class="p">(</span><span class="s1">&#39;GBIF_USER&#39;</span><span class="p">,</span> <span class="n">user</span><span class="p">)</span>
+        <span class="n">pwd</span> <span class="o">=</span> <span class="n">_check_environ</span><span class="p">(</span><span class="s1">&#39;GBIF_PWD&#39;</span><span class="p">,</span> <span class="n">pwd</span><span class="p">)</span>
+
+        <span class="c1"># pprint.pprint(self.payload)</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span><span class="p">,</span>
+                          <span class="n">auth</span><span class="o">=</span><span class="n">auth</span><span class="o">.</span><span class="n">HTTPBasicAuth</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">pwd</span><span class="p">),</span>
+                          <span class="n">data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">payload</span><span class="p">),</span>
+                          <span class="n">headers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">header</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">status_code</span> <span class="o">&gt;</span> <span class="mi">203</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;error: &#39;</span> <span class="o">+</span> <span class="n">r</span><span class="o">.</span><span class="n">text</span> <span class="o">+</span>
+                            <span class="s1">&#39;, with error status code &#39;</span> <span class="o">+</span>
+                            <span class="nb">str</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span> <span class="o">+</span>
+                            <span class="s1">&#39;check your number of active downloads.&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">request_id</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">text</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Your download key is &#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">request_id</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">request_id</span>
+
+    <span class="k">def</span> <span class="nf">get_status</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;get the current download status&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">get_download_status</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">request_id</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">get_download_status</span><span class="p">(</span><span class="n">request_key</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;get the current download status&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">download_meta</span><span class="p">(</span><span class="n">request_key</span><span class="p">)</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;status&#39;</span><span class="p">)</span>
+
 
 <span class="k">def</span> <span class="nf">download_meta</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-  <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">  Retrieves the occurrence download metadata by its unique key.</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Retrieves the occurrence download metadata by its unique key. Further</span>
+<span class="sd">    named arguments passed on to ``requests.get`` can be included as additional</span>
+<span class="sd">    arguments</span>
 
-<span class="sd">  :param key: [str] A key generated from a request, like that from `download`</span>
-<span class="sd">  :param **kwargs: Further named arguments passed on to `requests.get`</span>
+<span class="sd">    :param key: [str] A key generated from a request, like that from ``download``</span>
 
-<span class="sd">  Usage::</span>
+<span class="sd">    Usage::</span>
 
 <span class="sd">      from pygbif import occurrences as occ</span>
 <span class="sd">      occ.download_meta(key = &quot;0003970-140910143529206&quot;)</span>
 <span class="sd">      occ.download_meta(key = &quot;0000099-140929101555934&quot;)</span>
-<span class="sd">  &#39;&#39;&#39;</span>
-  <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://api.gbif.org/v1/occurrence/download/&#39;</span> <span class="o">+</span> <span class="n">key</span>
-  <span class="k">return</span> <span class="n">gbif_GET</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="p">{},</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://api.gbif.org/v1/occurrence/download/&#39;</span> <span class="o">+</span> <span class="n">key</span>
+    <span class="k">return</span> <span class="n">gbif_GET</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="p">{},</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">download_list</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">pwd</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">limit</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="n">start</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-  <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">  Lists the downloads created by a user.</span>
 
-<span class="sd">  :param user: [str] A user name, look at env var &quot;GBIF_USER&quot; first</span>
-<span class="sd">  :param pwd: [str] Your password, look at env var &quot;GBIF_PWD&quot; first</span>
-<span class="sd">  :param limit: [int] Number of records to return. Default: 20</span>
-<span class="sd">  :param start: [int] Record number to start at. Default: 0</span>
-<span class="sd">  :param **kwargs: Further named arguments passed on to `requests.get`</span>
+<span class="k">def</span> <span class="nf">download_list</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">pwd</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Lists the downloads created by a user.</span>
 
-<span class="sd">  Usage::</span>
+<span class="sd">    :param user: [str] A user name, look at env var ``GBIF_USER`` first</span>
+<span class="sd">    :param pwd: [str] Your password, look at env var ``GBIF_PWD`` first</span>
+<span class="sd">    :param limit: [int] Number of records to return. Default: ``20``</span>
+<span class="sd">    :param start: [int] Record number to start at. Default: ``0``</span>
+
+<span class="sd">    Usage::</span>
 
 <span class="sd">      from pygbif import occurrences as occ</span>
 <span class="sd">      occ.download_list(user = &quot;sckott&quot;)</span>
 <span class="sd">      occ.download_list(user = &quot;sckott&quot;, limit = 5)</span>
 <span class="sd">      occ.download_list(user = &quot;sckott&quot;, start = 21)</span>
-<span class="sd">  &#39;&#39;&#39;</span>
-  <span class="k">if</span> <span class="n">is_none</span><span class="p">(</span><span class="n">user</span><span class="p">):</span>
-    <span class="n">user</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;GBIF_USER&#39;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">is_none</span><span class="p">(</span><span class="n">user</span><span class="p">):</span>
-      <span class="n">stop</span><span class="p">(</span><span class="s1">&#39;user not supplied and no entry for GBIF_USER&#39;</span><span class="p">)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
-  <span class="k">if</span> <span class="n">is_none</span><span class="p">(</span><span class="n">pwd</span><span class="p">):</span>
-    <span class="n">pwd</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;GBIF_PWD&#39;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">is_none</span><span class="p">(</span><span class="n">pwd</span><span class="p">):</span>
-      <span class="n">stop</span><span class="p">(</span><span class="s1">&#39;pwd not supplied and no entry for GBIF_PWD&#39;</span><span class="p">)</span>
+    <span class="n">user</span> <span class="o">=</span> <span class="n">_check_environ</span><span class="p">(</span><span class="s1">&#39;GBIF_USER&#39;</span><span class="p">,</span> <span class="n">user</span><span class="p">)</span>
+    <span class="n">pwd</span> <span class="o">=</span> <span class="n">_check_environ</span><span class="p">(</span><span class="s1">&#39;GBIF_PWD&#39;</span><span class="p">,</span> <span class="n">pwd</span><span class="p">)</span>
 
-  <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://api.gbif.org/v1/occurrence/download/user/&#39;</span> <span class="o">+</span> <span class="n">user</span>
-  <span class="n">args</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;limit&#39;</span><span class="p">:</span> <span class="n">limit</span><span class="p">,</span> <span class="s1">&#39;offset&#39;</span><span class="p">:</span> <span class="n">start</span><span class="p">}</span>
-  <span class="n">res</span> <span class="o">=</span> <span class="n">gbif_GET</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">pwd</span><span class="p">))</span>
-  <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;meta&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;offset&#39;</span><span class="p">:</span> <span class="n">res</span><span class="p">[</span><span class="s1">&#39;offset&#39;</span><span class="p">],</span> <span class="s1">&#39;limit&#39;</span><span class="p">:</span> <span class="n">res</span><span class="p">[</span><span class="s1">&#39;limit&#39;</span><span class="p">],</span>
-    <span class="s1">&#39;endofrecords&#39;</span><span class="p">:</span> <span class="n">res</span><span class="p">[</span><span class="s1">&#39;endOfRecords&#39;</span><span class="p">],</span> <span class="s1">&#39;count&#39;</span><span class="p">:</span> <span class="n">res</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">]},</span>
-   <span class="s1">&#39;results&#39;</span><span class="p">:</span> <span class="n">res</span><span class="p">[</span><span class="s1">&#39;results&#39;</span><span class="p">]}</span>
-
-<span class="k">def</span> <span class="nf">download_get</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="n">overwrite</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-  <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">  Get a download from GBIF.</span>
-
-<span class="sd">  :param key: [str] A key generated from a request, like that from `download`</span>
-<span class="sd">  :param path: [str] Path to write zip file to. Default: `&quot;.&quot;`, with a `.zip`</span>
-<span class="sd">    appended to the end.</span>
-<span class="sd">  :param **kwargs: Further named arguments passed on to `requests.get`</span>
-
-<span class="sd">  Downloads the zip file to a directory you specify on your machine.</span>
-<span class="sd">  We stream the zip data to a file. This function only downloads the file.</span>
-<span class="sd">  See `download_import` to open a downloaded file in Python. The speed of this</span>
-<span class="sd">  function is of course proportional to the size of the file to download, and affected</span>
-<span class="sd">  by your internet connection speed. For example, a 58 MB file on my machine took</span>
-<span class="sd">  about 26 seconds.</span>
-
-<span class="sd">  Usage::</span>
-
-<span class="sd">    from pygbif import occurrences as occ</span>
-<span class="sd">    occ.download_get(&quot;0000066-140928181241064&quot;)</span>
-<span class="sd">    occ.download_get(&quot;0003983-140910143529206&quot;)</span>
-<span class="sd">  &#39;&#39;&#39;</span>
-  <span class="n">meta</span> <span class="o">=</span> <span class="n">pygbif</span><span class="o">.</span><span class="n">occurrences</span><span class="o">.</span><span class="n">download_meta</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-  <span class="k">if</span> <span class="n">meta</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;SUCCEEDED&#39;</span><span class="p">:</span>
-    <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;download &quot;</span><span class="si">%s</span><span class="s1">&quot; not of status SUCCEEDED&#39;</span> <span class="o">%</span> <span class="n">key</span><span class="p">)</span>
-  <span class="k">else</span><span class="p">:</span>
-    <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Download file size: </span><span class="si">%s</span><span class="s1"> bytes&#39;</span> <span class="o">%</span> <span class="n">meta</span><span class="p">[</span><span class="s1">&#39;size&#39;</span><span class="p">])</span>
-    <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://api.gbif.org/v1/occurrence/download/request/&#39;</span> <span class="o">+</span> <span class="n">key</span>
-    <span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/</span><span class="si">%s</span><span class="s2">.zip&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
-    <span class="n">res</span> <span class="o">=</span> <span class="n">gbif_GET_write</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-    <span class="c1"># options(gbifdownloadpath = path)</span>
-    <span class="k">print</span><span class="p">(</span> <span class="s2">&quot;On disk at &quot;</span> <span class="o">+</span> <span class="n">path</span> <span class="p">)</span>
-    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="n">path</span><span class="p">,</span> <span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="n">meta</span><span class="p">[</span><span class="s1">&#39;size&#39;</span><span class="p">],</span> <span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="n">key</span><span class="p">}</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://api.gbif.org/v1/occurrence/download/user/&#39;</span> <span class="o">+</span> <span class="n">user</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;limit&#39;</span><span class="p">:</span> <span class="n">limit</span><span class="p">,</span> <span class="s1">&#39;offset&#39;</span><span class="p">:</span> <span class="n">start</span><span class="p">}</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">gbif_GET</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">pwd</span><span class="p">))</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;meta&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;offset&#39;</span><span class="p">:</span> <span class="n">res</span><span class="p">[</span><span class="s1">&#39;offset&#39;</span><span class="p">],</span>
+                     <span class="s1">&#39;limit&#39;</span><span class="p">:</span> <span class="n">res</span><span class="p">[</span><span class="s1">&#39;limit&#39;</span><span class="p">],</span>
+                     <span class="s1">&#39;endofrecords&#39;</span><span class="p">:</span> <span class="n">res</span><span class="p">[</span><span class="s1">&#39;endOfRecords&#39;</span><span class="p">],</span>
+                     <span class="s1">&#39;count&#39;</span><span class="p">:</span> <span class="n">res</span><span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">]},</span>
+            <span class="s1">&#39;results&#39;</span><span class="p">:</span> <span class="n">res</span><span class="p">[</span><span class="s1">&#39;results&#39;</span><span class="p">]}</span>
 
 
-<span class="c1"># helper functions</span>
-<span class="k">def</span> <span class="nf">rg_POST</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">req</span><span class="p">,</span> <span class="n">user</span><span class="p">,</span> <span class="n">pwd</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-  <span class="n">heads</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;accept&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;content-type&#39;</span><span class="p">:</span> <span class="s1">&#39;application/json&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;user-agent&#39;</span><span class="p">:</span> <span class="s1">&#39;python-requests/&#39;</span> <span class="o">+</span> <span class="n">requests</span><span class="o">.</span><span class="n">__version__</span> <span class="o">+</span> <span class="s1">&#39;,pygbif/&#39;</span> <span class="o">+</span> <span class="n">pygbif</span><span class="o">.</span><span class="n">__version__</span>
-  <span class="p">}</span>
-  <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">req</span><span class="p">),</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">heads</span><span class="p">,</span> <span class="n">auth</span> <span class="o">=</span> <span class="n">auth</span><span class="o">.</span><span class="n">HTTPBasicAuth</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">pwd</span><span class="p">))</span>
-  <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">status_code</span> <span class="o">&gt;</span> <span class="mi">203</span><span class="p">:</span>
-    <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;error: &#39;</span> <span class="o">+</span> <span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
-  <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">headers</span><span class="p">()[</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;application/json&#39;</span><span class="p">:</span>
-    <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;not of type json&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">download_get</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Get a download from GBIF.</span>
 
-  <span class="k">return</span> <span class="n">r</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="sd">    :param key: [str] A key generated from a request, like that from ``download``</span>
+<span class="sd">    :param path: [str] Path to write zip file to. Default: ``&quot;.&quot;``, with a ``.zip`` appended to the end.</span>
+<span class="sd">    :param **kwargs: Further named arguments passed on to ``requests.get``</span>
 
-<span class="c1"># def rg_POST(url, req, user, pwd, callopts):</span>
-<span class="c1">#   tmp = requests.post(url, config = c(</span>
-<span class="c1">#     content_type_json(),</span>
-<span class="c1">#     accept_json(),</span>
-<span class="c1">#     authenticate(user = user, password = pwd),</span>
-<span class="c1">#     callopts), body = jsonlite::toJSON(req),</span>
-<span class="c1">#     make_rgbif_ua())</span>
-<span class="c1">#   if (tmp$status_code &gt; 203) stop(content(tmp, as = &quot;text&quot;), call. = FALSE)</span>
-<span class="c1">#   stopifnot(tmp$header$`content-type` == &#39;application/json&#39;)</span>
-<span class="c1">#   content(tmp, as = &quot;text&quot;)</span>
+<span class="sd">    Downloads the zip file to a directory you specify on your machine.</span>
+<span class="sd">    We stream the zip data to a file. This function only downloads the file.</span>
+<span class="sd">    </span>
+<span class="sd">    See ``download_import`` to open a downloaded file in Python. The speed of </span>
+<span class="sd">    this function is of course proportional to the size of the file to </span>
+<span class="sd">    download, and affected by your internet connection speed. For example, </span>
+<span class="sd">    a 58 MB file on my machine took about 26 seconds.</span>
 
-<span class="c1"># print.download = function(x, ...) {</span>
-<span class="c1">#   stopifnot(is(x, &#39;download&#39;))</span>
-<span class="c1">#   cat(&quot;&lt;&lt;gbif download&gt;&gt;&quot;, &quot;\n&quot;, sep = &quot;&quot;)</span>
-<span class="c1">#   cat(&quot;  Username: &quot;, attr(x, &quot;user&quot;), &quot;\n&quot;, sep = &quot;&quot;)</span>
-<span class="c1">#   cat(&quot;  E-mail: &quot;, attr(x, &quot;email&quot;), &quot;\n&quot;, sep = &quot;&quot;)</span>
-<span class="c1">#   cat(&quot;  Download key: &quot;, x, &quot;\n&quot;, sep = &quot;&quot;)</span>
-<span class="c1"># }</span>
+<span class="sd">    Usage::</span>
 
-<span class="k">def</span> <span class="nf">parse_args</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-  <span class="n">tmp</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;\s&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
-  <span class="nb">type</span> <span class="o">=</span> <span class="n">operator_lkup</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-  <span class="n">key</span> <span class="o">=</span> <span class="n">key_lkup</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">tmp</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-  <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="nb">type</span><span class="p">,</span> <span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="n">key</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="n">tmp</span><span class="p">[</span><span class="mi">2</span><span class="p">]}</span>
+<span class="sd">      from pygbif import occurrences as occ</span>
+<span class="sd">      occ.download_get(&quot;0000066-140928181241064&quot;)</span>
+<span class="sd">      occ.download_get(&quot;0003983-140910143529206&quot;)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">meta</span> <span class="o">=</span> <span class="n">pygbif</span><span class="o">.</span><span class="n">occurrences</span><span class="o">.</span><span class="n">download_meta</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">meta</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;SUCCEEDED&#39;</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;download &quot;</span><span class="si">%s</span><span class="s1">&quot; not of status SUCCEEDED&#39;</span> <span class="o">%</span> <span class="n">key</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Download file size: </span><span class="si">%s</span><span class="s1"> bytes&#39;</span> <span class="o">%</span> <span class="n">meta</span><span class="p">[</span><span class="s1">&#39;size&#39;</span><span class="p">])</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://api.gbif.org/v1/occurrence/download/request/&#39;</span> <span class="o">+</span> <span class="n">key</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/</span><span class="si">%s</span><span class="s2">.zip&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
+        <span class="n">gbif_GET_write</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="c1"># options(gbifdownloadpath = path)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;On disk at &quot;</span> <span class="o">+</span> <span class="n">path</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="n">path</span><span class="p">,</span> <span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="n">meta</span><span class="p">[</span><span class="s1">&#39;size&#39;</span><span class="p">],</span> <span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="n">key</span><span class="p">}</span>
 
-<span class="n">operator_lkup</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;=&#39;</span><span class="p">:</span> <span class="s1">&#39;equals&#39;</span><span class="p">,</span> <span class="s1">&#39;&amp;&#39;</span><span class="p">:</span> <span class="s1">&#39;and&#39;</span><span class="p">,</span> <span class="s1">&#39;|&#39;</span><span class="p">:</span> <span class="s1">&#39;or&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;&lt;&#39;</span><span class="p">:</span> <span class="s1">&#39;lessThan&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;=&#39;</span><span class="p">:</span> <span class="s1">&#39;lessThanOrEquals&#39;</span><span class="p">,</span> <span class="s1">&#39;&gt;&#39;</span><span class="p">:</span> <span class="s1">&#39;greaterThan&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;&gt;=&#39;</span><span class="p">:</span> <span class="s1">&#39;greaterThanOrEquals&#39;</span><span class="p">,</span> <span class="s1">&#39;!&#39;</span><span class="p">:</span> <span class="s1">&#39;not&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;in&#39;</span><span class="p">:</span> <span class="s1">&#39;in&#39;</span><span class="p">,</span> <span class="s1">&#39;within&#39;</span><span class="p">:</span> <span class="s1">&#39;within&#39;</span><span class="p">,</span> <span class="s1">&#39;like&#39;</span><span class="p">:</span> <span class="s1">&#39;like&#39;</span><span class="p">}</span>
+<span class="n">operators</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;equals&#39;</span><span class="p">,</span> <span class="s1">&#39;and&#39;</span><span class="p">,</span> <span class="s1">&#39;or&#39;</span><span class="p">,</span> <span class="s1">&#39;lessThan&#39;</span><span class="p">,</span> <span class="s1">&#39;lessThanOrEquals&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;greaterThan&#39;</span><span class="p">,</span> <span class="s1">&#39;greaterThanOrEquals&#39;</span><span class="p">,</span> <span class="s1">&#39;in&#39;</span><span class="p">,</span> <span class="s1">&#39;within&#39;</span><span class="p">,</span>
+             <span class="s1">&#39;not&#39;</span><span class="p">,</span> <span class="s1">&#39;like&#39;</span><span class="p">]</span>
 
-<span class="n">key_lkup</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;taxonKey&#39;</span><span class="p">:</span> <span class="s1">&#39;TAXON_KEY&#39;</span><span class="p">,</span> <span class="s1">&#39;scientificName&#39;</span><span class="p">:</span> <span class="s1">&#39;SCIENTIFIC_NAME&#39;</span><span class="p">,</span> <span class="s1">&#39;country&#39;</span><span class="p">:</span> <span class="s1">&#39;COUNTRY&#39;</span><span class="p">,</span>
-     <span class="s1">&#39;publishingCountry&#39;</span><span class="p">:</span> <span class="s1">&#39;PUBLISHING_COUNTRY&#39;</span><span class="p">,</span> <span class="s1">&#39;hasCoordinate&#39;</span><span class="p">:</span> <span class="s1">&#39;HAS_COORDINATE&#39;</span><span class="p">,</span>
-     <span class="s1">&#39;hasGeospatialIssue&#39;</span><span class="p">:</span> <span class="s1">&#39;HAS_GEOSPATIAL_ISSUE&#39;</span><span class="p">,</span> <span class="s1">&#39;typeStatus&#39;</span><span class="p">:</span> <span class="s1">&#39;TYPE_STATUS&#39;</span><span class="p">,</span>
-     <span class="s1">&#39;recordNumber&#39;</span><span class="p">:</span> <span class="s1">&#39;RECORD_NUMBER&#39;</span><span class="p">,</span> <span class="s1">&#39;lastInterpreted&#39;</span><span class="p">:</span> <span class="s1">&#39;LAST_INTERPRETED&#39;</span><span class="p">,</span> <span class="s1">&#39;continent&#39;</span><span class="p">:</span> <span class="s1">&#39;CONTINENT&#39;</span><span class="p">,</span>
-     <span class="s1">&#39;geometry&#39;</span><span class="p">:</span> <span class="s1">&#39;GEOMETRY&#39;</span><span class="p">,</span> <span class="s1">&#39;basisOfRecord&#39;</span><span class="p">:</span> <span class="s1">&#39;BASIS_OF_RECORD&#39;</span><span class="p">,</span> <span class="s1">&#39;datasetKey&#39;</span><span class="p">:</span> <span class="s1">&#39;DATASET_KEY&#39;</span><span class="p">,</span>
-     <span class="s1">&#39;eventDate&#39;</span><span class="p">:</span> <span class="s1">&#39;EVENT_DATE&#39;</span><span class="p">,</span> <span class="s1">&#39;catalogNumber&#39;</span><span class="p">:</span> <span class="s1">&#39;CATALOG_NUMBER&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="s1">&#39;YEAR&#39;</span><span class="p">,</span> <span class="s1">&#39;month&#39;</span><span class="p">:</span> <span class="s1">&#39;MONTH&#39;</span><span class="p">,</span>
-     <span class="s1">&#39;decimalLatitude&#39;</span><span class="p">:</span> <span class="s1">&#39;DECIMAL_LATITUDE&#39;</span><span class="p">,</span> <span class="s1">&#39;decimalLongitude&#39;</span><span class="p">:</span> <span class="s1">&#39;DECIMAL_LONGITUDE&#39;</span><span class="p">,</span> <span class="s1">&#39;elevation&#39;</span><span class="p">:</span> <span class="s1">&#39;ELEVATION&#39;</span><span class="p">,</span>
-     <span class="s1">&#39;depth&#39;</span><span class="p">:</span> <span class="s1">&#39;DEPTH&#39;</span><span class="p">,</span> <span class="s1">&#39;institutionCode&#39;</span><span class="p">:</span> <span class="s1">&#39;INSTITUTION_CODE&#39;</span><span class="p">,</span> <span class="s1">&#39;collectionCode&#39;</span><span class="p">:</span> <span class="s1">&#39;COLLECTION_CODE&#39;</span><span class="p">,</span>
-     <span class="s1">&#39;issue&#39;</span><span class="p">:</span> <span class="s1">&#39;ISSUE&#39;</span><span class="p">,</span> <span class="s1">&#39;mediatype&#39;</span><span class="p">:</span> <span class="s1">&#39;MEDIA_TYPE&#39;</span><span class="p">,</span> <span class="s1">&#39;recordedBy&#39;</span><span class="p">:</span> <span class="s1">&#39;RECORDED_BY&#39;</span><span class="p">}</span>
+<span class="n">operator_lkup</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;=&#39;</span><span class="p">:</span> <span class="s1">&#39;equals&#39;</span><span class="p">,</span> <span class="s1">&#39;&amp;&#39;</span><span class="p">:</span> <span class="s1">&#39;and&#39;</span><span class="p">,</span> <span class="s1">&#39;|&#39;</span><span class="p">:</span> <span class="s1">&#39;or&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;&#39;</span><span class="p">:</span> <span class="s1">&#39;lessThan&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;&lt;=&#39;</span><span class="p">:</span> <span class="s1">&#39;lessThanOrEquals&#39;</span><span class="p">,</span> <span class="s1">&#39;&gt;&#39;</span><span class="p">:</span> <span class="s1">&#39;greaterThan&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;&gt;=&#39;</span><span class="p">:</span> <span class="s1">&#39;greaterThanOrEquals&#39;</span><span class="p">,</span> <span class="s1">&#39;!&#39;</span><span class="p">:</span> <span class="s1">&#39;not&#39;</span><span class="p">,</span>
+                 <span class="s1">&#39;in&#39;</span><span class="p">:</span> <span class="s1">&#39;in&#39;</span><span class="p">,</span> <span class="s1">&#39;within&#39;</span><span class="p">:</span> <span class="s1">&#39;within&#39;</span><span class="p">,</span> <span class="s1">&#39;like&#39;</span><span class="p">:</span> <span class="s1">&#39;like&#39;</span><span class="p">}</span>
+
+<span class="n">key_lkup</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;taxonKey&#39;</span><span class="p">:</span> <span class="s1">&#39;TAXON_KEY&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;scientificName&#39;</span><span class="p">:</span> <span class="s1">&#39;SCIENTIFIC_NAME&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;country&#39;</span><span class="p">:</span> <span class="s1">&#39;COUNTRY&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;publishingCountry&#39;</span><span class="p">:</span> <span class="s1">&#39;PUBLISHING_COUNTRY&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;hasCoordinate&#39;</span><span class="p">:</span> <span class="s1">&#39;HAS_COORDINATE&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;hasGeospatialIssue&#39;</span><span class="p">:</span> <span class="s1">&#39;HAS_GEOSPATIAL_ISSUE&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;typeStatus&#39;</span><span class="p">:</span> <span class="s1">&#39;TYPE_STATUS&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;recordNumber&#39;</span><span class="p">:</span> <span class="s1">&#39;RECORD_NUMBER&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;lastInterpreted&#39;</span><span class="p">:</span> <span class="s1">&#39;LAST_INTERPRETED&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;continent&#39;</span><span class="p">:</span> <span class="s1">&#39;CONTINENT&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;geometry&#39;</span><span class="p">:</span> <span class="s1">&#39;GEOMETRY&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;basisOfRecord&#39;</span><span class="p">:</span> <span class="s1">&#39;BASIS_OF_RECORD&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;datasetKey&#39;</span><span class="p">:</span> <span class="s1">&#39;DATASET_KEY&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;eventDate&#39;</span><span class="p">:</span> <span class="s1">&#39;EVENT_DATE&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;catalogNumber&#39;</span><span class="p">:</span> <span class="s1">&#39;CATALOG_NUMBER&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="s1">&#39;YEAR&#39;</span><span class="p">,</span> <span class="s1">&#39;month&#39;</span><span class="p">:</span> <span class="s1">&#39;MONTH&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;decimalLatitude&#39;</span><span class="p">:</span> <span class="s1">&#39;DECIMAL_LATITUDE&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;decimalLongitude&#39;</span><span class="p">:</span> <span class="s1">&#39;DECIMAL_LONGITUDE&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;elevation&#39;</span><span class="p">:</span> <span class="s1">&#39;ELEVATION&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;depth&#39;</span><span class="p">:</span> <span class="s1">&#39;DEPTH&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;institutionCode&#39;</span><span class="p">:</span> <span class="s1">&#39;INSTITUTION_CODE&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;collectionCode&#39;</span><span class="p">:</span> <span class="s1">&#39;COLLECTION_CODE&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;issue&#39;</span><span class="p">:</span> <span class="s1">&#39;ISSUE&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;mediatype&#39;</span><span class="p">:</span> <span class="s1">&#39;MEDIA_TYPE&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;recordedBy&#39;</span><span class="p">:</span> <span class="s1">&#39;RECORDED_BY&#39;</span><span class="p">}</span>
 </pre></div>
 
            </div>

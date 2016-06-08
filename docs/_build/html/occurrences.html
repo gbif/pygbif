@@ -82,7 +82,7 @@
             
             
                 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="">occurrences module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">occurrences module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="registry.html">registry module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="species.html">species module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="changelog_link.html">Changelog</a></li>
@@ -108,7 +108,7 @@
         <div class="rst-content">
           
 
-
+ 
 
 
 
@@ -148,66 +148,66 @@
 <li><strong>recordedBy</strong> &#8211; [str] The person who recorded the occurrence.</li>
 <li><strong>collectionCode</strong> &#8211; [str] An identifier of any form assigned by the source to identify the physical collection or digital dataset uniquely within the text of an institution.</li>
 <li><strong>institutionCode</strong> &#8211; [str] An identifier of any form assigned by the source to identify the institution the record belongs to. Not guaranteed to be que.</li>
-<li><strong>country</strong> &#8211; [str] The 2-letter country code (as per ISO-3166-1) of the country in which the occurrence was recorded. See here <a class="reference external" href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2</a>}</li>
+<li><strong>country</strong> &#8211; [str] The 2-letter country code (as per ISO-3166-1) of the country in which the occurrence was recorded. See here <a class="reference external" href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2</a></li>
 <li><strong>basisOfRecord</strong> &#8211; <p>[str] Basis of record, as defined in our BasisOfRecord enum here <a class="reference external" href="http://gbif.github.io/gbif-api/apidocs/org/gbif/api/vocabulary/BasisOfRecord.html">http://gbif.github.io/gbif-api/apidocs/org/gbif/api/vocabulary/BasisOfRecord.html</a> Acceptable values are:</p>
 <ul>
-<li>FOSSIL_SPECIMEN An occurrence record describing a fossilized specimen.</li>
-<li>HUMAN_OBSERVATION An occurrence record describing an observation made by one or more people.</li>
-<li>LITERATURE An occurrence record based on literature alone.</li>
-<li>LIVING_SPECIMEN An occurrence record describing a living specimen, e.g.</li>
-<li>MACHINE_OBSERVATION An occurrence record describing an observation made by a machine.</li>
-<li>OBSERVATION An occurrence record describing an observation.</li>
-<li>PRESERVED_SPECIMEN An occurrence record describing a preserved specimen.</li>
-<li>UNKNOWN Unknown basis for the record.</li>
+<li><code class="docutils literal"><span class="pre">FOSSIL_SPECIMEN</span></code> An occurrence record describing a fossilized specimen.</li>
+<li><code class="docutils literal"><span class="pre">HUMAN_OBSERVATION</span></code> An occurrence record describing an observation made by one or more people.</li>
+<li><code class="docutils literal"><span class="pre">LITERATURE</span></code> An occurrence record based on literature alone.</li>
+<li><code class="docutils literal"><span class="pre">LIVING_SPECIMEN</span></code> An occurrence record describing a living specimen, e.g.</li>
+<li><code class="docutils literal"><span class="pre">MACHINE_OBSERVATION</span></code> An occurrence record describing an observation made by a machine.</li>
+<li><code class="docutils literal"><span class="pre">OBSERVATION</span></code> An occurrence record describing an observation.</li>
+<li><code class="docutils literal"><span class="pre">PRESERVED_SPECIMEN</span></code> An occurrence record describing a preserved specimen.</li>
+<li><code class="docutils literal"><span class="pre">UNKNOWN</span></code> Unknown basis for the record.</li>
 </ul>
 </li>
 <li><strong>eventDate</strong> &#8211; [date] Occurrence date in ISO 8601 format: yyyy, yyyy-MM, yyyy-MM-dd, or
-MM-dd. Supports range queries, smaller,larger (e.g., &#8216;1990,1991&#8217;, whereas &#8216;1991,1990&#8217;
+MM-dd. Supports range queries, smaller,larger (e.g., <code class="docutils literal"><span class="pre">1990,1991</span></code>, whereas <code class="docutils literal"><span class="pre">1991,1990</span></code>
 wouldn&#8217;t work)</li>
 <li><strong>year</strong> &#8211; [int] The 4 digit year. A year of 98 will be interpreted as AD 98. Supports range queries,
-smaller,larger (e.g., &#8216;1990,1991&#8217;, whereas &#8216;1991,1990&#8217; wouldn&#8217;t work)</li>
+smaller,larger (e.g., <code class="docutils literal"><span class="pre">1990,1991</span></code>, whereas <code class="docutils literal"><span class="pre">1991,1990</span></code> wouldn&#8217;t work)</li>
 <li><strong>month</strong> &#8211; [int] The month of the year, starting with 1 for January. Supports range queries,
-smaller,larger (e.g., &#8216;1,2&#8217;, whereas &#8216;2,1&#8217; wouldn&#8217;t work)</li>
+smaller,larger (e.g., <code class="docutils literal"><span class="pre">1,2</span></code>, whereas <code class="docutils literal"><span class="pre">2,1</span></code> wouldn&#8217;t work)</li>
 <li><strong>q</strong> &#8211; [str] Query terms. The value for this parameter can be a simple word or a phrase.</li>
 <li><strong>decimalLatitude</strong> &#8211; [float] Latitude in decimals between -90 and 90 based on WGS 84.
-Supports range queries, smaller,larger (e.g., &#8216;25,30&#8217;, whereas &#8216;30,25&#8217; wouldn&#8217;t work)</li>
+Supports range queries, smaller,larger (e.g., <code class="docutils literal"><span class="pre">25,30</span></code>, whereas <code class="docutils literal"><span class="pre">30,25</span></code> wouldn&#8217;t work)</li>
 <li><strong>decimalLongitude</strong> &#8211; [float] Longitude in decimals between -180 and 180 based on WGS 84.
-Supports range queries (e.g., &#8216;-0.4,-0.2&#8217;, whereas &#8216;-0.2,-0.4&#8217; wouldn&#8217;t work).</li>
+Supports range queries (e.g., <code class="docutils literal"><span class="pre">-0.4,-0.2</span></code>, whereas <code class="docutils literal"><span class="pre">-0.2,-0.4</span></code> wouldn&#8217;t work).</li>
 <li><strong>publishingCountry</strong> &#8211; [str] The 2-letter country code (as per ISO-3166-1) of the
 country in which the occurrence was recorded.</li>
 <li><strong>elevation</strong> &#8211; [int/str] Elevation in meters above sea level. Supports range queries, smaller,larger
-(e.g., &#8216;5,30&#8217;, whereas &#8216;30,5&#8217; wouldn&#8217;t work)</li>
+(e.g., <code class="docutils literal"><span class="pre">5,30</span></code>, whereas <code class="docutils literal"><span class="pre">30,5</span></code> wouldn&#8217;t work)</li>
 <li><strong>depth</strong> &#8211; [int/str] Depth in meters relative to elevation. For example 10 meters below a
-lake surface with given elevation. Supports range queries, smaller,larger (e.g., &#8216;5,30&#8217;,
-whereas &#8216;30,5&#8217; wouldn&#8217;t work)</li>
+lake surface with given elevation. Supports range queries, smaller,larger (e.g., <code class="docutils literal"><span class="pre">5,30</span></code>,
+whereas <code class="docutils literal"><span class="pre">30,5</span></code> wouldn&#8217;t work)</li>
 <li><strong>geometry</strong> &#8211; [str] Searches for occurrences inside a polygon described in Well Known
 Text (WKT) format. A WKT shape written as either POINT, LINESTRING, LINEARRING
-or POLYGON. Example of a polygon: ((30.1 10.1, 20, 20 40, 40 40, 30.1 10.1)) would be queried as <a class="reference external" href="http://bit.ly/1BzNwDq">http://bit.ly/1BzNwDq</a>}.</li>
+or POLYGON. Example of a polygon: <code class="docutils literal"><span class="pre">((30.1</span> <span class="pre">10.1,</span> <span class="pre">20,</span> <span class="pre">20</span> <span class="pre">40,</span> <span class="pre">40</span> <span class="pre">40,</span> <span class="pre">30.1</span> <span class="pre">10.1))</span></code> would be queried as <a class="reference external" href="http://bit.ly/1BzNwDq">http://bit.ly/1BzNwDq</a>.</li>
 <li><strong>hasGeospatialIssue</strong> &#8211; [bool] Includes/excludes occurrence records which contain spatial
-issues (as determined in our record interpretation), i.e. code{hasGeospatialIssue=TRUE}
-returns only those records with spatial issues while code{hasGeospatialIssue=FALSE} includes
+issues (as determined in our record interpretation), i.e. <code class="docutils literal"><span class="pre">hasGeospatialIssue=TRUE</span></code>
+returns only those records with spatial issues while <code class="docutils literal"><span class="pre">hasGeospatialIssue=FALSE</span></code> includes
 only records without spatial issues. The absence of this parameter returns any
 record with or without spatial issues.</li>
 <li><strong>issue</strong> &#8211; [str] One or more of many possible issues with each occurrence record. See
 Details. Issues passed to this parameter filter results by the issue.</li>
-<li><strong>hasCoordinate</strong> &#8211; (logical) Return only occurence records with lat/long data (TRUE) or
-all records (FALSE, default).</li>
+<li><strong>hasCoordinate</strong> &#8211; (logical) Return only occurence records with lat/long data (<code class="docutils literal"><span class="pre">TRUE</span></code>) or
+all records (<code class="docutils literal"><span class="pre">FALSE</span></code>, default).</li>
 <li><strong>typeStatus</strong> &#8211; [str] Type status of the specimen. One of many options. See ?typestatus</li>
 <li><strong>recordNumber</strong> &#8211; [int] Number recorded by collector of the data, different from GBIF record
 number. See <a class="reference external" href="http://rs.tdwg.org/dwc/terms/#recordNumber">http://rs.tdwg.org/dwc/terms/#recordNumber</a>} for more info</li>
 <li><strong>lastInterpreted</strong> &#8211; [date] Date the record was last modified in GBIF, in ISO 8601 format:
 yyyy, yyyy-MM, yyyy-MM-dd, or MM-dd.  Supports range queries, smaller,larger (e.g.,
-&#8216;1990,1991&#8217;, whereas &#8216;1991,1990&#8217; wouldn&#8217;t work)</li>
-<li><strong>continent</strong> &#8211; [str] Continent. One of africa, antarctica, asia, europe, north_america
-(North America includes the Caribbean and reachies down and includes Panama), oceania,
-or south_america</li>
-<li><strong>fields</strong> &#8211; [str] Default (&#8216;all&#8217;) returns all fields. &#8216;minimal&#8217; returns just taxon name,
-key, latitude, and longitute. Or specify each field you want returned by name, e.g.
-fields = c(&#8216;name&#8217;,&#8217;latitude&#8217;,&#8217;elevation&#8217;).</li>
-<li><strong>mediatype</strong> &#8211; [str] Media type. Default is NULL, so no filtering on mediatype. Options:
-NULL, &#8216;MovingImage&#8217;, &#8216;Sound&#8217;, and &#8216;StillImage&#8217;</li>
-<li><strong>limit</strong> &#8211; [int] Number of results to return. Default: 300</li>
-<li><strong>offset</strong> &#8211; [int] Record to start at. Default: 0</li>
+<code class="docutils literal"><span class="pre">1990,1991</span></code>, whereas <code class="docutils literal"><span class="pre">1991,1990</span></code> wouldn&#8217;t work)</li>
+<li><strong>continent</strong> &#8211; [str] Continent. One of <code class="docutils literal"><span class="pre">africa</span></code>, <code class="docutils literal"><span class="pre">antarctica</span></code>, <code class="docutils literal"><span class="pre">asia</span></code>, <code class="docutils literal"><span class="pre">europe</span></code>, <code class="docutils literal"><span class="pre">north_america</span></code>
+(North America includes the Caribbean and reachies down and includes Panama), <code class="docutils literal"><span class="pre">oceania</span></code>,
+or <code class="docutils literal"><span class="pre">south_america</span></code></li>
+<li><strong>fields</strong> &#8211; [str] Default (<code class="docutils literal"><span class="pre">all</span></code>) returns all fields. <code class="docutils literal"><span class="pre">minimal</span></code> returns just taxon name,
+key, latitude, and longitude. Or specify each field you want returned by name, e.g.
+<code class="docutils literal"><span class="pre">fields</span> <span class="pre">=</span> <span class="pre">c('name','latitude','elevation')</span></code>.</li>
+<li><strong>mediatype</strong> &#8211; [str] Media type. Default is <code class="docutils literal"><span class="pre">NULL</span></code>, so no filtering on mediatype. Options:
+<code class="docutils literal"><span class="pre">NULL</span></code>, <code class="docutils literal"><span class="pre">MovingImage</span></code>, <code class="docutils literal"><span class="pre">Sound</span></code>, and <code class="docutils literal"><span class="pre">StillImage</span></code></li>
+<li><strong>limit</strong> &#8211; [int] Number of results to return. Default: <code class="docutils literal"><span class="pre">300</span></code></li>
+<li><strong>offset</strong> &#8211; [int] Record to start at. Default: <code class="docutils literal"><span class="pre">0</span></code></li>
 </ul>
 </td>
 </tr>
@@ -217,157 +217,157 @@ NULL, &#8216;MovingImage&#8217;, &#8216;Sound&#8217;, and &#8216;StillImage&#821
 </tbody>
 </table>
 <p>Usage:</p>
-<div class="highlight-python"><div class="highlight"><pre>from pygbif import occurrences
-occurrences.search(taxonKey = 3329049)
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">taxonKey</span> <span class="o">=</span> <span class="mi">3329049</span><span class="p">)</span>
 
-# Return 2 results, this is the default by the way
-occurrences.search(taxonKey=3329049, limit=2)
+<span class="c1"># Return 2 results, this is the default by the way</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">taxonKey</span><span class="o">=</span><span class="mi">3329049</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
-# Instead of getting a taxon key first, you can search for a name directly
-## However, note that using this approach (with \code{scientificName=&quot;...&quot;})
-## you are getting synonyms too. The results for using \code{scientifcName} and
-## \code{taxonKey} parameters are the same in this case, but I wouldn&#39;t be surprised if for some
-## names they return different results
-occurrences.search(scientificName = &#39;Ursus americanus&#39;)
-from pygbif import species
-key = species.name_backbone(name = &#39;Ursus americanus&#39;, rank=&#39;species&#39;)[&#39;usageKey&#39;]
-occurrences.search(taxonKey = key)
+<span class="c1"># Instead of getting a taxon key first, you can search for a name directly</span>
+<span class="c1">## However, note that using this approach (with \code{scientificName=&quot;...&quot;})</span>
+<span class="c1">## you are getting synonyms too. The results for using \code{scientifcName} and</span>
+<span class="c1">## \code{taxonKey} parameters are the same in this case, but I wouldn&#39;t be surprised if for some</span>
+<span class="c1">## names they return different results</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">scientificName</span> <span class="o">=</span> <span class="s1">&#39;Ursus americanus&#39;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">species</span>
+<span class="n">key</span> <span class="o">=</span> <span class="n">species</span><span class="o">.</span><span class="n">name_backbone</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Ursus americanus&#39;</span><span class="p">,</span> <span class="n">rank</span><span class="o">=</span><span class="s1">&#39;species&#39;</span><span class="p">)[</span><span class="s1">&#39;usageKey&#39;</span><span class="p">]</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">taxonKey</span> <span class="o">=</span> <span class="n">key</span><span class="p">)</span>
 
-# Search by dataset key
-occurrences.search(datasetKey=&#39;7b5d6a48-f762-11e1-a439-00145eb45e9a&#39;, limit=20)
+<span class="c1"># Search by dataset key</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">datasetKey</span><span class="o">=</span><span class="s1">&#39;7b5d6a48-f762-11e1-a439-00145eb45e9a&#39;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 
-# Search by catalog number
-occurrences.search(catalogNumber=&quot;49366&quot;, limit=20)
-# occurrences.search(catalogNumber=[&quot;49366&quot;,&quot;Bird.27847588&quot;], limit=20)
+<span class="c1"># Search by catalog number</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">catalogNumber</span><span class="o">=</span><span class="s2">&quot;49366&quot;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="c1"># occurrences.search(catalogNumber=[&quot;49366&quot;,&quot;Bird.27847588&quot;], limit=20)</span>
 
-# Use paging parameters (limit and start) to page. Note the different results
-# for the two queries below.
-occurrences.search(datasetKey=&#39;7b5d6a48-f762-11e1-a439-00145eb45e9a&#39;, offset=10, limit=5)
-occurrences.search(datasetKey=&#39;7b5d6a48-f762-11e1-a439-00145eb45e9a&#39;, offset=20, limit=5)
+<span class="c1"># Use paging parameters (limit and start) to page. Note the different results</span>
+<span class="c1"># for the two queries below.</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">datasetKey</span><span class="o">=</span><span class="s1">&#39;7b5d6a48-f762-11e1-a439-00145eb45e9a&#39;</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">datasetKey</span><span class="o">=</span><span class="s1">&#39;7b5d6a48-f762-11e1-a439-00145eb45e9a&#39;</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 
-# Many dataset keys
-# occurrences.search(datasetKey=[&quot;50c9509d-22c7-4a22-a47d-8c48425ef4a7&quot;, &quot;7b5d6a48-f762-11e1-a439-00145eb45e9a&quot;], limit=20)
+<span class="c1"># Many dataset keys</span>
+<span class="c1"># occurrences.search(datasetKey=[&quot;50c9509d-22c7-4a22-a47d-8c48425ef4a7&quot;, &quot;7b5d6a48-f762-11e1-a439-00145eb45e9a&quot;], limit=20)</span>
 
-# Search by collector name
-res = occurrences.search(recordedBy=&quot;smith&quot;, limit=20)
-[ x[&#39;recordedBy&#39;] for x in res[&#39;results&#39;] ]
+<span class="c1"># Search by collector name</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">recordedBy</span><span class="o">=</span><span class="s2">&quot;smith&quot;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="p">[</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;recordedBy&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">res</span><span class="p">[</span><span class="s1">&#39;results&#39;</span><span class="p">]</span> <span class="p">]</span>
 
-# Many collector names
-# occurrences.search(recordedBy=[&quot;smith&quot;,&quot;BJ Stacey&quot;], limit=20)
+<span class="c1"># Many collector names</span>
+<span class="c1"># occurrences.search(recordedBy=[&quot;smith&quot;,&quot;BJ Stacey&quot;], limit=20)</span>
 
-# Search for many species
-splist = [&#39;Cyanocitta stelleri&#39;, &#39;Junco hyemalis&#39;, &#39;Aix sponsa&#39;]
-keys = [ species.name_suggest(x)[0][&#39;key&#39;] for x in splist ]
-out = [ occurrences.search(taxonKey = x, limit=1) for x in keys ]
-[ x[&#39;results&#39;][0][&#39;speciesKey&#39;] for x in out ]
+<span class="c1"># Search for many species</span>
+<span class="n">splist</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Cyanocitta stelleri&#39;</span><span class="p">,</span> <span class="s1">&#39;Junco hyemalis&#39;</span><span class="p">,</span> <span class="s1">&#39;Aix sponsa&#39;</span><span class="p">]</span>
+<span class="n">keys</span> <span class="o">=</span> <span class="p">[</span> <span class="n">species</span><span class="o">.</span><span class="n">name_suggest</span><span class="p">(</span><span class="n">x</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;key&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">splist</span> <span class="p">]</span>
+<span class="n">out</span> <span class="o">=</span> <span class="p">[</span> <span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">taxonKey</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">keys</span> <span class="p">]</span>
+<span class="p">[</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;results&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;speciesKey&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">out</span> <span class="p">]</span>
 
-# Search - q parameter
-occurrences.search(q=&quot;kingfisher&quot;, limit=2)
+<span class="c1"># Search - q parameter</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="s2">&quot;kingfisher&quot;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
-# Search on latitidue and longitude
-occurrences.search(decimalLatitude=50, decimalLongitude=10, limit=2)
+<span class="c1"># Search on latitidue and longitude</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">decimalLatitude</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">decimalLongitude</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
-# Search on a bounding box
-## in well known text format
-occurrences.search(geometry=&#39;POLYGON((30.1 10.1, 10 20, 20 40, 40 40, 30.1 10.1))&#39;, limit=20)
-from pygbif import species
-key = species.name_suggest(q=&#39;Aesculus hippocastanum&#39;)[0][&#39;key&#39;]
-occurrences.search(taxonKey=key, geometry=&#39;POLYGON((30.1 10.1, 10 20, 20 40, 40 40, 30.1 10.1))&#39;, limit=20)
+<span class="c1"># Search on a bounding box</span>
+<span class="c1">## in well known text format</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">geometry</span><span class="o">=</span><span class="s1">&#39;POLYGON((30.1 10.1, 10 20, 20 40, 40 40, 30.1 10.1))&#39;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">species</span>
+<span class="n">key</span> <span class="o">=</span> <span class="n">species</span><span class="o">.</span><span class="n">name_suggest</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="s1">&#39;Aesculus hippocastanum&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;key&#39;</span><span class="p">]</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">taxonKey</span><span class="o">=</span><span class="n">key</span><span class="p">,</span> <span class="n">geometry</span><span class="o">=</span><span class="s1">&#39;POLYGON((30.1 10.1, 10 20, 20 40, 40 40, 30.1 10.1))&#39;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 
-# Search on country
-occurrences.search(country=&#39;US&#39;, limit=20)
-occurrences.search(country=&#39;FR&#39;, limit=20)
-occurrences.search(country=&#39;DE&#39;, limit=20)
+<span class="c1"># Search on country</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">country</span><span class="o">=</span><span class="s1">&#39;US&#39;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">country</span><span class="o">=</span><span class="s1">&#39;FR&#39;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">country</span><span class="o">=</span><span class="s1">&#39;DE&#39;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 
-# Get only occurrences with lat/long data
-occurrences.search(taxonKey=key, hasCoordinate=True, limit=20)
+<span class="c1"># Get only occurrences with lat/long data</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">taxonKey</span><span class="o">=</span><span class="n">key</span><span class="p">,</span> <span class="n">hasCoordinate</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 
-# Get only occurrences that were recorded as living specimens
-occurrences.search(taxonKey=key, basisOfRecord=&quot;LIVING_SPECIMEN&quot;, hasCoordinate=True, limit=20)
+<span class="c1"># Get only occurrences that were recorded as living specimens</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">taxonKey</span><span class="o">=</span><span class="n">key</span><span class="p">,</span> <span class="n">basisOfRecord</span><span class="o">=</span><span class="s2">&quot;LIVING_SPECIMEN&quot;</span><span class="p">,</span> <span class="n">hasCoordinate</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 
-# Get occurrences for a particular eventDate
-occurrences.search(taxonKey=key, eventDate=&quot;2013&quot;, limit=20)
-occurrences.search(taxonKey=key, year=&quot;2013&quot;, limit=20)
-occurrences.search(taxonKey=key, month=&quot;6&quot;, limit=20)
+<span class="c1"># Get occurrences for a particular eventDate</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">taxonKey</span><span class="o">=</span><span class="n">key</span><span class="p">,</span> <span class="n">eventDate</span><span class="o">=</span><span class="s2">&quot;2013&quot;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">taxonKey</span><span class="o">=</span><span class="n">key</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="s2">&quot;2013&quot;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">taxonKey</span><span class="o">=</span><span class="n">key</span><span class="p">,</span> <span class="n">month</span><span class="o">=</span><span class="s2">&quot;6&quot;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 
-# Get occurrences based on depth
-key = species.name_backbone(name=&#39;Salmo salar&#39;, kingdom=&#39;animals&#39;)[&#39;usageKey&#39;]
-occurrences.search(taxonKey=key, depth=&quot;5&quot;, limit=20)
+<span class="c1"># Get occurrences based on depth</span>
+<span class="n">key</span> <span class="o">=</span> <span class="n">species</span><span class="o">.</span><span class="n">name_backbone</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Salmo salar&#39;</span><span class="p">,</span> <span class="n">kingdom</span><span class="o">=</span><span class="s1">&#39;animals&#39;</span><span class="p">)[</span><span class="s1">&#39;usageKey&#39;</span><span class="p">]</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">taxonKey</span><span class="o">=</span><span class="n">key</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="s2">&quot;5&quot;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 
-# Get occurrences based on elevation
-key = species.name_backbone(name=&#39;Puma concolor&#39;, kingdom=&#39;animals&#39;)[&#39;usageKey&#39;]
-occurrences.search(taxonKey=key, elevation=50, hasCoordinate=True, limit=20)
+<span class="c1"># Get occurrences based on elevation</span>
+<span class="n">key</span> <span class="o">=</span> <span class="n">species</span><span class="o">.</span><span class="n">name_backbone</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Puma concolor&#39;</span><span class="p">,</span> <span class="n">kingdom</span><span class="o">=</span><span class="s1">&#39;animals&#39;</span><span class="p">)[</span><span class="s1">&#39;usageKey&#39;</span><span class="p">]</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">taxonKey</span><span class="o">=</span><span class="n">key</span><span class="p">,</span> <span class="n">elevation</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">hasCoordinate</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 
-# Get occurrences based on institutionCode
-occurrences.search(institutionCode=&quot;TLMF&quot;, limit=20)
+<span class="c1"># Get occurrences based on institutionCode</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">institutionCode</span><span class="o">=</span><span class="s2">&quot;TLMF&quot;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 
-# Get occurrences based on collectionCode
-occurrences.search(collectionCode=&quot;Floristic Databases MV - Higher Plants&quot;, limit=20)
+<span class="c1"># Get occurrences based on collectionCode</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">collectionCode</span><span class="o">=</span><span class="s2">&quot;Floristic Databases MV - Higher Plants&quot;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 
-# Get only those occurrences with spatial issues
-occurrences.search(taxonKey=key, hasGeospatialIssue=True, limit=20)
+<span class="c1"># Get only those occurrences with spatial issues</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">taxonKey</span><span class="o">=</span><span class="n">key</span><span class="p">,</span> <span class="n">hasGeospatialIssue</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 
-# Search using a query string
-occurrences.search(q=&quot;kingfisher&quot;, limit=20)
+<span class="c1"># Search using a query string</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="s2">&quot;kingfisher&quot;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 
-# Range queries
-## See Detail for parameters that support range queries
-### this is a range depth, with lower/upper limits in character string
-occurrences.search(depth=&#39;50,100&#39;)
+<span class="c1"># Range queries</span>
+<span class="c1">## See Detail for parameters that support range queries</span>
+<span class="c1">### this is a range depth, with lower/upper limits in character string</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">depth</span><span class="o">=</span><span class="s1">&#39;50,100&#39;</span><span class="p">)</span>
 
-## Range search with year
-occurrences.search(year=&#39;1999,2000&#39;, limit=20)
+<span class="c1">## Range search with year</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">year</span><span class="o">=</span><span class="s1">&#39;1999,2000&#39;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 
-## Range search with latitude
-occurrences.search(decimalLatitude=&#39;29.59,29.6&#39;)
+<span class="c1">## Range search with latitude</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">decimalLatitude</span><span class="o">=</span><span class="s1">&#39;29.59,29.6&#39;</span><span class="p">)</span>
 
-# Search by specimen type status
-## Look for possible values of the typeStatus parameter looking at the typestatus dataset
-occurrences.search(typeStatus = &#39;allotype&#39;)
+<span class="c1"># Search by specimen type status</span>
+<span class="c1">## Look for possible values of the typeStatus parameter looking at the typestatus dataset</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">typeStatus</span> <span class="o">=</span> <span class="s1">&#39;allotype&#39;</span><span class="p">)</span>
 
-# Search by specimen record number
-## This is the record number of the person/group that submitted the data, not GBIF&#39;s numbers
-## You can see that many different groups have record number 1, so not super helpful
-occurrences.search(recordNumber = 1)
+<span class="c1"># Search by specimen record number</span>
+<span class="c1">## This is the record number of the person/group that submitted the data, not GBIF&#39;s numbers</span>
+<span class="c1">## You can see that many different groups have record number 1, so not super helpful</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">recordNumber</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
 
-# Search by last time interpreted: Date the record was last modified in GBIF
-## The lastInterpreted parameter accepts ISO 8601 format dates, including
-## yyyy, yyyy-MM, yyyy-MM-dd, or MM-dd. Range queries are accepted for lastInterpreted
-occurrences.search(lastInterpreted = &#39;2014-04-01&#39;)
+<span class="c1"># Search by last time interpreted: Date the record was last modified in GBIF</span>
+<span class="c1">## The lastInterpreted parameter accepts ISO 8601 format dates, including</span>
+<span class="c1">## yyyy, yyyy-MM, yyyy-MM-dd, or MM-dd. Range queries are accepted for lastInterpreted</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">lastInterpreted</span> <span class="o">=</span> <span class="s1">&#39;2014-04-01&#39;</span><span class="p">)</span>
 
-# Search by continent
-## One of africa, antarctica, asia, europe, north_america, oceania, or south_america
-occurrences.search(continent = &#39;south_america&#39;)
-occurrences.search(continent = &#39;africa&#39;)
-occurrences.search(continent = &#39;oceania&#39;)
-occurrences.search(continent = &#39;antarctica&#39;)
+<span class="c1"># Search by continent</span>
+<span class="c1">## One of africa, antarctica, asia, europe, north_america, oceania, or south_america</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">continent</span> <span class="o">=</span> <span class="s1">&#39;south_america&#39;</span><span class="p">)</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">continent</span> <span class="o">=</span> <span class="s1">&#39;africa&#39;</span><span class="p">)</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">continent</span> <span class="o">=</span> <span class="s1">&#39;oceania&#39;</span><span class="p">)</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">continent</span> <span class="o">=</span> <span class="s1">&#39;antarctica&#39;</span><span class="p">)</span>
 
-# Search for occurrences with images
-occurrences.search(mediatype = &#39;StillImage&#39;)
-occurrences.search(mediatype = &#39;MovingImage&#39;)
-x = occurrences.search(mediatype = &#39;Sound&#39;)
-[z[&#39;media&#39;] for z in x[&#39;results&#39;]]
+<span class="c1"># Search for occurrences with images</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">mediatype</span> <span class="o">=</span> <span class="s1">&#39;StillImage&#39;</span><span class="p">)</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">mediatype</span> <span class="o">=</span> <span class="s1">&#39;MovingImage&#39;</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">mediatype</span> <span class="o">=</span> <span class="s1">&#39;Sound&#39;</span><span class="p">)</span>
+<span class="p">[</span><span class="n">z</span><span class="p">[</span><span class="s1">&#39;media&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;results&#39;</span><span class="p">]]</span>
 
-# Query based on issues
-occurrences.search(taxonKey=1, issue=&#39;DEPTH_UNLIKELY&#39;)
-occurrences.search(taxonKey=1, issue=[&#39;DEPTH_UNLIKELY&#39;,&#39;COORDINATE_ROUNDED&#39;])
-# Show all records in the Arizona State Lichen Collection that cant be matched to the GBIF
-# backbone properly:
-occurrences.search(datasetKey=&#39;84c0e1a0-f762-11e1-a439-00145eb45e9a&#39;, issue=[&#39;TAXON_MATCH_NONE&#39;,&#39;TAXON_MATCH_HIGHERRANK&#39;])
+<span class="c1"># Query based on issues</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">taxonKey</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">issue</span><span class="o">=</span><span class="s1">&#39;DEPTH_UNLIKELY&#39;</span><span class="p">)</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">taxonKey</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">issue</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;DEPTH_UNLIKELY&#39;</span><span class="p">,</span><span class="s1">&#39;COORDINATE_ROUNDED&#39;</span><span class="p">])</span>
+<span class="c1"># Show all records in the Arizona State Lichen Collection that cant be matched to the GBIF</span>
+<span class="c1"># backbone properly:</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">datasetKey</span><span class="o">=</span><span class="s1">&#39;84c0e1a0-f762-11e1-a439-00145eb45e9a&#39;</span><span class="p">,</span> <span class="n">issue</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;TAXON_MATCH_NONE&#39;</span><span class="p">,</span><span class="s1">&#39;TAXON_MATCH_HIGHERRANK&#39;</span><span class="p">])</span>
 
-# If you pass in an invalid polygon you get hopefully informative errors
-### the WKT string is fine, but GBIF says bad polygon
-wkt = &#39;POLYGON((-178.59375 64.83258989321493,-165.9375 59.24622380205539,
--147.3046875 59.065977905449806,-130.78125 51.04484764446178,-125.859375 36.70806354647625,
--112.1484375 23.367471303759686,-105.1171875 16.093320185359257,-86.8359375 9.23767076398516,
--82.96875 2.9485268155066175,-82.6171875 -14.812060061226388,-74.8828125 -18.849111862023985,
--77.34375 -47.661687803329166,-84.375 -49.975955187343295,174.7265625 -50.649460483096114,
-179.296875 -42.19189902447192,-176.8359375 -35.634976650677295,176.8359375 -31.835565983656227,
-163.4765625 -6.528187613695323,152.578125 1.894796132058301,135.703125 4.702353722559447,
-127.96875 15.077427674847987,127.96875 23.689804541429606,139.921875 32.06861069132688,
-149.4140625 42.65416193033991,159.2578125 48.3160811030533,168.3984375 57.019804336633165,
-178.2421875 59.95776046458139,-179.6484375 61.16708631440347,-178.59375 64.83258989321493))&#39;
-occurrences.search(geometry = wkt)
+<span class="c1"># If you pass in an invalid polygon you get hopefully informative errors</span>
+<span class="c1">### the WKT string is fine, but GBIF says bad polygon</span>
+<span class="n">wkt</span> <span class="o">=</span> <span class="s1">&#39;POLYGON((-178.59375 64.83258989321493,-165.9375 59.24622380205539,</span>
+<span class="o">-</span><span class="mf">147.3046875</span> <span class="mf">59.065977905449806</span><span class="p">,</span><span class="o">-</span><span class="mf">130.78125</span> <span class="mf">51.04484764446178</span><span class="p">,</span><span class="o">-</span><span class="mf">125.859375</span> <span class="mf">36.70806354647625</span><span class="p">,</span>
+<span class="o">-</span><span class="mf">112.1484375</span> <span class="mf">23.367471303759686</span><span class="p">,</span><span class="o">-</span><span class="mf">105.1171875</span> <span class="mf">16.093320185359257</span><span class="p">,</span><span class="o">-</span><span class="mf">86.8359375</span> <span class="mf">9.23767076398516</span><span class="p">,</span>
+<span class="o">-</span><span class="mf">82.96875</span> <span class="mf">2.9485268155066175</span><span class="p">,</span><span class="o">-</span><span class="mf">82.6171875</span> <span class="o">-</span><span class="mf">14.812060061226388</span><span class="p">,</span><span class="o">-</span><span class="mf">74.8828125</span> <span class="o">-</span><span class="mf">18.849111862023985</span><span class="p">,</span>
+<span class="o">-</span><span class="mf">77.34375</span> <span class="o">-</span><span class="mf">47.661687803329166</span><span class="p">,</span><span class="o">-</span><span class="mf">84.375</span> <span class="o">-</span><span class="mf">49.975955187343295</span><span class="p">,</span><span class="mf">174.7265625</span> <span class="o">-</span><span class="mf">50.649460483096114</span><span class="p">,</span>
+<span class="mf">179.296875</span> <span class="o">-</span><span class="mf">42.19189902447192</span><span class="p">,</span><span class="o">-</span><span class="mf">176.8359375</span> <span class="o">-</span><span class="mf">35.634976650677295</span><span class="p">,</span><span class="mf">176.8359375</span> <span class="o">-</span><span class="mf">31.835565983656227</span><span class="p">,</span>
+<span class="mf">163.4765625</span> <span class="o">-</span><span class="mf">6.528187613695323</span><span class="p">,</span><span class="mf">152.578125</span> <span class="mf">1.894796132058301</span><span class="p">,</span><span class="mf">135.703125</span> <span class="mf">4.702353722559447</span><span class="p">,</span>
+<span class="mf">127.96875</span> <span class="mf">15.077427674847987</span><span class="p">,</span><span class="mf">127.96875</span> <span class="mf">23.689804541429606</span><span class="p">,</span><span class="mf">139.921875</span> <span class="mf">32.06861069132688</span><span class="p">,</span>
+<span class="mf">149.4140625</span> <span class="mf">42.65416193033991</span><span class="p">,</span><span class="mf">159.2578125</span> <span class="mf">48.3160811030533</span><span class="p">,</span><span class="mf">168.3984375</span> <span class="mf">57.019804336633165</span><span class="p">,</span>
+<span class="mf">178.2421875</span> <span class="mf">59.95776046458139</span><span class="p">,</span><span class="o">-</span><span class="mf">179.6484375</span> <span class="mf">61.16708631440347</span><span class="p">,</span><span class="o">-</span><span class="mf">178.59375</span> <span class="mf">64.83258989321493</span><span class="p">))</span><span class="s1">&#39;</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">geometry</span> <span class="o">=</span> <span class="n">wkt</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -387,7 +387,7 @@ occurrences.search(geometry = wkt)
 </tbody>
 </table>
 <p>Usage:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">occurrences</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span>
 <span class="n">occurrences</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span> <span class="o">=</span> <span class="mi">252408386</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -408,7 +408,7 @@ occurrences.search(geometry = wkt)
 </tbody>
 </table>
 <p>Usage:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">occurrences</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span>
 <span class="n">occurrences</span><span class="o">.</span><span class="n">get_verbatim</span><span class="p">(</span><span class="n">key</span> <span class="o">=</span> <span class="mi">252408386</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -429,7 +429,7 @@ occurrences.search(geometry = wkt)
 </tbody>
 </table>
 <p>Usage:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">occurrences</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span>
 <span class="n">occurrences</span><span class="o">.</span><span class="n">get_fragment</span><span class="p">(</span><span class="n">key</span> <span class="o">=</span> <span class="mi">1052909293</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -462,10 +462,10 @@ occurrences.search(geometry = wkt)
 </tbody>
 </table>
 <p>Usage:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">occurrences</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span>
 <span class="n">occurrences</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">taxonKey</span> <span class="o">=</span> <span class="mi">3329049</span><span class="p">)</span>
 <span class="n">occurrences</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">country</span> <span class="o">=</span> <span class="s1">&#39;CA&#39;</span><span class="p">)</span>
-<span class="n">occurrences</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">isGeoreferenced</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">isGeoreferenced</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 <span class="n">occurrences</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">basisOfRecord</span> <span class="o">=</span> <span class="s1">&#39;OBSERVATION&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -484,7 +484,7 @@ occurrences.search(geometry = wkt)
 </tbody>
 </table>
 <p>Usage:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">occurrences</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span>
 <span class="n">occurrences</span><span class="o">.</span><span class="n">count_basisofrecord</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -498,14 +498,14 @@ occurrences.search(geometry = wkt)
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>year</strong> &#8211; [int] year range, e.g., &#8220;1990,2000&#8221;. Does not support ranges like &#8220;asterisk,2010&#8221;</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>year</strong> &#8211; [int] year range, e.g., <code class="docutils literal"><span class="pre">1990,2000</span></code>. Does not support ranges like <code class="docutils literal"><span class="pre">asterisk,2010</span></code></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
 </tr>
 </tbody>
 </table>
 <p>Usage:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">occurrences</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span>
 <span class="n">occurrences</span><span class="o">.</span><span class="n">count_year</span><span class="p">(</span><span class="n">year</span> <span class="o">=</span> <span class="s1">&#39;1990,2000&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -531,7 +531,7 @@ occurrences.search(geometry = wkt)
 </tbody>
 </table>
 <p>Usage:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">occurrences</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span>
 <span class="n">occurrences</span><span class="o">.</span><span class="n">count_datasets</span><span class="p">(</span><span class="n">country</span> <span class="o">=</span> <span class="s2">&quot;DE&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -552,7 +552,7 @@ occurrences.search(geometry = wkt)
 </tbody>
 </table>
 <p>Usage:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">occurrences</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span>
 <span class="n">occurrences</span><span class="o">.</span><span class="n">count_countries</span><span class="p">(</span><span class="n">publishingCountry</span> <span class="o">=</span> <span class="s2">&quot;DE&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -571,7 +571,7 @@ occurrences.search(geometry = wkt)
 </tbody>
 </table>
 <p>Usage:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">occurrences</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span>
 <span class="n">occurrences</span><span class="o">.</span><span class="n">count_schema</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -592,8 +592,106 @@ occurrences.search(geometry = wkt)
 </tbody>
 </table>
 <p>Usage:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">occurrences</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span>
 <span class="n">occurrences</span><span class="o">.</span><span class="n">count_publishingcountries</span><span class="p">(</span><span class="n">country</span> <span class="o">=</span> <span class="s2">&quot;DE&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygbif.occurrences.download">
+<code class="descclassname">occurrences.</code><code class="descname">download</code><span class="sig-paren">(</span><em>queries</em>, <em>user=None</em>, <em>pwd=None</em>, <em>email=None</em>, <em>pred_type='and'</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.download" title="Permalink to this definition">¶</a></dt>
+<dd><p>Spin up a download request for GBIF occurrence data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>queries</strong> (<em>str or list</em>) &#8211; One or more of query arguments to kick of a download job.
+See Details.</li>
+<li><strong>pred_type</strong> &#8211; (character) One of <code class="docutils literal"><span class="pre">equals</span></code> (<code class="docutils literal"><span class="pre">=</span></code>), <code class="docutils literal"><span class="pre">and</span></code> (<code class="docutils literal"><span class="pre">&amp;</span></code>),
+<cite>or`</cite> (<code class="docutils literal"><span class="pre">|</span></code>), <code class="docutils literal"><span class="pre">lessThan</span></code> (<code class="docutils literal"><span class="pre">&lt;</span></code>), <code class="docutils literal"><span class="pre">lessThanOrEquals</span></code> (<code class="docutils literal"><span class="pre">&lt;=</span></code>),
+<code class="docutils literal"><span class="pre">greaterThan</span></code> (<code class="docutils literal"><span class="pre">&gt;</span></code>), <code class="docutils literal"><span class="pre">greaterThanOrEquals</span></code> (<code class="docutils literal"><span class="pre">&gt;=</span></code>),
+<code class="docutils literal"><span class="pre">in</span></code>, <code class="docutils literal"><span class="pre">within</span></code>, <code class="docutils literal"><span class="pre">not</span></code> (<code class="docutils literal"><span class="pre">!</span></code>), <code class="docutils literal"><span class="pre">like</span></code></li>
+<li><strong>user</strong> &#8211; (character) User name within GBIF&#8217;s website.
+Required. Set in your env vars with the option <code class="docutils literal"><span class="pre">GBIF_USER</span></code></li>
+<li><strong>pwd</strong> &#8211; (character) User password within GBIF&#8217;s website. Required.
+Set in your env vars with the option <code class="docutils literal"><span class="pre">GBIF_PWD</span></code></li>
+<li><strong>email</strong> &#8211; (character) Email address to recieve download notice done
+email. Required. Set in your env vars with the option <code class="docutils literal"><span class="pre">GBIF_EMAIL</span></code></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Argument passed have to be passed as character (e.g., <code class="docutils literal"><span class="pre">country</span> <span class="pre">=</span> <span class="pre">US</span></code>),
+with a space between key (<code class="docutils literal"><span class="pre">country</span></code>), operator (<code class="docutils literal"><span class="pre">=</span></code>), and value (<code class="docutils literal"><span class="pre">US</span></code>).
+See the <code class="docutils literal"><span class="pre">type</span></code> parameter for possible options for the operator.
+This character string is parsed internally.</p>
+<p>Acceptable arguments to <code class="docutils literal"><span class="pre">...</span></code> (args) are:</p>
+<blockquote>
+<div><ul class="simple">
+<li>taxonKey = <code class="docutils literal"><span class="pre">TAXON_KEY</span></code></li>
+<li>scientificName = <code class="docutils literal"><span class="pre">SCIENTIFIC_NAME</span></code></li>
+<li>country = <code class="docutils literal"><span class="pre">COUNTRY</span></code></li>
+<li>publishingCountry = <code class="docutils literal"><span class="pre">PUBLISHING_COUNTRY</span></code></li>
+<li>hasCoordinate = <code class="docutils literal"><span class="pre">HAS_COORDINATE</span></code></li>
+<li>hasGeospatialIssue = <code class="docutils literal"><span class="pre">HAS_GEOSPATIAL_ISSUE</span></code></li>
+<li>typeStatus = <code class="docutils literal"><span class="pre">TYPE_STATUS</span></code></li>
+<li>recordNumber = <code class="docutils literal"><span class="pre">RECORD_NUMBER</span></code></li>
+<li>lastInterpreted = <code class="docutils literal"><span class="pre">LAST_INTERPRETED</span></code></li>
+<li>continent = <code class="docutils literal"><span class="pre">CONTINENT</span></code></li>
+<li>geometry = <code class="docutils literal"><span class="pre">GEOMETRY</span></code></li>
+<li>basisOfRecord = <code class="docutils literal"><span class="pre">BASIS_OF_RECORD</span></code></li>
+<li>datasetKey = <code class="docutils literal"><span class="pre">DATASET_KEY</span></code></li>
+<li>eventDate = <code class="docutils literal"><span class="pre">EVENT_DATE</span></code></li>
+<li>catalogNumber = <code class="docutils literal"><span class="pre">CATALOG_NUMBER</span></code></li>
+<li>year = <code class="docutils literal"><span class="pre">YEAR</span></code></li>
+<li>month = <code class="docutils literal"><span class="pre">MONTH</span></code></li>
+<li>decimalLatitude = <code class="docutils literal"><span class="pre">DECIMAL_LATITUDE</span></code></li>
+<li>decimalLongitude = <code class="docutils literal"><span class="pre">DECIMAL_LONGITUDE</span></code></li>
+<li>elevation = <code class="docutils literal"><span class="pre">ELEVATION</span></code></li>
+<li>depth = <code class="docutils literal"><span class="pre">DEPTH</span></code></li>
+<li>institutionCode = <code class="docutils literal"><span class="pre">INSTITUTION_CODE</span></code></li>
+<li>collectionCode = <code class="docutils literal"><span class="pre">COLLECTION_CODE</span></code></li>
+<li>issue = <code class="docutils literal"><span class="pre">ISSUE</span></code></li>
+<li>mediatype = <code class="docutils literal"><span class="pre">MEDIA_TYPE</span></code></li>
+<li>recordedBy = <code class="docutils literal"><span class="pre">RECORDED_BY</span></code></li>
+</ul>
+</div></blockquote>
+<p>See the API docs <a class="reference external" href="http://www.gbif.org/developer/occurrence#download">http://www.gbif.org/developer/occurrence#download</a>
+for more info, and the predicates docs
+<a class="reference external" href="http://www.gbif.org/developer/occurrence#predicates">http://www.gbif.org/developer/occurrence#predicates</a></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A dictionary, of results</td>
+</tr>
+</tbody>
+</table>
+<p>Usage:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span> <span class="k">as</span> <span class="n">occ</span>
+
+<span class="n">occ</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;basisOfRecord = LITERATURE&#39;</span><span class="p">)</span>
+<span class="n">occ</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;taxonKey = 3119195&#39;</span><span class="p">)</span>
+<span class="n">occ</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;decimalLatitude &gt; 50&#39;</span><span class="p">)</span>
+<span class="n">occ</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;elevation &gt;= 9000&#39;</span><span class="p">)</span>
+<span class="n">occ</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;decimalLatitude &gt;= 65&#39;</span><span class="p">)</span>
+<span class="n">occ</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;country = US&#39;</span><span class="p">)</span>
+<span class="n">occ</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;institutionCode = TLMF&#39;</span><span class="p">)</span>
+<span class="n">occ</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;catalogNumber = Bird.27847588&#39;</span><span class="p">)</span>
+
+<span class="n">res</span> <span class="o">=</span> <span class="n">occ</span><span class="o">.</span><span class="n">download</span><span class="p">([</span><span class="s1">&#39;taxonKey = 7264332&#39;</span><span class="p">,</span> <span class="s1">&#39;hasCoordinate = TRUE&#39;</span><span class="p">])</span>
+
+<span class="c1"># pass output to download_meta for more information</span>
+<span class="n">occ</span><span class="o">.</span><span class="n">download_meta</span><span class="p">(</span><span class="n">occ</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;decimalLatitude &gt; 75&#39;</span><span class="p">))</span>
+
+<span class="c1"># Multiple queries</span>
+<span class="n">gg</span> <span class="o">=</span> <span class="n">occ</span><span class="o">.</span><span class="n">download</span><span class="p">([</span><span class="s1">&#39;decimalLatitude &gt;= 65&#39;</span><span class="p">,</span>
+                  <span class="s1">&#39;decimalLatitude &lt;= -65&#39;</span><span class="p">],</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;or&#39;</span><span class="p">)</span>
+<span class="n">gg</span> <span class="o">=</span> <span class="n">occ</span><span class="o">.</span><span class="n">download</span><span class="p">([</span><span class="s1">&#39;depth = 80&#39;</span><span class="p">,</span> <span class="s1">&#39;taxonKey = 2343454&#39;</span><span class="p">],</span>
+                  <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;or&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -601,22 +699,19 @@ occurrences.search(geometry = wkt)
 <dl class="method">
 <dt id="pygbif.occurrences.download_meta">
 <code class="descclassname">occurrences.</code><code class="descname">download_meta</code><span class="sig-paren">(</span><em>key</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.download_meta" title="Permalink to this definition">¶</a></dt>
-<dd><p>Retrieves the occurrence download metadata by its unique key.</p>
+<dd><p>Retrieves the occurrence download metadata by its unique key. Further
+named arguments passed on to <code class="docutils literal"><span class="pre">requests.get</span></code> can be included as additional
+arguments</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>key</strong> &#8211; [str] A key generated from a request, like that from <cite>download</cite></li>
-<li><strong>**kwargs</strong> &#8211; <p>Further named arguments passed on to <cite>requests.get</cite></p>
-</li>
-</ul>
-</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>key</strong> &#8211; [str] A key generated from a request, like that from <code class="docutils literal"><span class="pre">download</span></code></td>
 </tr>
 </tbody>
 </table>
 <p>Usage:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">occurrences</span> <span class="k">as</span> <span class="n">occ</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span> <span class="k">as</span> <span class="n">occ</span>
 <span class="n">occ</span><span class="o">.</span><span class="n">download_meta</span><span class="p">(</span><span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;0003970-140910143529206&quot;</span><span class="p">)</span>
 <span class="n">occ</span><span class="o">.</span><span class="n">download_meta</span><span class="p">(</span><span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;0000099-140929101555934&quot;</span><span class="p">)</span>
 </pre></div>
@@ -625,26 +720,24 @@ occurrences.search(geometry = wkt)
 
 <dl class="method">
 <dt id="pygbif.occurrences.download_list">
-<code class="descclassname">occurrences.</code><code class="descname">download_list</code><span class="sig-paren">(</span><em>user=None</em>, <em>pwd=None</em>, <em>limit=20</em>, <em>start=0</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.download_list" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">occurrences.</code><code class="descname">download_list</code><span class="sig-paren">(</span><em>user=None</em>, <em>pwd=None</em>, <em>limit=20</em>, <em>start=0</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.download_list" title="Permalink to this definition">¶</a></dt>
 <dd><p>Lists the downloads created by a user.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>user</strong> &#8211; [str] A user name, look at env var &#8220;GBIF_USER&#8221; first</li>
-<li><strong>pwd</strong> &#8211; [str] Your password, look at env var &#8220;GBIF_PWD&#8221; first</li>
-<li><strong>limit</strong> &#8211; [int] Number of records to return. Default: 20</li>
-<li><strong>start</strong> &#8211; [int] Record number to start at. Default: 0</li>
-<li><strong>**kwargs</strong> &#8211; <p>Further named arguments passed on to <cite>requests.get</cite></p>
-</li>
+<li><strong>user</strong> &#8211; [str] A user name, look at env var <code class="docutils literal"><span class="pre">GBIF_USER</span></code> first</li>
+<li><strong>pwd</strong> &#8211; [str] Your password, look at env var <code class="docutils literal"><span class="pre">GBIF_PWD</span></code> first</li>
+<li><strong>limit</strong> &#8211; [int] Number of records to return. Default: <code class="docutils literal"><span class="pre">20</span></code></li>
+<li><strong>start</strong> &#8211; [int] Record number to start at. Default: <code class="docutils literal"><span class="pre">0</span></code></li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
 <p>Usage:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">occurrences</span> <span class="k">as</span> <span class="n">occ</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span> <span class="k">as</span> <span class="n">occ</span>
 <span class="n">occ</span><span class="o">.</span><span class="n">download_list</span><span class="p">(</span><span class="n">user</span> <span class="o">=</span> <span class="s2">&quot;sckott&quot;</span><span class="p">)</span>
 <span class="n">occ</span><span class="o">.</span><span class="n">download_list</span><span class="p">(</span><span class="n">user</span> <span class="o">=</span> <span class="s2">&quot;sckott&quot;</span><span class="p">,</span> <span class="n">limit</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
 <span class="n">occ</span><span class="o">.</span><span class="n">download_list</span><span class="p">(</span><span class="n">user</span> <span class="o">=</span> <span class="s2">&quot;sckott&quot;</span><span class="p">,</span> <span class="n">start</span> <span class="o">=</span> <span class="mi">21</span><span class="p">)</span>
@@ -654,17 +747,16 @@ occurrences.search(geometry = wkt)
 
 <dl class="method">
 <dt id="pygbif.occurrences.download_get">
-<code class="descclassname">occurrences.</code><code class="descname">download_get</code><span class="sig-paren">(</span><em>key</em>, <em>path='.'</em>, <em>overwrite=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.download_get" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">occurrences.</code><code class="descname">download_get</code><span class="sig-paren">(</span><em>key</em>, <em>path='.'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.download_get" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a download from GBIF.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>key</strong> &#8211; [str] A key generated from a request, like that from <cite>download</cite></li>
-<li><strong>path</strong> &#8211; [str] Path to write zip file to. Default: <cite>&#8221;.&#8221;</cite>, with a <cite>.zip</cite>
-appended to the end.</li>
-<li><strong>**kwargs</strong> &#8211; <p>Further named arguments passed on to <cite>requests.get</cite></p>
+<li><strong>key</strong> &#8211; [str] A key generated from a request, like that from <code class="docutils literal"><span class="pre">download</span></code></li>
+<li><strong>path</strong> &#8211; [str] Path to write zip file to. Default: <code class="docutils literal"><span class="pre">&quot;.&quot;</span></code>, with a <code class="docutils literal"><span class="pre">.zip</span></code> appended to the end.</li>
+<li><strong>**kwargs</strong> &#8211; <p>Further named arguments passed on to <code class="docutils literal"><span class="pre">requests.get</span></code></p>
 </li>
 </ul>
 </td>
@@ -672,13 +764,13 @@ appended to the end.</li>
 </tbody>
 </table>
 <p>Downloads the zip file to a directory you specify on your machine.
-We stream the zip data to a file. This function only downloads the file.
-See <cite>download_import</cite> to open a downloaded file in Python. The speed of this
-function is of course proportional to the size of the file to download, and affected
-by your internet connection speed. For example, a 58 MB file on my machine took
-about 26 seconds.</p>
+We stream the zip data to a file. This function only downloads the file.</p>
+<p>See <code class="docutils literal"><span class="pre">download_import</span></code> to open a downloaded file in Python. The speed of 
+this function is of course proportional to the size of the file to 
+download, and affected by your internet connection speed. For example, 
+a 58 MB file on my machine took about 26 seconds.</p>
 <p>Usage:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">occurrences</span> <span class="k">as</span> <span class="n">occ</span>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span> <span class="k">as</span> <span class="n">occ</span>
 <span class="n">occ</span><span class="o">.</span><span class="n">download_get</span><span class="p">(</span><span class="s2">&quot;0000066-140928181241064&quot;</span><span class="p">)</span>
 <span class="n">occ</span><span class="o">.</span><span class="n">download_get</span><span class="p">(</span><span class="s2">&quot;0003983-140910143529206&quot;</span><span class="p">)</span>
 </pre></div>

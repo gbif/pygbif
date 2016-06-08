@@ -16,3 +16,9 @@
 
 .tox
 .coverage
+
+# test DwcA
+*.zip
+
+# pycharm project info
+.idea/
