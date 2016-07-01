@@ -23,7 +23,7 @@ def _check_environ(variable, value):
         value = os.environ.get(variable)
         if is_none(value):
             stop(''.join([variable,
-                          """ not supplied and no entry in environmental 
+                          """ not supplied and no entry in environmental
                            variables"""]))
         else:
             return value
@@ -81,6 +81,7 @@ def download(queries, user=None, pwd=None,
      - issue = ``ISSUE``
      - mediatype = ``MEDIA_TYPE``
      - recordedBy = ``RECORDED_BY``
+     - repatriated = ``REPATRIATED``
 
     See the API docs http://www.gbif.org/developer/occurrence#download
     for more info, and the predicates docs
@@ -111,6 +112,9 @@ def download(queries, user=None, pwd=None,
                           'decimalLatitude <= -65'], type='or')
         gg = occ.download(['depth = 80', 'taxonKey = 2343454'],
                           type='or')
+
+        # Repratriated data for Costa Rica
+        occ.download(['country = CR', 'repatriated = true'])
     """
 
     user = _check_environ('GBIF_USER', user)
@@ -352,16 +356,16 @@ def download_list(user=None, pwd=None, limit=20, start=0):
 def download_get(key, path=".", **kwargs):
     """
     Get a download from GBIF.
-    
+
     :param key: [str] A key generated from a request, like that from ``download``
     :param path: [str] Path to write zip file to. Default: ``"."``, with a ``.zip`` appended to the end.
     :param **kwargs: Further named arguments passed on to ``requests.get``
-    
-    Downloads the zip file to a directory you specify on your machine. 
-    The speed of this function is of course proportional to the size of the 
+
+    Downloads the zip file to a directory you specify on your machine.
+    The speed of this function is of course proportional to the size of the
     file to download, and affected by your internet connection speed.
-    
-    This function only downloads the file. To open and read it, see 
+
+    This function only downloads the file. To open and read it, see
     https://github.com/BelgianBiodiversityPlatform/python-dwca-reader
 
     Usage::
