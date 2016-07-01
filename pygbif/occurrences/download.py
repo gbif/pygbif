@@ -415,4 +415,5 @@ key_lkup = {'taxonKey': 'TAXON_KEY',
             'collectionCode': 'COLLECTION_CODE',
             'issue': 'ISSUE',
             'mediatype': 'MEDIA_TYPE',
-            'recordedBy': 'RECORDED_BY'}
+            'recordedBy': 'RECORDED_BY',
+            'repatriated': 'REPATRIATED'}
