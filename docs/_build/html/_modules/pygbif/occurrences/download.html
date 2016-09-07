@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pygbif.occurrences.download &mdash; pygbif 0.1.5.1 documentation</title>
+  <title>pygbif.occurrences.download &mdash; pygbif 0.1.5.3 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="pygbif 0.1.5.1 documentation" href="../../../index.html"/>
+    <link rel="top" title="pygbif 0.1.5.3 documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   
@@ -59,7 +59,7 @@
             
             
               <div class="version">
-                0.1.5.1
+                0.1.5.3
               </div>
             
           
@@ -155,7 +155,7 @@
         <span class="n">value</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">is_none</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
             <span class="n">stop</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">variable</span><span class="p">,</span>
-                          <span class="sd">&quot;&quot;&quot; not supplied and no entry in environmental </span>
+                          <span class="sd">&quot;&quot;&quot; not supplied and no entry in environmental</span>
 <span class="sd">                           variables&quot;&quot;&quot;</span><span class="p">]))</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">value</span>
@@ -213,6 +213,7 @@
 <span class="sd">     - issue = ``ISSUE``</span>
 <span class="sd">     - mediatype = ``MEDIA_TYPE``</span>
 <span class="sd">     - recordedBy = ``RECORDED_BY``</span>
+<span class="sd">     - repatriated = ``REPATRIATED``</span>
 
 <span class="sd">    See the API docs http://www.gbif.org/developer/occurrence#download</span>
 <span class="sd">    for more info, and the predicates docs</span>
@@ -243,6 +244,9 @@
 <span class="sd">                          &#39;decimalLatitude &lt;= -65&#39;], type=&#39;or&#39;)</span>
 <span class="sd">        gg = occ.download([&#39;depth = 80&#39;, &#39;taxonKey = 2343454&#39;],</span>
 <span class="sd">                          type=&#39;or&#39;)</span>
+
+<span class="sd">        # Repratriated data for Costa Rica</span>
+<span class="sd">        occ.download([&#39;country = CR&#39;, &#39;repatriated = true&#39;])</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">user</span> <span class="o">=</span> <span class="n">_check_environ</span><span class="p">(</span><span class="s1">&#39;GBIF_USER&#39;</span><span class="p">,</span> <span class="n">user</span><span class="p">)</span>
@@ -484,16 +488,16 @@
 <span class="k">def</span> <span class="nf">download_get</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s2">&quot;.&quot;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Get a download from GBIF.</span>
-<span class="sd">    </span>
+
 <span class="sd">    :param key: [str] A key generated from a request, like that from ``download``</span>
 <span class="sd">    :param path: [str] Path to write zip file to. Default: ``&quot;.&quot;``, with a ``.zip`` appended to the end.</span>
 <span class="sd">    :param **kwargs: Further named arguments passed on to ``requests.get``</span>
-<span class="sd">    </span>
-<span class="sd">    Downloads the zip file to a directory you specify on your machine. </span>
-<span class="sd">    The speed of this function is of course proportional to the size of the </span>
+
+<span class="sd">    Downloads the zip file to a directory you specify on your machine.</span>
+<span class="sd">    The speed of this function is of course proportional to the size of the</span>
 <span class="sd">    file to download, and affected by your internet connection speed.</span>
-<span class="sd">    </span>
-<span class="sd">    This function only downloads the file. To open and read it, see </span>
+
+<span class="sd">    This function only downloads the file. To open and read it, see</span>
 <span class="sd">    https://github.com/BelgianBiodiversityPlatform/python-dwca-reader</span>
 
 <span class="sd">    Usage::</span>
@@ -547,7 +551,8 @@
             <span class="s1">&#39;collectionCode&#39;</span><span class="p">:</span> <span class="s1">&#39;COLLECTION_CODE&#39;</span><span class="p">,</span>
             <span class="s1">&#39;issue&#39;</span><span class="p">:</span> <span class="s1">&#39;ISSUE&#39;</span><span class="p">,</span>
             <span class="s1">&#39;mediatype&#39;</span><span class="p">:</span> <span class="s1">&#39;MEDIA_TYPE&#39;</span><span class="p">,</span>
-            <span class="s1">&#39;recordedBy&#39;</span><span class="p">:</span> <span class="s1">&#39;RECORDED_BY&#39;</span><span class="p">}</span>
+            <span class="s1">&#39;recordedBy&#39;</span><span class="p">:</span> <span class="s1">&#39;RECORDED_BY&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;repatriated&#39;</span><span class="p">:</span> <span class="s1">&#39;REPATRIATED&#39;</span><span class="p">}</span>
 </pre></div>
 
            </div>
@@ -581,7 +586,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'0.1.5.1',
+            VERSION:'0.1.5.3',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>occurrences module &mdash; pygbif 0.1.5.1 documentation</title>
+  <title>occurrences module &mdash; pygbif 0.1.5.3 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="pygbif 0.1.5.1 documentation" href="index.html"/>
+    <link rel="top" title="pygbif 0.1.5.3 documentation" href="index.html"/>
         <link rel="next" title="registry module" href="registry.html"/>
         <link rel="prev" title="Python GBIF Client" href="index.html"/> 
 
@@ -60,7 +60,7 @@
             
             
               <div class="version">
-                0.1.5.1
+                0.1.5.3
               </div>
             
           
@@ -182,7 +182,7 @@ lake surface with given elevation. Supports range queries, smaller,larger (e.g.,
 whereas <code class="docutils literal"><span class="pre">30,5</span></code> wouldn&#8217;t work)</li>
 <li><strong>geometry</strong> &#8211; [str] Searches for occurrences inside a polygon described in Well Known
 Text (WKT) format. A WKT shape written as either POINT, LINESTRING, LINEARRING
-or POLYGON. Example of a polygon: <code class="docutils literal"><span class="pre">((30.1</span> <span class="pre">10.1,</span> <span class="pre">20,</span> <span class="pre">20</span> <span class="pre">40,</span> <span class="pre">40</span> <span class="pre">40,</span> <span class="pre">30.1</span> <span class="pre">10.1))</span></code> would be queried as <a class="reference external" href="http://bit.ly/1BzNwDq">http://bit.ly/1BzNwDq</a>.</li>
+POLYGON, or MULTIPOLYGON. Example of a polygon: <code class="docutils literal"><span class="pre">((30.1</span> <span class="pre">10.1,</span> <span class="pre">20,</span> <span class="pre">20</span> <span class="pre">40,</span> <span class="pre">40</span> <span class="pre">40,</span> <span class="pre">30.1</span> <span class="pre">10.1))</span></code> would be queried as <a class="reference external" href="http://bit.ly/1BzNwDq">http://bit.ly/1BzNwDq</a>.</li>
 <li><strong>hasGeospatialIssue</strong> &#8211; [bool] Includes/excludes occurrence records which contain spatial
 issues (as determined in our record interpretation), i.e. <code class="docutils literal"><span class="pre">hasGeospatialIssue=TRUE</span></code>
 returns only those records with spatial issues while <code class="docutils literal"><span class="pre">hasGeospatialIssue=FALSE</span></code> includes
@@ -273,6 +273,9 @@ key, latitude, and longitude. Or specify each field you want returned by name, e
 <span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">species</span>
 <span class="n">key</span> <span class="o">=</span> <span class="n">species</span><span class="o">.</span><span class="n">name_suggest</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="s1">&#39;Aesculus hippocastanum&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;key&#39;</span><span class="p">]</span>
 <span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">taxonKey</span><span class="o">=</span><span class="n">key</span><span class="p">,</span> <span class="n">geometry</span><span class="o">=</span><span class="s1">&#39;POLYGON((30.1 10.1, 10 20, 20 40, 40 40, 30.1 10.1))&#39;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="c1">## multipolygon</span>
+<span class="n">wkt</span> <span class="o">=</span> <span class="s1">&#39;MULTIPOLYGON(((-123 38, -123 43, -116 43, -116 38, -123 38)),((-97 41, -97 45, -93 45, -93 41, -97 41)))&#39;</span>
+<span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">geometry</span> <span class="o">=</span> <span class="n">wkt</span><span class="p">,</span> <span class="n">limit</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
 
 <span class="c1"># Search on country</span>
 <span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">country</span><span class="o">=</span><span class="s1">&#39;US&#39;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
@@ -657,6 +660,7 @@ This character string is parsed internally.</p>
 <li>issue = <code class="docutils literal"><span class="pre">ISSUE</span></code></li>
 <li>mediatype = <code class="docutils literal"><span class="pre">MEDIA_TYPE</span></code></li>
 <li>recordedBy = <code class="docutils literal"><span class="pre">RECORDED_BY</span></code></li>
+<li>repatriated = <code class="docutils literal"><span class="pre">REPATRIATED</span></code></li>
 </ul>
 </div></blockquote>
 <p>See the API docs <a class="reference external" href="http://www.gbif.org/developer/occurrence#download">http://www.gbif.org/developer/occurrence#download</a>
@@ -692,6 +696,9 @@ for more info, and the predicates docs
                   <span class="s1">&#39;decimalLatitude &lt;= -65&#39;</span><span class="p">],</span> <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;or&#39;</span><span class="p">)</span>
 <span class="n">gg</span> <span class="o">=</span> <span class="n">occ</span><span class="o">.</span><span class="n">download</span><span class="p">([</span><span class="s1">&#39;depth = 80&#39;</span><span class="p">,</span> <span class="s1">&#39;taxonKey = 2343454&#39;</span><span class="p">],</span>
                   <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;or&#39;</span><span class="p">)</span>
+
+<span class="c1"># Repratriated data for Costa Rica</span>
+<span class="n">occ</span><span class="o">.</span><span class="n">download</span><span class="p">([</span><span class="s1">&#39;country = CR&#39;</span><span class="p">,</span> <span class="s1">&#39;repatriated = true&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -763,10 +770,10 @@ arguments</p>
 </tr>
 </tbody>
 </table>
-<p>Downloads the zip file to a directory you specify on your machine. 
-The speed of this function is of course proportional to the size of the 
+<p>Downloads the zip file to a directory you specify on your machine.
+The speed of this function is of course proportional to the size of the
 file to download, and affected by your internet connection speed.</p>
-<p>This function only downloads the file. To open and read it, see 
+<p>This function only downloads the file. To open and read it, see
 <a class="reference external" href="https://github.com/BelgianBiodiversityPlatform/python-dwca-reader">https://github.com/BelgianBiodiversityPlatform/python-dwca-reader</a></p>
 <p>Usage:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span> <span class="k">as</span> <span class="n">occ</span>
@@ -819,7 +826,7 @@ file to download, and affected by your internet connection speed.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.1.5.1',
+            VERSION:'0.1.5.3',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
