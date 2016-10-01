@@ -1,22 +1,25 @@
 import re
 from ..gbifutils import *
 
-def search(taxonKey=None, repatriated=None, kingdomKey=None, phylumKey=None,
-    classKey=None, orderKey=None, familyKey=None, genusKey=None, subgenusKey=None,
-    scientificName=None, country=None,
-    publishingCountry=None, hasCoordinate=None, typeStatus=None,
+def search(taxonKey=None, repatriated=None,
+    kingdomKey=None, phylumKey=None, classKey=None, orderKey=None,
+    familyKey=None, genusKey=None, subgenusKey=None, scientificName=None,
+    country=None, publishingCountry=None, hasCoordinate=None, typeStatus=None,
     recordNumber=None, lastInterpreted=None, continent=None,
     geometry=None, recordedBy=None, basisOfRecord=None, datasetKey=None,
     eventDate=None, catalogNumber=None, year=None, month=None,
     decimalLatitude=None, decimalLongitude=None, elevation=None,
     depth=None, institutionCode=None, collectionCode=None,
-    hasGeospatialIssue=None, issue=None, q=None, mediatype=None,
+    hasGeospatialIssue=None, issue=None, q=None, spellCheck=None, mediatype=None,
     limit=300, offset=0, establishmentMeans=None,
     facet=None, facetMincount=None, facetMultiselect=None, **kwargs):
     '''
     Search GBIF occurrences
 
     :param taxonKey: [int] A GBIF occurrence identifier
+    :param q: [str] Simple search parameter. The value for this parameter can be a simple word or a phrase.
+    :param spellCheck: [bool] If ``True`` ask GBIF to check your spelling of the value passed to the ``search`` parameter.
+        IMPORTANT: This only checks the input to the ``search`` parameter, and no others. Default: ``False``
     :param repatriated: [str] Searches for records whose publishing country is different to the country where the record was recorded in
     :param kingdomKey: [int] Kingdom classification key
     :param phylumKey: [int] Phylum classification key
@@ -146,7 +149,15 @@ def search(taxonKey=None, repatriated=None, kingdomKey=None, phylumKey=None,
         [ x['results'][0]['speciesKey'] for x in out ]
 
         # Search - q parameter
-        occurrences.search(q="kingfisher", limit=2)
+        occurrences.search(q = "kingfisher", limit=20)
+        ## spell check - only works with the `search` parameter
+        ### spelled correctly - same result as above call
+        occurrences.search(q = "kingfisher", limit=20, spellCheck = True)
+        ### spelled incorrectly - stops with suggested spelling
+        occurrences.search(q = "kajsdkla", limit=20, spellCheck = True)
+        ### spelled incorrectly - stops with many suggested spellings
+        ###   and number of results for each
+        occurrences.search(q = "helir", limit=20, spellCheck = True)
 
         # Search on latitidue and longitude
         occurrences.search(decimalLatitude=50, decimalLongitude=10, limit=2)
@@ -309,8 +320,8 @@ def search(taxonKey=None, repatriated=None, kingdomKey=None, phylumKey=None,
         'decimalLatitude': decimalLatitude, 'decimalLongitude': decimalLongitude,
         'elevation': elevation, 'depth': depth, 'institutionCode': institutionCode,
         'collectionCode': collectionCode, 'hasGeospatialIssue': hasGeospatialIssue,
-        'issue': issue, 'q': q, 'mediatype': mediatype, 'limit': limit,
-        'offset': offset, 'establishmentMeans': establishmentMeans,
+        'issue': issue, 'q': q, 'spellCheck': spellCheck, 'mediatype': mediatype,
+        'limit': limit, 'offset': offset, 'establishmentMeans': establishmentMeans,
         'facetMincount': facetMincount, 'facet': facet,
         'facetMultiselect': facetMultiselect}
     gbif_kwargs = {key: kwargs[key] for key in kwargs if key not in requests_argset}

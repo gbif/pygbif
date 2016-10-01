@@ -3,12 +3,9 @@ Changelog
 
 0.1.5.4 (2016-10-01)
 --------------------
-- Added many new occurrence search parameters, including
-	`repatriated`, `kingdomKey`, `phylumKey`, `classKey`,
-	`orderKey`, `familyKey`, `genusKey`, `subgenusKey`,
-	`establishmentMeans`, `facet`, `facetMincount`,
-	`facetMultiselect`, and support for facet paging via
-	`**kwargs`
+- Added many new `occurrence.search` parameters, including `repatriated`, `kingdomKey`, `phylumKey`, `classKey`, `orderKey`, `familyKey`, `genusKey`, `subgenusKey`, `establishmentMeans`, `facet`, `facetMincount`, `facetMultiselect`, and support for facet paging via	`**kwargs` (#30) (#34)
+- Fixes to `**kwargs` in `occurrence.search` so that facet parameters can be parsed correctly and `requests` GET	request options are collected correctly (#36)
+- Added `spellCheck` parameter to `occurrence.search` that goes along with the `q` parameter to optionally spell check full text searches (#31)
 
 0.1.4 (2016-06-04)
 --------------------

@@ -86,9 +86,9 @@
 <li class="toctree-l1"><a class="reference internal" href="species.html">species module</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id1">0.1.5.4 (2016-10-01)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">0.1.4 (2016-06-04)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">0.1.1 (2015-11-03)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id4">0.1.0 (2015-11-02)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">0.1.4 (2016-06-04)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">0.1.1 (2015-11-03)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">0.1.0 (2015-11-02)</a></li>
 </ul>
 </li>
 </ul>
@@ -139,21 +139,14 @@
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
 <h2>0.1.5.4 (2016-10-01)<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<ul>
-<li><dl class="first docutils">
-<dt>Added many new occurrence search parameters, including</dt>
-<dd><p class="first last"><cite>repatriated</cite>, <cite>kingdomKey</cite>, <cite>phylumKey</cite>, <cite>classKey</cite>,
-<cite>orderKey</cite>, <cite>familyKey</cite>, <cite>genusKey</cite>, <cite>subgenusKey</cite>,
-<cite>establishmentMeans</cite>, <cite>facet</cite>, <cite>facetMincount</cite>,
-<cite>facetMultiselect</cite>, and support for facet paging via
-<cite>**kwargs</cite></p>
-</dd>
-</dl>
-</li>
+<ul class="simple">
+<li>Added many new <cite>occurrence.search</cite> parameters, including <cite>repatriated</cite>, <cite>kingdomKey</cite>, <cite>phylumKey</cite>, <cite>classKey</cite>, <cite>orderKey</cite>, <cite>familyKey</cite>, <cite>genusKey</cite>, <cite>subgenusKey</cite>, <cite>establishmentMeans</cite>, <cite>facet</cite>, <cite>facetMincount</cite>, <cite>facetMultiselect</cite>, and support for facet paging via       <cite>**kwargs</cite> (#30) (#34)</li>
+<li>Fixes to <a href="#id2"><span class="problematic" id="id3">**</span></a>kwargs in <cite>occurrence.search</cite> so that facet parameters can be parsed correctly and <cite>requests</cite> GET  request options are collected correctly (#36)</li>
+<li>Added <cite>spellCheck</cite> parameter to <cite>occurrence.search</cite> that goes along with the <cite>q</cite> parameter to optionally spell check full text searches (#31)</li>
 </ul>
 </div>
-<div class="section" id="id2">
-<h2>0.1.4 (2016-06-04)<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h2>0.1.4 (2016-06-04)<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Added variable types throughout docs</li>
 <li>Changed default <cite>limit</cite> value to 300 for <cite>occurrences.search</cite> method</li>
@@ -168,14 +161,14 @@
 <li>Improved documentation a lot, autodoc methods now</li>
 </ul>
 </div>
-<div class="section" id="id3">
-<h2>0.1.1 (2015-11-03)<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h2>0.1.1 (2015-11-03)<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Fixed distribution for pypi</li>
 </ul>
 </div>
-<div class="section" id="id4">
-<h2>0.1.0 (2015-11-02)<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h2>0.1.0 (2015-11-02)<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>First release</li>
 </ul>
