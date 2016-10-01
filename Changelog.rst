@@ -1,5 +1,14 @@
 Changelog
-=======
+=========
+
+0.1.5.4 (2016-10-01)
+--------------------
+- Added many new occurrence search parameters, including
+	`repatriated`, `kingdomKey`, `phylumKey`, `classKey`,
+	`orderKey`, `familyKey`, `genusKey`, `subgenusKey`,
+	`establishmentMeans`, `facet`, `facetMincount`,
+	`facetMultiselect`, and support for facet paging via
+	`**kwargs`
 
 0.1.4 (2016-06-04)
 --------------------

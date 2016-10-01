@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pygbif.occurrences.search &mdash; pygbif 0.1.5.3 documentation</title>
+  <title>pygbif.occurrences.search &mdash; pygbif 0.1.5.4 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="pygbif 0.1.5.3 documentation" href="../../../index.html"/>
+    <link rel="top" title="pygbif 0.1.5.4 documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   
@@ -59,7 +59,7 @@
             
             
               <div class="version">
-                0.1.5.3
+                0.1.5.4
               </div>
             
           
@@ -130,9 +130,12 @@
            <div itemprop="articleBody">
             
   <h1>Source code for pygbif.occurrences.search</h1><div class="highlight"><pre>
-<span></span><span class="kn">from</span> <span class="nn">..gbifutils</span> <span class="kn">import</span> <span class="o">*</span>
+<span></span><span class="kn">import</span> <span class="nn">re</span>
+<span class="kn">from</span> <span class="nn">..gbifutils</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="n">taxonKey</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">scientificName</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">country</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+<span class="k">def</span> <span class="nf">search</span><span class="p">(</span><span class="n">taxonKey</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">repatriated</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">kingdomKey</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">phylumKey</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+    <span class="n">classKey</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">orderKey</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">familyKey</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">genusKey</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">subgenusKey</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+    <span class="n">scientificName</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">country</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
     <span class="n">publishingCountry</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">hasCoordinate</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">typeStatus</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
     <span class="n">recordNumber</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">lastInterpreted</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">continent</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
     <span class="n">geometry</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">recordedBy</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">basisOfRecord</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">datasetKey</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
@@ -140,11 +143,20 @@
     <span class="n">decimalLatitude</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">decimalLongitude</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">elevation</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
     <span class="n">depth</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">institutionCode</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">collectionCode</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
     <span class="n">hasGeospatialIssue</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">issue</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">q</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">mediatype</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
-    <span class="n">limit</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="n">limit</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">establishmentMeans</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+    <span class="n">facet</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">facetMincount</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">facetMultiselect</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">    Search GBIF occurrences</span>
 
 <span class="sd">    :param taxonKey: [int] A GBIF occurrence identifier</span>
+<span class="sd">    :param repatriated: [str] Searches for records whose publishing country is different to the country where the record was recorded in</span>
+<span class="sd">    :param kingdomKey: [int] Kingdom classification key</span>
+<span class="sd">    :param phylumKey: [int] Phylum classification key</span>
+<span class="sd">    :param classKey: [int] Class classification key</span>
+<span class="sd">    :param orderKey: [int] Order classification key</span>
+<span class="sd">    :param familyKey: [int] Family classification key</span>
+<span class="sd">    :param genusKey: [int] Genus classification key</span>
+<span class="sd">    :param subgenusKey: [int] Subgenus classification key</span>
 <span class="sd">    :param scientificName: [str] A scientific name from the GBIF backbone. All included and synonym taxa are included in the search.</span>
 <span class="sd">    :param datasetKey: [str] The occurrence dataset key (a uuid)</span>
 <span class="sd">    :param catalogNumber: [str] An identifier of any form assigned by the source within a physical collection or digital dataset for the record which may not unique, but should be fairly unique in combination with the institution and collection code.</span>
@@ -192,8 +204,8 @@
 <span class="sd">       record with or without spatial issues.</span>
 <span class="sd">    :param issue: [str] One or more of many possible issues with each occurrence record. See</span>
 <span class="sd">       Details. Issues passed to this parameter filter results by the issue.</span>
-<span class="sd">    :param hasCoordinate: (logical) Return only occurence records with lat/long data (``TRUE``) or</span>
-<span class="sd">       all records (``FALSE``, default).</span>
+<span class="sd">    :param hasCoordinate: [bool] Return only occurence records with lat/long data (``true``) or</span>
+<span class="sd">       all records (``false``, default).</span>
 <span class="sd">    :param typeStatus: [str] Type status of the specimen. One of many options. See ?typestatus</span>
 <span class="sd">    :param recordNumber: [int] Number recorded by collector of the data, different from GBIF record</span>
 <span class="sd">       number. See http://rs.tdwg.org/dwc/terms/#recordNumber} for more info</span>
@@ -210,6 +222,12 @@
 <span class="sd">       ``NULL``, ``MovingImage``, ``Sound``, and ``StillImage``</span>
 <span class="sd">    :param limit: [int] Number of results to return. Default: ``300``</span>
 <span class="sd">    :param offset: [int] Record to start at. Default: ``0``</span>
+<span class="sd">    :param facet: [str] a character vector of length 1 or greater</span>
+<span class="sd">    :param establishmentMeans: [str] EstablishmentMeans, possible values include: INTRODUCED,</span>
+<span class="sd">        INVASIVE, MANAGED, NATIVE, NATURALISED, UNCERTAIN</span>
+<span class="sd">    :param facetMincount: [int] minimum number of records to be included in the faceting results</span>
+<span class="sd">    :param facetMultiselect: [bool] Set to ``true`` to still return counts for values that are not currently</span>
+<span class="sd">        filtered. See examples. Default: ``false``</span>
 
 <span class="sd">    :return: A dictionary, of results</span>
 
@@ -369,9 +387,51 @@
 <span class="sd">        149.4140625 42.65416193033991,159.2578125 48.3160811030533,168.3984375 57.019804336633165,</span>
 <span class="sd">        178.2421875 59.95776046458139,-179.6484375 61.16708631440347,-178.59375 64.83258989321493))&#39;</span>
 <span class="sd">        occurrences.search(geometry = wkt)</span>
+
+<span class="sd">        # Faceting</span>
+<span class="sd">        ## return no occurrence records with limit=0</span>
+<span class="sd">        x = occurrences.search(facet = &quot;country&quot;, limit = 0)</span>
+<span class="sd">        x[&#39;facets&#39;]</span>
+
+<span class="sd">        ## also return occurrence records</span>
+<span class="sd">        x = occurrences.search(facet = &quot;establishmentMeans&quot;, limit = 10)</span>
+<span class="sd">        x[&#39;facets&#39;]</span>
+<span class="sd">        x[&#39;results&#39;]</span>
+
+<span class="sd">        ## multiple facet variables</span>
+<span class="sd">        x = occurrences.search(facet = [&quot;country&quot;, &quot;basisOfRecord&quot;], limit = 10)</span>
+<span class="sd">        x[&#39;results&#39;]</span>
+<span class="sd">        x[&#39;facets&#39;]</span>
+<span class="sd">        x[&#39;facets&#39;][&#39;country&#39;]</span>
+<span class="sd">        x[&#39;facets&#39;][&#39;basisOfRecord&#39;]</span>
+<span class="sd">        x[&#39;facets&#39;][&#39;basisOfRecord&#39;][&#39;count&#39;]</span>
+
+<span class="sd">        ## set a minimum facet count</span>
+<span class="sd">        x = occurrences.search(facet = &quot;country&quot;, facetMincount = 30000000L, limit = 0)</span>
+<span class="sd">        x[&#39;facets&#39;]</span>
+
+<span class="sd">        ## paging per each faceted variable</span>
+<span class="sd">        ### do so by passing in variables like &quot;country&quot; + &quot;_facetLimit&quot; = &quot;country_facetLimit&quot;</span>
+<span class="sd">        ### or &quot;country&quot; + &quot;_facetOffset&quot; = &quot;country_facetOffset&quot;</span>
+<span class="sd">        x = occurrences.search(</span>
+<span class="sd">          facet = [&quot;country&quot;, &quot;basisOfRecord&quot;, &quot;hasCoordinate&quot;],</span>
+<span class="sd">          country_facetLimit = 3,</span>
+<span class="sd">          basisOfRecord_facetLimit = 6,</span>
+<span class="sd">          limit = 0</span>
+<span class="sd">        )</span>
+<span class="sd">        x[&#39;facets&#39;]</span>
+
+<span class="sd">        # requests package options</span>
+<span class="sd">        ## There&#39;s an acceptable set of requests options ([&#39;timeout&#39;, &#39;cookies&#39;, &#39;auth&#39;,</span>
+<span class="sd">        ## &#39;allow_redirects&#39;, &#39;proxies&#39;, &#39;verify&#39;, &#39;stream&#39;, &#39;cert&#39;]) you can pass</span>
+<span class="sd">        ## in via **kwargs, e.g., set a timeout</span>
+<span class="sd">        x = occurrences.search(timeout = 1)</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s1">&#39;occurrence/search&#39;</span>
-    <span class="n">out</span> <span class="o">=</span> <span class="n">gbif_GET</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;taxonKey&#39;</span><span class="p">:</span> <span class="n">taxonKey</span><span class="p">,</span> <span class="s1">&#39;scientificName&#39;</span><span class="p">:</span> <span class="n">scientificName</span><span class="p">,</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;taxonKey&#39;</span><span class="p">:</span> <span class="n">taxonKey</span><span class="p">,</span> <span class="s1">&#39;repatriated&#39;</span><span class="p">:</span> <span class="n">repatriated</span><span class="p">,</span>
+        <span class="s1">&#39;kingdomKey&#39;</span><span class="p">:</span> <span class="n">kingdomKey</span><span class="p">,</span> <span class="s1">&#39;phylumKey&#39;</span><span class="p">:</span> <span class="n">phylumKey</span><span class="p">,</span> <span class="s1">&#39;classKey&#39;</span><span class="p">:</span> <span class="n">classKey</span><span class="p">,</span>
+        <span class="s1">&#39;orderKey&#39;</span><span class="p">:</span> <span class="n">orderKey</span><span class="p">,</span> <span class="s1">&#39;familyKey&#39;</span><span class="p">:</span> <span class="n">familyKey</span><span class="p">,</span> <span class="s1">&#39;genusKey&#39;</span><span class="p">:</span> <span class="n">genusKey</span><span class="p">,</span>
+        <span class="s1">&#39;subgenusKey&#39;</span><span class="p">:</span> <span class="n">subgenusKey</span><span class="p">,</span> <span class="s1">&#39;scientificName&#39;</span><span class="p">:</span> <span class="n">scientificName</span><span class="p">,</span>
         <span class="s1">&#39;country&#39;</span><span class="p">:</span> <span class="n">country</span><span class="p">,</span> <span class="s1">&#39;publishingCountry&#39;</span><span class="p">:</span> <span class="n">publishingCountry</span><span class="p">,</span>
         <span class="s1">&#39;hasCoordinate&#39;</span><span class="p">:</span> <span class="n">hasCoordinate</span><span class="p">,</span> <span class="s1">&#39;typeStatus&#39;</span><span class="p">:</span> <span class="n">typeStatus</span><span class="p">,</span>
         <span class="s1">&#39;recordNumber&#39;</span><span class="p">:</span> <span class="n">recordNumber</span><span class="p">,</span> <span class="s1">&#39;lastInterpreted&#39;</span><span class="p">:</span> <span class="n">lastInterpreted</span><span class="p">,</span>
@@ -382,7 +442,15 @@
         <span class="s1">&#39;elevation&#39;</span><span class="p">:</span> <span class="n">elevation</span><span class="p">,</span> <span class="s1">&#39;depth&#39;</span><span class="p">:</span> <span class="n">depth</span><span class="p">,</span> <span class="s1">&#39;institutionCode&#39;</span><span class="p">:</span> <span class="n">institutionCode</span><span class="p">,</span>
         <span class="s1">&#39;collectionCode&#39;</span><span class="p">:</span> <span class="n">collectionCode</span><span class="p">,</span> <span class="s1">&#39;hasGeospatialIssue&#39;</span><span class="p">:</span> <span class="n">hasGeospatialIssue</span><span class="p">,</span>
         <span class="s1">&#39;issue&#39;</span><span class="p">:</span> <span class="n">issue</span><span class="p">,</span> <span class="s1">&#39;q&#39;</span><span class="p">:</span> <span class="n">q</span><span class="p">,</span> <span class="s1">&#39;mediatype&#39;</span><span class="p">:</span> <span class="n">mediatype</span><span class="p">,</span> <span class="s1">&#39;limit&#39;</span><span class="p">:</span> <span class="n">limit</span><span class="p">,</span>
-        <span class="s1">&#39;offset&#39;</span><span class="p">:</span> <span class="n">offset</span><span class="p">},</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="s1">&#39;offset&#39;</span><span class="p">:</span> <span class="n">offset</span><span class="p">,</span> <span class="s1">&#39;establishmentMeans&#39;</span><span class="p">:</span> <span class="n">establishmentMeans</span><span class="p">,</span>
+        <span class="s1">&#39;facetMincount&#39;</span><span class="p">:</span> <span class="n">facetMincount</span><span class="p">,</span> <span class="s1">&#39;facet&#39;</span><span class="p">:</span> <span class="n">facet</span><span class="p">,</span>
+        <span class="s1">&#39;facetMultiselect&#39;</span><span class="p">:</span> <span class="n">facetMultiselect</span><span class="p">}</span>
+    <span class="n">gbif_kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">kwargs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">kwargs</span> <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">requests_argset</span><span class="p">}</span>
+    <span class="k">if</span> <span class="n">gbif_kwargs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">xx</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span> <span class="p">[</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">gbif_kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="p">],</span> <span class="n">gbif_kwargs</span><span class="o">.</span><span class="n">values</span><span class="p">()</span> <span class="p">))</span>
+        <span class="n">args</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">xx</span><span class="p">)</span>
+    <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">kwargs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">kwargs</span> <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">requests_argset</span><span class="p">}</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">gbif_GET</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">out</span>
 </pre></div>
 
@@ -417,7 +485,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'0.1.5.3',
+            VERSION:'0.1.5.4',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

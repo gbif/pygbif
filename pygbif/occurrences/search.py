@@ -1,6 +1,9 @@
+import re
 from ..gbifutils import *
 
-def search(taxonKey=None, scientificName=None, country=None,
+def search(taxonKey=None, repatriated=None, kingdomKey=None, phylumKey=None,
+    classKey=None, orderKey=None, familyKey=None, genusKey=None, subgenusKey=None,
+    scientificName=None, country=None,
     publishingCountry=None, hasCoordinate=None, typeStatus=None,
     recordNumber=None, lastInterpreted=None, continent=None,
     geometry=None, recordedBy=None, basisOfRecord=None, datasetKey=None,
@@ -8,11 +11,20 @@ def search(taxonKey=None, scientificName=None, country=None,
     decimalLatitude=None, decimalLongitude=None, elevation=None,
     depth=None, institutionCode=None, collectionCode=None,
     hasGeospatialIssue=None, issue=None, q=None, mediatype=None,
-    limit=300, offset=0, **kwargs):
+    limit=300, offset=0, establishmentMeans=None,
+    facet=None, facetMincount=None, facetMultiselect=None, **kwargs):
     '''
     Search GBIF occurrences
 
     :param taxonKey: [int] A GBIF occurrence identifier
+    :param repatriated: [str] Searches for records whose publishing country is different to the country where the record was recorded in
+    :param kingdomKey: [int] Kingdom classification key
+    :param phylumKey: [int] Phylum classification key
+    :param classKey: [int] Class classification key
+    :param orderKey: [int] Order classification key
+    :param familyKey: [int] Family classification key
+    :param genusKey: [int] Genus classification key
+    :param subgenusKey: [int] Subgenus classification key
     :param scientificName: [str] A scientific name from the GBIF backbone. All included and synonym taxa are included in the search.
     :param datasetKey: [str] The occurrence dataset key (a uuid)
     :param catalogNumber: [str] An identifier of any form assigned by the source within a physical collection or digital dataset for the record which may not unique, but should be fairly unique in combination with the institution and collection code.
@@ -60,8 +72,8 @@ def search(taxonKey=None, scientificName=None, country=None,
        record with or without spatial issues.
     :param issue: [str] One or more of many possible issues with each occurrence record. See
        Details. Issues passed to this parameter filter results by the issue.
-    :param hasCoordinate: (logical) Return only occurence records with lat/long data (``TRUE``) or
-       all records (``FALSE``, default).
+    :param hasCoordinate: [bool] Return only occurence records with lat/long data (``true``) or
+       all records (``false``, default).
     :param typeStatus: [str] Type status of the specimen. One of many options. See ?typestatus
     :param recordNumber: [int] Number recorded by collector of the data, different from GBIF record
        number. See http://rs.tdwg.org/dwc/terms/#recordNumber} for more info
@@ -78,6 +90,12 @@ def search(taxonKey=None, scientificName=None, country=None,
        ``NULL``, ``MovingImage``, ``Sound``, and ``StillImage``
     :param limit: [int] Number of results to return. Default: ``300``
     :param offset: [int] Record to start at. Default: ``0``
+    :param facet: [str] a character vector of length 1 or greater
+    :param establishmentMeans: [str] EstablishmentMeans, possible values include: INTRODUCED,
+        INVASIVE, MANAGED, NATIVE, NATURALISED, UNCERTAIN
+    :param facetMincount: [int] minimum number of records to be included in the faceting results
+    :param facetMultiselect: [bool] Set to ``true`` to still return counts for values that are not currently
+        filtered. See examples. Default: ``false``
 
     :return: A dictionary, of results
 
@@ -237,9 +255,51 @@ def search(taxonKey=None, scientificName=None, country=None,
         149.4140625 42.65416193033991,159.2578125 48.3160811030533,168.3984375 57.019804336633165,
         178.2421875 59.95776046458139,-179.6484375 61.16708631440347,-178.59375 64.83258989321493))'
         occurrences.search(geometry = wkt)
+
+        # Faceting
+        ## return no occurrence records with limit=0
+        x = occurrences.search(facet = "country", limit = 0)
+        x['facets']
+
+        ## also return occurrence records
+        x = occurrences.search(facet = "establishmentMeans", limit = 10)
+        x['facets']
+        x['results']
+
+        ## multiple facet variables
+        x = occurrences.search(facet = ["country", "basisOfRecord"], limit = 10)
+        x['results']
+        x['facets']
+        x['facets']['country']
+        x['facets']['basisOfRecord']
+        x['facets']['basisOfRecord']['count']
+
+        ## set a minimum facet count
+        x = occurrences.search(facet = "country", facetMincount = 30000000L, limit = 0)
+        x['facets']
+
+        ## paging per each faceted variable
+        ### do so by passing in variables like "country" + "_facetLimit" = "country_facetLimit"
+        ### or "country" + "_facetOffset" = "country_facetOffset"
+        x = occurrences.search(
+          facet = ["country", "basisOfRecord", "hasCoordinate"],
+          country_facetLimit = 3,
+          basisOfRecord_facetLimit = 6,
+          limit = 0
+        )
+        x['facets']
+
+        # requests package options
+        ## There's an acceptable set of requests options (['timeout', 'cookies', 'auth',
+        ## 'allow_redirects', 'proxies', 'verify', 'stream', 'cert']) you can pass
+        ## in via **kwargs, e.g., set a timeout
+        x = occurrences.search(timeout = 1)
     '''
     url = gbif_baseurl + 'occurrence/search'
-    out = gbif_GET(url, {'taxonKey': taxonKey, 'scientificName': scientificName,
+    args = {'taxonKey': taxonKey, 'repatriated': repatriated,
+        'kingdomKey': kingdomKey, 'phylumKey': phylumKey, 'classKey': classKey,
+        'orderKey': orderKey, 'familyKey': familyKey, 'genusKey': genusKey,
+        'subgenusKey': subgenusKey, 'scientificName': scientificName,
         'country': country, 'publishingCountry': publishingCountry,
         'hasCoordinate': hasCoordinate, 'typeStatus': typeStatus,
         'recordNumber': recordNumber, 'lastInterpreted': lastInterpreted,
@@ -250,5 +310,13 @@ def search(taxonKey=None, scientificName=None, country=None,
         'elevation': elevation, 'depth': depth, 'institutionCode': institutionCode,
         'collectionCode': collectionCode, 'hasGeospatialIssue': hasGeospatialIssue,
         'issue': issue, 'q': q, 'mediatype': mediatype, 'limit': limit,
-        'offset': offset}, **kwargs)
+        'offset': offset, 'establishmentMeans': establishmentMeans,
+        'facetMincount': facetMincount, 'facet': facet,
+        'facetMultiselect': facetMultiselect}
+    gbif_kwargs = {key: kwargs[key] for key in kwargs if key not in requests_argset}
+    if gbif_kwargs is not None:
+        xx = dict(zip( [ re.sub('_', '.', x) for x in gbif_kwargs.keys() ], gbif_kwargs.values() ))
+        args.update(xx)
+    kwargs = {key: kwargs[key] for key in kwargs if key in requests_argset}
+    out = gbif_GET(url, args, **kwargs)
     return out

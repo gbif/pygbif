@@ -56,3 +56,6 @@ def is_not_none(x):
   return x.__class__.__name__ != 'NoneType'
 
 gbif_baseurl = "http://api.gbif.org/v1/"
+
+requests_argset = ['timeout', 'cookies', 'auth', 'allow_redirects',
+                    'proxies', 'verify', 'stream', 'cert']
