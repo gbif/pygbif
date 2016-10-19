@@ -32,4 +32,4 @@ def test_name_lookup_faceting():
     assert 0 == len(res['results'])
     assert 1 == len(res['facets'])
     assert 2 == len(res['facets'][0])
-    assert ['field','counts'] == res['facets'][0].keys()
+    assert ['field','counts'] == list(res['facets'][0].keys())
