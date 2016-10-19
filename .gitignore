@@ -26,3 +26,7 @@
 # ipython notebook files
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
+
+# scratch files
+scratch.py
+

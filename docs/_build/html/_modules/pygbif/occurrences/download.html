@@ -30,6 +30,9 @@
   
 
   
+        <link rel="index" title="Index"
+              href="../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../search.html"/>
     <link rel="top" title="pygbif 0.1.6.0 documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
@@ -135,9 +138,9 @@
 <span class="kn">import</span> <span class="nn">csv</span>
 <span class="kn">import</span> <span class="nn">json</span>
 <span class="kn">import</span> <span class="nn">datetime</span>
-<span class="kn">from</span> <span class="nn">requests</span> <span class="kn">import</span> <span class="n">auth</span>
+<span class="kn">from</span> <span class="nn">requests</span> <span class="k">import</span> <span class="n">auth</span>
 
-<span class="kn">from</span> <span class="nn">..gbifutils</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">..gbifutils</span> <span class="k">import</span> <span class="o">*</span>
 
 
 <span class="k">def</span> <span class="nf">_parse_args</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -161,8 +164,8 @@
             <span class="k">return</span> <span class="n">value</span>
 
 
-<span class="k">def</span> <span class="nf">download</span><span class="p">(</span><span class="n">queries</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">pwd</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
-             <span class="n">email</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">pred_type</span><span class="o">=</span><span class="s1">&#39;and&#39;</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">download</span><span class="p">(</span><span class="n">queries</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pwd</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+             <span class="n">email</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pred_type</span><span class="o">=</span><span class="s1">&#39;and&#39;</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Spin up a download request for GBIF occurrence data.</span>
 
@@ -272,7 +275,7 @@
 
 <span class="k">class</span> <span class="nc">GbifDownload</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
 
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">creator</span><span class="p">,</span> <span class="n">email</span><span class="p">,</span> <span class="n">polygon</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">creator</span><span class="p">,</span> <span class="n">email</span><span class="p">,</span> <span class="n">polygon</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;class to setup a JSON doc with the query and POST a request</span>
 
 <span class="sd">        All predicates (default key-value or iterative based on a list of</span>
@@ -305,7 +308,7 @@
                             <span class="s1">&#39;predicates&#39;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">predicates</span>
                             <span class="p">}</span>
                         <span class="p">}</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">request_id</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">request_id</span> <span class="o">=</span> <span class="kc">None</span>
 
         <span class="c1"># prepare the geometry polygon constructions</span>
         <span class="k">if</span> <span class="n">polygon</span><span class="p">:</span>
@@ -316,7 +319,7 @@
         <span class="sd">&quot;&quot;&quot;get main predicate combination type&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_main_pred_type</span>
 
-    <span class="nd">@main_pred_type.setter</span>
+    <span class="nd">@main_pred_type</span><span class="o">.</span><span class="n">setter</span>
     <span class="k">def</span> <span class="nf">main_pred_type</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;set main predicate combination type</span>
 
@@ -386,7 +389,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">values</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_extract_values</span><span class="p">(</span><span class="n">values_list</span><span class="p">)</span>
 
-        <span class="n">predicate</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;equals&#39;</span><span class="p">,</span> <span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="n">key</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="bp">None</span><span class="p">}</span>
+        <span class="n">predicate</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;equals&#39;</span><span class="p">,</span> <span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="n">key</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">}</span>
         <span class="n">predicates</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">while</span> <span class="n">values</span><span class="p">:</span>
             <span class="n">predicate</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">values</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
@@ -402,7 +405,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">predicates</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="n">geom_type</span><span class="p">,</span> <span class="s1">&#39;geometry&#39;</span><span class="p">:</span> <span class="n">polygon</span><span class="p">})</span>
 
-    <span class="k">def</span> <span class="nf">post_download</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">pwd</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">post_download</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pwd</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="sd">        :param user: Username</span>
@@ -424,7 +427,7 @@
                             <span class="s1">&#39;check your number of active downloads.&#39;</span><span class="p">)</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">request_id</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">text</span>
-            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Your download key is &#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">request_id</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Your download key is &#39;</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">request_id</span><span class="p">)</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">request_id</span>
 
     <span class="k">def</span> <span class="nf">get_status</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -455,7 +458,7 @@
     <span class="k">return</span> <span class="n">gbif_GET</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="p">{},</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">download_list</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">pwd</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">download_list</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pwd</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Lists the downloads created by a user.</span>
 
@@ -510,12 +513,12 @@
     <span class="k">if</span> <span class="n">meta</span><span class="p">[</span><span class="s1">&#39;status&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;SUCCEEDED&#39;</span><span class="p">:</span>
         <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;download &quot;</span><span class="si">%s</span><span class="s1">&quot; not of status SUCCEEDED&#39;</span> <span class="o">%</span> <span class="n">key</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Download file size: </span><span class="si">%s</span><span class="s1"> bytes&#39;</span> <span class="o">%</span> <span class="n">meta</span><span class="p">[</span><span class="s1">&#39;size&#39;</span><span class="p">])</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Download file size: </span><span class="si">%s</span><span class="s1"> bytes&#39;</span> <span class="o">%</span> <span class="n">meta</span><span class="p">[</span><span class="s1">&#39;size&#39;</span><span class="p">])</span>
         <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://api.gbif.org/v1/occurrence/download/request/&#39;</span> <span class="o">+</span> <span class="n">key</span>
         <span class="n">path</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="si">%s</span><span class="s2">/</span><span class="si">%s</span><span class="s2">.zip&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span>
         <span class="n">gbif_GET_write</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="c1"># options(gbifdownloadpath = path)</span>
-        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;On disk at &quot;</span> <span class="o">+</span> <span class="n">path</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;On disk at &quot;</span> <span class="o">+</span> <span class="n">path</span><span class="p">)</span>
         <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;path&#39;</span><span class="p">:</span> <span class="n">path</span><span class="p">,</span> <span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="n">meta</span><span class="p">[</span><span class="s1">&#39;size&#39;</span><span class="p">],</span> <span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="n">key</span><span class="p">}</span>
 
 <span class="n">operators</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;equals&#39;</span><span class="p">,</span> <span class="s1">&#39;and&#39;</span><span class="p">,</span> <span class="s1">&#39;or&#39;</span><span class="p">,</span> <span class="s1">&#39;lessThan&#39;</span><span class="p">,</span> <span class="s1">&#39;lessThanOrEquals&#39;</span><span class="p">,</span>

@@ -30,6 +30,9 @@
   
 
   
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="pygbif 0.1.6.0 documentation" href="index.html"/>
         <link rel="next" title="species module" href="species.html"/>
         <link rel="prev" title="occurrences module" href="occurrences.html"/> 
@@ -134,7 +137,7 @@
 <span id="registry-module"></span><span id="registry"></span><h1>registry module<a class="headerlink" href="#module-pygbif" title="Permalink to this headline">¶</a></h1>
 <dl class="method">
 <dt id="pygbif.registry.datasets">
-<code class="descclassname">registry.</code><code class="descname">datasets</code><span class="sig-paren">(</span><em>data='all'</em>, <em>type=None</em>, <em>uuid=None</em>, <em>query=None</em>, <em>id=None</em>, <em>limit=100</em>, <em>start=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.registry.datasets" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">registry.</code><code class="descname">datasets</code><span class="sig-paren">(</span><em>data='all'</em>, <em>type=None</em>, <em>uuid=None</em>, <em>query=None</em>, <em>id=None</em>, <em>limit=100</em>, <em>offset=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.registry.datasets" title="Permalink to this definition">¶</a></dt>
 <dd><p>Search for datasets and dataset metadata.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -185,6 +188,169 @@ is anything other than <code class="docutils literal"><span class="pre">all</spa
 <span class="n">registry</span><span class="o">.</span><span class="n">dataset_metrics</span><span class="p">(</span><span class="n">uuid</span><span class="o">=</span><span class="s1">&#39;3f8a1297-3259-4700-91fc-acc4170b27ce&#39;</span><span class="p">)</span>
 <span class="n">registry</span><span class="o">.</span><span class="n">dataset_metrics</span><span class="p">(</span><span class="n">uuid</span><span class="o">=</span><span class="s1">&#39;66dd0960-2d7d-46ee-a491-87b9adcfe7b1&#39;</span><span class="p">)</span>
 <span class="n">registry</span><span class="o">.</span><span class="n">dataset_metrics</span><span class="p">(</span><span class="n">uuid</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;3f8a1297-3259-4700-91fc-acc4170b27ce&#39;</span><span class="p">,</span> <span class="s1">&#39;66dd0960-2d7d-46ee-a491-87b9adcfe7b1&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygbif.registry.dataset_suggest">
+<code class="descclassname">registry.</code><code class="descname">dataset_suggest</code><span class="sig-paren">(</span><em>q=None</em>, <em>type=None</em>, <em>keyword=None</em>, <em>owningOrg=None</em>, <em>publishingOrg=None</em>, <em>hostingOrg=None</em>, <em>publishingCountry=None</em>, <em>decade=None</em>, <em>limit=100</em>, <em>offset=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.registry.dataset_suggest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Search that returns up to 20 matching datasets. Results are ordered by relevance.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>q</strong> &#8211; [str] Query term(s) for full text search.  The value for this parameter can be a simple word or a phrase. Wildcards can be added to the simple word parameters only, e.g. <code class="docutils literal"><span class="pre">q=*puma*</span></code></li>
+<li><strong>type</strong> &#8211; [str] Type of dataset, options include OCCURRENCE, etc.</li>
+<li><strong>keyword</strong> &#8211; [str] Keyword to search by. Datasets can be tagged by keywords, which you can search on. The search is done on the merged collection of tags, the dataset keywordCollections and temporalCoverages. SEEMS TO NOT BE WORKING ANYMORE AS OF 2016-09-02.</li>
+<li><strong>owningOrg</strong> &#8211; [str] Owning organization. A uuid string. See <a class="reference internal" href="#pygbif.registry.organizations" title="pygbif.registry.organizations"><code class="xref py py-func docutils literal"><span class="pre">organizations()</span></code></a></li>
+<li><strong>publishingOrg</strong> &#8211; [str] Publishing organization. A uuid string. See <a class="reference internal" href="#pygbif.registry.organizations" title="pygbif.registry.organizations"><code class="xref py py-func docutils literal"><span class="pre">organizations()</span></code></a></li>
+<li><strong>hostingOrg</strong> &#8211; [str] Hosting organization. A uuid string. See <a class="reference internal" href="#pygbif.registry.organizations" title="pygbif.registry.organizations"><code class="xref py py-func docutils literal"><span class="pre">organizations()</span></code></a></li>
+<li><strong>publishingCountry</strong> &#8211; [str] Publishing country.</li>
+<li><strong>decade</strong> &#8211; [str] Decade, e.g., 1980. Filters datasets by their temporal coverage broken down to decades. Decades are given as a full year, e.g. 1880, 1960, 2000, etc, and will return datasets wholly contained in the decade as well as those that cover the entire decade or more. Facet by decade to get the break down, e.g. <code class="docutils literal"><span class="pre">/search?facet=DECADE&amp;facet_only=true</span></code> (see example below)</li>
+<li><strong>limit</strong> &#8211; [int] Number of results to return. Default: <code class="docutils literal"><span class="pre">300</span></code></li>
+<li><strong>offset</strong> &#8211; [int] Record to start at. Default: <code class="docutils literal"><span class="pre">0</span></code></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A dictionary</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>References: <a class="reference external" href="http://www.gbif.org/developer/registry#datasetSearch">http://www.gbif.org/developer/registry#datasetSearch</a></p>
+<p>Usage:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">registry</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">dataset_suggest</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="s2">&quot;Amazon&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;OCCURRENCE&quot;</span><span class="p">)</span>
+
+<span class="c1"># Suggest datasets tagged with keyword &quot;france&quot;.</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">dataset_suggest</span><span class="p">(</span><span class="n">keyword</span><span class="o">=</span><span class="s2">&quot;france&quot;</span><span class="p">)</span>
+
+<span class="c1"># Suggest datasets owned by the organization with key</span>
+<span class="c1"># &quot;07f617d0-c688-11d8-bf62-b8a03c50a862&quot; (UK NBN).</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">dataset_suggest</span><span class="p">(</span><span class="n">owningOrg</span><span class="o">=</span><span class="s2">&quot;07f617d0-c688-11d8-bf62-b8a03c50a862&quot;</span><span class="p">)</span>
+
+<span class="c1"># Fulltext search for all datasets having the word &quot;amsterdam&quot; somewhere in</span>
+<span class="c1"># its metadata (title, description, etc).</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">dataset_suggest</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="s2">&quot;amsterdam&quot;</span><span class="p">)</span>
+
+<span class="c1"># Limited search</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">dataset_suggest</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;OCCURRENCE&quot;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">dataset_suggest</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;OCCURRENCE&quot;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="c1"># Return just descriptions</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">dataset_suggest</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;OCCURRENCE&quot;</span><span class="p">,</span> <span class="n">limit</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># Search by decade</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">dataset_suggest</span><span class="p">(</span><span class="n">decade</span><span class="o">=</span><span class="mi">1980</span><span class="p">,</span> <span class="n">limit</span> <span class="o">=</span> <span class="mi">30</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="pygbif.registry.dataset_search">
+<code class="descclassname">registry.</code><code class="descname">dataset_search</code><span class="sig-paren">(</span><em>q=None</em>, <em>type=None</em>, <em>keyword=None</em>, <em>owningOrg=None</em>, <em>publishingOrg=None</em>, <em>hostingOrg=None</em>, <em>decade=None</em>, <em>publishingCountry=None</em>, <em>facet=None</em>, <em>facetMincount=None</em>, <em>facetMultiselect=None</em>, <em>hl=False</em>, <em>limit=100</em>, <em>offset=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.registry.dataset_search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Full text search across all datasets. Results are ordered by relevance.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>q</strong> &#8211; [str] Query term(s) for full text search.  The value for this parameter
+can be a simple word or a phrase. Wildcards can be added to the simple word
+parameters only, e.g. <code class="docutils literal"><span class="pre">q=*puma*</span></code></li>
+<li><strong>type</strong> &#8211; [str] Type of dataset, options include OCCURRENCE, etc.</li>
+<li><strong>keyword</strong> &#8211; [str] Keyword to search by. Datasets can be tagged by keywords, which
+you can search on. The search is done on the merged collection of tags, the
+dataset keywordCollections and temporalCoverages. SEEMS TO NOT BE WORKING
+ANYMORE AS OF 2016-09-02.</li>
+<li><strong>owningOrg</strong> &#8211; [str] Owning organization. A uuid string. See <a class="reference internal" href="#pygbif.registry.organizations" title="pygbif.registry.organizations"><code class="xref py py-func docutils literal"><span class="pre">organizations()</span></code></a></li>
+<li><strong>publishingOrg</strong> &#8211; [str] Publishing organization. A uuid string. See <a class="reference internal" href="#pygbif.registry.organizations" title="pygbif.registry.organizations"><code class="xref py py-func docutils literal"><span class="pre">organizations()</span></code></a></li>
+<li><strong>hostingOrg</strong> &#8211; [str] Hosting organization. A uuid string. See <a class="reference internal" href="#pygbif.registry.organizations" title="pygbif.registry.organizations"><code class="xref py py-func docutils literal"><span class="pre">organizations()</span></code></a></li>
+<li><strong>publishingCountry</strong> &#8211; [str] Publishing country.</li>
+<li><strong>decade</strong> &#8211; [str] Decade, e.g., 1980. Filters datasets by their temporal coverage
+broken down to decades. Decades are given as a full year, e.g. 1880, 1960, 2000,
+etc, and will return datasets wholly contained in the decade as well as those
+that cover the entire decade or more. Facet by decade to get the break down,
+e.g. <code class="docutils literal"><span class="pre">/search?facet=DECADE&amp;facet_only=true</span></code> (see example below)</li>
+<li><strong>facet</strong> &#8211; [str] A list of facet names used to retrieve the 100 most frequent values
+for a field. Allowed facets are: type, keyword, publishingOrg, hostingOrg, decade,
+and publishingCountry. Additionally subtype and country are legal values but not
+yet implemented, so data will not yet be returned for them.</li>
+<li><strong>facetMincount</strong> &#8211; [str] Used in combination with the facet parameter. Set
+facetMincount={#} to exclude facets with a count less than {#}, e.g.
+<a class="reference external" href="http://api.gbif.org/v1/dataset/search?facet=type&amp;limit=0&amp;facetMincount=10000">http://api.gbif.org/v1/dataset/search?facet=type&amp;limit=0&amp;facetMincount=10000</a>
+only shows the type value &#8216;OCCURRENCE&#8217; because &#8216;CHECKLIST&#8217; and &#8216;METADATA&#8217; have
+counts less than 10000.</li>
+<li><strong>facetMultiselect</strong> &#8211; [bool] Used in combination with the facet parameter. Set
+facetMultiselect=True to still return counts for values that are not currently
+filtered, e.g.
+<a class="reference external" href="http://api.gbif.org/v1/dataset/search?facet=type&amp;limit=0&amp;type=CHECKLIST&amp;facetMultiselect=true">http://api.gbif.org/v1/dataset/search?facet=type&amp;limit=0&amp;type=CHECKLIST&amp;facetMultiselect=true</a>
+still shows type values &#8216;OCCURRENCE&#8217; and &#8216;METADATA&#8217; even though type is being
+filtered by type=CHECKLIST</li>
+<li><strong>hl</strong> &#8211; [bool] Set <code class="docutils literal"><span class="pre">hl=True</span></code> to highlight terms matching the query when in fulltext
+search fields. The highlight will be an emphasis tag of class &#8216;gbifH1&#8217; e.g.
+<a class="reference external" href="http://api.gbif.org/v1/dataset/search?q=plant&amp;hl=true">http://api.gbif.org/v1/dataset/search?q=plant&amp;hl=true</a>
+Fulltext search fields include: title, keyword, country, publishing country,
+publishing organization title, hosting organization title, and description. One
+additional full text field is searched which includes information from metadata
+documents, but the text of this field is not returned in the response.</li>
+<li><strong>limit</strong> &#8211; [int] Number of results to return. Default: <code class="docutils literal"><span class="pre">300</span></code></li>
+<li><strong>offset</strong> &#8211; [int] Record to start at. Default: <code class="docutils literal"><span class="pre">0</span></code></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Note:</th><td class="field-body"><p class="first">Note that you can pass in additional faceting parameters on a per field basis.
+For example, if you want to limit the numbef of facets returned from a field <code class="docutils literal"><span class="pre">foo</span></code> to
+3 results, pass in <code class="docutils literal"><span class="pre">foo_facetLimit</span> <span class="pre">=</span> <span class="pre">3</span></code>. GBIF does not allow all per field parameters,
+but does allow some. See also examples.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A dictionary</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>References: <a class="reference external" href="http://www.gbif.org/developer/registry#datasetSearch">http://www.gbif.org/developer/registry#datasetSearch</a></p>
+<p>Usage:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">registry</span>
+<span class="c1"># Gets all datasets of type &quot;OCCURRENCE&quot;.</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">dataset_search</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;OCCURRENCE&quot;</span><span class="p">,</span> <span class="n">limit</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="c1"># Fulltext search for all datasets having the word &quot;amsterdam&quot; somewhere in</span>
+<span class="c1"># its metadata (title, description, etc).</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">dataset_search</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="s2">&quot;amsterdam&quot;</span><span class="p">,</span> <span class="n">limit</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="c1"># Limited search</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">dataset_search</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;OCCURRENCE&quot;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">dataset_search</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;OCCURRENCE&quot;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="c1"># Search by decade</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">dataset_search</span><span class="p">(</span><span class="n">decade</span><span class="o">=</span><span class="mi">1980</span><span class="p">,</span> <span class="n">limit</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+
+<span class="c1"># Faceting</span>
+<span class="c1">## just facets</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">dataset_search</span><span class="p">(</span><span class="n">facet</span><span class="o">=</span><span class="s2">&quot;decade&quot;</span><span class="p">,</span> <span class="n">facetMincount</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1">## data and facets</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">dataset_search</span><span class="p">(</span><span class="n">facet</span><span class="o">=</span><span class="s2">&quot;decade&quot;</span><span class="p">,</span> <span class="n">facetMincount</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1">## many facet variables</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">dataset_search</span><span class="p">(</span><span class="n">facet</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;decade&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">],</span> <span class="n">facetMincount</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1">## facet vars</span>
+<span class="c1">### per variable paging</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">registry</span><span class="o">.</span><span class="n">dataset_search</span><span class="p">(</span>
+        <span class="n">facet</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;decade&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">],</span>
+        <span class="n">decade_facetLimit</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="n">type_facetLimit</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="n">limit</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="p">)</span>
+
+<span class="c1">## highlight</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">registry</span><span class="o">.</span><span class="n">dataset_search</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="s2">&quot;plant&quot;</span><span class="p">,</span> <span class="n">hl</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">limit</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+<span class="p">[</span> <span class="n">z</span><span class="p">[</span><span class="s1">&#39;description&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;results&#39;</span><span class="p">]</span> <span class="p">]</span>
 </pre></div>
 </div>
 </dd></dl>
