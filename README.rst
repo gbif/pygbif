@@ -40,6 +40,19 @@ Note that `GBIF maps API <http://www.gbif.org/developer/maps>`__ is not included
 Registry module
 ===============
 
+registry module API:
+
+* `organizations`
+* `nodes`
+* `networks`
+* `installations`
+* `datasets`
+* `dataset_metrics`
+* `dataset_suggest`
+* `dataset_search`
+
+Example usage:
+
 .. code-block:: python
 
     from pygbif import registry
@@ -48,6 +61,16 @@ Registry module
 Species module
 ===============
 
+species module API:
+
+* `name_backbone`
+* `name_suggest`
+* `name_usage`
+* `name_lookup`
+* `name_parser`
+
+Example usage:
+
 .. code-block:: python
 
     from pygbif import species
@@ -55,6 +78,26 @@ Species module
 
 Occurrences module
 ==================
+
+registry module API:
+
+* `search`
+* `get`
+* `get_verbatim`
+* `get_fragment`
+* `count`
+* `count_basisofrecord`
+* `count_year`
+* `count_datasets`
+* `count_countries`
+* `count_schema`
+* `count_publishingcountries`
+* `download`
+* `download_meta`
+* `download_list`
+* `download_get`
+
+Example usage:
 
 .. code-block:: python
 

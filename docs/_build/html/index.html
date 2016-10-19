@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Python GBIF Client &mdash; pygbif 0.2.0 documentation</title>
+  <title>pygbif &mdash; pygbif 0.2.0 documentation</title>
   
 
   
@@ -118,7 +118,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="#">Docs</a> &raquo;</li>
       
-    <li>Python GBIF Client</li>
+    <li>pygbif</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -132,31 +132,49 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="python-gbif-client">
-<h1>Python GBIF Client<a class="headerlink" href="#python-gbif-client" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="pygbif">
+<h1>pygbif<a class="headerlink" href="#pygbif" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference external" href="https://pypi.python.org/pypi/pygbif"><img alt="pypi" src="https://img.shields.io/pypi/v/pygbif.svg" /></a> <a class="reference external" href="http://pygbif.rtfd.org/"><img alt="docs" src="https://readthedocs.org/projects/pygbif/badge/?version=latest" /></a> <a class="reference external" href="https://travis-ci.org/sckott/pygbif"><img alt="travis" src="https://travis-ci.org/sckott/pygbif.svg" /></a> <a class="reference external" href="https://coveralls.io/github/sckott/pygbif?branch=master"><img alt="coverage" src="https://coveralls.io/repos/sckott/pygbif/badge.svg?branch=master&amp;service=github" /></a></p>
 <p>Python client for the <a class="reference external" href="http://www.gbif.org/developer/summary">GBIF API</a>.</p>
 <p><a class="reference external" href="https://github.com/sckott/pygbif">Source on GitHub at sckott/pygbif</a></p>
-<p><cite>pygbif</cite> is split up into modules for each of the major groups of API methods.</p>
-<ul class="simple">
-<li>Registry - Datasets, Nodes, Installations, Networks, Organizations - <a class="reference external" href="http://www.gbif.org/developer/registry">Registry API Docs</a></li>
-<li>Species - Taxonomic names - <a class="reference external" href="http://www.gbif.org/developer/species">Species API Docs</a></li>
-<li>Occurrences - Occurrence data, including the download API - <a class="reference external" href="http://www.gbif.org/developer/occurrences">Occurrences API Docs</a></li>
-</ul>
-<p>Note that GBIF maps <a class="reference external" href="http://www.gbif.org/developer/maps">API</a> is not included in <cite>pygbif</cite>.</p>
 <p>Other GBIF clients:</p>
 <ul class="simple">
-<li>R: <a class="reference external" href="https://github.com/ropensci/rgbif">rgbif</a></li>
+<li>R: <cite>rgbif</cite>, <a class="reference external" href="https://github.com/ropensci/rgbif">ropensci/rgbif</a></li>
 </ul>
+</div>
 <div class="section" id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">pygbif</span>
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<p>Stable from pypi</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">pip install pygbif</span>
 </pre></div>
 </div>
+<p>Development version</p>
+<div class="highlight-console"><div class="highlight"><pre><span></span><span class="go">[sudo] pip install git+git://github.com/sckott/pygbif.git#egg=pygbif</span>
+</pre></div>
 </div>
+<p><cite>pygbif</cite> is split up into modules for each of the major groups of API methods.</p>
+<ul class="simple">
+<li>Registry - Datasets, Nodes, Installations, Networks, Organizations</li>
+<li>Species - Taxonomic names</li>
+<li>Occurrences - Occurrence data, including the download API</li>
+</ul>
+<p>You can import the entire library, or each module individually as needed.</p>
+<p>Note that <a class="reference external" href="http://www.gbif.org/developer/maps">GBIF maps API</a> is not included in <cite>pygbif</cite>.</p>
 </div>
 <div class="section" id="registry-module">
 <h1>Registry module<a class="headerlink" href="#registry-module" title="Permalink to this headline">¶</a></h1>
+<p>registry module API:</p>
+<ul class="simple">
+<li><cite>organizations</cite></li>
+<li><cite>nodes</cite></li>
+<li><cite>networks</cite></li>
+<li><cite>installations</cite></li>
+<li><cite>datasets</cite></li>
+<li><cite>dataset_metrics</cite></li>
+<li><cite>dataset_suggest</cite></li>
+<li><cite>dataset_search</cite></li>
+</ul>
+<p>Example usage:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">registry</span>
 <span class="n">registry</span><span class="o">.</span><span class="n">dataset_metrics</span><span class="p">(</span><span class="n">uuid</span><span class="o">=</span><span class="s1">&#39;3f8a1297-3259-4700-91fc-acc4170b27ce&#39;</span><span class="p">)</span>
 </pre></div>
@@ -164,6 +182,15 @@
 </div>
 <div class="section" id="species-module">
 <h1>Species module<a class="headerlink" href="#species-module" title="Permalink to this headline">¶</a></h1>
+<p>species module API:</p>
+<ul class="simple">
+<li><cite>name_backbone</cite></li>
+<li><cite>name_suggest</cite></li>
+<li><cite>name_usage</cite></li>
+<li><cite>name_lookup</cite></li>
+<li><cite>name_parser</cite></li>
+</ul>
+<p>Example usage:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">species</span>
 <span class="n">species</span><span class="o">.</span><span class="n">name_suggest</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="s1">&#39;Puma concolor&#39;</span><span class="p">)</span>
 </pre></div>
@@ -171,10 +198,32 @@
 </div>
 <div class="section" id="occurrences-module">
 <h1>Occurrences module<a class="headerlink" href="#occurrences-module" title="Permalink to this headline">¶</a></h1>
+<p>registry module API:</p>
+<ul class="simple">
+<li><cite>search</cite></li>
+<li><cite>get</cite></li>
+<li><cite>get_verbatim</cite></li>
+<li><cite>get_fragment</cite></li>
+<li><cite>count</cite></li>
+<li><cite>count_basisofrecord</cite></li>
+<li><cite>count_year</cite></li>
+<li><cite>count_datasets</cite></li>
+<li><cite>count_countries</cite></li>
+<li><cite>count_schema</cite></li>
+<li><cite>count_publishingcountries</cite></li>
+<li><cite>download</cite></li>
+<li><cite>download_meta</cite></li>
+<li><cite>download_list</cite></li>
+<li><cite>download_get</cite></li>
+</ul>
+<p>Example usage:</p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">occurrences</span> <span class="k">as</span> <span class="n">occ</span>
 <span class="n">occ</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">taxonKey</span> <span class="o">=</span> <span class="mi">3329049</span><span class="p">)</span>
 <span class="n">occ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span> <span class="o">=</span> <span class="mi">252408386</span><span class="p">)</span>
 <span class="n">occ</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">isGeoreferenced</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+<span class="n">occ</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;basisOfRecord = LITERATURE&#39;</span><span class="p">)</span>
+<span class="n">occ</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;taxonKey = 3119195&#39;</span><span class="p">)</span>
+<span class="n">occ</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;decimalLatitude &gt; 50&#39;</span><span class="p">)</span>
 <span class="n">occ</span><span class="o">.</span><span class="n">download_list</span><span class="p">(</span><span class="n">user</span> <span class="o">=</span> <span class="s2">&quot;sckott&quot;</span><span class="p">,</span> <span class="n">limit</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
 <span class="n">occ</span><span class="o">.</span><span class="n">download_meta</span><span class="p">(</span><span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;0000099-140929101555934&quot;</span><span class="p">)</span>
 <span class="n">occ</span><span class="o">.</span><span class="n">download_get</span><span class="p">(</span><span class="s2">&quot;0000066-140928181241064&quot;</span><span class="p">)</span>
