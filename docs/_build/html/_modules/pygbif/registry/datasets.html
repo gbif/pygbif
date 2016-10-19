@@ -135,7 +135,6 @@
   <h1>Source code for pygbif.registry.datasets</h1><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">re</span>
 <span class="kn">from</span> <span class="nn">..gbifutils</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">.registry_utils</span> <span class="k">import</span> <span class="o">*</span>
 
 <span class="k">def</span> <span class="nf">dataset_metrics</span><span class="p">(</span><span class="n">uuid</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 	<span class="sd">&#39;&#39;&#39;</span>
@@ -193,33 +192,32 @@
 									<span class="s1">&#39;constituents&#39;</span><span class="p">,</span> <span class="s1">&#39;document&#39;</span><span class="p">,</span> <span class="s1">&#39;metadata&#39;</span><span class="p">,</span> <span class="s1">&#39;deleted&#39;</span><span class="p">,</span>
 									<span class="s1">&#39;duplicate&#39;</span><span class="p">,</span> <span class="s1">&#39;subDataset&#39;</span><span class="p">,</span> <span class="s1">&#39;withNoEndpoint&#39;</span><span class="p">]</span>
 	<span class="n">check_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">data_choices</span><span class="p">)</span>
-
-	<span class="k">def</span> <span class="nf">getdata</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">uuid</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-		<span class="k">if</span> <span class="n">x</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;all&#39;</span><span class="p">,</span><span class="s1">&#39;deleted&#39;</span><span class="p">,</span><span class="s1">&#39;duplicate&#39;</span><span class="p">,</span><span class="s1">&#39;subDataset&#39;</span><span class="p">,</span><span class="s1">&#39;withNoEndpoint&#39;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">uuid</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-			<span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;You must specify a uuid if data does not equal all and data does not equal of deleted, duplicate, subDataset, or withNoEndpoint&#39;</span><span class="p">)</span>
-
-		<span class="k">if</span> <span class="n">uuid</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-			<span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="s1">&#39;all&#39;</span><span class="p">:</span>
-				<span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s1">&#39;dataset&#39;</span>
-			<span class="k">else</span><span class="p">:</span>
-				<span class="k">if</span> <span class="nb">id</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">x</span> <span class="ow">is</span> <span class="s1">&#39;metadata&#39;</span><span class="p">:</span>
-					<span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s1">&#39;dataset/metadata/&#39;</span> <span class="o">+</span> <span class="nb">id</span> <span class="o">+</span> <span class="s1">&#39;/document&#39;</span>
-				<span class="k">else</span><span class="p">:</span>
-					<span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s1">&#39;dataset/&#39;</span> <span class="o">+</span> <span class="n">x</span>
-		<span class="k">else</span><span class="p">:</span>
-			<span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="s1">&#39;all&#39;</span><span class="p">:</span>
-				<span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s1">&#39;dataset/&#39;</span> <span class="o">+</span> <span class="n">uuid</span>
-			<span class="k">else</span><span class="p">:</span>
-				<span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s1">&#39;dataset/&#39;</span> <span class="o">+</span> <span class="n">uuid</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="n">x</span>
-
-		<span class="n">res</span> <span class="o">=</span> <span class="n">gbif_GET</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-		<span class="k">return</span> <span class="p">{</span><span class="s1">&#39;meta&#39;</span><span class="p">:</span> <span class="n">get_meta</span><span class="p">(</span><span class="n">res</span><span class="p">),</span> <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="n">parse_results</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">uuid</span><span class="p">)}</span>
-
-	<span class="c1"># Get data</span>
 	<span class="k">if</span> <span class="n">len2</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">==</span><span class="mi">1</span><span class="p">:</span>
-		<span class="k">return</span> <span class="n">getdata</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">uuid</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+		<span class="k">return</span> <span class="n">datasets_fetch</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">uuid</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 	<span class="k">else</span><span class="p">:</span>
-		<span class="k">return</span> <span class="p">[</span><span class="n">getdata</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">uuid</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span>
+		<span class="k">return</span> <span class="p">[</span><span class="n">datasets_fetch</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">uuid</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">datasets_fetch</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">uuid</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+	<span class="k">if</span> <span class="n">x</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;all&#39;</span><span class="p">,</span><span class="s1">&#39;deleted&#39;</span><span class="p">,</span><span class="s1">&#39;duplicate&#39;</span><span class="p">,</span><span class="s1">&#39;subDataset&#39;</span><span class="p">,</span><span class="s1">&#39;withNoEndpoint&#39;</span><span class="p">]</span> <span class="ow">and</span> <span class="n">uuid</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+		<span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;You must specify a uuid if data does not equal all and data does not equal of deleted, duplicate, subDataset, or withNoEndpoint&#39;</span><span class="p">)</span>
+
+	<span class="k">if</span> <span class="n">uuid</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+		<span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="s1">&#39;all&#39;</span><span class="p">:</span>
+			<span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s1">&#39;dataset&#39;</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">if</span> <span class="nb">id</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">x</span> <span class="ow">is</span> <span class="s1">&#39;metadata&#39;</span><span class="p">:</span>
+				<span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s1">&#39;dataset/metadata/&#39;</span> <span class="o">+</span> <span class="nb">id</span> <span class="o">+</span> <span class="s1">&#39;/document&#39;</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s1">&#39;dataset/&#39;</span> <span class="o">+</span> <span class="n">x</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="s1">&#39;all&#39;</span><span class="p">:</span>
+			<span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s1">&#39;dataset/&#39;</span> <span class="o">+</span> <span class="n">uuid</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s1">&#39;dataset/&#39;</span> <span class="o">+</span> <span class="n">uuid</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="n">x</span>
+
+	<span class="n">res</span> <span class="o">=</span> <span class="n">gbif_GET</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">res</span>
+
 
 
 <span class="k">def</span> <span class="nf">dataset_suggest</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">keyword</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">owningOrg</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>

@@ -7,4 +7,6 @@ species module
 
 .. automethod:: species.name_backbone
 .. automethod:: species.name_suggest
+.. automethod:: species.name_lookup
+.. automethod:: species.name_usage
 .. automethod:: species.name_parser

@@ -1,0 +1,338 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pygbif.species.name_lookup &mdash; pygbif 0.1.6.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../search.html"/>
+    <link rel="top" title="pygbif 0.1.6.0 documentation" href="../../../index.html"/>
+        <link rel="up" title="Module code" href="../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> pygbif
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.6.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../occurrences.html">occurrences module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../registry.html">registry module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../species.html">species module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog_link.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">pygbif</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      
+    <li>pygbif.species.name_lookup</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pygbif.species.name_lookup</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">..gbifutils</span> <span class="k">import</span> <span class="o">*</span>
+
+<span class="k">def</span> <span class="nf">name_lookup</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">rank</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">higherTaxonKey</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">status</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">isExtinct</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+	<span class="n">habitat</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nameType</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">datasetKey</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">nomenclaturalStatus</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+	<span class="n">limit</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">facet</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">facetMincount</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">facetMultiselect</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+	<span class="nb">type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">hl</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+	<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">	Lookup names in all taxonomies in GBIF.</span>
+
+<span class="sd">	This service uses fuzzy lookup so that you can put in partial names and</span>
+<span class="sd">	you should get back those things that match. See examples below.</span>
+
+<span class="sd">	:param q: [str] Query term(s) for full text search (optional)</span>
+<span class="sd">	:param rank: [str] ``CLASS``, ``CULTIVAR``, ``CULTIVAR_GROUP``, ``DOMAIN``, ``FAMILY``,</span>
+<span class="sd">		 ``FORM``, ``GENUS``, ``INFORMAL``, ``INFRAGENERIC_NAME``, ``INFRAORDER``, ``INFRASPECIFIC_NAME``,</span>
+<span class="sd">		 ``INFRASUBSPECIFIC_NAME``, ``KINGDOM``, ``ORDER``, ``PHYLUM``, ``SECTION``, ``SERIES``, ``SPECIES``, ``STRAIN``, ``SUBCLASS``,</span>
+<span class="sd">		 ``SUBFAMILY``, ``SUBFORM``, ``SUBGENUS``, ``SUBKINGDOM``, ``SUBORDER``, ``SUBPHYLUM``, ``SUBSECTION``, ``SUBSERIES``,</span>
+<span class="sd">		 ``SUBSPECIES``, ``SUBTRIBE``, ``SUBVARIETY``, ``SUPERCLASS``, ``SUPERFAMILY``, ``SUPERORDER``, ``SUPERPHYLUM``,</span>
+<span class="sd">		 ``SUPRAGENERIC_NAME``, ``TRIBE``, ``UNRANKED``, ``VARIETY`` (optional)</span>
+<span class="sd">	:param verbose: [bool] If True show alternative matches considered which had been rejected.</span>
+<span class="sd">	:param higherTaxonKey: [str] Filters by any of the higher Linnean rank keys. Note this</span>
+<span class="sd">			is within the respective checklist and not searching nub keys across all checklists (optional)</span>
+<span class="sd">	:param status: [str] (optional) Filters by the taxonomic status as one of:</span>
+
+<span class="sd">		* ``ACCEPTED``</span>
+<span class="sd">		* ``DETERMINATION_SYNONYM`` Used for unknown child taxa referred to via spec, ssp, ...</span>
+<span class="sd">		* ``DOUBTFUL`` Treated as accepted, but doubtful whether this is correct.</span>
+<span class="sd">		* ``HETEROTYPIC_SYNONYM`` More specific subclass of ``SYNONYM``.</span>
+<span class="sd">		* ``HOMOTYPIC_SYNONYM`` More specific subclass of ``SYNONYM``.</span>
+<span class="sd">		* ``INTERMEDIATE_RANK_SYNONYM`` Used in nub only.</span>
+<span class="sd">		* ``MISAPPLIED`` More specific subclass of ``SYNONYM``.</span>
+<span class="sd">		* ``PROPARTE_SYNONYM`` More specific subclass of ``SYNONYM``.</span>
+<span class="sd">		* ``SYNONYM`` A general synonym, the exact type is unknown.</span>
+
+<span class="sd">	:param isExtinct: [bool] Filters by extinction status (e.g. ``isExtinct=True``)</span>
+<span class="sd">	:param habitat: [str] Filters by habitat. One of: ``marine``, ``freshwater``, or</span>
+<span class="sd">			``terrestrial`` (optional)</span>
+<span class="sd">	:param nameType: [str] (optional) Filters by the name type as one of:</span>
+
+<span class="sd">		* ``BLACKLISTED`` surely not a scientific name.</span>
+<span class="sd">		* ``CANDIDATUS`` Candidatus is a component of the taxonomic name for a bacterium that cannot be maintained in a Bacteriology Culture Collection.</span>
+<span class="sd">		* ``CULTIVAR`` a cultivated plant name.</span>
+<span class="sd">		* ``DOUBTFUL`` doubtful whether this is a scientific name at all.</span>
+<span class="sd">		* ``HYBRID`` a hybrid formula (not a hybrid name).</span>
+<span class="sd">		* ``INFORMAL`` a scientific name with some informal addition like &quot;cf.&quot; or indetermined like Abies spec.</span>
+<span class="sd">		* ``SCINAME`` a scientific name which is not well formed.</span>
+<span class="sd">		* ``VIRUS`` a virus name.</span>
+<span class="sd">		* ``WELLFORMED`` a well formed scientific name according to present nomenclatural rules.</span>
+
+<span class="sd">	:param datasetKey: [str] Filters by the dataset&#39;s key (a uuid) (optional)</span>
+<span class="sd">	:param nomenclaturalStatus: [str] Not yet implemented, but will eventually allow for</span>
+<span class="sd">			filtering by a nomenclatural status enum</span>
+<span class="sd">	:param limit: [fixnum] Number of records to return. Maximum: ``1000``. (optional)</span>
+<span class="sd">	:param offset: [fixnum] Record number to start at. (optional)</span>
+<span class="sd">	:param facet: [str] A list of facet names used to retrieve the 100 most frequent values</span>
+<span class="sd">			for a field. Allowed facets are: ``datasetKey``, ``higherTaxonKey``, ``rank``, ``status``,</span>
+<span class="sd">			``isExtinct``, ``habitat``, and ``nameType``. Additionally ``threat`` and ``nomenclaturalStatus``</span>
+<span class="sd">			are legal values but not yet implemented, so data will not yet be returned for them. (optional)</span>
+<span class="sd">	:param facetMincount: [str] Used in combination with the facet parameter. Set</span>
+<span class="sd">			``facetMincount={#}`` to exclude facets with a count less than {#}, e.g.</span>
+<span class="sd">			http://bit.ly/1bMdByP only shows the type value ``ACCEPTED`` because the other</span>
+<span class="sd">			statuses have counts less than 7,000,000 (optional)</span>
+<span class="sd">	:param facetMultiselect: [bool] Used in combination with the facet parameter. Set</span>
+<span class="sd">			``facetMultiselect=True`` to still return counts for values that are not currently</span>
+<span class="sd">			filtered, e.g. http://bit.ly/19YLXPO still shows all status values even though</span>
+<span class="sd">			status is being filtered by ``status=ACCEPTED`` (optional)</span>
+<span class="sd">	:param type: [str] Type of name. One of ``occurrence``, ``checklist``, or ``metadata``. (optional)</span>
+<span class="sd">	:param hl: [bool] Set ``hl=True`` to highlight terms matching the query when in fulltext</span>
+<span class="sd">			search fields. The highlight will be an emphasis tag of class ``gbifH1`` e.g.</span>
+<span class="sd">			``q=&#39;plant&#39;, hl=True``. Fulltext search fields include: ``title``, ``keyword``, ``country``,</span>
+<span class="sd">			``publishing country``, ``publishing organization title``, ``hosting organization title``, and</span>
+<span class="sd">			``description``. One additional full text field is searched which includes information from</span>
+<span class="sd">			metadata documents, but the text of this field is not returned in the response. (optional)</span>
+
+<span class="sd">	:return: A dictionary</span>
+
+<span class="sd">	:references: http://www.gbif.org/developer/species#searching</span>
+
+<span class="sd">	Usage::</span>
+
+<span class="sd">			from pygbif import species</span>
+
+<span class="sd">			# Look up names like mammalia</span>
+<span class="sd">			species.name_lookup(q=&#39;mammalia&#39;)</span>
+
+<span class="sd">			# Paging</span>
+<span class="sd">			species.name_lookup(q=&#39;mammalia&#39;, limit=1)</span>
+<span class="sd">			species.name_lookup(q=&#39;mammalia&#39;, limit=1, offset=2)</span>
+
+<span class="sd">			# large requests, use offset parameter</span>
+<span class="sd">			first = species.name_lookup(q=&#39;mammalia&#39;, limit=1000)</span>
+<span class="sd">			second = species.name_lookup(q=&#39;mammalia&#39;, limit=1000, offset=1000)</span>
+
+<span class="sd">			# Get all data and parse it, removing descriptions which can be quite long</span>
+<span class="sd">			species.name_lookup(&#39;Helianthus annuus&#39;, rank=&quot;species&quot;, verbose=True)</span>
+
+<span class="sd">			# Get all data and parse it, removing descriptions field which can be quite long</span>
+<span class="sd">			out = species.name_lookup(&#39;Helianthus annuus&#39;, rank=&quot;species&quot;)</span>
+<span class="sd">			res = out[&#39;results&#39;]</span>
+<span class="sd">			[ z.pop(&#39;descriptions&#39;, None) for z in res ]</span>
+<span class="sd">			res</span>
+
+<span class="sd">			# Fuzzy searching</span>
+<span class="sd">			species.name_lookup(q=&#39;Heli&#39;, rank=&quot;genus&quot;)</span>
+
+<span class="sd">			# Limit records to certain number</span>
+<span class="sd">			species.name_lookup(&#39;Helianthus annuus&#39;, rank=&quot;species&quot;, limit=2)</span>
+
+<span class="sd">			# Query by habitat</span>
+<span class="sd">			species.name_lookup(habitat = &quot;terrestrial&quot;, limit=2)</span>
+<span class="sd">			species.name_lookup(habitat = &quot;marine&quot;, limit=2)</span>
+<span class="sd">			species.name_lookup(habitat = &quot;freshwater&quot;, limit=2)</span>
+
+<span class="sd">			# Using faceting</span>
+<span class="sd">			species.name_lookup(facet=&#39;status&#39;, limit=0, facetMincount=&#39;70000&#39;)</span>
+<span class="sd">			species.name_lookup(facet=[&#39;status&#39;, &#39;higherTaxonKey&#39;], limit=0, facetMincount=&#39;700000&#39;)</span>
+
+<span class="sd">			species.name_lookup(facet=&#39;nameType&#39;, limit=0)</span>
+<span class="sd">			species.name_lookup(facet=&#39;habitat&#39;, limit=0)</span>
+<span class="sd">			species.name_lookup(facet=&#39;datasetKey&#39;, limit=0)</span>
+<span class="sd">			species.name_lookup(facet=&#39;rank&#39;, limit=0)</span>
+<span class="sd">			species.name_lookup(facet=&#39;isExtinct&#39;, limit=0)</span>
+
+<span class="sd">			# text highlighting</span>
+<span class="sd">			species.name_lookup(q=&#39;plant&#39;, hl=True, limit=30)</span>
+
+<span class="sd">			# Lookup by datasetKey</span>
+<span class="sd">			species.name_lookup(datasetKey=&#39;3f8a1297-3259-4700-91fc-acc4170b27ce&#39;)</span>
+<span class="sd">	&#39;&#39;&#39;</span>
+	<span class="n">args</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;q&#39;</span><span class="p">:</span> <span class="n">q</span><span class="p">,</span> <span class="s1">&#39;rank&#39;</span><span class="p">:</span> <span class="n">rank</span><span class="p">,</span> <span class="s1">&#39;higherTaxonKey&#39;</span><span class="p">:</span> <span class="n">higherTaxonKey</span><span class="p">,</span>
+		<span class="s1">&#39;status&#39;</span><span class="p">:</span> <span class="n">status</span><span class="p">,</span> <span class="s1">&#39;isExtinct&#39;</span><span class="p">:</span> <span class="n">isExtinct</span><span class="p">,</span> <span class="s1">&#39;habitat&#39;</span><span class="p">:</span> <span class="n">habitat</span><span class="p">,</span>
+		<span class="s1">&#39;nameType&#39;</span><span class="p">:</span> <span class="n">nameType</span><span class="p">,</span> <span class="s1">&#39;datasetKey&#39;</span><span class="p">:</span> <span class="n">datasetKey</span><span class="p">,</span>
+		<span class="s1">&#39;nomenclaturalStatus&#39;</span><span class="p">:</span> <span class="n">nomenclaturalStatus</span><span class="p">,</span> <span class="s1">&#39;limit&#39;</span><span class="p">:</span> <span class="n">limit</span><span class="p">,</span> <span class="s1">&#39;offset&#39;</span><span class="p">:</span> <span class="n">offset</span><span class="p">,</span>
+		<span class="s1">&#39;facet&#39;</span><span class="p">:</span> <span class="n">bn</span><span class="p">(</span><span class="n">facet</span><span class="p">),</span> <span class="s1">&#39;facetMincount&#39;</span><span class="p">:</span> <span class="n">facetMincount</span><span class="p">,</span> <span class="s1">&#39;facetMultiselect&#39;</span><span class="p">:</span> <span class="n">facetMultiselect</span><span class="p">,</span>
+		<span class="s1">&#39;hl&#39;</span><span class="p">:</span> <span class="n">bn</span><span class="p">(</span><span class="n">hl</span><span class="p">),</span> <span class="s1">&#39;verbose&#39;</span><span class="p">:</span> <span class="n">bn</span><span class="p">(</span><span class="n">verbose</span><span class="p">),</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="nb">type</span><span class="p">}</span>
+	<span class="n">gbif_kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">kwargs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">kwargs</span> <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">requests_argset</span><span class="p">}</span>
+	<span class="k">if</span> <span class="n">gbif_kwargs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="n">xx</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span> <span class="p">[</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">gbif_kwargs</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="p">],</span> <span class="n">gbif_kwargs</span><span class="o">.</span><span class="n">values</span><span class="p">()</span> <span class="p">))</span>
+			<span class="n">args</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">xx</span><span class="p">)</span>
+	<span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">kwargs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">kwargs</span> <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">requests_argset</span><span class="p">}</span>
+	<span class="n">tt</span> <span class="o">=</span> <span class="n">gbif_GET</span><span class="p">(</span><span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s1">&#39;species/search&#39;</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">tt</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Scott Chamberlain.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.1.6.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

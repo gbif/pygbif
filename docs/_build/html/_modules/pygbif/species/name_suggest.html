@@ -1,0 +1,250 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pygbif.species.name_suggest &mdash; pygbif 0.1.6.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../search.html"/>
+    <link rel="top" title="pygbif 0.1.6.0 documentation" href="../../../index.html"/>
+        <link rel="up" title="Module code" href="../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> pygbif
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.6.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../occurrences.html">occurrences module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../registry.html">registry module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../species.html">species module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog_link.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">pygbif</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      
+    <li>pygbif.species.name_suggest</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pygbif.species.name_suggest</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">..gbifutils</span> <span class="k">import</span> <span class="o">*</span>
+
+<span class="k">def</span> <span class="nf">name_suggest</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">datasetKey</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">rank</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fields</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+  <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">  A quick and simple autocomplete service that returns up to 20 name usages by</span>
+<span class="sd">  doing prefix matching against the scientific name. Results are ordered by relevance.</span>
+
+<span class="sd">  References: http://www.gbif.org/developer/species#searching</span>
+
+<span class="sd">  :param q: [str] Simple search parameter. The value for this parameter can be a</span>
+<span class="sd">     simple word or a phrase. Wildcards can be added to the simple word parameters only,</span>
+<span class="sd">     e.g. ``q=*puma*`` (Required)</span>
+<span class="sd">  :param datasetKey: [str] Filters by the checklist dataset key (a uuid, see examples)</span>
+<span class="sd">  :param rank: [str] A taxonomic rank. One of ``class``, ``cultivar``, ``cultivar_group``, ``domain``, ``family``,</span>
+<span class="sd">     ``form``, ``genus``, ``informal``, ``infrageneric_name``, ``infraorder``, ``infraspecific_name``,</span>
+<span class="sd">     ``infrasubspecific_name``, ``kingdom``, ``order``, ``phylum``, ``section``, ``series``, ``species``, ``strain``, ``subclass``,</span>
+<span class="sd">     ``subfamily``, ``subform``, ``subgenus``, ``subkingdom``, ``suborder``, ``subphylum``, ``subsection``, ``subseries``,</span>
+<span class="sd">     ``subspecies``, ``subtribe``, ``subvariety``, ``superclass``, ``superfamily``, ``superorder``, ``superphylum``,</span>
+<span class="sd">     ``suprageneric_name``, ``tribe``, ``unranked``, or ``variety``.</span>
+
+<span class="sd">  :return: A dictionary, of results</span>
+
+<span class="sd">  Usage::</span>
+
+<span class="sd">      from pygbif import species</span>
+<span class="sd">      species.name_suggest(q=&#39;Puma concolor&#39;)</span>
+<span class="sd">      x = species.name_suggest(q=&#39;Puma&#39;)</span>
+<span class="sd">      x[&#39;data&#39;]</span>
+<span class="sd">      x[&#39;hierarchy&#39;]</span>
+<span class="sd">      species.name_suggest(q=&#39;Puma&#39;, rank=&quot;genus&quot;)</span>
+<span class="sd">      species.name_suggest(q=&#39;Puma&#39;, rank=&quot;subspecies&quot;)</span>
+<span class="sd">      species.name_suggest(q=&#39;Puma&#39;, rank=&quot;species&quot;)</span>
+<span class="sd">      species.name_suggest(q=&#39;Puma&#39;, rank=&quot;infraspecific_name&quot;)</span>
+<span class="sd">      species.name_suggest(q=&#39;Puma&#39;, limit=2)</span>
+<span class="sd">  &#39;&#39;&#39;</span>
+  <span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s1">&#39;species/suggest&#39;</span>
+  <span class="n">args</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;q&#39;</span><span class="p">:</span><span class="n">q</span><span class="p">,</span> <span class="s1">&#39;rank&#39;</span><span class="p">:</span><span class="n">rank</span><span class="p">,</span> <span class="s1">&#39;offset&#39;</span><span class="p">:</span><span class="n">start</span><span class="p">,</span> <span class="s1">&#39;limit&#39;</span><span class="p">:</span><span class="n">limit</span><span class="p">}</span>
+  <span class="n">tt</span> <span class="o">=</span> <span class="n">gbif_GET</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+  <span class="n">hier</span> <span class="o">=</span> <span class="p">[</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;higherClassificationMap&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">tt</span> <span class="p">]</span>
+  <span class="p">[</span> <span class="n">x</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;higherClassificationMap&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">tt</span> <span class="p">]</span>
+  <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="n">tt</span><span class="p">,</span> <span class="s1">&#39;hierarchy&#39;</span><span class="p">:</span> <span class="n">hier</span><span class="p">}</span>
+
+
+<span class="k">def</span> <span class="nf">suggestfields</span><span class="p">():</span>
+  <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">  Fields available in ``gbif_suggest()`` function</span>
+<span class="sd">  &#39;&#39;&#39;</span>
+  <span class="k">return</span> <span class="p">[</span><span class="s2">&quot;key&quot;</span><span class="p">,</span><span class="s2">&quot;datasetTitle&quot;</span><span class="p">,</span><span class="s2">&quot;datasetKey&quot;</span><span class="p">,</span><span class="s2">&quot;nubKey&quot;</span><span class="p">,</span><span class="s2">&quot;parentKey&quot;</span><span class="p">,</span><span class="s2">&quot;parent&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;kingdom&quot;</span><span class="p">,</span><span class="s2">&quot;phylum&quot;</span><span class="p">,</span><span class="s2">&quot;class&quot;</span><span class="p">,</span><span class="s2">&quot;order&quot;</span><span class="p">,</span><span class="s2">&quot;family&quot;</span><span class="p">,</span><span class="s2">&quot;genus&quot;</span><span class="p">,</span><span class="s2">&quot;species&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;kingdomKey&quot;</span><span class="p">,</span><span class="s2">&quot;phylumKey&quot;</span><span class="p">,</span><span class="s2">&quot;classKey&quot;</span><span class="p">,</span><span class="s2">&quot;orderKey&quot;</span><span class="p">,</span><span class="s2">&quot;familyKey&quot;</span><span class="p">,</span><span class="s2">&quot;genusKey&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;speciesKey&quot;</span><span class="p">,</span><span class="s2">&quot;species&quot;</span><span class="p">,</span><span class="s2">&quot;canonicalName&quot;</span><span class="p">,</span><span class="s2">&quot;authorship&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;accordingTo&quot;</span><span class="p">,</span><span class="s2">&quot;nameType&quot;</span><span class="p">,</span><span class="s2">&quot;taxonomicStatus&quot;</span><span class="p">,</span><span class="s2">&quot;rank&quot;</span><span class="p">,</span><span class="s2">&quot;numDescendants&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;numOccurrences&quot;</span><span class="p">,</span><span class="s2">&quot;sourceId&quot;</span><span class="p">,</span><span class="s2">&quot;nomenclaturalStatus&quot;</span><span class="p">,</span><span class="s2">&quot;threatStatuses&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;synonym&quot;</span><span class="p">,</span><span class="s2">&quot;higherClassificationMap&quot;</span><span class="p">]</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Scott Chamberlain.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.1.6.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

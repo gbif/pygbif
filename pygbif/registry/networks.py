@@ -1,5 +1,4 @@
 from ..gbifutils import *
-from .registry_utils import *
 
 def networks(data = 'all', uuid = None, query = None, identifier = None,
   identifierType = None, limit = 100, start = None, **kwargs):

@@ -1,0 +1,257 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pygbif.species.name_backbone &mdash; pygbif 0.1.6.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../search.html"/>
+    <link rel="top" title="pygbif 0.1.6.0 documentation" href="../../../index.html"/>
+        <link rel="up" title="Module code" href="../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> pygbif
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.6.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../occurrences.html">occurrences module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../registry.html">registry module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../species.html">species module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog_link.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">pygbif</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      
+    <li>pygbif.species.name_backbone</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pygbif.species.name_backbone</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">..gbifutils</span> <span class="k">import</span> <span class="o">*</span>
+
+<span class="k">def</span> <span class="nf">name_backbone</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">rank</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">kingdom</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">phylum</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">clazz</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+  <span class="n">order</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">genus</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+  <span class="n">start</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+  <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">  Lookup names in the GBIF backbone taxonomy.</span>
+
+<span class="sd">  :param name: [str] Full scientific name potentially with authorship (required)</span>
+<span class="sd">  :param rank: [str] The rank given as our rank enum. (optional)</span>
+<span class="sd">  :param kingdom: [str] If provided default matching will also try to match against this</span>
+<span class="sd">     if no direct match is found for the name alone. (optional)</span>
+<span class="sd">  :param phylum: [str] If provided default matching will also try to match against this</span>
+<span class="sd">     if no direct match is found for the name alone. (optional)</span>
+<span class="sd">  :param class: [str] If provided default matching will also try to match against this</span>
+<span class="sd">     if no direct match is found for the name alone. (optional)</span>
+<span class="sd">  :param order: [str] If provided default matching will also try to match against this</span>
+<span class="sd">     if no direct match is found for the name alone. (optional)</span>
+<span class="sd">  :param family: [str] If provided default matching will also try to match against this</span>
+<span class="sd">     if no direct match is found for the name alone. (optional)</span>
+<span class="sd">  :param genus: [str] If provided default matching will also try to match against this</span>
+<span class="sd">     if no direct match is found for the name alone. (optional)</span>
+<span class="sd">  :param strict: [bool] If True it (fuzzy) matches only the given name, but never a</span>
+<span class="sd">     taxon in the upper classification (optional)</span>
+<span class="sd">  :param verbose: [bool] If True show alternative matches considered which had been rejected.</span>
+
+<span class="sd">  A list for a single taxon with many slots (with ``verbose=False`` - default), or a</span>
+<span class="sd">  list of length two, first element for the suggested taxon match, and a data.frame</span>
+<span class="sd">  with alternative name suggestions resulting from fuzzy matching (with ``verbose=True``).</span>
+
+<span class="sd">  If you don&#39;t get a match GBIF gives back a list of length 3 with slots synonym,</span>
+<span class="sd">  confidence, and ``matchType=&#39;NONE&#39;``.</span>
+
+<span class="sd">  reference: http://www.gbif.org/developer/species#searching</span>
+
+<span class="sd">  Usage::</span>
+
+<span class="sd">      from pygbif import species</span>
+<span class="sd">      species.name_backbone(name=&#39;Helianthus annuus&#39;, kingdom=&#39;plants&#39;)</span>
+<span class="sd">      species.name_backbone(name=&#39;Helianthus&#39;, rank=&#39;genus&#39;, kingdom=&#39;plants&#39;)</span>
+<span class="sd">      species.name_backbone(name=&#39;Poa&#39;, rank=&#39;genus&#39;, family=&#39;Poaceae&#39;)</span>
+
+<span class="sd">      # Verbose - gives back alternatives</span>
+<span class="sd">      species.name_backbone(name=&#39;Helianthus annuus&#39;, kingdom=&#39;plants&#39;, verbose=True)</span>
+
+<span class="sd">      # Strictness</span>
+<span class="sd">      species.name_backbone(name=&#39;Poa&#39;, kingdom=&#39;plants&#39;, verbose=True, strict=False)</span>
+<span class="sd">      species.name_backbone(name=&#39;Helianthus annuus&#39;, kingdom=&#39;plants&#39;, verbose=True, strict=True)</span>
+
+<span class="sd">      # Non-existent name</span>
+<span class="sd">      species.name_backbone(name=&#39;Aso&#39;)</span>
+
+<span class="sd">      # Multiple equal matches</span>
+<span class="sd">      species.name_backbone(name=&#39;Oenante&#39;)</span>
+<span class="sd">  &#39;&#39;&#39;</span>
+  <span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s1">&#39;species/match&#39;</span>
+  <span class="n">args</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="s1">&#39;rank&#39;</span><span class="p">:</span> <span class="n">rank</span><span class="p">,</span> <span class="s1">&#39;kingdom&#39;</span><span class="p">:</span> <span class="n">kingdom</span><span class="p">,</span> <span class="s1">&#39;phylum&#39;</span><span class="p">:</span> <span class="n">phylum</span><span class="p">,</span>
+         <span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="n">clazz</span><span class="p">,</span> <span class="s1">&#39;order&#39;</span><span class="p">:</span> <span class="n">order</span><span class="p">,</span> <span class="s1">&#39;family&#39;</span><span class="p">:</span> <span class="n">family</span><span class="p">,</span> <span class="s1">&#39;genus&#39;</span><span class="p">:</span> <span class="n">genus</span><span class="p">,</span>
+         <span class="s1">&#39;strict&#39;</span><span class="p">:</span> <span class="n">strict</span><span class="p">,</span> <span class="s1">&#39;verbose&#39;</span><span class="p">:</span> <span class="n">verbose</span><span class="p">,</span> <span class="s1">&#39;offset&#39;</span><span class="p">:</span> <span class="n">start</span><span class="p">,</span> <span class="s1">&#39;limit&#39;</span><span class="p">:</span> <span class="n">limit</span><span class="p">}</span>
+  <span class="n">tt</span> <span class="o">=</span> <span class="n">gbif_GET</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">tt</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Scott Chamberlain.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.1.6.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

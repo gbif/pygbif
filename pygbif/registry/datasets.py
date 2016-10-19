@@ -1,6 +1,5 @@
 import re
 from ..gbifutils import *
-from .registry_utils import *
 
 def dataset_metrics(uuid, **kwargs):
 	'''
@@ -58,33 +57,32 @@ def datasets(data = 'all', type = None, uuid = None, query = None, id = None,
 									'constituents', 'document', 'metadata', 'deleted',
 									'duplicate', 'subDataset', 'withNoEndpoint']
 	check_data(data, data_choices)
-
-	def getdata(x, uuid, args, **kwargs):
-		if x not in ['all','deleted','duplicate','subDataset','withNoEndpoint'] and uuid is None:
-			raise TypeError('You must specify a uuid if data does not equal all and data does not equal of deleted, duplicate, subDataset, or withNoEndpoint')
-
-		if uuid is None:
-			if x is 'all':
-				url = gbif_baseurl + 'dataset'
-			else:
-				if id is not None and x is 'metadata':
-					url = gbif_baseurl + 'dataset/metadata/' + id + '/document'
-				else:
-					url = gbif_baseurl + 'dataset/' + x
-		else:
-			if x is 'all':
-				url = gbif_baseurl + 'dataset/' + uuid
-			else:
-				url = gbif_baseurl + 'dataset/' + uuid + '/' + x
-
-		res = gbif_GET(url, args, **kwargs)
-		return {'meta': get_meta(res), 'data': parse_results(res, uuid)}
-
-	# Get data
 	if len2(data) ==1:
-		return getdata(data, uuid, args, **kwargs)
+		return datasets_fetch(data, uuid, args, **kwargs)
 	else:
-		return [getdata(x, uuid, args, **kwargs) for x in data]
+		return [datasets_fetch(x, uuid, args, **kwargs) for x in data]
+
+def datasets_fetch(x, uuid, args, **kwargs):
+	if x not in ['all','deleted','duplicate','subDataset','withNoEndpoint'] and uuid is None:
+		raise TypeError('You must specify a uuid if data does not equal all and data does not equal of deleted, duplicate, subDataset, or withNoEndpoint')
+
+	if uuid is None:
+		if x is 'all':
+			url = gbif_baseurl + 'dataset'
+		else:
+			if id is not None and x is 'metadata':
+				url = gbif_baseurl + 'dataset/metadata/' + id + '/document'
+			else:
+				url = gbif_baseurl + 'dataset/' + x
+	else:
+		if x is 'all':
+			url = gbif_baseurl + 'dataset/' + uuid
+		else:
+			url = gbif_baseurl + 'dataset/' + uuid + '/' + x
+
+	res = gbif_GET(url, args, **kwargs)
+	return res
+
 
 
 def dataset_suggest(q=None, type=None, keyword=None, owningOrg=None,

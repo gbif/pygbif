@@ -1,0 +1,292 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pygbif.species.name_usage &mdash; pygbif 0.1.6.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../search.html"/>
+    <link rel="top" title="pygbif 0.1.6.0 documentation" href="../../../index.html"/>
+        <link rel="up" title="Module code" href="../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> pygbif
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.6.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../occurrences.html">occurrences module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../registry.html">registry module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../species.html">species module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog_link.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">pygbif</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      
+    <li>pygbif.species.name_usage</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pygbif.species.name_usage</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">..gbifutils</span> <span class="k">import</span> <span class="o">*</span>
+
+<span class="k">def</span> <span class="nf">name_usage</span><span class="p">(</span><span class="n">key</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">language</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+	<span class="n">datasetKey</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">uuid</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">sourceId</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">rank</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">shortname</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+	<span class="n">limit</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">offset</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+	<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">	Lookup details for specific names in all taxonomies in GBIF.</span>
+
+<span class="sd">	:param key: [fixnum] A GBIF key for a taxon</span>
+<span class="sd">	:param name: [str] Filters by a case insensitive, canonical namestring,</span>
+<span class="sd">		 e.g. &#39;Puma concolor&#39;</span>
+<span class="sd">	:param data: [str] The type of data to get. Default: ``all``. Options: ``all``,</span>
+<span class="sd">		``verbatim``, ``name``, ``parents``, ``children``,</span>
+<span class="sd">		``related``, ``synonyms``, ``descriptions``, ``distributions``, ``media``,</span>
+<span class="sd">		``references``, ``speciesProfiles``, ``vernacularNames``, ``typeSpecimens``,</span>
+<span class="sd">		``root``</span>
+<span class="sd">	:param language: [str] Language, default is english</span>
+<span class="sd">	:param datasetKey: [str] Filters by the dataset&#39;s key (a uuid)</span>
+<span class="sd">	:param uuid: [str] A uuid for a dataset. Should give exact same results as datasetKey.</span>
+<span class="sd">	:param sourceId: [fixnum] Filters by the source identifier.</span>
+<span class="sd">	:param rank: [str] Taxonomic rank. Filters by taxonomic rank as one of:</span>
+<span class="sd">			``CLASS``, ``CULTIVAR``, ``CULTIVAR_GROUP``, ``DOMAIN``, ``FAMILY``, ``FORM``, ``GENUS``, ``INFORMAL``,</span>
+<span class="sd">			``INFRAGENERIC_NAME``, ``INFRAORDER``, ``INFRASPECIFIC_NAME``, ``INFRASUBSPECIFIC_NAME``,</span>
+<span class="sd">			``KINGDOM``, ``ORDER``, ``PHYLUM``, ``SECTION``, ``SERIES``, ``SPECIES``, ``STRAIN``, ``SUBCLASS``, ``SUBFAMILY``,</span>
+<span class="sd">			``SUBFORM``, ``SUBGENUS``, ``SUBKINGDOM``, ``SUBORDER``, ``SUBPHYLUM``, ``SUBSECTION``, ``SUBSERIES``,</span>
+<span class="sd">			``SUBSPECIES``, ``SUBTRIBE``, ``SUBVARIETY``, ``SUPERCLASS``, ``SUPERFAMILY``, ``SUPERORDER``,</span>
+<span class="sd">			``SUPERPHYLUM``, ``SUPRAGENERIC_NAME``, ``TRIBE``, ``UNRANKED``, ``VARIETY``</span>
+<span class="sd">	:param shortname: [str] A short name..need more info on this?</span>
+<span class="sd">	:param limit: [fixnum] Number of records to return. Default: ``100``. Maximum: ``1000``. (optional)</span>
+<span class="sd">	:param offset: [fixnum] Record number to start at. (optional)</span>
+
+<span class="sd">	References: http://www.gbif.org/developer/species#nameUsages</span>
+
+<span class="sd">	Usage::</span>
+
+<span class="sd">			from pygbif import species</span>
+
+<span class="sd">			species.name_usage(key=1)</span>
+
+<span class="sd">			# Name usage for a taxonomic name</span>
+<span class="sd">			species.name_usage(name=&#39;Puma&#39;, rank=&quot;GENUS&quot;)</span>
+
+<span class="sd">			# All name usages</span>
+<span class="sd">			species.name_usage()</span>
+
+<span class="sd">			# References for a name usage</span>
+<span class="sd">			species.name_usage(key=2435099, data=&#39;references&#39;)</span>
+
+<span class="sd">			# Species profiles, descriptions</span>
+<span class="sd">			species.name_usage(key=3119195, data=&#39;speciesProfiles&#39;)</span>
+<span class="sd">			species.name_usage(key=3119195, data=&#39;descriptions&#39;)</span>
+<span class="sd">			species.name_usage(key=2435099, data=&#39;children&#39;)</span>
+
+<span class="sd">			# Vernacular names for a name usage</span>
+<span class="sd">			species.name_usage(key=3119195, data=&#39;vernacularNames&#39;)</span>
+
+<span class="sd">			# Limit number of results returned</span>
+<span class="sd">			species.name_usage(key=3119195, data=&#39;vernacularNames&#39;, limit=3)</span>
+
+<span class="sd">			# Search for names by dataset with datasetKey parameter</span>
+<span class="sd">			species.name_usage(datasetKey=&quot;d7dddbf4-2cf0-4f39-9b2a-bb099caae36c&quot;)</span>
+
+<span class="sd">			# Search for a particular language</span>
+<span class="sd">			species.name_usage(key=3119195, language=&quot;FRENCH&quot;, data=&#39;vernacularNames&#39;)</span>
+<span class="sd">	&#39;&#39;&#39;</span>
+	<span class="n">args</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;language&#39;</span><span class="p">:</span> <span class="n">language</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="s1">&#39;datasetKey&#39;</span><span class="p">:</span> <span class="n">datasetKey</span><span class="p">,</span>
+		<span class="s1">&#39;rank&#39;</span><span class="p">:</span> <span class="n">rank</span><span class="p">,</span> <span class="s1">&#39;sourceId&#39;</span><span class="p">:</span> <span class="n">sourceId</span><span class="p">,</span> <span class="s1">&#39;limit&#39;</span><span class="p">:</span> <span class="n">limit</span><span class="p">,</span> <span class="s1">&#39;offset&#39;</span><span class="p">:</span> <span class="n">offset</span><span class="p">}</span>
+	<span class="n">data_choices</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="s1">&#39;verbatim&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;parents&#39;</span><span class="p">,</span> <span class="s1">&#39;children&#39;</span><span class="p">,</span>
+								<span class="s1">&#39;related&#39;</span><span class="p">,</span> <span class="s1">&#39;synonyms&#39;</span><span class="p">,</span> <span class="s1">&#39;descriptions&#39;</span><span class="p">,</span>
+								<span class="s1">&#39;distributions&#39;</span><span class="p">,</span> <span class="s1">&#39;media&#39;</span><span class="p">,</span> <span class="s1">&#39;references&#39;</span><span class="p">,</span> <span class="s1">&#39;speciesProfiles&#39;</span><span class="p">,</span>
+								<span class="s1">&#39;vernacularNames&#39;</span><span class="p">,</span> <span class="s1">&#39;typeSpecimens&#39;</span><span class="p">,</span> <span class="s1">&#39;root&#39;</span><span class="p">]</span>
+	<span class="n">check_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">data_choices</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">len2</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+		<span class="k">return</span> <span class="n">name_usage_fetch</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">shortname</span><span class="p">,</span> <span class="n">uuid</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="k">return</span> <span class="p">[</span><span class="n">name_usage_fetch</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">shortname</span><span class="p">,</span> <span class="n">uuid</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">data</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">name_usage_fetch</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">shortname</span><span class="p">,</span> <span class="n">uuid</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+	<span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="ow">not</span> <span class="s1">&#39;all&#39;</span> <span class="ow">and</span> <span class="n">key</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+		<span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;You must specify `key` if `data` does not equal `all`&#39;</span><span class="p">)</span>
+
+	<span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="s1">&#39;all&#39;</span> <span class="ow">and</span> <span class="n">key</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+		<span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s1">&#39;species&#39;</span>
+	<span class="k">else</span><span class="p">:</span>
+		<span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="s1">&#39;all&#39;</span> <span class="ow">and</span> <span class="n">key</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+			<span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s1">&#39;species/&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">x</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;verbatim&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;parents&#39;</span><span class="p">,</span> <span class="s1">&#39;children&#39;</span><span class="p">,</span> <span class="s1">&#39;related&#39;</span><span class="p">,</span> <span class="s1">&#39;synonyms&#39;</span><span class="p">,</span> <span class="s1">&#39;descriptions&#39;</span><span class="p">,</span>
+			<span class="s1">&#39;distributions&#39;</span><span class="p">,</span> <span class="s1">&#39;media&#39;</span><span class="p">,</span> <span class="s1">&#39;references&#39;</span><span class="p">,</span> <span class="s1">&#39;speciesProfiles&#39;</span><span class="p">,</span> <span class="s1">&#39;vernacularNames&#39;</span><span class="p">,</span> <span class="s1">&#39;typeSpecimens&#39;</span><span class="p">]:</span>
+				<span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s1">&#39;species/</span><span class="si">%s</span><span class="s1">/</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="k">if</span> <span class="n">x</span> <span class="ow">is</span> <span class="s1">&#39;root&#39;</span><span class="p">:</span>
+					<span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s1">&#39;species/</span><span class="si">%s</span><span class="s1">/</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">uuid</span><span class="p">,</span> <span class="n">shortname</span><span class="p">)</span>
+
+	<span class="n">res</span> <span class="o">=</span> <span class="n">gbif_GET</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+	<span class="k">return</span> <span class="n">res</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Scott Chamberlain.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.1.6.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
