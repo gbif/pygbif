@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pygbif.occurrences.download &mdash; pygbif 0.1.6.0 documentation</title>
+  <title>pygbif.occurrences.download &mdash; pygbif 0.2.0 documentation</title>
   
 
   
@@ -33,7 +33,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="pygbif 0.1.6.0 documentation" href="../../../index.html"/>
+    <link rel="top" title="pygbif 0.2.0 documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.1.6.0
+                0.2.0
               </div>
             
           
@@ -458,28 +458,28 @@
     <span class="k">return</span> <span class="n">gbif_GET</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="p">{},</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
 
-<span class="k">def</span> <span class="nf">download_list</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pwd</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">download_list</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pwd</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Lists the downloads created by a user.</span>
 
 <span class="sd">    :param user: [str] A user name, look at env var ``GBIF_USER`` first</span>
 <span class="sd">    :param pwd: [str] Your password, look at env var ``GBIF_PWD`` first</span>
 <span class="sd">    :param limit: [int] Number of records to return. Default: ``20``</span>
-<span class="sd">    :param start: [int] Record number to start at. Default: ``0``</span>
+<span class="sd">    :param offset: [int] Record number to start at. Default: ``0``</span>
 
 <span class="sd">    Usage::</span>
 
 <span class="sd">      from pygbif import occurrences as occ</span>
 <span class="sd">      occ.download_list(user = &quot;sckott&quot;)</span>
 <span class="sd">      occ.download_list(user = &quot;sckott&quot;, limit = 5)</span>
-<span class="sd">      occ.download_list(user = &quot;sckott&quot;, start = 21)</span>
+<span class="sd">      occ.download_list(user = &quot;sckott&quot;, offset = 21)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">user</span> <span class="o">=</span> <span class="n">_check_environ</span><span class="p">(</span><span class="s1">&#39;GBIF_USER&#39;</span><span class="p">,</span> <span class="n">user</span><span class="p">)</span>
     <span class="n">pwd</span> <span class="o">=</span> <span class="n">_check_environ</span><span class="p">(</span><span class="s1">&#39;GBIF_PWD&#39;</span><span class="p">,</span> <span class="n">pwd</span><span class="p">)</span>
 
     <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://api.gbif.org/v1/occurrence/download/user/&#39;</span> <span class="o">+</span> <span class="n">user</span>
-    <span class="n">args</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;limit&#39;</span><span class="p">:</span> <span class="n">limit</span><span class="p">,</span> <span class="s1">&#39;offset&#39;</span><span class="p">:</span> <span class="n">start</span><span class="p">}</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;limit&#39;</span><span class="p">:</span> <span class="n">limit</span><span class="p">,</span> <span class="s1">&#39;offset&#39;</span><span class="p">:</span> <span class="n">offset</span><span class="p">}</span>
     <span class="n">res</span> <span class="o">=</span> <span class="n">gbif_GET</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">pwd</span><span class="p">))</span>
     <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;meta&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;offset&#39;</span><span class="p">:</span> <span class="n">res</span><span class="p">[</span><span class="s1">&#39;offset&#39;</span><span class="p">],</span>
                      <span class="s1">&#39;limit&#39;</span><span class="p">:</span> <span class="n">res</span><span class="p">[</span><span class="s1">&#39;limit&#39;</span><span class="p">],</span>
@@ -589,7 +589,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'0.1.6.0',
+            VERSION:'0.2.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Changelog &mdash; pygbif 0.1.6.0 documentation</title>
+  <title>Changelog &mdash; pygbif 0.2.0 documentation</title>
   
 
   
@@ -33,7 +33,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="pygbif 0.1.6.0 documentation" href="index.html"/>
+    <link rel="top" title="pygbif 0.2.0 documentation" href="index.html"/>
         <link rel="prev" title="species module" href="species.html"/> 
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.1.6.0
+                0.2.0
               </div>
             
           
@@ -150,10 +150,18 @@
 </ul>
 <p><cite>occurrences.get_fragment</cite> and demo that used occurrence keys that no longer
 exist in GBIF (#39)
-- xxx (#xx)
-- xxx (#xx)
-- xxx (#xx)
-- xxx (#xx)</p>
+- Added <cite>organizations</cite> method to <cite>registry</cite> module (#12)
+- Added remainder of datasets methods: <cite>registry.dataset_search</cite> (including faceting support (#37))
+and <cite>registry.dataset_suggest</cite>, for the <cite>/dataset/search</cite> and <cite>/dataset/suggest</cite> routes, respectively (#40)
+- Added remainder of species methods: <cite>species.name_lookup</cite> (including faceting support (#38)) and
+<cite>species.name_usage</cite>, for the <cite>/species/search</cite> and <cite>/species</cite> routes, respectively (#18)
+- Added more tests to cover new methods
+- Changed <cite>species.name_suggest</cite> to give back data stucture as received from GBIF.
+We used to parse out the classification data, but for simplicity and speed, that is
+left up to the user now.
+- <cite>start</cite> parameter in <cite>species.name_suggest</cite>, <cite>occurrences.download_list</cite>, <cite>registry.organizations</cite>,
+<cite>registry.nodes</cite>, <cite>registry.networks</cite>, and <cite>registry.installations</cite>, changed to <cite>offset</cite> to match
+GBIF API and match usage throughout remainder of <cite>pygbif</cite></p>
 </div>
 <div class="section" id="id2">
 <h2>0.1.5.4 (2016-10-01)<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
@@ -232,7 +240,7 @@ exist in GBIF (#39)
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.1.6.0',
+            VERSION:'0.2.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

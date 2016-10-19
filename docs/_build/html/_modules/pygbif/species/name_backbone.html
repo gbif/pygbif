@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pygbif.species.name_backbone &mdash; pygbif 0.1.6.0 documentation</title>
+  <title>pygbif.species.name_backbone &mdash; pygbif 0.2.0 documentation</title>
   
 
   
@@ -33,7 +33,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="pygbif 0.1.6.0 documentation" href="../../../index.html"/>
+    <link rel="top" title="pygbif 0.2.0 documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.1.6.0
+                0.2.0
               </div>
             
           
@@ -137,7 +137,7 @@
 
 <span class="k">def</span> <span class="nf">name_backbone</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">rank</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">kingdom</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">phylum</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">clazz</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
   <span class="n">order</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">genus</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-  <span class="n">start</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+  <span class="n">offset</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
   <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">  Lookup names in the GBIF backbone taxonomy.</span>
 
@@ -158,6 +158,8 @@
 <span class="sd">  :param strict: [bool] If True it (fuzzy) matches only the given name, but never a</span>
 <span class="sd">     taxon in the upper classification (optional)</span>
 <span class="sd">  :param verbose: [bool] If True show alternative matches considered which had been rejected.</span>
+<span class="sd">  :param offset: [int] Record to start at. Default: ``0``</span>
+<span class="sd">  :param limit: [int] Number of results to return. Default: ``100``</span>
 
 <span class="sd">  A list for a single taxon with many slots (with ``verbose=False`` - default), or a</span>
 <span class="sd">  list of length two, first element for the suggested taxon match, and a data.frame</span>
@@ -191,7 +193,7 @@
   <span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s1">&#39;species/match&#39;</span>
   <span class="n">args</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="s1">&#39;rank&#39;</span><span class="p">:</span> <span class="n">rank</span><span class="p">,</span> <span class="s1">&#39;kingdom&#39;</span><span class="p">:</span> <span class="n">kingdom</span><span class="p">,</span> <span class="s1">&#39;phylum&#39;</span><span class="p">:</span> <span class="n">phylum</span><span class="p">,</span>
          <span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="n">clazz</span><span class="p">,</span> <span class="s1">&#39;order&#39;</span><span class="p">:</span> <span class="n">order</span><span class="p">,</span> <span class="s1">&#39;family&#39;</span><span class="p">:</span> <span class="n">family</span><span class="p">,</span> <span class="s1">&#39;genus&#39;</span><span class="p">:</span> <span class="n">genus</span><span class="p">,</span>
-         <span class="s1">&#39;strict&#39;</span><span class="p">:</span> <span class="n">strict</span><span class="p">,</span> <span class="s1">&#39;verbose&#39;</span><span class="p">:</span> <span class="n">verbose</span><span class="p">,</span> <span class="s1">&#39;offset&#39;</span><span class="p">:</span> <span class="n">start</span><span class="p">,</span> <span class="s1">&#39;limit&#39;</span><span class="p">:</span> <span class="n">limit</span><span class="p">}</span>
+         <span class="s1">&#39;strict&#39;</span><span class="p">:</span> <span class="n">strict</span><span class="p">,</span> <span class="s1">&#39;verbose&#39;</span><span class="p">:</span> <span class="n">verbose</span><span class="p">,</span> <span class="s1">&#39;offset&#39;</span><span class="p">:</span> <span class="n">offset</span><span class="p">,</span> <span class="s1">&#39;limit&#39;</span><span class="p">:</span> <span class="n">limit</span><span class="p">}</span>
   <span class="n">tt</span> <span class="o">=</span> <span class="n">gbif_GET</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
   <span class="k">return</span> <span class="n">tt</span>
 </pre></div>
@@ -227,7 +229,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'0.1.6.0',
+            VERSION:'0.2.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

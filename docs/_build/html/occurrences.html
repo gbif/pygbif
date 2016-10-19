@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>occurrences module &mdash; pygbif 0.1.6.0 documentation</title>
+  <title>occurrences module &mdash; pygbif 0.2.0 documentation</title>
   
 
   
@@ -33,7 +33,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="pygbif 0.1.6.0 documentation" href="index.html"/>
+    <link rel="top" title="pygbif 0.2.0 documentation" href="index.html"/>
         <link rel="next" title="registry module" href="registry.html"/>
         <link rel="prev" title="Python GBIF Client" href="index.html"/> 
 
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                0.1.6.0
+                0.2.0
               </div>
             
           
@@ -260,7 +260,7 @@ filtered. See examples. Default: <code class="docutils literal"><span class="pre
 <span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">catalogNumber</span><span class="o">=</span><span class="s2">&quot;49366&quot;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 <span class="c1"># occurrences.search(catalogNumber=[&quot;49366&quot;,&quot;Bird.27847588&quot;], limit=20)</span>
 
-<span class="c1"># Use paging parameters (limit and start) to page. Note the different results</span>
+<span class="c1"># Use paging parameters (limit and offset) to page. Note the different results</span>
 <span class="c1"># for the two queries below.</span>
 <span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">datasetKey</span><span class="o">=</span><span class="s1">&#39;7b5d6a48-f762-11e1-a439-00145eb45e9a&#39;</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">datasetKey</span><span class="o">=</span><span class="s1">&#39;7b5d6a48-f762-11e1-a439-00145eb45e9a&#39;</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
@@ -800,7 +800,7 @@ arguments</p>
 
 <dl class="method">
 <dt id="pygbif.occurrences.download_list">
-<code class="descclassname">occurrences.</code><code class="descname">download_list</code><span class="sig-paren">(</span><em>user=None</em>, <em>pwd=None</em>, <em>limit=20</em>, <em>start=0</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.download_list" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">occurrences.</code><code class="descname">download_list</code><span class="sig-paren">(</span><em>user=None</em>, <em>pwd=None</em>, <em>limit=20</em>, <em>offset=0</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.download_list" title="Permalink to this definition">¶</a></dt>
 <dd><p>Lists the downloads created by a user.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -810,7 +810,7 @@ arguments</p>
 <li><strong>user</strong> &#8211; [str] A user name, look at env var <code class="docutils literal"><span class="pre">GBIF_USER</span></code> first</li>
 <li><strong>pwd</strong> &#8211; [str] Your password, look at env var <code class="docutils literal"><span class="pre">GBIF_PWD</span></code> first</li>
 <li><strong>limit</strong> &#8211; [int] Number of records to return. Default: <code class="docutils literal"><span class="pre">20</span></code></li>
-<li><strong>start</strong> &#8211; [int] Record number to start at. Default: <code class="docutils literal"><span class="pre">0</span></code></li>
+<li><strong>offset</strong> &#8211; [int] Record number to start at. Default: <code class="docutils literal"><span class="pre">0</span></code></li>
 </ul>
 </td>
 </tr>
@@ -820,7 +820,7 @@ arguments</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span> <span class="k">as</span> <span class="n">occ</span>
 <span class="n">occ</span><span class="o">.</span><span class="n">download_list</span><span class="p">(</span><span class="n">user</span> <span class="o">=</span> <span class="s2">&quot;sckott&quot;</span><span class="p">)</span>
 <span class="n">occ</span><span class="o">.</span><span class="n">download_list</span><span class="p">(</span><span class="n">user</span> <span class="o">=</span> <span class="s2">&quot;sckott&quot;</span><span class="p">,</span> <span class="n">limit</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
-<span class="n">occ</span><span class="o">.</span><span class="n">download_list</span><span class="p">(</span><span class="n">user</span> <span class="o">=</span> <span class="s2">&quot;sckott&quot;</span><span class="p">,</span> <span class="n">start</span> <span class="o">=</span> <span class="mi">21</span><span class="p">)</span>
+<span class="n">occ</span><span class="o">.</span><span class="n">download_list</span><span class="p">(</span><span class="n">user</span> <span class="o">=</span> <span class="s2">&quot;sckott&quot;</span><span class="p">,</span> <span class="n">offset</span> <span class="o">=</span> <span class="mi">21</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -899,7 +899,7 @@ file to download, and affected by your internet connection speed.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.1.6.0',
+            VERSION:'0.2.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

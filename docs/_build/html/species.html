@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>species module &mdash; pygbif 0.1.6.0 documentation</title>
+  <title>species module &mdash; pygbif 0.2.0 documentation</title>
   
 
   
@@ -33,7 +33,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="pygbif 0.1.6.0 documentation" href="index.html"/>
+    <link rel="top" title="pygbif 0.2.0 documentation" href="index.html"/>
         <link rel="next" title="Changelog" href="changelog_link.html"/>
         <link rel="prev" title="registry module" href="registry.html"/> 
 
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                0.1.6.0
+                0.2.0
               </div>
             
           
@@ -137,7 +137,7 @@
 <span id="species-module"></span><span id="species"></span><h1>species module<a class="headerlink" href="#module-pygbif" title="Permalink to this headline">¶</a></h1>
 <dl class="method">
 <dt id="pygbif.species.name_backbone">
-<code class="descclassname">species.</code><code class="descname">name_backbone</code><span class="sig-paren">(</span><em>name</em>, <em>rank=None</em>, <em>kingdom=None</em>, <em>phylum=None</em>, <em>clazz=None</em>, <em>order=None</em>, <em>family=None</em>, <em>genus=None</em>, <em>strict=False</em>, <em>verbose=False</em>, <em>start=None</em>, <em>limit=100</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.species.name_backbone" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">species.</code><code class="descname">name_backbone</code><span class="sig-paren">(</span><em>name</em>, <em>rank=None</em>, <em>kingdom=None</em>, <em>phylum=None</em>, <em>clazz=None</em>, <em>order=None</em>, <em>family=None</em>, <em>genus=None</em>, <em>strict=False</em>, <em>verbose=False</em>, <em>offset=None</em>, <em>limit=100</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.species.name_backbone" title="Permalink to this definition">¶</a></dt>
 <dd><p>Lookup names in the GBIF backbone taxonomy.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -161,6 +161,8 @@ if no direct match is found for the name alone. (optional)</li>
 <li><strong>strict</strong> &#8211; [bool] If True it (fuzzy) matches only the given name, but never a
 taxon in the upper classification (optional)</li>
 <li><strong>verbose</strong> &#8211; [bool] If True show alternative matches considered which had been rejected.</li>
+<li><strong>offset</strong> &#8211; [int] Record to start at. Default: <code class="docutils literal"><span class="pre">0</span></code></li>
+<li><strong>limit</strong> &#8211; [int] Number of results to return. Default: <code class="docutils literal"><span class="pre">100</span></code></li>
 </ul>
 </td>
 </tr>
@@ -196,10 +198,9 @@ confidence, and <code class="docutils literal"><span class="pre">matchType='NONE
 
 <dl class="method">
 <dt id="pygbif.species.name_suggest">
-<code class="descclassname">species.</code><code class="descname">name_suggest</code><span class="sig-paren">(</span><em>q=None</em>, <em>datasetKey=None</em>, <em>rank=None</em>, <em>fields=None</em>, <em>start=None</em>, <em>limit=100</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.species.name_suggest" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">species.</code><code class="descname">name_suggest</code><span class="sig-paren">(</span><em>q=None</em>, <em>datasetKey=None</em>, <em>rank=None</em>, <em>limit=100</em>, <em>offset=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.species.name_suggest" title="Permalink to this definition">¶</a></dt>
 <dd><p>A quick and simple autocomplete service that returns up to 20 name usages by
 doing prefix matching against the scientific name. Results are ordered by relevance.</p>
-<p>References: <a class="reference external" href="http://www.gbif.org/developer/species#searching">http://www.gbif.org/developer/species#searching</a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -215,20 +216,22 @@ e.g. <code class="docutils literal"><span class="pre">q=*puma*</span></code> (Re
 <code class="docutils literal"><span class="pre">subfamily</span></code>, <code class="docutils literal"><span class="pre">subform</span></code>, <code class="docutils literal"><span class="pre">subgenus</span></code>, <code class="docutils literal"><span class="pre">subkingdom</span></code>, <code class="docutils literal"><span class="pre">suborder</span></code>, <code class="docutils literal"><span class="pre">subphylum</span></code>, <code class="docutils literal"><span class="pre">subsection</span></code>, <code class="docutils literal"><span class="pre">subseries</span></code>,
 <code class="docutils literal"><span class="pre">subspecies</span></code>, <code class="docutils literal"><span class="pre">subtribe</span></code>, <code class="docutils literal"><span class="pre">subvariety</span></code>, <code class="docutils literal"><span class="pre">superclass</span></code>, <code class="docutils literal"><span class="pre">superfamily</span></code>, <code class="docutils literal"><span class="pre">superorder</span></code>, <code class="docutils literal"><span class="pre">superphylum</span></code>,
 <code class="docutils literal"><span class="pre">suprageneric_name</span></code>, <code class="docutils literal"><span class="pre">tribe</span></code>, <code class="docutils literal"><span class="pre">unranked</span></code>, or <code class="docutils literal"><span class="pre">variety</span></code>.</li>
+<li><strong>limit</strong> &#8211; [fixnum] Number of records to return. Maximum: <code class="docutils literal"><span class="pre">1000</span></code>. (optional)</li>
+<li><strong>offset</strong> &#8211; [fixnum] Record number to start at. (optional)</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A dictionary, of results</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A dictionary</p>
 </td>
 </tr>
 </tbody>
 </table>
+<p>References: <a class="reference external" href="http://www.gbif.org/developer/species#searching">http://www.gbif.org/developer/species#searching</a></p>
 <p>Usage:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">species</span>
+
 <span class="n">species</span><span class="o">.</span><span class="n">name_suggest</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="s1">&#39;Puma concolor&#39;</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">species</span><span class="o">.</span><span class="n">name_suggest</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="s1">&#39;Puma&#39;</span><span class="p">)</span>
-<span class="n">x</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span>
-<span class="n">x</span><span class="p">[</span><span class="s1">&#39;hierarchy&#39;</span><span class="p">]</span>
 <span class="n">species</span><span class="o">.</span><span class="n">name_suggest</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="s1">&#39;Puma&#39;</span><span class="p">,</span> <span class="n">rank</span><span class="o">=</span><span class="s2">&quot;genus&quot;</span><span class="p">)</span>
 <span class="n">species</span><span class="o">.</span><span class="n">name_suggest</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="s1">&#39;Puma&#39;</span><span class="p">,</span> <span class="n">rank</span><span class="o">=</span><span class="s2">&quot;subspecies&quot;</span><span class="p">)</span>
 <span class="n">species</span><span class="o">.</span><span class="n">name_suggest</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="s1">&#39;Puma&#39;</span><span class="p">,</span> <span class="n">rank</span><span class="o">=</span><span class="s2">&quot;species&quot;</span><span class="p">)</span>
@@ -513,7 +516,7 @@ e.g. &#8216;Puma concolor&#8217;</li>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.1.6.0',
+            VERSION:'0.2.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

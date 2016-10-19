@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>registry module &mdash; pygbif 0.1.6.0 documentation</title>
+  <title>registry module &mdash; pygbif 0.2.0 documentation</title>
   
 
   
@@ -33,7 +33,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="pygbif 0.1.6.0 documentation" href="index.html"/>
+    <link rel="top" title="pygbif 0.2.0 documentation" href="index.html"/>
         <link rel="next" title="species module" href="species.html"/>
         <link rel="prev" title="occurrences module" href="occurrences.html"/> 
 
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                0.1.6.0
+                0.2.0
               </div>
             
           
@@ -357,19 +357,29 @@ but does allow some. See also examples.</p>
 
 <dl class="method">
 <dt id="pygbif.registry.installations">
-<code class="descclassname">registry.</code><code class="descname">installations</code><span class="sig-paren">(</span><em>data='all'</em>, <em>uuid=None</em>, <em>query=None</em>, <em>identifier=None</em>, <em>identifierType=None</em>, <em>limit=100</em>, <em>start=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.registry.installations" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">registry.</code><code class="descname">installations</code><span class="sig-paren">(</span><em>data='all'</em>, <em>uuid=None</em>, <em>q=None</em>, <em>identifier=None</em>, <em>identifierType=None</em>, <em>limit=100</em>, <em>offset=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.registry.installations" title="Permalink to this definition">¶</a></dt>
 <dd><p>Installations metadata.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>data</strong> &#8211; [str] The type of data to get. Default is all data. If not <code class="docutils literal"><span class="pre">all</span></code>, then one
 or more of <code class="docutils literal"><span class="pre">contact</span></code>, <code class="docutils literal"><span class="pre">endpoint</span></code>, <code class="docutils literal"><span class="pre">dataset</span></code>, <code class="docutils literal"><span class="pre">comment</span></code>, <code class="docutils literal"><span class="pre">deleted</span></code>, <code class="docutils literal"><span class="pre">nonPublishing</span></code>.</li>
 <li><strong>uuid</strong> &#8211; [str] UUID of the data node provider. This must be specified if data
 is anything other than <code class="docutils literal"><span class="pre">all</span></code>.</li>
-<li><strong>query</strong> &#8211; [str] Query nodes. Only used when <code class="docutils literal"><span class="pre">data='all'</span></code>. Ignored otherwise.</li>
+<li><strong>q</strong> &#8211; [str] Query nodes. Only used when <code class="docutils literal"><span class="pre">data='all'</span></code>. Ignored otherwise.</li>
+<li><strong>identifier</strong> &#8211; [fixnum] The value for this parameter can be a simple string or integer,
+e.g. identifier=120</li>
+<li><strong>identifierType</strong> &#8211; [str] Used in combination with the identifier parameter to filter
+identifiers by identifier type: <code class="docutils literal"><span class="pre">DOI</span></code>, <code class="docutils literal"><span class="pre">FTP</span></code>, <code class="docutils literal"><span class="pre">GBIF_NODE</span></code>, <code class="docutils literal"><span class="pre">GBIF_PARTICIPANT</span></code>,
+<code class="docutils literal"><span class="pre">GBIF_PORTAL</span></code>, <code class="docutils literal"><span class="pre">HANDLER</span></code>, <code class="docutils literal"><span class="pre">LSID</span></code>, <code class="docutils literal"><span class="pre">UNKNOWN</span></code>, <code class="docutils literal"><span class="pre">URI</span></code>, <code class="docutils literal"><span class="pre">URL</span></code>, <code class="docutils literal"><span class="pre">UUID</span></code></li>
+<li><strong>limit</strong> &#8211; [int] Number of results to return. Default: <code class="docutils literal"><span class="pre">100</span></code></li>
+<li><strong>offset</strong> &#8211; [int] Record to start at. Default: <code class="docutils literal"><span class="pre">0</span></code></li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A dictionary</p>
 </td>
 </tr>
 </tbody>
@@ -378,7 +388,7 @@ is anything other than <code class="docutils literal"><span class="pre">all</spa
 <p>Usage:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">registry</span>
 <span class="n">registry</span><span class="o">.</span><span class="n">installations</span><span class="p">(</span><span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">registry</span><span class="o">.</span><span class="n">installations</span><span class="p">(</span><span class="n">query</span><span class="o">=</span><span class="s2">&quot;france&quot;</span><span class="p">)</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">installations</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="s2">&quot;france&quot;</span><span class="p">)</span>
 <span class="n">registry</span><span class="o">.</span><span class="n">installations</span><span class="p">(</span><span class="n">uuid</span><span class="o">=</span><span class="s2">&quot;b77901f9-d9b0-47fa-94e0-dd96450aa2b4&quot;</span><span class="p">)</span>
 <span class="n">registry</span><span class="o">.</span><span class="n">installations</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="s1">&#39;contact&#39;</span><span class="p">,</span> <span class="n">uuid</span><span class="o">=</span><span class="s2">&quot;b77901f9-d9b0-47fa-94e0-dd96450aa2b4&quot;</span><span class="p">)</span>
 <span class="n">registry</span><span class="o">.</span><span class="n">installations</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="s1">&#39;contact&#39;</span><span class="p">,</span> <span class="n">uuid</span><span class="o">=</span><span class="s2">&quot;2e029a0c-87af-42e6-87d7-f38a50b78201&quot;</span><span class="p">)</span>
@@ -394,31 +404,33 @@ is anything other than <code class="docutils literal"><span class="pre">all</spa
 
 <dl class="method">
 <dt id="pygbif.registry.networks">
-<code class="descclassname">registry.</code><code class="descname">networks</code><span class="sig-paren">(</span><em>data='all'</em>, <em>uuid=None</em>, <em>query=None</em>, <em>identifier=None</em>, <em>identifierType=None</em>, <em>limit=100</em>, <em>start=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.registry.networks" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">registry.</code><code class="descname">networks</code><span class="sig-paren">(</span><em>data='all'</em>, <em>uuid=None</em>, <em>q=None</em>, <em>identifier=None</em>, <em>identifierType=None</em>, <em>limit=100</em>, <em>offset=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.registry.networks" title="Permalink to this definition">¶</a></dt>
 <dd><p>Networks metadata.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>data</strong> &#8211; [str] The type of data to get. Default: <code class="docutils literal"><span class="pre">all</span></code></li>
 <li><strong>uuid</strong> &#8211; [str] UUID of the data network provider. This must be specified if data
 is anything other than <code class="docutils literal"><span class="pre">all</span></code>.</li>
-<li><strong>query</strong> &#8211; [str] Query networks. Only used when <code class="docutils literal"><span class="pre">data</span> <span class="pre">=</span> <span class="pre">'all'</span></code>. Ignored otherwise.</li>
+<li><strong>q</strong> &#8211; [str] Query networks. Only used when <code class="docutils literal"><span class="pre">data</span> <span class="pre">=</span> <span class="pre">'all'</span></code>. Ignored otherwise.</li>
+<li><strong>identifier</strong> &#8211; [fixnum] The value for this parameter can be a simple string or integer,
+e.g. identifier=120</li>
+<li><strong>identifierType</strong> &#8211; [str] Used in combination with the identifier parameter to filter
+identifiers by identifier type: <code class="docutils literal"><span class="pre">DOI</span></code>, <code class="docutils literal"><span class="pre">FTP</span></code>, <code class="docutils literal"><span class="pre">GBIF_NODE</span></code>, <code class="docutils literal"><span class="pre">GBIF_PARTICIPANT</span></code>,
+<code class="docutils literal"><span class="pre">GBIF_PORTAL</span></code>, <code class="docutils literal"><span class="pre">HANDLER</span></code>, <code class="docutils literal"><span class="pre">LSID</span></code>, <code class="docutils literal"><span class="pre">UNKNOWN</span></code>, <code class="docutils literal"><span class="pre">URI</span></code>, <code class="docutils literal"><span class="pre">URL</span></code>, <code class="docutils literal"><span class="pre">UUID</span></code></li>
+<li><strong>limit</strong> &#8211; [int] Number of results to return. Default: <code class="docutils literal"><span class="pre">100</span></code></li>
+<li><strong>offset</strong> &#8211; [int] Record to start at. Default: <code class="docutils literal"><span class="pre">0</span></code></li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A dictionary</p>
 </td>
 </tr>
 </tbody>
 </table>
 <p>References: <a class="reference external" href="http://www.gbif.org/developer/registry#networks">http://www.gbif.org/developer/registry#networks</a></p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A dict</td>
-</tr>
-</tbody>
-</table>
 <p>Usage:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">registry</span>
 <span class="n">registry</span><span class="o">.</span><span class="n">networks</span><span class="p">(</span><span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
@@ -430,19 +442,29 @@ is anything other than <code class="docutils literal"><span class="pre">all</spa
 
 <dl class="method">
 <dt id="pygbif.registry.nodes">
-<code class="descclassname">registry.</code><code class="descname">nodes</code><span class="sig-paren">(</span><em>data='all'</em>, <em>uuid=None</em>, <em>query=None</em>, <em>identifier=None</em>, <em>identifierType=None</em>, <em>limit=100</em>, <em>start=None</em>, <em>isocode=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.registry.nodes" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">registry.</code><code class="descname">nodes</code><span class="sig-paren">(</span><em>data='all'</em>, <em>uuid=None</em>, <em>q=None</em>, <em>identifier=None</em>, <em>identifierType=None</em>, <em>limit=100</em>, <em>offset=None</em>, <em>isocode=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.registry.nodes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Nodes metadata.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>data</strong> &#8211; [str] The type of data to get. Default: <code class="docutils literal"><span class="pre">all</span></code></li>
 <li><strong>uuid</strong> &#8211; [str] UUID of the data node provider. This must be specified if data
 is anything other than <code class="docutils literal"><span class="pre">all</span></code>.</li>
-<li><strong>query</strong> &#8211; [str] Query nodes. Only used when <code class="docutils literal"><span class="pre">data</span> <span class="pre">=</span> <span class="pre">'all'</span></code></li>
+<li><strong>q</strong> &#8211; [str] Query nodes. Only used when <code class="docutils literal"><span class="pre">data</span> <span class="pre">=</span> <span class="pre">'all'</span></code></li>
+<li><strong>identifier</strong> &#8211; [fixnum] The value for this parameter can be a simple string or integer,
+e.g. identifier=120</li>
+<li><strong>identifierType</strong> &#8211; [str] Used in combination with the identifier parameter to filter
+identifiers by identifier type: <code class="docutils literal"><span class="pre">DOI</span></code>, <code class="docutils literal"><span class="pre">FTP</span></code>, <code class="docutils literal"><span class="pre">GBIF_NODE</span></code>, <code class="docutils literal"><span class="pre">GBIF_PARTICIPANT</span></code>,
+<code class="docutils literal"><span class="pre">GBIF_PORTAL</span></code>, <code class="docutils literal"><span class="pre">HANDLER</span></code>, <code class="docutils literal"><span class="pre">LSID</span></code>, <code class="docutils literal"><span class="pre">UNKNOWN</span></code>, <code class="docutils literal"><span class="pre">URI</span></code>, <code class="docutils literal"><span class="pre">URL</span></code>, <code class="docutils literal"><span class="pre">UUID</span></code></li>
+<li><strong>limit</strong> &#8211; [int] Number of results to return. Default: <code class="docutils literal"><span class="pre">100</span></code></li>
+<li><strong>offset</strong> &#8211; [int] Record to start at. Default: <code class="docutils literal"><span class="pre">0</span></code></li>
 <li><strong>isocode</strong> &#8211; [str] A 2 letter country code. Only used if <code class="docutils literal"><span class="pre">data</span> <span class="pre">=</span> <span class="pre">'country'</span></code>.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A dictionary</p>
 </td>
 </tr>
 </tbody>
@@ -451,6 +473,7 @@ is anything other than <code class="docutils literal"><span class="pre">all</spa
 <p>Usage:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">registry</span>
 <span class="n">registry</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">identifier</span><span class="o">=</span><span class="mi">120</span><span class="p">)</span>
 <span class="n">registry</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">uuid</span><span class="o">=</span><span class="s2">&quot;1193638d-32d1-43f0-a855-8727c94299d8&quot;</span><span class="p">)</span>
 <span class="n">registry</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="s1">&#39;identifier&#39;</span><span class="p">,</span> <span class="n">uuid</span><span class="o">=</span><span class="s2">&quot;03e816b3-8f58-49ae-bc12-4e18b358d6d9&quot;</span><span class="p">)</span>
 <span class="n">registry</span><span class="o">.</span><span class="n">nodes</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;identifier&#39;</span><span class="p">,</span><span class="s1">&#39;organization&#39;</span><span class="p">,</span><span class="s1">&#39;comment&#39;</span><span class="p">],</span> <span class="n">uuid</span><span class="o">=</span><span class="s2">&quot;03e816b3-8f58-49ae-bc12-4e18b358d6d9&quot;</span><span class="p">)</span>
@@ -473,21 +496,31 @@ is anything other than <code class="docutils literal"><span class="pre">all</spa
 
 <dl class="method">
 <dt id="pygbif.registry.organizations">
-<code class="descclassname">registry.</code><code class="descname">organizations</code><span class="sig-paren">(</span><em>data='all'</em>, <em>uuid=None</em>, <em>query=None</em>, <em>identifier=None</em>, <em>identifierType=None</em>, <em>limit=100</em>, <em>start=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.registry.organizations" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">registry.</code><code class="descname">organizations</code><span class="sig-paren">(</span><em>data='all'</em>, <em>uuid=None</em>, <em>q=None</em>, <em>identifier=None</em>, <em>identifierType=None</em>, <em>limit=100</em>, <em>offset=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.registry.organizations" title="Permalink to this definition">¶</a></dt>
 <dd><p>organizations metadata.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>data</strong> &#8211; [str] The type of data to get. Default is all data. If not <code class="docutils literal"><span class="pre">all</span></code>, then one
 or more of <code class="docutils literal"><span class="pre">contact</span></code>, <code class="docutils literal"><span class="pre">endpoint</span></code>, <code class="docutils literal"><span class="pre">identifier</span></code>, <code class="docutils literal"><span class="pre">tag</span></code>, <code class="docutils literal"><span class="pre">machineTag</span></code>,
 <code class="docutils literal"><span class="pre">comment</span></code>, <code class="docutils literal"><span class="pre">hostedDataset</span></code>, <code class="docutils literal"><span class="pre">ownedDataset</span></code>, <code class="docutils literal"><span class="pre">deleted</span></code>, <code class="docutils literal"><span class="pre">pending</span></code>,
 <code class="docutils literal"><span class="pre">nonPublishing</span></code>.</li>
 <li><strong>uuid</strong> &#8211; [str] UUID of the data node provider. This must be specified if data
 is anything other than <code class="docutils literal"><span class="pre">all</span></code>.</li>
-<li><strong>query</strong> &#8211; [str] Query nodes. Only used when <code class="docutils literal"><span class="pre">data='all'</span></code>. Ignored otherwise.</li>
+<li><strong>q</strong> &#8211; [str] Query nodes. Only used when <code class="docutils literal"><span class="pre">data='all'</span></code>. Ignored otherwise.</li>
+<li><strong>identifier</strong> &#8211; [fixnum] The value for this parameter can be a simple string or integer,
+e.g. identifier=120</li>
+<li><strong>identifierType</strong> &#8211; [str] Used in combination with the identifier parameter to filter
+identifiers by identifier type: <code class="docutils literal"><span class="pre">DOI</span></code>, <code class="docutils literal"><span class="pre">FTP</span></code>, <code class="docutils literal"><span class="pre">GBIF_NODE</span></code>, <code class="docutils literal"><span class="pre">GBIF_PARTICIPANT</span></code>,
+<code class="docutils literal"><span class="pre">GBIF_PORTAL</span></code>, <code class="docutils literal"><span class="pre">HANDLER</span></code>, <code class="docutils literal"><span class="pre">LSID</span></code>, <code class="docutils literal"><span class="pre">UNKNOWN</span></code>, <code class="docutils literal"><span class="pre">URI</span></code>, <code class="docutils literal"><span class="pre">URL</span></code>, <code class="docutils literal"><span class="pre">UUID</span></code></li>
+<li><strong>limit</strong> &#8211; [int] Number of results to return. Default: <code class="docutils literal"><span class="pre">100</span></code></li>
+<li><strong>offset</strong> &#8211; [int] Record to start at. Default: <code class="docutils literal"><span class="pre">0</span></code></li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A dictionary</p>
 </td>
 </tr>
 </tbody>
@@ -496,7 +529,8 @@ is anything other than <code class="docutils literal"><span class="pre">all</spa
 <p>Usage:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">registry</span>
 <span class="n">registry</span><span class="o">.</span><span class="n">organizations</span><span class="p">(</span><span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">registry</span><span class="o">.</span><span class="n">organizations</span><span class="p">(</span><span class="n">query</span><span class="o">=</span><span class="s2">&quot;france&quot;</span><span class="p">)</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">organizations</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="s2">&quot;france&quot;</span><span class="p">)</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">organizations</span><span class="p">(</span><span class="n">identifier</span><span class="o">=</span><span class="mi">120</span><span class="p">)</span>
 <span class="n">registry</span><span class="o">.</span><span class="n">organizations</span><span class="p">(</span><span class="n">uuid</span><span class="o">=</span><span class="s2">&quot;e2e717bf-551a-4917-bdc9-4fa0f342c530&quot;</span><span class="p">)</span>
 <span class="n">registry</span><span class="o">.</span><span class="n">organizations</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="s1">&#39;contact&#39;</span><span class="p">,</span> <span class="n">uuid</span><span class="o">=</span><span class="s2">&quot;e2e717bf-551a-4917-bdc9-4fa0f342c530&quot;</span><span class="p">)</span>
 <span class="n">registry</span><span class="o">.</span><span class="n">organizations</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="s1">&#39;endpoint&#39;</span><span class="p">,</span> <span class="n">uuid</span><span class="o">=</span><span class="s2">&quot;e2e717bf-551a-4917-bdc9-4fa0f342c530&quot;</span><span class="p">)</span>
@@ -551,7 +585,7 @@ is anything other than <code class="docutils literal"><span class="pre">all</spa
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.1.6.0',
+            VERSION:'0.2.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

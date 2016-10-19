@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pygbif.registry.networks &mdash; pygbif 0.1.6.0 documentation</title>
+  <title>pygbif.registry.networks &mdash; pygbif 0.2.0 documentation</title>
   
 
   
@@ -33,7 +33,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="pygbif 0.1.6.0 documentation" href="../../../index.html"/>
+    <link rel="top" title="pygbif 0.2.0 documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.1.6.0
+                0.2.0
               </div>
             
           
@@ -135,19 +135,26 @@
   <h1>Source code for pygbif.registry.networks</h1><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">..gbifutils</span> <span class="k">import</span> <span class="o">*</span>
 
-<span class="k">def</span> <span class="nf">networks</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">uuid</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">query</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">identifier</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
-  <span class="n">identifierType</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">limit</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">start</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">networks</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">uuid</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">q</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">identifier</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+  <span class="n">identifierType</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">limit</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">offset</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
   <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">  Networks metadata.</span>
 
 <span class="sd">  :param data: [str] The type of data to get. Default: ``all``</span>
 <span class="sd">  :param uuid: [str] UUID of the data network provider. This must be specified if data</span>
 <span class="sd">     is anything other than ``all``.</span>
-<span class="sd">  :param query: [str] Query networks. Only used when ``data = &#39;all&#39;``. Ignored otherwise.</span>
+<span class="sd">  :param q: [str] Query networks. Only used when ``data = &#39;all&#39;``. Ignored otherwise.</span>
+<span class="sd">  :param identifier: [fixnum] The value for this parameter can be a simple string or integer,</span>
+<span class="sd">      e.g. identifier=120</span>
+<span class="sd">  :param identifierType: [str] Used in combination with the identifier parameter to filter</span>
+<span class="sd">      identifiers by identifier type: ``DOI``, ``FTP``, ``GBIF_NODE``, ``GBIF_PARTICIPANT``,</span>
+<span class="sd">      ``GBIF_PORTAL``, ``HANDLER``, ``LSID``, ``UNKNOWN``, ``URI``, ``URL``, ``UUID``</span>
+<span class="sd">  :param limit: [int] Number of results to return. Default: ``100``</span>
+<span class="sd">  :param offset: [int] Record to start at. Default: ``0``</span>
+
+<span class="sd">  :return: A dictionary</span>
 
 <span class="sd">  References: http://www.gbif.org/developer/registry#networks</span>
-
-<span class="sd">  :return: A dict</span>
 
 <span class="sd">  Usage::</span>
 
@@ -156,7 +163,8 @@
 <span class="sd">      registry.networks(uuid=&#39;16ab5405-6c94-4189-ac71-16ca3b753df7&#39;)</span>
 <span class="sd">      registry.networks(data=&#39;endpoint&#39;, uuid=&#39;16ab5405-6c94-4189-ac71-16ca3b753df7&#39;)</span>
 <span class="sd">  &#39;&#39;&#39;</span>
-  <span class="n">args</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;q&#39;</span><span class="p">:</span> <span class="n">query</span><span class="p">,</span> <span class="s1">&#39;limit&#39;</span><span class="p">:</span> <span class="n">limit</span><span class="p">,</span> <span class="s1">&#39;offset&#39;</span><span class="p">:</span> <span class="n">start</span><span class="p">}</span>
+  <span class="n">args</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;q&#39;</span><span class="p">:</span> <span class="n">q</span><span class="p">,</span> <span class="s1">&#39;limit&#39;</span><span class="p">:</span> <span class="n">limit</span><span class="p">,</span> <span class="s1">&#39;offset&#39;</span><span class="p">:</span> <span class="n">offset</span><span class="p">,</span> <span class="s1">&#39;identifier&#39;</span><span class="p">:</span> <span class="n">identifier</span><span class="p">,</span>
+    <span class="s1">&#39;identifierType&#39;</span><span class="p">:</span> <span class="n">identifierType</span><span class="p">}</span>
   <span class="n">data_choices</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="s1">&#39;contact&#39;</span><span class="p">,</span> <span class="s1">&#39;endpoint&#39;</span><span class="p">,</span> <span class="s1">&#39;identifier&#39;</span><span class="p">,</span>
     <span class="s1">&#39;tag&#39;</span><span class="p">,</span> <span class="s1">&#39;machineTag&#39;</span><span class="p">,</span> <span class="s1">&#39;comment&#39;</span><span class="p">,</span> <span class="s1">&#39;constituents&#39;</span><span class="p">]</span>
   <span class="n">check_data</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">data_choices</span><span class="p">)</span>
@@ -214,7 +222,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'0.1.6.0',
+            VERSION:'0.2.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

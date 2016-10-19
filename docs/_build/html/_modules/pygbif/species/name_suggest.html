@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pygbif.species.name_suggest &mdash; pygbif 0.1.6.0 documentation</title>
+  <title>pygbif.species.name_suggest &mdash; pygbif 0.2.0 documentation</title>
   
 
   
@@ -33,7 +33,7 @@
         <link rel="index" title="Index"
               href="../../../genindex.html"/>
         <link rel="search" title="Search" href="../../../search.html"/>
-    <link rel="top" title="pygbif 0.1.6.0 documentation" href="../../../index.html"/>
+    <link rel="top" title="pygbif 0.2.0 documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   
@@ -62,7 +62,7 @@
             
             
               <div class="version">
-                0.1.6.0
+                0.2.0
               </div>
             
           
@@ -135,12 +135,10 @@
   <h1>Source code for pygbif.species.name_suggest</h1><div class="highlight"><pre>
 <span></span><span class="kn">from</span> <span class="nn">..gbifutils</span> <span class="k">import</span> <span class="o">*</span>
 
-<span class="k">def</span> <span class="nf">name_suggest</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">datasetKey</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">rank</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">fields</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">name_suggest</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">datasetKey</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">rank</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
   <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">  A quick and simple autocomplete service that returns up to 20 name usages by</span>
 <span class="sd">  doing prefix matching against the scientific name. Results are ordered by relevance.</span>
-
-<span class="sd">  References: http://www.gbif.org/developer/species#searching</span>
 
 <span class="sd">  :param q: [str] Simple search parameter. The value for this parameter can be a</span>
 <span class="sd">     simple word or a phrase. Wildcards can be added to the simple word parameters only,</span>
@@ -152,16 +150,19 @@
 <span class="sd">     ``subfamily``, ``subform``, ``subgenus``, ``subkingdom``, ``suborder``, ``subphylum``, ``subsection``, ``subseries``,</span>
 <span class="sd">     ``subspecies``, ``subtribe``, ``subvariety``, ``superclass``, ``superfamily``, ``superorder``, ``superphylum``,</span>
 <span class="sd">     ``suprageneric_name``, ``tribe``, ``unranked``, or ``variety``.</span>
+<span class="sd">  :param limit: [fixnum] Number of records to return. Maximum: ``1000``. (optional)</span>
+<span class="sd">  :param offset: [fixnum] Record number to start at. (optional)</span>
 
-<span class="sd">  :return: A dictionary, of results</span>
+<span class="sd">  :return: A dictionary</span>
+
+<span class="sd">  References: http://www.gbif.org/developer/species#searching</span>
 
 <span class="sd">  Usage::</span>
 
 <span class="sd">      from pygbif import species</span>
+
 <span class="sd">      species.name_suggest(q=&#39;Puma concolor&#39;)</span>
 <span class="sd">      x = species.name_suggest(q=&#39;Puma&#39;)</span>
-<span class="sd">      x[&#39;data&#39;]</span>
-<span class="sd">      x[&#39;hierarchy&#39;]</span>
 <span class="sd">      species.name_suggest(q=&#39;Puma&#39;, rank=&quot;genus&quot;)</span>
 <span class="sd">      species.name_suggest(q=&#39;Puma&#39;, rank=&quot;subspecies&quot;)</span>
 <span class="sd">      species.name_suggest(q=&#39;Puma&#39;, rank=&quot;species&quot;)</span>
@@ -169,11 +170,8 @@
 <span class="sd">      species.name_suggest(q=&#39;Puma&#39;, limit=2)</span>
 <span class="sd">  &#39;&#39;&#39;</span>
   <span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s1">&#39;species/suggest&#39;</span>
-  <span class="n">args</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;q&#39;</span><span class="p">:</span><span class="n">q</span><span class="p">,</span> <span class="s1">&#39;rank&#39;</span><span class="p">:</span><span class="n">rank</span><span class="p">,</span> <span class="s1">&#39;offset&#39;</span><span class="p">:</span><span class="n">start</span><span class="p">,</span> <span class="s1">&#39;limit&#39;</span><span class="p">:</span><span class="n">limit</span><span class="p">}</span>
-  <span class="n">tt</span> <span class="o">=</span> <span class="n">gbif_GET</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
-  <span class="n">hier</span> <span class="o">=</span> <span class="p">[</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;higherClassificationMap&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">tt</span> <span class="p">]</span>
-  <span class="p">[</span> <span class="n">x</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s1">&#39;higherClassificationMap&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">tt</span> <span class="p">]</span>
-  <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="n">tt</span><span class="p">,</span> <span class="s1">&#39;hierarchy&#39;</span><span class="p">:</span> <span class="n">hier</span><span class="p">}</span>
+  <span class="n">args</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;q&#39;</span><span class="p">:</span><span class="n">q</span><span class="p">,</span> <span class="s1">&#39;rank&#39;</span><span class="p">:</span><span class="n">rank</span><span class="p">,</span> <span class="s1">&#39;offset&#39;</span><span class="p">:</span><span class="n">offset</span><span class="p">,</span> <span class="s1">&#39;limit&#39;</span><span class="p">:</span><span class="n">limit</span><span class="p">}</span>
+  <span class="k">return</span> <span class="n">gbif_GET</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
 
 <span class="k">def</span> <span class="nf">suggestfields</span><span class="p">():</span>
@@ -220,7 +218,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'0.1.6.0',
+            VERSION:'0.2.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
