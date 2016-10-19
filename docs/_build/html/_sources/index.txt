@@ -1,16 +1,16 @@
 pygbif
-=======
+======
 
 |pypi| |docs| |travis| |coverage|
 
 Python client for the `GBIF API
-<http://www.gbif.org/developer/summary>`__.
+<http://www.gbif.org/developer/summary>`_
 
-`Source on GitHub at sckott/pygbif <https://github.com/sckott/pygbif>`__
+`Source on GitHub at sckott/pygbif <https://github.com/sckott/pygbif>`_
 
 Other GBIF clients:
 
-* R: `rgbif`, `ropensci/rgbif <https://github.com/ropensci/rgbif>`__
+* R: `rgbif`, `ropensci/rgbif <https://github.com/ropensci/rgbif>`_
 
 Installation
 ============
@@ -35,7 +35,7 @@ Development version
 
 You can import the entire library, or each module individually as needed.
 
-Note that `GBIF maps API <http://www.gbif.org/developer/maps>`__ is not included in `pygbif`.
+Note that `GBIF maps API <http://www.gbif.org/developer/maps>`_ is not included in `pygbif`.
 
 Registry module
 ===============
@@ -59,7 +59,7 @@ Example usage:
     registry.dataset_metrics(uuid='3f8a1297-3259-4700-91fc-acc4170b27ce')
 
 Species module
-===============
+==============
 
 species module API:
 
@@ -116,17 +116,17 @@ Example usage:
 Contributors
 ============
 
-* `Scott Chamberlain <https://github.com/sckott>`__
-* `Robert Forkel <https://github.com/xrotwang>`__
-* `Jan Legind <https://github.com/jlegind>`__
-* `Stijn Van Hoey <https://github.com/stijnvanhoey>`__
-* `Peter Desmet <https://github.com/peterdesmet>`__
+* `Scott Chamberlain <https://github.com/sckott>`_
+* `Robert Forkel <https://github.com/xrotwang>`_
+* `Jan Legind <https://github.com/jlegind>`_
+* `Stijn Van Hoey <https://github.com/stijnvanhoey>`_
+* `Peter Desmet <https://github.com/peterdesmet>`_
 
 Meta
 ====
 
-* License: MIT, see `LICENSE file <LICENSE>`__
-* Please note that this project is released with a `Contributor Code of Conduct <CONDUCT.md>`__. By participating in this project you agree to abide by its terms.
+* License: MIT, see `LICENSE file <LICENSE>`_
+* Please note that this project is released with a `Contributor Code of Conduct <CONDUCT.md>`_. By participating in this project you agree to abide by its terms.
 
 .. |pypi| image:: https://img.shields.io/pypi/v/pygbif.svg
    :target: https://pypi.python.org/pypi/pygbif
@@ -139,6 +139,8 @@ Meta
 
 .. |coverage| image:: https://coveralls.io/repos/sckott/pygbif/badge.svg?branch=master&service=github
    :target: https://coveralls.io/github/sckott/pygbif?branch=master
+
+
 
 
 Contents
