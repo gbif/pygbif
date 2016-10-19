@@ -305,6 +305,43 @@ is anything other than <code class="docutils literal"><span class="pre">all</spa
 </div>
 </dd></dl>
 
+<dl class="method">
+<dt id="pygbif.registry.organizations">
+<code class="descclassname">registry.</code><code class="descname">organizations</code><span class="sig-paren">(</span><em>data='all'</em>, <em>uuid=None</em>, <em>query=None</em>, <em>identifier=None</em>, <em>identifierType=None</em>, <em>limit=100</em>, <em>start=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.registry.organizations" title="Permalink to this definition">¶</a></dt>
+<dd><p>organizations metadata.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>data</strong> &#8211; [str] The type of data to get. Default is all data. If not <code class="docutils literal"><span class="pre">all</span></code>, then one
+or more of <code class="docutils literal"><span class="pre">contact</span></code>, <code class="docutils literal"><span class="pre">endpoint</span></code>, <code class="docutils literal"><span class="pre">identifier</span></code>, <code class="docutils literal"><span class="pre">tag</span></code>, <code class="docutils literal"><span class="pre">machineTag</span></code>,
+<code class="docutils literal"><span class="pre">comment</span></code>, <code class="docutils literal"><span class="pre">hostedDataset</span></code>, <code class="docutils literal"><span class="pre">ownedDataset</span></code>, <code class="docutils literal"><span class="pre">deleted</span></code>, <code class="docutils literal"><span class="pre">pending</span></code>,
+<code class="docutils literal"><span class="pre">nonPublishing</span></code>.</li>
+<li><strong>uuid</strong> &#8211; [str] UUID of the data node provider. This must be specified if data
+is anything other than <code class="docutils literal"><span class="pre">all</span></code>.</li>
+<li><strong>query</strong> &#8211; [str] Query nodes. Only used when <code class="docutils literal"><span class="pre">data='all'</span></code>. Ignored otherwise.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<p>References: <a class="reference external" href="http://www.gbif.org/developer/registry#organizations">http://www.gbif.org/developer/registry#organizations</a></p>
+<p>Usage:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">registry</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">organizations</span><span class="p">(</span><span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">organizations</span><span class="p">(</span><span class="n">query</span><span class="o">=</span><span class="s2">&quot;france&quot;</span><span class="p">)</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">organizations</span><span class="p">(</span><span class="n">uuid</span><span class="o">=</span><span class="s2">&quot;e2e717bf-551a-4917-bdc9-4fa0f342c530&quot;</span><span class="p">)</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">organizations</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="s1">&#39;contact&#39;</span><span class="p">,</span> <span class="n">uuid</span><span class="o">=</span><span class="s2">&quot;e2e717bf-551a-4917-bdc9-4fa0f342c530&quot;</span><span class="p">)</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">organizations</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="s1">&#39;endpoint&#39;</span><span class="p">,</span> <span class="n">uuid</span><span class="o">=</span><span class="s2">&quot;e2e717bf-551a-4917-bdc9-4fa0f342c530&quot;</span><span class="p">)</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">organizations</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="s1">&#39;deleted&#39;</span><span class="p">)</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">organizations</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="s1">&#39;deleted&#39;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">organizations</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;deleted&#39;</span><span class="p">,</span><span class="s1">&#39;nonPublishing&#39;</span><span class="p">],</span> <span class="n">limit</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">organizations</span><span class="p">(</span><span class="n">identifierType</span><span class="o">=</span><span class="s1">&#39;DOI&#39;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
 </div>
 
 

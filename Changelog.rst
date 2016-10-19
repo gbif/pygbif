@@ -5,8 +5,9 @@ Changelog
 --------------------
 - Download methods much improved (#16) (#27) thanks @jlegind @stijnvanhoey @peterdesmet !
 - MULTIPOLYGON now supported in `geometry` parameter (#35)
-- Fixed docs for `occurrences.get`, and `occurrences.get_verbatim` and
-demo that used occurrence keys that no longer exist in GBIF (#39)
+- Fixed docs for `occurrences.get`, and `occurrences.get_verbatim`,
+`occurrences.get_fragment` and demo that used occurrence keys that no longer
+exist in GBIF (#39)
 - xxx (#xx)
 - xxx (#xx)
 - xxx (#xx)

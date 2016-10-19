@@ -10,3 +10,4 @@ registry module
 .. automethod:: registry.installations
 .. automethod:: registry.networks
 .. automethod:: registry.nodes
+.. automethod:: registry.organizations
