@@ -127,7 +127,7 @@ def search(taxonKey=None, repatriated=None,
         occurrences.search(catalogNumber="49366", limit=20)
         # occurrences.search(catalogNumber=["49366","Bird.27847588"], limit=20)
 
-        # Use paging parameters (limit and start) to page. Note the different results
+        # Use paging parameters (limit and offset) to page. Note the different results
         # for the two queries below.
         occurrences.search(datasetKey='7b5d6a48-f762-11e1-a439-00145eb45e9a', offset=10, limit=5)
         occurrences.search(datasetKey='7b5d6a48-f762-11e1-a439-00145eb45e9a', offset=20, limit=5)

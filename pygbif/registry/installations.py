@@ -1,7 +1,7 @@
 from ..gbifutils import *
 
-def installations(data = 'all', uuid = None, query = None, identifier = None,
-  identifierType = None, limit = 100, start = None, **kwargs):
+def installations(data = 'all', uuid = None, q = None, identifier = None,
+  identifierType = None, limit = 100, offset = None, **kwargs):
   '''
   Installations metadata.
 
@@ -9,7 +9,16 @@ def installations(data = 'all', uuid = None, query = None, identifier = None,
      or more of ``contact``, ``endpoint``, ``dataset``, ``comment``, ``deleted``, ``nonPublishing``.
   :param uuid: [str] UUID of the data node provider. This must be specified if data
      is anything other than ``all``.
-  :param query: [str] Query nodes. Only used when ``data='all'``. Ignored otherwise.
+  :param q: [str] Query nodes. Only used when ``data='all'``. Ignored otherwise.
+  :param identifier: [fixnum] The value for this parameter can be a simple string or integer,
+      e.g. identifier=120
+  :param identifierType: [str] Used in combination with the identifier parameter to filter
+      identifiers by identifier type: ``DOI``, ``FTP``, ``GBIF_NODE``, ``GBIF_PARTICIPANT``,
+      ``GBIF_PORTAL``, ``HANDLER``, ``LSID``, ``UNKNOWN``, ``URI``, ``URL``, ``UUID``
+  :param limit: [int] Number of results to return. Default: ``100``
+  :param offset: [int] Record to start at. Default: ``0``
+
+  :return: A dictionary
 
   References: http://www.gbif.org/developer/registry#installations
 
@@ -17,7 +26,7 @@ def installations(data = 'all', uuid = None, query = None, identifier = None,
 
       from pygbif import registry
       registry.installations(limit=5)
-      registry.installations(query="france")
+      registry.installations(q="france")
       registry.installations(uuid="b77901f9-d9b0-47fa-94e0-dd96450aa2b4")
       registry.installations(data='contact', uuid="b77901f9-d9b0-47fa-94e0-dd96450aa2b4")
       registry.installations(data='contact', uuid="2e029a0c-87af-42e6-87d7-f38a50b78201")
@@ -28,7 +37,8 @@ def installations(data = 'all', uuid = None, query = None, identifier = None,
       registry.installations(data=['deleted','nonPublishing'], limit=2)
       registry.installations(identifierType='DOI', limit=2)
   '''
-  args = {'q': query, 'limit': limit, 'offset': start}
+  args = {'q': q, 'limit': limit, 'offset': offset, 'identifier': identifier,
+    'identifierType': identifierTyp}
   data_choices = ['all', 'contact', 'endpoint', 'dataset',
    'identifier', 'tag', 'machineTag', 'comment',
    'deleted', 'nonPublishing']

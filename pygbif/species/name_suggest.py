@@ -1,11 +1,9 @@
 from ..gbifutils import *
 
-def name_suggest(q=None, datasetKey=None, rank=None, fields=None, start=None, limit=100, **kwargs):
+def name_suggest(q=None, datasetKey=None, rank=None, limit=100, offset=None, **kwargs):
   '''
   A quick and simple autocomplete service that returns up to 20 name usages by
   doing prefix matching against the scientific name. Results are ordered by relevance.
-
-  References: http://www.gbif.org/developer/species#searching
 
   :param q: [str] Simple search parameter. The value for this parameter can be a
      simple word or a phrase. Wildcards can be added to the simple word parameters only,
@@ -17,16 +15,19 @@ def name_suggest(q=None, datasetKey=None, rank=None, fields=None, start=None, li
      ``subfamily``, ``subform``, ``subgenus``, ``subkingdom``, ``suborder``, ``subphylum``, ``subsection``, ``subseries``,
      ``subspecies``, ``subtribe``, ``subvariety``, ``superclass``, ``superfamily``, ``superorder``, ``superphylum``,
      ``suprageneric_name``, ``tribe``, ``unranked``, or ``variety``.
+  :param limit: [fixnum] Number of records to return. Maximum: ``1000``. (optional)
+  :param offset: [fixnum] Record number to start at. (optional)
 
-  :return: A dictionary, of results
+  :return: A dictionary
+
+  References: http://www.gbif.org/developer/species#searching
 
   Usage::
 
       from pygbif import species
+
       species.name_suggest(q='Puma concolor')
       x = species.name_suggest(q='Puma')
-      x['data']
-      x['hierarchy']
       species.name_suggest(q='Puma', rank="genus")
       species.name_suggest(q='Puma', rank="subspecies")
       species.name_suggest(q='Puma', rank="species")
@@ -34,11 +35,8 @@ def name_suggest(q=None, datasetKey=None, rank=None, fields=None, start=None, li
       species.name_suggest(q='Puma', limit=2)
   '''
   url = gbif_baseurl + 'species/suggest'
-  args = {'q':q, 'rank':rank, 'offset':start, 'limit':limit}
-  tt = gbif_GET(url, args, **kwargs)
-  hier = [ x['higherClassificationMap'] for x in tt ]
-  [ x.pop('higherClassificationMap') for x in tt ]
-  return {'data': tt, 'hierarchy': hier}
+  args = {'q':q, 'rank':rank, 'offset':offset, 'limit':limit}
+  return gbif_GET(url, args, **kwargs)
 
 
 def suggestfields():

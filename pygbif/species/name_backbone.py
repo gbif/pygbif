@@ -2,7 +2,7 @@ from ..gbifutils import *
 
 def name_backbone(name, rank=None, kingdom=None, phylum=None, clazz=None,
   order=None, family=None, genus=None, strict=False, verbose=False,
-  start=None, limit=100, **kwargs):
+  offset=None, limit=100, **kwargs):
   '''
   Lookup names in the GBIF backbone taxonomy.
 
@@ -23,6 +23,8 @@ def name_backbone(name, rank=None, kingdom=None, phylum=None, clazz=None,
   :param strict: [bool] If True it (fuzzy) matches only the given name, but never a
      taxon in the upper classification (optional)
   :param verbose: [bool] If True show alternative matches considered which had been rejected.
+  :param offset: [int] Record to start at. Default: ``0``
+  :param limit: [int] Number of results to return. Default: ``100``
 
   A list for a single taxon with many slots (with ``verbose=False`` - default), or a
   list of length two, first element for the suggested taxon match, and a data.frame
@@ -56,6 +58,6 @@ def name_backbone(name, rank=None, kingdom=None, phylum=None, clazz=None,
   url = gbif_baseurl + 'species/match'
   args = {'name': name, 'rank': rank, 'kingdom': kingdom, 'phylum': phylum,
          'class': clazz, 'order': order, 'family': family, 'genus': genus,
-         'strict': strict, 'verbose': verbose, 'offset': start, 'limit': limit}
+         'strict': strict, 'verbose': verbose, 'offset': offset, 'limit': limit}
   tt = gbif_GET(url, args, **kwargs)
   return tt

@@ -1,15 +1,24 @@
 from ..gbifutils import *
 
-def nodes(data = 'all', uuid = None, query = None, identifier = None,
-  identifierType = None, limit = 100, start = None, isocode = None, **kwargs):
+def nodes(data = 'all', uuid = None, q = None, identifier = None,
+  identifierType = None, limit = 100, offset = None, isocode = None, **kwargs):
   '''
   Nodes metadata.
 
   :param data: [str] The type of data to get. Default: ``all``
   :param uuid: [str] UUID of the data node provider. This must be specified if data
      is anything other than ``all``.
-  :param query: [str] Query nodes. Only used when ``data = 'all'``
+  :param q: [str] Query nodes. Only used when ``data = 'all'``
+  :param identifier: [fixnum] The value for this parameter can be a simple string or integer,
+      e.g. identifier=120
+  :param identifierType: [str] Used in combination with the identifier parameter to filter
+      identifiers by identifier type: ``DOI``, ``FTP``, ``GBIF_NODE``, ``GBIF_PARTICIPANT``,
+      ``GBIF_PORTAL``, ``HANDLER``, ``LSID``, ``UNKNOWN``, ``URI``, ``URL``, ``UUID``
+  :param limit: [int] Number of results to return. Default: ``100``
+  :param offset: [int] Record to start at. Default: ``0``
   :param isocode: [str] A 2 letter country code. Only used if ``data = 'country'``.
+
+  :return: A dictionary
 
   References http://www.gbif.org/developer/registry#nodes
 
@@ -17,6 +26,7 @@ def nodes(data = 'all', uuid = None, query = None, identifier = None,
 
       from pygbif import registry
       registry.nodes(limit=5)
+      registry.nodes(identifier=120)
       registry.nodes(uuid="1193638d-32d1-43f0-a855-8727c94299d8")
       registry.nodes(data='identifier', uuid="03e816b3-8f58-49ae-bc12-4e18b358d6d9")
       registry.nodes(data=['identifier','organization','comment'], uuid="03e816b3-8f58-49ae-bc12-4e18b358d6d9")
@@ -34,7 +44,8 @@ def nodes(data = 'all', uuid = None, query = None, identifier = None,
 
       [ registry.nodes(data='identifier', uuid=x) for x in uuids ]
   '''
-  args = {'q': query, 'limit': limit, 'offset': start}
+  args = {'q': q, 'limit': limit, 'offset': offset, 'identifier': identifier,
+    'identifierType': identifierType }
   data_choices = ['all', 'organization', 'endpoint',
      'identifier', 'tag', 'machineTag', 'comment',
      'pendingEndorsement', 'country', 'dataset', 'installation']

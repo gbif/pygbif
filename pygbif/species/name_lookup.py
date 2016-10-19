@@ -138,5 +138,4 @@ def name_lookup(q=None, rank=None, higherTaxonKey=None, status=None, isExtinct=N
 			xx = dict(zip( [ re.sub('_', '.', x) for x in gbif_kwargs.keys() ], gbif_kwargs.values() ))
 			args.update(xx)
 	kwargs = {key: kwargs[key] for key in kwargs if key in requests_argset}
-	tt = gbif_GET(gbif_baseurl + 'species/search', args, **kwargs)
-	return tt
+	return gbif_GET(gbif_baseurl + 'species/search', args, **kwargs)

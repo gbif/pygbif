@@ -8,10 +8,18 @@ Changelog
 - Fixed docs for `occurrences.get`, and `occurrences.get_verbatim`,
 `occurrences.get_fragment` and demo that used occurrence keys that no longer
 exist in GBIF (#39)
-- xxx (#xx)
-- xxx (#xx)
-- xxx (#xx)
-- xxx (#xx)
+- Added `organizations` method to `registry` module (#12)
+- Added remainder of datasets methods: `registry.dataset_search` (including faceting support (#37))
+and `registry.dataset_suggest`, for the `/dataset/search` and `/dataset/suggest` routes, respectively (#40)
+- Added remainder of species methods: `species.name_lookup` (including faceting support (#38)) and
+`species.name_usage`, for the `/species/search` and `/species` routes, respectively (#18)
+- Added more tests to cover new methods
+- Changed `species.name_suggest` to give back data stucture as received from GBIF.
+We used to parse out the classification data, but for simplicity and speed, that is
+left up to the user now.
+- `start` parameter in `species.name_suggest`, `occurrences.download_list`, `registry.organizations`,
+`registry.nodes`, `registry.networks`, and `registry.installations`, changed to `offset` to match
+GBIF API and match usage throughout remainder of `pygbif`
 
 0.1.5.4 (2016-10-01)
 --------------------

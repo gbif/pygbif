@@ -1,7 +1,7 @@
 from ..gbifutils import *
 
-def organizations(data = 'all', uuid = None, query = None, identifier = None,
-  identifierType = None, limit = 100, start = None, **kwargs):
+def organizations(data = 'all', uuid = None, q = None, identifier = None,
+  identifierType = None, limit = 100, offset = None, **kwargs):
   '''
   organizations metadata.
 
@@ -11,7 +11,16 @@ def organizations(data = 'all', uuid = None, query = None, identifier = None,
      ``nonPublishing``.
   :param uuid: [str] UUID of the data node provider. This must be specified if data
      is anything other than ``all``.
-  :param query: [str] Query nodes. Only used when ``data='all'``. Ignored otherwise.
+  :param q: [str] Query nodes. Only used when ``data='all'``. Ignored otherwise.
+  :param identifier: [fixnum] The value for this parameter can be a simple string or integer,
+      e.g. identifier=120
+  :param identifierType: [str] Used in combination with the identifier parameter to filter
+      identifiers by identifier type: ``DOI``, ``FTP``, ``GBIF_NODE``, ``GBIF_PARTICIPANT``,
+      ``GBIF_PORTAL``, ``HANDLER``, ``LSID``, ``UNKNOWN``, ``URI``, ``URL``, ``UUID``
+  :param limit: [int] Number of results to return. Default: ``100``
+  :param offset: [int] Record to start at. Default: ``0``
+
+  :return: A dictionary
 
   References: http://www.gbif.org/developer/registry#organizations
 
@@ -19,7 +28,8 @@ def organizations(data = 'all', uuid = None, query = None, identifier = None,
 
       from pygbif import registry
       registry.organizations(limit=5)
-      registry.organizations(query="france")
+      registry.organizations(q="france")
+      registry.organizations(identifier=120)
       registry.organizations(uuid="e2e717bf-551a-4917-bdc9-4fa0f342c530")
       registry.organizations(data='contact', uuid="e2e717bf-551a-4917-bdc9-4fa0f342c530")
       registry.organizations(data='endpoint', uuid="e2e717bf-551a-4917-bdc9-4fa0f342c530")
@@ -28,7 +38,8 @@ def organizations(data = 'all', uuid = None, query = None, identifier = None,
       registry.organizations(data=['deleted','nonPublishing'], limit=2)
       registry.organizations(identifierType='DOI', limit=2)
   '''
-  args = {'q': query, 'limit': limit, 'offset': start}
+  args = {'q': q, 'limit': limit, 'offset': offset, 'identifier': identifier,
+    'identifierType': identifierType}
   data_choices = ['all', 'contact', 'endpoint',
     'identifier', 'tag', 'machineTag', 'comment', 'hostedDataset',
     'ownedDataset', 'deleted', 'pending', 'nonPublishing']
