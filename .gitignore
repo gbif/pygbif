@@ -22,3 +22,7 @@
 
 # pycharm project info
 .idea/
+
+# ipython notebook files
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*

@@ -11,7 +11,9 @@ def get(key, **kwargs):
     Usage::
 
         from pygbif import occurrences
-        occurrences.get(key = 252408386)
+        occurrences.get(key = 1258202889)
+        occurrences.get(key = 1227768771)
+        occurrences.get(key = 1227769518)
     '''
     url = gbif_baseurl + 'occurrence/' + str(key)
     out = gbif_GET(url, {}, **kwargs)
@@ -28,7 +30,9 @@ def get_verbatim(key, **kwargs):
     Usage::
 
         from pygbif import occurrences
-        occurrences.get_verbatim(key = 252408386)
+        occurrences.get_verbatim(key = 1258202889)
+        occurrences.get_verbatim(key = 1227768771)
+        occurrences.get_verbatim(key = 1227769518)
     '''
     url = gbif_baseurl + 'occurrence/' + str(key) + '/verbatim'
     out = gbif_GET(url, {}, **kwargs)
@@ -45,6 +49,8 @@ def get_fragment(key, **kwargs):
     Usage::
 
         from pygbif import occurrences
+        occurrences.get_fragment(key = 1052909293)
+        occurrences.get_fragment(key = 1052909293)
         occurrences.get_fragment(key = 1052909293)
     '''
     url = gbif_baseurl + 'occurrence/' + str(key) + '/fragment'

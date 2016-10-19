@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pygbif.occurrences.get &mdash; pygbif 0.1.5.4 documentation</title>
+  <title>pygbif.occurrences.get &mdash; pygbif 0.1.6.0 documentation</title>
   
 
   
@@ -30,7 +30,7 @@
   
 
   
-    <link rel="top" title="pygbif 0.1.5.4 documentation" href="../../../index.html"/>
+    <link rel="top" title="pygbif 0.1.6.0 documentation" href="../../../index.html"/>
         <link rel="up" title="Module code" href="../../index.html"/> 
 
   
@@ -59,7 +59,7 @@
             
             
               <div class="version">
-                0.1.5.4
+                0.1.6.0
               </div>
             
           
@@ -143,7 +143,9 @@
 <span class="sd">    Usage::</span>
 
 <span class="sd">        from pygbif import occurrences</span>
-<span class="sd">        occurrences.get(key = 252408386)</span>
+<span class="sd">        occurrences.get(key = 1258202889)</span>
+<span class="sd">        occurrences.get(key = 1227768771)</span>
+<span class="sd">        occurrences.get(key = 1227769518)</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s1">&#39;occurrence/&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
     <span class="n">out</span> <span class="o">=</span> <span class="n">gbif_GET</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="p">{},</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
@@ -160,7 +162,9 @@
 <span class="sd">    Usage::</span>
 
 <span class="sd">        from pygbif import occurrences</span>
-<span class="sd">        occurrences.get_verbatim(key = 252408386)</span>
+<span class="sd">        occurrences.get_verbatim(key = 1258202889)</span>
+<span class="sd">        occurrences.get_verbatim(key = 1227768771)</span>
+<span class="sd">        occurrences.get_verbatim(key = 1227769518)</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s1">&#39;occurrence/&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/verbatim&#39;</span>
     <span class="n">out</span> <span class="o">=</span> <span class="n">gbif_GET</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="p">{},</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
@@ -177,6 +181,8 @@
 <span class="sd">    Usage::</span>
 
 <span class="sd">        from pygbif import occurrences</span>
+<span class="sd">        occurrences.get_fragment(key = 1052909293)</span>
+<span class="sd">        occurrences.get_fragment(key = 1052909293)</span>
 <span class="sd">        occurrences.get_fragment(key = 1052909293)</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="n">url</span> <span class="o">=</span> <span class="n">gbif_baseurl</span> <span class="o">+</span> <span class="s1">&#39;occurrence/&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">key</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;/fragment&#39;</span>
@@ -218,7 +224,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'0.1.5.4',
+            VERSION:'0.1.6.0',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true

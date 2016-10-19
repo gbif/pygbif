@@ -1,6 +1,16 @@
 Changelog
 =========
 
+0.2.0 (2016-10-18)
+--------------------
+- Download methods much improved (#16) (#27) thanks @jlegind @stijnvanhoey @peterdesmet !
+- MULTIPOLYGON now supported in `geometry` parameter (#35)
+- xxx (#xx)
+- xxx (#xx)
+- xxx (#xx)
+- xxx (#xx)
+- xxx (#xx)
+
 0.1.5.4 (2016-10-01)
 --------------------
 - Added many new `occurrence.search` parameters, including `repatriated`, `kingdomKey`, `phylumKey`, `classKey`, `orderKey`, `familyKey`, `genusKey`, `subgenusKey`, `establishmentMeans`, `facet`, `facetMincount`, `facetMultiselect`, and support for facet paging via	`**kwargs` (#30) (#34)
@@ -13,7 +23,7 @@ Changelog
 - Changed default `limit` value to 300 for `occurrences.search` method
 - `tox` now included, via @xrotwang (#20)
 - Added more registry methods (#11)
-- Started occurrence download methods (#16
+- Started occurrence download methods (#16)
 - Added more names methods (#18)
 - All requests now send user-agent headers with `requests` and `pygbif` versions (#13)
 - Bug fix for `occurrences.download_get` (#23)
