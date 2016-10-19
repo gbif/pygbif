@@ -146,22 +146,14 @@
 <ul class="simple">
 <li>Download methods much improved (#16) (#27) thanks &#64;jlegind &#64;stijnvanhoey &#64;peterdesmet !</li>
 <li>MULTIPOLYGON now supported in <cite>geometry</cite> parameter (#35)</li>
-<li>Fixed docs for <cite>occurrences.get</cite>, and <cite>occurrences.get_verbatim</cite>,</li>
+<li>Fixed docs for <cite>occurrences.get</cite>, and <cite>occurrences.get_verbatim</cite>, <cite>occurrences.get_fragment</cite> and demo that used occurrence keys that no longer exist in GBIF (#39)</li>
+<li>Added <cite>organizations</cite> method to <cite>registry</cite> module (#12)</li>
+<li>Added remainder of datasets methods: <cite>registry.dataset_search</cite> (including faceting support (#37)) and <cite>registry.dataset_suggest</cite>, for the <cite>/dataset/search</cite> and <cite>/dataset/suggest</cite> routes, respectively (#40)</li>
+<li>Added remainder of species methods: <cite>species.name_lookup</cite> (including faceting support (#38)) and <cite>species.name_usage</cite>, for the <cite>/species/search</cite> and <cite>/species</cite> routes, respectively (#18)</li>
+<li>Added more tests to cover new methods</li>
+<li>Changed <cite>species.name_suggest</cite> to give back data stucture as received from GBIF. We used to parse out the classification data, but for simplicity and speed, that is left up to the user now.</li>
+<li><cite>start</cite> parameter in <cite>species.name_suggest</cite>, <cite>occurrences.download_list</cite>, <cite>registry.organizations</cite>, <cite>registry.nodes</cite>, <cite>registry.networks</cite>, and <cite>registry.installations</cite>, changed to <cite>offset</cite> to match GBIF API and match usage throughout remainder of <cite>pygbif</cite></li>
 </ul>
-<p><cite>occurrences.get_fragment</cite> and demo that used occurrence keys that no longer
-exist in GBIF (#39)
-- Added <cite>organizations</cite> method to <cite>registry</cite> module (#12)
-- Added remainder of datasets methods: <cite>registry.dataset_search</cite> (including faceting support (#37))
-and <cite>registry.dataset_suggest</cite>, for the <cite>/dataset/search</cite> and <cite>/dataset/suggest</cite> routes, respectively (#40)
-- Added remainder of species methods: <cite>species.name_lookup</cite> (including faceting support (#38)) and
-<cite>species.name_usage</cite>, for the <cite>/species/search</cite> and <cite>/species</cite> routes, respectively (#18)
-- Added more tests to cover new methods
-- Changed <cite>species.name_suggest</cite> to give back data stucture as received from GBIF.
-We used to parse out the classification data, but for simplicity and speed, that is
-left up to the user now.
-- <cite>start</cite> parameter in <cite>species.name_suggest</cite>, <cite>occurrences.download_list</cite>, <cite>registry.organizations</cite>,
-<cite>registry.nodes</cite>, <cite>registry.networks</cite>, and <cite>registry.installations</cite>, changed to <cite>offset</cite> to match
-GBIF API and match usage throughout remainder of <cite>pygbif</cite></p>
 </div>
 <div class="section" id="id2">
 <h2>0.1.5.4 (2016-10-01)<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
