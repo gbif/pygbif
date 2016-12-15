@@ -8,7 +8,7 @@ def test_name_lookup():
     assert dict == res.__class__
     assert 6 == len(res)
     assert 100 == len(res['results'])
-    assert 'Mammalia' == res['results'][0]['class']
+    assert 'Mammalia' == res['results'][0]['canonicalName']
 
 def test_name_lookup_paging():
     "species.name_lookup - paging"
