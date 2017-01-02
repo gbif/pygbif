@@ -24,7 +24,7 @@ class TestGbifClass(unittest.TestCase):
 
         req = GbifDownload("name", "email")
         self.assertIsInstance(req.payload, dict)
-        self.assertDictEqual(req.payload, {'created': 2016, 'creator': 'name',
+        self.assertDictEqual(req.payload, {'created': 2017, 'creator': 'name',
                                            'notification_address': ['email'],
                                            'predicate': {'predicates': [],
                                                          'type': 'and'},
@@ -36,7 +36,7 @@ class TestGbifClass(unittest.TestCase):
         req = GbifDownload("name", "email")
         req.main_pred_type = "or"
         self.assertIsInstance(req.payload, dict)
-        self.assertDictEqual(req.payload, {'created': 2016, 'creator': 'name',
+        self.assertDictEqual(req.payload, {'created': 2017, 'creator': 'name',
                                            'notification_address': ['email'],
                                            'predicate': {'predicates': [],
                                                          'type': 'or'},
