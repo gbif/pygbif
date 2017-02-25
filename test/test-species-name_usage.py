@@ -6,7 +6,7 @@ def test_name_usage():
     "species.name_usage - basic test"
     res = species.name_usage(key=1)
     assert dict == res.__class__
-    assert 22 == len(res)
+    assert 23 == len(res)
     assert 1 == res['key']
 
 def test_name_usage_paging():
