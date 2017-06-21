@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>occurrences module &mdash; pygbif 0.2.0 documentation</title>
+  <title>occurrence module &mdash; pygbif 0.2.1 documentation</title>
   
 
   
@@ -24,21 +24,21 @@
 
   
   
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   
 
   
 
   
         <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="pygbif 0.2.0 documentation" href="index.html"/>
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="pygbif 0.2.1 documentation" href="../index.html"/>
         <link rel="next" title="registry module" href="registry.html"/>
-        <link rel="prev" title="Python GBIF Client" href="index.html"/> 
+        <link rel="prev" title="pygbif modules" href="intro.html"/> 
 
   
-  <script src="_static/js/modernizr.min.js"></script>
+  <script src="../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -53,7 +53,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> pygbif
+            <a href="../index.html" class="icon icon-home"> pygbif
           
 
           
@@ -63,14 +63,14 @@
             
             
               <div class="version">
-                0.2.0
+                0.2.1
               </div>
             
           
 
           
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -84,11 +84,32 @@
           
             
             
-                <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">occurrences module</a></li>
+                <p class="caption"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/install.html">Installation guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Docs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../docs/faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/usecases.html">Usecases</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Modules</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">pygbif modules</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">occurrence module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-pygbif">occurrences API</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="registry.html">registry module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="species.html">species module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="changelog_link.html">Changelog</a></li>
+</ul>
+<p class="caption"><span class="caption-text">All the rest</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../changelog_link.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributors.html">Contributors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conduct.html">Contributor Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">LICENSE</a></li>
 </ul>
 
             
@@ -102,7 +123,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">pygbif</a>
+        <a href="../index.html">pygbif</a>
       </nav>
 
 
@@ -117,13 +138,13 @@
 
 <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
+    <li><a href="../index.html">Docs</a> &raquo;</li>
       
-    <li>occurrences module</li>
+    <li>occurrence module</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="_sources/occurrences.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/modules/occurrence.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -133,8 +154,41 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-pygbif">
-<span id="occurrences-module"></span><span id="occurrences"></span><h1>occurrences module<a class="headerlink" href="#module-pygbif" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="occurrence-module">
+<span id="occurrence-modules"></span><h1>occurrence module<a class="headerlink" href="#occurrence-module" title="Permalink to this headline">¶</a></h1>
+<p>occurrence module API:</p>
+<ul class="simple">
+<li><cite>search</cite></li>
+<li><cite>get</cite></li>
+<li><cite>get_verbatim</cite></li>
+<li><cite>get_fragment</cite></li>
+<li><cite>count</cite></li>
+<li><cite>count_basisofrecord</cite></li>
+<li><cite>count_year</cite></li>
+<li><cite>count_datasets</cite></li>
+<li><cite>count_countries</cite></li>
+<li><cite>count_schema</cite></li>
+<li><cite>count_publishingcountries</cite></li>
+<li><cite>download</cite></li>
+<li><cite>download_meta</cite></li>
+<li><cite>download_list</cite></li>
+<li><cite>download_get</cite></li>
+</ul>
+<p>Example usage:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">occurrences</span> <span class="k">as</span> <span class="n">occ</span>
+<span class="n">occ</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">taxonKey</span> <span class="o">=</span> <span class="mi">3329049</span><span class="p">)</span>
+<span class="n">occ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span> <span class="o">=</span> <span class="mi">252408386</span><span class="p">)</span>
+<span class="n">occ</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">isGeoreferenced</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+<span class="n">occ</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;basisOfRecord = LITERATURE&#39;</span><span class="p">)</span>
+<span class="n">occ</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;taxonKey = 3119195&#39;</span><span class="p">)</span>
+<span class="n">occ</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;decimalLatitude &gt; 50&#39;</span><span class="p">)</span>
+<span class="n">occ</span><span class="o">.</span><span class="n">download_list</span><span class="p">(</span><span class="n">user</span> <span class="o">=</span> <span class="s2">&quot;sckott&quot;</span><span class="p">,</span> <span class="n">limit</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">occ</span><span class="o">.</span><span class="n">download_meta</span><span class="p">(</span><span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;0000099-140929101555934&quot;</span><span class="p">)</span>
+<span class="n">occ</span><span class="o">.</span><span class="n">download_get</span><span class="p">(</span><span class="s2">&quot;0000066-140928181241064&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="module-pygbif">
+<span id="occurrences-api"></span><h2>occurrences API<a class="headerlink" href="#module-pygbif" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="pygbif.occurrences.search">
 <code class="descclassname">occurrences.</code><code class="descname">search</code><span class="sig-paren">(</span><em>taxonKey=None</em>, <em>repatriated=None</em>, <em>kingdomKey=None</em>, <em>phylumKey=None</em>, <em>classKey=None</em>, <em>orderKey=None</em>, <em>familyKey=None</em>, <em>genusKey=None</em>, <em>subgenusKey=None</em>, <em>scientificName=None</em>, <em>country=None</em>, <em>publishingCountry=None</em>, <em>hasCoordinate=None</em>, <em>typeStatus=None</em>, <em>recordNumber=None</em>, <em>lastInterpreted=None</em>, <em>continent=None</em>, <em>geometry=None</em>, <em>recordedBy=None</em>, <em>basisOfRecord=None</em>, <em>datasetKey=None</em>, <em>eventDate=None</em>, <em>catalogNumber=None</em>, <em>year=None</em>, <em>month=None</em>, <em>decimalLatitude=None</em>, <em>decimalLongitude=None</em>, <em>elevation=None</em>, <em>depth=None</em>, <em>institutionCode=None</em>, <em>collectionCode=None</em>, <em>hasGeospatialIssue=None</em>, <em>issue=None</em>, <em>q=None</em>, <em>spellCheck=None</em>, <em>mediatype=None</em>, <em>limit=300</em>, <em>offset=0</em>, <em>establishmentMeans=None</em>, <em>facet=None</em>, <em>facetMincount=None</em>, <em>facetMultiselect=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.search" title="Permalink to this definition">¶</a></dt>
@@ -231,7 +285,7 @@ filtered. See examples. Default: <code class="docutils literal"><span class="pre
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A dictionary, of results</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A dictionary</p>
 </td>
 </tr>
 </tbody>
@@ -244,10 +298,10 @@ filtered. See examples. Default: <code class="docutils literal"><span class="pre
 <span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">taxonKey</span><span class="o">=</span><span class="mi">3329049</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="c1"># Instead of getting a taxon key first, you can search for a name directly</span>
-<span class="c1">## However, note that using this approach (with \code{scientificName=&quot;...&quot;})</span>
-<span class="c1">## you are getting synonyms too. The results for using \code{scientifcName} and</span>
-<span class="c1">## \code{taxonKey} parameters are the same in this case, but I wouldn&#39;t be surprised if for some</span>
-<span class="c1">## names they return different results</span>
+<span class="c1"># However, note that using this approach (with `scientificName=&quot;...&quot;`)</span>
+<span class="c1"># you are getting synonyms too. The results for using `scientifcName` and</span>
+<span class="c1"># `taxonKey` parameters are the same in this case, but I wouldn&#39;t be surprised if for some</span>
+<span class="c1"># names they return different results</span>
 <span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">scientificName</span> <span class="o">=</span> <span class="s1">&#39;Ursus americanus&#39;</span><span class="p">)</span>
 <span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">species</span>
 <span class="n">key</span> <span class="o">=</span> <span class="n">species</span><span class="o">.</span><span class="n">name_backbone</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Ursus americanus&#39;</span><span class="p">,</span> <span class="n">rank</span><span class="o">=</span><span class="s1">&#39;species&#39;</span><span class="p">)[</span><span class="s1">&#39;usageKey&#39;</span><span class="p">]</span>
@@ -739,6 +793,10 @@ This character string is parsed internally.</p>
 <p>See the API docs <a class="reference external" href="http://www.gbif.org/developer/occurrence#download">http://www.gbif.org/developer/occurrence#download</a>
 for more info, and the predicates docs
 <a class="reference external" href="http://www.gbif.org/developer/occurrence#predicates">http://www.gbif.org/developer/occurrence#predicates</a></p>
+<p>GBIF has a limit of 12,000 characters for download queries - so
+if you&#8217;re download request is really, really long and complex,
+consider breaking it up into multiple requests by one factor or
+another.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -836,8 +894,7 @@ arguments</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
 <li><strong>key</strong> &#8211; [str] A key generated from a request, like that from <code class="docutils literal"><span class="pre">download</span></code></li>
 <li><strong>path</strong> &#8211; [str] Path to write zip file to. Default: <code class="docutils literal"><span class="pre">&quot;.&quot;</span></code>, with a <code class="docutils literal"><span class="pre">.zip</span></code> appended to the end.</li>
-<li><strong>**kwargs</strong> &#8211; <p>Further named arguments passed on to <code class="docutils literal"><span class="pre">requests.get</span></code></p>
-</li>
+<li><strong>kwargs</strong> &#8211; Further named arguments passed on to <code class="docutils literal"><span class="pre">requests.get</span></code></li>
 </ul>
 </td>
 </tr>
@@ -857,6 +914,7 @@ file to download, and affected by your internet connection speed.</p>
 </dd></dl>
 
 </div>
+</div>
 
 
            </div>
@@ -868,7 +926,7 @@ file to download, and affected by your internet connection speed.</p>
         <a href="registry.html" class="btn btn-neutral float-right" title="registry module" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="Python GBIF Client" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="intro.html" class="btn btn-neutral" title="pygbif modules" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -898,22 +956,22 @@ file to download, and affected by your internet connection speed.</p>
 
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'0.2.0',
+            URL_ROOT:'../',
+            VERSION:'0.2.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
 
   
 
   
   
-    <script type="text/javascript" src="_static/js/theme.js"></script>
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
   
 
   

@@ -87,6 +87,11 @@ def download(queries, user=None, pwd=None,
     for more info, and the predicates docs
     http://www.gbif.org/developer/occurrence#predicates
 
+    GBIF has a limit of 12,000 characters for download queries - so
+    if you're download request is really, really long and complex,
+    consider breaking it up into multiple requests by one factor or
+    another.
+
     :return: A dictionary, of results
 
     Usage::
@@ -359,7 +364,7 @@ def download_get(key, path=".", **kwargs):
 
     :param key: [str] A key generated from a request, like that from ``download``
     :param path: [str] Path to write zip file to. Default: ``"."``, with a ``.zip`` appended to the end.
-    :param **kwargs: Further named arguments passed on to ``requests.get``
+    :param **kwargs**: Further named arguments passed on to ``requests.get``
 
     Downloads the zip file to a directory you specify on your machine.
     The speed of this function is of course proportional to the size of the

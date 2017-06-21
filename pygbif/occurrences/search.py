@@ -100,7 +100,7 @@ def search(taxonKey=None, repatriated=None,
     :param facetMultiselect: [bool] Set to ``true`` to still return counts for values that are not currently
         filtered. See examples. Default: ``false``
 
-    :return: A dictionary, of results
+    :return: A dictionary
 
     Usage::
 
@@ -111,10 +111,10 @@ def search(taxonKey=None, repatriated=None,
         occurrences.search(taxonKey=3329049, limit=2)
 
         # Instead of getting a taxon key first, you can search for a name directly
-        ## However, note that using this approach (with \code{scientificName="..."})
-        ## you are getting synonyms too. The results for using \code{scientifcName} and
-        ## \code{taxonKey} parameters are the same in this case, but I wouldn't be surprised if for some
-        ## names they return different results
+        # However, note that using this approach (with `scientificName="..."`)
+        # you are getting synonyms too. The results for using `scientifcName` and
+        # `taxonKey` parameters are the same in this case, but I wouldn't be surprised if for some
+        # names they return different results
         occurrences.search(scientificName = 'Ursus americanus')
         from pygbif import species
         key = species.name_backbone(name = 'Ursus americanus', rank='species')['usageKey']

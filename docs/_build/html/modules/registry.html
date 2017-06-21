@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>registry module &mdash; pygbif 0.2.0 documentation</title>
+  <title>registry module &mdash; pygbif 0.2.1 documentation</title>
   
 
   
@@ -24,21 +24,21 @@
 
   
   
-    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   
 
   
 
   
         <link rel="index" title="Index"
-              href="genindex.html"/>
-        <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="pygbif 0.2.0 documentation" href="index.html"/>
+              href="../genindex.html"/>
+        <link rel="search" title="Search" href="../search.html"/>
+    <link rel="top" title="pygbif 0.2.1 documentation" href="../index.html"/>
         <link rel="next" title="species module" href="species.html"/>
-        <link rel="prev" title="occurrences module" href="occurrences.html"/> 
+        <link rel="prev" title="occurrence module" href="occurrence.html"/> 
 
   
-  <script src="_static/js/modernizr.min.js"></script>
+  <script src="../_static/js/modernizr.min.js"></script>
 
 </head>
 
@@ -53,7 +53,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> pygbif
+            <a href="../index.html" class="icon icon-home"> pygbif
           
 
           
@@ -63,14 +63,14 @@
             
             
               <div class="version">
-                0.2.0
+                0.2.1
               </div>
             
           
 
           
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -84,11 +84,32 @@
           
             
             
-                <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="occurrences.html">occurrences module</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">registry module</a></li>
+                <p class="caption"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/install.html">Installation guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Docs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../docs/faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/usecases.html">Usecases</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Modules</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">pygbif modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="occurrence.html">occurrence module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">registry module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-pygbif">registry API</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="species.html">species module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="changelog_link.html">Changelog</a></li>
+</ul>
+<p class="caption"><span class="caption-text">All the rest</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../changelog_link.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributors.html">Contributors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conduct.html">Contributor Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">LICENSE</a></li>
 </ul>
 
             
@@ -102,7 +123,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="index.html">pygbif</a>
+        <a href="../index.html">pygbif</a>
       </nav>
 
 
@@ -117,13 +138,13 @@
 
 <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="index.html">Docs</a> &raquo;</li>
+    <li><a href="../index.html">Docs</a> &raquo;</li>
       
     <li>registry module</li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="_sources/registry.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/modules/registry.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -133,8 +154,26 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-pygbif">
-<span id="registry-module"></span><span id="registry"></span><h1>registry module<a class="headerlink" href="#module-pygbif" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="registry-module">
+<span id="registry-modules"></span><h1>registry module<a class="headerlink" href="#registry-module" title="Permalink to this headline">¶</a></h1>
+<p>registry module API:</p>
+<ul class="simple">
+<li><cite>organizations</cite></li>
+<li><cite>nodes</cite></li>
+<li><cite>networks</cite></li>
+<li><cite>installations</cite></li>
+<li><cite>datasets</cite></li>
+<li><cite>dataset_metrics</cite></li>
+<li><cite>dataset_suggest</cite></li>
+<li><cite>dataset_search</cite></li>
+</ul>
+<p>Example usage:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">registry</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">dataset_metrics</span><span class="p">(</span><span class="n">uuid</span><span class="o">=</span><span class="s1">&#39;3f8a1297-3259-4700-91fc-acc4170b27ce&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="module-pygbif">
+<span id="registry-api"></span><h2>registry API<a class="headerlink" href="#module-pygbif" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="pygbif.registry.datasets">
 <code class="descclassname">registry.</code><code class="descname">datasets</code><span class="sig-paren">(</span><em>data='all'</em>, <em>type=None</em>, <em>uuid=None</em>, <em>query=None</em>, <em>id=None</em>, <em>limit=100</em>, <em>offset=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.registry.datasets" title="Permalink to this definition">¶</a></dt>
@@ -543,6 +582,7 @@ identifiers by identifier type: <code class="docutils literal"><span class="pre"
 </dd></dl>
 
 </div>
+</div>
 
 
            </div>
@@ -554,7 +594,7 @@ identifiers by identifier type: <code class="docutils literal"><span class="pre"
         <a href="species.html" class="btn btn-neutral float-right" title="species module" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="occurrences.html" class="btn btn-neutral" title="occurrences module" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="occurrence.html" class="btn btn-neutral" title="occurrence module" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -584,22 +624,22 @@ identifiers by identifier type: <code class="docutils literal"><span class="pre"
 
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'./',
-            VERSION:'0.2.0',
+            URL_ROOT:'../',
+            VERSION:'0.2.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true
         };
     </script>
-      <script type="text/javascript" src="_static/jquery.js"></script>
-      <script type="text/javascript" src="_static/underscore.js"></script>
-      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
 
   
 
   
   
-    <script type="text/javascript" src="_static/js/theme.js"></script>
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
   
 
   
