@@ -22,14 +22,15 @@ def gbif_GET(url, args, **kwargs):
 
 def gbif_GET_write(url, path, **kwargs):
   out = requests.get(url, headers=make_ua(), stream=True, **kwargs)
-  ctype = 'application/octet-stream; qs=0.5'
-  if out.headers['content-type'] != ctype:
-    raise NoResultException("content-type did not = '%s'" % ctype)
+  out.raise_for_status()
   if out.status_code == 200:
     with open(path, 'wb') as f:
       for chunk in out.iter_content(chunk_size = 1024):
         if chunk:
           f.write(chunk)
+  ctype = 'application/octet-stream; qs=0.5'
+  if out.headers['content-type'] != ctype:
+    raise NoResultException("content-type did not = '%s'" % ctype)
   return path
 
 def gbif_POST(url, body, **kwargs):

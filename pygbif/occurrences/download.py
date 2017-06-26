@@ -387,7 +387,6 @@ def download_get(key, path=".", **kwargs):
         url = 'http://api.gbif.org/v1/occurrence/download/request/' + key
         path = "%s/%s.zip" % (path, key)
         gbif_GET_write(url, path, **kwargs)
-        # options(gbifdownloadpath = path)
         print("On disk at " + path)
         return {'path': path, 'size': meta['size'], 'key': key}
 
