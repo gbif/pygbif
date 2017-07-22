@@ -7,7 +7,6 @@ def test_name_suggest():
     "species.name_suggest - basic test"
     res = species.name_suggest(q='Puma concolor')
     assert list == res.__class__
-    assert 33 == len(res)
     assert True == all([ bool(re.search('Puma concolor', z['canonicalName'])) for z in res ])
 
 def test_name_suggest_paging():
