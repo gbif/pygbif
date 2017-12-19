@@ -1,0 +1,28 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      user-agent: ['python-requests/2.18.4,pygbif/0.2.2.1']
+    method: GET
+    uri: http://api.gbif.org/v1/dataset/3f8a1297-3259-4700-91fc-acc4170b27ce/metrics
+  response:
+    body: {string: '{"key":178643,"datasetKey":"3f8a1297-3259-4700-91fc-acc4170b27ce","usagesCount":30685,"synonymsCount":20314,"distinctNamesCount":30669,"nubMatchingCount":29227,"colMatchingCount":23602,"nubCoveragePct":95,"colCoveragePct":76,"countByConstituent":{},"countByKingdom":{"PLANTAE":9015,"ANIMALIA":1},"countByRank":{"SPECIES":6145,"GENUS":1258,"VARIETY":894,"SUBSPECIES":731,"SECTION":353,"TRIBE":328,"FAMILY":173,"SUBFAMILY":148,"SUBGENUS":106,"SUBTRIBE":61,"SUBSECTION":60,"ORDER":55,"SERIES":40,"SUPERORDER":12,"SUBCLASS":6,"CLASS":1},"countNamesByLanguage":{"ENGLISH":20953,"FRENCH":11314},"countExtRecordsByExtension":{"VERNACULAR_NAME":32267,"DISTRIBUTION":29473,"DESCRIPTION":10337,"IDENTIFIER":0,"MULTIMEDIA":0,"REFERENCE":0,"SPECIES_PROFILE":0,"TYPES_AND_SPECIMEN":0},"countByOrigin":{"SOURCE":30677,"PROPARTE":8},"countByIssue":{"BACKBONE_MATCH_NONE":1458},"otherCount":{},"created":"2017-12-18T18:22:09.454+0000","downloaded":"2017-12-18T18:10:38.430+0000"}'}
+    headers:
+      Accept-Ranges: [bytes]
+      Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT']
+      Access-Control-Allow-Origin: ['*']
+      Age: ['0']
+      Cache-Control: ['public, max-age=3601']
+      Connection: [keep-alive]
+      Content-Length: ['963']
+      Content-Type: [application/json]
+      Date: ['Tue, 19 Dec 2017 20:58:20 GMT']
+      Server: [Jetty(9.3.z-SNAPSHOT)]
+      Via: [1.1 varnish (Varnish/5.2)]
+      X-API-URL: [/v1/dataset/3f8a1297-3259-4700-91fc-acc4170b27ce/metrics]
+      X-Varnish: ['445056282']
+    status: {code: 200, message: OK}
+version: 1

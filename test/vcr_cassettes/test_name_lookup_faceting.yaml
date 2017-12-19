@@ -1,0 +1,28 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      user-agent: ['python-requests/2.18.4,pygbif/0.2.2.1']
+    method: GET
+    uri: http://api.gbif.org/v1/species/search?limit=0&facet=status
+  response:
+    body: {string: '{"offset":0,"limit":0,"endOfRecords":false,"count":24790700,"results":[],"facets":[{"field":"STATUS","counts":[{"name":"ACCEPTED","count":15963360},{"name":"SYNONYM","count":6979359},{"name":"DOUBTFUL","count":1093524},{"name":"HOMOTYPIC_SYNONYM","count":371696},{"name":"HETEROTYPIC_SYNONYM","count":191551},{"name":"PROPARTE_SYNONYM","count":17060},{"name":"MISAPPLIED","count":14640}]}]}'}
+    headers:
+      Accept-Ranges: [bytes]
+      Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT']
+      Access-Control-Allow-Origin: ['*']
+      Age: ['0']
+      Cache-Control: ['public, max-age=600']
+      Connection: [keep-alive]
+      Content-Length: ['390']
+      Content-Type: [application/json]
+      Date: ['Tue, 19 Dec 2017 20:58:45 GMT']
+      Server: [Jetty(9.3.z-SNAPSHOT)]
+      Via: [1.1 varnish (Varnish/5.2)]
+      X-API-URL: ['/v1/species/search?limit=0&facet=status']
+      X-Varnish: ['415897862']
+    status: {code: 200, message: OK}
+version: 1

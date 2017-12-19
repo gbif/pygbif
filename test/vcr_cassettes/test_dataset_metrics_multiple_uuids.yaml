@@ -1,0 +1,54 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      user-agent: ['python-requests/2.18.4,pygbif/0.2.2.1']
+    method: GET
+    uri: http://api.gbif.org/v1/dataset/3f8a1297-3259-4700-91fc-acc4170b27ce/metrics
+  response:
+    body: {string: '{"key":178643,"datasetKey":"3f8a1297-3259-4700-91fc-acc4170b27ce","usagesCount":30685,"synonymsCount":20314,"distinctNamesCount":30669,"nubMatchingCount":29227,"colMatchingCount":23602,"nubCoveragePct":95,"colCoveragePct":76,"countByConstituent":{},"countByKingdom":{"PLANTAE":9015,"ANIMALIA":1},"countByRank":{"SPECIES":6145,"GENUS":1258,"VARIETY":894,"SUBSPECIES":731,"SECTION":353,"TRIBE":328,"FAMILY":173,"SUBFAMILY":148,"SUBGENUS":106,"SUBTRIBE":61,"SUBSECTION":60,"ORDER":55,"SERIES":40,"SUPERORDER":12,"SUBCLASS":6,"CLASS":1},"countNamesByLanguage":{"ENGLISH":20953,"FRENCH":11314},"countExtRecordsByExtension":{"VERNACULAR_NAME":32267,"DISTRIBUTION":29473,"DESCRIPTION":10337,"IDENTIFIER":0,"MULTIMEDIA":0,"REFERENCE":0,"SPECIES_PROFILE":0,"TYPES_AND_SPECIMEN":0},"countByOrigin":{"SOURCE":30677,"PROPARTE":8},"countByIssue":{"BACKBONE_MATCH_NONE":1458},"otherCount":{},"created":"2017-12-18T18:22:09.454+0000","downloaded":"2017-12-18T18:10:38.430+0000"}'}
+    headers:
+      Accept-Ranges: [bytes]
+      Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT']
+      Access-Control-Allow-Origin: ['*']
+      Age: ['0']
+      Cache-Control: ['public, max-age=3601']
+      Connection: [keep-alive]
+      Content-Length: ['963']
+      Content-Type: [application/json]
+      Date: ['Tue, 19 Dec 2017 20:58:21 GMT']
+      Server: [Jetty(9.3.z-SNAPSHOT)]
+      Via: [1.1 varnish (Varnish/5.2)]
+      X-API-URL: [/v1/dataset/3f8a1297-3259-4700-91fc-acc4170b27ce/metrics]
+      X-Varnish: ['447480864']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      user-agent: ['python-requests/2.18.4,pygbif/0.2.2.1']
+    method: GET
+    uri: http://api.gbif.org/v1/dataset/66dd0960-2d7d-46ee-a491-87b9adcfe7b1/metrics
+  response:
+    body: {string: '{"key":178618,"datasetKey":"66dd0960-2d7d-46ee-a491-87b9adcfe7b1","usagesCount":138248,"synonymsCount":59906,"distinctNamesCount":138145,"nubMatchingCount":131102,"colMatchingCount":98073,"nubCoveragePct":94,"colCoveragePct":70,"countByConstituent":{},"countByKingdom":{"PLANTAE":72354,"INCERTAE_SEDIS":1},"countByRank":{"SPECIES":52563,"GENUS":12880,"VARIETY":4810,"SUBSPECIES":4462,"SERIES":1077,"TRIBE":844,"FAMILY":509,"SUBTRIBE":327,"SUBFAMILY":303,"SUBGENUS":240,"FORM":238,"SECTION":82,"SUBVARIETY":5,"KINGDOM":1},"countNamesByLanguage":{"ENGLISH":32165,"SWEDISH":7284,"GERMAN":4882,"SPANISH":4157,"FRENCH":3783,"PORTUGUESE":1141,"ITALIAN":663,"AFRIKAANS":450,"ARABIC":182,"INDONESIAN":153,"MALAY":139,"SWAHILI":72,"DUTCH":50,"MALAGASY":41,"DANISH":21,"FIJIAN":17,"HINDI":15,"SOMALI":11,"TURKISH":8,"POLISH":7,"CZECH":4,"KOREAN":4,"TAJIK":4,"CATALAN":3,"FINNISH":3,"JAVANESE":3,"ROMANIAN":3,"YORUBA":3,"AYMARA":2,"CHINESE":2,"SAMOAN":2,"ALBANIAN":1,"BISLAMA":1,"HUNGARIAN":1,"NORWEGIAN":1,"QUECHUA":1,"RUSSIAN":1,"SANSKRIT":1,"TAMIL":1,"THAI":1,"TONGA":1,"TURKMEN":1},"countExtRecordsByExtension":{"VERNACULAR_NAME":64900,"DESCRIPTION":0,"DISTRIBUTION":0,"IDENTIFIER":0,"MULTIMEDIA":0,"REFERENCE":0,"SPECIES_PROFILE":0,"TYPES_AND_SPECIMEN":0},"countByOrigin":{"SOURCE":138246,"DENORMED_CLASSIFICATION":1,"MISSING_ACCEPTED":1},"countByIssue":{"SCIENTIFIC_NAME_ASSEMBLED":130272,"BACKBONE_MATCH_NONE":7146,"VERNACULAR_NAME_INVALID":5732,"CHAINED_SYNOYM":522,"PARENT_NAME_USAGE_ID_INVALID":48,"PARENT_CYCLE":1},"otherCount":{},"created":"2017-12-14T22:24:35.688+0000","downloaded":"2017-12-14T21:23:06.290+0000"}'}
+    headers:
+      Accept-Ranges: [bytes]
+      Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT']
+      Access-Control-Allow-Origin: ['*']
+      Age: ['0']
+      Cache-Control: ['public, max-age=3601']
+      Connection: [keep-alive]
+      Content-Length: ['1616']
+      Content-Type: [application/json]
+      Date: ['Tue, 19 Dec 2017 20:58:21 GMT']
+      Server: [Jetty(9.3.z-SNAPSHOT)]
+      Via: [1.1 varnish (Varnish/5.2)]
+      X-API-URL: [/v1/dataset/66dd0960-2d7d-46ee-a491-87b9adcfe7b1/metrics]
+      X-Varnish: ['425889812']
+    status: {code: 200, message: OK}
+version: 1

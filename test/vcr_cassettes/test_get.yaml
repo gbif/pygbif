@@ -1,0 +1,50 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      user-agent: ['python-requests/2.18.4,pygbif/0.2.2.1']
+    method: GET
+    uri: http://api.gbif.org/v1/occurrence/1248387548
+  response:
+    body: {string: "{\"key\":1248387548,\"datasetKey\":\"492d63a8-4978-4bc7-acd8-7d0e3ac0e744\"\
+        ,\"publishingOrgKey\":\"f314b0b0-e3dc-11d9-8d81-b8a03c50a862\",\"publishingCountry\"\
+        :\"NO\",\"protocol\":\"DWC_ARCHIVE\",\"lastCrawled\":\"2017-12-13T13:14:41.428+0000\"\
+        ,\"lastParsed\":\"2016-10-17T02:06:30.879+0000\",\"crawlId\":158,\"extensions\"\
+        :{},\"basisOfRecord\":\"HUMAN_OBSERVATION\",\"individualCount\":1,\"taxonKey\"\
+        :2480637,\"kingdomKey\":1,\"phylumKey\":44,\"classKey\":212,\"orderKey\":7191147,\"\
+        familyKey\":2877,\"genusKey\":2480577,\"speciesKey\":2480637,\"scientificName\"\
+        :\"Accipiter nisus (Linnaeus, 1758)\",\"kingdom\":\"Animalia\",\"phylum\"\
+        :\"Chordata\",\"order\":\"Accipitriformes\",\"family\":\"Accipitridae\",\"\
+        genus\":\"Accipiter\",\"species\":\"Accipiter nisus\",\"genericName\":\"Accipiter\"\
+        ,\"specificEpithet\":\"nisus\",\"taxonRank\":\"SPECIES\",\"decimalLongitude\"\
+        :6.081586,\"decimalLatitude\":61.225441,\"coordinatePrecision\":0.0,\"elevation\"\
+        :0.0,\"elevationAccuracy\":0.0,\"stateProvince\":\"Sogn og Fjordane\",\"year\"\
+        :2016,\"month\":1,\"day\":25,\"eventDate\":\"2016-01-25T00:00:00.000+0000\"\
+        ,\"issues\":[\"COORDINATE_ROUNDED\",\"GEODETIC_DATUM_ASSUMED_WGS84\"],\"modified\"\
+        :\"2016-02-02T00:00:00.000+0000\",\"lastInterpreted\":\"2017-02-16T11:03:36.557+0000\"\
+        ,\"license\":\"http://creativecommons.org/licenses/by/4.0/legalcode\",\"identifiers\"\
+        :[],\"facts\":[],\"relations\":[],\"geodeticDatum\":\"WGS84\",\"class\":\"\
+        Aves\",\"countryCode\":\"NO\",\"country\":\"Norway\",\"identifier\":\"miljolare:fugl:1001099\"\
+        ,\"recordedBy\":\"Magn Arne Jensen\",\"catalogNumber\":\"1001099\",\"institutionCode\"\
+        :\"miljolare\",\"county\":\"Sogn og Fjordane\",\"locality\":\"H\xF8gebakkane\"\
+        ,\"municipality\":\"H\xF8yanger\",\"collectionCode\":\"fugl\",\"gbifID\":\"\
+        1248387548\",\"occurrenceID\":\"miljolare:fugl:1001099\"}"}
+    headers:
+      Accept-Ranges: [bytes]
+      Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT']
+      Access-Control-Allow-Origin: ['*']
+      Age: ['815']
+      Cache-Control: ['public, max-age=3601']
+      Connection: [keep-alive]
+      Content-Length: ['1621']
+      Content-Type: [application/json]
+      Date: ['Tue, 19 Dec 2017 20:44:25 GMT']
+      Server: [Jetty(9.2.z-SNAPSHOT)]
+      Via: [1.1 varnish (Varnish/5.2)]
+      X-API-URL: [/v1/occurrence/1248387548]
+      X-Varnish: [437847804 444760617]
+    status: {code: 200, message: OK}
+version: 1

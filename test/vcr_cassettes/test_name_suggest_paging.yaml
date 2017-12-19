@@ -1,0 +1,36 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      user-agent: ['python-requests/2.18.4,pygbif/0.2.2.1']
+    method: GET
+    uri: http://api.gbif.org/v1/species/suggest?q=Aso&limit=3
+  response:
+    body: {string: '[{"key":1268023,"kingdom":"Animalia","phylum":"Arthropoda","order":"Hymenoptera","family":"Braconidae","genus":"Apanteles","species":"Apanteles
+        aso","kingdomKey":1,"phylumKey":54,"classKey":216,"orderKey":1457,"familyKey":6910,"genusKey":8411933,"speciesKey":1268023,"parent":"Apanteles","parentKey":8411933,"nubKey":1268023,"scientificName":"Apanteles
+        aso Nixon, 1967","canonicalName":"Apanteles aso","rank":"SPECIES","status":"ACCEPTED","higherClassificationMap":{"1":"Animalia","54":"Arthropoda","216":"Insecta","1457":"Hymenoptera","6910":"Braconidae","8411933":"Apanteles"},"synonym":false,"class":"Insecta"},{"key":4499084,"kingdom":"Animalia","phylum":"Arthropoda","order":"Hymenoptera","family":"Eulophidae","genus":"Chrysocharis","species":"Chrysocharis
+        viridis","kingdomKey":1,"phylumKey":54,"classKey":216,"orderKey":1457,"familyKey":5505,"genusKey":1382102,"speciesKey":1384781,"parent":"Chrysocharis","parentKey":1382102,"nubKey":4499084,"scientificName":"Chrysocharis
+        aso Walker, 1839","canonicalName":"Chrysocharis aso","rank":"SPECIES","status":"HETEROTYPIC_SYNONYM","higherClassificationMap":{"1":"Animalia","54":"Arthropoda","216":"Insecta","1457":"Hymenoptera","5505":"Eulophidae","1382102":"Chrysocharis","1384781":"Chrysocharis
+        viridis"},"synonym":true,"class":"Insecta"},{"key":1384797,"kingdom":"Animalia","phylum":"Arthropoda","order":"Hymenoptera","family":"Eulophidae","genus":"Chrysocharis","species":"Chrysocharis
+        viridis","kingdomKey":1,"phylumKey":54,"classKey":216,"orderKey":1457,"familyKey":5505,"genusKey":1382102,"speciesKey":1384781,"parent":"Chrysocharis","parentKey":1382102,"nubKey":1384797,"scientificName":"Entedon
+        aso Walker, 1839","canonicalName":"Entedon aso","rank":"SPECIES","status":"SYNONYM","higherClassificationMap":{"1":"Animalia","54":"Arthropoda","216":"Insecta","1457":"Hymenoptera","5505":"Eulophidae","1382102":"Chrysocharis","1384781":"Chrysocharis
+        viridis"},"synonym":true,"class":"Insecta"}]'}
+    headers:
+      Accept-Ranges: [bytes]
+      Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT']
+      Access-Control-Allow-Origin: ['*']
+      Age: ['766']
+      Cache-Control: ['public, max-age=3601']
+      Connection: [keep-alive]
+      Content-Length: ['1950']
+      Content-Type: [application/json]
+      Date: ['Tue, 19 Dec 2017 20:45:59 GMT']
+      Server: [Jetty(9.3.z-SNAPSHOT)]
+      Via: [1.1 varnish (Varnish/5.2)]
+      X-API-URL: ['/v1/species/suggest?q=Aso&limit=3']
+      X-Varnish: [450625606 444302053]
+    status: {code: 200, message: OK}
+version: 1

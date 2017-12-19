@@ -1,0 +1,28 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      user-agent: ['python-requests/2.18.4,pygbif/0.2.2.1']
+    method: GET
+    uri: http://api.gbif.org/v1/node/03e816b3-8f58-49ae-bc12-4e18b358d6d9/identifier?limit=100
+  response:
+    body: {string: '[{"key":13657,"type":"GBIF_PARTICIPANT","identifier":"308","createdBy":"registry-migration.gbif.org","created":"2013-10-24T09:06:08.312+0000"}]'}
+    headers:
+      Accept-Ranges: [bytes]
+      Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT']
+      Access-Control-Allow-Origin: ['*']
+      Age: ['0']
+      Cache-Control: ['public, max-age=3601']
+      Connection: [keep-alive]
+      Content-Length: ['143']
+      Content-Type: [application/json]
+      Date: ['Tue, 19 Dec 2017 20:58:41 GMT']
+      Server: [Jetty(9.3.z-SNAPSHOT)]
+      Via: [1.1 varnish (Varnish/5.2)]
+      X-API-URL: ['/v1/node/03e816b3-8f58-49ae-bc12-4e18b358d6d9/identifier?limit=100']
+      X-Varnish: ['429722581']
+    status: {code: 200, message: OK}
+version: 1

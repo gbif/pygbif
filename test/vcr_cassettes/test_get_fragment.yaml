@@ -1,0 +1,91 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      user-agent: ['python-requests/2.18.4,pygbif/0.2.2.1']
+    method: GET
+    uri: http://api.gbif.org/v1/occurrence/1052909293/fragment
+  response:
+    body: {string: "{\"acceptedNameUsage\":null,\"acceptedNameUsageID\":null,\"accessRights\"\
+        :\"Free usage\",\"associatedOccurrences\":null,\"associatedOrganisms\":null,\"\
+        associatedReferences\":null,\"associatedSequences\":null,\"associatedTaxa\"\
+        :null,\"basisOfRecord\":\"humanobservation\",\"bed\":null,\"behavior\":null,\"\
+        bibliographicCitation\":null,\"catalogNumber\":\"48943274\",\"class\":\"Agaricomycetes\"\
+        ,\"collectionCode\":\"Artportalen\",\"collectionID\":null,\"continent\":\"\
+        Europe\",\"coordinatePrecision\":null,\"coordinateUncertaintyInMeters\":\"\
+        0.00\",\"country\":\"Sweden\",\"countryCode\":\"SE\",\"county\":\"V\xE4sterg\xF6\
+        tland\",\"dataGeneralizations\":null,\"datasetID\":\"urn:lsid:swedishlifewatch.se:DataProvider:1\"\
+        ,\"datasetName\":null,\"dateIdentified\":null,\"day\":\"9\",\"decimalLatitude\"\
+        :\"58.3726380\",\"decimalLongitude\":\"12.4196760\",\"disposition\":null,\"\
+        dynamicProperties\":null,\"earliestAgeOrLowestStage\":null,\"earliestEonOrLowestEonothem\"\
+        :null,\"earliestEpochOrLowestSeries\":null,\"earliestEraOrLowestErathem\"\
+        :null,\"earliestPeriodOrLowestSystem\":null,\"endDayOfYear\":\"9\",\"establishmentMeans\"\
+        :\"Natural\",\"eventDate\":\"2015-01-09 00:00:00/2015-01-09 00:00:00\",\"\
+        eventID\":null,\"eventRemarks\":null,\"eventTime\":\"00:00:00 - 00:00:00\"\
+        ,\"family\":\"Mycenaceae\",\"fieldNotes\":null,\"fieldNumber\":null,\"footprintSRS\"\
+        :null,\"footprintSpatialFit\":null,\"footprintWKT\":null,\"formation\":null,\"\
+        genus\":\"Sarcomyxa\",\"geodeticDatum\":null,\"geologicalContextID\":null,\"\
+        georeferenceProtocol\":null,\"georeferenceRemarks\":null,\"georeferenceSources\"\
+        :null,\"georeferenceVerificationStatus\":null,\"georeferencedBy\":null,\"\
+        georeferencedDate\":null,\"group\":null,\"habitat\":null,\"higherClassification\"\
+        :\"Biota;Fungi;Basidiomycota;Agaricomycotina;Agaricomycetes;Agaricomycetidae;Agaricales;Mycenaceae\"\
+        ,\"higherGeography\":null,\"higherGeographyID\":null,\"highestBiostratigraphicZone\"\
+        :null,\"id\":\"urn:lsid:artportalen.se:Sighting:17030445\",\"identificationID\"\
+        :null,\"identificationQualifier\":null,\"identificationReferences\":null,\"\
+        identificationRemarks\":null,\"identificationVerificationStatus\":\"Unvalidated\"\
+        ,\"identifiedBy\":null,\"individualCount\":null,\"informationWithheld\":\"\
+        More information can be obtained from the Data Provider.\",\"infraspecificEpithet\"\
+        :null,\"institutionCode\":\"ArtDatabanken\",\"institutionID\":null,\"island\"\
+        :null,\"islandGroup\":null,\"kingdom\":\"Fungi\",\"language\":\"Swedish\"\
+        ,\"latestAgeOrHighestStage\":null,\"latestEonOrHighestEonothem\":null,\"latestEpochOrHighestSeries\"\
+        :null,\"latestEraOrHighestErathem\":null,\"latestPeriodOrHighestSystem\":null,\"\
+        license\":null,\"lifeStage\":null,\"lithostratigraphicTerms\":null,\"locality\"\
+        :\"Halleberg Uggledalen\",\"locationAccordingTo\":null,\"locationID\":null,\"\
+        locationRemarks\":null,\"lowestBiostratigraphicZone\":null,\"materialSampleID\"\
+        :null,\"maximumDepthInMeters\":null,\"maximumDistanceAboveSurfaceInMeters\"\
+        :null,\"maximumElevationInMeters\":null,\"member\":null,\"minimumDepthInMeters\"\
+        :null,\"minimumDistanceAboveSurfaceInMeters\":null,\"minimumElevationInMeters\"\
+        :null,\"modified\":\"2015-01-16 11:51:37\",\"month\":\"1\",\"municipality\"\
+        :\"V\xE4nersborg\",\"nameAccordingTo\":null,\"nameAccordingToID\":null,\"\
+        namePublishedIn\":null,\"namePublishedInID\":null,\"namePublishedInYear\"\
+        :null,\"nomenclaturalCode\":null,\"nomenclaturalStatus\":null,\"occurrenceID\"\
+        :\"urn:lsid:artportalen.se:Sighting:17030445\",\"occurrenceRemarks\":null,\"\
+        occurrenceStatus\":\"Present\",\"order\":\"Agaricales\",\"organismID\":null,\"\
+        organismName\":null,\"organismQuantity\":null,\"organismQuantityType\":null,\"\
+        organismRemarks\":null,\"organismScope\":null,\"originalNameUsage\":null,\"\
+        originalNameUsageID\":null,\"otherCatalogNumbers\":null,\"ownerInstitutionCode\"\
+        :null,\"parentEventID\":null,\"parentNameUsage\":null,\"parentNameUsageID\"\
+        :null,\"phylum\":\"Basidiomycota\",\"pointRadiusSpatialFit\":null,\"preparations\"\
+        :null,\"previousIdentifications\":null,\"recordNumber\":null,\"recordedBy\"\
+        :\"Jan Olsson\",\"references\":null,\"reproductiveCondition\":null,\"rightsHolder\"\
+        :\"Jan  Olsson\",\"sampleSizeUnit\":null,\"sampleSizeValue\":null,\"samplingEffort\"\
+        :null,\"samplingProtocol\":null,\"scientificName\":\"Sarcomyxa serotina\"\
+        ,\"scientificNameAuthorship\":\"(Schrad. : Fr.) P. Karst.\",\"scientificNameID\"\
+        :null,\"sex\":null,\"specificEpithet\":\"serotina\",\"startDayOfYear\":\"\
+        9\",\"stateProvince\":null,\"subgenus\":null,\"taxonConceptID\":\"urn:lsid:dyntaxa.se:Taxon:5341\"\
+        ,\"taxonID\":\"urn:lsid:dyntaxa.se:Taxon:5341\",\"taxonRank\":\"Species\"\
+        ,\"taxonRemarks\":null,\"taxonomicStatus\":null,\"type\":\"Occurrence\",\"\
+        typeStatus\":null,\"verbatimCoordinateSystem\":null,\"verbatimCoordinates\"\
+        :null,\"verbatimDepth\":null,\"verbatimElevation\":null,\"verbatimEventDate\"\
+        :null,\"verbatimLatitude\":null,\"verbatimLocality\":null,\"verbatimLongitude\"\
+        :null,\"verbatimSRS\":null,\"verbatimTaxonRank\":null,\"vernacularName\":\"\
+        gr\xF6nmussling\",\"waterBody\":null,\"year\":\"2015\"}"}
+    headers:
+      Accept-Ranges: [bytes]
+      Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT']
+      Access-Control-Allow-Origin: ['*']
+      Age: ['815']
+      Cache-Control: ['public, max-age=3601']
+      Connection: [keep-alive]
+      Content-Length: ['4595']
+      Content-Type: [application/json]
+      Date: ['Tue, 19 Dec 2017 20:44:25 GMT']
+      Server: [Jetty(9.2.z-SNAPSHOT)]
+      Via: [1.1 varnish (Varnish/5.2)]
+      X-API-URL: [/v1/occurrence/1052909293/fragment]
+      X-Varnish: [446661908 416551882]
+    status: {code: 200, message: OK}
+version: 1

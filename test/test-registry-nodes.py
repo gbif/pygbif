@@ -1,7 +1,9 @@
 """Tests for registry module - nodes methods"""
 import os
+import vcr
 from pygbif import registry
 
+@vcr.use_cassette('test/vcr_cassettes/test_nodes.yaml')
 def test_nodes():
     "Basic test of registry.nodes"
     res = registry.nodes()
@@ -10,12 +12,14 @@ def test_nodes():
     assert 100 == len(res['data'])
     assert ['data', 'meta'] == sorted(res.keys())
 
+@vcr.use_cassette('test/vcr_cassettes/test_nodes_limit.yaml')
 def test_nodes_limit():
     "limit param in registry.nodes"
     res = registry.nodes(limit=5)
     assert dict == res.__class__
     assert 5 == len(res['data'])
 
+@vcr.use_cassette('test/vcr_cassettes/test_nodes_return.yaml')
 def test_nodes_return():
     "data param in registry.nodes"
     res = registry.nodes(data='identifier', uuid="03e816b3-8f58-49ae-bc12-4e18b358d6d9")

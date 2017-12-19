@@ -1,0 +1,28 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      user-agent: ['python-requests/2.18.4,pygbif/0.2.2.1']
+    method: GET
+    uri: http://api.gbif.org/v1/species/search?q=mammalia&limit=1
+  response:
+    body: {string: '{"offset":0,"limit":1,"endOfRecords":false,"count":1345,"results":[{"key":114091654,"datasetKey":"30f55c63-a829-4cb2-9676-3b1b6f981567","nubKey":359,"scientificName":"Mammalia","canonicalName":"Mammalia","nameType":"SCIENTIFIC","taxonomicStatus":"ACCEPTED","origin":"SOURCE","numDescendants":0,"numOccurrences":0,"taxonID":"58030399-21e2-4b72-b999-f8440809f7a4","habitats":[],"nomenclaturalStatus":[],"threatStatuses":[],"descriptions":[],"vernacularNames":[],"higherClassificationMap":{},"synonym":false}],"facets":[]}'}
+    headers:
+      Accept-Ranges: [bytes]
+      Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT']
+      Access-Control-Allow-Origin: ['*']
+      Age: ['0']
+      Cache-Control: ['public, max-age=600']
+      Connection: [keep-alive]
+      Content-Length: ['519']
+      Content-Type: [application/json]
+      Date: ['Tue, 19 Dec 2017 20:58:44 GMT']
+      Server: [Jetty(9.3.z-SNAPSHOT)]
+      Via: [1.1 varnish (Varnish/5.2)]
+      X-API-URL: ['/v1/species/search?q=mammalia&limit=1']
+      X-Varnish: ['444793684']
+    status: {code: 200, message: OK}
+version: 1

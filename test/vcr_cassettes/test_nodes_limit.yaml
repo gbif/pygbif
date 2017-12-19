@@ -1,0 +1,158 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      user-agent: ['python-requests/2.18.4,pygbif/0.2.2.1']
+    method: GET
+    uri: http://api.gbif.org/v1/node?limit=5
+  response:
+    body: {string: "{\"offset\":0,\"limit\":5,\"endOfRecords\":false,\"count\":135,\"\
+        results\":[{\"key\":\"29c6a139-ea7f-41f5-8d9b-c55af8736182\",\"type\":\"OTHER\"\
+        ,\"participationStatus\":\"ASSOCIATE\",\"gbifRegion\":\"OCEANIA\",\"continent\"\
+        :\"OCEANIA\",\"title\":\"Secretariat of the Pacific Regional Environment Programme\"\
+        ,\"participantTitle\":\"Secretariat of the Pacific Regional Environment Programme\"\
+        ,\"abbreviation\":\"SPREP\",\"email\":[],\"phone\":[],\"homepage\":[\"www.sprep.org\"\
+        ],\"address\":[null],\"country\":\"WS\",\"createdBy\":\"directory-update-robot\"\
+        ,\"modifiedBy\":\"directory-update-robot\",\"created\":\"2017-10-17T03:34:43.743+0000\"\
+        ,\"modified\":\"2017-10-17T03:34:43.743+0000\",\"contacts\":[],\"endpoints\"\
+        :[],\"machineTags\":[],\"tags\":[],\"identifiers\":[{\"key\":106017,\"type\"\
+        :\"GBIF_PARTICIPANT\",\"identifier\":\"377\",\"createdBy\":\"directory-update-robot\"\
+        ,\"created\":\"2017-10-17T03:34:43.800+0000\"}],\"comments\":[]},{\"key\"\
+        :\"1ff5a421-76e9-44c6-bbb6-dd7058cbc98f\",\"type\":\"COUNTRY\",\"participationStatus\"\
+        :\"ASSOCIATE\",\"gbifRegion\":\"AFRICA\",\"continent\":\"AFRICA\",\"title\"\
+        :\"GBIF Mali\",\"participantTitle\":\"Mali\",\"email\":[],\"phone\":[],\"\
+        homepage\":[],\"address\":[null],\"country\":\"ML\",\"createdBy\":\"directory-update-robot\"\
+        ,\"modifiedBy\":\"directory-update-robot\",\"created\":\"2017-08-04T03:34:11.301+0000\"\
+        ,\"modified\":\"2017-08-04T03:34:11.301+0000\",\"contacts\":[{\"key\":3808,\"\
+        type\":\"ADDITIONAL_DELEGATE\",\"primary\":false,\"userId\":[],\"firstName\"\
+        :\"Abdoulaye Bin\xE9\",\"lastName\":\"Guindo\",\"position\":[],\"email\":[\"\
+        abdoulayebine@gmail.com\"],\"phone\":[\"+223 20 22 50 49 / 20 23 36 97\"],\"\
+        homepage\":[],\"organization\":\"Mali\",\"address\":[\"Direction Nationale\
+        \ des Eaux et For\xEAts\\nzone Tabakoro\\nBP 275\\nBamako\"],\"country\":\"\
+        ML\",\"modified\":\"2017-08-18T06:46:19.121+0000\"},{\"key\":3919,\"type\"\
+        :\"HEAD_OF_DELEGATION\",\"primary\":false,\"userId\":[],\"firstName\":\"Mamadou\"\
+        ,\"lastName\":\"Gakou\",\"position\":[],\"email\":[\"mgkou@yahoo.fr\"],\"\
+        phone\":[\"+223 20 22 50 49 / 20 23 36 97\"],\"homepage\":[],\"organization\"\
+        :\"Mali\",\"address\":[\"Direction Nationale des Eaux et For\xEAts\\nzone\
+        \ Tabakoro\\nBP 275\\nBamako\"],\"country\":\"ML\",\"modified\":\"2017-08-18T06:50:35.411+0000\"\
+        },{\"key\":3808,\"type\":\"NODE_MANAGER\",\"primary\":false,\"userId\":[],\"\
+        firstName\":\"Abdoulaye Bin\xE9\",\"lastName\":\"Guindo\",\"position\":[],\"\
+        email\":[\"abdoulayebine@gmail.com\"],\"phone\":[\"+223 20 22 50 49 / 20 23\
+        \ 36 97\"],\"homepage\":[],\"organization\":\"GBIF Mali\",\"address\":[\"\
+        Direction Nationale des Eaux et For\xEAts\\nzone Tabakoro\\nBP 275\\nBamako\"\
+        ],\"country\":\"ML\",\"modified\":\"2017-08-18T06:46:19.121+0000\"}],\"endpoints\"\
+        :[],\"machineTags\":[],\"tags\":[],\"identifiers\":[{\"key\":102874,\"type\"\
+        :\"GBIF_PARTICIPANT\",\"identifier\":\"376\",\"createdBy\":\"directory-update-robot\"\
+        ,\"created\":\"2017-08-04T03:34:11.318+0000\"}],\"comments\":[]},{\"key\"\
+        :\"f9332bd7-7435-4741-b45a-5fe2887533ec\",\"type\":\"OTHER\",\"participationStatus\"\
+        :\"ASSOCIATE\",\"gbifRegion\":\"NORTH_AMERICA\",\"continent\":\"NORTH_AMERICA\"\
+        ,\"title\":\"iDigBio\",\"participantTitle\":\"iDigBio\",\"email\":[],\"phone\"\
+        :[],\"homepage\":[],\"address\":[null],\"country\":\"US\",\"createdBy\":\"\
+        directory-update-robot\",\"modifiedBy\":\"directory-update-robot\",\"created\"\
+        :\"2017-05-17T03:34:56.089+0000\",\"modified\":\"2017-05-17T03:34:56.089+0000\"\
+        ,\"contacts\":[{\"key\":1817,\"type\":\"HEAD_OF_DELEGATION\",\"primary\":false,\"\
+        userId\":[],\"firstName\":\"Greg\",\"lastName\":\"Riccardi\",\"position\"\
+        :[],\"email\":[\"griccardi@fsu.edu\"],\"phone\":[\"850-644-2869\"],\"homepage\"\
+        :[],\"organization\":\"iDigBio\",\"address\":[\"Institute for Digital Information\
+        \ and Scientific Communication\\nFlorida State University\\nTallahassee, FL\
+        \ 32306-2100\"],\"country\":\"US\",\"modified\":\"2017-03-16T14:34:13.502+0000\"\
+        },{\"key\":3467,\"type\":\"ADDITIONAL_DELEGATE\",\"primary\":false,\"userId\"\
+        :[],\"firstName\":\"Deborah\",\"lastName\":\"Paul\",\"position\":[],\"email\"\
+        :[\"dpaul@fsu.edu\"],\"phone\":[\"+1 (850) 644-6366\"],\"homepage\":[],\"\
+        organization\":\"iDigBio\",\"address\":[\"Institute for Digital Information,\
+        \ iDigInfo\\nFlorida State University\\nShores Building, Rm 234\\n142 Collegiate\
+        \ Loop\\nTallahasse, Florida 32306-2100\"],\"country\":\"US\",\"modified\"\
+        :\"2017-09-07T08:37:05.106+0000\"},{\"key\":3940,\"type\":\"NODE_MANAGER\"\
+        ,\"primary\":false,\"userId\":[],\"firstName\":\"David\",\"lastName\":\"Jennings\"\
+        ,\"position\":[],\"email\":[\"djennings@flmnh.ufl.edu\"],\"phone\":[],\"homepage\"\
+        :[],\"organization\":\"iDigBio\",\"address\":[null],\"country\":\"US\",\"\
+        modified\":\"2017-11-22T08:39:11.830+0000\"},{\"key\":3945,\"type\":\"NODE_STAFF\"\
+        ,\"primary\":false,\"userId\":[],\"firstName\":\"Joanna\",\"lastName\":\"\
+        McCaffrey\",\"position\":[],\"email\":[\"jmccaffrey@flmnh.ufl.edu\"],\"phone\"\
+        :[],\"homepage\":[],\"organization\":\"iDigBio\",\"address\":[null],\"country\"\
+        :\"US\",\"modified\":\"2017-12-11T14:20:41.223+0000\"}],\"endpoints\":[],\"\
+        machineTags\":[],\"tags\":[],\"identifiers\":[{\"key\":99609,\"type\":\"GBIF_PARTICIPANT\"\
+        ,\"identifier\":\"375\",\"createdBy\":\"directory-update-robot\",\"created\"\
+        :\"2017-05-17T03:34:56.132+0000\"}],\"comments\":[]},{\"key\":\"dc9041d6-a5ae-4217-92ea-f7674794d760\"\
+        ,\"type\":\"COUNTRY\",\"participationStatus\":\"ASSOCIATE\",\"gbifRegion\"\
+        :\"AFRICA\",\"continent\":\"AFRICA\",\"title\":\"GBIF Niger\",\"participantTitle\"\
+        :\"Niger\",\"email\":[],\"phone\":[],\"homepage\":[],\"address\":[null],\"\
+        country\":\"NE\",\"createdBy\":\"directory-update-robot\",\"modifiedBy\":\"\
+        directory-update-robot\",\"created\":\"2016-09-23T03:34:55.006+0000\",\"modified\"\
+        :\"2016-09-23T03:34:55.006+0000\",\"contacts\":[{\"key\":3810,\"type\":\"\
+        HEAD_OF_DELEGATION\",\"primary\":false,\"userId\":[],\"firstName\":\"Kimba\"\
+        ,\"lastName\":\"OUSSEINI\",\"position\":[],\"email\":[\"kimba.adamou@yahoo.fr\"\
+        ],\"phone\":[\"(00227) 20732821\"],\"homepage\":[],\"organization\":\"Niger\"\
+        ,\"address\":[\"Minist\xE8re de l'Environnement de la Salubrit\xE9 Urbaine\
+        \ \\net du D\xE9veloppement Durable \\nNiamey\\nBP 721\"],\"country\":\"NE\"\
+        ,\"modified\":\"2017-06-14T07:21:42.222+0000\"},{\"key\":3901,\"type\":\"\
+        ADDITIONAL_DELEGATE\",\"primary\":false,\"userId\":[],\"firstName\":\"Alhou\"\
+        ,\"lastName\":\"Bassirou\",\"position\":[],\"email\":[\"alhoubass@yahoo.fr\"\
+        ],\"phone\":[\"(00227)20315562\"],\"homepage\":[],\"organization\":\"Niger\"\
+        ,\"address\":[\"Ecole Normale Sup\xE9rieure\\nD\xE9partement de la science\\\
+        nDe la vie et de la terre\\nUniversit\xE9 Abdou Moumouni Dioffo  \\nNiamey\\\
+        nNIGER\"],\"country\":\"NE\",\"modified\":\"2017-06-14T07:23:18.991+0000\"\
+        },{\"key\":3902,\"type\":\"ADDITIONAL_DELEGATE\",\"primary\":false,\"userId\"\
+        :[],\"firstName\":\"Ousmane\",\"lastName\":\"Adamou\",\"position\":[],\"email\"\
+        :[\"a.ousmane@gmail.com\"],\"phone\":[\"(00227)20732821\"],\"homepage\":[],\"\
+        organization\":\"Niger\",\"address\":[\"Direction des Statistiques\\nNiamey\\\
+        nNIGER\"],\"country\":\"NE\",\"modified\":\"2017-06-14T07:22:31.277+0000\"\
+        },{\"key\":3903,\"type\":\"ADDITIONAL_DELEGATE\",\"primary\":false,\"userId\"\
+        :[],\"firstName\":\"Amadou\",\"lastName\":\"Alidou\",\"position\":[],\"email\"\
+        :[\"amaalidou@gmail.com\"],\"phone\":[\"(00227)90334501\"],\"homepage\":[],\"\
+        organization\":\"Niger\",\"address\":[\"D\xE9partement eaux et forets\\nKollo\\\
+        nNiger\"],\"country\":\"NE\",\"modified\":\"2017-06-14T07:23:58.058+0000\"\
+        },{\"key\":3904,\"type\":\"NODE_MANAGER\",\"primary\":false,\"userId\":[],\"\
+        firstName\":\"Adda\",\"lastName\":\"Maman\",\"position\":[],\"email\":[\"\
+        maman_addatcho@yahoo.ca\"],\"phone\":[\"(00227)20370773\"],\"homepage\":[],\"\
+        organization\":\"GBIF Niger\",\"address\":[\"Directeur du Centre National\
+        \ des Semences Foresti\xE8res\\nNiamey\"],\"country\":\"NE\",\"modified\"\
+        :\"2017-07-24T15:20:21.546+0000\"}],\"endpoints\":[],\"machineTags\":[],\"\
+        tags\":[],\"identifiers\":[{\"key\":75229,\"type\":\"GBIF_PARTICIPANT\",\"\
+        identifier\":\"374\",\"createdBy\":\"directory-update-robot\",\"created\"\
+        :\"2016-09-23T03:34:55.049+0000\"}],\"comments\":[]},{\"key\":\"2dc472f1-c3d9-486d-b3c1-12ca7ba1ed22\"\
+        ,\"type\":\"COUNTRY\",\"participationStatus\":\"ASSOCIATE\",\"gbifRegion\"\
+        :\"LATIN_AMERICA\",\"continent\":\"SOUTH_AMERICA\",\"title\":\"GBIF Ecuador\"\
+        ,\"participantTitle\":\"Ecuador\",\"email\":[],\"phone\":[],\"homepage\":[],\"\
+        address\":[null],\"country\":\"EC\",\"createdBy\":\"directory-update-robot\"\
+        ,\"modifiedBy\":\"directory-update-robot\",\"created\":\"2016-09-08T03:34:42.706+0000\"\
+        ,\"modified\":\"2016-09-08T03:34:42.706+0000\",\"contacts\":[{\"key\":3928,\"\
+        type\":\"HEAD_OF_DELEGATION\",\"primary\":false,\"userId\":[],\"firstName\"\
+        :\"Zack\",\"lastName\":\"Romo Parades\",\"position\":[],\"email\":[\"zack.romo@ambiente.gob.ec\"\
+        ],\"phone\":[],\"homepage\":[],\"organization\":\"Ecuador\",\"address\":[null],\"\
+        country\":\"EC\",\"modified\":\"2017-09-05T08:55:58.677+0000\"},{\"key\":3929,\"\
+        type\":\"ADDITIONAL_DELEGATE\",\"primary\":false,\"userId\":[],\"firstName\"\
+        :\"David\",\"lastName\":\"Veintimilla Y\xE1nez\",\"position\":[],\"email\"\
+        :[\"david.veintimilla@ambiente.gob.ec\"],\"phone\":[],\"homepage\":[],\"organization\"\
+        :\"Ecuador\",\"address\":[null],\"country\":\"EC\",\"modified\":\"2017-09-05T08:55:18.891+0000\"\
+        },{\"key\":3864,\"type\":\"NODE_MANAGER\",\"primary\":false,\"userId\":[],\"\
+        firstName\":\"N\xE9stor\",\"lastName\":\"Acosta Buena\xF1o\",\"position\"\
+        :[],\"email\":[\"nestor.acosta@ambiente.gob.ec\"],\"phone\":[],\"homepage\"\
+        :[],\"organization\":\"GBIF Ecuador\",\"address\":[null],\"country\":\"EC\"\
+        ,\"modified\":\"2017-09-05T08:57:56.272+0000\"},{\"key\":3930,\"type\":\"\
+        NODE_STAFF\",\"primary\":false,\"userId\":[],\"firstName\":\"Fanny\",\"lastName\"\
+        :\"Tello Ramos\",\"position\":[],\"email\":[\"fanny.tello@ambiente.gob.ec\"\
+        ],\"phone\":[],\"homepage\":[],\"organization\":\"GBIF Ecuador\",\"address\"\
+        :[null],\"country\":\"EC\",\"modified\":\"2017-09-05T08:59:45.351+0000\"}],\"\
+        endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[{\"key\":74766,\"\
+        type\":\"GBIF_PARTICIPANT\",\"identifier\":\"373\",\"createdBy\":\"directory-update-robot\"\
+        ,\"created\":\"2016-09-08T03:34:42.765+0000\"}],\"comments\":[]}]}"}
+    headers:
+      Accept-Ranges: [bytes]
+      Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT']
+      Access-Control-Allow-Origin: ['*']
+      Age: ['0']
+      Cache-Control: ['public, max-age=3601']
+      Connection: [keep-alive]
+      Content-Length: ['9008']
+      Content-Type: [application/json]
+      Date: ['Tue, 19 Dec 2017 20:58:41 GMT']
+      Server: [Jetty(9.3.z-SNAPSHOT)]
+      Via: [1.1 varnish (Varnish/5.2)]
+      X-API-URL: ['/v1/node?limit=5']
+      X-Varnish: ['429843147']
+    status: {code: 200, message: OK}
+version: 1

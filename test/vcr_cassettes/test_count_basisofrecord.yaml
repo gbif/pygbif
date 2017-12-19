@@ -1,0 +1,28 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      user-agent: ['python-requests/2.18.4,pygbif/0.2.2.1']
+    method: GET
+    uri: http://api.gbif.org/v1/occurrence/counts/basisOfRecord
+  response:
+    body: {string: '{"HUMAN_OBSERVATION":752864000,"PRESERVED_SPECIMEN":128358228,"UNKNOWN":31280332,"OBSERVATION":29714749,"MACHINE_OBSERVATION":9830297,"FOSSIL_SPECIMEN":8094690,"LIVING_SPECIMEN":1463587,"MATERIAL_SAMPLE":508770,"LITERATURE":262365}'}
+    headers:
+      Accept-Ranges: [bytes]
+      Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT']
+      Access-Control-Allow-Origin: ['*']
+      Age: ['0']
+      Cache-Control: ['public, max-age=60']
+      Connection: [keep-alive]
+      Content-Length: ['231']
+      Content-Type: [application/json]
+      Date: ['Tue, 19 Dec 2017 20:53:27 GMT']
+      Server: [Jetty(9.3.z-SNAPSHOT)]
+      Via: [1.1 varnish (Varnish/5.2)]
+      X-API-URL: [/v1/occurrence/counts/basisOfRecord]
+      X-Varnish: ['425430392']
+    status: {code: 200, message: OK}
+version: 1

@@ -1,0 +1,83 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      user-agent: ['python-requests/2.18.4,pygbif/0.2.2.1']
+    method: GET
+    uri: http://api.gbif.org/v1/dataset?limit=1
+  response:
+    body: {string: '{"offset":0,"limit":1,"endOfRecords":false,"count":37519,"results":[{"key":"159daa05-c182-432d-88ce-df0b2ef467ae","installationKey":"7ce8aef1-9e92-11dc-8740-b8a03c50a999","publishingOrganizationKey":"7ce8aef0-9e92-11dc-8738-b8a03c50a862","doi":"doi:10.15468/bgnijn","external":false,"numConstituents":0,"type":"CHECKLIST","title":"Reduction
+        of the Hawaiian genus Platydesma into MelicopesectionPelea (Rutaceae) and
+        notes on the monophyly of the section","language":"eng","citation":{"text":"Plazi.org
+        taxonomic treatments database. Reduction of the Hawaiian genus Platydesma
+        into MelicopesectionPelea (Rutaceae) and notes on the monophyly of the section.
+        Checklist Dataset https://doi.org/10.15468/bgnijn accessed via GBIF.org on
+        2017-12-19."},"lockedForAutoUpdate":false,"createdBy":"plazi","modifiedBy":"plazi","created":"2017-12-19T18:50:35.188+0000","modified":"2017-12-19T18:50:35.188+0000","contacts":[],"endpoints":[{"key":242687,"type":"DWC_ARCHIVE","url":"http://tb.plazi.org/GgServer/dwca/FFE18C0AFFF6415F2C7B7427FFF60B6E.zip","createdBy":"plazi","modifiedBy":"plazi","created":"2017-12-19T18:50:36.029+0000","modified":"2017-12-19T18:50:36.029+0000","machineTags":[]}],"machineTags":[],"tags":[],"identifiers":[{"key":108912,"type":"UUID","identifier":"FFE18C0AFFF6415F2C7B7427FFF60B6E","createdBy":"plazi","created":"2017-12-19T18:50:35.561+0000"}],"comments":[],"bibliographicCitations":[],"curatorialUnits":[],"taxonomicCoverages":[],"geographicCoverages":[],"temporalCoverages":[],"keywordCollections":[],"countryCoverage":[],"collections":[],"dataDescriptions":[],"license":"http://creativecommons.org/licenses/by/4.0/legalcode"}]}'}
+    headers:
+      Accept-Ranges: [bytes]
+      Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT']
+      Access-Control-Allow-Origin: ['*']
+      Age: ['0']
+      Cache-Control: ['public, max-age=3601']
+      Connection: [keep-alive]
+      Content-Length: ['1647']
+      Content-Type: [application/json]
+      Date: ['Tue, 19 Dec 2017 20:58:28 GMT']
+      Server: [Jetty(9.3.z-SNAPSHOT)]
+      Via: [1.1 varnish (Varnish/5.2)]
+      X-API-URL: ['/v1/dataset?limit=1']
+      X-Varnish: ['444335582']
+    status: {code: 200, message: OK}
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      user-agent: ['python-requests/2.18.4,pygbif/0.2.2.1']
+    method: GET
+    uri: http://api.gbif.org/v1/dataset?limit=3
+  response:
+    body: {string: '{"offset":0,"limit":3,"endOfRecords":false,"count":37519,"results":[{"key":"159daa05-c182-432d-88ce-df0b2ef467ae","installationKey":"7ce8aef1-9e92-11dc-8740-b8a03c50a999","publishingOrganizationKey":"7ce8aef0-9e92-11dc-8738-b8a03c50a862","doi":"doi:10.15468/bgnijn","external":false,"numConstituents":0,"type":"CHECKLIST","title":"Reduction
+        of the Hawaiian genus Platydesma into MelicopesectionPelea (Rutaceae) and
+        notes on the monophyly of the section","language":"eng","citation":{"text":"Plazi.org
+        taxonomic treatments database. Reduction of the Hawaiian genus Platydesma
+        into MelicopesectionPelea (Rutaceae) and notes on the monophyly of the section.
+        Checklist Dataset https://doi.org/10.15468/bgnijn accessed via GBIF.org on
+        2017-12-19."},"lockedForAutoUpdate":false,"createdBy":"plazi","modifiedBy":"plazi","created":"2017-12-19T18:50:35.188+0000","modified":"2017-12-19T18:50:35.188+0000","contacts":[],"endpoints":[{"key":242687,"type":"DWC_ARCHIVE","url":"http://tb.plazi.org/GgServer/dwca/FFE18C0AFFF6415F2C7B7427FFF60B6E.zip","createdBy":"plazi","modifiedBy":"plazi","created":"2017-12-19T18:50:36.029+0000","modified":"2017-12-19T18:50:36.029+0000","machineTags":[]}],"machineTags":[],"tags":[],"identifiers":[{"key":108912,"type":"UUID","identifier":"FFE18C0AFFF6415F2C7B7427FFF60B6E","createdBy":"plazi","created":"2017-12-19T18:50:35.561+0000"}],"comments":[],"bibliographicCitations":[],"curatorialUnits":[],"taxonomicCoverages":[],"geographicCoverages":[],"temporalCoverages":[],"keywordCollections":[],"countryCoverage":[],"collections":[],"dataDescriptions":[],"license":"http://creativecommons.org/licenses/by/4.0/legalcode"},{"key":"b69ae625-e97f-48f9-b698-42ae0b60ae1d","installationKey":"7ce8aef1-9e92-11dc-8740-b8a03c50a999","publishingOrganizationKey":"7ce8aef0-9e92-11dc-8738-b8a03c50a862","doi":"doi:10.15468/2fr4sg","external":false,"numConstituents":0,"type":"CHECKLIST","title":"Morphological
+        and anatomical evidence support a new wild cassava: Manihotfallax (Crotonoideae,
+        Euphorbiaceae), from Mato Grosso, Brazil","language":"eng","citation":{"text":"Plazi.org
+        taxonomic treatments database. Morphological and anatomical evidence support
+        a new wild cassava: Manihotfallax (Crotonoideae, Euphorbiaceae), from Mato
+        Grosso, Brazil. Checklist Dataset https://doi.org/10.15468/2fr4sg accessed
+        via GBIF.org on 2017-12-19."},"lockedForAutoUpdate":false,"createdBy":"plazi","modifiedBy":"plazi","created":"2017-12-19T18:50:21.498+0000","modified":"2017-12-19T18:50:21.498+0000","contacts":[],"endpoints":[{"key":242686,"type":"DWC_ARCHIVE","url":"http://tb.plazi.org/GgServer/dwca/D16CC228FF96FFDF6704FFE09506FFC0.zip","createdBy":"plazi","modifiedBy":"plazi","created":"2017-12-19T18:50:22.273+0000","modified":"2017-12-19T18:50:22.273+0000","machineTags":[]}],"machineTags":[],"tags":[],"identifiers":[{"key":108911,"type":"UUID","identifier":"D16CC228FF96FFDF6704FFE09506FFC0","createdBy":"plazi","created":"2017-12-19T18:50:21.869+0000"}],"comments":[],"bibliographicCitations":[],"curatorialUnits":[],"taxonomicCoverages":[],"geographicCoverages":[],"temporalCoverages":[],"keywordCollections":[],"countryCoverage":[],"collections":[],"dataDescriptions":[],"license":"http://creativecommons.org/licenses/by/4.0/legalcode"},{"key":"a9735e8f-4740-4048-84e7-7c3dda638783","installationKey":"97dfec69-b198-43ba-a8fa-c5edbc04e324","publishingOrganizationKey":"1121cbc9-17eb-4ba0-b95d-bc3ec19a5b74","doi":"doi:10.15468/czjoss","external":false,"numConstituents":0,"type":"METADATA","title":"Earthworm
+        survey Hoeksche Waard 2012","description":"This dataset consists of a sampling
+        campaign of earthworms in arable fields and field margins in the Southwest
+        of the Netherlands. Samples were taken in September and October 2012 with
+        a combination of two methods: handsorting a soil monolith of 20x20x20 cm,
+        and formaldehyde solution (500 ml of 0.2% solution) pored after removing the
+        material to be hand-sorted.","language":"eng","homepage":"https://www.researchgate.net/profile/Joana_Frazao4/contributions?ev=prf_act","logoUrl":"http://ipt.nlbif.nl/ipt/logo.do?r=earthwormshw2012","citation":{"text":"Dept.
+        Soil Quality, Wageningen University. Earthworm survey Hoeksche Waard 2012.
+        Metadata Dataset https://doi.org/10.15468/czjoss accessed via GBIF.org on
+        2017-12-19."},"lockedForAutoUpdate":false,"createdBy":"1121cbc9-17eb-4ba0-b95d-bc3ec19a5b74","modifiedBy":"1121cbc9-17eb-4ba0-b95d-bc3ec19a5b74","created":"2017-12-19T14:04:53.492+0000","modified":"2017-12-19T14:29:53.247+0000","contacts":[{"key":825005,"type":"ADMINISTRATIVE_POINT_OF_CONTACT","primary":true,"userId":[],"firstName":"Mirjam
+        Pulleman","position":[],"email":["mirjam.pulleman@wur.nl"],"phone":[null],"homepage":[],"address":["Droevendaalsesteeg
+        4, Wageningen NL, 6708 PB"],"createdBy":"1121cbc9-17eb-4ba0-b95d-bc3ec19a5b74","modifiedBy":"1121cbc9-17eb-4ba0-b95d-bc3ec19a5b74","created":"2017-12-19T14:04:53.601+0000","modified":"2017-12-19T14:29:53.317+0000"}],"endpoints":[{"key":242669,"type":"EML","url":"http://ipt.nlbif.nl/ipt/eml.do?r=earthwormshw2012","createdBy":"1121cbc9-17eb-4ba0-b95d-bc3ec19a5b74","modifiedBy":"1121cbc9-17eb-4ba0-b95d-bc3ec19a5b74","created":"2017-12-19T14:29:53.439+0000","modified":"2017-12-19T14:29:53.439+0000","machineTags":[]}],"machineTags":[],"tags":[],"identifiers":[],"comments":[],"bibliographicCitations":[],"curatorialUnits":[],"taxonomicCoverages":[],"geographicCoverages":[],"temporalCoverages":[],"keywordCollections":[],"countryCoverage":[],"collections":[],"dataDescriptions":[],"license":"http://creativecommons.org/licenses/by/4.0/legalcode"}]}'}
+    headers:
+      Accept-Ranges: [bytes]
+      Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT']
+      Access-Control-Allow-Origin: ['*']
+      Age: ['0']
+      Cache-Control: ['public, max-age=3601']
+      Connection: [keep-alive]
+      Content-Length: ['5586']
+      Content-Type: [application/json]
+      Date: ['Tue, 19 Dec 2017 20:58:29 GMT']
+      Server: [Jetty(9.3.z-SNAPSHOT)]
+      Via: [1.1 varnish (Varnish/5.2)]
+      X-API-URL: ['/v1/dataset?limit=3']
+      X-Varnish: ['449708400']
+    status: {code: 200, message: OK}
+version: 1

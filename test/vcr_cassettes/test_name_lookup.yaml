@@ -1,0 +1,1044 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      user-agent: ['python-requests/2.18.4,pygbif/0.2.2.1']
+    method: GET
+    uri: http://api.gbif.org/v1/species/search?q=mammalia&limit=100
+  response:
+    body: {string: "{\"offset\":0,\"limit\":100,\"endOfRecords\":false,\"count\":1345,\"\
+        results\":[{\"key\":114091654,\"datasetKey\":\"30f55c63-a829-4cb2-9676-3b1b6f981567\"\
+        ,\"nubKey\":359,\"scientificName\":\"Mammalia\",\"canonicalName\":\"Mammalia\"\
+        ,\"nameType\":\"SCIENTIFIC\",\"taxonomicStatus\":\"ACCEPTED\",\"origin\":\"\
+        SOURCE\",\"numDescendants\":0,\"numOccurrences\":0,\"taxonID\":\"58030399-21e2-4b72-b999-f8440809f7a4\"\
+        ,\"habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{},\"synonym\":false},{\"\
+        key\":127804986,\"datasetKey\":\"ec532910-dec5-4ca9-9814-f6d1c02ced77\",\"\
+        nubKey\":359,\"parentKey\":127804985,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":127804984,\"phylumKey\"\
+        :127804985,\"classKey\":127804986,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"authorship\":\"\",\"nameType\":\"SCIENTIFIC\",\"taxonomicStatus\"\
+        :\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\":\"DENORMED_CLASSIFICATION\",\"\
+        numDescendants\":6,\"numOccurrences\":0,\"habitats\":[],\"nomenclaturalStatus\"\
+        :[],\"threatStatuses\":[],\"descriptions\":[],\"vernacularNames\":[],\"higherClassificationMap\"\
+        :{\"127804984\":\"Animalia\",\"127804985\":\"Chordata\"},\"synonym\":false,\"\
+        class\":\"Mammalia\"},{\"key\":117910746,\"datasetKey\":\"a43ec6d8-7b8a-4868-ad74-56b824c75698\"\
+        ,\"nubKey\":359,\"parentKey\":117910745,\"parent\":\"Chordata\",\"kingdom\"\
+        :\"Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":117898234,\"phylumKey\"\
+        :117910745,\"classKey\":117910746,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"nameType\":\"SCIENTIFIC\",\"taxonomicStatus\":\"ACCEPTED\"\
+        ,\"rank\":\"CLASS\",\"origin\":\"SOURCE\",\"numDescendants\":0,\"numOccurrences\"\
+        :0,\"taxonID\":\"fdf0d137-5d1f-4a76-bd2e-8d6de3bb2997\",\"habitats\":[],\"\
+        nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\":[],\"vernacularNames\"\
+        :[],\"higherClassificationMap\":{\"117898234\":\"Animalia\",\"117910745\"\
+        :\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"key\":134843305,\"\
+        datasetKey\":\"29d2d5a6-db22-4abd-b784-9ab2f9757c3c\",\"nubKey\":359,\"parentKey\"\
+        :134843291,\"parent\":\"Chordata\",\"kingdom\":\"Animalia\",\"phylum\":\"\
+        Chordata\",\"kingdomKey\":134843262,\"phylumKey\":134843291,\"classKey\":134843305,\"\
+        scientificName\":\"Mammalia\",\"canonicalName\":\"Mammalia\",\"taxonomicStatus\"\
+        :\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\":\"DENORMED_CLASSIFICATION\",\"\
+        numDescendants\":0,\"numOccurrences\":0,\"habitats\":[],\"nomenclaturalStatus\"\
+        :[],\"threatStatuses\":[],\"descriptions\":[],\"vernacularNames\":[],\"higherClassificationMap\"\
+        :{\"134843262\":\"Animalia\",\"134843291\":\"Chordata\"},\"synonym\":false,\"\
+        class\":\"Mammalia\"},{\"key\":134844570,\"datasetKey\":\"089ede6e-6496-4638-915e-f28f016c2f89\"\
+        ,\"nubKey\":359,\"parentKey\":134844514,\"parent\":\"Chordata\",\"kingdom\"\
+        :\"Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":134843840,\"phylumKey\"\
+        :134844514,\"classKey\":134844570,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"134843840\":\"Animalia\"\
+        ,\"134844514\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":134843651,\"datasetKey\":\"0c0ac27f-c7cb-4a1a-b5d7-6d9a386b2c53\",\"\
+        nubKey\":359,\"parentKey\":134843648,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":134843511,\"phylumKey\"\
+        :134843648,\"classKey\":134843651,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"134843511\":\"Animalia\"\
+        ,\"134843648\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":134966362,\"datasetKey\":\"02916f3b-c610-4efb-8d3c-fa389a3bf631\",\"\
+        nubKey\":359,\"parentKey\":134966361,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":134966360,\"phylumKey\"\
+        :134966361,\"classKey\":134966362,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"134966360\":\"Animalia\"\
+        ,\"134966361\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135075403,\"datasetKey\":\"3fd6230d-1a04-4f08-ba00-8b2d025698a6\",\"\
+        nubKey\":359,\"parentKey\":135075402,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":135075401,\"phylumKey\"\
+        :135075402,\"classKey\":135075403,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"135075401\":\"Animalia\"\
+        ,\"135075402\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135059785,\"datasetKey\":\"97b48148-0d1c-4040-8de1-64bf75b859c4\",\"\
+        nubKey\":359,\"parentKey\":135059784,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":135059783,\"phylumKey\"\
+        :135059784,\"classKey\":135059785,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"135059783\":\"Animalia\"\
+        ,\"135059784\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135063837,\"datasetKey\":\"a2f5b315-167d-4d13-b2e3-18f5bc437b16\",\"\
+        nubKey\":359,\"parentKey\":135063836,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":135063835,\"phylumKey\"\
+        :135063836,\"classKey\":135063837,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"135063835\":\"Animalia\"\
+        ,\"135063836\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":134999810,\"datasetKey\":\"71431286-1537-40d2-95e2-6deaa5bf22d3\",\"\
+        nubKey\":359,\"parentKey\":134999809,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":134999808,\"phylumKey\"\
+        :134999809,\"classKey\":134999810,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"134999808\":\"Animalia\"\
+        ,\"134999809\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":134999747,\"datasetKey\":\"7109f202-9561-476f-8f75-8c8f747656c9\",\"\
+        nubKey\":359,\"parentKey\":134999746,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":134999745,\"phylumKey\"\
+        :134999746,\"classKey\":134999747,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"134999745\":\"Animalia\"\
+        ,\"134999746\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135020343,\"datasetKey\":\"856e1d56-1b48-4e94-ae6d-671bfdeac333\",\"\
+        nubKey\":359,\"parentKey\":135020342,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":135020341,\"phylumKey\"\
+        :135020342,\"classKey\":135020343,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"135020341\":\"Animalia\"\
+        ,\"135020342\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135074284,\"datasetKey\":\"086d0402-a5e1-42ae-b67f-ac6244178fa2\",\"\
+        nubKey\":359,\"classKey\":135074284,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{},\"synonym\":false,\"\
+        class\":\"Mammalia\"},{\"key\":135216359,\"datasetKey\":\"0a423169-63f8-439c-b833-ab01b379bd50\"\
+        ,\"nubKey\":359,\"parentKey\":135216358,\"parent\":\"Chordata\",\"kingdom\"\
+        :\"Lagotrix lagotricha\",\"phylum\":\"Chordata\",\"kingdomKey\":135216354,\"\
+        phylumKey\":135216358,\"classKey\":135216359,\"scientificName\":\"Mammalia\"\
+        ,\"canonicalName\":\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\"\
+        :\"CLASS\",\"origin\":\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"\
+        numOccurrences\":0,\"habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\"\
+        :[],\"descriptions\":[],\"vernacularNames\":[],\"higherClassificationMap\"\
+        :{\"135216354\":\"Lagotrix lagotricha\",\"135216358\":\"Chordata\"},\"synonym\"\
+        :false,\"class\":\"Mammalia\"},{\"key\":135228429,\"datasetKey\":\"81e739b4-cba8-46d9-8104-5ea487c2dd20\"\
+        ,\"nubKey\":359,\"parentKey\":135228405,\"parent\":\"Chordata\",\"kingdom\"\
+        :\"Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":135228404,\"phylumKey\"\
+        :135228405,\"classKey\":135228429,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"135228404\":\"Animalia\"\
+        ,\"135228405\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":134887810,\"datasetKey\":\"3652a603-2b28-4def-a4c1-3cd46187a389\",\"\
+        nubKey\":359,\"parentKey\":134887809,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":134887808,\"phylumKey\"\
+        :134887809,\"classKey\":134887810,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"134887808\":\"Animalia\"\
+        ,\"134887809\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":134890750,\"datasetKey\":\"b2a18f87-18d5-4ddd-a900-d301db2160d2\",\"\
+        nubKey\":359,\"parentKey\":134890749,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":134890748,\"phylumKey\"\
+        :134890749,\"classKey\":134890750,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"134890748\":\"Animalia\"\
+        ,\"134890749\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135279889,\"datasetKey\":\"1ec61203-14fa-4fbd-8ee5-a4a80257b45a\",\"\
+        nubKey\":359,\"parentKey\":135275022,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":135274895,\"phylumKey\"\
+        :135275022,\"classKey\":135279889,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"135274895\":\"Animalia\"\
+        ,\"135275022\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135274291,\"datasetKey\":\"86e2cb47-46df-4e40-ad76-cdc65a663bcf\",\"\
+        nubKey\":359,\"parentKey\":135274221,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":135274219,\"phylumKey\"\
+        :135274221,\"classKey\":135274291,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"135274219\":\"Animalia\"\
+        ,\"135274221\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135273722,\"datasetKey\":\"11f5ca15-8de9-4499-9fd2-368b62ea45cb\",\"\
+        nubKey\":359,\"parentKey\":135273712,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":135273711,\"phylumKey\"\
+        :135273712,\"classKey\":135273722,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"135273711\":\"Animalia\"\
+        ,\"135273712\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135272611,\"datasetKey\":\"dbfacc33-350a-4620-976f-4d3a441aa242\",\"\
+        nubKey\":359,\"parentKey\":135272525,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":135272524,\"phylumKey\"\
+        :135272525,\"classKey\":135272611,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"135272524\":\"Animalia\"\
+        ,\"135272525\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":137555997,\"datasetKey\":\"272a784c-30ee-4116-97b3-b58d07c0fd8b\",\"\
+        nubKey\":359,\"parentKey\":137555995,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":137555993,\"phylumKey\"\
+        :137555995,\"classKey\":137555997,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"137555993\":\"Animalia\"\
+        ,\"137555995\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":137627559,\"datasetKey\":\"6b3928ce-b7c6-42a2-ab24-995c30a122cc\",\"\
+        nubKey\":359,\"parentKey\":137627554,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":137627553,\"phylumKey\"\
+        :137627554,\"classKey\":137627559,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"137627553\":\"Animalia\"\
+        ,\"137627554\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":114079693,\"datasetKey\":\"bd0a2b6d-69d1-4650-8bb1-829c8f92035f\",\"\
+        nubKey\":359,\"parentKey\":114079410,\"parent\":\"Animalia\",\"scientificName\"\
+        :\"Mammalia\",\"canonicalName\":\"Mammalia\",\"nameType\":\"SCIENTIFIC\",\"\
+        taxonomicStatus\":\"ACCEPTED\",\"origin\":\"SOURCE\",\"numDescendants\":0,\"\
+        numOccurrences\":0,\"taxonID\":\"6313-sp2549\",\"habitats\":[],\"nomenclaturalStatus\"\
+        :[],\"threatStatuses\":[],\"descriptions\":[],\"vernacularNames\":[],\"higherClassificationMap\"\
+        :{\"114079410\":\"Animalia\"},\"synonym\":false},{\"key\":115498126,\"datasetKey\"\
+        :\"fe51a93b-a7f8-48ec-99c8-7c347716e8d3\",\"nubKey\":359,\"parentKey\":115497915,\"\
+        parent\":\"Chordata\",\"kingdom\":\"Animalia\",\"phylum\":\"Chordata\",\"\
+        kingdomKey\":115497603,\"phylumKey\":115497915,\"classKey\":115498126,\"scientificName\"\
+        :\"Mammalia\",\"canonicalName\":\"Mammalia\",\"authorship\":\"\",\"nameType\"\
+        :\"SCIENTIFIC\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":45,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"115497603\":\"Animalia\"\
+        ,\"115497915\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":127776750,\"datasetKey\":\"5b3a293b-04e5-4ad7-992f-cb016fcf166a\",\"\
+        nubKey\":359,\"parentKey\":127776749,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":127776748,\"phylumKey\"\
+        :127776749,\"classKey\":127776750,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"authorship\":\"\",\"nameType\":\"SCIENTIFIC\",\"taxonomicStatus\"\
+        :\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\":\"DENORMED_CLASSIFICATION\",\"\
+        numDescendants\":4,\"numOccurrences\":0,\"habitats\":[],\"nomenclaturalStatus\"\
+        :[],\"threatStatuses\":[],\"descriptions\":[],\"vernacularNames\":[],\"higherClassificationMap\"\
+        :{\"127776748\":\"Animalia\",\"127776749\":\"Chordata\"},\"synonym\":false,\"\
+        class\":\"Mammalia\"},{\"key\":123227024,\"datasetKey\":\"90d9e8a6-0ce1-472d-b682-3451095dbc5a\"\
+        ,\"nubKey\":359,\"parentKey\":123221530,\"parent\":\"Gnathostomata\",\"kingdom\"\
+        :\"Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":123221224,\"phylumKey\"\
+        :123221506,\"classKey\":123227024,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"nameType\":\"SCIENTIFIC\",\"taxonomicStatus\":\"ACCEPTED\"\
+        ,\"rank\":\"CLASS\",\"origin\":\"SOURCE\",\"numDescendants\":0,\"numOccurrences\"\
+        :0,\"taxonID\":\"12613\",\"habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\"\
+        :[],\"descriptions\":[],\"vernacularNames\":[],\"higherClassificationMap\"\
+        :{\"123221224\":\"Animalia\",\"123221506\":\"Chordata\",\"123221530\":\"Gnathostomata\"\
+        },\"synonym\":false,\"class\":\"Mammalia\"},{\"key\":100375341,\"datasetKey\"\
+        :\"16c3f9cb-4b19-4553-ac8e-ebb90003aa02\",\"nubKey\":359,\"classKey\":100375341,\"\
+        scientificName\":\"Mammalia\",\"canonicalName\":\"Mammalia\",\"nameType\"\
+        :\"SCIENTIFIC\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"SOURCE\",\"numDescendants\":0,\"numOccurrences\":0,\"taxonID\":\"2621711\"\
+        ,\"extinct\":true,\"habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\"\
+        :[],\"descriptions\":[{\"description\":\"Die Eutriconodonta (oder Triconodonta)\
+        \ sind ein m\xF6gliches Taxon (eine systematische Gruppe) ausgestorbener S\xE4\
+        ugetiere aus dem Mesozoikum. Sie lebten vom mittleren Jura bis zur Oberkreide\
+        \ und sind durch gemeinsame Merkmale im Bau der Molaren (Backenz\xE4hne) charakterisiert.\
+        \ Ob sie tats\xE4chlich eine nat\xFCrliche Gruppe bilden oder nur konvergente\
+        \ Entwicklungen darstellen, ist umstritten.\"},{\"description\":\"Wie zahlreiche\
+        \ andere S\xE4ugetiergruppen des Mesozoikums sind die Eutriconodonta vielfach\
+        \ nur durch einzelne Z\xE4hne oder Kieferteile bekannt, was eine systematische\
+        \ Zuordnung erschwert. Gemeinsames Merkmal aller dieser Tiere ist der Bau\
+        \ der Backenz\xE4hne. Diese wiesen stets drei gro\xDFe hintereinander angeordnete\
+        \ H\xF6cker auf, was eine schneidende Zerkleinerung der Nahrung erm\xF6glichte.\
+        \ Bei manchen Eutriconodonta (etwa den Triconodontidae) waren die drei H\xF6\
+        cker ann\xE4hernd gleich gro\xDF, bei anderen Tieren ist es zu einer deutlichen\
+        \ Vergr\xF6\xDFerung des mittleren H\xF6ckers gekommen. Bei manchen Vertretern\
+        \ waren zus\xE4tzliche kleine H\xF6cker am Vorder- und Hinterende der Molaren\
+        \ vorhanden, die ein Ineinandergreifen der benachbarten Z\xE4hne bewirkten\
+        \ und so f\xFCr zus\xE4tzliche Stabilit\xE4t beim Zubei\xDFen sorgten. Der\
+        \ Bau der Z\xE4hne deutet an, dass sich viele Eutriconodonta von Insekten\
+        \ und anderen Tieren ern\xE4hrten, f\xFCr manche Vertreter wird auch eine\
+        \ omnivore (allesfressende) Ern\xE4hrung angenommen.Fossilienfunde von Rumpf\
+        \ und Gliedma\xDFen sind nur von wenigen Gattungen bekannt. Diese zeigten\
+        \ etwa im Bau des Beckens oft noch urt\xFCmliche Merkmale der S\xE4ugetiervorfahren,\
+        \ w\xE4hrend der Schulterg\xFCrtel relativ hoch entwickelt war. Die meisten\
+        \ Vertreter d\xFCrften m\xE4use- bis katzengro\xDF gewesen sein, mit dem \xFC\
+        ber einen Meter langen Repenomamus hat aber auch das gr\xF6\xDFte bekannte\
+        \ S\xE4ugetier des Mesozoikums zu dieser Gruppe geh\xF6rt.Nahezu alle Funde\
+        \ stammen aus dem mittleren und oberen Jura und der Unterkreide (zwischen\
+        \ 165 und 100 Millionen Jahren) und sind fast ausschlie\xDFlich auf dem ehemaligen\
+        \ Nordkontinent Laurasia (Eurasien und Nordamerika) gemacht worden. Es gibt\
+        \ vereinzelte sp\xE4rliche Funde aus dem ehemaligen S\xFCdkontinent Gondwana,\
+        \ die m\xF6glicherweise eine weltweite Verbreitung der Eutriconodonta andeuten,\
+        \ sich aber systematisch nicht eindeutig zuordnen lassen.\"},{\"description\"\
+        :\"Kategorie:S\xE4ugetiere Kategorie:Mammalia Kategorie:Ausgestorbenes S\xE4\
+        ugetier ca:Triconodont cs:Triconodonta nl:Triconodonta pl:Trykonodonty pt:Triconodonta\
+        \ ru:\u0422\u0440\u0438\u043A\u043E\u043D\u043E\u0434\u043E\u043D\u0442\u044B\
+        \"},{\"description\":\"Rekonstruktion von Repenomamus Die Bezeichnung Triconodonta\
+        \ (\u201EDreih\xF6ckerz\xE4hne\u201C) wurde 1888 von Henry Fairfield Osborn\
+        \ gepr\xE4gt und fasste verschiedenste mesozoische S\xE4uger mit einem dreih\xF6\
+        ckrigen Bau der Molaren zusammen. Dieses Merkmal ist allerdings plesiomorph,\
+        \ das hei\xDFt es zeigt sich auch bei fr\xFCheren Vorfahren. Deswegen werden\
+        \ Taxa wie die die Morganucodonta oder Sinoconodon, die zwar einen \xE4hnlichen\
+        \ Bau der Molaren aufweisen, aber aufgrund urt\xFCmlicher Merkmale etwa beim\
+        \ Bau des Kiefergelenks eindeutig fr\xFChere Seitenlinien darstellen, heute\
+        \ nicht mehr dazugerechnet. Die nach Ausschluss dieser urt\xFCmlichen S\xE4\
+        uger \xFCbrig gebliebenen Tiere werden Eutriconodonta (\u201Erichtige Dreih\xF6\
+        ckerz\xE4hne\u201C) \u2013 oder manchmal weiterhin Triconodonta \u2013 genannt.\
+        \ Ob die Eutriconodonta tats\xE4chliche eine monophyletische Gruppe darstellen,\
+        \ ist umstritten, kladistische Analysen Z.-X. Luo, Z Kielan-Jaworowska und\
+        \ R. L. Cifelli: In quest for a phylogeny of Mesozoic mammals. Acta Palaeontol.\
+        \ Pol. 47 (2002): S. 1-78. unterst\xFCtzen zumindest teilweise die Monophylie\
+        \ dieser Gruppe. F\xFCr viele Gattungen sind allerdings einfach zu wenig Funde\
+        \ vorhanden, um eine gesicherte systematische Zuordnung zuzulassen.Auch ihre\
+        \ Stellung in der Systematik der S\xE4ugetiere ist umstritten. Aufgrund einiger\
+        \ urt\xFCmlicher Merkmale gelten sie als relativ fr\xFCher Seitenzweig und\
+        \ sind dementsprechend mit keiner heutigen S\xE4ugergruppe n\xE4her verwandt.\"\
+        },{\"description\":\"Fossil von Jeholodens jenkinsi im Hong Kong Science Museum\
+        \ Die oft sp\xE4rlichen Funde und die systematischen Unsicherheiten lassen\
+        \ eine genaue Abgrenzung nicht zu. Folgende Taxa werden meist zu den Eutriconodonta\
+        \ gerechnet: Die Amphilestidae lebten im mittleren und oberen Jura. Die Triconodontidae\
+        \ (Oberjura bis Oberkreide) waren durch drei ann\xE4hernd gleich gro\xDFe\
+        \ H\xF6cker charakterisiert. Die Gobiconodontidae sind aus der Unterkreide\
+        \ bekannt. Repenomamus wird entweder in diese Familie oder als nahe verwandte\
+        \ eigene Familie Repenomamidae eingeordnet. Jeholodens aus der Unterkreide\
+        \ Chinas ist durch ein komplettes Skelett bekannt. Die 2007 beschriebene Gattung\
+        \ Yanoconodon, die als \xDCbergangsform im Bau der Geh\xF6rkn\xF6chelchen\
+        \ bekannt ist, k\xF6nnte nahe mit Jeholodens verwandt sein und die Familie\
+        \ der Jeholodentidae bilden. Die Zugeh\xF6rigkeit von Klamelia aus dem Oberjura\
+        \ Chinas ist unklar; eventuell bildet sie mit der 2007 entdeckten Gattung\
+        \ Ferganodon eine eigene Familie Klameliidae Thomas Martin und Alexander O.\
+        \ Averianov: A previously unrecognized group of Middle Jurassic triconodontan\
+        \ mammals from Central Asia. In Naturwissenschaften, 94(1), S.43-48. Abstrakt.\
+        \ Austrotriconodon ist durch einzelne Z\xE4hne charakterisiert, die aus der\
+        \ Oberkreide Patagoniens stammen und durch einen enorm vergr\xF6\xDFerten\
+        \ mittleren H\xF6cker charakterisiert sind. Ihre systematische Stellung ist\
+        \ unklar, sie w\xE4re eine der j\xFCngsten und eine der wenigen aus Gondwana\
+        \ bekannten Eutriconodonta. Liaoconodon aus der Unterkreide Chinas ist durch\
+        \ ein komplettes Skelett bekannt und zeigt ein \xDCbergangsstadium in der\
+        \ Entwicklung zum Mittelohr der h\xF6heren S\xE4ugetiere Jin Meng, Yuanqing\
+        \ Wang & Chuankui Li: Transitional mammalian middle ear from a new Cretaceous\
+        \ Jehol eutriconodont. Nature 472, 181\u2013185.\"}],\"vernacularNames\":[{\"\
+        vernacularName\":\"S\xE4ugetiere\",\"language\":\"deu\"},{\"vernacularName\"\
+        :\"Triconodont\",\"language\":\"cat\"},{\"vernacularName\":\"Triconodonta\"\
+        ,\"language\":\"ces\"},{\"vernacularName\":\"Triconodonta\",\"language\":\"\
+        nld\"},{\"vernacularName\":\"Triconodonta\",\"language\":\"por\"},{\"vernacularName\"\
+        :\"Trykonodonty\",\"language\":\"pol\"},{\"vernacularName\":\"\u0422\u0440\
+        \u0438\u043A\u043E\u043D\u043E\u0434\u043E\u043D\u0442\u044B\",\"language\"\
+        :\"rus\"}],\"higherClassificationMap\":{},\"synonym\":false,\"class\":\"Mammalia\"\
+        },{\"key\":134966702,\"datasetKey\":\"4098d153-d4d9-404e-b500-2eaadc1c2693\"\
+        ,\"nubKey\":359,\"parentKey\":134966701,\"parent\":\"Chordata\",\"kingdom\"\
+        :\"Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":134966700,\"phylumKey\"\
+        :134966701,\"classKey\":134966702,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"134966700\":\"Animalia\"\
+        ,\"134966701\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135017640,\"datasetKey\":\"dd1bdc0a-5e97-4e57-aef0-25d6bfd5fa1a\",\"\
+        nubKey\":359,\"parentKey\":135017639,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":135017638,\"phylumKey\"\
+        :135017639,\"classKey\":135017640,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"135017638\":\"Animalia\"\
+        ,\"135017639\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135020116,\"datasetKey\":\"677a9818-ca48-47a4-8c7a-c5b400f3ae34\",\"\
+        nubKey\":359,\"parentKey\":135020113,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":135020083,\"phylumKey\"\
+        :135020113,\"classKey\":135020116,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"135020083\":\"Animalia\"\
+        ,\"135020113\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":134993302,\"datasetKey\":\"bc1a1eb3-243d-4e87-b9fa-d35fe0800230\",\"\
+        nubKey\":359,\"parentKey\":134993150,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":134993024,\"phylumKey\"\
+        :134993150,\"classKey\":134993302,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"134993024\":\"Animalia\"\
+        ,\"134993150\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135060218,\"datasetKey\":\"b791e095-c2b5-46d1-8666-d67f9f3c4347\",\"\
+        nubKey\":359,\"parentKey\":135060217,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":135060215,\"phylumKey\"\
+        :135060217,\"classKey\":135060218,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"135060215\":\"Animalia\"\
+        ,\"135060217\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135056355,\"datasetKey\":\"047f732a-1b10-4a40-a329-40afcee68fd3\",\"\
+        nubKey\":359,\"parentKey\":135056354,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":135056353,\"phylumKey\"\
+        :135056354,\"classKey\":135056355,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"135056353\":\"Animalia\"\
+        ,\"135056354\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135059933,\"datasetKey\":\"117afacf-7b5a-4ab0-ace5-683c806ef40a\",\"\
+        nubKey\":359,\"parentKey\":135059932,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":135059931,\"phylumKey\"\
+        :135059932,\"classKey\":135059933,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"135059931\":\"Animalia\"\
+        ,\"135059932\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":134089731,\"datasetKey\":\"5943a8d6-434e-430c-bc40-9f43601dd7b2\",\"\
+        nubKey\":359,\"parentKey\":134089730,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":134089729,\"phylumKey\"\
+        :134089730,\"classKey\":134089731,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"134089729\":\"Animalia\"\
+        ,\"134089730\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":134843159,\"datasetKey\":\"ca55b876-88ef-44a1-b752-c38977af7d2f\",\"\
+        nubKey\":359,\"parentKey\":134843158,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":134843100,\"phylumKey\"\
+        :134843158,\"classKey\":134843159,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"134843100\":\"Animalia\"\
+        ,\"134843158\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":134851119,\"datasetKey\":\"88875dc2-4e00-48e5-9e72-2de3ab964da9\",\"\
+        nubKey\":359,\"parentKey\":134850932,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":134850923,\"phylumKey\"\
+        :134850932,\"classKey\":134851119,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"134850923\":\"Animalia\"\
+        ,\"134850932\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":134916304,\"datasetKey\":\"1bdf89cc-ca41-4094-a65a-bf6c59ca96af\",\"\
+        nubKey\":359,\"parentKey\":134916303,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":134916302,\"phylumKey\"\
+        :134916303,\"classKey\":134916304,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"134916302\":\"Animalia\"\
+        ,\"134916303\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":134874900,\"datasetKey\":\"27f33714-c0e8-423e-afda-97265b21193a\",\"\
+        nubKey\":359,\"parentKey\":134874899,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":134874898,\"phylumKey\"\
+        :134874899,\"classKey\":134874900,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"134874898\":\"Animalia\"\
+        ,\"134874899\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":134909569,\"datasetKey\":\"d7506d3e-5d6b-4914-9de0-208a44712770\",\"\
+        nubKey\":359,\"parentKey\":134909568,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":134909567,\"phylumKey\"\
+        :134909568,\"classKey\":134909569,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"134909567\":\"Animalia\"\
+        ,\"134909568\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":134906452,\"datasetKey\":\"aafe6968-9cbf-438d-852c-fa253fe67d5a\",\"\
+        nubKey\":359,\"parentKey\":134906451,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":134906450,\"phylumKey\"\
+        :134906451,\"classKey\":134906452,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"134906450\":\"Animalia\"\
+        ,\"134906451\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135359503,\"datasetKey\":\"cbb6498e-8927-405a-916b-576d00a6289b\",\"\
+        nubKey\":359,\"parentKey\":135359502,\"parent\":\"swag\",\"kingdom\":\"Animalia\"\
+        ,\"phylum\":\"swag\",\"kingdomKey\":112707351,\"phylumKey\":135359502,\"classKey\"\
+        :135359503,\"scientificName\":\"Mammalia\",\"canonicalName\":\"Mammalia\"\
+        ,\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\":\"DENORMED_CLASSIFICATION\"\
+        ,\"numDescendants\":0,\"numOccurrences\":0,\"habitats\":[],\"nomenclaturalStatus\"\
+        :[],\"threatStatuses\":[],\"descriptions\":[],\"vernacularNames\":[],\"higherClassificationMap\"\
+        :{\"112707351\":\"Animalia\",\"135359502\":\"swag\"},\"synonym\":false,\"\
+        class\":\"Mammalia\"},{\"key\":135252755,\"datasetKey\":\"3408ce35-c482-4df0-9644-b8d4e6318f99\"\
+        ,\"nubKey\":359,\"parentKey\":135252610,\"parent\":\"Chordata\",\"kingdom\"\
+        :\"Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":135252609,\"phylumKey\"\
+        :135252610,\"classKey\":135252755,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"135252609\":\"Animalia\"\
+        ,\"135252610\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135450429,\"datasetKey\":\"687146d5-e65d-424d-858a-830894f1a038\",\"\
+        nubKey\":359,\"parentKey\":135450428,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":135450427,\"phylumKey\"\
+        :135450428,\"classKey\":135450429,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"135450427\":\"Animalia\"\
+        ,\"135450428\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":137554948,\"datasetKey\":\"5e94ab8c-e9dd-4f52-ae7c-f9cb19c36660\",\"\
+        nubKey\":359,\"parentKey\":137554716,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":137554714,\"phylumKey\"\
+        :137554716,\"classKey\":137554948,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"137554714\":\"Animalia\"\
+        ,\"137554716\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":137351195,\"datasetKey\":\"e1c9e885-9d8c-45b5-9f7d-b710ac2b303b\",\"\
+        nubKey\":359,\"parentKey\":137350577,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":137350575,\"phylumKey\"\
+        :137350577,\"classKey\":137351195,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"137350575\":\"Animalia\"\
+        ,\"137350577\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":100371916,\"datasetKey\":\"16c3f9cb-4b19-4553-ac8e-ebb90003aa02\",\"\
+        nubKey\":359,\"classKey\":100371916,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"nameType\":\"SCIENTIFIC\",\"taxonomicStatus\":\"ACCEPTED\"\
+        ,\"rank\":\"CLASS\",\"origin\":\"SOURCE\",\"numDescendants\":0,\"numOccurrences\"\
+        :0,\"taxonID\":\"2505753\",\"extinct\":true,\"habitats\":[],\"nomenclaturalStatus\"\
+        :[],\"threatStatuses\":[],\"descriptions\":[{\"description\":\"Die Allotheria\
+        \ sind ein Taxon (eine systematische Gruppe) ausgestorbener S\xE4ugetiere.\
+        \ Drei Gruppen werden darin zusammengefasst: die Haramiyida, die in der Trias\
+        \ und im Jura lebten und zu den \xE4ltesten bekannten S\xE4ugetieren z\xE4\
+        hlen, die Multituberculata, eine artenreiche Gruppe, die vom Jura bis zum\
+        \ Eoz\xE4n in den Kontinenten der Nordhalbkugel lebten und die Gondwanatheria,\
+        \ die von der Oberkreide bis zum Eoz\xE4n in den s\xFCdlichen Kontinenten\
+        \ vorkamen. Die vermutete Verwandtschaft gr\xFCndet sich im Bau der Molaren,\
+        \ die bei allen drei Gruppen durch eine auff\xE4llige Anordnung der H\xF6\
+        cker charakterisiert sind. Ein m\xF6gliches Szenario sieht in den Haramiyida\
+        \ die Vorfahren der beiden anderen Gruppen, die sich im Mesozoikum und fr\xFC\
+        hen K\xE4nozoikum ausbreiteten, sp\xE4ter aber von den modernen S\xE4ugetieren\
+        \ verdr\xE4ngt wurden.Erschwert wurde die Forschung aber dadurch, dass von\
+        \ den Haramiyida und den Gondwanatheria lange Zeit au\xDFer vereinzelten Z\xE4\
+        hnen kaum Fossilien bekannt waren. Mittlerweile wurden von beiden Gruppen\
+        \ jedoch auch Kieferteile entdeckt, sowie der Sch\xE4del einer Gondwanatheriengattung\
+        \ und gut erhaltene, fast vollst\xE4ndige Fossilien von verschiedenen, baumbewohnenden\
+        \ Haramiyiden. Die Haramiyida, die sich als paraphyletisch herausgestellt\
+        \ haben und aus einigen basalen Gattungen und den baumbewohnenden Euharamiyida\
+        \ bestehen, weisen einen sehr urt\xFCmlichen Kieferbau auf, w\xE4hrend der\
+        \ Kiefer der Multituberculata und Gondwanatheria st\xE4rker dem der heutigen\
+        \ S\xE4uger \xE4hnelt. Detaillierte kladistische Analysen zeigen eindeutig\
+        \ das die Allotheria ein Monophylum sind und aus den drei oben genannten Gruppen\
+        \ bestehen. Das folgende Kladogramm nach Krause et al. zeigt die Stellung\
+        \ der Allotheria innerhalb der S\xE4ugetiere und ihre innere Systematik:\"\
+        }],\"vernacularNames\":[{\"vernacularName\":\"S\xE4ugetiere\",\"language\"\
+        :\"deu\"}],\"higherClassificationMap\":{},\"synonym\":false,\"class\":\"Mammalia\"\
+        },{\"key\":116807520,\"datasetKey\":\"88f4e35a-bdf8-4aa2-9a1b-56401d4eed15\"\
+        ,\"nubKey\":359,\"parentKey\":116785007,\"parent\":\"Chordata\",\"kingdom\"\
+        :\"Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":132774790,\"phylumKey\"\
+        :116785007,\"classKey\":116807520,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"nameType\":\"SCIENTIFIC\",\"taxonomicStatus\":\"ACCEPTED\"\
+        ,\"rank\":\"CLASS\",\"origin\":\"SOURCE\",\"numDescendants\":0,\"numOccurrences\"\
+        :0,\"taxonID\":\"http://services.snsb.info/DTNtaxonlists/rest/v0.1/names/DiversityTaxonNames_TaxaVaria/28038/\"\
+        ,\"habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"132774790\":\"Animalia\"\
+        ,\"116785007\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":134907682,\"datasetKey\":\"ad93ccba-1051-46b7-a219-b153a1718d74\",\"\
+        nubKey\":359,\"parentKey\":134907681,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":134907680,\"phylumKey\"\
+        :134907681,\"classKey\":134907682,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"134907680\":\"Animalia\"\
+        ,\"134907681\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":134858082,\"datasetKey\":\"69c3d481-f867-4e34-a068-dcd79213b4b9\",\"\
+        nubKey\":359,\"parentKey\":134858040,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":134857837,\"phylumKey\"\
+        :134858040,\"classKey\":134858082,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"134857837\":\"Animalia\"\
+        ,\"134858040\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135080673,\"datasetKey\":\"7b3f4866-9369-45a9-b2a8-bcd0b144d500\",\"\
+        nubKey\":359,\"parentKey\":135080672,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":135080671,\"phylumKey\"\
+        :135080672,\"classKey\":135080673,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"135080671\":\"Animalia\"\
+        ,\"135080672\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135080508,\"datasetKey\":\"128fd844-b069-42a1-8f8c-9bb66a52f9d9\",\"\
+        nubKey\":359,\"parentKey\":135080507,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":135080506,\"phylumKey\"\
+        :135080507,\"classKey\":135080508,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"135080506\":\"Animalia\"\
+        ,\"135080507\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135024374,\"datasetKey\":\"f6770855-5dfc-495e-ad8e-52b4a1040942\",\"\
+        nubKey\":359,\"parentKey\":135024373,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":135024372,\"phylumKey\"\
+        :135024373,\"classKey\":135024374,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"135024372\":\"Animalia\"\
+        ,\"135024373\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135017515,\"datasetKey\":\"f8ad5ca3-a1b2-4660-b4cc-aa563b9a4bd5\",\"\
+        nubKey\":359,\"parentKey\":135017514,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":135017513,\"phylumKey\"\
+        :135017514,\"classKey\":135017515,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"135017513\":\"Animalia\"\
+        ,\"135017514\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135025807,\"datasetKey\":\"b0135100-e83b-444f-a51f-1232a778b3a1\",\"\
+        nubKey\":359,\"parentKey\":135025806,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":135025805,\"phylumKey\"\
+        :135025806,\"classKey\":135025807,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"135025805\":\"Animalia\"\
+        ,\"135025806\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135011053,\"datasetKey\":\"79c8c7d3-7db9-43a5-a268-739984158725\",\"\
+        nubKey\":359,\"parentKey\":135011046,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":135010932,\"phylumKey\"\
+        :135011046,\"classKey\":135011053,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"135010932\":\"Animalia\"\
+        ,\"135011046\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135028138,\"datasetKey\":\"aa0551b8-1e8d-488b-848a-cfb5f1bfd2ab\",\"\
+        nubKey\":359,\"parentKey\":135028137,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":135028136,\"phylumKey\"\
+        :135028137,\"classKey\":135028138,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"135028136\":\"Animalia\"\
+        ,\"135028137\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135051628,\"datasetKey\":\"7d1c86c6-388f-4a4a-9792-eb3d144116d4\",\"\
+        nubKey\":359,\"parentKey\":135051627,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":135051626,\"phylumKey\"\
+        :135051627,\"classKey\":135051628,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"135051626\":\"Animalia\"\
+        ,\"135051627\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135059178,\"datasetKey\":\"67ffeba4-df44-4e5b-a366-c0a59fea1d59\",\"\
+        nubKey\":359,\"parentKey\":135059177,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":135059176,\"phylumKey\"\
+        :135059177,\"classKey\":135059178,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"135059176\":\"Animalia\"\
+        ,\"135059177\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135034455,\"datasetKey\":\"04ffa69d-4ea3-44a1-aa6c-3b3f4c7d13a1\",\"\
+        nubKey\":359,\"parentKey\":135034454,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":135034453,\"phylumKey\"\
+        :135034454,\"classKey\":135034455,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"135034453\":\"Animalia\"\
+        ,\"135034454\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135047265,\"datasetKey\":\"15614c66-5414-4a6d-b4e9-c3cb24e44d6a\",\"\
+        nubKey\":359,\"parentKey\":135047264,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":135047263,\"phylumKey\"\
+        :135047264,\"classKey\":135047265,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"135047263\":\"Animalia\"\
+        ,\"135047264\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135051193,\"datasetKey\":\"4b4931d6-e70b-4ae8-b067-3fb5e1776061\",\"\
+        nubKey\":359,\"parentKey\":135051192,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":135051191,\"phylumKey\"\
+        :135051192,\"classKey\":135051193,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"135051191\":\"Animalia\"\
+        ,\"135051192\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135216940,\"datasetKey\":\"97b24147-e3c8-4d72-9af8-a5b5871460b3\",\"\
+        nubKey\":359,\"parentKey\":135216923,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":135216922,\"phylumKey\"\
+        :135216923,\"classKey\":135216940,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"135216922\":\"Animalia\"\
+        ,\"135216923\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135215963,\"datasetKey\":\"1ddab917-15d1-4d69-a455-5bd397af5a9c\",\"\
+        nubKey\":359,\"parentKey\":135215962,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":135215961,\"phylumKey\"\
+        :135215962,\"classKey\":135215963,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"135215961\":\"Animalia\"\
+        ,\"135215962\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135229686,\"datasetKey\":\"f3a1e772-2b73-4375-9dd6-2ec4805856f2\",\"\
+        nubKey\":359,\"parentKey\":135229685,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":135229684,\"phylumKey\"\
+        :135229685,\"classKey\":135229686,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"135229684\":\"Animalia\"\
+        ,\"135229685\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135267638,\"datasetKey\":\"29886bf9-62d2-4208-87f6-109dd1972607\",\"\
+        nubKey\":359,\"parentKey\":135267546,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":135267543,\"phylumKey\"\
+        :135267546,\"classKey\":135267638,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"135267543\":\"Animalia\"\
+        ,\"135267546\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135260145,\"datasetKey\":\"f34d6baa-d308-46a5-a164-9db110c422b8\",\"\
+        nubKey\":359,\"parentKey\":135260144,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":135260143,\"phylumKey\"\
+        :135260144,\"classKey\":135260145,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"135260143\":\"Animalia\"\
+        ,\"135260144\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135449831,\"datasetKey\":\"83ca3188-af12-4545-aaf4-304df32ff9d7\",\"\
+        nubKey\":359,\"parentKey\":135449816,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":135449761,\"phylumKey\"\
+        :135449816,\"classKey\":135449831,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"135449761\":\"Animalia\"\
+        ,\"135449816\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":137727331,\"datasetKey\":\"4dd32523-a3a3-43b7-84df-4cda02f15cf7\",\"\
+        nubKey\":359,\"parentKey\":137725941,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":137725905,\"phylumKey\"\
+        :137725941,\"classKey\":137727331,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"137725905\":\"Animalia\"\
+        ,\"137725941\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":137744163,\"datasetKey\":\"8067e0a2-a26d-4831-8a1e-21b9118a299c\",\"\
+        nubKey\":359,\"parentKey\":137743934,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":137743177,\"phylumKey\"\
+        :137743934,\"classKey\":137744163,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"137743177\":\"Animalia\"\
+        ,\"137743934\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":125925138,\"datasetKey\":\"de8934f4-a136-481c-a87a-b0b202b80a31\",\"\
+        nubKey\":359,\"parentKey\":125924589,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":101440940,\"phylumKey\"\
+        :125924589,\"classKey\":125925138,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"authorship\":\"\",\"nameType\":\"SCIENTIFIC\",\"taxonomicStatus\"\
+        :\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\":\"DENORMED_CLASSIFICATION\",\"\
+        numDescendants\":374,\"numOccurrences\":0,\"habitats\":[],\"nomenclaturalStatus\"\
+        :[],\"threatStatuses\":[],\"descriptions\":[],\"vernacularNames\":[],\"higherClassificationMap\"\
+        :{\"101440940\":\"Animalia\",\"125924589\":\"Chordata\"},\"synonym\":false,\"\
+        class\":\"Mammalia\"},{\"key\":135061385,\"datasetKey\":\"3385d731-b373-4d9b-a167-633902b43069\"\
+        ,\"nubKey\":359,\"parentKey\":135061384,\"parent\":\"Chordata\",\"kingdom\"\
+        :\"Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":135061363,\"phylumKey\"\
+        :135061384,\"classKey\":135061385,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"135061363\":\"Animalia\"\
+        ,\"135061384\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135065010,\"datasetKey\":\"eeb7bd4b-37ed-4366-8557-4661cf7f47b0\",\"\
+        nubKey\":359,\"parentKey\":135065009,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":135064990,\"phylumKey\"\
+        :135065009,\"classKey\":135065010,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"135064990\":\"Animalia\"\
+        ,\"135065009\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135019411,\"datasetKey\":\"b05da2f8-5e97-4918-97e2-ae85ac43eecf\",\"\
+        nubKey\":359,\"parentKey\":135019410,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":135019409,\"phylumKey\"\
+        :135019410,\"classKey\":135019411,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"135019409\":\"Animalia\"\
+        ,\"135019410\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135043486,\"datasetKey\":\"f0248a65-b407-4edc-b2e2-aded770417d2\",\"\
+        nubKey\":359,\"parentKey\":135043485,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":135043484,\"phylumKey\"\
+        :135043485,\"classKey\":135043486,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"135043484\":\"Animalia\"\
+        ,\"135043485\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135251442,\"datasetKey\":\"cc056915-475e-4179-b12e-849acebc6ed9\",\"\
+        nubKey\":359,\"parentKey\":135251314,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":135251313,\"phylumKey\"\
+        :135251314,\"classKey\":135251442,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"135251313\":\"Animalia\"\
+        ,\"135251314\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135000842,\"datasetKey\":\"e672eb37-6da9-46e6-b7c2-1b281ebc02b1\",\"\
+        nubKey\":359,\"parentKey\":135000841,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":135000840,\"phylumKey\"\
+        :135000841,\"classKey\":135000842,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"135000840\":\"Animalia\"\
+        ,\"135000841\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":134996909,\"datasetKey\":\"47034122-1fc6-4b05-9cb8-0bf9749ef4b1\",\"\
+        nubKey\":359,\"parentKey\":134996908,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":134996907,\"phylumKey\"\
+        :134996908,\"classKey\":134996909,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"134996907\":\"Animalia\"\
+        ,\"134996908\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135009294,\"datasetKey\":\"a98356f4-7b13-4274-a121-3442375bf35c\",\"\
+        nubKey\":359,\"parentKey\":135009293,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":135009292,\"phylumKey\"\
+        :135009293,\"classKey\":135009294,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"135009292\":\"Animalia\"\
+        ,\"135009293\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135226191,\"datasetKey\":\"9e11f45e-f496-42e5-a1a6-9415907a3717\",\"\
+        nubKey\":359,\"parentKey\":135226181,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":135226033,\"phylumKey\"\
+        :135226181,\"classKey\":135226191,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"135226033\":\"Animalia\"\
+        ,\"135226181\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135229595,\"datasetKey\":\"64fa10f0-ca43-4f53-aa88-621ec9ea2b50\",\"\
+        nubKey\":359,\"parentKey\":135229404,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":135229402,\"phylumKey\"\
+        :135229404,\"classKey\":135229595,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"135229402\":\"Animalia\"\
+        ,\"135229404\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":134888698,\"datasetKey\":\"752f7715-2b9f-45a4-b9ee-c759bebf3981\",\"\
+        nubKey\":359,\"parentKey\":134888697,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":134888696,\"phylumKey\"\
+        :134888697,\"classKey\":134888698,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"134888696\":\"Animalia\"\
+        ,\"134888697\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":134893328,\"datasetKey\":\"6d3e2ddd-cde7-4508-880f-50458e912848\",\"\
+        nubKey\":359,\"parentKey\":134893327,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":134893317,\"phylumKey\"\
+        :134893327,\"classKey\":134893328,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"134893317\":\"Animalia\"\
+        ,\"134893327\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":134860281,\"datasetKey\":\"06d566fc-ac40-4283-bac4-7b4198204259\",\"\
+        nubKey\":359,\"parentKey\":134860271,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":134860265,\"phylumKey\"\
+        :134860271,\"classKey\":134860281,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"134860265\":\"Animalia\"\
+        ,\"134860271\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":134858540,\"datasetKey\":\"c42ad93c-88a8-440f-8842-118f2a1927a8\",\"\
+        nubKey\":359,\"parentKey\":134858408,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":134858279,\"phylumKey\"\
+        :134858408,\"classKey\":134858540,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"134858279\":\"Animalia\"\
+        ,\"134858408\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":134880394,\"datasetKey\":\"02308cb2-2ac2-407f-aa58-b7f5b657fc44\",\"\
+        nubKey\":359,\"parentKey\":134880393,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":134880387,\"phylumKey\"\
+        :134880393,\"classKey\":134880394,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"134880387\":\"Animalia\"\
+        ,\"134880393\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135047182,\"datasetKey\":\"6fa16a5a-560e-432f-ad9e-f93e8bd3e90d\",\"\
+        nubKey\":359,\"parentKey\":135047181,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":135047180,\"phylumKey\"\
+        :135047181,\"classKey\":135047182,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"135047180\":\"Animalia\"\
+        ,\"135047181\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135058344,\"datasetKey\":\"882b995c-8e5b-42a4-ac52-3dcf104ab6ac\",\"\
+        nubKey\":359,\"parentKey\":135058343,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":135058342,\"phylumKey\"\
+        :135058343,\"classKey\":135058344,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"135058342\":\"Animalia\"\
+        ,\"135058343\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135344054,\"datasetKey\":\"cbb6498e-8927-405a-916b-576d00a6289b\",\"\
+        nubKey\":359,\"parentKey\":135344049,\"parent\":\"Chordate\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordate\",\"kingdomKey\":112707351,\"phylumKey\"\
+        :135344049,\"classKey\":135344054,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"112707351\":\"Animalia\"\
+        ,\"135344049\":\"Chordate\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135359496,\"datasetKey\":\"cbb6498e-8927-405a-916b-576d00a6289b\",\"\
+        nubKey\":359,\"parentKey\":135359495,\"parent\":\"squirrels\",\"kingdom\"\
+        :\"Animalia\",\"phylum\":\"squirrels\",\"kingdomKey\":112707351,\"phylumKey\"\
+        :135359495,\"classKey\":135359496,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"112707351\":\"Animalia\"\
+        ,\"135359495\":\"squirrels\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":135315564,\"datasetKey\":\"99aaf1d4-6099-45a7-975e-324adc74036f\",\"\
+        nubKey\":359,\"parentKey\":135315281,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":135315279,\"phylumKey\"\
+        :135315281,\"classKey\":135315564,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"135315279\":\"Animalia\"\
+        ,\"135315281\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":137560860,\"datasetKey\":\"39c18d15-4c48-4f8d-a110-cd4a813c9984\",\"\
+        nubKey\":359,\"parentKey\":137560859,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":137560858,\"phylumKey\"\
+        :137560859,\"classKey\":137560860,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"137560858\":\"Animalia\"\
+        ,\"137560859\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":139350332,\"datasetKey\":\"e04b87e4-d35c-4812-a5f1-528631eca683\",\"\
+        nubKey\":359,\"parentKey\":139350331,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":139350330,\"phylumKey\"\
+        :139350331,\"classKey\":139350332,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\"\
+        :\"DENORMED_CLASSIFICATION\",\"numDescendants\":0,\"numOccurrences\":0,\"\
+        habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\"\
+        :[],\"vernacularNames\":[],\"higherClassificationMap\":{\"139350330\":\"Animalia\"\
+        ,\"139350331\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":127783787,\"datasetKey\":\"107e911e-cfc7-4f8b-be1b-9617888704d0\",\"\
+        nubKey\":359,\"parentKey\":127783786,\"parent\":\"Chordata\",\"kingdom\":\"\
+        Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":127783785,\"phylumKey\"\
+        :127783786,\"classKey\":127783787,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"authorship\":\"\",\"nameType\":\"SCIENTIFIC\",\"taxonomicStatus\"\
+        :\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\":\"DENORMED_CLASSIFICATION\",\"\
+        numDescendants\":4,\"numOccurrences\":0,\"habitats\":[],\"nomenclaturalStatus\"\
+        :[],\"threatStatuses\":[],\"descriptions\":[],\"vernacularNames\":[],\"higherClassificationMap\"\
+        :{\"127783785\":\"Animalia\",\"127783786\":\"Chordata\"},\"synonym\":false,\"\
+        class\":\"Mammalia\"},{\"key\":127773322,\"datasetKey\":\"e1f7fc27-d969-4f66-b01a-06ab3c4a08c5\"\
+        ,\"nubKey\":359,\"parentKey\":127773321,\"parent\":\"Chordata\",\"kingdom\"\
+        :\"Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":127773320,\"phylumKey\"\
+        :127773321,\"classKey\":127773322,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"authorship\":\"\",\"nameType\":\"SCIENTIFIC\",\"taxonomicStatus\"\
+        :\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\":\"DENORMED_CLASSIFICATION\",\"\
+        numDescendants\":6,\"numOccurrences\":0,\"habitats\":[],\"nomenclaturalStatus\"\
+        :[],\"threatStatuses\":[],\"descriptions\":[],\"vernacularNames\":[],\"higherClassificationMap\"\
+        :{\"127773320\":\"Animalia\",\"127773321\":\"Chordata\"},\"synonym\":false,\"\
+        class\":\"Mammalia\"},{\"key\":127782284,\"datasetKey\":\"f8a83a76-c666-4d5e-b11b-24b8586e86b4\"\
+        ,\"nubKey\":359,\"parentKey\":127782283,\"parent\":\"Chordata\",\"kingdom\"\
+        :\"Animalia\",\"phylum\":\"Chordata\",\"kingdomKey\":127782282,\"phylumKey\"\
+        :127782283,\"classKey\":127782284,\"scientificName\":\"Mammalia\",\"canonicalName\"\
+        :\"Mammalia\",\"authorship\":\"\",\"nameType\":\"SCIENTIFIC\",\"taxonomicStatus\"\
+        :\"ACCEPTED\",\"rank\":\"CLASS\",\"origin\":\"DENORMED_CLASSIFICATION\",\"\
+        numDescendants\":4,\"numOccurrences\":0,\"habitats\":[],\"nomenclaturalStatus\"\
+        :[],\"threatStatuses\":[],\"descriptions\":[],\"vernacularNames\":[],\"higherClassificationMap\"\
+        :{\"127782282\":\"Animalia\",\"127782283\":\"Chordata\"},\"synonym\":false,\"\
+        class\":\"Mammalia\"},{\"key\":359,\"datasetKey\":\"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c\"\
+        ,\"constituentKey\":\"7ddf754f-d193-4cc9-b351-99906754a03b\",\"nubKey\":359,\"\
+        parentKey\":44,\"parent\":\"Chordata\",\"kingdom\":\"Animalia\",\"phylum\"\
+        :\"Chordata\",\"kingdomKey\":1,\"phylumKey\":44,\"classKey\":359,\"scientificName\"\
+        :\"Mammalia\",\"canonicalName\":\"Mammalia\",\"authorship\":\"\",\"publishedIn\"\
+        :\"Linnaeus, C. (1758). Systema Naturae per regna tria naturae, secundum classes,\
+        \ ordines, genera, species, cum characteribus, differentiis, synonymis, locis.\
+        \ <em>Editio decima, reformata. Laurentius Salvius: Holmiae.</em> ii, 824\
+        \ pp.\",\"nameType\":\"SCIENTIFIC\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\"\
+        :\"CLASS\",\"origin\":\"SOURCE\",\"numDescendants\":39656,\"numOccurrences\"\
+        :0,\"extinct\":false,\"habitats\":[\"MARINE\",\"TERRESTRIAL\"],\"nomenclaturalStatus\"\
+        :[],\"threatStatuses\":[],\"descriptions\":[],\"vernacularNames\":[{\"vernacularName\"\
+        :\"zoogdieren\",\"language\":\"nld\"},{\"vernacularName\":\"Mammals\",\"language\"\
+        :\"eng\"},{\"vernacularName\":\"mammal\",\"language\":\"eng\"},{\"vernacularName\"\
+        :\"mammals\",\"language\":\"\"},{\"vernacularName\":\"d\xE4ggdjur\",\"language\"\
+        :\"swe\"},{\"vernacularName\":\"mammals\",\"language\":\"eng\"},{\"vernacularName\"\
+        :\"mammif\xE8res\",\"language\":\"fra\"},{\"vernacularName\":\"pattedyr\"\
+        ,\"language\":\"nno\"},{\"vernacularName\":\"pattedyr\",\"language\":\"nob\"\
+        },{\"vernacularName\":\"sogdyr\",\"language\":\"nno\"},{\"vernacularName\"\
+        :\"spendyr\",\"language\":\"nno\"},{\"vernacularName\":\"zoogdieren\",\"language\"\
+        :\"nld\"},{\"vernacularName\":\"\u0421\u0441\u0430\u0432\u0446\u0456\",\"\
+        language\":\"ukr\"},{\"vernacularName\":\"\u54FA\u4E73\",\"language\":\"jpn\"\
+        },{\"vernacularName\":\"mammals\",\"language\":\"eng\"},{\"vernacularName\"\
+        :\"mammif\xC3\xA8res\",\"language\":\"fra\"},{\"vernacularName\":\"mam\xC3\
+        \xADfero\",\"language\":\"por\"}],\"higherClassificationMap\":{\"1\":\"Animalia\"\
+        ,\"44\":\"Chordata\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"key\":115499069,\"\
+        datasetKey\":\"36ad3207-1190-47ad-868e-b09d6c0aeec2\",\"nubKey\":359,\"parentKey\"\
+        :115499051,\"parent\":\"Chordata\",\"kingdom\":\"Animalia\",\"phylum\":\"\
+        Chordata\",\"kingdomKey\":115498847,\"phylumKey\":115499051,\"classKey\":115499069,\"\
+        scientificName\":\"Mammalia\",\"canonicalName\":\"Mammalia\",\"authorship\"\
+        :\"\",\"nameType\":\"SCIENTIFIC\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\"\
+        :\"CLASS\",\"origin\":\"DENORMED_CLASSIFICATION\",\"numDescendants\":22,\"\
+        numOccurrences\":0,\"habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\"\
+        :[],\"descriptions\":[],\"vernacularNames\":[],\"higherClassificationMap\"\
+        :{\"115498847\":\"Animalia\",\"115499051\":\"Chordata\"},\"synonym\":false,\"\
+        class\":\"Mammalia\"}],\"facets\":[]}"}
+    headers:
+      Accept-Ranges: [bytes]
+      Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT']
+      Access-Control-Allow-Origin: ['*']
+      Age: ['0']
+      Cache-Control: ['public, max-age=600']
+      Connection: [keep-alive]
+      Content-Type: [application/json]
+      Date: ['Tue, 19 Dec 2017 20:58:43 GMT']
+      Server: [Jetty(9.3.z-SNAPSHOT)]
+      Via: [1.1 varnish (Varnish/5.2)]
+      X-API-URL: ['/v1/species/search?q=mammalia&limit=100']
+      X-Varnish: ['443155799']
+    status: {code: 200, message: OK}
+version: 1

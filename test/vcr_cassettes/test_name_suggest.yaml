@@ -1,0 +1,344 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      user-agent: ['python-requests/2.18.4,pygbif/0.2.2.1']
+    method: GET
+    uri: http://api.gbif.org/v1/species/suggest?q=Puma+concolor&limit=100
+  response:
+    body: {string: "[{\"key\":2435099,\"kingdom\":\"Animalia\",\"phylum\":\"Chordata\"\
+        ,\"order\":\"Carnivora\",\"family\":\"Felidae\",\"genus\":\"Puma\",\"species\"\
+        :\"Puma concolor\",\"kingdomKey\":1,\"phylumKey\":44,\"classKey\":359,\"orderKey\"\
+        :732,\"familyKey\":9703,\"genusKey\":2435098,\"speciesKey\":2435099,\"parent\"\
+        :\"Puma\",\"parentKey\":2435098,\"nubKey\":2435099,\"scientificName\":\"Puma\
+        \ concolor (Linnaeus, 1771)\",\"canonicalName\":\"Puma concolor\",\"rank\"\
+        :\"SPECIES\",\"status\":\"ACCEPTED\",\"higherClassificationMap\":{\"1\":\"\
+        Animalia\",\"44\":\"Chordata\",\"359\":\"Mammalia\",\"732\":\"Carnivora\"\
+        ,\"9703\":\"Felidae\",\"2435098\":\"Puma\"},\"synonym\":false,\"class\":\"\
+        Mammalia\"},{\"key\":8916934,\"kingdom\":\"Animalia\",\"phylum\":\"Chordata\"\
+        ,\"order\":\"Carnivora\",\"family\":\"Felidae\",\"genus\":\"Puma\",\"species\"\
+        :\"Puma concolor\",\"kingdomKey\":1,\"phylumKey\":44,\"classKey\":359,\"orderKey\"\
+        :732,\"familyKey\":9703,\"genusKey\":2435098,\"speciesKey\":2435099,\"parent\"\
+        :\"Puma concolor\",\"parentKey\":2435099,\"scientificName\":\"Puma concolor\
+        \ subsp. bangsi (Merriam, 1901)\",\"canonicalName\":\"Puma concolor bangsi\"\
+        ,\"rank\":\"SUBSPECIES\",\"status\":\"SYNONYM\",\"higherClassificationMap\"\
+        :{\"1\":\"Animalia\",\"44\":\"Chordata\",\"359\":\"Mammalia\",\"732\":\"Carnivora\"\
+        ,\"9703\":\"Felidae\",\"2435098\":\"Puma\",\"2435099\":\"Puma concolor\"},\"\
+        synonym\":true,\"class\":\"Mammalia\"},{\"key\":6164599,\"kingdom\":\"Animalia\"\
+        ,\"phylum\":\"Chordata\",\"order\":\"Carnivora\",\"family\":\"Felidae\",\"\
+        genus\":\"Puma\",\"species\":\"Puma concolor\",\"kingdomKey\":1,\"phylumKey\"\
+        :44,\"classKey\":359,\"orderKey\":732,\"familyKey\":9703,\"genusKey\":2435098,\"\
+        speciesKey\":2435099,\"parent\":\"Puma concolor\",\"parentKey\":2435099,\"\
+        nubKey\":6164599,\"scientificName\":\"Puma concolor subsp. azteca (Merriam,\
+        \ 1901)\",\"canonicalName\":\"Puma concolor azteca\",\"rank\":\"SUBSPECIES\"\
+        ,\"status\":\"SYNONYM\",\"higherClassificationMap\":{\"1\":\"Animalia\",\"\
+        44\":\"Chordata\",\"359\":\"Mammalia\",\"732\":\"Carnivora\",\"9703\":\"Felidae\"\
+        ,\"2435098\":\"Puma\",\"2435099\":\"Puma concolor\"},\"synonym\":true,\"class\"\
+        :\"Mammalia\"},{\"key\":8951716,\"kingdom\":\"Animalia\",\"phylum\":\"Chordata\"\
+        ,\"order\":\"Carnivora\",\"family\":\"Felidae\",\"genus\":\"Puma\",\"species\"\
+        :\"Puma concolor\",\"kingdomKey\":1,\"phylumKey\":44,\"classKey\":359,\"orderKey\"\
+        :732,\"familyKey\":9703,\"genusKey\":2435098,\"speciesKey\":2435099,\"parent\"\
+        :\"Puma concolor\",\"parentKey\":2435099,\"scientificName\":\"Puma concolor\
+        \ subsp. borbensis (Nelson & Goldman, 1933)\",\"canonicalName\":\"Puma concolor\
+        \ borbensis\",\"rank\":\"SUBSPECIES\",\"status\":\"SYNONYM\",\"higherClassificationMap\"\
+        :{\"1\":\"Animalia\",\"44\":\"Chordata\",\"359\":\"Mammalia\",\"732\":\"Carnivora\"\
+        ,\"9703\":\"Felidae\",\"2435098\":\"Puma\",\"2435099\":\"Puma concolor\"},\"\
+        synonym\":true,\"class\":\"Mammalia\"},{\"key\":6164618,\"kingdom\":\"Animalia\"\
+        ,\"phylum\":\"Chordata\",\"order\":\"Carnivora\",\"family\":\"Felidae\",\"\
+        genus\":\"Puma\",\"species\":\"Puma concolor\",\"kingdomKey\":1,\"phylumKey\"\
+        :44,\"classKey\":359,\"orderKey\":732,\"familyKey\":9703,\"genusKey\":2435098,\"\
+        speciesKey\":2435099,\"parent\":\"Puma concolor\",\"parentKey\":2435099,\"\
+        nubKey\":6164618,\"scientificName\":\"Puma concolor subsp. browni (Merriam,\
+        \ 1903)\",\"canonicalName\":\"Puma concolor browni\",\"rank\":\"SUBSPECIES\"\
+        ,\"status\":\"SYNONYM\",\"higherClassificationMap\":{\"1\":\"Animalia\",\"\
+        44\":\"Chordata\",\"359\":\"Mammalia\",\"732\":\"Carnivora\",\"9703\":\"Felidae\"\
+        ,\"2435098\":\"Puma\",\"2435099\":\"Puma concolor\"},\"synonym\":true,\"class\"\
+        :\"Mammalia\"},{\"key\":8860878,\"kingdom\":\"Animalia\",\"phylum\":\"Chordata\"\
+        ,\"order\":\"Carnivora\",\"family\":\"Felidae\",\"genus\":\"Puma\",\"species\"\
+        :\"Puma concolor\",\"kingdomKey\":1,\"phylumKey\":44,\"classKey\":359,\"orderKey\"\
+        :732,\"familyKey\":9703,\"genusKey\":2435098,\"speciesKey\":2435099,\"parent\"\
+        :\"Puma concolor\",\"parentKey\":2435099,\"scientificName\":\"Puma concolor\
+        \ subsp. capricornensis (Goldman, 1946)\",\"canonicalName\":\"Puma concolor\
+        \ capricornensis\",\"rank\":\"SUBSPECIES\",\"status\":\"SYNONYM\",\"higherClassificationMap\"\
+        :{\"1\":\"Animalia\",\"44\":\"Chordata\",\"359\":\"Mammalia\",\"732\":\"Carnivora\"\
+        ,\"9703\":\"Felidae\",\"2435098\":\"Puma\",\"2435099\":\"Puma concolor\"},\"\
+        synonym\":true,\"class\":\"Mammalia\"},{\"key\":6164589,\"kingdom\":\"Animalia\"\
+        ,\"phylum\":\"Chordata\",\"order\":\"Carnivora\",\"family\":\"Felidae\",\"\
+        genus\":\"Puma\",\"species\":\"Puma concolor\",\"kingdomKey\":1,\"phylumKey\"\
+        :44,\"classKey\":359,\"orderKey\":732,\"familyKey\":9703,\"genusKey\":2435098,\"\
+        speciesKey\":2435099,\"parent\":\"Puma concolor\",\"parentKey\":2435099,\"\
+        nubKey\":6164589,\"scientificName\":\"Puma concolor subsp. anthonyi (Nelson\
+        \ & Goldman, 1931)\",\"canonicalName\":\"Puma concolor anthonyi\",\"rank\"\
+        :\"SUBSPECIES\",\"status\":\"ACCEPTED\",\"higherClassificationMap\":{\"1\"\
+        :\"Animalia\",\"44\":\"Chordata\",\"359\":\"Mammalia\",\"732\":\"Carnivora\"\
+        ,\"9703\":\"Felidae\",\"2435098\":\"Puma\",\"2435099\":\"Puma concolor\"},\"\
+        synonym\":false,\"class\":\"Mammalia\"},{\"key\":6164611,\"kingdom\":\"Animalia\"\
+        ,\"phylum\":\"Chordata\",\"order\":\"Carnivora\",\"family\":\"Felidae\",\"\
+        genus\":\"Puma\",\"species\":\"Puma concolor\",\"kingdomKey\":1,\"phylumKey\"\
+        :44,\"classKey\":359,\"orderKey\":732,\"familyKey\":9703,\"genusKey\":2435098,\"\
+        speciesKey\":2435099,\"parent\":\"Puma concolor\",\"parentKey\":2435099,\"\
+        nubKey\":6164611,\"scientificName\":\"Puma concolor subsp. mayensis (Nelson\
+        \ & Goldman, 1929)\",\"canonicalName\":\"Puma concolor mayensis\",\"rank\"\
+        :\"SUBSPECIES\",\"status\":\"SYNONYM\",\"higherClassificationMap\":{\"1\"\
+        :\"Animalia\",\"44\":\"Chordata\",\"359\":\"Mammalia\",\"732\":\"Carnivora\"\
+        ,\"9703\":\"Felidae\",\"2435098\":\"Puma\",\"2435099\":\"Puma concolor\"},\"\
+        synonym\":true,\"class\":\"Mammalia\"},{\"key\":6164613,\"kingdom\":\"Animalia\"\
+        ,\"phylum\":\"Chordata\",\"order\":\"Carnivora\",\"family\":\"Felidae\",\"\
+        genus\":\"Puma\",\"species\":\"Puma concolor\",\"kingdomKey\":1,\"phylumKey\"\
+        :44,\"classKey\":359,\"orderKey\":732,\"familyKey\":9703,\"genusKey\":2435098,\"\
+        speciesKey\":2435099,\"parent\":\"Puma concolor\",\"parentKey\":2435099,\"\
+        nubKey\":6164613,\"scientificName\":\"Puma concolor subsp. schorgeri (Jackson,\
+        \ 1955)\",\"canonicalName\":\"Puma concolor schorgeri\",\"rank\":\"SUBSPECIES\"\
+        ,\"status\":\"SYNONYM\",\"higherClassificationMap\":{\"1\":\"Animalia\",\"\
+        44\":\"Chordata\",\"359\":\"Mammalia\",\"732\":\"Carnivora\",\"9703\":\"Felidae\"\
+        ,\"2435098\":\"Puma\",\"2435099\":\"Puma concolor\"},\"synonym\":true,\"class\"\
+        :\"Mammalia\"},{\"key\":8766647,\"kingdom\":\"Animalia\",\"phylum\":\"Chordata\"\
+        ,\"order\":\"Carnivora\",\"family\":\"Felidae\",\"genus\":\"Puma\",\"species\"\
+        :\"Puma concolor\",\"kingdomKey\":1,\"phylumKey\":44,\"classKey\":359,\"orderKey\"\
+        :732,\"familyKey\":9703,\"genusKey\":2435098,\"speciesKey\":2435099,\"parent\"\
+        :\"Puma concolor\",\"parentKey\":2435099,\"scientificName\":\"Puma concolor\
+        \ subsp. pearsoni (Thomas, 1901)\",\"canonicalName\":\"Puma concolor pearsoni\"\
+        ,\"rank\":\"SUBSPECIES\",\"status\":\"SYNONYM\",\"higherClassificationMap\"\
+        :{\"1\":\"Animalia\",\"44\":\"Chordata\",\"359\":\"Mammalia\",\"732\":\"Carnivora\"\
+        ,\"9703\":\"Felidae\",\"2435098\":\"Puma\",\"2435099\":\"Puma concolor\"},\"\
+        synonym\":true,\"class\":\"Mammalia\"},{\"key\":9037937,\"kingdom\":\"Animalia\"\
+        ,\"phylum\":\"Chordata\",\"order\":\"Carnivora\",\"family\":\"Felidae\",\"\
+        genus\":\"Puma\",\"species\":\"Puma concolor\",\"kingdomKey\":1,\"phylumKey\"\
+        :44,\"classKey\":359,\"orderKey\":732,\"familyKey\":9703,\"genusKey\":2435098,\"\
+        speciesKey\":2435099,\"parent\":\"Puma concolor\",\"parentKey\":2435099,\"\
+        scientificName\":\"Puma concolor subsp. soderstromii (L\xF6nnberg, 1913)\"\
+        ,\"canonicalName\":\"Puma concolor soderstromii\",\"rank\":\"SUBSPECIES\"\
+        ,\"status\":\"SYNONYM\",\"higherClassificationMap\":{\"1\":\"Animalia\",\"\
+        44\":\"Chordata\",\"359\":\"Mammalia\",\"732\":\"Carnivora\",\"9703\":\"Felidae\"\
+        ,\"2435098\":\"Puma\",\"2435099\":\"Puma concolor\"},\"synonym\":true,\"class\"\
+        :\"Mammalia\"},{\"key\":6164602,\"kingdom\":\"Animalia\",\"phylum\":\"Chordata\"\
+        ,\"order\":\"Carnivora\",\"family\":\"Felidae\",\"genus\":\"Puma\",\"species\"\
+        :\"Puma concolor\",\"kingdomKey\":1,\"phylumKey\":44,\"classKey\":359,\"orderKey\"\
+        :732,\"familyKey\":9703,\"genusKey\":2435098,\"speciesKey\":2435099,\"parent\"\
+        :\"Puma concolor\",\"parentKey\":2435099,\"nubKey\":6164602,\"scientificName\"\
+        :\"Puma concolor subsp. improcera (Phillips, 1912)\",\"canonicalName\":\"\
+        Puma concolor improcera\",\"rank\":\"SUBSPECIES\",\"status\":\"SYNONYM\",\"\
+        higherClassificationMap\":{\"1\":\"Animalia\",\"44\":\"Chordata\",\"359\"\
+        :\"Mammalia\",\"732\":\"Carnivora\",\"9703\":\"Felidae\",\"2435098\":\"Puma\"\
+        ,\"2435099\":\"Puma concolor\"},\"synonym\":true,\"class\":\"Mammalia\"},{\"\
+        key\":6164622,\"kingdom\":\"Animalia\",\"phylum\":\"Chordata\",\"order\":\"\
+        Carnivora\",\"family\":\"Felidae\",\"genus\":\"Puma\",\"species\":\"Puma concolor\"\
+        ,\"kingdomKey\":1,\"phylumKey\":44,\"classKey\":359,\"orderKey\":732,\"familyKey\"\
+        :9703,\"genusKey\":2435098,\"speciesKey\":2435099,\"parent\":\"Puma concolor\"\
+        ,\"parentKey\":2435099,\"nubKey\":6164622,\"scientificName\":\"Puma concolor\
+        \ subsp. puma (Molina, 1782)\",\"canonicalName\":\"Puma concolor puma\",\"\
+        rank\":\"SUBSPECIES\",\"status\":\"ACCEPTED\",\"higherClassificationMap\"\
+        :{\"1\":\"Animalia\",\"44\":\"Chordata\",\"359\":\"Mammalia\",\"732\":\"Carnivora\"\
+        ,\"9703\":\"Felidae\",\"2435098\":\"Puma\",\"2435099\":\"Puma concolor\"},\"\
+        synonym\":false,\"class\":\"Mammalia\"},{\"key\":6164600,\"kingdom\":\"Animalia\"\
+        ,\"phylum\":\"Chordata\",\"order\":\"Carnivora\",\"family\":\"Felidae\",\"\
+        genus\":\"Puma\",\"species\":\"Puma concolor\",\"kingdomKey\":1,\"phylumKey\"\
+        :44,\"classKey\":359,\"orderKey\":732,\"familyKey\":9703,\"genusKey\":2435098,\"\
+        speciesKey\":2435099,\"parent\":\"Puma concolor\",\"parentKey\":2435099,\"\
+        nubKey\":6164600,\"scientificName\":\"Puma concolor subsp. coryi (Bangs, 1899)\"\
+        ,\"canonicalName\":\"Puma concolor coryi\",\"rank\":\"SUBSPECIES\",\"status\"\
+        :\"SYNONYM\",\"higherClassificationMap\":{\"1\":\"Animalia\",\"44\":\"Chordata\"\
+        ,\"359\":\"Mammalia\",\"732\":\"Carnivora\",\"9703\":\"Felidae\",\"2435098\"\
+        :\"Puma\",\"2435099\":\"Puma concolor\"},\"synonym\":true,\"class\":\"Mammalia\"\
+        },{\"key\":6164624,\"kingdom\":\"Animalia\",\"phylum\":\"Chordata\",\"order\"\
+        :\"Carnivora\",\"family\":\"Felidae\",\"genus\":\"Puma\",\"species\":\"Puma\
+        \ concolor\",\"kingdomKey\":1,\"phylumKey\":44,\"classKey\":359,\"orderKey\"\
+        :732,\"familyKey\":9703,\"genusKey\":2435098,\"speciesKey\":2435099,\"parent\"\
+        :\"Puma concolor\",\"parentKey\":2435099,\"nubKey\":6164624,\"scientificName\"\
+        :\"Puma concolor subsp. costaricensis (Merriam, 1901)\",\"canonicalName\"\
+        :\"Puma concolor costaricensis\",\"rank\":\"SUBSPECIES\",\"status\":\"ACCEPTED\"\
+        ,\"higherClassificationMap\":{\"1\":\"Animalia\",\"44\":\"Chordata\",\"359\"\
+        :\"Mammalia\",\"732\":\"Carnivora\",\"9703\":\"Felidae\",\"2435098\":\"Puma\"\
+        ,\"2435099\":\"Puma concolor\"},\"synonym\":false,\"class\":\"Mammalia\"},{\"\
+        key\":9164058,\"kingdom\":\"Animalia\",\"phylum\":\"Chordata\",\"order\":\"\
+        Carnivora\",\"family\":\"Felidae\",\"genus\":\"Puma\",\"species\":\"Puma concolor\"\
+        ,\"kingdomKey\":1,\"phylumKey\":44,\"classKey\":359,\"orderKey\":732,\"familyKey\"\
+        :9703,\"genusKey\":2435098,\"speciesKey\":2435099,\"parent\":\"Puma concolor\"\
+        ,\"parentKey\":2435099,\"scientificName\":\"Puma concolor subsp. osgoodi (Nelson\
+        \ & Goldman, 1929)\",\"canonicalName\":\"Puma concolor osgoodi\",\"rank\"\
+        :\"SUBSPECIES\",\"status\":\"SYNONYM\",\"higherClassificationMap\":{\"1\"\
+        :\"Animalia\",\"44\":\"Chordata\",\"359\":\"Mammalia\",\"732\":\"Carnivora\"\
+        ,\"9703\":\"Felidae\",\"2435098\":\"Puma\",\"2435099\":\"Puma concolor\"},\"\
+        synonym\":true,\"class\":\"Mammalia\"},{\"key\":6164604,\"kingdom\":\"Animalia\"\
+        ,\"phylum\":\"Chordata\",\"order\":\"Carnivora\",\"family\":\"Felidae\",\"\
+        genus\":\"Puma\",\"species\":\"Puma concolor\",\"kingdomKey\":1,\"phylumKey\"\
+        :44,\"classKey\":359,\"orderKey\":732,\"familyKey\":9703,\"genusKey\":2435098,\"\
+        speciesKey\":2435099,\"parent\":\"Puma concolor\",\"parentKey\":2435099,\"\
+        nubKey\":6164604,\"scientificName\":\"Puma concolor subsp. stanleyana (Goldman,\
+        \ 1938)\",\"canonicalName\":\"Puma concolor stanleyana\",\"rank\":\"SUBSPECIES\"\
+        ,\"status\":\"SYNONYM\",\"higherClassificationMap\":{\"1\":\"Animalia\",\"\
+        44\":\"Chordata\",\"359\":\"Mammalia\",\"732\":\"Carnivora\",\"9703\":\"Felidae\"\
+        ,\"2435098\":\"Puma\",\"2435099\":\"Puma concolor\"},\"synonym\":true,\"class\"\
+        :\"Mammalia\"},{\"key\":6164610,\"kingdom\":\"Animalia\",\"phylum\":\"Chordata\"\
+        ,\"order\":\"Carnivora\",\"family\":\"Felidae\",\"genus\":\"Puma\",\"species\"\
+        :\"Puma concolor\",\"kingdomKey\":1,\"phylumKey\":44,\"classKey\":359,\"orderKey\"\
+        :732,\"familyKey\":9703,\"genusKey\":2435098,\"speciesKey\":2435099,\"parent\"\
+        :\"Puma concolor\",\"parentKey\":2435099,\"nubKey\":6164610,\"scientificName\"\
+        :\"Puma concolor subsp. hippolestes (Merriam, 1897)\",\"canonicalName\":\"\
+        Puma concolor hippolestes\",\"rank\":\"SUBSPECIES\",\"status\":\"SYNONYM\"\
+        ,\"higherClassificationMap\":{\"1\":\"Animalia\",\"44\":\"Chordata\",\"359\"\
+        :\"Mammalia\",\"732\":\"Carnivora\",\"9703\":\"Felidae\",\"2435098\":\"Puma\"\
+        ,\"2435099\":\"Puma concolor\"},\"synonym\":true,\"class\":\"Mammalia\"},{\"\
+        key\":6164620,\"kingdom\":\"Animalia\",\"phylum\":\"Chordata\",\"order\":\"\
+        Carnivora\",\"family\":\"Felidae\",\"genus\":\"Puma\",\"species\":\"Puma concolor\"\
+        ,\"kingdomKey\":1,\"phylumKey\":44,\"classKey\":359,\"orderKey\":732,\"familyKey\"\
+        :9703,\"genusKey\":2435098,\"speciesKey\":2435099,\"parent\":\"Puma concolor\"\
+        ,\"parentKey\":2435099,\"nubKey\":6164620,\"scientificName\":\"Puma concolor\
+        \ subsp. cougar (Kerr, 1792)\",\"canonicalName\":\"Puma concolor cougar\"\
+        ,\"rank\":\"SUBSPECIES\",\"status\":\"SYNONYM\",\"higherClassificationMap\"\
+        :{\"1\":\"Animalia\",\"44\":\"Chordata\",\"359\":\"Mammalia\",\"732\":\"Carnivora\"\
+        ,\"9703\":\"Felidae\",\"2435098\":\"Puma\",\"2435099\":\"Puma concolor\"},\"\
+        synonym\":true,\"class\":\"Mammalia\"},{\"key\":9045222,\"kingdom\":\"Animalia\"\
+        ,\"phylum\":\"Chordata\",\"order\":\"Carnivora\",\"family\":\"Felidae\",\"\
+        genus\":\"Puma\",\"species\":\"Puma concolor\",\"kingdomKey\":1,\"phylumKey\"\
+        :44,\"classKey\":359,\"orderKey\":732,\"familyKey\":9703,\"genusKey\":2435098,\"\
+        speciesKey\":2435099,\"parent\":\"Puma concolor\",\"parentKey\":2435099,\"\
+        scientificName\":\"Puma concolor subsp. araucanus (Osgood, 1943)\",\"canonicalName\"\
+        :\"Puma concolor araucanus\",\"rank\":\"SUBSPECIES\",\"status\":\"SYNONYM\"\
+        ,\"higherClassificationMap\":{\"1\":\"Animalia\",\"44\":\"Chordata\",\"359\"\
+        :\"Mammalia\",\"732\":\"Carnivora\",\"9703\":\"Felidae\",\"2435098\":\"Puma\"\
+        ,\"2435099\":\"Puma concolor\"},\"synonym\":true,\"class\":\"Mammalia\"},{\"\
+        key\":6164591,\"kingdom\":\"Animalia\",\"phylum\":\"Chordata\",\"order\":\"\
+        Carnivora\",\"family\":\"Felidae\",\"genus\":\"Puma\",\"species\":\"Puma concolor\"\
+        ,\"kingdomKey\":1,\"phylumKey\":44,\"classKey\":359,\"orderKey\":732,\"familyKey\"\
+        :9703,\"genusKey\":2435098,\"speciesKey\":2435099,\"parent\":\"Puma concolor\"\
+        ,\"parentKey\":2435099,\"nubKey\":6164591,\"scientificName\":\"Puma concolor\
+        \ subsp. kaibabensis (Nelson & Goldman, 1931)\",\"canonicalName\":\"Puma concolor\
+        \ kaibabensis\",\"rank\":\"SUBSPECIES\",\"status\":\"SYNONYM\",\"higherClassificationMap\"\
+        :{\"1\":\"Animalia\",\"44\":\"Chordata\",\"359\":\"Mammalia\",\"732\":\"Carnivora\"\
+        ,\"9703\":\"Felidae\",\"2435098\":\"Puma\",\"2435099\":\"Puma concolor\"},\"\
+        synonym\":true,\"class\":\"Mammalia\"},{\"key\":9156584,\"kingdom\":\"Animalia\"\
+        ,\"phylum\":\"Chordata\",\"order\":\"Carnivora\",\"family\":\"Felidae\",\"\
+        genus\":\"Puma\",\"species\":\"Puma concolor\",\"kingdomKey\":1,\"phylumKey\"\
+        :44,\"classKey\":359,\"orderKey\":732,\"familyKey\":9703,\"genusKey\":2435098,\"\
+        speciesKey\":2435099,\"parent\":\"Puma concolor\",\"parentKey\":2435099,\"\
+        scientificName\":\"Puma concolor subsp. patagonica (Merriam, 1901)\",\"canonicalName\"\
+        :\"Puma concolor patagonica\",\"rank\":\"SUBSPECIES\",\"status\":\"SYNONYM\"\
+        ,\"higherClassificationMap\":{\"1\":\"Animalia\",\"44\":\"Chordata\",\"359\"\
+        :\"Mammalia\",\"732\":\"Carnivora\",\"9703\":\"Felidae\",\"2435098\":\"Puma\"\
+        ,\"2435099\":\"Puma concolor\"},\"synonym\":true,\"class\":\"Mammalia\"},{\"\
+        key\":6164603,\"kingdom\":\"Animalia\",\"phylum\":\"Chordata\",\"order\":\"\
+        Carnivora\",\"family\":\"Felidae\",\"genus\":\"Puma\",\"species\":\"Puma concolor\"\
+        ,\"kingdomKey\":1,\"phylumKey\":44,\"classKey\":359,\"orderKey\":732,\"familyKey\"\
+        :9703,\"genusKey\":2435098,\"speciesKey\":2435099,\"parent\":\"Puma concolor\"\
+        ,\"parentKey\":2435099,\"nubKey\":6164603,\"scientificName\":\"Puma concolor\
+        \ subsp. missoulensis (Goldman, 1943)\",\"canonicalName\":\"Puma concolor\
+        \ missoulensis\",\"rank\":\"SUBSPECIES\",\"status\":\"SYNONYM\",\"higherClassificationMap\"\
+        :{\"1\":\"Animalia\",\"44\":\"Chordata\",\"359\":\"Mammalia\",\"732\":\"Carnivora\"\
+        ,\"9703\":\"Felidae\",\"2435098\":\"Puma\",\"2435099\":\"Puma concolor\"},\"\
+        synonym\":true,\"class\":\"Mammalia\"},{\"key\":6164590,\"kingdom\":\"Animalia\"\
+        ,\"phylum\":\"Chordata\",\"order\":\"Carnivora\",\"family\":\"Felidae\",\"\
+        genus\":\"Puma\",\"species\":\"Puma concolor\",\"kingdomKey\":1,\"phylumKey\"\
+        :44,\"classKey\":359,\"orderKey\":732,\"familyKey\":9703,\"genusKey\":2435098,\"\
+        speciesKey\":2435099,\"parent\":\"Puma concolor\",\"parentKey\":2435099,\"\
+        nubKey\":6164590,\"scientificName\":\"Puma concolor subsp. couguar (Kerr,\
+        \ 1792)\",\"canonicalName\":\"Puma concolor couguar\",\"rank\":\"SUBSPECIES\"\
+        ,\"status\":\"ACCEPTED\",\"higherClassificationMap\":{\"1\":\"Animalia\",\"\
+        44\":\"Chordata\",\"359\":\"Mammalia\",\"732\":\"Carnivora\",\"9703\":\"Felidae\"\
+        ,\"2435098\":\"Puma\",\"2435099\":\"Puma concolor\"},\"synonym\":false,\"\
+        class\":\"Mammalia\"},{\"key\":6164623,\"kingdom\":\"Animalia\",\"phylum\"\
+        :\"Chordata\",\"order\":\"Carnivora\",\"family\":\"Felidae\",\"genus\":\"\
+        Puma\",\"species\":\"Puma concolor\",\"kingdomKey\":1,\"phylumKey\":44,\"\
+        classKey\":359,\"orderKey\":732,\"familyKey\":9703,\"genusKey\":2435098,\"\
+        speciesKey\":2435099,\"parent\":\"Puma concolor\",\"parentKey\":2435099,\"\
+        nubKey\":6164623,\"scientificName\":\"Puma concolor subsp. cabrerae Pocock,\
+        \ 1940\",\"canonicalName\":\"Puma concolor cabrerae\",\"rank\":\"SUBSPECIES\"\
+        ,\"status\":\"ACCEPTED\",\"higherClassificationMap\":{\"1\":\"Animalia\",\"\
+        44\":\"Chordata\",\"359\":\"Mammalia\",\"732\":\"Carnivora\",\"9703\":\"Felidae\"\
+        ,\"2435098\":\"Puma\",\"2435099\":\"Puma concolor\"},\"synonym\":false,\"\
+        class\":\"Mammalia\"},{\"key\":8836300,\"kingdom\":\"Animalia\",\"phylum\"\
+        :\"Chordata\",\"order\":\"Carnivora\",\"family\":\"Felidae\",\"genus\":\"\
+        Puma\",\"species\":\"Puma concolor\",\"kingdomKey\":1,\"phylumKey\":44,\"\
+        classKey\":359,\"orderKey\":732,\"familyKey\":9703,\"genusKey\":2435098,\"\
+        speciesKey\":2435099,\"parent\":\"Puma concolor\",\"parentKey\":2435099,\"\
+        scientificName\":\"Puma concolor subsp. discolor\",\"canonicalName\":\"Puma\
+        \ concolor discolor\",\"rank\":\"SUBSPECIES\",\"status\":\"ACCEPTED\",\"higherClassificationMap\"\
+        :{\"1\":\"Animalia\",\"44\":\"Chordata\",\"359\":\"Mammalia\",\"732\":\"Carnivora\"\
+        ,\"9703\":\"Felidae\",\"2435098\":\"Puma\",\"2435099\":\"Puma concolor\"},\"\
+        synonym\":false,\"class\":\"Mammalia\"},{\"key\":6164608,\"kingdom\":\"Animalia\"\
+        ,\"phylum\":\"Chordata\",\"order\":\"Carnivora\",\"family\":\"Felidae\",\"\
+        genus\":\"Puma\",\"species\":\"Puma concolor\",\"kingdomKey\":1,\"phylumKey\"\
+        :44,\"classKey\":359,\"orderKey\":732,\"familyKey\":9703,\"genusKey\":2435098,\"\
+        speciesKey\":2435099,\"parent\":\"Puma concolor\",\"parentKey\":2435099,\"\
+        nubKey\":6164608,\"scientificName\":\"Puma concolor subsp. californica (May,\
+        \ 1896)\",\"canonicalName\":\"Puma concolor californica\",\"rank\":\"SUBSPECIES\"\
+        ,\"status\":\"SYNONYM\",\"higherClassificationMap\":{\"1\":\"Animalia\",\"\
+        44\":\"Chordata\",\"359\":\"Mammalia\",\"732\":\"Carnivora\",\"9703\":\"Felidae\"\
+        ,\"2435098\":\"Puma\",\"2435099\":\"Puma concolor\"},\"synonym\":true,\"class\"\
+        :\"Mammalia\"},{\"key\":6164594,\"kingdom\":\"Animalia\",\"phylum\":\"Chordata\"\
+        ,\"order\":\"Carnivora\",\"family\":\"Felidae\",\"genus\":\"Puma\",\"species\"\
+        :\"Puma concolor\",\"kingdomKey\":1,\"phylumKey\":44,\"classKey\":359,\"orderKey\"\
+        :732,\"familyKey\":9703,\"genusKey\":2435098,\"speciesKey\":2435099,\"parent\"\
+        :\"Puma concolor\",\"parentKey\":2435099,\"nubKey\":6164594,\"scientificName\"\
+        :\"Puma concolor subsp. vancouverensis (Nelson & Goldman, 1932)\",\"canonicalName\"\
+        :\"Puma concolor vancouverensis\",\"rank\":\"SUBSPECIES\",\"status\":\"SYNONYM\"\
+        ,\"higherClassificationMap\":{\"1\":\"Animalia\",\"44\":\"Chordata\",\"359\"\
+        :\"Mammalia\",\"732\":\"Carnivora\",\"9703\":\"Felidae\",\"2435098\":\"Puma\"\
+        ,\"2435099\":\"Puma concolor\"},\"synonym\":true,\"class\":\"Mammalia\"},{\"\
+        key\":8773192,\"kingdom\":\"Animalia\",\"phylum\":\"Chordata\",\"order\":\"\
+        Carnivora\",\"family\":\"Felidae\",\"genus\":\"Puma\",\"species\":\"Puma concolor\"\
+        ,\"kingdomKey\":1,\"phylumKey\":44,\"classKey\":359,\"orderKey\":732,\"familyKey\"\
+        :9703,\"genusKey\":2435098,\"speciesKey\":2435099,\"parent\":\"Puma concolor\"\
+        ,\"parentKey\":2435099,\"scientificName\":\"Puma concolor subsp. incarum (Nelson\
+        \ & Goldman, 1929)\",\"canonicalName\":\"Puma concolor incarum\",\"rank\"\
+        :\"SUBSPECIES\",\"status\":\"SYNONYM\",\"higherClassificationMap\":{\"1\"\
+        :\"Animalia\",\"44\":\"Chordata\",\"359\":\"Mammalia\",\"732\":\"Carnivora\"\
+        ,\"9703\":\"Felidae\",\"2435098\":\"Puma\",\"2435099\":\"Puma concolor\"},\"\
+        synonym\":true,\"class\":\"Mammalia\"},{\"key\":6164592,\"kingdom\":\"Animalia\"\
+        ,\"phylum\":\"Chordata\",\"order\":\"Carnivora\",\"family\":\"Felidae\",\"\
+        genus\":\"Puma\",\"species\":\"Puma concolor\",\"kingdomKey\":1,\"phylumKey\"\
+        :44,\"classKey\":359,\"orderKey\":732,\"familyKey\":9703,\"genusKey\":2435098,\"\
+        speciesKey\":2435099,\"parent\":\"Puma concolor\",\"parentKey\":2435099,\"\
+        nubKey\":6164592,\"scientificName\":\"Puma concolor subsp. oregonensis (Rafinesque,\
+        \ 1832)\",\"canonicalName\":\"Puma concolor oregonensis\",\"rank\":\"SUBSPECIES\"\
+        ,\"status\":\"SYNONYM\",\"higherClassificationMap\":{\"1\":\"Animalia\",\"\
+        44\":\"Chordata\",\"359\":\"Mammalia\",\"732\":\"Carnivora\",\"9703\":\"Felidae\"\
+        ,\"2435098\":\"Puma\",\"2435099\":\"Puma concolor\"},\"synonym\":true,\"class\"\
+        :\"Mammalia\"},{\"key\":7193927,\"kingdom\":\"Animalia\",\"phylum\":\"Chordata\"\
+        ,\"order\":\"Carnivora\",\"family\":\"Felidae\",\"genus\":\"Puma\",\"species\"\
+        :\"Puma concolor\",\"kingdomKey\":1,\"phylumKey\":44,\"classKey\":359,\"orderKey\"\
+        :732,\"familyKey\":9703,\"genusKey\":2435098,\"speciesKey\":2435099,\"parent\"\
+        :\"Puma concolor\",\"parentKey\":2435099,\"nubKey\":7193927,\"scientificName\"\
+        :\"Puma concolor subsp. concolor\",\"canonicalName\":\"Puma concolor concolor\"\
+        ,\"rank\":\"SUBSPECIES\",\"status\":\"ACCEPTED\",\"higherClassificationMap\"\
+        :{\"1\":\"Animalia\",\"44\":\"Chordata\",\"359\":\"Mammalia\",\"732\":\"Carnivora\"\
+        ,\"9703\":\"Felidae\",\"2435098\":\"Puma\",\"2435099\":\"Puma concolor\"},\"\
+        synonym\":false,\"class\":\"Mammalia\"},{\"key\":9104297,\"kingdom\":\"Animalia\"\
+        ,\"phylum\":\"Chordata\",\"order\":\"Carnivora\",\"family\":\"Felidae\",\"\
+        genus\":\"Puma\",\"species\":\"Puma concolor\",\"kingdomKey\":1,\"phylumKey\"\
+        :44,\"classKey\":359,\"orderKey\":732,\"familyKey\":9703,\"genusKey\":2435098,\"\
+        speciesKey\":2435099,\"parent\":\"Puma concolor\",\"parentKey\":2435099,\"\
+        scientificName\":\"Puma concolor subsp. greeni (Nelson & Goldman, 1931)\"\
+        ,\"canonicalName\":\"Puma concolor greeni\",\"rank\":\"SUBSPECIES\",\"status\"\
+        :\"SYNONYM\",\"higherClassificationMap\":{\"1\":\"Animalia\",\"44\":\"Chordata\"\
+        ,\"359\":\"Mammalia\",\"732\":\"Carnivora\",\"9703\":\"Felidae\",\"2435098\"\
+        :\"Puma\",\"2435099\":\"Puma concolor\"},\"synonym\":true,\"class\":\"Mammalia\"\
+        },{\"key\":8944801,\"kingdom\":\"Animalia\",\"phylum\":\"Chordata\",\"order\"\
+        :\"Carnivora\",\"family\":\"Felidae\",\"genus\":\"Puma\",\"species\":\"Puma\
+        \ concolor\",\"kingdomKey\":1,\"phylumKey\":44,\"classKey\":359,\"orderKey\"\
+        :732,\"familyKey\":9703,\"genusKey\":2435098,\"speciesKey\":2435099,\"parent\"\
+        :\"Puma concolor\",\"parentKey\":2435099,\"scientificName\":\"Puma concolor\
+        \ subsp. acrocodia (Goldman, 1943)\",\"canonicalName\":\"Puma concolor acrocodia\"\
+        ,\"rank\":\"SUBSPECIES\",\"status\":\"SYNONYM\",\"higherClassificationMap\"\
+        :{\"1\":\"Animalia\",\"44\":\"Chordata\",\"359\":\"Mammalia\",\"732\":\"Carnivora\"\
+        ,\"9703\":\"Felidae\",\"2435098\":\"Puma\",\"2435099\":\"Puma concolor\"},\"\
+        synonym\":true,\"class\":\"Mammalia\"}]"}
+    headers:
+      Accept-Ranges: [bytes]
+      Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT']
+      Access-Control-Allow-Origin: ['*']
+      Age: ['767']
+      Cache-Control: ['public, max-age=3601']
+      Connection: [keep-alive]
+      Content-Length: ['21248']
+      Content-Type: [application/json]
+      Date: ['Tue, 19 Dec 2017 20:45:58 GMT']
+      Server: [Jetty(9.3.z-SNAPSHOT)]
+      Via: [1.1 varnish (Varnish/5.2)]
+      X-API-URL: ['/v1/species/suggest?q=Puma+concolor&limit=100']
+      X-Varnish: [442698144 443024298]
+    status: {code: 200, message: OK}
+version: 1
