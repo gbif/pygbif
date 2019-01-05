@@ -17,7 +17,7 @@ class TestWKTClass(unittest.TestCase):
         res = utils.wkt_rewind(x, digits = 3)
         pat = re.compile('\\.[0-9]{3}\\s')
         out = pat.search(res)
-        self.assertIsInstance(out, re.Match)
+        self.assertIsInstance(out.string, str)
 
 @raises(TypeError)
 def test_wkt_rewind_fails_well():
