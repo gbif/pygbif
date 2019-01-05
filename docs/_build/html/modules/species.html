@@ -8,9 +8,11 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>species module &mdash; pygbif 0.2.1 documentation</title>
+  <title>species module &mdash; pygbif 0.2.2.3 documentation</title>
   
 
+  
+  
   
   
 
@@ -22,28 +24,21 @@
 
   
 
-  
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="pygbif 0.2.1 documentation" href="../index.html"/>
-        <link rel="next" title="Changelog" href="../changelog_link.html"/>
-        <link rel="prev" title="registry module" href="registry.html"/> 
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Changelog" href="../changelog_link.html" />
+    <link rel="prev" title="registry module" href="registry.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
+   
   <div class="wy-grid-for-nav">
 
     
@@ -63,7 +58,7 @@
             
             
               <div class="version">
-                0.2.1
+                0.2.2.3
               </div>
             
           
@@ -84,7 +79,10 @@
           
             
             
-                <p class="caption"><span class="caption-text">Installation</span></p>
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../intro/install.html">Installation guide</a></li>
 </ul>
@@ -121,34 +119,54 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../index.html">pygbif</a>
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pygbif</a>
+        
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="../index.html">Docs</a> &raquo;</li>
-      
-    <li>species module</li>
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>species module</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
-            <a href="../_sources/modules/species.txt" rel="nofollow"> View page source</a>
+            
+            <a href="../_sources/modules/species.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -165,7 +183,7 @@
 <li><cite>name_parser</cite></li>
 </ul>
 <p>Example usage:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">species</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">species</span>
 <span class="n">species</span><span class="o">.</span><span class="n">name_suggest</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="s1">&#39;Puma concolor&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -173,45 +191,45 @@
 <span id="species-api"></span><h2>species API<a class="headerlink" href="#module-pygbif" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="pygbif.species.name_backbone">
-<code class="descclassname">species.</code><code class="descname">name_backbone</code><span class="sig-paren">(</span><em>name</em>, <em>rank=None</em>, <em>kingdom=None</em>, <em>phylum=None</em>, <em>clazz=None</em>, <em>order=None</em>, <em>family=None</em>, <em>genus=None</em>, <em>strict=False</em>, <em>verbose=False</em>, <em>offset=None</em>, <em>limit=100</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.species.name_backbone" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">species.</code><code class="descname">name_backbone</code><span class="sig-paren">(</span><em>rank=None</em>, <em>kingdom=None</em>, <em>phylum=None</em>, <em>clazz=None</em>, <em>order=None</em>, <em>family=None</em>, <em>genus=None</em>, <em>strict=False</em>, <em>verbose=False</em>, <em>offset=None</em>, <em>limit=100</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.species.name_backbone" title="Permalink to this definition">¶</a></dt>
 <dd><p>Lookup names in the GBIF backbone taxonomy.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>name</strong> &#8211; [str] Full scientific name potentially with authorship (required)</li>
-<li><strong>rank</strong> &#8211; [str] The rank given as our rank enum. (optional)</li>
-<li><strong>kingdom</strong> &#8211; [str] If provided default matching will also try to match against this
+<li><strong>name</strong> – [str] Full scientific name potentially with authorship (required)</li>
+<li><strong>rank</strong> – [str] The rank given as our rank enum. (optional)</li>
+<li><strong>kingdom</strong> – [str] If provided default matching will also try to match against this
 if no direct match is found for the name alone. (optional)</li>
-<li><strong>phylum</strong> &#8211; [str] If provided default matching will also try to match against this
+<li><strong>phylum</strong> – [str] If provided default matching will also try to match against this
 if no direct match is found for the name alone. (optional)</li>
-<li><strong>class</strong> &#8211; [str] If provided default matching will also try to match against this
+<li><strong>class</strong> – [str] If provided default matching will also try to match against this
 if no direct match is found for the name alone. (optional)</li>
-<li><strong>order</strong> &#8211; [str] If provided default matching will also try to match against this
+<li><strong>order</strong> – [str] If provided default matching will also try to match against this
 if no direct match is found for the name alone. (optional)</li>
-<li><strong>family</strong> &#8211; [str] If provided default matching will also try to match against this
+<li><strong>family</strong> – [str] If provided default matching will also try to match against this
 if no direct match is found for the name alone. (optional)</li>
-<li><strong>genus</strong> &#8211; [str] If provided default matching will also try to match against this
+<li><strong>genus</strong> – [str] If provided default matching will also try to match against this
 if no direct match is found for the name alone. (optional)</li>
-<li><strong>strict</strong> &#8211; [bool] If True it (fuzzy) matches only the given name, but never a
+<li><strong>strict</strong> – [bool] If True it (fuzzy) matches only the given name, but never a
 taxon in the upper classification (optional)</li>
-<li><strong>verbose</strong> &#8211; [bool] If True show alternative matches considered which had been rejected.</li>
-<li><strong>offset</strong> &#8211; [int] Record to start at. Default: <code class="docutils literal"><span class="pre">0</span></code></li>
-<li><strong>limit</strong> &#8211; [int] Number of results to return. Default: <code class="docutils literal"><span class="pre">100</span></code></li>
+<li><strong>verbose</strong> – [bool] If True show alternative matches considered which had been rejected.</li>
+<li><strong>offset</strong> – [int] Record to start at. Default: <code class="docutils literal notranslate"><span class="pre">0</span></code></li>
+<li><strong>limit</strong> – [int] Number of results to return. Default: <code class="docutils literal notranslate"><span class="pre">100</span></code></li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-<p>A list for a single taxon with many slots (with <code class="docutils literal"><span class="pre">verbose=False</span></code> - default), or a
+<p>A list for a single taxon with many slots (with <code class="docutils literal notranslate"><span class="pre">verbose=False</span></code> - default), or a
 list of length two, first element for the suggested taxon match, and a data.frame
-with alternative name suggestions resulting from fuzzy matching (with <code class="docutils literal"><span class="pre">verbose=True</span></code>).</p>
-<p>If you don&#8217;t get a match GBIF gives back a list of length 3 with slots synonym,
-confidence, and <code class="docutils literal"><span class="pre">matchType='NONE'</span></code>.</p>
+with alternative name suggestions resulting from fuzzy matching (with <code class="docutils literal notranslate"><span class="pre">verbose=True</span></code>).</p>
+<p>If you don’t get a match GBIF gives back a list of length 3 with slots synonym,
+confidence, and <code class="docutils literal notranslate"><span class="pre">matchType='NONE'</span></code>.</p>
 <p>reference: <a class="reference external" href="http://www.gbif.org/developer/species#searching">http://www.gbif.org/developer/species#searching</a></p>
 <p>Usage:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">species</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">species</span>
 <span class="n">species</span><span class="o">.</span><span class="n">name_backbone</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Helianthus annuus&#39;</span><span class="p">,</span> <span class="n">kingdom</span><span class="o">=</span><span class="s1">&#39;plants&#39;</span><span class="p">)</span>
 <span class="n">species</span><span class="o">.</span><span class="n">name_backbone</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Helianthus&#39;</span><span class="p">,</span> <span class="n">rank</span><span class="o">=</span><span class="s1">&#39;genus&#39;</span><span class="p">,</span> <span class="n">kingdom</span><span class="o">=</span><span class="s1">&#39;plants&#39;</span><span class="p">)</span>
 <span class="n">species</span><span class="o">.</span><span class="n">name_backbone</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Poa&#39;</span><span class="p">,</span> <span class="n">rank</span><span class="o">=</span><span class="s1">&#39;genus&#39;</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s1">&#39;Poaceae&#39;</span><span class="p">)</span>
@@ -234,7 +252,7 @@ confidence, and <code class="docutils literal"><span class="pre">matchType='NONE
 
 <dl class="method">
 <dt id="pygbif.species.name_suggest">
-<code class="descclassname">species.</code><code class="descname">name_suggest</code><span class="sig-paren">(</span><em>q=None</em>, <em>datasetKey=None</em>, <em>rank=None</em>, <em>limit=100</em>, <em>offset=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.species.name_suggest" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">species.</code><code class="descname">name_suggest</code><span class="sig-paren">(</span><em>datasetKey=None</em>, <em>rank=None</em>, <em>limit=100</em>, <em>offset=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.species.name_suggest" title="Permalink to this definition">¶</a></dt>
 <dd><p>A quick and simple autocomplete service that returns up to 20 name usages by
 doing prefix matching against the scientific name. Results are ordered by relevance.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -242,18 +260,18 @@ doing prefix matching against the scientific name. Results are ordered by releva
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>q</strong> &#8211; [str] Simple search parameter. The value for this parameter can be a
+<li><strong>q</strong> – [str] Simple search parameter. The value for this parameter can be a
 simple word or a phrase. Wildcards can be added to the simple word parameters only,
-e.g. <code class="docutils literal"><span class="pre">q=*puma*</span></code> (Required)</li>
-<li><strong>datasetKey</strong> &#8211; [str] Filters by the checklist dataset key (a uuid, see examples)</li>
-<li><strong>rank</strong> &#8211; [str] A taxonomic rank. One of <code class="docutils literal"><span class="pre">class</span></code>, <code class="docutils literal"><span class="pre">cultivar</span></code>, <code class="docutils literal"><span class="pre">cultivar_group</span></code>, <code class="docutils literal"><span class="pre">domain</span></code>, <code class="docutils literal"><span class="pre">family</span></code>,
-<code class="docutils literal"><span class="pre">form</span></code>, <code class="docutils literal"><span class="pre">genus</span></code>, <code class="docutils literal"><span class="pre">informal</span></code>, <code class="docutils literal"><span class="pre">infrageneric_name</span></code>, <code class="docutils literal"><span class="pre">infraorder</span></code>, <code class="docutils literal"><span class="pre">infraspecific_name</span></code>,
-<code class="docutils literal"><span class="pre">infrasubspecific_name</span></code>, <code class="docutils literal"><span class="pre">kingdom</span></code>, <code class="docutils literal"><span class="pre">order</span></code>, <code class="docutils literal"><span class="pre">phylum</span></code>, <code class="docutils literal"><span class="pre">section</span></code>, <code class="docutils literal"><span class="pre">series</span></code>, <code class="docutils literal"><span class="pre">species</span></code>, <code class="docutils literal"><span class="pre">strain</span></code>, <code class="docutils literal"><span class="pre">subclass</span></code>,
-<code class="docutils literal"><span class="pre">subfamily</span></code>, <code class="docutils literal"><span class="pre">subform</span></code>, <code class="docutils literal"><span class="pre">subgenus</span></code>, <code class="docutils literal"><span class="pre">subkingdom</span></code>, <code class="docutils literal"><span class="pre">suborder</span></code>, <code class="docutils literal"><span class="pre">subphylum</span></code>, <code class="docutils literal"><span class="pre">subsection</span></code>, <code class="docutils literal"><span class="pre">subseries</span></code>,
-<code class="docutils literal"><span class="pre">subspecies</span></code>, <code class="docutils literal"><span class="pre">subtribe</span></code>, <code class="docutils literal"><span class="pre">subvariety</span></code>, <code class="docutils literal"><span class="pre">superclass</span></code>, <code class="docutils literal"><span class="pre">superfamily</span></code>, <code class="docutils literal"><span class="pre">superorder</span></code>, <code class="docutils literal"><span class="pre">superphylum</span></code>,
-<code class="docutils literal"><span class="pre">suprageneric_name</span></code>, <code class="docutils literal"><span class="pre">tribe</span></code>, <code class="docutils literal"><span class="pre">unranked</span></code>, or <code class="docutils literal"><span class="pre">variety</span></code>.</li>
-<li><strong>limit</strong> &#8211; [fixnum] Number of records to return. Maximum: <code class="docutils literal"><span class="pre">1000</span></code>. (optional)</li>
-<li><strong>offset</strong> &#8211; [fixnum] Record number to start at. (optional)</li>
+e.g. <code class="docutils literal notranslate"><span class="pre">q=*puma*</span></code> (Required)</li>
+<li><strong>datasetKey</strong> – [str] Filters by the checklist dataset key (a uuid, see examples)</li>
+<li><strong>rank</strong> – [str] A taxonomic rank. One of <code class="docutils literal notranslate"><span class="pre">class</span></code>, <code class="docutils literal notranslate"><span class="pre">cultivar</span></code>, <code class="docutils literal notranslate"><span class="pre">cultivar_group</span></code>, <code class="docutils literal notranslate"><span class="pre">domain</span></code>, <code class="docutils literal notranslate"><span class="pre">family</span></code>,
+<code class="docutils literal notranslate"><span class="pre">form</span></code>, <code class="docutils literal notranslate"><span class="pre">genus</span></code>, <code class="docutils literal notranslate"><span class="pre">informal</span></code>, <code class="docutils literal notranslate"><span class="pre">infrageneric_name</span></code>, <code class="docutils literal notranslate"><span class="pre">infraorder</span></code>, <code class="docutils literal notranslate"><span class="pre">infraspecific_name</span></code>,
+<code class="docutils literal notranslate"><span class="pre">infrasubspecific_name</span></code>, <code class="docutils literal notranslate"><span class="pre">kingdom</span></code>, <code class="docutils literal notranslate"><span class="pre">order</span></code>, <code class="docutils literal notranslate"><span class="pre">phylum</span></code>, <code class="docutils literal notranslate"><span class="pre">section</span></code>, <code class="docutils literal notranslate"><span class="pre">series</span></code>, <code class="docutils literal notranslate"><span class="pre">species</span></code>, <code class="docutils literal notranslate"><span class="pre">strain</span></code>, <code class="docutils literal notranslate"><span class="pre">subclass</span></code>,
+<code class="docutils literal notranslate"><span class="pre">subfamily</span></code>, <code class="docutils literal notranslate"><span class="pre">subform</span></code>, <code class="docutils literal notranslate"><span class="pre">subgenus</span></code>, <code class="docutils literal notranslate"><span class="pre">subkingdom</span></code>, <code class="docutils literal notranslate"><span class="pre">suborder</span></code>, <code class="docutils literal notranslate"><span class="pre">subphylum</span></code>, <code class="docutils literal notranslate"><span class="pre">subsection</span></code>, <code class="docutils literal notranslate"><span class="pre">subseries</span></code>,
+<code class="docutils literal notranslate"><span class="pre">subspecies</span></code>, <code class="docutils literal notranslate"><span class="pre">subtribe</span></code>, <code class="docutils literal notranslate"><span class="pre">subvariety</span></code>, <code class="docutils literal notranslate"><span class="pre">superclass</span></code>, <code class="docutils literal notranslate"><span class="pre">superfamily</span></code>, <code class="docutils literal notranslate"><span class="pre">superorder</span></code>, <code class="docutils literal notranslate"><span class="pre">superphylum</span></code>,
+<code class="docutils literal notranslate"><span class="pre">suprageneric_name</span></code>, <code class="docutils literal notranslate"><span class="pre">tribe</span></code>, <code class="docutils literal notranslate"><span class="pre">unranked</span></code>, or <code class="docutils literal notranslate"><span class="pre">variety</span></code>.</li>
+<li><strong>limit</strong> – [fixnum] Number of records to return. Maximum: <code class="docutils literal notranslate"><span class="pre">1000</span></code>. (optional)</li>
+<li><strong>offset</strong> – [fixnum] Record number to start at. (optional)</li>
 </ul>
 </td>
 </tr>
@@ -264,7 +282,7 @@ e.g. <code class="docutils literal"><span class="pre">q=*puma*</span></code> (Re
 </table>
 <p>References: <a class="reference external" href="http://www.gbif.org/developer/species#searching">http://www.gbif.org/developer/species#searching</a></p>
 <p>Usage:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">species</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">species</span>
 
 <span class="n">species</span><span class="o">.</span><span class="n">name_suggest</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="s1">&#39;Puma concolor&#39;</span><span class="p">)</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">species</span><span class="o">.</span><span class="n">name_suggest</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="s1">&#39;Puma&#39;</span><span class="p">)</span>
@@ -279,7 +297,7 @@ e.g. <code class="docutils literal"><span class="pre">q=*puma*</span></code> (Re
 
 <dl class="method">
 <dt id="pygbif.species.name_lookup">
-<code class="descclassname">species.</code><code class="descname">name_lookup</code><span class="sig-paren">(</span><em>q=None</em>, <em>rank=None</em>, <em>higherTaxonKey=None</em>, <em>status=None</em>, <em>isExtinct=None</em>, <em>habitat=None</em>, <em>nameType=None</em>, <em>datasetKey=None</em>, <em>nomenclaturalStatus=None</em>, <em>limit=100</em>, <em>offset=None</em>, <em>facet=False</em>, <em>facetMincount=None</em>, <em>facetMultiselect=None</em>, <em>type=None</em>, <em>hl=False</em>, <em>verbose=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.species.name_lookup" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">species.</code><code class="descname">name_lookup</code><span class="sig-paren">(</span><em>rank=None</em>, <em>higherTaxonKey=None</em>, <em>status=None</em>, <em>isExtinct=None</em>, <em>habitat=None</em>, <em>nameType=None</em>, <em>datasetKey=None</em>, <em>nomenclaturalStatus=None</em>, <em>limit=100</em>, <em>offset=None</em>, <em>facet=False</em>, <em>facetMincount=None</em>, <em>facetMultiselect=None</em>, <em>type=None</em>, <em>hl=False</em>, <em>verbose=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.species.name_lookup" title="Permalink to this definition">¶</a></dt>
 <dd><p>Lookup names in all taxonomies in GBIF.</p>
 <p>This service uses fuzzy lookup so that you can put in partial names and
 you should get back those things that match. See examples below.</p>
@@ -288,68 +306,68 @@ you should get back those things that match. See examples below.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>q</strong> &#8211; [str] Query term(s) for full text search (optional)</li>
-<li><strong>rank</strong> &#8211; [str] <code class="docutils literal"><span class="pre">CLASS</span></code>, <code class="docutils literal"><span class="pre">CULTIVAR</span></code>, <code class="docutils literal"><span class="pre">CULTIVAR_GROUP</span></code>, <code class="docutils literal"><span class="pre">DOMAIN</span></code>, <code class="docutils literal"><span class="pre">FAMILY</span></code>,
-<code class="docutils literal"><span class="pre">FORM</span></code>, <code class="docutils literal"><span class="pre">GENUS</span></code>, <code class="docutils literal"><span class="pre">INFORMAL</span></code>, <code class="docutils literal"><span class="pre">INFRAGENERIC_NAME</span></code>, <code class="docutils literal"><span class="pre">INFRAORDER</span></code>, <code class="docutils literal"><span class="pre">INFRASPECIFIC_NAME</span></code>,
-<code class="docutils literal"><span class="pre">INFRASUBSPECIFIC_NAME</span></code>, <code class="docutils literal"><span class="pre">KINGDOM</span></code>, <code class="docutils literal"><span class="pre">ORDER</span></code>, <code class="docutils literal"><span class="pre">PHYLUM</span></code>, <code class="docutils literal"><span class="pre">SECTION</span></code>, <code class="docutils literal"><span class="pre">SERIES</span></code>, <code class="docutils literal"><span class="pre">SPECIES</span></code>, <code class="docutils literal"><span class="pre">STRAIN</span></code>, <code class="docutils literal"><span class="pre">SUBCLASS</span></code>,
-<code class="docutils literal"><span class="pre">SUBFAMILY</span></code>, <code class="docutils literal"><span class="pre">SUBFORM</span></code>, <code class="docutils literal"><span class="pre">SUBGENUS</span></code>, <code class="docutils literal"><span class="pre">SUBKINGDOM</span></code>, <code class="docutils literal"><span class="pre">SUBORDER</span></code>, <code class="docutils literal"><span class="pre">SUBPHYLUM</span></code>, <code class="docutils literal"><span class="pre">SUBSECTION</span></code>, <code class="docutils literal"><span class="pre">SUBSERIES</span></code>,
-<code class="docutils literal"><span class="pre">SUBSPECIES</span></code>, <code class="docutils literal"><span class="pre">SUBTRIBE</span></code>, <code class="docutils literal"><span class="pre">SUBVARIETY</span></code>, <code class="docutils literal"><span class="pre">SUPERCLASS</span></code>, <code class="docutils literal"><span class="pre">SUPERFAMILY</span></code>, <code class="docutils literal"><span class="pre">SUPERORDER</span></code>, <code class="docutils literal"><span class="pre">SUPERPHYLUM</span></code>,
-<code class="docutils literal"><span class="pre">SUPRAGENERIC_NAME</span></code>, <code class="docutils literal"><span class="pre">TRIBE</span></code>, <code class="docutils literal"><span class="pre">UNRANKED</span></code>, <code class="docutils literal"><span class="pre">VARIETY</span></code> (optional)</li>
-<li><strong>verbose</strong> &#8211; [bool] If True show alternative matches considered which had been rejected.</li>
-<li><strong>higherTaxonKey</strong> &#8211; [str] Filters by any of the higher Linnean rank keys. Note this
+<li><strong>q</strong> – [str] Query term(s) for full text search (optional)</li>
+<li><strong>rank</strong> – [str] <code class="docutils literal notranslate"><span class="pre">CLASS</span></code>, <code class="docutils literal notranslate"><span class="pre">CULTIVAR</span></code>, <code class="docutils literal notranslate"><span class="pre">CULTIVAR_GROUP</span></code>, <code class="docutils literal notranslate"><span class="pre">DOMAIN</span></code>, <code class="docutils literal notranslate"><span class="pre">FAMILY</span></code>,
+<code class="docutils literal notranslate"><span class="pre">FORM</span></code>, <code class="docutils literal notranslate"><span class="pre">GENUS</span></code>, <code class="docutils literal notranslate"><span class="pre">INFORMAL</span></code>, <code class="docutils literal notranslate"><span class="pre">INFRAGENERIC_NAME</span></code>, <code class="docutils literal notranslate"><span class="pre">INFRAORDER</span></code>, <code class="docutils literal notranslate"><span class="pre">INFRASPECIFIC_NAME</span></code>,
+<code class="docutils literal notranslate"><span class="pre">INFRASUBSPECIFIC_NAME</span></code>, <code class="docutils literal notranslate"><span class="pre">KINGDOM</span></code>, <code class="docutils literal notranslate"><span class="pre">ORDER</span></code>, <code class="docutils literal notranslate"><span class="pre">PHYLUM</span></code>, <code class="docutils literal notranslate"><span class="pre">SECTION</span></code>, <code class="docutils literal notranslate"><span class="pre">SERIES</span></code>, <code class="docutils literal notranslate"><span class="pre">SPECIES</span></code>, <code class="docutils literal notranslate"><span class="pre">STRAIN</span></code>, <code class="docutils literal notranslate"><span class="pre">SUBCLASS</span></code>,
+<code class="docutils literal notranslate"><span class="pre">SUBFAMILY</span></code>, <code class="docutils literal notranslate"><span class="pre">SUBFORM</span></code>, <code class="docutils literal notranslate"><span class="pre">SUBGENUS</span></code>, <code class="docutils literal notranslate"><span class="pre">SUBKINGDOM</span></code>, <code class="docutils literal notranslate"><span class="pre">SUBORDER</span></code>, <code class="docutils literal notranslate"><span class="pre">SUBPHYLUM</span></code>, <code class="docutils literal notranslate"><span class="pre">SUBSECTION</span></code>, <code class="docutils literal notranslate"><span class="pre">SUBSERIES</span></code>,
+<code class="docutils literal notranslate"><span class="pre">SUBSPECIES</span></code>, <code class="docutils literal notranslate"><span class="pre">SUBTRIBE</span></code>, <code class="docutils literal notranslate"><span class="pre">SUBVARIETY</span></code>, <code class="docutils literal notranslate"><span class="pre">SUPERCLASS</span></code>, <code class="docutils literal notranslate"><span class="pre">SUPERFAMILY</span></code>, <code class="docutils literal notranslate"><span class="pre">SUPERORDER</span></code>, <code class="docutils literal notranslate"><span class="pre">SUPERPHYLUM</span></code>,
+<code class="docutils literal notranslate"><span class="pre">SUPRAGENERIC_NAME</span></code>, <code class="docutils literal notranslate"><span class="pre">TRIBE</span></code>, <code class="docutils literal notranslate"><span class="pre">UNRANKED</span></code>, <code class="docutils literal notranslate"><span class="pre">VARIETY</span></code> (optional)</li>
+<li><strong>verbose</strong> – [bool] If True show alternative matches considered which had been rejected.</li>
+<li><strong>higherTaxonKey</strong> – [str] Filters by any of the higher Linnean rank keys. Note this
 is within the respective checklist and not searching nub keys across all checklists (optional)</li>
-<li><strong>status</strong> &#8211; <p>[str] (optional) Filters by the taxonomic status as one of:</p>
+<li><strong>status</strong> – <p>[str] (optional) Filters by the taxonomic status as one of:</p>
 <ul>
-<li><code class="docutils literal"><span class="pre">ACCEPTED</span></code></li>
-<li><code class="docutils literal"><span class="pre">DETERMINATION_SYNONYM</span></code> Used for unknown child taxa referred to via spec, ssp, ...</li>
-<li><code class="docutils literal"><span class="pre">DOUBTFUL</span></code> Treated as accepted, but doubtful whether this is correct.</li>
-<li><code class="docutils literal"><span class="pre">HETEROTYPIC_SYNONYM</span></code> More specific subclass of <code class="docutils literal"><span class="pre">SYNONYM</span></code>.</li>
-<li><code class="docutils literal"><span class="pre">HOMOTYPIC_SYNONYM</span></code> More specific subclass of <code class="docutils literal"><span class="pre">SYNONYM</span></code>.</li>
-<li><code class="docutils literal"><span class="pre">INTERMEDIATE_RANK_SYNONYM</span></code> Used in nub only.</li>
-<li><code class="docutils literal"><span class="pre">MISAPPLIED</span></code> More specific subclass of <code class="docutils literal"><span class="pre">SYNONYM</span></code>.</li>
-<li><code class="docutils literal"><span class="pre">PROPARTE_SYNONYM</span></code> More specific subclass of <code class="docutils literal"><span class="pre">SYNONYM</span></code>.</li>
-<li><code class="docutils literal"><span class="pre">SYNONYM</span></code> A general synonym, the exact type is unknown.</li>
+<li><code class="docutils literal notranslate"><span class="pre">ACCEPTED</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">DETERMINATION_SYNONYM</span></code> Used for unknown child taxa referred to via spec, ssp, …</li>
+<li><code class="docutils literal notranslate"><span class="pre">DOUBTFUL</span></code> Treated as accepted, but doubtful whether this is correct.</li>
+<li><code class="docutils literal notranslate"><span class="pre">HETEROTYPIC_SYNONYM</span></code> More specific subclass of <code class="docutils literal notranslate"><span class="pre">SYNONYM</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">HOMOTYPIC_SYNONYM</span></code> More specific subclass of <code class="docutils literal notranslate"><span class="pre">SYNONYM</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">INTERMEDIATE_RANK_SYNONYM</span></code> Used in nub only.</li>
+<li><code class="docutils literal notranslate"><span class="pre">MISAPPLIED</span></code> More specific subclass of <code class="docutils literal notranslate"><span class="pre">SYNONYM</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">PROPARTE_SYNONYM</span></code> More specific subclass of <code class="docutils literal notranslate"><span class="pre">SYNONYM</span></code>.</li>
+<li><code class="docutils literal notranslate"><span class="pre">SYNONYM</span></code> A general synonym, the exact type is unknown.</li>
 </ul>
 </li>
-<li><strong>isExtinct</strong> &#8211; [bool] Filters by extinction status (e.g. <code class="docutils literal"><span class="pre">isExtinct=True</span></code>)</li>
-<li><strong>habitat</strong> &#8211; [str] Filters by habitat. One of: <code class="docutils literal"><span class="pre">marine</span></code>, <code class="docutils literal"><span class="pre">freshwater</span></code>, or
-<code class="docutils literal"><span class="pre">terrestrial</span></code> (optional)</li>
-<li><strong>nameType</strong> &#8211; <p>[str] (optional) Filters by the name type as one of:</p>
+<li><strong>isExtinct</strong> – [bool] Filters by extinction status (e.g. <code class="docutils literal notranslate"><span class="pre">isExtinct=True</span></code>)</li>
+<li><strong>habitat</strong> – [str] Filters by habitat. One of: <code class="docutils literal notranslate"><span class="pre">marine</span></code>, <code class="docutils literal notranslate"><span class="pre">freshwater</span></code>, or
+<code class="docutils literal notranslate"><span class="pre">terrestrial</span></code> (optional)</li>
+<li><strong>nameType</strong> – <p>[str] (optional) Filters by the name type as one of:</p>
 <ul>
-<li><code class="docutils literal"><span class="pre">BLACKLISTED</span></code> surely not a scientific name.</li>
-<li><code class="docutils literal"><span class="pre">CANDIDATUS</span></code> Candidatus is a component of the taxonomic name for a bacterium that cannot be maintained in a Bacteriology Culture Collection.</li>
-<li><code class="docutils literal"><span class="pre">CULTIVAR</span></code> a cultivated plant name.</li>
-<li><code class="docutils literal"><span class="pre">DOUBTFUL</span></code> doubtful whether this is a scientific name at all.</li>
-<li><code class="docutils literal"><span class="pre">HYBRID</span></code> a hybrid formula (not a hybrid name).</li>
-<li><code class="docutils literal"><span class="pre">INFORMAL</span></code> a scientific name with some informal addition like &#8220;cf.&#8221; or indetermined like Abies spec.</li>
-<li><code class="docutils literal"><span class="pre">SCINAME</span></code> a scientific name which is not well formed.</li>
-<li><code class="docutils literal"><span class="pre">VIRUS</span></code> a virus name.</li>
-<li><code class="docutils literal"><span class="pre">WELLFORMED</span></code> a well formed scientific name according to present nomenclatural rules.</li>
+<li><code class="docutils literal notranslate"><span class="pre">BLACKLISTED</span></code> surely not a scientific name.</li>
+<li><code class="docutils literal notranslate"><span class="pre">CANDIDATUS</span></code> Candidatus is a component of the taxonomic name for a bacterium that cannot be maintained in a Bacteriology Culture Collection.</li>
+<li><code class="docutils literal notranslate"><span class="pre">CULTIVAR</span></code> a cultivated plant name.</li>
+<li><code class="docutils literal notranslate"><span class="pre">DOUBTFUL</span></code> doubtful whether this is a scientific name at all.</li>
+<li><code class="docutils literal notranslate"><span class="pre">HYBRID</span></code> a hybrid formula (not a hybrid name).</li>
+<li><code class="docutils literal notranslate"><span class="pre">INFORMAL</span></code> a scientific name with some informal addition like “cf.” or indetermined like Abies spec.</li>
+<li><code class="docutils literal notranslate"><span class="pre">SCINAME</span></code> a scientific name which is not well formed.</li>
+<li><code class="docutils literal notranslate"><span class="pre">VIRUS</span></code> a virus name.</li>
+<li><code class="docutils literal notranslate"><span class="pre">WELLFORMED</span></code> a well formed scientific name according to present nomenclatural rules.</li>
 </ul>
 </li>
-<li><strong>datasetKey</strong> &#8211; [str] Filters by the dataset&#8217;s key (a uuid) (optional)</li>
-<li><strong>nomenclaturalStatus</strong> &#8211; [str] Not yet implemented, but will eventually allow for
+<li><strong>datasetKey</strong> – [str] Filters by the dataset’s key (a uuid) (optional)</li>
+<li><strong>nomenclaturalStatus</strong> – [str] Not yet implemented, but will eventually allow for
 filtering by a nomenclatural status enum</li>
-<li><strong>limit</strong> &#8211; [fixnum] Number of records to return. Maximum: <code class="docutils literal"><span class="pre">1000</span></code>. (optional)</li>
-<li><strong>offset</strong> &#8211; [fixnum] Record number to start at. (optional)</li>
-<li><strong>facet</strong> &#8211; [str] A list of facet names used to retrieve the 100 most frequent values
-for a field. Allowed facets are: <code class="docutils literal"><span class="pre">datasetKey</span></code>, <code class="docutils literal"><span class="pre">higherTaxonKey</span></code>, <code class="docutils literal"><span class="pre">rank</span></code>, <code class="docutils literal"><span class="pre">status</span></code>,
-<code class="docutils literal"><span class="pre">isExtinct</span></code>, <code class="docutils literal"><span class="pre">habitat</span></code>, and <code class="docutils literal"><span class="pre">nameType</span></code>. Additionally <code class="docutils literal"><span class="pre">threat</span></code> and <code class="docutils literal"><span class="pre">nomenclaturalStatus</span></code>
+<li><strong>limit</strong> – [fixnum] Number of records to return. Maximum: <code class="docutils literal notranslate"><span class="pre">1000</span></code>. (optional)</li>
+<li><strong>offset</strong> – [fixnum] Record number to start at. (optional)</li>
+<li><strong>facet</strong> – [str] A list of facet names used to retrieve the 100 most frequent values
+for a field. Allowed facets are: <code class="docutils literal notranslate"><span class="pre">datasetKey</span></code>, <code class="docutils literal notranslate"><span class="pre">higherTaxonKey</span></code>, <code class="docutils literal notranslate"><span class="pre">rank</span></code>, <code class="docutils literal notranslate"><span class="pre">status</span></code>,
+<code class="docutils literal notranslate"><span class="pre">isExtinct</span></code>, <code class="docutils literal notranslate"><span class="pre">habitat</span></code>, and <code class="docutils literal notranslate"><span class="pre">nameType</span></code>. Additionally <code class="docutils literal notranslate"><span class="pre">threat</span></code> and <code class="docutils literal notranslate"><span class="pre">nomenclaturalStatus</span></code>
 are legal values but not yet implemented, so data will not yet be returned for them. (optional)</li>
-<li><strong>facetMincount</strong> &#8211; [str] Used in combination with the facet parameter. Set
-<code class="docutils literal"><span class="pre">facetMincount={#}</span></code> to exclude facets with a count less than {#}, e.g.
-<a class="reference external" href="http://bit.ly/1bMdByP">http://bit.ly/1bMdByP</a> only shows the type value <code class="docutils literal"><span class="pre">ACCEPTED</span></code> because the other
+<li><strong>facetMincount</strong> – [str] Used in combination with the facet parameter. Set
+<code class="docutils literal notranslate"><span class="pre">facetMincount={#}</span></code> to exclude facets with a count less than {#}, e.g.
+<a class="reference external" href="http://bit.ly/1bMdByP">http://bit.ly/1bMdByP</a> only shows the type value <code class="docutils literal notranslate"><span class="pre">ACCEPTED</span></code> because the other
 statuses have counts less than 7,000,000 (optional)</li>
-<li><strong>facetMultiselect</strong> &#8211; [bool] Used in combination with the facet parameter. Set
-<code class="docutils literal"><span class="pre">facetMultiselect=True</span></code> to still return counts for values that are not currently
+<li><strong>facetMultiselect</strong> – [bool] Used in combination with the facet parameter. Set
+<code class="docutils literal notranslate"><span class="pre">facetMultiselect=True</span></code> to still return counts for values that are not currently
 filtered, e.g. <a class="reference external" href="http://bit.ly/19YLXPO">http://bit.ly/19YLXPO</a> still shows all status values even though
-status is being filtered by <code class="docutils literal"><span class="pre">status=ACCEPTED</span></code> (optional)</li>
-<li><strong>type</strong> &#8211; [str] Type of name. One of <code class="docutils literal"><span class="pre">occurrence</span></code>, <code class="docutils literal"><span class="pre">checklist</span></code>, or <code class="docutils literal"><span class="pre">metadata</span></code>. (optional)</li>
-<li><strong>hl</strong> &#8211; [bool] Set <code class="docutils literal"><span class="pre">hl=True</span></code> to highlight terms matching the query when in fulltext
-search fields. The highlight will be an emphasis tag of class <code class="docutils literal"><span class="pre">gbifH1</span></code> e.g.
-<code class="docutils literal"><span class="pre">q='plant',</span> <span class="pre">hl=True</span></code>. Fulltext search fields include: <code class="docutils literal"><span class="pre">title</span></code>, <code class="docutils literal"><span class="pre">keyword</span></code>, <code class="docutils literal"><span class="pre">country</span></code>,
-<code class="docutils literal"><span class="pre">publishing</span> <span class="pre">country</span></code>, <code class="docutils literal"><span class="pre">publishing</span> <span class="pre">organization</span> <span class="pre">title</span></code>, <code class="docutils literal"><span class="pre">hosting</span> <span class="pre">organization</span> <span class="pre">title</span></code>, and
-<code class="docutils literal"><span class="pre">description</span></code>. One additional full text field is searched which includes information from
+status is being filtered by <code class="docutils literal notranslate"><span class="pre">status=ACCEPTED</span></code> (optional)</li>
+<li><strong>type</strong> – [str] Type of name. One of <code class="docutils literal notranslate"><span class="pre">occurrence</span></code>, <code class="docutils literal notranslate"><span class="pre">checklist</span></code>, or <code class="docutils literal notranslate"><span class="pre">metadata</span></code>. (optional)</li>
+<li><strong>hl</strong> – [bool] Set <code class="docutils literal notranslate"><span class="pre">hl=True</span></code> to highlight terms matching the query when in fulltext
+search fields. The highlight will be an emphasis tag of class <code class="docutils literal notranslate"><span class="pre">gbifH1</span></code> e.g.
+<code class="docutils literal notranslate"><span class="pre">q='plant',</span> <span class="pre">hl=True</span></code>. Fulltext search fields include: <code class="docutils literal notranslate"><span class="pre">title</span></code>, <code class="docutils literal notranslate"><span class="pre">keyword</span></code>, <code class="docutils literal notranslate"><span class="pre">country</span></code>,
+<code class="docutils literal notranslate"><span class="pre">publishing</span> <span class="pre">country</span></code>, <code class="docutils literal notranslate"><span class="pre">publishing</span> <span class="pre">organization</span> <span class="pre">title</span></code>, <code class="docutils literal notranslate"><span class="pre">hosting</span> <span class="pre">organization</span> <span class="pre">title</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">description</span></code>. One additional full text field is searched which includes information from
 metadata documents, but the text of this field is not returned in the response. (optional)</li>
 </ul>
 </td>
@@ -363,7 +381,7 @@ metadata documents, but the text of this field is not returned in the response. 
 </tbody>
 </table>
 <p>Usage:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">species</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">species</span>
 
 <span class="c1"># Look up names like mammalia</span>
 <span class="n">species</span><span class="o">.</span><span class="n">name_lookup</span><span class="p">(</span><span class="n">q</span><span class="o">=</span><span class="s1">&#39;mammalia&#39;</span><span class="p">)</span>
@@ -417,35 +435,35 @@ metadata documents, but the text of this field is not returned in the response. 
 
 <dl class="method">
 <dt id="pygbif.species.name_usage">
-<code class="descclassname">species.</code><code class="descname">name_usage</code><span class="sig-paren">(</span><em>key=None</em>, <em>name=None</em>, <em>data='all'</em>, <em>language=None</em>, <em>datasetKey=None</em>, <em>uuid=None</em>, <em>sourceId=None</em>, <em>rank=None</em>, <em>shortname=None</em>, <em>limit=100</em>, <em>offset=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.species.name_usage" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">species.</code><code class="descname">name_usage</code><span class="sig-paren">(</span><em>name=None</em>, <em>data='all'</em>, <em>language=None</em>, <em>datasetKey=None</em>, <em>uuid=None</em>, <em>sourceId=None</em>, <em>rank=None</em>, <em>shortname=None</em>, <em>limit=100</em>, <em>offset=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.species.name_usage" title="Permalink to this definition">¶</a></dt>
 <dd><p>Lookup details for specific names in all taxonomies in GBIF.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>key</strong> &#8211; [fixnum] A GBIF key for a taxon</li>
-<li><strong>name</strong> &#8211; [str] Filters by a case insensitive, canonical namestring,
-e.g. &#8216;Puma concolor&#8217;</li>
-<li><strong>data</strong> &#8211; [str] The type of data to get. Default: <code class="docutils literal"><span class="pre">all</span></code>. Options: <code class="docutils literal"><span class="pre">all</span></code>,
-<code class="docutils literal"><span class="pre">verbatim</span></code>, <code class="docutils literal"><span class="pre">name</span></code>, <code class="docutils literal"><span class="pre">parents</span></code>, <code class="docutils literal"><span class="pre">children</span></code>,
-<code class="docutils literal"><span class="pre">related</span></code>, <code class="docutils literal"><span class="pre">synonyms</span></code>, <code class="docutils literal"><span class="pre">descriptions</span></code>, <code class="docutils literal"><span class="pre">distributions</span></code>, <code class="docutils literal"><span class="pre">media</span></code>,
-<code class="docutils literal"><span class="pre">references</span></code>, <code class="docutils literal"><span class="pre">speciesProfiles</span></code>, <code class="docutils literal"><span class="pre">vernacularNames</span></code>, <code class="docutils literal"><span class="pre">typeSpecimens</span></code>,
-<code class="docutils literal"><span class="pre">root</span></code></li>
-<li><strong>language</strong> &#8211; [str] Language, default is english</li>
-<li><strong>datasetKey</strong> &#8211; [str] Filters by the dataset&#8217;s key (a uuid)</li>
-<li><strong>uuid</strong> &#8211; [str] A uuid for a dataset. Should give exact same results as datasetKey.</li>
-<li><strong>sourceId</strong> &#8211; [fixnum] Filters by the source identifier.</li>
-<li><strong>rank</strong> &#8211; [str] Taxonomic rank. Filters by taxonomic rank as one of:
-<code class="docutils literal"><span class="pre">CLASS</span></code>, <code class="docutils literal"><span class="pre">CULTIVAR</span></code>, <code class="docutils literal"><span class="pre">CULTIVAR_GROUP</span></code>, <code class="docutils literal"><span class="pre">DOMAIN</span></code>, <code class="docutils literal"><span class="pre">FAMILY</span></code>, <code class="docutils literal"><span class="pre">FORM</span></code>, <code class="docutils literal"><span class="pre">GENUS</span></code>, <code class="docutils literal"><span class="pre">INFORMAL</span></code>,
-<code class="docutils literal"><span class="pre">INFRAGENERIC_NAME</span></code>, <code class="docutils literal"><span class="pre">INFRAORDER</span></code>, <code class="docutils literal"><span class="pre">INFRASPECIFIC_NAME</span></code>, <code class="docutils literal"><span class="pre">INFRASUBSPECIFIC_NAME</span></code>,
-<code class="docutils literal"><span class="pre">KINGDOM</span></code>, <code class="docutils literal"><span class="pre">ORDER</span></code>, <code class="docutils literal"><span class="pre">PHYLUM</span></code>, <code class="docutils literal"><span class="pre">SECTION</span></code>, <code class="docutils literal"><span class="pre">SERIES</span></code>, <code class="docutils literal"><span class="pre">SPECIES</span></code>, <code class="docutils literal"><span class="pre">STRAIN</span></code>, <code class="docutils literal"><span class="pre">SUBCLASS</span></code>, <code class="docutils literal"><span class="pre">SUBFAMILY</span></code>,
-<code class="docutils literal"><span class="pre">SUBFORM</span></code>, <code class="docutils literal"><span class="pre">SUBGENUS</span></code>, <code class="docutils literal"><span class="pre">SUBKINGDOM</span></code>, <code class="docutils literal"><span class="pre">SUBORDER</span></code>, <code class="docutils literal"><span class="pre">SUBPHYLUM</span></code>, <code class="docutils literal"><span class="pre">SUBSECTION</span></code>, <code class="docutils literal"><span class="pre">SUBSERIES</span></code>,
-<code class="docutils literal"><span class="pre">SUBSPECIES</span></code>, <code class="docutils literal"><span class="pre">SUBTRIBE</span></code>, <code class="docutils literal"><span class="pre">SUBVARIETY</span></code>, <code class="docutils literal"><span class="pre">SUPERCLASS</span></code>, <code class="docutils literal"><span class="pre">SUPERFAMILY</span></code>, <code class="docutils literal"><span class="pre">SUPERORDER</span></code>,
-<code class="docutils literal"><span class="pre">SUPERPHYLUM</span></code>, <code class="docutils literal"><span class="pre">SUPRAGENERIC_NAME</span></code>, <code class="docutils literal"><span class="pre">TRIBE</span></code>, <code class="docutils literal"><span class="pre">UNRANKED</span></code>, <code class="docutils literal"><span class="pre">VARIETY</span></code></li>
-<li><strong>shortname</strong> &#8211; [str] A short name..need more info on this?</li>
-<li><strong>limit</strong> &#8211; [fixnum] Number of records to return. Default: <code class="docutils literal"><span class="pre">100</span></code>. Maximum: <code class="docutils literal"><span class="pre">1000</span></code>. (optional)</li>
-<li><strong>offset</strong> &#8211; [fixnum] Record number to start at. (optional)</li>
+<li><strong>key</strong> – [fixnum] A GBIF key for a taxon</li>
+<li><strong>name</strong> – [str] Filters by a case insensitive, canonical namestring,
+e.g. ‘Puma concolor’</li>
+<li><strong>data</strong> – [str] The type of data to get. Default: <code class="docutils literal notranslate"><span class="pre">all</span></code>. Options: <code class="docutils literal notranslate"><span class="pre">all</span></code>,
+<code class="docutils literal notranslate"><span class="pre">verbatim</span></code>, <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">parents</span></code>, <code class="docutils literal notranslate"><span class="pre">children</span></code>,
+<code class="docutils literal notranslate"><span class="pre">related</span></code>, <code class="docutils literal notranslate"><span class="pre">synonyms</span></code>, <code class="docutils literal notranslate"><span class="pre">descriptions</span></code>, <code class="docutils literal notranslate"><span class="pre">distributions</span></code>, <code class="docutils literal notranslate"><span class="pre">media</span></code>,
+<code class="docutils literal notranslate"><span class="pre">references</span></code>, <code class="docutils literal notranslate"><span class="pre">speciesProfiles</span></code>, <code class="docutils literal notranslate"><span class="pre">vernacularNames</span></code>, <code class="docutils literal notranslate"><span class="pre">typeSpecimens</span></code>,
+<code class="docutils literal notranslate"><span class="pre">root</span></code></li>
+<li><strong>language</strong> – [str] Language, default is english</li>
+<li><strong>datasetKey</strong> – [str] Filters by the dataset’s key (a uuid)</li>
+<li><strong>uuid</strong> – [str] A uuid for a dataset. Should give exact same results as datasetKey.</li>
+<li><strong>sourceId</strong> – [fixnum] Filters by the source identifier.</li>
+<li><strong>rank</strong> – [str] Taxonomic rank. Filters by taxonomic rank as one of:
+<code class="docutils literal notranslate"><span class="pre">CLASS</span></code>, <code class="docutils literal notranslate"><span class="pre">CULTIVAR</span></code>, <code class="docutils literal notranslate"><span class="pre">CULTIVAR_GROUP</span></code>, <code class="docutils literal notranslate"><span class="pre">DOMAIN</span></code>, <code class="docutils literal notranslate"><span class="pre">FAMILY</span></code>, <code class="docutils literal notranslate"><span class="pre">FORM</span></code>, <code class="docutils literal notranslate"><span class="pre">GENUS</span></code>, <code class="docutils literal notranslate"><span class="pre">INFORMAL</span></code>,
+<code class="docutils literal notranslate"><span class="pre">INFRAGENERIC_NAME</span></code>, <code class="docutils literal notranslate"><span class="pre">INFRAORDER</span></code>, <code class="docutils literal notranslate"><span class="pre">INFRASPECIFIC_NAME</span></code>, <code class="docutils literal notranslate"><span class="pre">INFRASUBSPECIFIC_NAME</span></code>,
+<code class="docutils literal notranslate"><span class="pre">KINGDOM</span></code>, <code class="docutils literal notranslate"><span class="pre">ORDER</span></code>, <code class="docutils literal notranslate"><span class="pre">PHYLUM</span></code>, <code class="docutils literal notranslate"><span class="pre">SECTION</span></code>, <code class="docutils literal notranslate"><span class="pre">SERIES</span></code>, <code class="docutils literal notranslate"><span class="pre">SPECIES</span></code>, <code class="docutils literal notranslate"><span class="pre">STRAIN</span></code>, <code class="docutils literal notranslate"><span class="pre">SUBCLASS</span></code>, <code class="docutils literal notranslate"><span class="pre">SUBFAMILY</span></code>,
+<code class="docutils literal notranslate"><span class="pre">SUBFORM</span></code>, <code class="docutils literal notranslate"><span class="pre">SUBGENUS</span></code>, <code class="docutils literal notranslate"><span class="pre">SUBKINGDOM</span></code>, <code class="docutils literal notranslate"><span class="pre">SUBORDER</span></code>, <code class="docutils literal notranslate"><span class="pre">SUBPHYLUM</span></code>, <code class="docutils literal notranslate"><span class="pre">SUBSECTION</span></code>, <code class="docutils literal notranslate"><span class="pre">SUBSERIES</span></code>,
+<code class="docutils literal notranslate"><span class="pre">SUBSPECIES</span></code>, <code class="docutils literal notranslate"><span class="pre">SUBTRIBE</span></code>, <code class="docutils literal notranslate"><span class="pre">SUBVARIETY</span></code>, <code class="docutils literal notranslate"><span class="pre">SUPERCLASS</span></code>, <code class="docutils literal notranslate"><span class="pre">SUPERFAMILY</span></code>, <code class="docutils literal notranslate"><span class="pre">SUPERORDER</span></code>,
+<code class="docutils literal notranslate"><span class="pre">SUPERPHYLUM</span></code>, <code class="docutils literal notranslate"><span class="pre">SUPRAGENERIC_NAME</span></code>, <code class="docutils literal notranslate"><span class="pre">TRIBE</span></code>, <code class="docutils literal notranslate"><span class="pre">UNRANKED</span></code>, <code class="docutils literal notranslate"><span class="pre">VARIETY</span></code></li>
+<li><strong>shortname</strong> – [str] A short name..need more info on this?</li>
+<li><strong>limit</strong> – [fixnum] Number of records to return. Default: <code class="docutils literal notranslate"><span class="pre">100</span></code>. Maximum: <code class="docutils literal notranslate"><span class="pre">1000</span></code>. (optional)</li>
+<li><strong>offset</strong> – [fixnum] Record number to start at. (optional)</li>
 </ul>
 </td>
 </tr>
@@ -453,7 +471,7 @@ e.g. &#8216;Puma concolor&#8217;</li>
 </table>
 <p>References: <a class="reference external" href="http://www.gbif.org/developer/species#nameUsages">http://www.gbif.org/developer/species#nameUsages</a></p>
 <p>Usage:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">species</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">species</span>
 
 <span class="n">species</span><span class="o">.</span><span class="n">name_usage</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
@@ -488,19 +506,19 @@ e.g. &#8216;Puma concolor&#8217;</li>
 
 <dl class="method">
 <dt id="pygbif.species.name_parser">
-<code class="descclassname">species.</code><code class="descname">name_parser</code><span class="sig-paren">(</span><em>name</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.species.name_parser" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">species.</code><code class="descname">name_parser</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.species.name_parser" title="Permalink to this definition">¶</a></dt>
 <dd><p>Parse taxon names using the GBIF name parser</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> &#8211; [str] A character vector of scientific names. (required)</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> – [str] A character vector of scientific names. (required)</td>
 </tr>
 </tbody>
 </table>
 <p>reference: <a class="reference external" href="http://www.gbif.org/developer/species#parser">http://www.gbif.org/developer/species#parser</a></p>
 <p>Usage:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">species</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">species</span>
 <span class="n">species</span><span class="o">.</span><span class="n">name_parser</span><span class="p">(</span><span class="s1">&#39;x Agropogon littoralis&#39;</span><span class="p">)</span>
 <span class="n">species</span><span class="o">.</span><span class="n">name_parser</span><span class="p">([</span><span class="s1">&#39;Arrhenatherum elatius var. elatius&#39;</span><span class="p">,</span>
   <span class="s1">&#39;Secale cereale subsp. cereale&#39;</span><span class="p">,</span> <span class="s1">&#39;Secale cereale ssp. cereale&#39;</span><span class="p">,</span>
@@ -514,15 +532,16 @@ e.g. &#8216;Puma concolor&#8217;</li>
 
 
            </div>
+           
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../changelog_link.html" class="btn btn-neutral float-right" title="Changelog" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../changelog_link.html" class="btn btn-neutral float-right" title="Changelog" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="registry.html" class="btn btn-neutral" title="registry module" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="registry.html" class="btn btn-neutral" title="registry module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -535,7 +554,7 @@ e.g. &#8216;Puma concolor&#8217;</li>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -553,10 +572,12 @@ e.g. &#8216;Puma concolor&#8217;</li>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'0.2.1',
+            VERSION:'0.2.2.3',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
         };
     </script>
       <script type="text/javascript" src="../_static/jquery.js"></script>
@@ -565,19 +586,13 @@ e.g. &#8216;Puma concolor&#8217;</li>
 
   
 
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

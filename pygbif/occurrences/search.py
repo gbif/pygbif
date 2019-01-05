@@ -68,6 +68,7 @@ def search(taxonKey=None, repatriated=None,
     :param geometry: [str] Searches for occurrences inside a polygon described in Well Known
        Text (WKT) format. A WKT shape written as either POINT, LINESTRING, LINEARRING
        POLYGON, or MULTIPOLYGON. Example of a polygon: ``((30.1 10.1, 20, 20 40, 40 40, 30.1 10.1))`` would be queried as http://bit.ly/1BzNwDq.
+       Polygons must have counter-clockwise ordering of points.
     :param hasGeospatialIssue: [bool] Includes/excludes occurrence records which contain spatial
        issues (as determined in our record interpretation), i.e. ``hasGeospatialIssue=TRUE``
        returns only those records with spatial issues while ``hasGeospatialIssue=FALSE`` includes

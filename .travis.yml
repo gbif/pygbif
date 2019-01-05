@@ -3,7 +3,6 @@ language: python
 sudo: false
 
 python:
-  - "2.7"
   - "3.4"
   - "3.5"
   - "3.6"
@@ -11,6 +10,8 @@ python:
 install:
   - pip install 'requests>=2.7'
   - pip install 'shapely>=1.5.13'
+  - pip install 'geojson_rewind>=0.1.1'
+  - pip install 'geomet>=0.2.0.post2'
   - pip install coveralls
   - pip install vcrpy
 

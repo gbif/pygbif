@@ -29,16 +29,16 @@ setup(
   url              = 'http://github.com/sckott/pygbif',
   license          = "MIT",
   packages         = find_packages(exclude=['test-*']),
-  install_requires = ['requests>2.7'],
-  classifiers      = (
+  install_requires = ['requests>2.7', 'geojson_rewind', 'geomet'],
+  classifiers      = [
     'Development Status :: 4 - Beta',
     'Intended Audience :: Science/Research',
     'Topic :: Scientific/Engineering :: Bio-Informatics',
     'Natural Language :: English',
     'License :: OSI Approved :: MIT License',
     'Programming Language :: Python',
-    'Programming Language :: Python :: 2.6',
-    'Programming Language :: Python :: 2.7',
-    'Programming Language :: Python :: 3.4'
-	)
+    'Programming Language :: Python :: 3.5',
+    'Programming Language :: Python :: 3.6',
+    'Programming Language :: Python :: 3.7'
+	]
 )
