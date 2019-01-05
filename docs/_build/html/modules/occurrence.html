@@ -8,9 +8,11 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>occurrence module &mdash; pygbif 0.2.1 documentation</title>
+  <title>occurrence module &mdash; pygbif 0.2.2.3 documentation</title>
   
 
+  
+  
   
   
 
@@ -22,28 +24,21 @@
 
   
 
-  
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-        <link rel="index" title="Index"
-              href="../genindex.html"/>
-        <link rel="search" title="Search" href="../search.html"/>
-    <link rel="top" title="pygbif 0.2.1 documentation" href="../index.html"/>
-        <link rel="next" title="registry module" href="registry.html"/>
-        <link rel="prev" title="pygbif modules" href="intro.html"/> 
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="registry module" href="registry.html" />
+    <link rel="prev" title="pygbif modules" href="intro.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
 
 </head>
 
-<body class="wy-body-for-nav" role="document">
+<body class="wy-body-for-nav">
 
+   
   <div class="wy-grid-for-nav">
 
     
@@ -63,7 +58,7 @@
             
             
               <div class="version">
-                0.2.1
+                0.2.2.3
               </div>
             
           
@@ -84,7 +79,10 @@
           
             
             
-                <p class="caption"><span class="caption-text">Installation</span></p>
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../intro/install.html">Installation guide</a></li>
 </ul>
@@ -121,34 +119,54 @@
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
       
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../index.html">pygbif</a>
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pygbif</a>
+        
       </nav>
 
 
-      
       <div class="wy-nav-content">
+        
         <div class="rst-content">
+        
           
 
- 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 <div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-    <li><a href="../index.html">Docs</a> &raquo;</li>
-      
-    <li>occurrence module</li>
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>occurrence module</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
         
-          
-            <a href="../_sources/modules/occurrence.txt" rel="nofollow"> View page source</a>
+            
+            <a href="../_sources/modules/occurrence.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
@@ -175,7 +193,7 @@
 <li><cite>download_get</cite></li>
 </ul>
 <p>Example usage:</p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">occurrences</span> <span class="k">as</span> <span class="n">occ</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">occurrences</span> <span class="k">as</span> <span class="n">occ</span>
 <span class="n">occ</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">taxonKey</span> <span class="o">=</span> <span class="mi">3329049</span><span class="p">)</span>
 <span class="n">occ</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span> <span class="o">=</span> <span class="mi">252408386</span><span class="p">)</span>
 <span class="n">occ</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">isGeoreferenced</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
@@ -191,97 +209,98 @@
 <span id="occurrences-api"></span><h2>occurrences API<a class="headerlink" href="#module-pygbif" title="Permalink to this headline">¶</a></h2>
 <dl class="method">
 <dt id="pygbif.occurrences.search">
-<code class="descclassname">occurrences.</code><code class="descname">search</code><span class="sig-paren">(</span><em>taxonKey=None</em>, <em>repatriated=None</em>, <em>kingdomKey=None</em>, <em>phylumKey=None</em>, <em>classKey=None</em>, <em>orderKey=None</em>, <em>familyKey=None</em>, <em>genusKey=None</em>, <em>subgenusKey=None</em>, <em>scientificName=None</em>, <em>country=None</em>, <em>publishingCountry=None</em>, <em>hasCoordinate=None</em>, <em>typeStatus=None</em>, <em>recordNumber=None</em>, <em>lastInterpreted=None</em>, <em>continent=None</em>, <em>geometry=None</em>, <em>recordedBy=None</em>, <em>basisOfRecord=None</em>, <em>datasetKey=None</em>, <em>eventDate=None</em>, <em>catalogNumber=None</em>, <em>year=None</em>, <em>month=None</em>, <em>decimalLatitude=None</em>, <em>decimalLongitude=None</em>, <em>elevation=None</em>, <em>depth=None</em>, <em>institutionCode=None</em>, <em>collectionCode=None</em>, <em>hasGeospatialIssue=None</em>, <em>issue=None</em>, <em>q=None</em>, <em>spellCheck=None</em>, <em>mediatype=None</em>, <em>limit=300</em>, <em>offset=0</em>, <em>establishmentMeans=None</em>, <em>facet=None</em>, <em>facetMincount=None</em>, <em>facetMultiselect=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.search" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">occurrences.</code><code class="descname">search</code><span class="sig-paren">(</span><em>repatriated=None</em>, <em>kingdomKey=None</em>, <em>phylumKey=None</em>, <em>classKey=None</em>, <em>orderKey=None</em>, <em>familyKey=None</em>, <em>genusKey=None</em>, <em>subgenusKey=None</em>, <em>scientificName=None</em>, <em>country=None</em>, <em>publishingCountry=None</em>, <em>hasCoordinate=None</em>, <em>typeStatus=None</em>, <em>recordNumber=None</em>, <em>lastInterpreted=None</em>, <em>continent=None</em>, <em>geometry=None</em>, <em>recordedBy=None</em>, <em>basisOfRecord=None</em>, <em>datasetKey=None</em>, <em>eventDate=None</em>, <em>catalogNumber=None</em>, <em>year=None</em>, <em>month=None</em>, <em>decimalLatitude=None</em>, <em>decimalLongitude=None</em>, <em>elevation=None</em>, <em>depth=None</em>, <em>institutionCode=None</em>, <em>collectionCode=None</em>, <em>hasGeospatialIssue=None</em>, <em>issue=None</em>, <em>q=None</em>, <em>spellCheck=None</em>, <em>mediatype=None</em>, <em>limit=300</em>, <em>offset=0</em>, <em>establishmentMeans=None</em>, <em>facet=None</em>, <em>facetMincount=None</em>, <em>facetMultiselect=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.search" title="Permalink to this definition">¶</a></dt>
 <dd><p>Search GBIF occurrences</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>taxonKey</strong> &#8211; [int] A GBIF occurrence identifier</li>
-<li><strong>q</strong> &#8211; [str] Simple search parameter. The value for this parameter can be a simple word or a phrase.</li>
-<li><strong>spellCheck</strong> &#8211; [bool] If <code class="docutils literal"><span class="pre">True</span></code> ask GBIF to check your spelling of the value passed to the <code class="docutils literal"><span class="pre">search</span></code> parameter.
-IMPORTANT: This only checks the input to the <code class="docutils literal"><span class="pre">search</span></code> parameter, and no others. Default: <code class="docutils literal"><span class="pre">False</span></code></li>
-<li><strong>repatriated</strong> &#8211; [str] Searches for records whose publishing country is different to the country where the record was recorded in</li>
-<li><strong>kingdomKey</strong> &#8211; [int] Kingdom classification key</li>
-<li><strong>phylumKey</strong> &#8211; [int] Phylum classification key</li>
-<li><strong>classKey</strong> &#8211; [int] Class classification key</li>
-<li><strong>orderKey</strong> &#8211; [int] Order classification key</li>
-<li><strong>familyKey</strong> &#8211; [int] Family classification key</li>
-<li><strong>genusKey</strong> &#8211; [int] Genus classification key</li>
-<li><strong>subgenusKey</strong> &#8211; [int] Subgenus classification key</li>
-<li><strong>scientificName</strong> &#8211; [str] A scientific name from the GBIF backbone. All included and synonym taxa are included in the search.</li>
-<li><strong>datasetKey</strong> &#8211; [str] The occurrence dataset key (a uuid)</li>
-<li><strong>catalogNumber</strong> &#8211; [str] An identifier of any form assigned by the source within a physical collection or digital dataset for the record which may not unique, but should be fairly unique in combination with the institution and collection code.</li>
-<li><strong>recordedBy</strong> &#8211; [str] The person who recorded the occurrence.</li>
-<li><strong>collectionCode</strong> &#8211; [str] An identifier of any form assigned by the source to identify the physical collection or digital dataset uniquely within the text of an institution.</li>
-<li><strong>institutionCode</strong> &#8211; [str] An identifier of any form assigned by the source to identify the institution the record belongs to. Not guaranteed to be que.</li>
-<li><strong>country</strong> &#8211; [str] The 2-letter country code (as per ISO-3166-1) of the country in which the occurrence was recorded. See here <a class="reference external" href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2</a></li>
-<li><strong>basisOfRecord</strong> &#8211; <p>[str] Basis of record, as defined in our BasisOfRecord enum here <a class="reference external" href="http://gbif.github.io/gbif-api/apidocs/org/gbif/api/vocabulary/BasisOfRecord.html">http://gbif.github.io/gbif-api/apidocs/org/gbif/api/vocabulary/BasisOfRecord.html</a> Acceptable values are:</p>
+<li><strong>taxonKey</strong> – [int] A GBIF occurrence identifier</li>
+<li><strong>q</strong> – [str] Simple search parameter. The value for this parameter can be a simple word or a phrase.</li>
+<li><strong>spellCheck</strong> – [bool] If <code class="docutils literal notranslate"><span class="pre">True</span></code> ask GBIF to check your spelling of the value passed to the <code class="docutils literal notranslate"><span class="pre">search</span></code> parameter.
+IMPORTANT: This only checks the input to the <code class="docutils literal notranslate"><span class="pre">search</span></code> parameter, and no others. Default: <code class="docutils literal notranslate"><span class="pre">False</span></code></li>
+<li><strong>repatriated</strong> – [str] Searches for records whose publishing country is different to the country where the record was recorded in</li>
+<li><strong>kingdomKey</strong> – [int] Kingdom classification key</li>
+<li><strong>phylumKey</strong> – [int] Phylum classification key</li>
+<li><strong>classKey</strong> – [int] Class classification key</li>
+<li><strong>orderKey</strong> – [int] Order classification key</li>
+<li><strong>familyKey</strong> – [int] Family classification key</li>
+<li><strong>genusKey</strong> – [int] Genus classification key</li>
+<li><strong>subgenusKey</strong> – [int] Subgenus classification key</li>
+<li><strong>scientificName</strong> – [str] A scientific name from the GBIF backbone. All included and synonym taxa are included in the search.</li>
+<li><strong>datasetKey</strong> – [str] The occurrence dataset key (a uuid)</li>
+<li><strong>catalogNumber</strong> – [str] An identifier of any form assigned by the source within a physical collection or digital dataset for the record which may not unique, but should be fairly unique in combination with the institution and collection code.</li>
+<li><strong>recordedBy</strong> – [str] The person who recorded the occurrence.</li>
+<li><strong>collectionCode</strong> – [str] An identifier of any form assigned by the source to identify the physical collection or digital dataset uniquely within the text of an institution.</li>
+<li><strong>institutionCode</strong> – [str] An identifier of any form assigned by the source to identify the institution the record belongs to. Not guaranteed to be que.</li>
+<li><strong>country</strong> – [str] The 2-letter country code (as per ISO-3166-1) of the country in which the occurrence was recorded. See here <a class="reference external" href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2</a></li>
+<li><strong>basisOfRecord</strong> – <p>[str] Basis of record, as defined in our BasisOfRecord enum here <a class="reference external" href="http://gbif.github.io/gbif-api/apidocs/org/gbif/api/vocabulary/BasisOfRecord.html">http://gbif.github.io/gbif-api/apidocs/org/gbif/api/vocabulary/BasisOfRecord.html</a> Acceptable values are:</p>
 <ul>
-<li><code class="docutils literal"><span class="pre">FOSSIL_SPECIMEN</span></code> An occurrence record describing a fossilized specimen.</li>
-<li><code class="docutils literal"><span class="pre">HUMAN_OBSERVATION</span></code> An occurrence record describing an observation made by one or more people.</li>
-<li><code class="docutils literal"><span class="pre">LITERATURE</span></code> An occurrence record based on literature alone.</li>
-<li><code class="docutils literal"><span class="pre">LIVING_SPECIMEN</span></code> An occurrence record describing a living specimen, e.g.</li>
-<li><code class="docutils literal"><span class="pre">MACHINE_OBSERVATION</span></code> An occurrence record describing an observation made by a machine.</li>
-<li><code class="docutils literal"><span class="pre">OBSERVATION</span></code> An occurrence record describing an observation.</li>
-<li><code class="docutils literal"><span class="pre">PRESERVED_SPECIMEN</span></code> An occurrence record describing a preserved specimen.</li>
-<li><code class="docutils literal"><span class="pre">UNKNOWN</span></code> Unknown basis for the record.</li>
+<li><code class="docutils literal notranslate"><span class="pre">FOSSIL_SPECIMEN</span></code> An occurrence record describing a fossilized specimen.</li>
+<li><code class="docutils literal notranslate"><span class="pre">HUMAN_OBSERVATION</span></code> An occurrence record describing an observation made by one or more people.</li>
+<li><code class="docutils literal notranslate"><span class="pre">LITERATURE</span></code> An occurrence record based on literature alone.</li>
+<li><code class="docutils literal notranslate"><span class="pre">LIVING_SPECIMEN</span></code> An occurrence record describing a living specimen, e.g.</li>
+<li><code class="docutils literal notranslate"><span class="pre">MACHINE_OBSERVATION</span></code> An occurrence record describing an observation made by a machine.</li>
+<li><code class="docutils literal notranslate"><span class="pre">OBSERVATION</span></code> An occurrence record describing an observation.</li>
+<li><code class="docutils literal notranslate"><span class="pre">PRESERVED_SPECIMEN</span></code> An occurrence record describing a preserved specimen.</li>
+<li><code class="docutils literal notranslate"><span class="pre">UNKNOWN</span></code> Unknown basis for the record.</li>
 </ul>
 </li>
-<li><strong>eventDate</strong> &#8211; [date] Occurrence date in ISO 8601 format: yyyy, yyyy-MM, yyyy-MM-dd, or
-MM-dd. Supports range queries, smaller,larger (e.g., <code class="docutils literal"><span class="pre">1990,1991</span></code>, whereas <code class="docutils literal"><span class="pre">1991,1990</span></code>
-wouldn&#8217;t work)</li>
-<li><strong>year</strong> &#8211; [int] The 4 digit year. A year of 98 will be interpreted as AD 98. Supports range queries,
-smaller,larger (e.g., <code class="docutils literal"><span class="pre">1990,1991</span></code>, whereas <code class="docutils literal"><span class="pre">1991,1990</span></code> wouldn&#8217;t work)</li>
-<li><strong>month</strong> &#8211; [int] The month of the year, starting with 1 for January. Supports range queries,
-smaller,larger (e.g., <code class="docutils literal"><span class="pre">1,2</span></code>, whereas <code class="docutils literal"><span class="pre">2,1</span></code> wouldn&#8217;t work)</li>
-<li><strong>q</strong> &#8211; [str] Query terms. The value for this parameter can be a simple word or a phrase.</li>
-<li><strong>decimalLatitude</strong> &#8211; [float] Latitude in decimals between -90 and 90 based on WGS 84.
-Supports range queries, smaller,larger (e.g., <code class="docutils literal"><span class="pre">25,30</span></code>, whereas <code class="docutils literal"><span class="pre">30,25</span></code> wouldn&#8217;t work)</li>
-<li><strong>decimalLongitude</strong> &#8211; [float] Longitude in decimals between -180 and 180 based on WGS 84.
-Supports range queries (e.g., <code class="docutils literal"><span class="pre">-0.4,-0.2</span></code>, whereas <code class="docutils literal"><span class="pre">-0.2,-0.4</span></code> wouldn&#8217;t work).</li>
-<li><strong>publishingCountry</strong> &#8211; [str] The 2-letter country code (as per ISO-3166-1) of the
+<li><strong>eventDate</strong> – [date] Occurrence date in ISO 8601 format: yyyy, yyyy-MM, yyyy-MM-dd, or
+MM-dd. Supports range queries, smaller,larger (e.g., <code class="docutils literal notranslate"><span class="pre">1990,1991</span></code>, whereas <code class="docutils literal notranslate"><span class="pre">1991,1990</span></code>
+wouldn’t work)</li>
+<li><strong>year</strong> – [int] The 4 digit year. A year of 98 will be interpreted as AD 98. Supports range queries,
+smaller,larger (e.g., <code class="docutils literal notranslate"><span class="pre">1990,1991</span></code>, whereas <code class="docutils literal notranslate"><span class="pre">1991,1990</span></code> wouldn’t work)</li>
+<li><strong>month</strong> – [int] The month of the year, starting with 1 for January. Supports range queries,
+smaller,larger (e.g., <code class="docutils literal notranslate"><span class="pre">1,2</span></code>, whereas <code class="docutils literal notranslate"><span class="pre">2,1</span></code> wouldn’t work)</li>
+<li><strong>q</strong> – [str] Query terms. The value for this parameter can be a simple word or a phrase.</li>
+<li><strong>decimalLatitude</strong> – [float] Latitude in decimals between -90 and 90 based on WGS 84.
+Supports range queries, smaller,larger (e.g., <code class="docutils literal notranslate"><span class="pre">25,30</span></code>, whereas <code class="docutils literal notranslate"><span class="pre">30,25</span></code> wouldn’t work)</li>
+<li><strong>decimalLongitude</strong> – [float] Longitude in decimals between -180 and 180 based on WGS 84.
+Supports range queries (e.g., <code class="docutils literal notranslate"><span class="pre">-0.4,-0.2</span></code>, whereas <code class="docutils literal notranslate"><span class="pre">-0.2,-0.4</span></code> wouldn’t work).</li>
+<li><strong>publishingCountry</strong> – [str] The 2-letter country code (as per ISO-3166-1) of the
 country in which the occurrence was recorded.</li>
-<li><strong>elevation</strong> &#8211; [int/str] Elevation in meters above sea level. Supports range queries, smaller,larger
-(e.g., <code class="docutils literal"><span class="pre">5,30</span></code>, whereas <code class="docutils literal"><span class="pre">30,5</span></code> wouldn&#8217;t work)</li>
-<li><strong>depth</strong> &#8211; [int/str] Depth in meters relative to elevation. For example 10 meters below a
-lake surface with given elevation. Supports range queries, smaller,larger (e.g., <code class="docutils literal"><span class="pre">5,30</span></code>,
-whereas <code class="docutils literal"><span class="pre">30,5</span></code> wouldn&#8217;t work)</li>
-<li><strong>geometry</strong> &#8211; [str] Searches for occurrences inside a polygon described in Well Known
+<li><strong>elevation</strong> – [int/str] Elevation in meters above sea level. Supports range queries, smaller,larger
+(e.g., <code class="docutils literal notranslate"><span class="pre">5,30</span></code>, whereas <code class="docutils literal notranslate"><span class="pre">30,5</span></code> wouldn’t work)</li>
+<li><strong>depth</strong> – [int/str] Depth in meters relative to elevation. For example 10 meters below a
+lake surface with given elevation. Supports range queries, smaller,larger (e.g., <code class="docutils literal notranslate"><span class="pre">5,30</span></code>,
+whereas <code class="docutils literal notranslate"><span class="pre">30,5</span></code> wouldn’t work)</li>
+<li><strong>geometry</strong> – [str] Searches for occurrences inside a polygon described in Well Known
 Text (WKT) format. A WKT shape written as either POINT, LINESTRING, LINEARRING
-POLYGON, or MULTIPOLYGON. Example of a polygon: <code class="docutils literal"><span class="pre">((30.1</span> <span class="pre">10.1,</span> <span class="pre">20,</span> <span class="pre">20</span> <span class="pre">40,</span> <span class="pre">40</span> <span class="pre">40,</span> <span class="pre">30.1</span> <span class="pre">10.1))</span></code> would be queried as <a class="reference external" href="http://bit.ly/1BzNwDq">http://bit.ly/1BzNwDq</a>.</li>
-<li><strong>hasGeospatialIssue</strong> &#8211; [bool] Includes/excludes occurrence records which contain spatial
-issues (as determined in our record interpretation), i.e. <code class="docutils literal"><span class="pre">hasGeospatialIssue=TRUE</span></code>
-returns only those records with spatial issues while <code class="docutils literal"><span class="pre">hasGeospatialIssue=FALSE</span></code> includes
+POLYGON, or MULTIPOLYGON. Example of a polygon: <code class="docutils literal notranslate"><span class="pre">((30.1</span> <span class="pre">10.1,</span> <span class="pre">20,</span> <span class="pre">20</span> <span class="pre">40,</span> <span class="pre">40</span> <span class="pre">40,</span> <span class="pre">30.1</span> <span class="pre">10.1))</span></code> would be queried as <a class="reference external" href="http://bit.ly/1BzNwDq">http://bit.ly/1BzNwDq</a>.
+Polygons must have counter-clockwise ordering of points.</li>
+<li><strong>hasGeospatialIssue</strong> – [bool] Includes/excludes occurrence records which contain spatial
+issues (as determined in our record interpretation), i.e. <code class="docutils literal notranslate"><span class="pre">hasGeospatialIssue=TRUE</span></code>
+returns only those records with spatial issues while <code class="docutils literal notranslate"><span class="pre">hasGeospatialIssue=FALSE</span></code> includes
 only records without spatial issues. The absence of this parameter returns any
 record with or without spatial issues.</li>
-<li><strong>issue</strong> &#8211; [str] One or more of many possible issues with each occurrence record. See
+<li><strong>issue</strong> – [str] One or more of many possible issues with each occurrence record. See
 Details. Issues passed to this parameter filter results by the issue.</li>
-<li><strong>hasCoordinate</strong> &#8211; [bool] Return only occurence records with lat/long data (<code class="docutils literal"><span class="pre">true</span></code>) or
-all records (<code class="docutils literal"><span class="pre">false</span></code>, default).</li>
-<li><strong>typeStatus</strong> &#8211; [str] Type status of the specimen. One of many options. See ?typestatus</li>
-<li><strong>recordNumber</strong> &#8211; [int] Number recorded by collector of the data, different from GBIF record
+<li><strong>hasCoordinate</strong> – [bool] Return only occurence records with lat/long data (<code class="docutils literal notranslate"><span class="pre">true</span></code>) or
+all records (<code class="docutils literal notranslate"><span class="pre">false</span></code>, default).</li>
+<li><strong>typeStatus</strong> – [str] Type status of the specimen. One of many options. See ?typestatus</li>
+<li><strong>recordNumber</strong> – [int] Number recorded by collector of the data, different from GBIF record
 number. See <a class="reference external" href="http://rs.tdwg.org/dwc/terms/#recordNumber">http://rs.tdwg.org/dwc/terms/#recordNumber</a>} for more info</li>
-<li><strong>lastInterpreted</strong> &#8211; [date] Date the record was last modified in GBIF, in ISO 8601 format:
+<li><strong>lastInterpreted</strong> – [date] Date the record was last modified in GBIF, in ISO 8601 format:
 yyyy, yyyy-MM, yyyy-MM-dd, or MM-dd.  Supports range queries, smaller,larger (e.g.,
-<code class="docutils literal"><span class="pre">1990,1991</span></code>, whereas <code class="docutils literal"><span class="pre">1991,1990</span></code> wouldn&#8217;t work)</li>
-<li><strong>continent</strong> &#8211; [str] Continent. One of <code class="docutils literal"><span class="pre">africa</span></code>, <code class="docutils literal"><span class="pre">antarctica</span></code>, <code class="docutils literal"><span class="pre">asia</span></code>, <code class="docutils literal"><span class="pre">europe</span></code>, <code class="docutils literal"><span class="pre">north_america</span></code>
-(North America includes the Caribbean and reachies down and includes Panama), <code class="docutils literal"><span class="pre">oceania</span></code>,
-or <code class="docutils literal"><span class="pre">south_america</span></code></li>
-<li><strong>fields</strong> &#8211; [str] Default (<code class="docutils literal"><span class="pre">all</span></code>) returns all fields. <code class="docutils literal"><span class="pre">minimal</span></code> returns just taxon name,
+<code class="docutils literal notranslate"><span class="pre">1990,1991</span></code>, whereas <code class="docutils literal notranslate"><span class="pre">1991,1990</span></code> wouldn’t work)</li>
+<li><strong>continent</strong> – [str] Continent. One of <code class="docutils literal notranslate"><span class="pre">africa</span></code>, <code class="docutils literal notranslate"><span class="pre">antarctica</span></code>, <code class="docutils literal notranslate"><span class="pre">asia</span></code>, <code class="docutils literal notranslate"><span class="pre">europe</span></code>, <code class="docutils literal notranslate"><span class="pre">north_america</span></code>
+(North America includes the Caribbean and reachies down and includes Panama), <code class="docutils literal notranslate"><span class="pre">oceania</span></code>,
+or <code class="docutils literal notranslate"><span class="pre">south_america</span></code></li>
+<li><strong>fields</strong> – [str] Default (<code class="docutils literal notranslate"><span class="pre">all</span></code>) returns all fields. <code class="docutils literal notranslate"><span class="pre">minimal</span></code> returns just taxon name,
 key, latitude, and longitude. Or specify each field you want returned by name, e.g.
-<code class="docutils literal"><span class="pre">fields</span> <span class="pre">=</span> <span class="pre">c('name','latitude','elevation')</span></code>.</li>
-<li><strong>mediatype</strong> &#8211; [str] Media type. Default is <code class="docutils literal"><span class="pre">NULL</span></code>, so no filtering on mediatype. Options:
-<code class="docutils literal"><span class="pre">NULL</span></code>, <code class="docutils literal"><span class="pre">MovingImage</span></code>, <code class="docutils literal"><span class="pre">Sound</span></code>, and <code class="docutils literal"><span class="pre">StillImage</span></code></li>
-<li><strong>limit</strong> &#8211; [int] Number of results to return. Default: <code class="docutils literal"><span class="pre">300</span></code></li>
-<li><strong>offset</strong> &#8211; [int] Record to start at. Default: <code class="docutils literal"><span class="pre">0</span></code></li>
-<li><strong>facet</strong> &#8211; [str] a character vector of length 1 or greater</li>
-<li><strong>establishmentMeans</strong> &#8211; [str] EstablishmentMeans, possible values include: INTRODUCED,
+<code class="docutils literal notranslate"><span class="pre">fields</span> <span class="pre">=</span> <span class="pre">c('name','latitude','elevation')</span></code>.</li>
+<li><strong>mediatype</strong> – [str] Media type. Default is <code class="docutils literal notranslate"><span class="pre">NULL</span></code>, so no filtering on mediatype. Options:
+<code class="docutils literal notranslate"><span class="pre">NULL</span></code>, <code class="docutils literal notranslate"><span class="pre">MovingImage</span></code>, <code class="docutils literal notranslate"><span class="pre">Sound</span></code>, and <code class="docutils literal notranslate"><span class="pre">StillImage</span></code></li>
+<li><strong>limit</strong> – [int] Number of results to return. Default: <code class="docutils literal notranslate"><span class="pre">300</span></code></li>
+<li><strong>offset</strong> – [int] Record to start at. Default: <code class="docutils literal notranslate"><span class="pre">0</span></code></li>
+<li><strong>facet</strong> – [str] a character vector of length 1 or greater</li>
+<li><strong>establishmentMeans</strong> – [str] EstablishmentMeans, possible values include: INTRODUCED,
 INVASIVE, MANAGED, NATIVE, NATURALISED, UNCERTAIN</li>
-<li><strong>facetMincount</strong> &#8211; [int] minimum number of records to be included in the faceting results</li>
-<li><strong>facetMultiselect</strong> &#8211; [bool] Set to <code class="docutils literal"><span class="pre">true</span></code> to still return counts for values that are not currently
-filtered. See examples. Default: <code class="docutils literal"><span class="pre">false</span></code></li>
+<li><strong>facetMincount</strong> – [int] minimum number of records to be included in the faceting results</li>
+<li><strong>facetMultiselect</strong> – [bool] Set to <code class="docutils literal notranslate"><span class="pre">true</span></code> to still return counts for values that are not currently
+filtered. See examples. Default: <code class="docutils literal notranslate"><span class="pre">false</span></code></li>
 </ul>
 </td>
 </tr>
@@ -291,7 +310,7 @@ filtered. See examples. Default: <code class="docutils literal"><span class="pre
 </tbody>
 </table>
 <p>Usage:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span>
 <span class="n">occurrences</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">taxonKey</span> <span class="o">=</span> <span class="mi">3329049</span><span class="p">)</span>
 
 <span class="c1"># Return 2 results, this is the default by the way</span>
@@ -498,20 +517,20 @@ filtered. See examples. Default: <code class="docutils literal"><span class="pre
 
 <dl class="method">
 <dt id="pygbif.occurrences.get">
-<code class="descclassname">occurrences.</code><code class="descname">get</code><span class="sig-paren">(</span><em>key</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.get" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">occurrences.</code><code class="descname">get</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.get" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets details for a single, interpreted occurrence</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>key</strong> &#8211; [int] A GBIF occurrence key</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>key</strong> – [int] A GBIF occurrence key</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A dictionary, of results</td>
 </tr>
 </tbody>
 </table>
 <p>Usage:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span>
 <span class="n">occurrences</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span> <span class="o">=</span> <span class="mi">1258202889</span><span class="p">)</span>
 <span class="n">occurrences</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span> <span class="o">=</span> <span class="mi">1227768771</span><span class="p">)</span>
 <span class="n">occurrences</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span> <span class="o">=</span> <span class="mi">1227769518</span><span class="p">)</span>
@@ -521,20 +540,20 @@ filtered. See examples. Default: <code class="docutils literal"><span class="pre
 
 <dl class="method">
 <dt id="pygbif.occurrences.get_verbatim">
-<code class="descclassname">occurrences.</code><code class="descname">get_verbatim</code><span class="sig-paren">(</span><em>key</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.get_verbatim" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">occurrences.</code><code class="descname">get_verbatim</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.get_verbatim" title="Permalink to this definition">¶</a></dt>
 <dd><p>Gets a verbatim occurrence record without any interpretation</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>key</strong> &#8211; [int] A GBIF occurrence key</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>key</strong> – [int] A GBIF occurrence key</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A dictionary, of results</td>
 </tr>
 </tbody>
 </table>
 <p>Usage:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span>
 <span class="n">occurrences</span><span class="o">.</span><span class="n">get_verbatim</span><span class="p">(</span><span class="n">key</span> <span class="o">=</span> <span class="mi">1258202889</span><span class="p">)</span>
 <span class="n">occurrences</span><span class="o">.</span><span class="n">get_verbatim</span><span class="p">(</span><span class="n">key</span> <span class="o">=</span> <span class="mi">1227768771</span><span class="p">)</span>
 <span class="n">occurrences</span><span class="o">.</span><span class="n">get_verbatim</span><span class="p">(</span><span class="n">key</span> <span class="o">=</span> <span class="mi">1227769518</span><span class="p">)</span>
@@ -544,20 +563,20 @@ filtered. See examples. Default: <code class="docutils literal"><span class="pre
 
 <dl class="method">
 <dt id="pygbif.occurrences.get_fragment">
-<code class="descclassname">occurrences.</code><code class="descname">get_fragment</code><span class="sig-paren">(</span><em>key</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.get_fragment" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">occurrences.</code><code class="descname">get_fragment</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.get_fragment" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a single occurrence fragment in its raw form (xml or json)</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>key</strong> &#8211; [int] A GBIF occurrence key</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>key</strong> – [int] A GBIF occurrence key</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A dictionary, of results</td>
 </tr>
 </tbody>
 </table>
 <p>Usage:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span>
 <span class="n">occurrences</span><span class="o">.</span><span class="n">get_fragment</span><span class="p">(</span><span class="n">key</span> <span class="o">=</span> <span class="mi">1052909293</span><span class="p">)</span>
 <span class="n">occurrences</span><span class="o">.</span><span class="n">get_fragment</span><span class="p">(</span><span class="n">key</span> <span class="o">=</span> <span class="mi">1227768771</span><span class="p">)</span>
 <span class="n">occurrences</span><span class="o">.</span><span class="n">get_fragment</span><span class="p">(</span><span class="n">key</span> <span class="o">=</span> <span class="mi">1227769518</span><span class="p">)</span>
@@ -567,22 +586,22 @@ filtered. See examples. Default: <code class="docutils literal"><span class="pre
 
 <dl class="method">
 <dt id="pygbif.occurrences.count">
-<code class="descclassname">occurrences.</code><code class="descname">count</code><span class="sig-paren">(</span><em>taxonKey=None</em>, <em>basisOfRecord=None</em>, <em>country=None</em>, <em>isGeoreferenced=None</em>, <em>datasetKey=None</em>, <em>publishingCountry=None</em>, <em>typeStatus=None</em>, <em>issue=None</em>, <em>year=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.count" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">occurrences.</code><code class="descname">count</code><span class="sig-paren">(</span><em>basisOfRecord=None</em>, <em>country=None</em>, <em>isGeoreferenced=None</em>, <em>datasetKey=None</em>, <em>publishingCountry=None</em>, <em>typeStatus=None</em>, <em>issue=None</em>, <em>year=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.count" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns occurrence counts for a predefined set of dimensions</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>taxonKey</strong> &#8211; [int] A GBIF occurrence identifier</li>
-<li><strong>basisOfRecord</strong> &#8211; [str] A GBIF occurrence identifier</li>
-<li><strong>country</strong> &#8211; [str] A GBIF occurrence identifier</li>
-<li><strong>isGeoreferenced</strong> &#8211; [bool] A GBIF occurrence identifier</li>
-<li><strong>datasetKey</strong> &#8211; [str] A GBIF occurrence identifier</li>
-<li><strong>publishingCountry</strong> &#8211; [str] A GBIF occurrence identifier</li>
-<li><strong>typeStatus</strong> &#8211; [str] A GBIF occurrence identifier</li>
-<li><strong>issue</strong> &#8211; [str] A GBIF occurrence identifier</li>
-<li><strong>year</strong> &#8211; [int] A GBIF occurrence identifier</li>
+<li><strong>taxonKey</strong> – [int] A GBIF occurrence identifier</li>
+<li><strong>basisOfRecord</strong> – [str] A GBIF occurrence identifier</li>
+<li><strong>country</strong> – [str] A GBIF occurrence identifier</li>
+<li><strong>isGeoreferenced</strong> – [bool] A GBIF occurrence identifier</li>
+<li><strong>datasetKey</strong> – [str] A GBIF occurrence identifier</li>
+<li><strong>publishingCountry</strong> – [str] A GBIF occurrence identifier</li>
+<li><strong>typeStatus</strong> – [str] A GBIF occurrence identifier</li>
+<li><strong>issue</strong> – [str] A GBIF occurrence identifier</li>
+<li><strong>year</strong> – [int] A GBIF occurrence identifier</li>
 </ul>
 </td>
 </tr>
@@ -592,7 +611,7 @@ filtered. See examples. Default: <code class="docutils literal"><span class="pre
 </tbody>
 </table>
 <p>Usage:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span>
 <span class="n">occurrences</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">taxonKey</span> <span class="o">=</span> <span class="mi">3329049</span><span class="p">)</span>
 <span class="n">occurrences</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">country</span> <span class="o">=</span> <span class="s1">&#39;CA&#39;</span><span class="p">)</span>
 <span class="n">occurrences</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">isGeoreferenced</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
@@ -603,7 +622,7 @@ filtered. See examples. Default: <code class="docutils literal"><span class="pre
 
 <dl class="method">
 <dt id="pygbif.occurrences.count_basisofrecord">
-<code class="descclassname">occurrences.</code><code class="descname">count_basisofrecord</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.count_basisofrecord" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">occurrences.</code><code class="descname">count_basisofrecord</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.count_basisofrecord" title="Permalink to this definition">¶</a></dt>
 <dd><p>Lists occurrence counts by basis of record.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -614,7 +633,7 @@ filtered. See examples. Default: <code class="docutils literal"><span class="pre
 </tbody>
 </table>
 <p>Usage:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span>
 <span class="n">occurrences</span><span class="o">.</span><span class="n">count_basisofrecord</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -622,20 +641,20 @@ filtered. See examples. Default: <code class="docutils literal"><span class="pre
 
 <dl class="method">
 <dt id="pygbif.occurrences.count_year">
-<code class="descclassname">occurrences.</code><code class="descname">count_year</code><span class="sig-paren">(</span><em>year</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.count_year" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">occurrences.</code><code class="descname">count_year</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.count_year" title="Permalink to this definition">¶</a></dt>
 <dd><p>Lists occurrence counts by year</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>year</strong> &#8211; [int] year range, e.g., <code class="docutils literal"><span class="pre">1990,2000</span></code>. Does not support ranges like <code class="docutils literal"><span class="pre">asterisk,2010</span></code></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>year</strong> – [int] year range, e.g., <code class="docutils literal notranslate"><span class="pre">1990,2000</span></code>. Does not support ranges like <code class="docutils literal notranslate"><span class="pre">asterisk,2010</span></code></td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
 </tr>
 </tbody>
 </table>
 <p>Usage:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span>
 <span class="n">occurrences</span><span class="o">.</span><span class="n">count_year</span><span class="p">(</span><span class="n">year</span> <span class="o">=</span> <span class="s1">&#39;1990,2000&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -643,15 +662,15 @@ filtered. See examples. Default: <code class="docutils literal"><span class="pre
 
 <dl class="method">
 <dt id="pygbif.occurrences.count_datasets">
-<code class="descclassname">occurrences.</code><code class="descname">count_datasets</code><span class="sig-paren">(</span><em>taxonKey=None</em>, <em>country=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.count_datasets" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">occurrences.</code><code class="descname">count_datasets</code><span class="sig-paren">(</span><em>country=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.count_datasets" title="Permalink to this definition">¶</a></dt>
 <dd><p>Lists occurrence counts for datasets that cover a given taxon or country</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>taxonKey</strong> &#8211; [int] Taxon key</li>
-<li><strong>country</strong> &#8211; [str] A country, two letter code</li>
+<li><strong>taxonKey</strong> – [int] Taxon key</li>
+<li><strong>country</strong> – [str] A country, two letter code</li>
 </ul>
 </td>
 </tr>
@@ -661,7 +680,7 @@ filtered. See examples. Default: <code class="docutils literal"><span class="pre
 </tbody>
 </table>
 <p>Usage:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span>
 <span class="n">occurrences</span><span class="o">.</span><span class="n">count_datasets</span><span class="p">(</span><span class="n">country</span> <span class="o">=</span> <span class="s2">&quot;DE&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -669,20 +688,20 @@ filtered. See examples. Default: <code class="docutils literal"><span class="pre
 
 <dl class="method">
 <dt id="pygbif.occurrences.count_countries">
-<code class="descclassname">occurrences.</code><code class="descname">count_countries</code><span class="sig-paren">(</span><em>publishingCountry</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.count_countries" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">occurrences.</code><code class="descname">count_countries</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.count_countries" title="Permalink to this definition">¶</a></dt>
 <dd><p>Lists occurrence counts for all countries covered by the data published by the given country</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>publishingCountry</strong> &#8211; [str] A two letter country code</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>publishingCountry</strong> – [str] A two letter country code</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
 </tr>
 </tbody>
 </table>
 <p>Usage:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span>
 <span class="n">occurrences</span><span class="o">.</span><span class="n">count_countries</span><span class="p">(</span><span class="n">publishingCountry</span> <span class="o">=</span> <span class="s2">&quot;DE&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -690,7 +709,7 @@ filtered. See examples. Default: <code class="docutils literal"><span class="pre
 
 <dl class="method">
 <dt id="pygbif.occurrences.count_schema">
-<code class="descclassname">occurrences.</code><code class="descname">count_schema</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.count_schema" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">occurrences.</code><code class="descname">count_schema</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.count_schema" title="Permalink to this definition">¶</a></dt>
 <dd><p>List the supported metrics by the service</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -701,7 +720,7 @@ filtered. See examples. Default: <code class="docutils literal"><span class="pre
 </tbody>
 </table>
 <p>Usage:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span>
 <span class="n">occurrences</span><span class="o">.</span><span class="n">count_schema</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -709,20 +728,20 @@ filtered. See examples. Default: <code class="docutils literal"><span class="pre
 
 <dl class="method">
 <dt id="pygbif.occurrences.count_publishingcountries">
-<code class="descclassname">occurrences.</code><code class="descname">count_publishingcountries</code><span class="sig-paren">(</span><em>country</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.count_publishingcountries" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">occurrences.</code><code class="descname">count_publishingcountries</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.count_publishingcountries" title="Permalink to this definition">¶</a></dt>
 <dd><p>Lists occurrence counts for all countries that publish data about the given country</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>country</strong> &#8211; [str] A country, two letter code</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>country</strong> – [str] A country, two letter code</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">dict</td>
 </tr>
 </tbody>
 </table>
 <p>Usage:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span>
 <span class="n">occurrences</span><span class="o">.</span><span class="n">count_publishingcountries</span><span class="p">(</span><span class="n">country</span> <span class="o">=</span> <span class="s2">&quot;DE&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -730,71 +749,71 @@ filtered. See examples. Default: <code class="docutils literal"><span class="pre
 
 <dl class="method">
 <dt id="pygbif.occurrences.download">
-<code class="descclassname">occurrences.</code><code class="descname">download</code><span class="sig-paren">(</span><em>queries</em>, <em>user=None</em>, <em>pwd=None</em>, <em>email=None</em>, <em>pred_type='and'</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.download" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">occurrences.</code><code class="descname">download</code><span class="sig-paren">(</span><em>user=None</em>, <em>pwd=None</em>, <em>email=None</em>, <em>pred_type='and'</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.download" title="Permalink to this definition">¶</a></dt>
 <dd><p>Spin up a download request for GBIF occurrence data.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>queries</strong> (<em>str or list</em>) &#8211; One or more of query arguments to kick of a download job.
+<li><strong>queries</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.7)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.7)"><em>list</em></a>) – One or more of query arguments to kick of a download job.
 See Details.</li>
-<li><strong>pred_type</strong> &#8211; (character) One of <code class="docutils literal"><span class="pre">equals</span></code> (<code class="docutils literal"><span class="pre">=</span></code>), <code class="docutils literal"><span class="pre">and</span></code> (<code class="docutils literal"><span class="pre">&amp;</span></code>),
-<cite>or`</cite> (<code class="docutils literal"><span class="pre">|</span></code>), <code class="docutils literal"><span class="pre">lessThan</span></code> (<code class="docutils literal"><span class="pre">&lt;</span></code>), <code class="docutils literal"><span class="pre">lessThanOrEquals</span></code> (<code class="docutils literal"><span class="pre">&lt;=</span></code>),
-<code class="docutils literal"><span class="pre">greaterThan</span></code> (<code class="docutils literal"><span class="pre">&gt;</span></code>), <code class="docutils literal"><span class="pre">greaterThanOrEquals</span></code> (<code class="docutils literal"><span class="pre">&gt;=</span></code>),
-<code class="docutils literal"><span class="pre">in</span></code>, <code class="docutils literal"><span class="pre">within</span></code>, <code class="docutils literal"><span class="pre">not</span></code> (<code class="docutils literal"><span class="pre">!</span></code>), <code class="docutils literal"><span class="pre">like</span></code></li>
-<li><strong>user</strong> &#8211; (character) User name within GBIF&#8217;s website.
-Required. Set in your env vars with the option <code class="docutils literal"><span class="pre">GBIF_USER</span></code></li>
-<li><strong>pwd</strong> &#8211; (character) User password within GBIF&#8217;s website. Required.
-Set in your env vars with the option <code class="docutils literal"><span class="pre">GBIF_PWD</span></code></li>
-<li><strong>email</strong> &#8211; (character) Email address to recieve download notice done
-email. Required. Set in your env vars with the option <code class="docutils literal"><span class="pre">GBIF_EMAIL</span></code></li>
+<li><strong>pred_type</strong> – (character) One of <code class="docutils literal notranslate"><span class="pre">equals</span></code> (<code class="docutils literal notranslate"><span class="pre">=</span></code>), <code class="docutils literal notranslate"><span class="pre">and</span></code> (<code class="docutils literal notranslate"><span class="pre">&amp;</span></code>),
+<cite>or`</cite> (<code class="docutils literal notranslate"><span class="pre">|</span></code>), <code class="docutils literal notranslate"><span class="pre">lessThan</span></code> (<code class="docutils literal notranslate"><span class="pre">&lt;</span></code>), <code class="docutils literal notranslate"><span class="pre">lessThanOrEquals</span></code> (<code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>),
+<code class="docutils literal notranslate"><span class="pre">greaterThan</span></code> (<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>), <code class="docutils literal notranslate"><span class="pre">greaterThanOrEquals</span></code> (<code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>),
+<code class="docutils literal notranslate"><span class="pre">in</span></code>, <code class="docutils literal notranslate"><span class="pre">within</span></code>, <code class="docutils literal notranslate"><span class="pre">not</span></code> (<code class="docutils literal notranslate"><span class="pre">!</span></code>), <code class="docutils literal notranslate"><span class="pre">like</span></code></li>
+<li><strong>user</strong> – (character) User name within GBIF’s website.
+Required. Set in your env vars with the option <code class="docutils literal notranslate"><span class="pre">GBIF_USER</span></code></li>
+<li><strong>pwd</strong> – (character) User password within GBIF’s website. Required.
+Set in your env vars with the option <code class="docutils literal notranslate"><span class="pre">GBIF_PWD</span></code></li>
+<li><strong>email</strong> – (character) Email address to recieve download notice done
+email. Required. Set in your env vars with the option <code class="docutils literal notranslate"><span class="pre">GBIF_EMAIL</span></code></li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
-<p>Argument passed have to be passed as character (e.g., <code class="docutils literal"><span class="pre">country</span> <span class="pre">=</span> <span class="pre">US</span></code>),
-with a space between key (<code class="docutils literal"><span class="pre">country</span></code>), operator (<code class="docutils literal"><span class="pre">=</span></code>), and value (<code class="docutils literal"><span class="pre">US</span></code>).
-See the <code class="docutils literal"><span class="pre">type</span></code> parameter for possible options for the operator.
+<p>Argument passed have to be passed as character (e.g., <code class="docutils literal notranslate"><span class="pre">country</span> <span class="pre">=</span> <span class="pre">US</span></code>),
+with a space between key (<code class="docutils literal notranslate"><span class="pre">country</span></code>), operator (<code class="docutils literal notranslate"><span class="pre">=</span></code>), and value (<code class="docutils literal notranslate"><span class="pre">US</span></code>).
+See the <code class="docutils literal notranslate"><span class="pre">type</span></code> parameter for possible options for the operator.
 This character string is parsed internally.</p>
-<p>Acceptable arguments to <code class="docutils literal"><span class="pre">...</span></code> (args) are:</p>
+<p>Acceptable arguments to <code class="docutils literal notranslate"><span class="pre">...</span></code> (args) are:</p>
 <blockquote>
 <div><ul class="simple">
-<li>taxonKey = <code class="docutils literal"><span class="pre">TAXON_KEY</span></code></li>
-<li>scientificName = <code class="docutils literal"><span class="pre">SCIENTIFIC_NAME</span></code></li>
-<li>country = <code class="docutils literal"><span class="pre">COUNTRY</span></code></li>
-<li>publishingCountry = <code class="docutils literal"><span class="pre">PUBLISHING_COUNTRY</span></code></li>
-<li>hasCoordinate = <code class="docutils literal"><span class="pre">HAS_COORDINATE</span></code></li>
-<li>hasGeospatialIssue = <code class="docutils literal"><span class="pre">HAS_GEOSPATIAL_ISSUE</span></code></li>
-<li>typeStatus = <code class="docutils literal"><span class="pre">TYPE_STATUS</span></code></li>
-<li>recordNumber = <code class="docutils literal"><span class="pre">RECORD_NUMBER</span></code></li>
-<li>lastInterpreted = <code class="docutils literal"><span class="pre">LAST_INTERPRETED</span></code></li>
-<li>continent = <code class="docutils literal"><span class="pre">CONTINENT</span></code></li>
-<li>geometry = <code class="docutils literal"><span class="pre">GEOMETRY</span></code></li>
-<li>basisOfRecord = <code class="docutils literal"><span class="pre">BASIS_OF_RECORD</span></code></li>
-<li>datasetKey = <code class="docutils literal"><span class="pre">DATASET_KEY</span></code></li>
-<li>eventDate = <code class="docutils literal"><span class="pre">EVENT_DATE</span></code></li>
-<li>catalogNumber = <code class="docutils literal"><span class="pre">CATALOG_NUMBER</span></code></li>
-<li>year = <code class="docutils literal"><span class="pre">YEAR</span></code></li>
-<li>month = <code class="docutils literal"><span class="pre">MONTH</span></code></li>
-<li>decimalLatitude = <code class="docutils literal"><span class="pre">DECIMAL_LATITUDE</span></code></li>
-<li>decimalLongitude = <code class="docutils literal"><span class="pre">DECIMAL_LONGITUDE</span></code></li>
-<li>elevation = <code class="docutils literal"><span class="pre">ELEVATION</span></code></li>
-<li>depth = <code class="docutils literal"><span class="pre">DEPTH</span></code></li>
-<li>institutionCode = <code class="docutils literal"><span class="pre">INSTITUTION_CODE</span></code></li>
-<li>collectionCode = <code class="docutils literal"><span class="pre">COLLECTION_CODE</span></code></li>
-<li>issue = <code class="docutils literal"><span class="pre">ISSUE</span></code></li>
-<li>mediatype = <code class="docutils literal"><span class="pre">MEDIA_TYPE</span></code></li>
-<li>recordedBy = <code class="docutils literal"><span class="pre">RECORDED_BY</span></code></li>
-<li>repatriated = <code class="docutils literal"><span class="pre">REPATRIATED</span></code></li>
+<li>taxonKey = <code class="docutils literal notranslate"><span class="pre">TAXON_KEY</span></code></li>
+<li>scientificName = <code class="docutils literal notranslate"><span class="pre">SCIENTIFIC_NAME</span></code></li>
+<li>country = <code class="docutils literal notranslate"><span class="pre">COUNTRY</span></code></li>
+<li>publishingCountry = <code class="docutils literal notranslate"><span class="pre">PUBLISHING_COUNTRY</span></code></li>
+<li>hasCoordinate = <code class="docutils literal notranslate"><span class="pre">HAS_COORDINATE</span></code></li>
+<li>hasGeospatialIssue = <code class="docutils literal notranslate"><span class="pre">HAS_GEOSPATIAL_ISSUE</span></code></li>
+<li>typeStatus = <code class="docutils literal notranslate"><span class="pre">TYPE_STATUS</span></code></li>
+<li>recordNumber = <code class="docutils literal notranslate"><span class="pre">RECORD_NUMBER</span></code></li>
+<li>lastInterpreted = <code class="docutils literal notranslate"><span class="pre">LAST_INTERPRETED</span></code></li>
+<li>continent = <code class="docutils literal notranslate"><span class="pre">CONTINENT</span></code></li>
+<li>geometry = <code class="docutils literal notranslate"><span class="pre">GEOMETRY</span></code></li>
+<li>basisOfRecord = <code class="docutils literal notranslate"><span class="pre">BASIS_OF_RECORD</span></code></li>
+<li>datasetKey = <code class="docutils literal notranslate"><span class="pre">DATASET_KEY</span></code></li>
+<li>eventDate = <code class="docutils literal notranslate"><span class="pre">EVENT_DATE</span></code></li>
+<li>catalogNumber = <code class="docutils literal notranslate"><span class="pre">CATALOG_NUMBER</span></code></li>
+<li>year = <code class="docutils literal notranslate"><span class="pre">YEAR</span></code></li>
+<li>month = <code class="docutils literal notranslate"><span class="pre">MONTH</span></code></li>
+<li>decimalLatitude = <code class="docutils literal notranslate"><span class="pre">DECIMAL_LATITUDE</span></code></li>
+<li>decimalLongitude = <code class="docutils literal notranslate"><span class="pre">DECIMAL_LONGITUDE</span></code></li>
+<li>elevation = <code class="docutils literal notranslate"><span class="pre">ELEVATION</span></code></li>
+<li>depth = <code class="docutils literal notranslate"><span class="pre">DEPTH</span></code></li>
+<li>institutionCode = <code class="docutils literal notranslate"><span class="pre">INSTITUTION_CODE</span></code></li>
+<li>collectionCode = <code class="docutils literal notranslate"><span class="pre">COLLECTION_CODE</span></code></li>
+<li>issue = <code class="docutils literal notranslate"><span class="pre">ISSUE</span></code></li>
+<li>mediatype = <code class="docutils literal notranslate"><span class="pre">MEDIA_TYPE</span></code></li>
+<li>recordedBy = <code class="docutils literal notranslate"><span class="pre">RECORDED_BY</span></code></li>
+<li>repatriated = <code class="docutils literal notranslate"><span class="pre">REPATRIATED</span></code></li>
 </ul>
 </div></blockquote>
 <p>See the API docs <a class="reference external" href="http://www.gbif.org/developer/occurrence#download">http://www.gbif.org/developer/occurrence#download</a>
 for more info, and the predicates docs
 <a class="reference external" href="http://www.gbif.org/developer/occurrence#predicates">http://www.gbif.org/developer/occurrence#predicates</a></p>
 <p>GBIF has a limit of 12,000 characters for download queries - so
-if you&#8217;re download request is really, really long and complex,
+if you’re download request is really, really long and complex,
 consider breaking it up into multiple requests by one factor or
 another.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -806,7 +825,7 @@ another.</p>
 </tbody>
 </table>
 <p>Usage:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span> <span class="k">as</span> <span class="n">occ</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span> <span class="k">as</span> <span class="n">occ</span>
 
 <span class="n">occ</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;basisOfRecord = LITERATURE&#39;</span><span class="p">)</span>
 <span class="n">occ</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;taxonKey = 3119195&#39;</span><span class="p">)</span>
@@ -836,20 +855,20 @@ another.</p>
 
 <dl class="method">
 <dt id="pygbif.occurrences.download_meta">
-<code class="descclassname">occurrences.</code><code class="descname">download_meta</code><span class="sig-paren">(</span><em>key</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.download_meta" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">occurrences.</code><code class="descname">download_meta</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.download_meta" title="Permalink to this definition">¶</a></dt>
 <dd><p>Retrieves the occurrence download metadata by its unique key. Further
-named arguments passed on to <code class="docutils literal"><span class="pre">requests.get</span></code> can be included as additional
+named arguments passed on to <code class="docutils literal notranslate"><span class="pre">requests.get</span></code> can be included as additional
 arguments</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>key</strong> &#8211; [str] A key generated from a request, like that from <code class="docutils literal"><span class="pre">download</span></code></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>key</strong> – [str] A key generated from a request, like that from <code class="docutils literal notranslate"><span class="pre">download</span></code></td>
 </tr>
 </tbody>
 </table>
 <p>Usage:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span> <span class="k">as</span> <span class="n">occ</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span> <span class="k">as</span> <span class="n">occ</span>
 <span class="n">occ</span><span class="o">.</span><span class="n">download_meta</span><span class="p">(</span><span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;0003970-140910143529206&quot;</span><span class="p">)</span>
 <span class="n">occ</span><span class="o">.</span><span class="n">download_meta</span><span class="p">(</span><span class="n">key</span> <span class="o">=</span> <span class="s2">&quot;0000099-140929101555934&quot;</span><span class="p">)</span>
 </pre></div>
@@ -858,24 +877,24 @@ arguments</p>
 
 <dl class="method">
 <dt id="pygbif.occurrences.download_list">
-<code class="descclassname">occurrences.</code><code class="descname">download_list</code><span class="sig-paren">(</span><em>user=None</em>, <em>pwd=None</em>, <em>limit=20</em>, <em>offset=0</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.download_list" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">occurrences.</code><code class="descname">download_list</code><span class="sig-paren">(</span><em>pwd=None</em>, <em>limit=20</em>, <em>offset=0</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.download_list" title="Permalink to this definition">¶</a></dt>
 <dd><p>Lists the downloads created by a user.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>user</strong> &#8211; [str] A user name, look at env var <code class="docutils literal"><span class="pre">GBIF_USER</span></code> first</li>
-<li><strong>pwd</strong> &#8211; [str] Your password, look at env var <code class="docutils literal"><span class="pre">GBIF_PWD</span></code> first</li>
-<li><strong>limit</strong> &#8211; [int] Number of records to return. Default: <code class="docutils literal"><span class="pre">20</span></code></li>
-<li><strong>offset</strong> &#8211; [int] Record number to start at. Default: <code class="docutils literal"><span class="pre">0</span></code></li>
+<li><strong>user</strong> – [str] A user name, look at env var <code class="docutils literal notranslate"><span class="pre">GBIF_USER</span></code> first</li>
+<li><strong>pwd</strong> – [str] Your password, look at env var <code class="docutils literal notranslate"><span class="pre">GBIF_PWD</span></code> first</li>
+<li><strong>limit</strong> – [int] Number of records to return. Default: <code class="docutils literal notranslate"><span class="pre">20</span></code></li>
+<li><strong>offset</strong> – [int] Record number to start at. Default: <code class="docutils literal notranslate"><span class="pre">0</span></code></li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
 <p>Usage:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span> <span class="k">as</span> <span class="n">occ</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span> <span class="k">as</span> <span class="n">occ</span>
 <span class="n">occ</span><span class="o">.</span><span class="n">download_list</span><span class="p">(</span><span class="n">user</span> <span class="o">=</span> <span class="s2">&quot;sckott&quot;</span><span class="p">)</span>
 <span class="n">occ</span><span class="o">.</span><span class="n">download_list</span><span class="p">(</span><span class="n">user</span> <span class="o">=</span> <span class="s2">&quot;sckott&quot;</span><span class="p">,</span> <span class="n">limit</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
 <span class="n">occ</span><span class="o">.</span><span class="n">download_list</span><span class="p">(</span><span class="n">user</span> <span class="o">=</span> <span class="s2">&quot;sckott&quot;</span><span class="p">,</span> <span class="n">offset</span> <span class="o">=</span> <span class="mi">21</span><span class="p">)</span>
@@ -885,16 +904,16 @@ arguments</p>
 
 <dl class="method">
 <dt id="pygbif.occurrences.download_get">
-<code class="descclassname">occurrences.</code><code class="descname">download_get</code><span class="sig-paren">(</span><em>key</em>, <em>path='.'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.download_get" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">occurrences.</code><code class="descname">download_get</code><span class="sig-paren">(</span><em>path='.'</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.occurrences.download_get" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get a download from GBIF.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>key</strong> &#8211; [str] A key generated from a request, like that from <code class="docutils literal"><span class="pre">download</span></code></li>
-<li><strong>path</strong> &#8211; [str] Path to write zip file to. Default: <code class="docutils literal"><span class="pre">&quot;.&quot;</span></code>, with a <code class="docutils literal"><span class="pre">.zip</span></code> appended to the end.</li>
-<li><strong>kwargs</strong> &#8211; Further named arguments passed on to <code class="docutils literal"><span class="pre">requests.get</span></code></li>
+<li><strong>key</strong> – [str] A key generated from a request, like that from <code class="docutils literal notranslate"><span class="pre">download</span></code></li>
+<li><strong>path</strong> – [str] Path to write zip file to. Default: <code class="docutils literal notranslate"><span class="pre">&quot;.&quot;</span></code>, with a <code class="docutils literal notranslate"><span class="pre">.zip</span></code> appended to the end.</li>
+<li><strong>kwargs</strong> – Further named arguments passed on to <code class="docutils literal notranslate"><span class="pre">requests.get</span></code></li>
 </ul>
 </td>
 </tr>
@@ -906,7 +925,7 @@ file to download, and affected by your internet connection speed.</p>
 <p>This function only downloads the file. To open and read it, see
 <a class="reference external" href="https://github.com/BelgianBiodiversityPlatform/python-dwca-reader">https://github.com/BelgianBiodiversityPlatform/python-dwca-reader</a></p>
 <p>Usage:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span> <span class="k">as</span> <span class="n">occ</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">occurrences</span> <span class="k">as</span> <span class="n">occ</span>
 <span class="n">occ</span><span class="o">.</span><span class="n">download_get</span><span class="p">(</span><span class="s2">&quot;0000066-140928181241064&quot;</span><span class="p">)</span>
 <span class="n">occ</span><span class="o">.</span><span class="n">download_get</span><span class="p">(</span><span class="s2">&quot;0003983-140910143529206&quot;</span><span class="p">)</span>
 </pre></div>
@@ -918,15 +937,16 @@ file to download, and affected by your internet connection speed.</p>
 
 
            </div>
+           
           </div>
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="registry.html" class="btn btn-neutral float-right" title="registry module" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="registry.html" class="btn btn-neutral float-right" title="registry module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="intro.html" class="btn btn-neutral" title="pygbif modules" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="intro.html" class="btn btn-neutral" title="pygbif modules" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -939,7 +959,7 @@ file to download, and affected by your internet connection speed.</p>
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -957,10 +977,12 @@ file to download, and affected by your internet connection speed.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'0.2.1',
+            VERSION:'0.2.2.3',
+            LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
         };
     </script>
       <script type="text/javascript" src="../_static/jquery.js"></script>
@@ -969,19 +991,13 @@ file to download, and affected by your internet connection speed.</p>
 
   
 
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
 
-  
-  
   <script type="text/javascript">
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>

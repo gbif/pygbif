@@ -37,6 +37,8 @@ You can import the entire library, or each module individually as needed.
 
 Note that `GBIF maps API <http://www.gbif.org/developer/maps>`_ is not included in `pygbif`.
 
+In addition there is a utils module, currently with one method: `wkt_rewind`
+
 Registry module
 ===============
 
@@ -111,6 +113,22 @@ Example usage:
     occ.download_list(user = "sckott", limit = 5)
     occ.download_meta(key = "0000099-140929101555934")
     occ.download_get("0000066-140928181241064")
+
+utils module
+============
+
+utils module API:
+
+* `wkt_rewind`
+
+Example usage:
+
+.. code-block:: python
+
+    from pygbif import utils
+    x = 'POLYGON((144.6 13.2, 144.6 13.6, 144.9 13.6, 144.9 13.2, 144.6 13.2))'
+    utils.wkt_rewind(x)
+
 
 
 Contributors
