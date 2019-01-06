@@ -1,0 +1,400 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>maps module &mdash; pygbif 0.2.2.3 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="utils module" href="utils.html" />
+    <link rel="prev" title="species module" href="species.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> pygbif
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2.2.3
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../intro/install.html">Installation guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Docs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../docs/faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../docs/usecases.html">Usecases</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Modules</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">pygbif modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="occurrence.html">occurrence module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="registry.html">registry module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="species.html">species module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">maps module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module-pygbif">maps API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="utils.html">utils module</a></li>
+</ul>
+<p class="caption"><span class="caption-text">All the rest</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../changelog_link.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributors.html">Contributors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../conduct.html">Contributor Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../license.html">LICENSE</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pygbif</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>maps module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/modules/maps.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="maps-module">
+<span id="maps-modules"></span><h1>maps module<a class="headerlink" href="#maps-module" title="Permalink to this headline">¶</a></h1>
+<p>maps module API:</p>
+<ul class="simple">
+<li><cite>map</cite></li>
+</ul>
+<p>Example usage:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="kn">import</span> <span class="n">maps</span>
+<span class="n">maps</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">taxonKey</span> <span class="o">=</span> <span class="mi">2435098</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="module-pygbif">
+<span id="maps-api"></span><h2>maps API<a class="headerlink" href="#module-pygbif" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="pygbif.maps.map">
+<code class="descclassname">maps.</code><code class="descname">map</code><span class="sig-paren">(</span><em>z=0</em>, <em>x=0</em>, <em>y=0</em>, <em>format='&#64;1x.png'</em>, <em>srs='EPSG:4326'</em>, <em>bin=None</em>, <em>hexPerTile=None</em>, <em>style='classic.point'</em>, <em>taxonKey=None</em>, <em>country=None</em>, <em>publishingCountry=None</em>, <em>publisher=None</em>, <em>datasetKey=None</em>, <em>year=None</em>, <em>basisOfRecord=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.maps.map" title="Permalink to this definition">¶</a></dt>
+<dd><p>GBIF maps API</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>source</strong> – [str] Either <code class="docutils literal notranslate"><span class="pre">density</span></code> for fast, precalculated tiles,
+or <code class="docutils literal notranslate"><span class="pre">adhoc</span></code> for any search</li>
+<li><strong>z</strong> – [str] zoom level</li>
+<li><strong>x</strong> – [str] longitude</li>
+<li><strong>y</strong> – [str] latitude</li>
+<li><strong>format</strong> – [str] format of returned data. One of:</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">.mvt</span></code> - vector tile</li>
+<li><code class="docutils literal notranslate"><span class="pre">&#64;Hx.png</span></code> - 256px raster tile (for legacy clients)</li>
+<li><code class="docutils literal notranslate"><span class="pre">&#64;1x.png</span></code> - 512px raster tile, &#64;2x.png for a 1024px raster tile</li>
+<li><code class="docutils literal notranslate"><span class="pre">&#64;3x.png</span></code> - 2048px raster tile, &#64;4x.png for a 4096px raster tile</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>srs</strong> – [str] Spatial reference system. One of:</td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">EPSG:3857</span></code> (Web Mercator)</li>
+<li><code class="docutils literal notranslate"><span class="pre">EPSG:4326</span></code> (WGS84 plate careé)</li>
+<li><code class="docutils literal notranslate"><span class="pre">EPSG:3575</span></code> (Arctic LAEA)</li>
+<li><code class="docutils literal notranslate"><span class="pre">EPSG:3031</span></code> (Antarctic stereographic)</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>bin</strong> – [str] square or hex to aggregate occurrence counts into
+squares or hexagons. Points by default.</li>
+<li><strong>hexPerTile</strong> – [str] sets the size of the hexagons (the number 
+horizontally across a tile)</li>
+<li><strong>squareSize</strong> – [str] sets the size of the squares. Choose a factor 
+of 4096 so they tessalate correctly: probably from 8, 16, 32, 64, 
+128, 256, 512.</li>
+<li><strong>style</strong> – [str] for raster tiles, choose from the available styles.
+Defaults to classic.point.</li>
+<li><strong>taxonKey</strong> – [int] A GBIF occurrence identifier</li>
+<li><strong>datasetKey</strong> – [str] The occurrence dataset key (a uuid)</li>
+<li><strong>country</strong> – [str] The 2-letter country code (as per ISO-3166-1) of 
+the country in which the occurrence was recorded. See here
+<a class="reference external" href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2</a></li>
+<li><strong>basisOfRecord</strong> – <dl class="docutils">
+<dt>[str] Basis of record, as defined in our </dt>
+<dd>BasisOfRecord enum here 
+<a class="reference external" href="http://gbif.github.io/gbif-api/apidocs/org/gbif/api/vocabulary/BasisOfRecord.html">http://gbif.github.io/gbif-api/apidocs/org/gbif/api/vocabulary/BasisOfRecord.html</a>
+Acceptable values are:</dd>
+</dl>
+<ul>
+<li><dl class="first docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">FOSSIL_SPECIMEN</span></code> An occurrence record describing a fossilized </dt>
+<dd>specimen.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">HUMAN_OBSERVATION</span></code> An occurrence record describing an observation </dt>
+<dd>made by one or more people.</dd>
+</dl>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">LITERATURE</span></code> An occurrence record based on literature alone.</li>
+<li><dl class="first docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">LIVING_SPECIMEN</span></code> An occurrence record describing a living </dt>
+<dd>specimen, e.g.</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">MACHINE_OBSERVATION</span></code> An occurrence record describing an observation </dt>
+<dd>made by a machine.</dd>
+</dl>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">OBSERVATION</span></code> An occurrence record describing an observation.</li>
+<li><dl class="first docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">PRESERVED_SPECIMEN</span></code> An occurrence record describing a preserved </dt>
+<dd>specimen.</dd>
+</dl>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">UNKNOWN</span></code> Unknown basis for the record.</li>
+</ul>
+</li>
+<li><strong>year</strong> – [int] The 4 digit year. A year of 98 will be interpreted as 
+AD 98. Supports range queries, smaller,larger (e.g., <code class="docutils literal notranslate"><span class="pre">1990,1991</span></code>, 
+whereas <code class="docutils literal notranslate"><span class="pre">1991,1990</span></code> wouldn’t work)</li>
+<li><strong>publishingCountry</strong> – [str] The 2-letter country code (as per 
+ISO-3166-1) of the country in which the occurrence was recorded.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A requests library Response class, see Usage for how to process</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">maps</span>
+<span class="n">out</span> <span class="o">=</span> <span class="n">maps</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">taxonKey</span> <span class="o">=</span> <span class="mi">2435098</span><span class="p">)</span>
+<span class="n">out</span><span class="o">.</span><span class="n">response</span>
+<span class="n">out</span><span class="o">.</span><span class="n">path</span>
+<span class="n">out</span><span class="o">.</span><span class="n">img</span>
+<span class="n">out</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+
+<span class="n">out</span> <span class="o">=</span> <span class="n">maps</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">taxonKey</span> <span class="o">=</span> <span class="mi">2480498</span><span class="p">,</span> <span class="n">year</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2007</span><span class="p">,</span> <span class="mi">2011</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">out</span><span class="o">.</span><span class="n">response</span>
+<span class="n">out</span><span class="o">.</span><span class="n">path</span>
+<span class="n">out</span><span class="o">.</span><span class="n">img</span>
+<span class="n">out</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+
+<span class="c1"># srs</span>
+<span class="n">maps</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">taxonKey</span> <span class="o">=</span> <span class="mi">2480498</span><span class="p">,</span> <span class="n">year</span> <span class="o">=</span> <span class="mi">2010</span><span class="p">,</span> <span class="n">srs</span> <span class="o">=</span> <span class="s2">&quot;EPSG:3857&quot;</span><span class="p">)</span>
+<span class="c1"># bin</span>
+<span class="n">maps</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">taxonKey</span> <span class="o">=</span> <span class="mi">212</span><span class="p">,</span> <span class="n">year</span> <span class="o">=</span> <span class="mi">1998</span><span class="p">,</span> <span class="nb">bin</span> <span class="o">=</span> <span class="s2">&quot;hex&quot;</span><span class="p">,</span>
+   <span class="n">hexPerTile</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span> <span class="n">style</span> <span class="o">=</span> <span class="s2">&quot;classic-noborder.poly&quot;</span><span class="p">)</span>
+<span class="c1"># style</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">maps</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">taxonKey</span> <span class="o">=</span> <span class="mi">2480498</span><span class="p">,</span> <span class="n">style</span> <span class="o">=</span> <span class="s2">&quot;purpleYellow.point&quot;</span><span class="p">))</span>
+<span class="c1"># map vector tile, gives back raw bytes</span>
+<span class="c1"># maps.map(taxonKey = 2480498, year = 2010,</span>
+<span class="c1">#  format = &quot;.mvt&quot;)</span>
+<span class="c1"># basisOfRecord</span>
+<span class="n">maps</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">taxonKey</span> <span class="o">=</span> <span class="mi">2480498</span><span class="p">,</span> <span class="n">year</span> <span class="o">=</span> <span class="s1">&#39;2010&#39;</span><span class="p">,</span> 
+  <span class="n">basisOfRecord</span> <span class="o">=</span> <span class="s2">&quot;HUMAN_OBSERVATION&quot;</span><span class="p">)</span>
+<span class="n">maps</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">taxonKey</span> <span class="o">=</span> <span class="mi">2480498</span><span class="p">,</span> <span class="n">year</span> <span class="o">=</span> <span class="s1">&#39;2010&#39;</span><span class="p">,</span> 
+  <span class="n">basisOfRecord</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;HUMAN_OBSERVATION&quot;</span><span class="p">,</span> <span class="s2">&quot;LIVING_SPECIMEN&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="utils.html" class="btn btn-neutral float-right" title="utils module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="species.html" class="btn btn-neutral" title="species module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Scott Chamberlain.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.2.2.3',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

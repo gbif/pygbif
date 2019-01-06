@@ -29,7 +29,13 @@ setup(
   url              = 'http://github.com/sckott/pygbif',
   license          = "MIT",
   packages         = find_packages(exclude=['test-*']),
-  install_requires = ['requests>2.7', 'geojson_rewind', 'geomet'],
+  install_requires = [
+    'requests>2.7', 
+    'geojson_rewind', 
+    'geomet',
+    'appdirs>=1.4.3',
+    'matplotlib'
+  ],
   classifiers      = [
     'Development Status :: 4 - Beta',
     'Intended Audience :: Science/Research',

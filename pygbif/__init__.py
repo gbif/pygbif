@@ -44,5 +44,6 @@ __license__ = 'MIT'
 from .occurrences import search, get, count, download
 from .species import name_parser, name_suggest, name_backbone, name_lookup, name_usage
 from .registry import datasets, nodes, networks, organizations, installations
+from .maps import map, GbifMap
 from .gbifissues import occ_issues_lookup
 from .utils import *

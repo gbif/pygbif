@@ -20,6 +20,12 @@ def gbif_GET(url, args, **kwargs):
   stopifnot(out.headers['content-type'])
   return out.json()
 
+def gbif_GET_map(url, args, ctype, **kwargs):
+  out = requests.get(url, params=args, headers=make_ua(), **kwargs)
+  out.raise_for_status()
+  stopifnot(out.headers['content-type'], ctype)
+  return out
+
 def gbif_GET_write(url, path, **kwargs):
   out = requests.get(url, headers=make_ua(), stream=True, **kwargs)
   out.raise_for_status()
@@ -40,9 +46,9 @@ def gbif_POST(url, body, **kwargs):
   stopifnot(out.headers['content-type'])
   return out.json()
 
-def stopifnot(x):
-  if x != 'application/json':
-    raise NoResultException("content-type did not = application/json")
+def stopifnot(x, ctype = 'application/json'):
+  if x != ctype:
+    raise NoResultException("content-type did not equal " + ctype)
 
 def stop(x):
   raise ValueError(x)
