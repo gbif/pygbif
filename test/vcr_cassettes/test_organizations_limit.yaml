@@ -1,0 +1,225 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      user-agent: ['python-requests/2.21.0,pygbif/0.2.2.3']
+    method: GET
+    uri: http://api.gbif.org/v1/organization?limit=5
+  response:
+    body: {string: "{\"offset\":0,\"limit\":5,\"endOfRecords\":false,\"count\":1742,\"\
+        results\":[{\"key\":\"2e3408a2-7d79-478f-875b-2b6a669b9026\",\"endorsingNodeKey\"\
+        :\"46e3639a-27f8-45af-bfbe-d19b77efb040\",\"endorsementApproved\":true,\"\
+        title\":\"Servicio Nacional de Areas Naturales Protegidas por el Estado\"\
+        ,\"description\":\"El Servicio Nacional de \xC1reas Naturales Protegidas por\
+        \ el Estado - SERNANP, es un Organismo P\xFAblico T\xE9cnico Especializado\
+        \ adscrito al Ministerio del Ambiente, a trav\xE9s del Decreto Legislativo\
+        \ 1013 del 14 de mayo de 2008, encargado de dirigir y establecer los criterios\
+        \ t\xE9cnicos y administrativos para la conservaci\xF3n de las \xC1reas Naturales\
+        \ Protegidas \u2013 ANP, y de cautelar el mantenimiento de la diversidad biol\xF3\
+        gica. El SERNANP es el ente rector del Sistema Nacional de \xC1reas Naturales\
+        \ Protegidas por el Estado \u2013 SINANPE, y en su calidad de autoridad t\xE9\
+        cnico-normativa realiza su trabajo en coordinaci\xF3n con gobiernos regionales,\
+        \ locales y propietarios de predios reconocidos como \xE1reas de conservaci\xF3\
+        n privada.\",\"language\":\"eng\",\"email\":[\"sernanp@sernanp.gob.pe\"],\"\
+        phone\":[\"51 1 7177500\"],\"homepage\":[\"http://www.sernanp.gob.pe\"],\"\
+        logoUrl\":\"http://www.sernanp.gob.pe/documents/10181/0/logoSernanp.png\"\
+        ,\"address\":[\"Calle Diecisiete N\xB0 355. Urbanizaci\xF3n El Palomar\"],\"\
+        city\":\"San Isidro\",\"province\":\"Lima\",\"country\":\"PE\",\"postalCode\"\
+        :\"27\",\"numPublishedDatasets\":0,\"createdBy\":\"gbif.express\",\"modifiedBy\"\
+        :\"gbif.express\",\"created\":\"2019-01-22T23:31:49.087+0000\",\"modified\"\
+        :\"2019-01-23T15:16:42.044+0000\",\"contacts\":[{\"key\":1468669,\"type\"\
+        :\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\"\
+        :\"Giovanna\",\"lastName\":\"Chipana\",\"position\":[],\"email\":[\"gchipana@sernanp.gob.pe\"\
+        ],\"phone\":[\"51 1 7177500\"],\"homepage\":[],\"address\":[],\"createdBy\"\
+        :\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2019-01-22T23:31:49.115+0000\"\
+        ,\"modified\":\"2019-01-22T23:31:49.115+0000\"},{\"key\":1468670,\"type\"\
+        :\"POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Carlos\"\
+        ,\"lastName\":\"Sanchez Rojas\",\"position\":[],\"email\":[\"csanchezrojas@sernanp.gob.pe\"\
+        ],\"phone\":[\"51 1 7177500\"],\"homepage\":[],\"address\":[],\"createdBy\"\
+        :\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2019-01-22T23:31:49.151+0000\"\
+        ,\"modified\":\"2019-01-22T23:31:49.151+0000\"}],\"endpoints\":[],\"machineTags\"\
+        :[],\"tags\":[],\"identifiers\":[],\"comments\":[{\"key\":23436,\"content\"\
+        :\"Is associated with a GBIF-funded project: no\\n\\n\\nExpects to publish:\\\
+        n\\n\\n - OccurenceData\\n - SamplingEventData\\n - ResourceMetaData\\n\\\
+        nWill run a server which exposes data: no\\n\\n\\nPlans to run publishing\
+        \ software (e.g. an IPT): no\\n\\n\\nNeeds help for data publishing: yes\"\
+        ,\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\"\
+        :\"2019-01-22T23:31:49.193+0000\",\"modified\":\"2019-01-22T23:31:49.193+0000\"\
+        }]},{\"key\":\"76f68a9a-c7e9-4628-8ed2-fca4f81fe87d\",\"endorsingNodeKey\"\
+        :\"efb9c00e-f802-45dd-8826-a52ec45b89ff\",\"endorsementApproved\":true,\"\
+        title\":\"Centre d'Etudes de Recherches et de Formation Foresti\xE8res (CERF)\"\
+        ,\"description\":\"Le Centre d'Etudes de Recherche et de Formation Foresti\xE8\
+        res (CERF) est un office \xE0 caract\xE8re scientifique qui contribue \xE0\
+        \ la mise en \u0153uvre de la politique foresti\xE8re nationale et \xE0 l'avancement\
+        \ de la science. Le CERF est une structure publique appartenant au Minist\xE8\
+        re du Cadre de vie et du D\xE9veloppement Durable.  En tant que Centre de\
+        \ Recherche, le CERF dispose fr\xE9quemment de donn\xE9es d'occurrences issues\
+        \ des \xE9tudes diverses r\xE9alis\xE9es y compris les inventaires sur le\
+        \ territoire national. De ce fait, le CERF dispose d'une importante base de\
+        \ donn\xE9es de biodiversit\xE9 que nous souhaitons rendre visible sur le\
+        \ site du GBIF.\",\"language\":\"eng\",\"email\":[\"cerfbenin@gmail.com\"\
+        ],\"phone\":[\"229 21333771\"],\"homepage\":[],\"address\":[\"06 BP 707 PK3,5\
+        \ Cotonou\"],\"city\":\"Cotonou\",\"province\":\"Littoral\",\"country\":\"\
+        BJ\",\"postalCode\":\"06BP 707\",\"numPublishedDatasets\":0,\"createdBy\"\
+        :\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2019-01-22T21:42:37.047+0000\"\
+        ,\"modified\":\"2019-01-22T22:10:22.745+0000\",\"contacts\":[{\"key\":1468515,\"\
+        type\":\"ADMINISTRATIVE_POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"\
+        firstName\":\"Gaston\",\"lastName\":\"AKOUEHOU\",\"position\":[],\"email\"\
+        :[\"gastonakouehou@gmail.com\"],\"phone\":[\"229 97367678\"],\"homepage\"\
+        :[],\"address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\"\
+        ,\"created\":\"2019-01-22T21:42:37.064+0000\",\"modified\":\"2019-01-22T21:42:37.064+0000\"\
+        },{\"key\":1468516,\"type\":\"POINT_OF_CONTACT\",\"primary\":false,\"userId\"\
+        :[],\"firstName\":\"Augustin\",\"lastName\":\"OROU MATILO TIMOTHEE B.\",\"\
+        position\":[],\"email\":[\"matilorou@yahoo.fr\"],\"phone\":[\"22997842182\"\
+        ],\"homepage\":[],\"address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\"\
+        :\"gbif.express\",\"created\":\"2019-01-22T21:42:37.096+0000\",\"modified\"\
+        :\"2019-01-22T21:42:37.096+0000\"}],\"endpoints\":[],\"machineTags\":[],\"\
+        tags\":[],\"identifiers\":[],\"comments\":[{\"key\":23435,\"content\":\"Is\
+        \ associated with a GBIF-funded project: yes\\n\\n\\nExpects to publish:\\\
+        n\\n\\n - ResourceMetaData\\n - ChecklistData\\n - SamplingEventData\\n\\\
+        nWill run a server which exposes data: yes\\n\\n\\nPlans to run publishing\
+        \ software (e.g. an IPT): no\\n\\n\\nNeeds help for data publishing: yes\"\
+        ,\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\"\
+        :\"2019-01-22T21:42:37.128+0000\",\"modified\":\"2019-01-22T21:42:37.128+0000\"\
+        }]},{\"key\":\"b648db34-3bf9-45eb-a65b-8176a3c3be88\",\"endorsingNodeKey\"\
+        :\"7f48e0c8-5c96-49ec-b972-30748e339115\",\"endorsementApproved\":false,\"\
+        title\":\"MyCoPortal\",\"description\":\"The Mycology Collections data Portal\
+        \ (MyCoPortal) is a suite of user-friendly, web-based data access technologies\
+        \ to aid taxonomists, field biologists, ecologists, educators, and citizen\
+        \ scientists in the study of fungal diversity. The data are derived from a\
+        \ network of universities, botanical gardens, museums, and agencies that provide\
+        \ taxonomic, environmental, and specimen-based information. Using the Symbiota\
+        \ (http://symbiota.org) system of virtual online floras, these data are directly\
+        \ accessible to dynamically generate georeferenced species checklists, distribution\
+        \ maps, and interactive identification keys, all linked with a rich collection\
+        \ of digital imagery documenting fungal diversity throughout the World.\"\
+        ,\"language\":\"eng\",\"email\":[\"help@mycoportal.org\"],\"phone\":[\"2172440439\"\
+        ],\"homepage\":[\"https://www.mycoportal.org\"],\"logoUrl\":\"https://www.microfungi.org/files/8413/5976/3006/index.jpeg\"\
+        ,\"address\":[\"University of Illinois, Illinois Natural History Survey, 1816\
+        \ South Oak Street\"],\"city\":\"Champaign\",\"province\":\"Illinois\",\"\
+        country\":\"US\",\"postalCode\":\"61820\",\"latitude\":40.09269,\"longitude\"\
+        :-88.24098,\"numPublishedDatasets\":0,\"createdBy\":\"gbif.express\",\"modifiedBy\"\
+        :\"gbif.express\",\"created\":\"2019-01-21T22:16:33.120+0000\",\"modified\"\
+        :\"2019-01-21T22:16:33.120+0000\",\"contacts\":[{\"key\":1468014,\"type\"\
+        :\"ADMINISTRATIVE_POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\"\
+        :\"Scott\",\"lastName\":\"Bates\",\"position\":[],\"email\":[\"help@mycoportal.org\"\
+        ],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"gbif.express\"\
+        ,\"modifiedBy\":\"gbif.express\",\"created\":\"2019-01-21T22:16:33.138+0000\"\
+        ,\"modified\":\"2019-01-21T22:16:33.138+0000\"},{\"key\":1468015,\"type\"\
+        :\"POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Andrew\"\
+        ,\"lastName\":\"Miller\",\"position\":[],\"email\":[\"amiller7@illinois.edu\"\
+        ],\"phone\":[\"2172440439\"],\"homepage\":[],\"address\":[],\"createdBy\"\
+        :\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2019-01-21T22:16:33.173+0000\"\
+        ,\"modified\":\"2019-01-21T22:16:33.173+0000\"}],\"endpoints\":[],\"machineTags\"\
+        :[],\"tags\":[],\"identifiers\":[],\"comments\":[{\"key\":23408,\"content\"\
+        :\"Is associated with a GBIF-funded project: no\\n\\n\\nExpects to publish:\\\
+        n\\n\\n - ResourceMetaData\\n - ChecklistData\\n - OccurenceData\\n\\nWill\
+        \ run a server which exposes data: yes\\n\\n\\nPlans to run publishing software\
+        \ (e.g. an IPT): yes\\n\\n\\nNeeds help for data publishing: no\",\"createdBy\"\
+        :\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2019-01-21T22:16:33.204+0000\"\
+        ,\"modified\":\"2019-01-21T22:16:33.204+0000\"}]},{\"key\":\"296d6619-3af7-47fd-825b-3e4e3b77fe94\"\
+        ,\"endorsingNodeKey\":\"7f48e0c8-5c96-49ec-b972-30748e339115\",\"endorsementApproved\"\
+        :false,\"title\":\"Institute of Plant Sciences, University of Sindh Jamshoro\"\
+        ,\"description\":\"The herbarium of the University of Sindh Jamshoro is one\
+        \ of two key components of the Institute of Plant Sciences, the other being\
+        \ establishment of a botanic garden. The herbarium was initiated in the 1950s,\
+        \ primarily as a teaching resource. In 2018, with support from the Higher\
+        \ Education Commission of Pakistan, it is being transformed into a research\
+        \ herbarium. A key part of this transformation has been identifying its primary\
+        \ goals as 1) documentation of the flora of Sindh and adjacent regions of\
+        \ Balochistan; 2) providing instruction in the importance and preparation\
+        \ of voucher specimens in botanical research; and sharing of what is learned\
+        \ with diverse audiences through multiple outlets.  In December 2018, the\
+        \ herbarium began sharing its data via OpenHerbarium, a Symbiota network,\
+        \ and, early in 2019, via the Global Biodiversity Information Facility. In\
+        \ 2018, the collection included about 15,000 specimens, essentially all of\
+        \ which are of vascular plants.\",\"language\":\"eng\",\"email\":[\"rabia.memon@usindh.edu.pk\"\
+        ],\"phone\":[\"+923338709966\"],\"homepage\":[],\"logoUrl\":\"http://openherbarium.org/portal/content/collicon/sindh.jpg\"\
+        ,\"address\":[\"Institute of Plant Sciences, Faculty of Natural Sciences University\
+        \ of Sindh, Jamshoro  Sindh  Pakistan\"],\"city\":\"Jamshoro\",\"province\"\
+        :\"Sindh\",\"country\":\"PK\",\"postalCode\":\"76080\",\"numPublishedDatasets\"\
+        :0,\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\"\
+        :\"2019-01-21T19:55:17.022+0000\",\"modified\":\"2019-01-21T19:55:17.022+0000\"\
+        ,\"contacts\":[{\"key\":1467867,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"\
+        primary\":false,\"userId\":[],\"firstName\":\"Mary\",\"lastName\":\"Barkworth\"\
+        ,\"position\":[],\"email\":[\"mary.barkworth@usu.edu\"],\"phone\":[\"14352133124\"\
+        ],\"homepage\":[],\"address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\"\
+        :\"gbif.express\",\"created\":\"2019-01-21T19:55:17.042+0000\",\"modified\"\
+        :\"2019-01-21T19:55:17.042+0000\"},{\"key\":1467868,\"type\":\"POINT_OF_CONTACT\"\
+        ,\"primary\":false,\"userId\":[],\"firstName\":\"Rabia\",\"lastName\":\"Memon\"\
+        ,\"position\":[],\"email\":[\"rabia.memon@usindh.edu.pk\"],\"phone\":[\"+923338709966\"\
+        ],\"homepage\":[],\"address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\"\
+        :\"gbif.express\",\"created\":\"2019-01-21T19:55:17.080+0000\",\"modified\"\
+        :\"2019-01-21T19:55:17.080+0000\"}],\"endpoints\":[],\"machineTags\":[],\"\
+        tags\":[],\"identifiers\":[],\"comments\":[{\"key\":23407,\"content\":\"Is\
+        \ associated with a GBIF-funded project: no\\n\\n\\nExpects to publish:\\\
+        n\\n\\n - OccurenceData\\n - ResourceMetaData\\n\\nWill run a server which\
+        \ exposes data: no\\n\\n\\nPlans to run publishing software (e.g. an IPT):\
+        \ no\\n\\n\\nNeeds help for data publishing: yes\",\"createdBy\":\"gbif.express\"\
+        ,\"modifiedBy\":\"gbif.express\",\"created\":\"2019-01-21T19:55:17.113+0000\"\
+        ,\"modified\":\"2019-01-21T19:55:17.113+0000\"}]},{\"key\":\"b16e38a9-0cd4-4c3f-bb28-e7bb9260f4f1\"\
+        ,\"endorsingNodeKey\":\"7e865cba-7c46-417b-ade5-97f2cf5b7be0\",\"endorsementApproved\"\
+        :false,\"title\":\"Jard\xEDn Bot\xE1nico de La Macarena\",\"description\"\
+        :\"We need a major change of attitude talking about environment. It is imperative\
+        \ to understand that we are interdependent. So we have to study, manage, review\
+        \ the topics of biodiversity and maintenance of vegetation cover, of food\
+        \ production, agriculture, the seeds, the use of pesticides, food sovereignty,\
+        \ human rights. Protection of the environment means also guaranteed human\
+        \ rights. And it is no less important to assume the rights of the Amazon Rainforest\
+        \ protecting it against mining and oil extraction. The garden has a list of\
+        \ more than 1050 different plantspecies and more than 1200 trees and shrubs\
+        \ numbered and named.\\n\\nwww.vivos4life.org\\nCada Bosque es un Jard\xED\
+        n Bot\xE1nico. Significa que en La Macarena el bosque es tan megadiverso que\
+        \ sin hacer nada tienes la diversidad de un Jard\xEDn Bot\xE1nico. \\nEl Jard\xED\
+        n Bot\xE1nico de La Macarena tiene el inter\xE9s de mantener y desarrollar\
+        \ dos actividades conjuntas : una actividad de protecci\xF3n, conservaci\xF3\
+        n, estudio del ambiente y  la otra mantener un desarrollo de una actividad\
+        \ agropecuaria como el ejercicio pr\xE1ctico de convivencia de dos sistemas\
+        \ el uno de la naturaleza la otra de vida campesina con una filosofia de agro-ecologia....\
+        \ sabiendo que ecologia se conecta con la palabra de sostenibilidad y soberania\
+        \ alimentaria y en esto podemos compartirlo con el ecoturismo. En el Jard\xED\
+        n Bot\xE1nico de La Macarena hay de este manera una caracterizaci\xF3n  bot\xE1\
+        nica, con m\xE1s de 1000 especies identificadas. M\xE1s de  1200 arbustos\
+        \ y \xE1rboles tienen identificaci\xF3n con plaquetas.\",\"language\":\"eng\"\
+        ,\"email\":[\"michel@boutsen.onmicrosoft.com\"],\"phone\":[\"+32 475 680873\"\
+        ],\"homepage\":[\"https://es.wikipedia.org/wiki/Jard%C3%ADn_Bot%C3%A1nico_de_La_Macarena\"\
+        ],\"address\":[\"Jard\xEDn Bot\xE1nico de La Macarena\"],\"city\":\"La Macarena\"\
+        ,\"province\":\"Meta\",\"country\":\"CO\",\"latitude\":2.06139,\"longitude\"\
+        :-73.86105,\"numPublishedDatasets\":0,\"createdBy\":\"gbif.express\",\"modifiedBy\"\
+        :\"gbif.express\",\"created\":\"2019-01-21T10:09:59.987+0000\",\"modified\"\
+        :\"2019-01-21T10:09:59.987+0000\",\"contacts\":[{\"key\":1465057,\"type\"\
+        :\"ADMINISTRATIVE_POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\"\
+        :\"Aleja\",\"lastName\":\"Medaglia\",\"position\":[],\"email\":[\"alemedaglia@hotmail.com\"\
+        ],\"phone\":[\"+57 312 658 1004\"],\"homepage\":[],\"address\":[],\"createdBy\"\
+        :\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2019-01-21T10:10:00.013+0000\"\
+        ,\"modified\":\"2019-01-21T10:10:00.013+0000\"},{\"key\":1465058,\"type\"\
+        :\"POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Michel\"\
+        ,\"lastName\":\"Boutsen\",\"position\":[],\"email\":[\"michel@boutsen.onmicrosoft.com\"\
+        ],\"phone\":[\"+32 475 680873\"],\"homepage\":[],\"address\":[],\"createdBy\"\
+        :\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2019-01-21T10:10:00.072+0000\"\
+        ,\"modified\":\"2019-01-21T10:10:00.072+0000\"}],\"endpoints\":[],\"machineTags\"\
+        :[],\"tags\":[],\"identifiers\":[],\"comments\":[{\"key\":23406,\"content\"\
+        :\"Is associated with a GBIF-funded project: no\\n\\n\\nExpects to publish:\\\
+        n\\n\\n - OccurenceData\\n - SamplingEventData\\n\\nWill run a server which\
+        \ exposes data: yes\\n\\n\\nPlans to run publishing software (e.g. an IPT):\
+        \ yes\\n\\n\\nNeeds help for data publishing: yes\",\"createdBy\":\"gbif.express\"\
+        ,\"modifiedBy\":\"gbif.express\",\"created\":\"2019-01-21T10:10:00.120+0000\"\
+        ,\"modified\":\"2019-01-21T10:10:00.120+0000\"}]}]}"}
+    headers:
+      Accept-Ranges: [bytes]
+      Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT, OPTIONS']
+      Access-Control-Allow-Origin: ['*']
+      Age: ['0']
+      Cache-Control: ['public, max-age=3601']
+      Connection: [keep-alive]
+      Content-Length: ['14292']
+      Content-Type: [application/json]
+      Date: ['Fri, 25 Jan 2019 18:13:46 GMT']
+      Server: [Jetty(9.3.z-SNAPSHOT)]
+      Via: [1.1 varnish (Varnish/5.2)]
+      X-Varnish: ['597003884']
+    status: {code: 200, message: OK}
+version: 1
