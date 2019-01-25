@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Changelog &mdash; pygbif 0.2.2.4 documentation</title>
+  <title>Changelog &mdash; pygbif 0.3.0 documentation</title>
   
 
   
@@ -58,7 +58,7 @@
             
             
               <div class="version">
-                0.2.2.4
+                0.3.0
               </div>
             
           
@@ -103,11 +103,12 @@
 <p class="caption"><span class="caption-text">All the rest</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id1">0.2.0 (2016-10-18)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">0.1.5.4 (2016-10-01)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">0.1.4 (2016-06-04)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id4">0.1.1 (2015-11-03)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id5">0.1.0 (2015-11-02)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">0.3.0 (2019-01-25)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">0.2.0 (2016-10-18)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">0.1.5.4 (2016-10-01)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">0.1.4 (2016-06-04)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">0.1.1 (2015-11-03)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">0.1.0 (2015-11-02)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="contributors.html">Contributors</a></li>
@@ -181,51 +182,63 @@
   <div class="section" id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="id1">
-<h2>0.2.0 (2016-10-18)<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2>0.3.0 (2019-01-25)<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Download methods much improved (#16) (#27) thanks &#64;jlegind &#64;stijnvanhoey &#64;peterdesmet !</li>
-<li>MULTIPOLYGON now supported in <cite>geometry</cite> parameter (#35)</li>
-<li>Fixed docs for <cite>occurrences.get</cite>, and <cite>occurrences.get_verbatim</cite>, <cite>occurrences.get_fragment</cite> and demo that used occurrence keys that no longer exist in GBIF (#39)</li>
-<li>Added <cite>organizations</cite> method to <cite>registry</cite> module (#12)</li>
-<li>Added remainder of datasets methods: <cite>registry.dataset_search</cite> (including faceting support (#37)) and <cite>registry.dataset_suggest</cite>, for the <cite>/dataset/search</cite> and <cite>/dataset/suggest</cite> routes, respectively (#40)</li>
-<li>Added remainder of species methods: <cite>species.name_lookup</cite> (including faceting support (#38)) and <cite>species.name_usage</cite>, for the <cite>/species/search</cite> and <cite>/species</cite> routes, respectively (#18)</li>
+<li>pygbif is Python 3 only now <a class="reference external" href="https://github.com/sckott/pygbif/issues/19">#19</a></li>
+<li>Gains maps module with maps.map method for working with the GBIF maps API <a class="reference external" href="https://github.com/sckott/pygbif/issues/41">#41</a> <a class="reference external" href="https://github.com/sckott/pygbif/issues/49">#49</a></li>
+<li>Gains new module utils with one method <cite>wkt_rewind</cite>  <a class="reference external" href="https://github.com/sckott/pygbif/issues/46">#46</a> thanks &#64;aubreymoore for the inspiration</li>
+<li>Fixed bug in registry.installations: typo in one of the parameters <cite>identifierTyp</cite> instead of <cite>identifierType</cite> <a class="reference external" href="https://github.com/sckott/pygbif/issues/48">#48</a> thanks &#64;data-biodiversity-aq</li>
+<li>Link to GitHub issues from Changelog 🎉</li>
+<li>Fix a occurrence download test <a class="reference external" href="https://github.com/sckott/pygbif/issues/47">#47</a></li>
+<li>Much more thorough docs <a class="reference external" href="https://github.com/sckott/pygbif/issues/25">#25</a></li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>0.2.0 (2016-10-18)<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Download methods much improved <a class="reference external" href="https://github.com/sckott/pygbif/issues/16">#16</a> <a class="reference external" href="https://github.com/sckott/pygbif/issues/27">#27</a> thanks &#64;jlegind &#64;stijnvanhoey &#64;peterdesmet !</li>
+<li>MULTIPOLYGON now supported in <cite>geometry</cite> parameter <a class="reference external" href="https://github.com/sckott/pygbif/issues/35">#35</a></li>
+<li>Fixed docs for <cite>occurrences.get</cite>, and <cite>occurrences.get_verbatim</cite>, <cite>occurrences.get_fragment</cite> and demo that used occurrence keys that no longer exist in GBIF <a class="reference external" href="https://github.com/sckott/pygbif/issues/39">#39</a></li>
+<li>Added <cite>organizations</cite> method to <cite>registry</cite> module <a class="reference external" href="https://github.com/sckott/pygbif/issues/12">#12</a></li>
+<li>Added remainder of datasets methods: <cite>registry.dataset_search</cite> (including faceting support <a class="reference external" href="https://github.com/sckott/pygbif/issues/37">#37</a>) and <cite>registry.dataset_suggest</cite>, for the <cite>/dataset/search</cite> and <cite>/dataset/suggest</cite> routes, respectively <a class="reference external" href="https://github.com/sckott/pygbif/issues/40">#40</a></li>
+<li>Added remainder of species methods: <cite>species.name_lookup</cite> (including faceting support <a class="reference external" href="https://github.com/sckott/pygbif/issues/38">#38</a>) and <cite>species.name_usage</cite>, for the <cite>/species/search</cite> and <cite>/species</cite> routes, respectively <a class="reference external" href="https://github.com/sckott/pygbif/issues/18">#18</a></li>
 <li>Added more tests to cover new methods</li>
 <li>Changed <cite>species.name_suggest</cite> to give back data stucture as received from GBIF. We used to parse out the classification data, but for simplicity and speed, that is left up to the user now.</li>
 <li><cite>start</cite> parameter in <cite>species.name_suggest</cite>, <cite>occurrences.download_list</cite>, <cite>registry.organizations</cite>, <cite>registry.nodes</cite>, <cite>registry.networks</cite>, and <cite>registry.installations</cite>, changed to <cite>offset</cite> to match GBIF API and match usage throughout remainder of <cite>pygbif</cite></li>
 </ul>
 </div>
-<div class="section" id="id2">
-<h2>0.1.5.4 (2016-10-01)<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li>Added many new <cite>occurrence.search</cite> parameters, including <cite>repatriated</cite>, <cite>kingdomKey</cite>, <cite>phylumKey</cite>, <cite>classKey</cite>, <cite>orderKey</cite>, <cite>familyKey</cite>, <cite>genusKey</cite>, <cite>subgenusKey</cite>, <cite>establishmentMeans</cite>, <cite>facet</cite>, <cite>facetMincount</cite>, <cite>facetMultiselect</cite>, and support for facet paging via       <cite>**kwargs</cite> (#30) (#34)</li>
-<li>Fixes to <cite>**kwargs</cite> in <cite>occurrence.search</cite> so that facet parameters can be parsed correctly and <cite>requests</cite> GET        request options are collected correctly (#36)</li>
-<li>Added <cite>spellCheck</cite> parameter to <cite>occurrence.search</cite> that goes along with the <cite>q</cite> parameter to optionally spell check full text searches (#31)</li>
-</ul>
-</div>
 <div class="section" id="id3">
-<h2>0.1.4 (2016-06-04)<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2>0.1.5.4 (2016-10-01)<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Added variable types throughout docs</li>
-<li>Changed default <cite>limit</cite> value to 300 for <cite>occurrences.search</cite> method</li>
-<li><cite>tox</cite> now included, via &#64;xrotwang (#20)</li>
-<li>Added more registry methods (#11)</li>
-<li>Started occurrence download methods (#16)</li>
-<li>Added more names methods (#18)</li>
-<li>All requests now send user-agent headers with <cite>requests</cite> and <cite>pygbif</cite> versions (#13)</li>
-<li>Bug fix for <cite>occurrences.download_get</cite> (#23)</li>
-<li>Fixed bad example for <cite>occurrences.get</cite> (#22)</li>
-<li>Fixed wheel to be universal for 2 and 3 (#10)</li>
-<li>Improved documentation a lot, autodoc methods now</li>
+<li>Added many new <cite>occurrence.search</cite> parameters, including <cite>repatriated</cite>, <cite>kingdomKey</cite>, <cite>phylumKey</cite>, <cite>classKey</cite>, <cite>orderKey</cite>, <cite>familyKey</cite>, <cite>genusKey</cite>, <cite>subgenusKey</cite>, <cite>establishmentMeans</cite>, <cite>facet</cite>, <cite>facetMincount</cite>, <cite>facetMultiselect</cite>, and support for facet paging via       <cite>**kwargs</cite> <a class="reference external" href="https://github.com/sckott/pygbif/issues/30">#30</a> <a class="reference external" href="https://github.com/sckott/pygbif/issues/34">#34</a></li>
+<li>Fixes to <cite>**kwargs</cite> in <cite>occurrence.search</cite> so that facet parameters can be parsed correctly and <cite>requests</cite> GET        request options are collected correctly <a class="reference external" href="https://github.com/sckott/pygbif/issues/36">#36</a></li>
+<li>Added <cite>spellCheck</cite> parameter to <cite>occurrence.search</cite> that goes along with the <cite>q</cite> parameter to optionally spell check full text searches <a class="reference external" href="https://github.com/sckott/pygbif/issues/31">#31</a></li>
 </ul>
 </div>
 <div class="section" id="id4">
-<h2>0.1.1 (2015-11-03)<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2>0.1.4 (2016-06-04)<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Added variable types throughout docs</li>
+<li>Changed default <cite>limit</cite> value to 300 for <cite>occurrences.search</cite> method</li>
+<li><cite>tox</cite> now included, via &#64;xrotwang <a class="reference external" href="https://github.com/sckott/pygbif/issues/20">#20</a></li>
+<li>Added more registry methods <a class="reference external" href="https://github.com/sckott/pygbif/issues/11">#11</a></li>
+<li>Started occurrence download methods <a class="reference external" href="https://github.com/sckott/pygbif/issues/16">#16</a></li>
+<li>Added more names methods <a class="reference external" href="https://github.com/sckott/pygbif/issues/18">#18</a></li>
+<li>All requests now send user-agent headers with <cite>requests</cite> and <cite>pygbif</cite> versions <a class="reference external" href="https://github.com/sckott/pygbif/issues/13">#13</a></li>
+<li>Bug fix for <cite>occurrences.download_get</cite> <a class="reference external" href="https://github.com/sckott/pygbif/issues/23">#23</a></li>
+<li>Fixed bad example for <cite>occurrences.get</cite> <a class="reference external" href="https://github.com/sckott/pygbif/issues/22">#22</a></li>
+<li>Fixed wheel to be universal for 2 and 3 <a class="reference external" href="https://github.com/sckott/pygbif/issues/10">#10</a></li>
+<li>Improved documentation a lot, autodoc methods now</li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h2>0.1.1 (2015-11-03)<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>Fixed distribution for pypi</li>
 </ul>
 </div>
-<div class="section" id="id5">
-<h2>0.1.0 (2015-11-02)<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id6">
+<h2>0.1.0 (2015-11-02)<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>First release</li>
 </ul>
@@ -274,7 +287,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.2.2.4',
+            VERSION:'0.3.0',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

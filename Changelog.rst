@@ -1,36 +1,46 @@
 Changelog
 =========
 
+0.3.0 (2019-01-25)
+------------------
+- pygbif is Python 3 only now :issue:`19`
+- Gains maps module with maps.map method for working with the GBIF maps API :issue:`41` :issue:`49`
+- Gains new module utils with one method `wkt_rewind`  :issue:`46` thanks @aubreymoore for the inspiration
+- Fixed bug in registry.installations: typo in one of the parameters `identifierTyp` instead of `identifierType` :issue:`48` thanks @data-biodiversity-aq
+- Link to GitHub issues from Changelog 🎉
+- Fix a occurrence download test :issue:`47`
+- Much more thorough docs :issue:`25`
+
 0.2.0 (2016-10-18)
 ------------------
-- Download methods much improved (#16) (#27) thanks @jlegind @stijnvanhoey @peterdesmet !
-- MULTIPOLYGON now supported in `geometry` parameter (#35)
-- Fixed docs for `occurrences.get`, and `occurrences.get_verbatim`, `occurrences.get_fragment` and demo that used occurrence keys that no longer exist in GBIF (#39)
-- Added `organizations` method to `registry` module (#12)
-- Added remainder of datasets methods: `registry.dataset_search` (including faceting support (#37)) and `registry.dataset_suggest`, for the `/dataset/search` and `/dataset/suggest` routes, respectively (#40)
-- Added remainder of species methods: `species.name_lookup` (including faceting support (#38)) and `species.name_usage`, for the `/species/search` and `/species` routes, respectively (#18)
+- Download methods much improved :issue:`16` :issue:`27` thanks @jlegind @stijnvanhoey @peterdesmet !
+- MULTIPOLYGON now supported in `geometry` parameter :issue:`35`
+- Fixed docs for `occurrences.get`, and `occurrences.get_verbatim`, `occurrences.get_fragment` and demo that used occurrence keys that no longer exist in GBIF :issue:`39`
+- Added `organizations` method to `registry` module :issue:`12`
+- Added remainder of datasets methods: `registry.dataset_search` (including faceting support :issue:`37`) and `registry.dataset_suggest`, for the `/dataset/search` and `/dataset/suggest` routes, respectively :issue:`40`
+- Added remainder of species methods: `species.name_lookup` (including faceting support :issue:`38`) and `species.name_usage`, for the `/species/search` and `/species` routes, respectively :issue:`18`
 - Added more tests to cover new methods
 - Changed `species.name_suggest` to give back data stucture as received from GBIF. We used to parse out the classification data, but for simplicity and speed, that is left up to the user now.
 - `start` parameter in `species.name_suggest`, `occurrences.download_list`, `registry.organizations`, `registry.nodes`, `registry.networks`, and `registry.installations`, changed to `offset` to match GBIF API and match usage throughout remainder of `pygbif`
 
 0.1.5.4 (2016-10-01)
 --------------------
-- Added many new `occurrence.search` parameters, including `repatriated`, `kingdomKey`, `phylumKey`, `classKey`, `orderKey`, `familyKey`, `genusKey`, `subgenusKey`, `establishmentMeans`, `facet`, `facetMincount`, `facetMultiselect`, and support for facet paging via	`**kwargs` (#30) (#34)
-- Fixes to `**kwargs` in `occurrence.search` so that facet parameters can be parsed correctly and `requests` GET	request options are collected correctly (#36)
-- Added `spellCheck` parameter to `occurrence.search` that goes along with the `q` parameter to optionally spell check full text searches (#31)
+- Added many new `occurrence.search` parameters, including `repatriated`, `kingdomKey`, `phylumKey`, `classKey`, `orderKey`, `familyKey`, `genusKey`, `subgenusKey`, `establishmentMeans`, `facet`, `facetMincount`, `facetMultiselect`, and support for facet paging via	`**kwargs` :issue:`30` :issue:`34`
+- Fixes to `**kwargs` in `occurrence.search` so that facet parameters can be parsed correctly and `requests` GET	request options are collected correctly :issue:`36`
+- Added `spellCheck` parameter to `occurrence.search` that goes along with the `q` parameter to optionally spell check full text searches :issue:`31`
 
 0.1.4 (2016-06-04)
 ------------------
 - Added variable types throughout docs
 - Changed default `limit` value to 300 for `occurrences.search` method
-- `tox` now included, via @xrotwang (#20)
-- Added more registry methods (#11)
-- Started occurrence download methods (#16)
-- Added more names methods (#18)
-- All requests now send user-agent headers with `requests` and `pygbif` versions (#13)
-- Bug fix for `occurrences.download_get` (#23)
-- Fixed bad example for `occurrences.get` (#22)
-- Fixed wheel to be universal for 2 and 3 (#10)
+- `tox` now included, via @xrotwang :issue:`20`
+- Added more registry methods :issue:`11`
+- Started occurrence download methods :issue:`16`
+- Added more names methods :issue:`18`
+- All requests now send user-agent headers with `requests` and `pygbif` versions :issue:`13`
+- Bug fix for `occurrences.download_get` :issue:`23`
+- Fixed bad example for `occurrences.get` :issue:`22`
+- Fixed wheel to be universal for 2 and 3 :issue:`10`
 - Improved documentation a lot, autodoc methods now
 
 0.1.1 (2015-11-03)
