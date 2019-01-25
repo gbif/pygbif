@@ -132,7 +132,7 @@ Example usage:
     out.img
     out.plot()
 
-.. image:: gbif_map.png
+.. image:: https://github.com/sckott/pygbif/raw/master/gbif_map.png
 
 
 utils module
