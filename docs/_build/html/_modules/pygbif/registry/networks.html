@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pygbif.registry.networks &mdash; pygbif 0.2.2.3 documentation</title>
+  <title>pygbif.registry.networks &mdash; pygbif 0.2.2.4 documentation</title>
   
 
   
@@ -56,7 +56,7 @@
             
             
               <div class="version">
-                0.2.2.3
+                0.2.2.4
               </div>
             
           
@@ -174,6 +174,8 @@
   <span class="sd">&#39;&#39;&#39;</span>
 <span class="sd">  Networks metadata.</span>
 
+<span class="sd">  Note: there&#39;s only 1 network now, so there&#39;s not a lot you can do with this method.</span>
+
 <span class="sd">  :param data: [str] The type of data to get. Default: ``all``</span>
 <span class="sd">  :param uuid: [str] UUID of the data network provider. This must be specified if data</span>
 <span class="sd">     is anything other than ``all``.</span>
@@ -193,9 +195,8 @@
 <span class="sd">  Usage::</span>
 
 <span class="sd">      from pygbif import registry</span>
-<span class="sd">      registry.networks(limit=5)</span>
-<span class="sd">      registry.networks(uuid=&#39;16ab5405-6c94-4189-ac71-16ca3b753df7&#39;)</span>
-<span class="sd">      registry.networks(data=&#39;endpoint&#39;, uuid=&#39;16ab5405-6c94-4189-ac71-16ca3b753df7&#39;)</span>
+<span class="sd">      registry.networks(limit=1)</span>
+<span class="sd">      registry.networks(uuid=&#39;2b7c7b4f-4d4f-40d3-94de-c28b6fa054a6&#39;)</span>
 <span class="sd">  &#39;&#39;&#39;</span>
   <span class="n">args</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;q&#39;</span><span class="p">:</span> <span class="n">q</span><span class="p">,</span> <span class="s1">&#39;limit&#39;</span><span class="p">:</span> <span class="n">limit</span><span class="p">,</span> <span class="s1">&#39;offset&#39;</span><span class="p">:</span> <span class="n">offset</span><span class="p">,</span> <span class="s1">&#39;identifier&#39;</span><span class="p">:</span> <span class="n">identifier</span><span class="p">,</span>
     <span class="s1">&#39;identifierType&#39;</span><span class="p">:</span> <span class="n">identifierType</span><span class="p">}</span>
@@ -257,7 +258,7 @@
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../../',
-            VERSION:'0.2.2.3',
+            VERSION:'0.2.2.4',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
