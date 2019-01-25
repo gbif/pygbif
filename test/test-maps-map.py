@@ -5,6 +5,7 @@ import os
 import vcr
 import requests
 import matplotlib
+matplotlib.use('Agg')
 import pygbif
 
 class TestMapsClass(unittest.TestCase):
