@@ -1,0 +1,44 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept: ['*/*']
+      Accept-Encoding: ['gzip, deflate']
+      Connection: [keep-alive]
+      user-agent: ['python-requests/2.21.0,pygbif/0.2.2.3']
+    method: GET
+    uri: http://api.gbif.org/v1/installation?limit=5
+  response:
+    body: {string: '{"offset":0,"limit":5,"endOfRecords":false,"count":515,"results":[{"key":"992d49ea-1a93-4cc4-8247-06b55680d7a3","organizationKey":"e7cc89db-d984-4b46-bf67-fb2ffdcf1e22","type":"IPT_INSTALLATION","title":"EPA
+        Guyana IPT","description":"EPA Guyana IPT","createdBy":"e7cc89db-d984-4b46-bf67-fb2ffdcf1e22","modifiedBy":"992d49ea-1a93-4cc4-8247-06b55680d7a3","created":"2019-01-24T17:11:54.025+0000","modified":"2019-01-24T17:17:39.889+0000","disabled":false,"contacts":[{"key":1470849,"type":"TECHNICAL_POINT_OF_CONTACT","primary":true,"userId":[],"firstName":"Ray
+        Sam","position":[],"email":["raywebspace@gmail.com"],"phone":[],"homepage":[],"address":[],"createdBy":"e7cc89db-d984-4b46-bf67-fb2ffdcf1e22","modifiedBy":"992d49ea-1a93-4cc4-8247-06b55680d7a3","created":"2019-01-24T17:11:54.107+0000","modified":"2019-01-24T17:17:39.933+0000"}],"endpoints":[{"key":360036,"type":"FEED","url":"http://132.148.241.236:8080/ipt/rss.do","createdBy":"992d49ea-1a93-4cc4-8247-06b55680d7a3","modifiedBy":"992d49ea-1a93-4cc4-8247-06b55680d7a3","created":"2019-01-24T17:17:40.059+0000","modified":"2019-01-24T17:17:40.059+0000","machineTags":[]}],"machineTags":[],"tags":[],"identifiers":[],"comments":[]},{"key":"70914e1e-2dea-46b5-b91d-8128dbacdaeb","organizationKey":"c4e13320-0708-41c8-8aef-2a0f99d95e40","type":"IPT_INSTALLATION","title":"CRBio-IPT","description":"The
+        Biodiversity Informatics Research Center (CRBio) is a scientific non-profit
+        research center, based in Costa Rica, established t o facilitate and promote
+        free and open access to biodiversity data and information through information
+        and communication technologies to support science, education, decision-making,
+        and environmental conservation. This server hosts data from Costa Rica and
+        Latin America.","createdBy":"c4e13320-0708-41c8-8aef-2a0f99d95e40","modifiedBy":"70914e1e-2dea-46b5-b91d-8128dbacdaeb","created":"2018-12-31T04:49:10.352+0000","modified":"2018-12-31T05:03:34.208+0000","disabled":false,"contacts":[{"key":1308321,"type":"TECHNICAL_POINT_OF_CONTACT","primary":true,"userId":[],"firstName":"Maria
+        Mora","position":[],"email":["mariamoracross@gmail.com"],"phone":[],"homepage":[],"address":[],"createdBy":"c4e13320-0708-41c8-8aef-2a0f99d95e40","modifiedBy":"70914e1e-2dea-46b5-b91d-8128dbacdaeb","created":"2018-12-31T04:49:10.459+0000","modified":"2018-12-31T05:03:34.265+0000"}],"endpoints":[{"key":354615,"type":"FEED","url":"http://ipt.crbio.cr:8080/ipt-2.3.6/rss.do","createdBy":"70914e1e-2dea-46b5-b91d-8128dbacdaeb","modifiedBy":"70914e1e-2dea-46b5-b91d-8128dbacdaeb","created":"2018-12-31T05:03:34.372+0000","modified":"2018-12-31T05:03:34.372+0000","machineTags":[]}],"machineTags":[],"tags":[],"identifiers":[],"comments":[]},{"key":"72fbc33c-5d2d-460a-8caf-cbcc8aade513","organizationKey":"a30d7f59-d3d4-4e89-97dc-de9cf837f591","type":"IPT_INSTALLATION","title":"ASEAN
+        Centre for Biodiversity IPT","description":"Biodiversity Information Management
+        Unit of ASEAN Centre for Biodiversity Domingo M. Lantican Avenue College,
+        Laguna 4031","createdBy":"a30d7f59-d3d4-4e89-97dc-de9cf837f591","modifiedBy":"a30d7f59-d3d4-4e89-97dc-de9cf837f591","created":"2018-12-29T15:02:05.166+0000","modified":"2018-12-29T15:02:05.166+0000","disabled":false,"contacts":[{"key":1307872,"type":"TECHNICAL_POINT_OF_CONTACT","primary":true,"userId":[],"firstName":"Christian
+        Elloran","position":[],"email":["cbelloran@aseanbiodiversity.org"],"phone":[],"homepage":[],"address":[],"createdBy":"a30d7f59-d3d4-4e89-97dc-de9cf837f591","modifiedBy":"a30d7f59-d3d4-4e89-97dc-de9cf837f591","created":"2018-12-29T15:02:05.246+0000","modified":"2018-12-29T15:02:05.246+0000"}],"endpoints":[{"key":354455,"type":"FEED","url":"http://160.20.43.236:8080/ipt/rss.do","createdBy":"a30d7f59-d3d4-4e89-97dc-de9cf837f591","modifiedBy":"a30d7f59-d3d4-4e89-97dc-de9cf837f591","created":"2018-12-29T15:02:05.380+0000","modified":"2018-12-29T15:02:05.380+0000","machineTags":[]}],"machineTags":[],"tags":[],"identifiers":[],"comments":[]},{"key":"25c96fbf-9abc-49c6-9225-28c73011d157","organizationKey":"c04707c7-f9fe-41e5-a9b7-5f46af21e0b5","type":"IPT_INSTALLATION","title":"Species
+        database","description":"Species database","createdBy":"c04707c7-f9fe-41e5-a9b7-5f46af21e0b5","modifiedBy":"c04707c7-f9fe-41e5-a9b7-5f46af21e0b5","created":"2018-12-20T14:36:55.520+0000","modified":"2018-12-20T14:36:55.520+0000","disabled":false,"contacts":[{"key":1288312,"type":"TECHNICAL_POINT_OF_CONTACT","primary":true,"userId":[],"firstName":"CIFOR-RDM-Support","position":[],"email":["cifor-rdm-support@cgiar.org"],"phone":[],"homepage":[],"address":[],"createdBy":"c04707c7-f9fe-41e5-a9b7-5f46af21e0b5","modifiedBy":"c04707c7-f9fe-41e5-a9b7-5f46af21e0b5","created":"2018-12-20T14:36:55.603+0000","modified":"2018-12-20T14:36:55.603+0000"}],"endpoints":[{"key":353204,"type":"FEED","url":"https://data.cifor.org/gbif_ipt/rss.do","createdBy":"c04707c7-f9fe-41e5-a9b7-5f46af21e0b5","modifiedBy":"c04707c7-f9fe-41e5-a9b7-5f46af21e0b5","created":"2018-12-20T14:36:55.719+0000","modified":"2018-12-20T14:36:55.719+0000","machineTags":[]}],"machineTags":[],"tags":[],"identifiers":[],"comments":[]},{"key":"cc2eed88-69e8-432c-b6cd-134997f80487","organizationKey":"07acecfd-5994-47a7-bd1b-ccdbf534973b","type":"IPT_INSTALLATION","title":"Indonesian
+        Institute of Sciences (LIPI)","description":"Indonesian Biodiversity Information
+        Facility","createdBy":"07acecfd-5994-47a7-bd1b-ccdbf534973b","modifiedBy":"07acecfd-5994-47a7-bd1b-ccdbf534973b","created":"2018-11-19T10:06:38.835+0000","modified":"2018-11-19T10:06:38.835+0000","disabled":false,"contacts":[{"key":1105510,"type":"TECHNICAL_POINT_OF_CONTACT","primary":true,"userId":[],"firstName":"Dr.
+        Anang Setiawan Achmadi","position":[],"email":["gudelly@gmail.com"],"phone":[],"homepage":[],"address":[],"createdBy":"07acecfd-5994-47a7-bd1b-ccdbf534973b","modifiedBy":"07acecfd-5994-47a7-bd1b-ccdbf534973b","created":"2018-11-19T10:06:38.927+0000","modified":"2018-11-19T10:06:38.927+0000"}],"endpoints":[{"key":344064,"type":"FEED","url":"http://ipt.biologi.lipi.go.id/rss.do","createdBy":"07acecfd-5994-47a7-bd1b-ccdbf534973b","modifiedBy":"07acecfd-5994-47a7-bd1b-ccdbf534973b","created":"2018-11-19T10:06:39.006+0000","modified":"2018-11-19T10:06:39.006+0000","machineTags":[]}],"machineTags":[],"tags":[],"identifiers":[],"comments":[]}]}'}
+    headers:
+      Accept-Ranges: [bytes]
+      Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT, OPTIONS']
+      Access-Control-Allow-Origin: ['*']
+      Age: ['0']
+      Cache-Control: ['public, max-age=3601']
+      Connection: [keep-alive]
+      Content-Length: ['6322']
+      Content-Type: [application/json]
+      Date: ['Fri, 25 Jan 2019 18:01:35 GMT']
+      Server: [Jetty(9.3.z-SNAPSHOT)]
+      Via: [1.1 varnish (Varnish/5.2)]
+      X-Varnish: ['635732017']
+    status: {code: 200, message: OK}
+version: 1

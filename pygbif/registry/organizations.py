@@ -32,7 +32,6 @@ def organizations(data = 'all', uuid = None, q = None, identifier = None,
       registry.organizations(identifier=120)
       registry.organizations(uuid="e2e717bf-551a-4917-bdc9-4fa0f342c530")
       registry.organizations(data='contact', uuid="e2e717bf-551a-4917-bdc9-4fa0f342c530")
-      registry.organizations(data='endpoint', uuid="e2e717bf-551a-4917-bdc9-4fa0f342c530")
       registry.organizations(data='deleted')
       registry.organizations(data='deleted', limit=2)
       registry.organizations(data=['deleted','nonPublishing'], limit=2)

@@ -5,6 +5,8 @@ def networks(data = 'all', uuid = None, q = None, identifier = None,
   '''
   Networks metadata.
 
+  Note: there's only 1 network now, so there's not a lot you can do with this method.
+
   :param data: [str] The type of data to get. Default: ``all``
   :param uuid: [str] UUID of the data network provider. This must be specified if data
      is anything other than ``all``.
@@ -24,9 +26,8 @@ def networks(data = 'all', uuid = None, q = None, identifier = None,
   Usage::
 
       from pygbif import registry
-      registry.networks(limit=5)
-      registry.networks(uuid='16ab5405-6c94-4189-ac71-16ca3b753df7')
-      registry.networks(data='endpoint', uuid='16ab5405-6c94-4189-ac71-16ca3b753df7')
+      registry.networks(limit=1)
+      registry.networks(uuid='2b7c7b4f-4d4f-40d3-94de-c28b6fa054a6')
   '''
   args = {'q': q, 'limit': limit, 'offset': offset, 'identifier': identifier,
     'identifierType': identifierType}

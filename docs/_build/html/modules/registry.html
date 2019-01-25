@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>registry module &mdash; pygbif 0.2.2.3 documentation</title>
+  <title>registry module &mdash; pygbif 0.2.2.4 documentation</title>
   
 
   
@@ -58,7 +58,7 @@
             
             
               <div class="version">
-                0.2.2.3
+                0.2.2.4
               </div>
             
           
@@ -465,6 +465,7 @@ identifiers by identifier type: <code class="docutils literal notranslate"><span
 <dt id="pygbif.registry.networks">
 <code class="descclassname">registry.</code><code class="descname">networks</code><span class="sig-paren">(</span><em>uuid=None</em>, <em>q=None</em>, <em>identifier=None</em>, <em>identifierType=None</em>, <em>limit=100</em>, <em>offset=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pygbif.registry.networks" title="Permalink to this definition">¶</a></dt>
 <dd><p>Networks metadata.</p>
+<p>Note: there’s only 1 network now, so there’s not a lot you can do with this method.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -492,9 +493,8 @@ identifiers by identifier type: <code class="docutils literal notranslate"><span
 <p>References: <a class="reference external" href="http://www.gbif.org/developer/registry#networks">http://www.gbif.org/developer/registry#networks</a></p>
 <p>Usage:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">registry</span>
-<span class="n">registry</span><span class="o">.</span><span class="n">networks</span><span class="p">(</span><span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">registry</span><span class="o">.</span><span class="n">networks</span><span class="p">(</span><span class="n">uuid</span><span class="o">=</span><span class="s1">&#39;16ab5405-6c94-4189-ac71-16ca3b753df7&#39;</span><span class="p">)</span>
-<span class="n">registry</span><span class="o">.</span><span class="n">networks</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="s1">&#39;endpoint&#39;</span><span class="p">,</span> <span class="n">uuid</span><span class="o">=</span><span class="s1">&#39;16ab5405-6c94-4189-ac71-16ca3b753df7&#39;</span><span class="p">)</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">networks</span><span class="p">(</span><span class="n">limit</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">registry</span><span class="o">.</span><span class="n">networks</span><span class="p">(</span><span class="n">uuid</span><span class="o">=</span><span class="s1">&#39;2b7c7b4f-4d4f-40d3-94de-c28b6fa054a6&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -592,7 +592,6 @@ identifiers by identifier type: <code class="docutils literal notranslate"><span
 <span class="n">registry</span><span class="o">.</span><span class="n">organizations</span><span class="p">(</span><span class="n">identifier</span><span class="o">=</span><span class="mi">120</span><span class="p">)</span>
 <span class="n">registry</span><span class="o">.</span><span class="n">organizations</span><span class="p">(</span><span class="n">uuid</span><span class="o">=</span><span class="s2">&quot;e2e717bf-551a-4917-bdc9-4fa0f342c530&quot;</span><span class="p">)</span>
 <span class="n">registry</span><span class="o">.</span><span class="n">organizations</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="s1">&#39;contact&#39;</span><span class="p">,</span> <span class="n">uuid</span><span class="o">=</span><span class="s2">&quot;e2e717bf-551a-4917-bdc9-4fa0f342c530&quot;</span><span class="p">)</span>
-<span class="n">registry</span><span class="o">.</span><span class="n">organizations</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="s1">&#39;endpoint&#39;</span><span class="p">,</span> <span class="n">uuid</span><span class="o">=</span><span class="s2">&quot;e2e717bf-551a-4917-bdc9-4fa0f342c530&quot;</span><span class="p">)</span>
 <span class="n">registry</span><span class="o">.</span><span class="n">organizations</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="s1">&#39;deleted&#39;</span><span class="p">)</span>
 <span class="n">registry</span><span class="o">.</span><span class="n">organizations</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="s1">&#39;deleted&#39;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">registry</span><span class="o">.</span><span class="n">organizations</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;deleted&#39;</span><span class="p">,</span><span class="s1">&#39;nonPublishing&#39;</span><span class="p">],</span> <span class="n">limit</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
@@ -646,7 +645,7 @@ identifiers by identifier type: <code class="docutils literal notranslate"><span
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../',
-            VERSION:'0.2.2.3',
+            VERSION:'0.2.2.4',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',

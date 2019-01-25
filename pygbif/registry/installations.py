@@ -38,7 +38,7 @@ def installations(data = 'all', uuid = None, q = None, identifier = None,
       registry.installations(identifierType='DOI', limit=2)
   '''
   args = {'q': q, 'limit': limit, 'offset': offset, 'identifier': identifier,
-    'identifierType': identifierTyp}
+    'identifierType': identifierType}
   data_choices = ['all', 'contact', 'endpoint', 'dataset',
    'identifier', 'tag', 'machineTag', 'comment',
    'deleted', 'nonPublishing']
