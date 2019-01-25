@@ -29,7 +29,7 @@ def map(source = 'density', z = 0, x = 0, y = 0, format = '@1x.png',
     :param srs: [str] Spatial reference system. One of:
 
       - ``EPSG:3857`` (Web Mercator)
-      - ``EPSG:4326`` (WGS84 plate careé)
+      - ``EPSG:4326`` (WGS84 plate caree)
       - ``EPSG:3575`` (Arctic LAEA)
       - ``EPSG:3031`` (Antarctic stereographic)
 
