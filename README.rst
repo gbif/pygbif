@@ -133,6 +133,7 @@ Example usage:
     out.plot()
 
 .. image:: https://github.com/sckott/pygbif/raw/master/gbif_map.png
+        :width: 50%
         :scale: 50%
 
 utils module
