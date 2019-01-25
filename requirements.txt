@@ -3,3 +3,4 @@ geojson_rewind
 geomet
 appdirs>=1.4.3
 matplotlib
+sphinx_issues
