@@ -32,10 +32,9 @@ Development version
 * Registry - Datasets, Nodes, Installations, Networks, Organizations
 * Species - Taxonomic names
 * Occurrences - Occurrence data, including the download API
+* Maps - Maps, get raster maps from GBIF as png or mvt
 
 You can import the entire library, or each module individually as needed.
-
-Note that `GBIF maps API <http://www.gbif.org/developer/maps>`_ is not included in `pygbif`.
 
 In addition there is a utils module, currently with one method: `wkt_rewind`
 
@@ -113,6 +112,28 @@ Example usage:
     occ.download_list(user = "sckott", limit = 5)
     occ.download_meta(key = "0000099-140929101555934")
     occ.download_get("0000066-140928181241064")
+
+Maps module
+===========
+
+maps module API:
+
+* `map`
+
+Example usage:
+
+.. code-block:: python
+
+    from pygbif import maps
+    out = maps.map(taxonKey = 212, year = 1998, bin = "hex",
+           hexPerTile = 30, style = "classic-noborder.poly")
+    out.response
+    out.path
+    out.img
+    out.plot()
+
+.. image:: gbif_map.png
+
 
 utils module
 ============
