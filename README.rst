@@ -133,7 +133,6 @@ Example usage:
     out.plot()
 
 .. image:: gbif_map.png
-        :width: 50%
 
 
 utils module
