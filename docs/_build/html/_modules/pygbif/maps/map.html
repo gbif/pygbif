@@ -1,0 +1,474 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pygbif.maps.map &mdash; pygbif 0.2.2.4 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" /> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> pygbif
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.2.2.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../intro/install.html">Installation guide</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Docs</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../docs/faq.html">Frequently Asked Questions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../docs/usecases.html">Usecases</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Modules</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules/intro.html">pygbif modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules/occurrence.html">occurrence module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules/registry.html">registry module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules/species.html">species module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules/maps.html">maps module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../modules/utils.html">utils module</a></li>
+</ul>
+<p class="caption"><span class="caption-text">All the rest</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog_link.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributors.html">Contributors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../conduct.html">Contributor Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../license.html">LICENSE</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">pygbif</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+        
+      <li>pygbif.maps.map</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for pygbif.maps.map</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">..gbifutils</span> <span class="k">import</span> <span class="o">*</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">hashlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">matplotlib.image</span> <span class="k">as</span> <span class="nn">mpimg</span>
+<span class="kn">from</span> <span class="nn">appdirs</span> <span class="k">import</span> <span class="n">user_cache_dir</span>
+
+<span class="k">def</span> <span class="nf">map</span><span class="p">(</span><span class="n">source</span> <span class="o">=</span> <span class="s1">&#39;density&#39;</span><span class="p">,</span> <span class="n">z</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">format</span> <span class="o">=</span> <span class="s1">&#39;@1x.png&#39;</span><span class="p">,</span> 
+    <span class="n">srs</span><span class="o">=</span><span class="s1">&#39;EPSG:4326&#39;</span><span class="p">,</span> <span class="nb">bin</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">hexPerTile</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">style</span><span class="o">=</span><span class="s1">&#39;classic.point&#39;</span><span class="p">,</span> 
+    <span class="n">taxonKey</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">country</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>  <span class="n">publishingCountry</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">publisher</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">datasetKey</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">year</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">basisOfRecord</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    GBIF maps API</span>
+
+<span class="sd">    :param source: [str] Either ``density`` for fast, precalculated tiles,</span>
+<span class="sd">        or ``adhoc`` for any search</span>
+<span class="sd">    :param z: [str] zoom level</span>
+<span class="sd">    :param x: [str] longitude</span>
+<span class="sd">    :param y: [str] latitude</span>
+<span class="sd">    :param format: [str] format of returned data. One of:</span>
+
+<span class="sd">      - ``.mvt`` - vector tile</span>
+<span class="sd">      - ``@Hx.png`` - 256px raster tile (for legacy clients)</span>
+<span class="sd">      - ``@1x.png`` - 512px raster tile, @2x.png for a 1024px raster tile</span>
+<span class="sd">      - ``@2x.png`` - 1024px raster tile</span>
+<span class="sd">      - ``@3x.png`` - 2048px raster tile</span>
+<span class="sd">      - ``@4x.png`` - 4096px raster tile</span>
+
+<span class="sd">    :param srs: [str] Spatial reference system. One of:</span>
+
+<span class="sd">      - ``EPSG:3857`` (Web Mercator)</span>
+<span class="sd">      - ``EPSG:4326`` (WGS84 plate careé)</span>
+<span class="sd">      - ``EPSG:3575`` (Arctic LAEA)</span>
+<span class="sd">      - ``EPSG:3031`` (Antarctic stereographic)</span>
+
+<span class="sd">    :param bin: [str] square or hex to aggregate occurrence counts into</span>
+<span class="sd">        squares or hexagons. Points by default.</span>
+<span class="sd">    :param hexPerTile: [str] sets the size of the hexagons (the number </span>
+<span class="sd">        horizontally across a tile)</span>
+<span class="sd">    :param squareSize: [str] sets the size of the squares. Choose a factor </span>
+<span class="sd">        of 4096 so they tessalate correctly: probably from 8, 16, 32, 64, </span>
+<span class="sd">        128, 256, 512.</span>
+<span class="sd">    :param style: [str] for raster tiles, choose from the available styles.</span>
+<span class="sd">        Defaults to classic.point.</span>
+<span class="sd">    :param taxonKey: [int] A GBIF occurrence identifier</span>
+<span class="sd">    :param datasetKey: [str] The occurrence dataset key (a uuid)</span>
+<span class="sd">    :param country: [str] The 2-letter country code (as per ISO-3166-1) of </span>
+<span class="sd">        the country in which the occurrence was recorded. See here</span>
+<span class="sd">        http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2</span>
+<span class="sd">    :param basisOfRecord: [str] Basis of record, as defined in the BasisOfRecord enum </span>
+<span class="sd">        http://gbif.github.io/gbif-api/apidocs/org/gbif/api/vocabulary/BasisOfRecord.html</span>
+<span class="sd">        Acceptable values are</span>
+
+<span class="sd">       - ``FOSSIL_SPECIMEN`` An occurrence record describing a fossilized specimen.</span>
+<span class="sd">       - ``HUMAN_OBSERVATION`` An occurrence record describing an observation made by one or more people.</span>
+<span class="sd">       - ``LITERATURE`` An occurrence record based on literature alone.</span>
+<span class="sd">       - ``LIVING_SPECIMEN`` An occurrence record describing a living specimen, e.g.</span>
+<span class="sd">       - ``MACHINE_OBSERVATION`` An occurrence record describing an observation made by a machine.</span>
+<span class="sd">       - ``OBSERVATION`` An occurrence record describing an observation.</span>
+<span class="sd">       - ``PRESERVED_SPECIMEN`` An occurrence record describing a preserved specimen.</span>
+<span class="sd">       - ``UNKNOWN`` Unknown basis for the record.</span>
+
+<span class="sd">    :param year: [int] The 4 digit year. A year of 98 will be interpreted as </span>
+<span class="sd">        AD 98. Supports range queries, smaller,larger (e.g., ``1990,1991``, </span>
+<span class="sd">        whereas ``1991,1990`` wouldn&#39;t work)</span>
+<span class="sd">    :param publishingCountry: [str] The 2-letter country code (as per </span>
+<span class="sd">        ISO-3166-1) of the country in which the occurrence was recorded.</span>
+
+<span class="sd">    :return: An object of class GbifMap</span>
+
+<span class="sd">    For mvt format, see https://github.com/tilezen/mapbox-vector-tile to </span>
+<span class="sd">    decode, and example below</span>
+
+<span class="sd">    Usage::</span>
+
+<span class="sd">        from pygbif import maps</span>
+<span class="sd">        out = maps.map(taxonKey = 2435098)</span>
+<span class="sd">        out.response</span>
+<span class="sd">        out.path</span>
+<span class="sd">        out.img</span>
+<span class="sd">        out.plot()</span>
+
+<span class="sd">        out = maps.map(taxonKey = 2480498, year = range(2008, 2011+1))</span>
+<span class="sd">        out.response</span>
+<span class="sd">        out.path</span>
+<span class="sd">        out.img</span>
+<span class="sd">        out.plot()</span>
+<span class="sd">        </span>
+<span class="sd">        # srs</span>
+<span class="sd">        maps.map(taxonKey = 2480498, year = 2010, srs = &quot;EPSG:3857&quot;)</span>
+<span class="sd">        # bin</span>
+<span class="sd">        maps.map(taxonKey = 212, year = 1998, bin = &quot;hex&quot;,</span>
+<span class="sd">           hexPerTile = 30, style = &quot;classic-noborder.poly&quot;)</span>
+<span class="sd">        # style</span>
+<span class="sd">        maps.map(taxonKey = 2480498, style = &quot;purpleYellow.point&quot;).plot()</span>
+<span class="sd">        # basisOfRecord</span>
+<span class="sd">        maps.map(taxonKey = 2480498, year = 2010,</span>
+<span class="sd">          basisOfRecord = &quot;HUMAN_OBSERVATION&quot;, bin = &quot;hex&quot;, </span>
+<span class="sd">          hexPerTile = 500).plot()</span>
+<span class="sd">        maps.map(taxonKey = 2480498, year = 2010, </span>
+<span class="sd">          basisOfRecord = [&quot;HUMAN_OBSERVATION&quot;, &quot;LIVING_SPECIMEN&quot;],</span>
+<span class="sd">          hexPerTile = 500, bin = &quot;hex&quot;).plot()</span>
+
+<span class="sd">        # map vector tiles, gives back raw bytes</span>
+<span class="sd">        from pygbif import maps</span>
+<span class="sd">        x = maps.map(taxonKey = 2480498, year = 2010,</span>
+<span class="sd">          format = &quot;.mvt&quot;)</span>
+<span class="sd">        x.response</span>
+<span class="sd">        x.path</span>
+<span class="sd">        x.img # None</span>
+<span class="sd">        import mapbox_vector_tile</span>
+<span class="sd">        mapbox_vector_tile.decode(x.response.content)</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">if</span> <span class="nb">format</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;.mvt&#39;</span><span class="p">,</span> <span class="s1">&#39;@Hx.png&#39;</span><span class="p">,</span> <span class="s1">&#39;@1x.png&#39;</span><span class="p">,</span> <span class="s1">&#39;@2x.png&#39;</span><span class="p">,</span> <span class="s1">&#39;@3x.png&#39;</span><span class="p">,</span> <span class="s1">&#39;@4x.png&#39;</span><span class="p">]:</span>
+      <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;&#39;format&#39; not in allowed set, see docs&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">source</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;density&#39;</span><span class="p">,</span> <span class="s1">&#39;adhoc&#39;</span><span class="p">]:</span>
+      <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;&#39;source&#39; not in allowed set, see docs&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">srs</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;EPSG:3857&#39;</span><span class="p">,</span> <span class="s1">&#39;EPSG:4326&#39;</span><span class="p">,</span> <span class="s1">&#39;EPSG:3575&#39;</span><span class="p">,</span> <span class="s1">&#39;EPSG:3031&#39;</span><span class="p">]:</span>
+      <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;&#39;srs&#39; not in allowed set, see docs&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">bin</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="k">if</span> <span class="nb">bin</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;square&#39;</span><span class="p">,</span> <span class="s1">&#39;hex&#39;</span><span class="p">]:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;&#39;bin&#39; not in allowed set, see docs&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">style</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+      <span class="k">if</span> <span class="n">style</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">map_styles</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;&#39;style&#39; not in allowed set, see docs&quot;</span><span class="p">)</span>
+
+    <span class="n">maps_baseurl</span> <span class="o">=</span> <span class="s1">&#39;https://api.gbif.org&#39;</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">maps_baseurl</span> <span class="o">+</span> <span class="s1">&#39;/v2/map/occurrence/</span><span class="si">%s</span><span class="s1">/</span><span class="si">%s</span><span class="s1">/</span><span class="si">%s</span><span class="s1">/</span><span class="si">%s%s</span><span class="s1">&#39;</span>
+    <span class="n">url</span> <span class="o">=</span> <span class="n">url</span> <span class="o">%</span> <span class="p">(</span> <span class="n">source</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="nb">format</span> <span class="p">)</span>
+    <span class="n">year</span> <span class="o">=</span> <span class="n">__handle_year</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
+    <span class="n">basisOfRecord</span> <span class="o">=</span> <span class="n">__handle_bor</span><span class="p">(</span><span class="n">basisOfRecord</span><span class="p">)</span>
+    <span class="n">args</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;srs&#39;</span><span class="p">:</span> <span class="n">srs</span><span class="p">,</span> <span class="s1">&#39;bin&#39;</span><span class="p">:</span> <span class="nb">bin</span><span class="p">,</span> <span class="s1">&#39;hexPerTile&#39;</span><span class="p">:</span> <span class="n">hexPerTile</span><span class="p">,</span> <span class="s1">&#39;style&#39;</span><span class="p">:</span> <span class="n">style</span><span class="p">,</span>
+        <span class="s1">&#39;taxonKey&#39;</span><span class="p">:</span> <span class="n">taxonKey</span><span class="p">,</span> <span class="s1">&#39;country&#39;</span><span class="p">:</span> <span class="n">country</span><span class="p">,</span>
+        <span class="s1">&#39;publishingCountry&#39;</span><span class="p">:</span> <span class="n">publishingCountry</span><span class="p">,</span> <span class="s1">&#39;publisher&#39;</span><span class="p">:</span> <span class="n">publisher</span><span class="p">,</span>
+        <span class="s1">&#39;datasetKey&#39;</span><span class="p">:</span> <span class="n">datasetKey</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">:</span> <span class="n">year</span><span class="p">,</span>
+        <span class="s1">&#39;basisOfRecord&#39;</span><span class="p">:</span> <span class="n">basisOfRecord</span><span class="p">}</span>
+    <span class="n">kw</span> <span class="o">=</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">kwargs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">kwargs</span> <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">requests_argset</span><span class="p">}</span>
+    <span class="k">if</span> <span class="n">kw</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">xx</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span> <span class="p">[</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">kw</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="p">],</span> <span class="n">kw</span><span class="o">.</span><span class="n">values</span><span class="p">()</span> <span class="p">))</span>
+        <span class="n">args</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">xx</span><span class="p">)</span>
+    <span class="n">kwargs</span> <span class="o">=</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">kwargs</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">kwargs</span> <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">requests_argset</span><span class="p">}</span>
+    <span class="n">ctype</span> <span class="o">=</span> <span class="s1">&#39;image/png&#39;</span> <span class="k">if</span> <span class="n">has</span><span class="p">(</span><span class="nb">format</span><span class="p">,</span> <span class="s2">&quot;png&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="s1">&#39;application/x-protobuf&#39;</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">gbif_GET_map</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">args</span><span class="p">,</span> <span class="n">ctype</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="c1"># return out</span>
+    <span class="k">return</span> <span class="n">GbifMap</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">GbifMap</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    GbifMap response class</span>
+
+<span class="sd">    contains:</span>
+<span class="sd">    </span>
+<span class="sd">    - response: the response from the requests library</span>
+<span class="sd">    - path: the path to the image</span>
+<span class="sd">    - img: the image data, of class matplotlib AxesImage</span>
+<span class="sd">    - plot(): a method to plot the image with matplotlib</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">(</span><span class="n">GbifMap</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">response</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__make_path</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__write_file</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">has</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">],</span> <span class="s2">&quot;png&quot;</span><span class="p">):</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">img</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__prep_plot</span><span class="p">()</span>
+        <span class="k">else</span><span class="p">:</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">img</span> <span class="o">=</span> <span class="kc">None</span>
+        
+    <span class="k">def</span> <span class="nf">__write_file</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">fh</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span>
+        <span class="n">fh</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+        <span class="n">fh</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="nf">__prep_plot</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">mpimg</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__make_path</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="n">uu</span> <span class="o">=</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span>
+      <span class="n">base_path</span> <span class="o">=</span> <span class="n">user_cache_dir</span><span class="p">(</span><span class="s1">&#39;python/pygbif&#39;</span><span class="p">)</span>
+      <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">base_path</span><span class="p">):</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">base_path</span><span class="p">)</span>
+      <span class="n">file_ext</span> <span class="o">=</span> <span class="s1">&#39;.png&#39;</span> <span class="k">if</span> <span class="n">has</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">],</span> <span class="s2">&quot;png&quot;</span><span class="p">)</span> <span class="k">else</span> <span class="s1">&#39;.mvt&#39;</span>
+      <span class="n">path</span> <span class="o">=</span> <span class="n">base_path</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="n">uu</span> <span class="o">+</span> <span class="n">file_ext</span>
+      <span class="k">return</span> <span class="n">path</span>
+
+    <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">img</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">__handle_year</span><span class="p">(</span><span class="n">year</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">year</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+            <span class="n">year</span> <span class="o">=</span> <span class="p">[</span><span class="n">year</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">year</span><span class="p">,</span> <span class="nb">range</span><span class="p">):</span>
+            <span class="n">year</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
+        <span class="n">bools</span> <span class="o">=</span> <span class="p">[</span> <span class="n">w</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2200</span><span class="p">)</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">year</span> <span class="p">]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="n">bools</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;one or more &#39;year&#39; values not in acceptable set&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">year</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">year</span> <span class="o">=</span> <span class="s1">&#39;,&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">year</span><span class="p">)),</span> <span class="nb">str</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">year</span><span class="p">))])</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">year</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">year</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">year</span>
+    
+<span class="k">def</span> <span class="nf">__handle_bor</span><span class="p">(</span><span class="n">basisOfRecord</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">basisOfRecord</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">basisOfRecord</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+          <span class="n">basisOfRecord</span> <span class="o">=</span> <span class="p">[</span><span class="n">basisOfRecord</span><span class="p">]</span>
+        <span class="n">bools</span> <span class="o">=</span> <span class="p">[</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">basis_of_record_values</span> <span class="k">for</span> <span class="n">w</span> <span class="ow">in</span> <span class="n">basisOfRecord</span> <span class="p">]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="n">bools</span><span class="p">):</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;one or more &#39;basisOfRecord&#39; values not in acceptable set&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">basisOfRecord</span>
+
+<span class="n">map_styles</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="s1">&#39;purpleHeat.point&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;blueHeat.point&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;orangeHeat.point&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;greenHeat.point&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;classic.point&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;purpleYellow.point&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;fire.point&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;glacier.point&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;classic.poly&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;classic-noborder.poly&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;purpleYellow.poly&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;purpleYellow-noborder.poly&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;green.poly&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;green2.poly&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;iNaturalist.poly&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;purpleWhite.poly&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;red.poly&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;blue.marker&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;orange.marker&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;outline.poly&#39;</span>
+<span class="p">]</span>
+
+<span class="n">basis_of_record_values</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="s1">&#39;OBSERVATION&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;HUMAN_OBSERVATION&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;MACHINE_OBSERVATION&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;MATERIAL_SAMPLE&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;PRESERVED_SPECIMEN&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;FOSSIL_SPECIMEN&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;LIVING_SPECIMEN&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;LITERATURE&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;UNKNOWN&#39;</span>
+<span class="p">]</span>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Scott Chamberlain.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.2.2.4',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+
+  
+
+  <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

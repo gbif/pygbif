@@ -12,6 +12,8 @@ install:
   - pip install 'shapely>=1.5.13'
   - pip install 'geojson_rewind>=0.1.1'
   - pip install 'geomet>=0.2.0.post2'
+  - pip install 'appdirs>=1.4.3'
+  - pip install matplotlib
   - pip install coveralls
   - pip install vcrpy
 

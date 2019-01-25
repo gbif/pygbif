@@ -9,7 +9,7 @@ pygbif modules
 * Registry - Datasets, Nodes, Installations, Networks, Organizations
 * Species - Taxonomic names
 * Occurrences - Occurrence data, including the download API
+* Maps - Maps
 
 You can import the entire library, or each module individually as needed.
 
-Note that `GBIF maps API <http://www.gbif.org/developer/maps>`_ is not included in `pygbif`.

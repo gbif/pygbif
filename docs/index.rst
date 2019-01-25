@@ -62,6 +62,7 @@ Modules
    modules/occurrence
    modules/registry
    modules/species
+   modules/maps
    modules/utils
 
 :doc:`modules/intro`
@@ -75,6 +76,9 @@ Modules
 
 :doc:`modules/species`
     The species module: including name search, lookup, suggest, usage, and backbone search.
+
+:doc:`modules/maps`
+    The maps module: including map.
 
 :doc:`modules/utils`
     The utils module: including wkt_rewind.
