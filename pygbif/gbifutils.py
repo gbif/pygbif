@@ -1,4 +1,5 @@
 import requests
+import re
 import pygbif
 
 class NoResultException(Exception):
@@ -114,3 +115,8 @@ def has_meta(x):
   else:
     tmp = [y in x.keys() for y in ['offset','limit','endOfRecords']]
     return True in tmp
+
+def has(str, pattern):
+  w = re.search(pattern, str)
+  return w is not None
+

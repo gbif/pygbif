@@ -195,43 +195,30 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>source</strong> – [str] Either <code class="docutils literal notranslate"><span class="pre">density</span></code> for fast, precalculated tiles,
 or <code class="docutils literal notranslate"><span class="pre">adhoc</span></code> for any search</li>
 <li><strong>z</strong> – [str] zoom level</li>
 <li><strong>x</strong> – [str] longitude</li>
 <li><strong>y</strong> – [str] latitude</li>
-<li><strong>format</strong> – [str] format of returned data. One of:</li>
-</ul>
-</td>
-</tr>
-</tbody>
-</table>
-<ul class="simple">
+<li><strong>format</strong> – <p>[str] format of returned data. One of:</p>
+<ul>
 <li><code class="docutils literal notranslate"><span class="pre">.mvt</span></code> - vector tile</li>
 <li><code class="docutils literal notranslate"><span class="pre">&#64;Hx.png</span></code> - 256px raster tile (for legacy clients)</li>
 <li><code class="docutils literal notranslate"><span class="pre">&#64;1x.png</span></code> - 512px raster tile, &#64;2x.png for a 1024px raster tile</li>
-<li><code class="docutils literal notranslate"><span class="pre">&#64;3x.png</span></code> - 2048px raster tile, &#64;4x.png for a 4096px raster tile</li>
+<li><code class="docutils literal notranslate"><span class="pre">&#64;2x.png</span></code> - 1024px raster tile</li>
+<li><code class="docutils literal notranslate"><span class="pre">&#64;3x.png</span></code> - 2048px raster tile</li>
+<li><code class="docutils literal notranslate"><span class="pre">&#64;4x.png</span></code> - 4096px raster tile</li>
 </ul>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>srs</strong> – [str] Spatial reference system. One of:</td>
-</tr>
-</tbody>
-</table>
-<ul class="simple">
+</li>
+<li><strong>srs</strong> – <p>[str] Spatial reference system. One of:</p>
+<ul>
 <li><code class="docutils literal notranslate"><span class="pre">EPSG:3857</span></code> (Web Mercator)</li>
 <li><code class="docutils literal notranslate"><span class="pre">EPSG:4326</span></code> (WGS84 plate careé)</li>
 <li><code class="docutils literal notranslate"><span class="pre">EPSG:3575</span></code> (Arctic LAEA)</li>
 <li><code class="docutils literal notranslate"><span class="pre">EPSG:3031</span></code> (Antarctic stereographic)</li>
 </ul>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+</li>
 <li><strong>bin</strong> – [str] square or hex to aggregate occurrence counts into
 squares or hexagons. Points by default.</li>
 <li><strong>hexPerTile</strong> – [str] sets the size of the hexagons (the number 
@@ -247,39 +234,18 @@ Defaults to classic.point.</li>
 the country in which the occurrence was recorded. See here
 <a class="reference external" href="http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2</a></li>
 <li><strong>basisOfRecord</strong> – <dl class="docutils">
-<dt>[str] Basis of record, as defined in our </dt>
-<dd>BasisOfRecord enum here 
-<a class="reference external" href="http://gbif.github.io/gbif-api/apidocs/org/gbif/api/vocabulary/BasisOfRecord.html">http://gbif.github.io/gbif-api/apidocs/org/gbif/api/vocabulary/BasisOfRecord.html</a>
-Acceptable values are:</dd>
+<dt>[str] Basis of record, as defined in the BasisOfRecord enum </dt>
+<dd><a class="reference external" href="http://gbif.github.io/gbif-api/apidocs/org/gbif/api/vocabulary/BasisOfRecord.html">http://gbif.github.io/gbif-api/apidocs/org/gbif/api/vocabulary/BasisOfRecord.html</a>
+Acceptable values are</dd>
 </dl>
 <ul>
-<li><dl class="first docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">FOSSIL_SPECIMEN</span></code> An occurrence record describing a fossilized </dt>
-<dd>specimen.</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">HUMAN_OBSERVATION</span></code> An occurrence record describing an observation </dt>
-<dd>made by one or more people.</dd>
-</dl>
-</li>
+<li><code class="docutils literal notranslate"><span class="pre">FOSSIL_SPECIMEN</span></code> An occurrence record describing a fossilized specimen.</li>
+<li><code class="docutils literal notranslate"><span class="pre">HUMAN_OBSERVATION</span></code> An occurrence record describing an observation made by one or more people.</li>
 <li><code class="docutils literal notranslate"><span class="pre">LITERATURE</span></code> An occurrence record based on literature alone.</li>
-<li><dl class="first docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">LIVING_SPECIMEN</span></code> An occurrence record describing a living </dt>
-<dd>specimen, e.g.</dd>
-</dl>
-</li>
-<li><dl class="first docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">MACHINE_OBSERVATION</span></code> An occurrence record describing an observation </dt>
-<dd>made by a machine.</dd>
-</dl>
-</li>
+<li><code class="docutils literal notranslate"><span class="pre">LIVING_SPECIMEN</span></code> An occurrence record describing a living specimen, e.g.</li>
+<li><code class="docutils literal notranslate"><span class="pre">MACHINE_OBSERVATION</span></code> An occurrence record describing an observation made by a machine.</li>
 <li><code class="docutils literal notranslate"><span class="pre">OBSERVATION</span></code> An occurrence record describing an observation.</li>
-<li><dl class="first docutils">
-<dt><code class="docutils literal notranslate"><span class="pre">PRESERVED_SPECIMEN</span></code> An occurrence record describing a preserved </dt>
-<dd>specimen.</dd>
-</dl>
-</li>
+<li><code class="docutils literal notranslate"><span class="pre">PRESERVED_SPECIMEN</span></code> An occurrence record describing a preserved specimen.</li>
 <li><code class="docutils literal notranslate"><span class="pre">UNKNOWN</span></code> Unknown basis for the record.</li>
 </ul>
 </li>
@@ -291,11 +257,13 @@ ISO-3166-1) of the country in which the occurrence was recorded.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">A requests library Response class, see Usage for how to process</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">An object of class GbifMap</p>
 </td>
 </tr>
 </tbody>
 </table>
+<p>For mvt format, see <a class="reference external" href="https://github.com/tilezen/mapbox-vector-tile">https://github.com/tilezen/mapbox-vector-tile</a> to 
+decode, and example below</p>
 <p>Usage:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">maps</span>
 <span class="n">out</span> <span class="o">=</span> <span class="n">maps</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">taxonKey</span> <span class="o">=</span> <span class="mi">2435098</span><span class="p">)</span>
@@ -304,7 +272,7 @@ ISO-3166-1) of the country in which the occurrence was recorded.</li>
 <span class="n">out</span><span class="o">.</span><span class="n">img</span>
 <span class="n">out</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 
-<span class="n">out</span> <span class="o">=</span> <span class="n">maps</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">taxonKey</span> <span class="o">=</span> <span class="mi">2480498</span><span class="p">,</span> <span class="n">year</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2007</span><span class="p">,</span> <span class="mi">2011</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">out</span> <span class="o">=</span> <span class="n">maps</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">taxonKey</span> <span class="o">=</span> <span class="mi">2480498</span><span class="p">,</span> <span class="n">year</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2008</span><span class="p">,</span> <span class="mi">2011</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
 <span class="n">out</span><span class="o">.</span><span class="n">response</span>
 <span class="n">out</span><span class="o">.</span><span class="n">path</span>
 <span class="n">out</span><span class="o">.</span><span class="n">img</span>
@@ -316,15 +284,24 @@ ISO-3166-1) of the country in which the occurrence was recorded.</li>
 <span class="n">maps</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">taxonKey</span> <span class="o">=</span> <span class="mi">212</span><span class="p">,</span> <span class="n">year</span> <span class="o">=</span> <span class="mi">1998</span><span class="p">,</span> <span class="nb">bin</span> <span class="o">=</span> <span class="s2">&quot;hex&quot;</span><span class="p">,</span>
    <span class="n">hexPerTile</span> <span class="o">=</span> <span class="mi">30</span><span class="p">,</span> <span class="n">style</span> <span class="o">=</span> <span class="s2">&quot;classic-noborder.poly&quot;</span><span class="p">)</span>
 <span class="c1"># style</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">maps</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">taxonKey</span> <span class="o">=</span> <span class="mi">2480498</span><span class="p">,</span> <span class="n">style</span> <span class="o">=</span> <span class="s2">&quot;purpleYellow.point&quot;</span><span class="p">))</span>
-<span class="c1"># map vector tile, gives back raw bytes</span>
-<span class="c1"># maps.map(taxonKey = 2480498, year = 2010,</span>
-<span class="c1">#  format = &quot;.mvt&quot;)</span>
+<span class="n">maps</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">taxonKey</span> <span class="o">=</span> <span class="mi">2480498</span><span class="p">,</span> <span class="n">style</span> <span class="o">=</span> <span class="s2">&quot;purpleYellow.point&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 <span class="c1"># basisOfRecord</span>
-<span class="n">maps</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">taxonKey</span> <span class="o">=</span> <span class="mi">2480498</span><span class="p">,</span> <span class="n">year</span> <span class="o">=</span> <span class="s1">&#39;2010&#39;</span><span class="p">,</span> 
-  <span class="n">basisOfRecord</span> <span class="o">=</span> <span class="s2">&quot;HUMAN_OBSERVATION&quot;</span><span class="p">)</span>
-<span class="n">maps</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">taxonKey</span> <span class="o">=</span> <span class="mi">2480498</span><span class="p">,</span> <span class="n">year</span> <span class="o">=</span> <span class="s1">&#39;2010&#39;</span><span class="p">,</span> 
-  <span class="n">basisOfRecord</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;HUMAN_OBSERVATION&quot;</span><span class="p">,</span> <span class="s2">&quot;LIVING_SPECIMEN&quot;</span><span class="p">])</span>
+<span class="n">maps</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">taxonKey</span> <span class="o">=</span> <span class="mi">2480498</span><span class="p">,</span> <span class="n">year</span> <span class="o">=</span> <span class="mi">2010</span><span class="p">,</span>
+  <span class="n">basisOfRecord</span> <span class="o">=</span> <span class="s2">&quot;HUMAN_OBSERVATION&quot;</span><span class="p">,</span> <span class="nb">bin</span> <span class="o">=</span> <span class="s2">&quot;hex&quot;</span><span class="p">,</span> 
+  <span class="n">hexPerTile</span> <span class="o">=</span> <span class="mi">500</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">maps</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">taxonKey</span> <span class="o">=</span> <span class="mi">2480498</span><span class="p">,</span> <span class="n">year</span> <span class="o">=</span> <span class="mi">2010</span><span class="p">,</span> 
+  <span class="n">basisOfRecord</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;HUMAN_OBSERVATION&quot;</span><span class="p">,</span> <span class="s2">&quot;LIVING_SPECIMEN&quot;</span><span class="p">],</span>
+  <span class="n">hexPerTile</span> <span class="o">=</span> <span class="mi">500</span><span class="p">,</span> <span class="nb">bin</span> <span class="o">=</span> <span class="s2">&quot;hex&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+
+<span class="c1"># map vector tiles, gives back raw bytes</span>
+<span class="kn">from</span> <span class="nn">pygbif</span> <span class="k">import</span> <span class="n">maps</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">maps</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">taxonKey</span> <span class="o">=</span> <span class="mi">2480498</span><span class="p">,</span> <span class="n">year</span> <span class="o">=</span> <span class="mi">2010</span><span class="p">,</span>
+  <span class="nb">format</span> <span class="o">=</span> <span class="s2">&quot;.mvt&quot;</span><span class="p">)</span>
+<span class="n">x</span><span class="o">.</span><span class="n">response</span>
+<span class="n">x</span><span class="o">.</span><span class="n">path</span>
+<span class="n">x</span><span class="o">.</span><span class="n">img</span> <span class="c1"># None</span>
+<span class="kn">import</span> <span class="nn">mapbox_vector_tile</span>
+<span class="n">mapbox_vector_tile</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>

@@ -19,17 +19,19 @@ def map(source = 'density', z = 0, x = 0, y = 0, format = '@1x.png',
     :param y: [str] latitude
     :param format: [str] format of returned data. One of:
 
-    - ``.mvt`` - vector tile
-    - ``@Hx.png`` - 256px raster tile (for legacy clients)
-    - ``@1x.png`` - 512px raster tile, @2x.png for a 1024px raster tile
-    - ``@3x.png`` - 2048px raster tile, @4x.png for a 4096px raster tile
+      - ``.mvt`` - vector tile
+      - ``@Hx.png`` - 256px raster tile (for legacy clients)
+      - ``@1x.png`` - 512px raster tile, @2x.png for a 1024px raster tile
+      - ``@2x.png`` - 1024px raster tile
+      - ``@3x.png`` - 2048px raster tile
+      - ``@4x.png`` - 4096px raster tile
 
     :param srs: [str] Spatial reference system. One of:
 
-    - ``EPSG:3857`` (Web Mercator)
-    - ``EPSG:4326`` (WGS84 plate careé)
-    - ``EPSG:3575`` (Arctic LAEA)
-    - ``EPSG:3031`` (Antarctic stereographic)
+      - ``EPSG:3857`` (Web Mercator)
+      - ``EPSG:4326`` (WGS84 plate careé)
+      - ``EPSG:3575`` (Arctic LAEA)
+      - ``EPSG:3031`` (Antarctic stereographic)
 
     :param bin: [str] square or hex to aggregate occurrence counts into
         squares or hexagons. Points by default.
@@ -45,24 +47,18 @@ def map(source = 'density', z = 0, x = 0, y = 0, format = '@1x.png',
     :param country: [str] The 2-letter country code (as per ISO-3166-1) of 
         the country in which the occurrence was recorded. See here
         http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
-    :param basisOfRecord: [str] Basis of record, as defined in our 
-        BasisOfRecord enum here 
+    :param basisOfRecord: [str] Basis of record, as defined in the BasisOfRecord enum 
         http://gbif.github.io/gbif-api/apidocs/org/gbif/api/vocabulary/BasisOfRecord.html
-        Acceptable values are:
+        Acceptable values are
 
-     - ``FOSSIL_SPECIMEN`` An occurrence record describing a fossilized 
-        specimen.
-     - ``HUMAN_OBSERVATION`` An occurrence record describing an observation 
-        made by one or more people.
-     - ``LITERATURE`` An occurrence record based on literature alone.
-     - ``LIVING_SPECIMEN`` An occurrence record describing a living 
-        specimen, e.g.
-     - ``MACHINE_OBSERVATION`` An occurrence record describing an observation 
-        made by a machine.
-     - ``OBSERVATION`` An occurrence record describing an observation.
-     - ``PRESERVED_SPECIMEN`` An occurrence record describing a preserved 
-        specimen.
-     - ``UNKNOWN`` Unknown basis for the record.
+       - ``FOSSIL_SPECIMEN`` An occurrence record describing a fossilized specimen.
+       - ``HUMAN_OBSERVATION`` An occurrence record describing an observation made by one or more people.
+       - ``LITERATURE`` An occurrence record based on literature alone.
+       - ``LIVING_SPECIMEN`` An occurrence record describing a living specimen, e.g.
+       - ``MACHINE_OBSERVATION`` An occurrence record describing an observation made by a machine.
+       - ``OBSERVATION`` An occurrence record describing an observation.
+       - ``PRESERVED_SPECIMEN`` An occurrence record describing a preserved specimen.
+       - ``UNKNOWN`` Unknown basis for the record.
 
     :param year: [int] The 4 digit year. A year of 98 will be interpreted as 
         AD 98. Supports range queries, smaller,larger (e.g., ``1990,1991``, 
@@ -70,7 +66,10 @@ def map(source = 'density', z = 0, x = 0, y = 0, format = '@1x.png',
     :param publishingCountry: [str] The 2-letter country code (as per 
         ISO-3166-1) of the country in which the occurrence was recorded.
 
-    :return: A requests library Response class, see Usage for how to process
+    :return: An object of class GbifMap
+
+    For mvt format, see https://github.com/tilezen/mapbox-vector-tile to 
+    decode, and example below
 
     Usage::
 
@@ -81,7 +80,7 @@ def map(source = 'density', z = 0, x = 0, y = 0, format = '@1x.png',
         out.img
         out.plot()
 
-        out = maps.map(taxonKey = 2480498, year = range(2007, 2011+1))
+        out = maps.map(taxonKey = 2480498, year = range(2008, 2011+1))
         out.response
         out.path
         out.img
@@ -93,16 +92,38 @@ def map(source = 'density', z = 0, x = 0, y = 0, format = '@1x.png',
         maps.map(taxonKey = 212, year = 1998, bin = "hex",
            hexPerTile = 30, style = "classic-noborder.poly")
         # style
-        plot(maps.map(taxonKey = 2480498, style = "purpleYellow.point"))
-        # map vector tile, gives back raw bytes
-        # maps.map(taxonKey = 2480498, year = 2010,
-        #  format = ".mvt")
+        maps.map(taxonKey = 2480498, style = "purpleYellow.point").plot()
         # basisOfRecord
-        maps.map(taxonKey = 2480498, year = '2010', 
-          basisOfRecord = "HUMAN_OBSERVATION")
-        maps.map(taxonKey = 2480498, year = '2010', 
-          basisOfRecord = ["HUMAN_OBSERVATION", "LIVING_SPECIMEN"])
+        maps.map(taxonKey = 2480498, year = 2010,
+          basisOfRecord = "HUMAN_OBSERVATION", bin = "hex", 
+          hexPerTile = 500).plot()
+        maps.map(taxonKey = 2480498, year = 2010, 
+          basisOfRecord = ["HUMAN_OBSERVATION", "LIVING_SPECIMEN"],
+          hexPerTile = 500, bin = "hex").plot()
+
+        # map vector tiles, gives back raw bytes
+        from pygbif import maps
+        x = maps.map(taxonKey = 2480498, year = 2010,
+          format = ".mvt")
+        x.response
+        x.path
+        x.img # None
+        import mapbox_vector_tile
+        mapbox_vector_tile.decode(x.response.content)
     '''
+    if format not in ['.mvt', '@Hx.png', '@1x.png', '@2x.png', '@3x.png', '@4x.png']:
+      raise ValueError("'format' not in allowed set, see docs")
+    if source not in ['density', 'adhoc']:
+      raise ValueError("'source' not in allowed set, see docs")
+    if srs not in ['EPSG:3857', 'EPSG:4326', 'EPSG:3575', 'EPSG:3031']:
+      raise ValueError("'srs' not in allowed set, see docs")
+    if bin is not None:
+      if bin not in ['square', 'hex']:
+        raise ValueError("'bin' not in allowed set, see docs")
+    if style is not None:
+      if style not in map_styles:
+        raise ValueError("'style' not in allowed set, see docs")
+
     maps_baseurl = 'https://api.gbif.org'
     url = maps_baseurl + '/v2/map/occurrence/%s/%s/%s/%s%s'
     url = url % ( source, z, x, y, format )
@@ -118,7 +139,9 @@ def map(source = 'density', z = 0, x = 0, y = 0, format = '@1x.png',
         xx = dict(zip( [ re.sub('_', '.', x) for x in kw.keys() ], kw.values() ))
         args.update(xx)
     kwargs = {key: kwargs[key] for key in kwargs if key in requests_argset}
-    out = gbif_GET_map(url, args, 'image/png', **kwargs)
+    ctype = 'image/png' if has(format, "png") else 'application/x-protobuf'
+    out = gbif_GET_map(url, args, ctype, **kwargs)
+    # return out
     return GbifMap(out)
 
 class GbifMap(object):
@@ -127,17 +150,20 @@ class GbifMap(object):
 
     contains:
     
-    - response
-    - path
-    - img
-    - plot()
+    - response: the response from the requests library
+    - path: the path to the image
+    - img: the image data, of class matplotlib AxesImage
+    - plot(): a method to plot the image with matplotlib
     '''
     def __init__(self, x):
         super(GbifMap, self).__init__()
         self.response = x
         self.path = self.__make_path()
         self.__write_file()
-        self.img = self.__prep_plot()
+        if has(self.response.headers['Content-Type'], "png"):
+          self.img = self.__prep_plot()
+        else:
+          self.img = None
         
     def __write_file(self):
         fh = open(self.path, "wb")
@@ -153,7 +179,8 @@ class GbifMap(object):
       base_path = user_cache_dir('python/pygbif')
       if not os.path.exists(base_path):
         os.makedirs(base_path)
-      path = base_path + '/' + uu + '.png'
+      file_ext = '.png' if has(self.response.headers['Content-Type'], "png") else '.mvt'
+      path = base_path + '/' + uu + file_ext
       return path
 
     def plot(self):
@@ -176,10 +203,12 @@ def __handle_year(year):
     
 def __handle_bor(basisOfRecord):
     if basisOfRecord is not None:
+        if isinstance(basisOfRecord, str):
+          basisOfRecord = [basisOfRecord]
         bools = [ w in basis_of_record_values for w in basisOfRecord ]
         if not all(bools):
             raise ValueError("one or more 'basisOfRecord' values not in acceptable set")
-
+        return basisOfRecord
 
 map_styles = [
   'purpleHeat.point',
