@@ -14,6 +14,9 @@
 # Build output
 /build/
 
+# docs build output
+docs/_build/
+
 .tox
 .coverage
 
