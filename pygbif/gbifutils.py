@@ -2,6 +2,18 @@ import requests
 import re
 import pygbif
 
+# import requests_cache
+# from requests_cache.core import remove_expired_responses
+# import os.path
+# import tempfile
+
+# CACHE_FILE = os.path.join(tempfile.gettempdir(), 'pygbif_requests_cache')
+# expire = 300
+# backend = "sqlite"
+# requests_cache.install_cache(cache_name=CACHE_FILE, backend=backend, expire_after=expire)
+# remove_expired_responses()
+
+
 class NoResultException(Exception):
     pass
 
