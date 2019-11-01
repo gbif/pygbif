@@ -47,3 +47,4 @@ from .registry import datasets, nodes, networks, organizations, installations
 from .maps import map, GbifMap
 from .gbifissues import occ_issues_lookup
 from .utils import *
+from .caching import caching

@@ -31,6 +31,7 @@ setup(
   packages         = find_packages(exclude=['test-*']),
   install_requires = [
     'requests>2.7', 
+    'requests-cache',
     'geojson_rewind', 
     'geomet',
     'appdirs>=1.4.3',
