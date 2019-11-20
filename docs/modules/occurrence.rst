@@ -28,7 +28,7 @@ Example usage:
 
     from pygbif import occurrences as occ
     occ.search(taxonKey = 3329049)
-    occ.get(key = 252408386)
+    occ.get(key = 1986559641)
     occ.count(isGeoreferenced = True)
     occ.download('basisOfRecord = LITERATURE')
     occ.download('taxonKey = 3119195')

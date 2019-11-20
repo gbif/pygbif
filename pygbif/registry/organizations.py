@@ -3,7 +3,7 @@ from ..gbifutils import *
 def organizations(data = 'all', uuid = None, q = None, identifier = None,
   identifierType = None, limit = 100, offset = None, **kwargs):
   '''
-  organizations metadata.
+  Organizations metadata.
 
   :param data: [str] The type of data to get. Default is all data. If not ``all``, then one
      or more of ``contact``, ``endpoint``, ``identifier``, ``tag``, ``machineTag``,

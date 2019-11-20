@@ -26,6 +26,12 @@ def name_backbone(name, rank=None, kingdom=None, phylum=None, clazz=None,
   :param offset: [int] Record to start at. Default: ``0``
   :param limit: [int] Number of results to return. Default: ``100``
 
+  If you are looking for behavior similar to the GBIF website when you search
+  for a name, `name_backbone` may be what you want. For example, a search for
+  *Lantanophaga pusillidactyla* on the GBIF website and with `name_backbone`
+  will give back as a first result the correct name
+  *Lantanophaga pusillidactylus*.
+
   A list for a single taxon with many slots (with ``verbose=False`` - default), or a
   list of length two, first element for the suggested taxon match, and a data.frame
   with alternative name suggestions resulting from fuzzy matching (with ``verbose=True``).
@@ -33,7 +39,7 @@ def name_backbone(name, rank=None, kingdom=None, phylum=None, clazz=None,
   If you don't get a match GBIF gives back a list of length 3 with slots synonym,
   confidence, and ``matchType='NONE'``.
 
-  reference: http://www.gbif.org/developer/species#searching
+  reference: https://www.gbif.org/developer/species#searching
 
   Usage::
 
