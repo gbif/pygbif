@@ -5,9 +5,9 @@ interactions:
       Accept: ['*/*']
       Accept-Encoding: ['gzip, deflate']
       Connection: [keep-alive]
-      user-agent: ['python-requests/2.18.4,pygbif/0.2.2.1']
+      user-agent: ['python-requests/2.22.0,pygbif/0.3.9']
     method: GET
-    uri: http://api.gbif.org/v1/occurrence/1052909293/fragment
+    uri: https://api.gbif.org/v1/occurrence/1052909293/fragment
   response:
     body: {string: "{\"acceptedNameUsage\":null,\"acceptedNameUsageID\":null,\"accessRights\"\
         :\"Free usage\",\"associatedOccurrences\":null,\"associatedOrganisms\":null,\"\
@@ -75,17 +75,16 @@ interactions:
         gr\xF6nmussling\",\"waterBody\":null,\"year\":\"2015\"}"}
     headers:
       Accept-Ranges: [bytes]
-      Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT']
+      Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT, OPTIONS']
       Access-Control-Allow-Origin: ['*']
-      Age: ['815']
+      Age: ['0']
       Cache-Control: ['public, max-age=3601']
       Connection: [keep-alive]
       Content-Length: ['4595']
       Content-Type: [application/json]
-      Date: ['Tue, 19 Dec 2017 20:44:25 GMT']
-      Server: [Jetty(9.2.z-SNAPSHOT)]
+      Date: ['Wed, 20 Nov 2019 17:58:04 GMT']
+      Server: [Jetty(9.3.z-SNAPSHOT)]
       Via: [1.1 varnish (Varnish/5.2)]
-      X-API-URL: [/v1/occurrence/1052909293/fragment]
-      X-Varnish: [446661908 416551882]
+      X-Varnish: ['998934497']
     status: {code: 200, message: OK}
 version: 1

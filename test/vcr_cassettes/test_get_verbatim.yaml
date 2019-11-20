@@ -5,48 +5,48 @@ interactions:
       Accept: ['*/*']
       Accept-Encoding: ['gzip, deflate']
       Connection: [keep-alive]
-      user-agent: ['python-requests/2.18.4,pygbif/0.2.2.1']
+      user-agent: ['python-requests/2.22.0,pygbif/0.3.9']
     method: GET
-    uri: http://api.gbif.org/v1/occurrence/1248387548/verbatim
+    uri: https://api.gbif.org/v1/occurrence/1248387548/verbatim
   response:
     body: {string: "{\"key\":1248387548,\"datasetKey\":\"492d63a8-4978-4bc7-acd8-7d0e3ac0e744\"\
-        ,\"publishingOrgKey\":\"f314b0b0-e3dc-11d9-8d81-b8a03c50a862\",\"publishingCountry\"\
-        :\"NO\",\"protocol\":\"DWC_ARCHIVE\",\"lastCrawled\":\"2017-12-13T13:14:41.428+0000\"\
-        ,\"lastParsed\":\"2016-10-17T02:06:30.879+0000\",\"crawlId\":158,\"extensions\"\
+        ,\"publishingOrgKey\":\"d3978a37-635a-4ae3-bb85-7b4d41bc0b88\",\"installationKey\"\
+        :\"7bdf9f6d-317a-45ec-8bb7-7ff61345d6a6\",\"publishingCountry\":\"NO\",\"\
+        protocol\":\"DWC_ARCHIVE\",\"lastCrawled\":\"2019-11-13T17:35:37.650+0000\"\
+        ,\"lastParsed\":\"2019-11-15T08:10:33.307+0000\",\"crawlId\":275,\"extensions\"\
         :{},\"http://rs.tdwg.org/dwc/terms/maximumElevationInMeters\":\"0\",\"http://rs.tdwg.org/dwc/terms/country\"\
         :\"Norge\",\"http://rs.tdwg.org/dwc/terms/collectionCode\":\"fugl\",\"http://rs.tdwg.org/dwc/terms/order\"\
-        :\"Ciconiiformes\",\"http://rs.tdwg.org/dwc/terms/municipality\":\"H\xF8yanger\"\
-        ,\"http://rs.tdwg.org/dwc/terms/minimumElevationInMeters\":\"0\",\"http://rs.tdwg.org/dwc/terms/year\"\
+        :\"Accipitriformes\",\"http://rs.tdwg.org/dwc/terms/minimumElevationInMeters\"\
+        :\"0\",\"http://rs.tdwg.org/dwc/terms/municipality\":\"H\xF8yanger\",\"http://rs.tdwg.org/dwc/terms/year\"\
         :\"2016\",\"http://rs.tdwg.org/dwc/terms/locality\":\"H\xF8gebakkane\",\"\
         http://rs.tdwg.org/dwc/terms/basisOfRecord\":\"HumanObservation\",\"http://rs.tdwg.org/dwc/terms/family\"\
-        :\"Accipitridae\",\"http://purl.org/dc/terms/modified\":\"2016-02-02 00:00:00.0\"\
-        ,\"http://rs.tdwg.org/dwc/terms/month\":\"1\",\"http://rs.tdwg.org/dwc/terms/decimalLatitude\"\
-        :\"61.22544055\",\"http://rs.tdwg.org/dwc/terms/scientificName\":\"Accipiter\
-        \ nisus\",\"http://rs.tdwg.org/dwc/terms/stateProvince\":\"Sogn og Fjordane\"\
-        ,\"http://rs.tdwg.org/dwc/terms/recordedBy\":\"Magn Arne Jensen\",\"http://rs.tdwg.org/dwc/terms/phylum\"\
-        :\"Chordata\",\"http://rs.gbif.org/terms/1.0/gbifID\":\"1248387548\",\"http://rs.tdwg.org/dwc/terms/day\"\
-        :\"25\",\"http://rs.tdwg.org/dwc/terms/genus\":\"Accipiter\",\"http://rs.tdwg.org/dwc/terms/kingdom\"\
+        :\"Accipitridae\",\"http://rs.tdwg.org/dwc/terms/decimalLatitude\":\"61.22544055\"\
+        ,\"http://purl.org/dc/terms/modified\":\"2018-01-30 00:00:00.0\",\"http://rs.tdwg.org/dwc/terms/month\"\
+        :\"1\",\"http://rs.tdwg.org/dwc/terms/stateProvince\":\"Sogn og Fjordane\"\
+        ,\"http://rs.tdwg.org/dwc/terms/recordedBy\":\"Magn Arne Jensen\",\"http://rs.tdwg.org/dwc/terms/scientificName\"\
+        :\"Accipiter nisus\",\"http://rs.tdwg.org/dwc/terms/phylum\":\"Chordata\"\
+        ,\"http://rs.tdwg.org/dwc/terms/day\":\"25\",\"http://rs.gbif.org/terms/1.0/gbifID\"\
+        :\"1248387548\",\"http://rs.tdwg.org/dwc/terms/genus\":\"Accipiter\",\"http://rs.tdwg.org/dwc/terms/kingdom\"\
         :\"Animalia\",\"http://purl.org/dc/terms/identifier\":\"miljolare:fugl:1001099\"\
-        ,\"http://rs.tdwg.org/dwc/terms/county\":\"Sogn og Fjordane\",\"http://rs.tdwg.org/dwc/terms/class\"\
-        :\"Aves\",\"http://rs.tdwg.org/dwc/terms/individualCount\":\"1\",\"http://rs.tdwg.org/dwc/terms/specificEpithet\"\
-        :\"nisus\",\"http://rs.tdwg.org/dwc/terms/occurrenceID\":\"miljolare:fugl:1001099\"\
-        ,\"http://rs.tdwg.org/dwc/terms/scientificNameAuthorship\":\"(Linnaeus, 1758)\"\
-        ,\"http://rs.tdwg.org/dwc/terms/catalogNumber\":\"1001099\",\"http://rs.tdwg.org/dwc/terms/decimalLongitude\"\
-        :\"6.08158592\",\"http://rs.tdwg.org/dwc/terms/coordinatePrecision\":\"0\"\
-        ,\"http://rs.tdwg.org/dwc/terms/institutionCode\":\"miljolare\"}"}
+        ,\"http://rs.tdwg.org/dwc/terms/class\":\"Aves\",\"http://rs.tdwg.org/dwc/terms/county\"\
+        :\"Sogn og Fjordane\",\"http://rs.tdwg.org/dwc/terms/individualCount\":\"\
+        1\",\"http://rs.tdwg.org/dwc/terms/specificEpithet\":\"nisus\",\"http://rs.tdwg.org/dwc/terms/occurrenceID\"\
+        :\"miljolare:fugl:1001099\",\"http://rs.tdwg.org/dwc/terms/scientificNameAuthorship\"\
+        :\"(Linnaeus, 1758)\",\"http://rs.tdwg.org/dwc/terms/catalogNumber\":\"1001099\"\
+        ,\"http://rs.tdwg.org/dwc/terms/decimalLongitude\":\"6.08158592\",\"http://rs.tdwg.org/dwc/terms/coordinatePrecision\"\
+        :\"0\",\"http://rs.tdwg.org/dwc/terms/institutionCode\":\"miljolare\"}"}
     headers:
       Accept-Ranges: [bytes]
-      Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT']
+      Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT, OPTIONS']
       Access-Control-Allow-Origin: ['*']
-      Age: ['815']
+      Age: ['0']
       Cache-Control: ['public, max-age=3601']
       Connection: [keep-alive]
-      Content-Length: ['2075']
+      Content-Length: ['2134']
       Content-Type: [application/json]
-      Date: ['Tue, 19 Dec 2017 20:44:25 GMT']
-      Server: [Jetty(9.2.z-SNAPSHOT)]
+      Date: ['Wed, 20 Nov 2019 17:58:03 GMT']
+      Server: [Jetty(9.3.z-SNAPSHOT)]
       Via: [1.1 varnish (Varnish/5.2)]
-      X-API-URL: [/v1/occurrence/1248387548/verbatim]
-      X-Varnish: [420614920 446759094]
+      X-Varnish: ['1005224983']
     status: {code: 200, message: OK}
 version: 1

@@ -5,160 +5,46 @@ interactions:
       Accept: ['*/*']
       Accept-Encoding: ['gzip, deflate']
       Connection: [keep-alive]
-      user-agent: ['python-requests/2.18.4,pygbif/0.2.2.1']
+      user-agent: ['python-requests/2.22.0,pygbif/0.3.9']
     method: GET
-    uri: http://api.gbif.org/v1/species/search?q=Helianthus+annuus&rank=species&limit=10
+    uri: https://api.gbif.org/v1/species/search?q=Helianthus+annuus&rank=species&limit=10
   response:
-    body: {string: "{\"offset\":0,\"limit\":10,\"endOfRecords\":false,\"count\":149,\"\
-        results\":[{\"key\":3119195,\"datasetKey\":\"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c\"\
-        ,\"constituentKey\":\"046bbc50-cae2-47ff-aa43-729fbf53f7c5\",\"nubKey\":3119195,\"\
-        parentKey\":3119134,\"parent\":\"Helianthus\",\"kingdom\":\"Plantae\",\"phylum\"\
-        :\"Tracheophyta\",\"order\":\"Asterales\",\"family\":\"Asteraceae\",\"genus\"\
-        :\"Helianthus\",\"species\":\"Helianthus annuus\",\"kingdomKey\":6,\"phylumKey\"\
-        :7707728,\"classKey\":220,\"orderKey\":414,\"familyKey\":3065,\"genusKey\"\
-        :3119134,\"speciesKey\":3119195,\"scientificName\":\"Helianthus annuus\",\"\
-        canonicalName\":\"Helianthus annuus\",\"authorship\":\"\",\"publishedIn\"\
-        :\"Sp. pl. 2:904.  1753\",\"nameType\":\"SCIENTIFIC\",\"taxonomicStatus\"\
-        :\"ACCEPTED\",\"rank\":\"SPECIES\",\"origin\":\"SOURCE\",\"numDescendants\"\
-        :28,\"numOccurrences\":0,\"extinct\":false,\"habitats\":[],\"nomenclaturalStatus\"\
-        :[],\"threatStatuses\":[],\"descriptions\":[{\"description\":\"herb\"}],\"\
-        vernacularNames\":[{\"vernacularName\":\"common sunflower\",\"language\":\"\
-        eng\"},{\"vernacularName\":\"garden sunflower\",\"language\":\"eng\"},{\"\
-        vernacularName\":\"grand soleil\",\"language\":\"fra\"},{\"vernacularName\"\
-        :\"h\xE9lianthe annuel\",\"language\":\"fra\"},{\"vernacularName\":\"soleil\"\
-        ,\"language\":\"fra\"},{\"vernacularName\":\"tournesol\",\"language\":\"fra\"\
-        }],\"higherClassificationMap\":{\"6\":\"Plantae\",\"7707728\":\"Tracheophyta\"\
-        ,\"220\":\"Magnoliopsida\",\"414\":\"Asterales\",\"3065\":\"Asteraceae\",\"\
-        3119134\":\"Helianthus\"},\"synonym\":false,\"class\":\"Magnoliopsida\"},{\"\
-        key\":134854463,\"datasetKey\":\"f82a4f7f-6f84-4b58-82e6-6b41ec9a1f49\",\"\
-        nubKey\":3119195,\"parentKey\":134854385,\"parent\":\"Asteraceae\",\"kingdom\"\
-        :\"Plantae\",\"phylum\":\"Tracheophyta\",\"order\":\"Asterales\",\"family\"\
-        :\"Asteraceae\",\"species\":\"Helianthus annuus\",\"kingdomKey\":134853337,\"\
-        phylumKey\":134853504,\"classKey\":134853773,\"orderKey\":134854378,\"familyKey\"\
-        :134854385,\"speciesKey\":134854463,\"scientificName\":\"Helianthus annuus\"\
-        ,\"canonicalName\":\"Helianthus annuus\",\"nameType\":\"SCIENTIFIC\",\"taxonomicStatus\"\
-        :\"ACCEPTED\",\"rank\":\"SPECIES\",\"origin\":\"SOURCE\",\"numDescendants\"\
-        :0,\"numOccurrences\":0,\"taxonID\":\"4000\",\"habitats\":[\"TERRESTRIAL\"\
-        ],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\":[],\"\
-        vernacularNames\":[],\"higherClassificationMap\":{\"134853337\":\"Plantae\"\
-        ,\"134853504\":\"Tracheophyta\",\"134853773\":\"Magnoliopsida\",\"134854378\"\
-        :\"Asterales\",\"134854385\":\"Asteraceae\"},\"synonym\":false,\"class\":\"\
-        Magnoliopsida\"},{\"key\":114910965,\"datasetKey\":\"ee2aac07-de9a-47a2-b828-37430d537633\"\
-        ,\"nubKey\":3119195,\"parentKey\":135078334,\"parent\":\"Helianthus\",\"kingdom\"\
-        :\"Plantae\",\"phylum\":\"Tracheophyta\",\"order\":\"Asterales\",\"family\"\
-        :\"Asteraceae\",\"genus\":\"Helianthus\",\"species\":\"Helianthus annuus\"\
-        ,\"kingdomKey\":135075485,\"phylumKey\":135077918,\"classKey\":135077982,\"\
-        orderKey\":135078256,\"familyKey\":135078264,\"genusKey\":135078334,\"speciesKey\"\
-        :114910965,\"scientificName\":\"Helianthus annuus\",\"canonicalName\":\"Helianthus\
-        \ annuus\",\"nameType\":\"SCIENTIFIC\",\"taxonomicStatus\":\"ACCEPTED\",\"\
-        rank\":\"SPECIES\",\"origin\":\"SOURCE\",\"numDescendants\":0,\"numOccurrences\"\
-        :0,\"taxonID\":\"http://eol.org/pages/468106\",\"habitats\":[],\"nomenclaturalStatus\"\
-        :[],\"threatStatuses\":[],\"descriptions\":[],\"vernacularNames\":[],\"higherClassificationMap\"\
-        :{\"135075485\":\"Plantae\",\"135077918\":\"Tracheophyta\",\"135077982\":\"\
-        Magnoliopsida\",\"135078256\":\"Asterales\",\"135078264\":\"Asteraceae\",\"\
-        135078334\":\"Helianthus\"},\"synonym\":false,\"class\":\"Magnoliopsida\"\
-        },{\"key\":134843454,\"datasetKey\":\"29d2d5a6-db22-4abd-b784-9ab2f9757c3c\"\
-        ,\"nubKey\":3119195,\"parentKey\":134843435,\"parent\":\"Asteraceae\",\"kingdom\"\
-        :\"Plantae\",\"phylum\":\"Tracheophyta\",\"order\":\"Asterales\",\"family\"\
-        :\"Asteraceae\",\"species\":\"Helianthus annuus\",\"kingdomKey\":134843328,\"\
-        phylumKey\":134843329,\"classKey\":134843362,\"orderKey\":134843434,\"familyKey\"\
-        :134843435,\"speciesKey\":134843454,\"scientificName\":\"Helianthus annuus\"\
-        ,\"canonicalName\":\"Helianthus annuus\",\"nameType\":\"SCIENTIFIC\",\"taxonomicStatus\"\
-        :\"ACCEPTED\",\"rank\":\"SPECIES\",\"origin\":\"SOURCE\",\"numDescendants\"\
-        :0,\"numOccurrences\":0,\"taxonID\":\"57\",\"habitats\":[\"TERRESTRIAL\"],\"\
-        nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\":[],\"vernacularNames\"\
-        :[],\"higherClassificationMap\":{\"134843328\":\"Plantae\",\"134843329\":\"\
-        Tracheophyta\",\"134843362\":\"Magnoliopsida\",\"134843434\":\"Asterales\"\
-        ,\"134843435\":\"Asteraceae\"},\"synonym\":false,\"class\":\"Magnoliopsida\"\
-        },{\"key\":127670355,\"datasetKey\":\"41c06f1a-23da-4445-b859-ec3a8a03b0e2\"\
-        ,\"nubKey\":3119195,\"parentKey\":137680073,\"parent\":\"Amaranthaceae\",\"\
-        kingdom\":\"Plantae\",\"family\":\"Amaranthaceae\",\"species\":\"Helianthus\
-        \ annuus\",\"kingdomKey\":137680060,\"familyKey\":137680073,\"speciesKey\"\
-        :127670355,\"scientificName\":\"Helianthus annuus\",\"canonicalName\":\"Helianthus\
-        \ annuus\",\"taxonomicStatus\":\"DOUBTFUL\",\"rank\":\"SPECIES\",\"origin\"\
-        :\"MISSING_ACCEPTED\",\"numDescendants\":0,\"numOccurrences\":0,\"taxonID\"\
-        :\"100\",\"habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"\
-        descriptions\":[],\"vernacularNames\":[],\"higherClassificationMap\":{\"137680060\"\
-        :\"Plantae\",\"137680073\":\"Amaranthaceae\"},\"synonym\":false},{\"key\"\
-        :103340289,\"datasetKey\":\"fab88965-e69d-4491-a04d-e3198b626e52\",\"parentKey\"\
-        :103340270,\"parent\":\"Helianthus\",\"kingdom\":\"Viridiplantae\",\"phylum\"\
-        :\"Streptophyta\",\"order\":\"Asterales\",\"family\":\"Asteraceae\",\"genus\"\
-        :\"Helianthus\",\"species\":\"Helianthus annuus\",\"kingdomKey\":102974832,\"\
-        phylumKey\":102986054,\"orderKey\":103311652,\"familyKey\":103311763,\"genusKey\"\
-        :103340270,\"speciesKey\":103340289,\"scientificName\":\"Helianthus annuus\"\
-        ,\"canonicalName\":\"Helianthus annuus\",\"authorship\":\"\",\"nameType\"\
-        :\"SCIENTIFIC\",\"taxonomicStatus\":\"ACCEPTED\",\"rank\":\"SPECIES\",\"origin\"\
-        :\"SOURCE\",\"numDescendants\":2,\"numOccurrences\":0,\"habitats\":[],\"nomenclaturalStatus\"\
-        :[],\"threatStatuses\":[],\"descriptions\":[],\"vernacularNames\":[{\"vernacularName\"\
-        :\"common sunflower\",\"language\":\"\"}],\"higherClassificationMap\":{\"\
-        102974832\":\"Viridiplantae\",\"102986054\":\"Streptophyta\",\"103311652\"\
-        :\"Asterales\",\"103311763\":\"Asteraceae\",\"103340270\":\"Helianthus\"},\"\
-        synonym\":false},{\"key\":134856103,\"datasetKey\":\"278c9199-be97-4fd0-9c6c-6c46c4e2369e\"\
-        ,\"nubKey\":3119195,\"parentKey\":134855917,\"parent\":\"Asteraceae\",\"kingdom\"\
-        :\"Plantae\",\"phylum\":\"Tracheophyta\",\"order\":\"Asterales\",\"family\"\
-        :\"Asteraceae\",\"species\":\"Helianthus annuus\",\"kingdomKey\":134854865,\"\
-        phylumKey\":134855093,\"classKey\":134855420,\"orderKey\":134855901,\"familyKey\"\
-        :134855917,\"speciesKey\":134856103,\"scientificName\":\"Helianthus annuus\"\
-        ,\"canonicalName\":\"Helianthus annuus\",\"nameType\":\"SCIENTIFIC\",\"taxonomicStatus\"\
-        :\"ACCEPTED\",\"rank\":\"SPECIES\",\"origin\":\"SOURCE\",\"numDescendants\"\
-        :0,\"numOccurrences\":0,\"taxonID\":\"5030\",\"habitats\":[\"TERRESTRIAL\"\
-        ],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\":[],\"\
-        vernacularNames\":[],\"higherClassificationMap\":{\"134854865\":\"Plantae\"\
-        ,\"134855093\":\"Tracheophyta\",\"134855420\":\"Magnoliopsida\",\"134855901\"\
-        :\"Asterales\",\"134855917\":\"Asteraceae\"},\"synonym\":false,\"class\":\"\
-        Magnoliopsida\"},{\"key\":134860113,\"datasetKey\":\"85183816-d5ea-460c-81fa-e934ceacae10\"\
-        ,\"nubKey\":3119195,\"parentKey\":134860085,\"parent\":\"Asteraceae\",\"kingdom\"\
-        :\"Plantae\",\"phylum\":\"Tracheophyta\",\"order\":\"Asterales\",\"family\"\
-        :\"Asteraceae\",\"species\":\"Helianthus annuus\",\"kingdomKey\":134859667,\"\
-        phylumKey\":134859668,\"classKey\":134859829,\"orderKey\":134860082,\"familyKey\"\
-        :134860085,\"speciesKey\":134860113,\"scientificName\":\"Helianthus annuus\"\
-        ,\"canonicalName\":\"Helianthus annuus\",\"nameType\":\"SCIENTIFIC\",\"taxonomicStatus\"\
-        :\"ACCEPTED\",\"rank\":\"SPECIES\",\"origin\":\"SOURCE\",\"numDescendants\"\
-        :0,\"numOccurrences\":0,\"taxonID\":\"1667\",\"habitats\":[\"TERRESTRIAL\"\
-        ],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\":[],\"\
-        vernacularNames\":[],\"higherClassificationMap\":{\"134859667\":\"Plantae\"\
-        ,\"134859668\":\"Tracheophyta\",\"134859829\":\"Magnoliopsida\",\"134860082\"\
-        :\"Asterales\",\"134860085\":\"Asteraceae\"},\"synonym\":false,\"class\":\"\
-        Magnoliopsida\"},{\"key\":134850375,\"datasetKey\":\"83ca3188-af12-4545-aaf4-304df32ff9d7\"\
-        ,\"nubKey\":3119195,\"parentKey\":135450011,\"parent\":\"Asteraceae\",\"kingdom\"\
-        :\"Plantae\",\"phylum\":\"Tracheophyta\",\"order\":\"Asterales\",\"family\"\
-        :\"Asteraceae\",\"species\":\"Helianthus annuus\",\"kingdomKey\":135449777,\"\
-        phylumKey\":135449792,\"classKey\":135449915,\"orderKey\":135450009,\"familyKey\"\
-        :135450011,\"speciesKey\":134850375,\"scientificName\":\"Helianthus annuus\"\
-        ,\"canonicalName\":\"Helianthus annuus\",\"nameType\":\"SCIENTIFIC\",\"taxonomicStatus\"\
-        :\"ACCEPTED\",\"rank\":\"SPECIES\",\"origin\":\"SOURCE\",\"numDescendants\"\
-        :0,\"numOccurrences\":0,\"taxonID\":\"8287\",\"habitats\":[\"TERRESTRIAL\"\
-        ],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\":[],\"\
-        vernacularNames\":[],\"higherClassificationMap\":{\"135449777\":\"Plantae\"\
-        ,\"135449792\":\"Tracheophyta\",\"135449915\":\"Magnoliopsida\",\"135450009\"\
-        :\"Asterales\",\"135450011\":\"Asteraceae\"},\"synonym\":false,\"class\":\"\
-        Magnoliopsida\"},{\"key\":134849059,\"datasetKey\":\"3cabcf37-db13-4dc1-9bf3-e6f3fbfbbe23\"\
-        ,\"nubKey\":3119195,\"parentKey\":134848873,\"parent\":\"Asteraceae\",\"kingdom\"\
-        :\"Plantae\",\"phylum\":\"Tracheophyta\",\"order\":\"Asterales\",\"family\"\
-        :\"Asteraceae\",\"species\":\"Helianthus annuus\",\"kingdomKey\":134846745,\"\
-        phylumKey\":134846944,\"classKey\":134846964,\"orderKey\":134848867,\"familyKey\"\
-        :134848873,\"speciesKey\":134849059,\"scientificName\":\"Helianthus annuus\"\
-        ,\"canonicalName\":\"Helianthus annuus\",\"nameType\":\"SCIENTIFIC\",\"taxonomicStatus\"\
-        :\"ACCEPTED\",\"rank\":\"SPECIES\",\"origin\":\"SOURCE\",\"numDescendants\"\
-        :0,\"numOccurrences\":0,\"taxonID\":\"10187\",\"habitats\":[\"TERRESTRIAL\"\
-        ],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\":[],\"\
-        vernacularNames\":[],\"higherClassificationMap\":{\"134846745\":\"Plantae\"\
-        ,\"134846944\":\"Tracheophyta\",\"134846964\":\"Magnoliopsida\",\"134848867\"\
-        :\"Asterales\",\"134848873\":\"Asteraceae\"},\"synonym\":false,\"class\":\"\
-        Magnoliopsida\"}],\"facets\":[]}"}
+    body: {string: '{"offset":0,"limit":10,"endOfRecords":false,"count":181,"results":[{"key":114910965,"datasetKey":"ee2aac07-de9a-47a2-b828-37430d537633","nubKey":9206251,"parentKey":144238801,"parent":"Helianthus","kingdom":"Plantae","phylum":"Tracheophyta","order":"Asterales","family":"Asteraceae","genus":"Helianthus","species":"Helianthus
+        annuus","kingdomKey":144235950,"phylumKey":144238385,"classKey":144238449,"orderKey":144238723,"familyKey":144238731,"genusKey":144238801,"speciesKey":114910965,"scientificName":"Helianthus
+        annuus","canonicalName":"Helianthus annuus","authorship":"","nameType":"SCIENTIFIC","taxonomicStatus":"ACCEPTED","rank":"SPECIES","origin":"SOURCE","numDescendants":0,"numOccurrences":0,"habitats":[],"nomenclaturalStatus":[],"threatStatuses":[],"descriptions":[],"vernacularNames":[],"higherClassificationMap":{"144235950":"Plantae","144238385":"Tracheophyta","144238449":"Magnoliopsida","144238723":"Asterales","144238731":"Asteraceae","144238801":"Helianthus"},"synonym":false,"class":"Magnoliopsida"},{"key":134854463,"datasetKey":"f82a4f7f-6f84-4b58-82e6-6b41ec9a1f49","nubKey":9206251,"parentKey":158739845,"parent":"Asteraceae","kingdom":"Plantae","phylum":"Tracheophyta","order":"Asterales","family":"Asteraceae","species":"Helianthus
+        annuus","kingdomKey":158739465,"phylumKey":158739554,"classKey":158739649,"orderKey":158739842,"familyKey":158739845,"speciesKey":134854463,"scientificName":"Helianthus
+        annuus","canonicalName":"Helianthus annuus","authorship":"","nameType":"SCIENTIFIC","taxonomicStatus":"ACCEPTED","rank":"SPECIES","origin":"SOURCE","numDescendants":0,"numOccurrences":0,"habitats":["TERRESTRIAL"],"nomenclaturalStatus":[],"threatStatuses":[],"descriptions":[],"vernacularNames":[],"higherClassificationMap":{"158739465":"Plantae","158739554":"Tracheophyta","158739649":"Magnoliopsida","158739842":"Asterales","158739845":"Asteraceae"},"synonym":false,"class":"Magnoliopsida"},{"key":134843454,"datasetKey":"29d2d5a6-db22-4abd-b784-9ab2f9757c3c","nubKey":9206251,"parentKey":159871432,"parent":"Asteraceae","kingdom":"Plantae","phylum":"Tracheophyta","order":"Asterales","family":"Asteraceae","species":"Helianthus
+        annuus","kingdomKey":159871385,"phylumKey":159871386,"classKey":159871401,"orderKey":159871431,"familyKey":159871432,"speciesKey":134843454,"scientificName":"Helianthus
+        annuus","canonicalName":"Helianthus annuus","nameType":"SCIENTIFIC","taxonomicStatus":"ACCEPTED","rank":"SPECIES","origin":"SOURCE","numDescendants":0,"numOccurrences":0,"taxonID":"57","habitats":["TERRESTRIAL"],"nomenclaturalStatus":[],"threatStatuses":[],"descriptions":[],"vernacularNames":[],"higherClassificationMap":{"159871385":"Plantae","159871386":"Tracheophyta","159871401":"Magnoliopsida","159871431":"Asterales","159871432":"Asteraceae"},"synonym":false,"class":"Magnoliopsida"},{"key":127670355,"datasetKey":"41c06f1a-23da-4445-b859-ec3a8a03b0e2","nubKey":9206251,"parentKey":146770884,"parent":"Amaranthaceae","kingdom":"Plantae","family":"Amaranthaceae","species":"Helianthus
+        annuus","kingdomKey":146770870,"familyKey":146770884,"speciesKey":127670355,"scientificName":"Helianthus
+        annuus","canonicalName":"Helianthus annuus","authorship":"","nameType":"SCIENTIFIC","taxonomicStatus":"DOUBTFUL","rank":"SPECIES","origin":"MISSING_ACCEPTED","numDescendants":0,"numOccurrences":0,"habitats":[],"nomenclaturalStatus":[],"threatStatuses":[],"descriptions":[],"vernacularNames":[],"higherClassificationMap":{"146770870":"Plantae","146770884":"Amaranthaceae"},"synonym":false},{"key":145984153,"datasetKey":"6a97172b-09ed-4b18-9ade-3b3f4f649825","nubKey":9206251,"parentKey":147653302,"parent":"Helianthus","genus":"Helianthus","species":"Helianthus
+        annuus","genusKey":147653302,"speciesKey":145984153,"scientificName":"Helianthus
+        annuus","canonicalName":"Helianthus annuus","authorship":"","nameType":"SCIENTIFIC","taxonomicStatus":"ACCEPTED","rank":"SPECIES","origin":"SOURCE","numDescendants":0,"numOccurrences":0,"habitats":[],"nomenclaturalStatus":[],"threatStatuses":[],"descriptions":[],"vernacularNames":[],"higherClassificationMap":{"147653302":"Helianthus"},"synonym":false},{"key":134850375,"datasetKey":"83ca3188-af12-4545-aaf4-304df32ff9d7","nubKey":9206251,"parentKey":158741993,"parent":"Asteraceae","kingdom":"Plantae","phylum":"Tracheophyta","order":"Asterales","family":"Asteraceae","species":"Helianthus
+        annuus","kingdomKey":158741754,"phylumKey":158741770,"classKey":158741897,"orderKey":158741991,"familyKey":158741993,"speciesKey":134850375,"scientificName":"Helianthus
+        annuus","canonicalName":"Helianthus annuus","authorship":"","nameType":"SCIENTIFIC","taxonomicStatus":"ACCEPTED","rank":"SPECIES","origin":"SOURCE","numDescendants":0,"numOccurrences":0,"habitats":["TERRESTRIAL"],"nomenclaturalStatus":[],"threatStatuses":[],"descriptions":[],"vernacularNames":[],"higherClassificationMap":{"158741754":"Plantae","158741770":"Tracheophyta","158741897":"Magnoliopsida","158741991":"Asterales","158741993":"Asteraceae"},"synonym":false,"class":"Magnoliopsida"},{"key":145962158,"datasetKey":"3f5e930b-52a5-461d-87ec-26ecd66f14a3","nubKey":9206251,"parentKey":157140516,"parent":"Helianthus","kingdom":"Plantae","phylum":"Angiospermae","genus":"Helianthus","species":"Helianthus
+        annuus","kingdomKey":157137731,"phylumKey":157138108,"classKey":157140136,"genusKey":157140516,"speciesKey":145962158,"scientificName":"Helianthus
+        annuus","canonicalName":"Helianthus annuus","authorship":"","nameType":"SCIENTIFIC","taxonomicStatus":"ACCEPTED","rank":"SPECIES","origin":"SOURCE","numDescendants":0,"numOccurrences":0,"habitats":["TERRESTRIAL"],"nomenclaturalStatus":[],"threatStatuses":[],"descriptions":[],"vernacularNames":[],"higherClassificationMap":{"157137731":"Plantae","157138108":"Angiospermae","157140136":"Eudicotyledoneae","157140516":"Helianthus"},"synonym":false,"class":"Eudicotyledoneae"},{"key":103340289,"datasetKey":"fab88965-e69d-4491-a04d-e3198b626e52","parentKey":103340270,"parent":"Helianthus","kingdom":"Viridiplantae","phylum":"Streptophyta","order":"Asterales","family":"Asteraceae","genus":"Helianthus","species":"Helianthus
+        annuus","kingdomKey":102974832,"phylumKey":102986054,"orderKey":103311652,"familyKey":103311763,"genusKey":103340270,"speciesKey":103340289,"scientificName":"Helianthus
+        annuus","canonicalName":"Helianthus annuus","nameType":"SCIENTIFIC","taxonomicStatus":"ACCEPTED","rank":"SPECIES","origin":"SOURCE","numDescendants":0,"numOccurrences":0,"taxonID":"4232","habitats":[],"nomenclaturalStatus":[],"threatStatuses":[],"descriptions":[],"vernacularNames":[{"vernacularName":"common
+        sunflower"}],"higherClassificationMap":{"102974832":"Viridiplantae","102986054":"Streptophyta","103311652":"Asterales","103311763":"Asteraceae","103340270":"Helianthus"},"synonym":false},{"key":134849059,"datasetKey":"3cabcf37-db13-4dc1-9bf3-e6f3fbfbbe23","nubKey":9206251,"parentKey":158741578,"parent":"Asteraceae","kingdom":"Plantae","phylum":"Tracheophyta","order":"Asterales","family":"Asteraceae","species":"Helianthus
+        annuus","kingdomKey":158740931,"phylumKey":158741037,"classKey":158741053,"orderKey":158741576,"familyKey":158741578,"speciesKey":134849059,"scientificName":"Helianthus
+        annuus","canonicalName":"Helianthus annuus","authorship":"","nameType":"SCIENTIFIC","taxonomicStatus":"ACCEPTED","rank":"SPECIES","origin":"SOURCE","numDescendants":0,"numOccurrences":0,"habitats":["TERRESTRIAL"],"nomenclaturalStatus":[],"threatStatuses":[],"descriptions":[],"vernacularNames":[],"higherClassificationMap":{"158740931":"Plantae","158741037":"Tracheophyta","158741053":"Magnoliopsida","158741576":"Asterales","158741578":"Asteraceae"},"synonym":false,"class":"Magnoliopsida"},{"key":127670357,"datasetKey":"41c06f1a-23da-4445-b859-ec3a8a03b0e2","nubKey":9206251,"parentKey":146770884,"parent":"Amaranthaceae","acceptedKey":127670355,"accepted":"Helianthus
+        annuus","kingdom":"Plantae","family":"Amaranthaceae","species":"Helianthus
+        annuus","kingdomKey":146770870,"familyKey":146770884,"speciesKey":127670355,"scientificName":"Helianthus
+        annuus","canonicalName":"Helianthus annuus","authorship":"","nameType":"SCIENTIFIC","taxonomicStatus":"SYNONYM","rank":"SPECIES","origin":"SOURCE","numDescendants":0,"numOccurrences":0,"habitats":[],"nomenclaturalStatus":[],"threatStatuses":[],"descriptions":[],"vernacularNames":[],"higherClassificationMap":{"146770870":"Plantae","146770884":"Amaranthaceae","127670355":"Helianthus
+        annuus"},"synonym":true}],"facets":[]}'}
     headers:
       Accept-Ranges: [bytes]
-      Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT']
+      Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT, OPTIONS']
       Access-Control-Allow-Origin: ['*']
       Age: ['0']
       Cache-Control: ['public, max-age=600']
       Connection: [keep-alive]
-      Content-Length: ['9382']
+      Content-Length: ['8450']
       Content-Type: [application/json]
-      Date: ['Tue, 19 Dec 2017 20:58:44 GMT']
+      Date: ['Wed, 20 Nov 2019 17:59:22 GMT']
       Server: [Jetty(9.3.z-SNAPSHOT)]
       Via: [1.1 varnish (Varnish/5.2)]
-      X-API-URL: ['/v1/species/search?q=Helianthus+annuus&rank=species&limit=10']
-      X-Varnish: ['445022870']
+      X-Varnish: ['1009583210']
     status: {code: 200, message: OK}
 version: 1

@@ -5,24 +5,23 @@ interactions:
       Accept: ['*/*']
       Accept-Encoding: ['gzip, deflate']
       Connection: [keep-alive]
-      user-agent: ['python-requests/2.18.4,pygbif/0.2.2.1']
+      user-agent: ['python-requests/2.22.0,pygbif/0.3.9']
     method: GET
-    uri: http://api.gbif.org/v1/occurrence/counts/year?year=1990%2C2000
+    uri: https://api.gbif.org/v1/occurrence/counts/year?year=1990%2C2000
   response:
-    body: {string: '{"1990":7326543,"1991":7650191,"1992":7726492,"1993":7896257,"1994":8115908,"1995":8773141,"1996":8774608,"1997":9306067,"1998":9528415,"1999":12509285,"2000":11977773}'}
+    body: {string: '{"2000":15308300,"1999":13845986,"1998":11762633,"1997":11723896,"1996":11057951,"1995":10593171,"1994":9836673,"1993":9740448,"1992":9656328,"1991":9382952,"1990":8996806}'}
     headers:
       Accept-Ranges: [bytes]
-      Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT']
+      Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT, OPTIONS']
       Access-Control-Allow-Origin: ['*']
       Age: ['0']
-      Cache-Control: ['public, max-age=60']
+      Cache-Control: ['public, max-age=600']
       Connection: [keep-alive]
-      Content-Length: ['168']
+      Content-Length: ['172']
       Content-Type: [application/json]
-      Date: ['Tue, 19 Dec 2017 20:53:27 GMT']
+      Date: ['Wed, 20 Nov 2019 17:57:50 GMT']
       Server: [Jetty(9.3.z-SNAPSHOT)]
       Via: [1.1 varnish (Varnish/5.2)]
-      X-API-URL: ['/v1/occurrence/counts/year?year=1990%2C2000']
-      X-Varnish: ['443024563']
+      X-Varnish: ['1015743173']
     status: {code: 200, message: OK}
 version: 1

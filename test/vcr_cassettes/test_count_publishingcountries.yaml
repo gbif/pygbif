@@ -5,24 +5,23 @@ interactions:
       Accept: ['*/*']
       Accept-Encoding: ['gzip, deflate']
       Connection: [keep-alive]
-      user-agent: ['python-requests/2.18.4,pygbif/0.2.2.1']
+      user-agent: ['python-requests/2.22.0,pygbif/0.3.9']
     method: GET
-    uri: http://api.gbif.org/v1/occurrence/counts/publishingCountries?country=DE
+    uri: https://api.gbif.org/v1/occurrence/counts/publishingCountries?country=DE
   response:
-    body: {string: '{"GERMANY":23370563,"UNITED_KINGDOM":913457,"NETHERLANDS":310196,"UNITED_STATES":201424,"LUXEMBOURG":154532,"COLOMBIA":56271,"AUSTRIA":55206,"SWEDEN":46870,"DENMARK":34567,"FINLAND":26778,"FRANCE":21579,"BELGIUM":13646,"SPAIN":13215,"ESTONIA":12853,"POLAND":11851,"SWITZERLAND":10477,"NORWAY":8544,"BRAZIL":8379,"AUSTRALIA":7668,"CANADA":3944,"NEW_ZEALAND":2855,"JAPAN":2477,"SOUTH_AFRICA":2458,"ARGENTINA":915,"MEXICO":724,"BULGARIA":383,"NICARAGUA":232,"COSTA_RICA":177,"PORTUGAL":89,"RUSSIAN_FEDERATION":61,"ITALY":35,"PERU":31,"GHANA":29,"KOREA_SOUTH":24,"MOROCCO":7,"CZECH_REPUBLIC":2,"SLOVENIA":2,"TAIWAN":2,"UKRAINE":1}'}
+    body: {string: '{"GERMANY":35275236,"UNITED_KINGDOM":647657,"UNITED_STATES":343844,"NETHERLANDS":338854,"LUXEMBOURG":152822,"AUSTRIA":62815,"COLOMBIA":56482,"SWEDEN":51180,"BELGIUM":35973,"DENMARK":33672,"SWITZERLAND":30057,"FINLAND":27015,"FRANCE":26001,"ESTONIA":20322,"NORWAY":15897,"SPAIN":15599,"BRAZIL":8946,"AUSTRALIA":8343,"POLAND":6115,"JAPAN":4962,"CANADA":4524,"RUSSIAN_FEDERATION":3671,"SOUTH_AFRICA":3189,"NEW_ZEALAND":2902,"ARGENTINA":946,"MEXICO":746,"BULGARIA":682,"CZECH_REPUBLIC":360,"NICARAGUA":232,"ITALY":211,"COSTA_RICA":177,"TAIWAN":122,"GHANA":102,"PORTUGAL":82,"PERU":31,"KOREA_SOUTH":24,"MOROCCO":7,"TRINIDAD_TOBAGO":2,"SLOVENIA":2,"ZIMBABWE":1,"UKRAINE":1,"NIGERIA":1}'}
     headers:
       Accept-Ranges: [bytes]
-      Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT']
+      Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT, OPTIONS']
       Access-Control-Allow-Origin: ['*']
       Age: ['0']
-      Cache-Control: ['public, max-age=60']
+      Cache-Control: ['public, max-age=600']
       Connection: [keep-alive]
-      Content-Length: ['626']
+      Content-Length: ['679']
       Content-Type: [application/json]
-      Date: ['Tue, 19 Dec 2017 20:53:30 GMT']
+      Date: ['Wed, 20 Nov 2019 17:57:58 GMT']
       Server: [Jetty(9.3.z-SNAPSHOT)]
       Via: [1.1 varnish (Varnish/5.2)]
-      X-API-URL: ['/v1/occurrence/counts/publishingCountries?country=DE']
-      X-Varnish: ['397382659']
+      X-Varnish: ['1020527154']
     status: {code: 200, message: OK}
 version: 1

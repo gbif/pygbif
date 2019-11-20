@@ -5,109 +5,25 @@ interactions:
       Accept: ['*/*']
       Accept-Encoding: ['gzip, deflate']
       Connection: [keep-alive]
-      user-agent: ['python-requests/2.18.4,pygbif/0.2.2.1']
+      user-agent: ['python-requests/2.22.0,pygbif/0.3.9']
     method: GET
-    uri: http://api.gbif.org/v1/species?limit=10
+    uri: https://api.gbif.org/v1/species?limit=10
   response:
-    body: {string: "{\"offset\":0,\"limit\":10,\"endOfRecords\":false,\"results\"\
-        :[{\"key\":0,\"nubKey\":0,\"nameKey\":13592277,\"taxonID\":\"gbif:0\",\"kingdom\"\
-        :\"incertae sedis\",\"kingdomKey\":0,\"datasetKey\":\"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c\"\
-        ,\"constituentKey\":\"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c\",\"scientificName\"\
-        :\"incertae sedis\",\"canonicalName\":\"incertae sedis\",\"authorship\":\"\
-        \",\"nameType\":\"PLACEHOLDER\",\"rank\":\"KINGDOM\",\"origin\":\"SOURCE\"\
-        ,\"taxonomicStatus\":\"DOUBTFUL\",\"nomenclaturalStatus\":[],\"remarks\":\"\
-        \",\"numDescendants\":12499,\"lastCrawled\":\"2017-02-14T13:42:21.926+0000\"\
-        ,\"lastInterpreted\":\"2017-02-14T13:37:11.829+0000\",\"issues\":[],\"synonym\"\
-        :false},{\"key\":1,\"nubKey\":1,\"nameKey\":13352168,\"taxonID\":\"gbif:1\"\
-        ,\"kingdom\":\"Animalia\",\"kingdomKey\":1,\"datasetKey\":\"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c\"\
-        ,\"constituentKey\":\"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c\",\"scientificName\"\
-        :\"Animalia\",\"canonicalName\":\"Animalia\",\"authorship\":\"\",\"nameType\"\
-        :\"SCIENTIFIC\",\"rank\":\"KINGDOM\",\"origin\":\"SOURCE\",\"taxonomicStatus\"\
-        :\"ACCEPTED\",\"nomenclaturalStatus\":[],\"remarks\":\"\",\"publishedIn\"\
-        :\"Linn\xE6us, Carolus.  1758. Systema naturae per regna tria naturae, secundum\
-        \ classes, ordines, genera, species, cum characteribus, differentiis, synonymis,\
-        \ locis. Laurentii Salvii, Holmiae [= Stockholm].  Vol. Tomus I,  Editio decima,\
-        \ reformata: i-ii, 1-824.\",\"numDescendants\":2323575,\"lastCrawled\":\"\
-        2017-02-14T13:42:21.926+0000\",\"lastInterpreted\":\"2017-02-14T12:05:57.974+0000\"\
-        ,\"issues\":[],\"synonym\":false},{\"key\":2,\"nubKey\":2,\"nameKey\":13555055,\"\
-        taxonID\":\"gbif:2\",\"kingdom\":\"Archaea\",\"kingdomKey\":2,\"datasetKey\"\
-        :\"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c\",\"constituentKey\":\"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c\"\
-        ,\"scientificName\":\"Archaea\",\"canonicalName\":\"Archaea\",\"authorship\"\
-        :\"\",\"nameType\":\"SCIENTIFIC\",\"rank\":\"KINGDOM\",\"origin\":\"SOURCE\"\
-        ,\"taxonomicStatus\":\"ACCEPTED\",\"nomenclaturalStatus\":[],\"remarks\":\"\
-        \",\"numDescendants\":716,\"lastCrawled\":\"2017-02-14T13:42:21.926+0000\"\
-        ,\"lastInterpreted\":\"2017-02-14T13:00:09.478+0000\",\"issues\":[],\"synonym\"\
-        :false},{\"key\":3,\"nubKey\":3,\"nameKey\":13555164,\"taxonID\":\"gbif:3\"\
-        ,\"kingdom\":\"Bacteria\",\"kingdomKey\":3,\"datasetKey\":\"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c\"\
-        ,\"constituentKey\":\"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c\",\"scientificName\"\
-        :\"Bacteria\",\"canonicalName\":\"Bacteria\",\"authorship\":\"\",\"nameType\"\
-        :\"SCIENTIFIC\",\"rank\":\"KINGDOM\",\"origin\":\"SOURCE\",\"taxonomicStatus\"\
-        :\"ACCEPTED\",\"nomenclaturalStatus\":[],\"remarks\":\"\",\"numDescendants\"\
-        :26326,\"lastCrawled\":\"2017-02-14T13:42:21.926+0000\",\"lastInterpreted\"\
-        :\"2017-02-14T13:00:10.285+0000\",\"issues\":[],\"synonym\":false},{\"key\"\
-        :4,\"nubKey\":4,\"nameKey\":13556905,\"taxonID\":\"gbif:4\",\"kingdom\":\"\
-        Chromista\",\"kingdomKey\":4,\"datasetKey\":\"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c\"\
-        ,\"constituentKey\":\"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c\",\"scientificName\"\
-        :\"Chromista\",\"canonicalName\":\"Chromista\",\"authorship\":\"\",\"nameType\"\
-        :\"SCIENTIFIC\",\"rank\":\"KINGDOM\",\"origin\":\"SOURCE\",\"taxonomicStatus\"\
-        :\"ACCEPTED\",\"nomenclaturalStatus\":[],\"remarks\":\"\",\"numDescendants\"\
-        :100630,\"lastCrawled\":\"2017-02-14T13:42:21.926+0000\",\"lastInterpreted\"\
-        :\"2017-02-14T13:00:47.352+0000\",\"issues\":[],\"synonym\":false},{\"key\"\
-        :5,\"nubKey\":5,\"nameKey\":13559875,\"taxonID\":\"gbif:5\",\"kingdom\":\"\
-        Fungi\",\"kingdomKey\":5,\"datasetKey\":\"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c\"\
-        ,\"constituentKey\":\"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c\",\"scientificName\"\
-        :\"Fungi\",\"canonicalName\":\"Fungi\",\"authorship\":\"\",\"nameType\":\"\
-        SCIENTIFIC\",\"rank\":\"KINGDOM\",\"origin\":\"SOURCE\",\"taxonomicStatus\"\
-        :\"ACCEPTED\",\"nomenclaturalStatus\":[],\"remarks\":\"\",\"publishedIn\"\
-        :\"Bot. Mar. 23: 371 (1980)\",\"numDescendants\":259402,\"lastCrawled\":\"\
-        2017-02-14T13:42:21.926+0000\",\"lastInterpreted\":\"2017-02-14T13:02:32.067+0000\"\
-        ,\"issues\":[],\"synonym\":false},{\"key\":6,\"nubKey\":6,\"nameKey\":13566757,\"\
-        taxonID\":\"gbif:6\",\"kingdom\":\"Plantae\",\"kingdomKey\":6,\"datasetKey\"\
-        :\"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c\",\"constituentKey\":\"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c\"\
-        ,\"scientificName\":\"Plantae\",\"canonicalName\":\"Plantae\",\"authorship\"\
-        :\"\",\"nameType\":\"SCIENTIFIC\",\"rank\":\"KINGDOM\",\"origin\":\"SOURCE\"\
-        ,\"taxonomicStatus\":\"ACCEPTED\",\"nomenclaturalStatus\":[],\"remarks\":\"\
-        \",\"numDescendants\":800354,\"lastCrawled\":\"2017-02-14T13:42:21.926+0000\"\
-        ,\"lastInterpreted\":\"2017-02-14T13:09:40.175+0000\",\"issues\":[],\"synonym\"\
-        :false},{\"key\":7,\"nubKey\":7,\"nameKey\":13590911,\"taxonID\":\"gbif:7\"\
-        ,\"kingdom\":\"Protozoa\",\"kingdomKey\":7,\"datasetKey\":\"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c\"\
-        ,\"constituentKey\":\"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c\",\"scientificName\"\
-        :\"Protozoa\",\"canonicalName\":\"Protozoa\",\"authorship\":\"\",\"nameType\"\
-        :\"SCIENTIFIC\",\"rank\":\"KINGDOM\",\"origin\":\"SOURCE\",\"taxonomicStatus\"\
-        :\"ACCEPTED\",\"nomenclaturalStatus\":[],\"remarks\":\"\",\"numDescendants\"\
-        :18599,\"lastCrawled\":\"2017-02-14T13:42:21.926+0000\",\"lastInterpreted\"\
-        :\"2017-02-14T13:36:57.343+0000\",\"issues\":[],\"synonym\":false},{\"key\"\
-        :8,\"nubKey\":8,\"nameKey\":13591390,\"taxonID\":\"gbif:8\",\"kingdom\":\"\
-        Viruses\",\"kingdomKey\":8,\"datasetKey\":\"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c\"\
-        ,\"constituentKey\":\"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c\",\"scientificName\"\
-        :\"Viruses\",\"canonicalName\":\"Viruses\",\"authorship\":\"\",\"nameType\"\
-        :\"SCIENTIFIC\",\"rank\":\"KINGDOM\",\"origin\":\"SOURCE\",\"taxonomicStatus\"\
-        :\"ACCEPTED\",\"nomenclaturalStatus\":[],\"remarks\":\"\",\"numDescendants\"\
-        :9806,\"lastCrawled\":\"2017-02-14T13:42:21.926+0000\",\"lastInterpreted\"\
-        :\"2017-02-14T13:37:08.587+0000\",\"issues\":[],\"synonym\":false},{\"key\"\
-        :9,\"nubKey\":9,\"nameKey\":6689984,\"taxonID\":\"gbif:9\",\"sourceTaxonKey\"\
-        :117196334,\"kingdom\":\"Plantae\",\"phylum\":\"Marchantiophyta\",\"kingdomKey\"\
-        :6,\"phylumKey\":9,\"datasetKey\":\"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c\"\
-        ,\"constituentKey\":\"daacce49-b206-469b-8dc2-2257719f3afa\",\"parentKey\"\
-        :6,\"parent\":\"Plantae\",\"scientificName\":\"Marchantiophyta\",\"canonicalName\"\
-        :\"Marchantiophyta\",\"authorship\":\"\",\"nameType\":\"SCIENTIFIC\",\"rank\"\
-        :\"PHYLUM\",\"origin\":\"SOURCE\",\"taxonomicStatus\":\"ACCEPTED\",\"nomenclaturalStatus\"\
-        :[],\"remarks\":\"\",\"numDescendants\":16130,\"lastCrawled\":\"2017-02-14T13:42:21.926+0000\"\
-        ,\"lastInterpreted\":\"2017-02-14T13:36:08.084+0000\",\"issues\":[],\"synonym\"\
-        :false}]}"}
+    body: {string: '{"offset":0,"limit":10,"endOfRecords":false,"results":[{"key":0,"nubKey":0,"nameKey":30662713,"taxonID":"gbif:0","sourceTaxonKey":0,"kingdom":"incertae
+        sedis","kingdomKey":0,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","scientificName":"incertae
+        sedis","canonicalName":"incertae sedis","authorship":"","nameType":"PLACEHOLDER","rank":"KINGDOM","origin":"SOURCE","taxonomicStatus":"DOUBTFUL","nomenclaturalStatus":[],"remarks":"","numDescendants":9403,"lastCrawled":"2019-09-06T05:41:48.812+0000","lastInterpreted":"2019-09-06T05:40:32.606+0000","issues":[],"synonym":false},{"key":1,"nubKey":1,"nameKey":29870428,"taxonID":"gbif:1","sourceTaxonKey":156096681,"kingdom":"Animalia","kingdomKey":1,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","scientificName":"Animalia","canonicalName":"Animalia","authorship":"","nameType":"SCIENTIFIC","rank":"KINGDOM","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"remarks":"","numDescendants":2781785,"lastCrawled":"2019-09-06T05:41:48.812+0000","lastInterpreted":"2019-09-06T04:15:56.154+0000","issues":[],"synonym":false},{"key":2,"nubKey":2,"nameKey":30467447,"taxonID":"gbif:2","sourceTaxonKey":157030641,"kingdom":"Archaea","kingdomKey":2,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","scientificName":"Archaea","canonicalName":"Archaea","authorship":"","nameType":"SCIENTIFIC","rank":"KINGDOM","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"remarks":"","numDescendants":745,"lastCrawled":"2019-09-06T05:41:48.812+0000","lastInterpreted":"2019-09-06T05:08:54.085+0000","issues":[],"synonym":false},{"key":3,"nubKey":3,"nameKey":30467689,"taxonID":"gbif:3","sourceTaxonKey":157030707,"kingdom":"Bacteria","kingdomKey":3,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","scientificName":"Bacteria","canonicalName":"Bacteria","authorship":"","nameType":"SCIENTIFIC","rank":"KINGDOM","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"remarks":"","numDescendants":22283,"lastCrawled":"2019-09-06T05:41:48.812+0000","lastInterpreted":"2019-09-06T05:08:56.070+0000","issues":[],"synonym":false},{"key":4,"nubKey":4,"nameKey":30472267,"taxonID":"gbif:4","sourceTaxonKey":157030862,"kingdom":"Chromista","kingdomKey":4,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","scientificName":"Chromista","canonicalName":"Chromista","authorship":"","nameType":"SCIENTIFIC","rank":"KINGDOM","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"remarks":"","numDescendants":149861,"lastCrawled":"2019-09-06T05:41:48.812+0000","lastInterpreted":"2019-09-06T05:09:04.687+0000","issues":[],"synonym":false},{"key":5,"nubKey":5,"nameKey":30477601,"taxonID":"gbif:5","sourceTaxonKey":155647434,"kingdom":"Fungi","kingdomKey":5,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","scientificName":"Fungi","canonicalName":"Fungi","authorship":"","nameType":"SCIENTIFIC","rank":"KINGDOM","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"remarks":"","numDescendants":335655,"lastCrawled":"2019-09-06T05:41:48.812+0000","lastInterpreted":"2019-09-06T05:11:18.271+0000","issues":[],"synonym":false},{"key":6,"nubKey":6,"nameKey":30634962,"taxonID":"gbif:6","sourceTaxonKey":155740154,"kingdom":"Plantae","kingdomKey":6,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","scientificName":"Plantae","canonicalName":"Plantae","authorship":"","nameType":"SCIENTIFIC","rank":"KINGDOM","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"remarks":"","numDescendants":755504,"lastCrawled":"2019-09-06T05:41:48.812+0000","lastInterpreted":"2019-09-06T05:17:56.962+0000","issues":[],"synonym":false},{"key":7,"nubKey":7,"nameKey":30660483,"taxonID":"gbif:7","sourceTaxonKey":155645943,"kingdom":"Protozoa","kingdomKey":7,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","scientificName":"Protozoa","canonicalName":"Protozoa","authorship":"","nameType":"SCIENTIFIC","rank":"KINGDOM","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"remarks":"","numDescendants":11211,"lastCrawled":"2019-09-06T05:41:48.812+0000","lastInterpreted":"2019-09-06T05:40:17.022+0000","issues":[],"synonym":false},{"key":8,"nubKey":8,"nameKey":30662612,"taxonID":"gbif:8","sourceTaxonKey":8,"kingdom":"Viruses","kingdomKey":8,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","scientificName":"Viruses","canonicalName":"Viruses","authorship":"","nameType":"SCIENTIFIC","rank":"KINGDOM","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"remarks":"","numDescendants":9597,"lastCrawled":"2019-09-06T05:41:48.812+0000","lastInterpreted":"2019-09-06T05:40:31.235+0000","issues":[],"synonym":false},{"key":9,"nubKey":9,"nameKey":6689984,"taxonID":"gbif:9","sourceTaxonKey":155863511,"kingdom":"Plantae","phylum":"Marchantiophyta","kingdomKey":6,"phylumKey":9,"datasetKey":"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c","constituentKey":"daacce49-b206-469b-8dc2-2257719f3afa","parentKey":6,"parent":"Plantae","scientificName":"Marchantiophyta","canonicalName":"Marchantiophyta","authorship":"","nameType":"SCIENTIFIC","rank":"PHYLUM","origin":"SOURCE","taxonomicStatus":"ACCEPTED","nomenclaturalStatus":[],"remarks":"","numDescendants":17496,"lastCrawled":"2019-09-06T05:41:48.812+0000","lastInterpreted":"2019-09-06T05:18:10.991+0000","issues":[],"synonym":false}]}'}
     headers:
       Accept-Ranges: [bytes]
-      Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT']
+      Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT, OPTIONS']
       Access-Control-Allow-Origin: ['*']
-      Age: ['766']
+      Age: ['0']
       Cache-Control: ['public, max-age=3601']
       Connection: [keep-alive]
-      Content-Length: ['5938']
+      Content-Length: ['5850']
       Content-Type: [application/json]
-      Date: ['Tue, 19 Dec 2017 20:46:00 GMT']
+      Date: ['Wed, 20 Nov 2019 17:59:30 GMT']
       Server: [Jetty(9.3.z-SNAPSHOT)]
       Via: [1.1 varnish (Varnish/5.2)]
-      X-API-URL: ['/v1/species?limit=10']
-      X-Varnish: [451379693 432737088]
+      X-Varnish: ['967351622']
     status: {code: 200, message: OK}
 version: 1

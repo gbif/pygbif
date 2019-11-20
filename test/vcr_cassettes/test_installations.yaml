@@ -5,25 +5,698 @@ interactions:
       Accept: ['*/*']
       Accept-Encoding: ['gzip, deflate']
       Connection: [keep-alive]
-      user-agent: ['python-requests/2.21.0,pygbif/0.2.2.3']
+      user-agent: ['python-requests/2.22.0,pygbif/0.3.9']
     method: GET
-    uri: http://api.gbif.org/v1/installation?limit=100
+    uri: https://api.gbif.org/v1/installation?limit=100
   response:
-    body: {string: "{\"offset\":0,\"limit\":100,\"endOfRecords\":false,\"count\":515,\"\
-        results\":[{\"key\":\"992d49ea-1a93-4cc4-8247-06b55680d7a3\",\"organizationKey\"\
-        :\"e7cc89db-d984-4b46-bf67-fb2ffdcf1e22\",\"type\":\"IPT_INSTALLATION\",\"\
-        title\":\"EPA Guyana IPT\",\"description\":\"EPA Guyana IPT\",\"createdBy\"\
-        :\"e7cc89db-d984-4b46-bf67-fb2ffdcf1e22\",\"modifiedBy\":\"992d49ea-1a93-4cc4-8247-06b55680d7a3\"\
-        ,\"created\":\"2019-01-24T17:11:54.025+0000\",\"modified\":\"2019-01-24T17:17:39.889+0000\"\
-        ,\"disabled\":false,\"contacts\":[{\"key\":1470849,\"type\":\"TECHNICAL_POINT_OF_CONTACT\"\
-        ,\"primary\":true,\"userId\":[],\"firstName\":\"Ray Sam\",\"position\":[],\"\
-        email\":[\"raywebspace@gmail.com\"],\"phone\":[],\"homepage\":[],\"address\"\
-        :[],\"createdBy\":\"e7cc89db-d984-4b46-bf67-fb2ffdcf1e22\",\"modifiedBy\"\
-        :\"992d49ea-1a93-4cc4-8247-06b55680d7a3\",\"created\":\"2019-01-24T17:11:54.107+0000\"\
-        ,\"modified\":\"2019-01-24T17:17:39.933+0000\"}],\"endpoints\":[{\"key\":360036,\"\
+    body: {string: "{\"offset\":0,\"limit\":100,\"endOfRecords\":false,\"count\":552,\"\
+        results\":[{\"key\":\"6fdcfa44-e2fb-44e3-876d-7cf0e1f8bc9d\",\"organizationKey\"\
+        :\"96710dc8-fecb-440d-ae3e-c34ae8a9616f\",\"type\":\"SYMBIOTA_INSTALLATION\"\
+        ,\"title\":\"InvertEBase Data Portal\",\"createdBy\":\"symb-invertebase\"\
+        ,\"modifiedBy\":\"symb-invertebase\",\"created\":\"2019-11-14T15:46:29.674+0000\"\
+        ,\"modified\":\"2019-11-14T15:46:29.674+0000\",\"disabled\":false,\"contacts\"\
+        :[],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"\
+        comments\":[]},{\"key\":\"1de87984-ce7c-407c-988c-a28014ae53ad\",\"organizationKey\"\
+        :\"96710dc8-fecb-440d-ae3e-c34ae8a9616f\",\"type\":\"SYMBIOTA_INSTALLATION\"\
+        ,\"title\":\"NEON Biorepository Data Portal\",\"createdBy\":\"symb_neon\"\
+        ,\"modifiedBy\":\"symb_neon\",\"created\":\"2019-10-30T13:37:54.253+0000\"\
+        ,\"modified\":\"2019-10-30T13:37:54.253+0000\",\"disabled\":false,\"contacts\"\
+        :[],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"\
+        comments\":[]},{\"key\":\"a31977f6-a20a-4c76-81a7-cbd88fd03d27\",\"organizationKey\"\
+        :\"0c163d39-b67e-4bd9-a2f4-6344b67247f9\",\"type\":\"IPT_INSTALLATION\",\"\
+        title\":\"KwaZulu-Natal Museum IPT\",\"description\":\"IPT for KwaZulu-Natal\
+        \ Museum to publish records to GBIF\",\"createdBy\":\"0c163d39-b67e-4bd9-a2f4-6344b67247f9\"\
+        ,\"modifiedBy\":\"0c163d39-b67e-4bd9-a2f4-6344b67247f9\",\"created\":\"2019-10-28T17:23:18.255+0000\"\
+        ,\"modified\":\"2019-10-28T17:23:18.255+0000\",\"disabled\":false,\"contacts\"\
+        :[{\"key\":1871851,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
+        userId\":[],\"firstName\":\"John Midgley\",\"position\":[],\"email\":[\"jmidgley@nmsa.org.za\"\
+        ],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"0c163d39-b67e-4bd9-a2f4-6344b67247f9\"\
+        ,\"modifiedBy\":\"0c163d39-b67e-4bd9-a2f4-6344b67247f9\",\"created\":\"2019-10-28T17:23:18.307+0000\"\
+        ,\"modified\":\"2019-10-28T17:23:18.307+0000\"}],\"endpoints\":[{\"key\":441700,\"\
+        type\":\"FEED\",\"url\":\"https://ipt.kznm.saiab.ac.za/rss.do\",\"createdBy\"\
+        :\"0c163d39-b67e-4bd9-a2f4-6344b67247f9\",\"modifiedBy\":\"0c163d39-b67e-4bd9-a2f4-6344b67247f9\"\
+        ,\"created\":\"2019-10-28T17:23:18.378+0000\",\"modified\":\"2019-10-28T17:23:18.378+0000\"\
+        ,\"machineTags\":[]}],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"\
+        comments\":[]},{\"key\":\"9c531ac2-579d-44a6-a5a0-73a4740f5df0\",\"organizationKey\"\
+        :\"b835f634-e4ed-4d54-bbcf-e0e6344a8c88\",\"type\":\"IPT_INSTALLATION\",\"\
+        title\":\"V. N. Karazin Kharkiv National University IPT\",\"description\"\
+        :\"V. N. Karazin Kharkiv National University IPT, Kharkiv, Ukraine\",\"createdBy\"\
+        :\"b835f634-e4ed-4d54-bbcf-e0e6344a8c88\",\"modifiedBy\":\"9c531ac2-579d-44a6-a5a0-73a4740f5df0\"\
+        ,\"created\":\"2019-10-17T10:31:29.559+0000\",\"modified\":\"2019-10-17T11:56:08.482+0000\"\
+        ,\"disabled\":false,\"contacts\":[{\"key\":1843126,\"type\":\"TECHNICAL_POINT_OF_CONTACT\"\
+        ,\"primary\":true,\"userId\":[],\"firstName\":\"Oleh Prylutskyi\",\"position\"\
+        :[],\"email\":[\"oleh.prylutskyi@gmail.com\"],\"phone\":[],\"homepage\":[],\"\
+        address\":[],\"createdBy\":\"b835f634-e4ed-4d54-bbcf-e0e6344a8c88\",\"modifiedBy\"\
+        :\"9c531ac2-579d-44a6-a5a0-73a4740f5df0\",\"created\":\"2019-10-17T10:31:29.600+0000\"\
+        ,\"modified\":\"2019-10-17T11:56:08.535+0000\"}],\"endpoints\":[{\"key\":439754,\"\
+        type\":\"FEED\",\"url\":\"https://gbif.univer.kharkov.ua/rss.do\",\"createdBy\"\
+        :\"9c531ac2-579d-44a6-a5a0-73a4740f5df0\",\"modifiedBy\":\"9c531ac2-579d-44a6-a5a0-73a4740f5df0\"\
+        ,\"created\":\"2019-10-17T11:56:08.665+0000\",\"modified\":\"2019-10-17T11:56:08.665+0000\"\
+        ,\"machineTags\":[]}],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"\
+        comments\":[]},{\"key\":\"d973e647-8f5f-4e6e-a1c6-65930deb0590\",\"organizationKey\"\
+        :\"f5fc4e61-b7a0-414b-ab68-b41cb23e7fdc\",\"type\":\"HTTP_INSTALLATION\",\"\
+        title\":\"RU-BIRDS.RU\",\"description\":\"HTTP installation for RU-BIRDS.RU\"\
+        ,\"createdBy\":\"nvolik\",\"modifiedBy\":\"nvolik\",\"created\":\"2019-10-14T08:25:37.894+0000\"\
+        ,\"modified\":\"2019-10-14T08:25:37.894+0000\",\"disabled\":false,\"contacts\"\
+        :[],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"\
+        comments\":[]},{\"key\":\"42b10e67-d9a1-4591-b373-6e9bbc1a9734\",\"organizationKey\"\
+        :\"71db9c1f-15c6-4c4e-8a05-831e7476057d\",\"type\":\"IPT_INSTALLATION\",\"\
+        title\":\"OBIS Indonesia IPT\",\"description\":\"IPT of OBIS hosted by RCO\
+        \ - LIPI\",\"createdBy\":\"71db9c1f-15c6-4c4e-8a05-831e7476057d\",\"modifiedBy\"\
+        :\"71db9c1f-15c6-4c4e-8a05-831e7476057d\",\"created\":\"2019-09-28T04:19:37.986+0000\"\
+        ,\"modified\":\"2019-09-28T04:19:37.986+0000\",\"disabled\":false,\"contacts\"\
+        :[{\"key\":1720214,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
+        userId\":[],\"firstName\":\"Udhi E. Hernawan\",\"position\":[],\"email\":[\"\
+        udhi001@lipi.go.id\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\"\
+        :\"71db9c1f-15c6-4c4e-8a05-831e7476057d\",\"modifiedBy\":\"71db9c1f-15c6-4c4e-8a05-831e7476057d\"\
+        ,\"created\":\"2019-09-28T04:19:38.039+0000\",\"modified\":\"2019-09-28T04:19:38.039+0000\"\
+        }],\"endpoints\":[{\"key\":436475,\"type\":\"FEED\",\"url\":\"http://obis.lipi.go.id:8080/ipt/rss.do\"\
+        ,\"createdBy\":\"71db9c1f-15c6-4c4e-8a05-831e7476057d\",\"modifiedBy\":\"\
+        71db9c1f-15c6-4c4e-8a05-831e7476057d\",\"created\":\"2019-09-28T04:19:38.112+0000\"\
+        ,\"modified\":\"2019-09-28T04:19:38.112+0000\",\"machineTags\":[]}],\"machineTags\"\
+        :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"00d874b4-e0fa-4e9c-8f25-22c9b7c6a617\"\
+        ,\"organizationKey\":\"7d3cd162-288f-42ad-b2ad-915272be963e\",\"type\":\"\
+        IPT_INSTALLATION\",\"title\":\"Madagascar Lemurs Portal IPT\",\"description\"\
+        :\"The lemur portal (http://www.lemursportal.org) tool was established to\
+        \ overcome difficulties in communication of existing data, addressing gaps\
+        \ and facilitating exchanges between stakeholders in lemur conservation. Based\
+        \ on the needs of the users, the lemur portal includes an online forum to\
+        \ promote real-time exchanges between different users, a comprehensive species\
+        \ database, a ready-made and tailored visualizations, and a mobile application\
+        \ integrating iNaturalist for citizen science.\",\"createdBy\":\"7d3cd162-288f-42ad-b2ad-915272be963e\"\
+        ,\"modifiedBy\":\"7d3cd162-288f-42ad-b2ad-915272be963e\",\"created\":\"2019-09-10T13:15:50.850+0000\"\
+        ,\"modified\":\"2019-09-10T13:15:50.850+0000\",\"disabled\":false,\"contacts\"\
+        :[{\"key\":1655835,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
+        userId\":[],\"firstName\":\"Tsiky Rabetrano\",\"position\":[],\"email\":[\"\
+        tsikyrabetrano@gmail.com\"],\"phone\":[],\"homepage\":[],\"address\":[],\"\
+        createdBy\":\"7d3cd162-288f-42ad-b2ad-915272be963e\",\"modifiedBy\":\"7d3cd162-288f-42ad-b2ad-915272be963e\"\
+        ,\"created\":\"2019-09-10T13:15:51.049+0000\",\"modified\":\"2019-09-10T13:15:51.049+0000\"\
+        }],\"endpoints\":[{\"key\":431659,\"type\":\"FEED\",\"url\":\"https://www.lemursportal.org/ipt/rss.do\"\
+        ,\"createdBy\":\"7d3cd162-288f-42ad-b2ad-915272be963e\",\"modifiedBy\":\"\
+        7d3cd162-288f-42ad-b2ad-915272be963e\",\"created\":\"2019-09-10T13:15:51.568+0000\"\
+        ,\"modified\":\"2019-09-10T13:15:51.568+0000\",\"machineTags\":[]}],\"machineTags\"\
+        :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"cd5979b8-8903-4751-bbaa-8fa7ed24f7d3\"\
+        ,\"organizationKey\":\"9a4467a2-eccd-4aa7-bb6d-aea3a31f2a2c\",\"type\":\"\
+        BIOCASE_INSTALLATION\",\"title\":\"Masaryk University BioCASE installation\"\
+        ,\"createdBy\":\"mgrosjean\",\"modifiedBy\":\"mgrosjean\",\"created\":\"2019-09-04T09:11:00.326+0000\"\
+        ,\"modified\":\"2019-09-04T09:11:00.326+0000\",\"disabled\":false,\"contacts\"\
+        :[],\"endpoints\":[{\"key\":430599,\"type\":\"BIOCASE\",\"url\":\"http://131.130.131.9/biocase/pywrapper.cgi?dsa=gbif_brnu\"\
+        ,\"createdBy\":\"mgrosjean\",\"modifiedBy\":\"mgrosjean\",\"created\":\"2019-09-04T09:11:32.801+0000\"\
+        ,\"modified\":\"2019-09-04T09:11:32.801+0000\",\"machineTags\":[]}],\"machineTags\"\
+        :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"bae93bfd-a784-4e25-8ca3-447a68ecf109\"\
+        ,\"organizationKey\":\"16f88706-56f2-4e1e-8f39-74782cc1ae27\",\"type\":\"\
+        EARTHCAPE_INSTALLATION\",\"title\":\"EarthCape Server of Herbarium Universitatis\
+        \ Daugavpiliensis\",\"createdBy\":\"earthcape_dau\",\"modifiedBy\":\"earthcape_dau\"\
+        ,\"created\":\"2019-08-28T18:40:27.362+0000\",\"modified\":\"2019-08-28T18:49:41.305+0000\"\
+        ,\"disabled\":false,\"contacts\":[],\"endpoints\":[],\"machineTags\":[],\"\
+        tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"385d42bc-a3ad-412d-b087-9e88ba00f034\"\
+        ,\"organizationKey\":\"7005bd99-23ca-4d42-840a-5d6dc19b43f6\",\"type\":\"\
+        EARTHCAPE_INSTALLATION\",\"title\":\"EarthCape Database for Butterfly Genetics\
+        \ Group\",\"createdBy\":\"earthcape\",\"modifiedBy\":\"earthcape\",\"created\"\
+        :\"2019-08-22T10:33:20.925+0000\",\"modified\":\"2019-08-22T10:33:20.925+0000\"\
+        ,\"disabled\":false,\"contacts\":[],\"endpoints\":[],\"machineTags\":[],\"\
+        tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"92a00840-efe1-4b82-9a1d-c655b34c8fce\"\
+        ,\"organizationKey\":\"04fd2e13-6881-4e5c-9dd1-8fdd9ab993c1\",\"type\":\"\
+        EARTHCAPE_INSTALLATION\",\"title\":\"EarthCape Database for Eurasian Chronicle\
+        \ of Nature Project\",\"description\":\"EarthCape hosted database for Eurasian\
+        \ Chronicle of Nature project run by the University of Helsinki.\\n\\nhttp://chronicleofnature.com/\\\
+        n\\nThis research project aims at putting together a large-scale and long-term\
+        \ database on Eurasian biodiversity. The ECN database shall cover the territory\
+        \ of former USSR and Finland, and include a description of the environmental\
+        \ change (e.g. in terms of forest structure and climatic conditions) that\
+        \ has taken place in the past 50-100 years, as well as the population dynamic\
+        \ and phenological responses of species of mammals, birds, insects and vascular\
+        \ plants.\",\"createdBy\":\"earthcape\",\"modifiedBy\":\"earthcape\",\"created\"\
+        :\"2019-08-20T18:59:37.962+0000\",\"modified\":\"2019-09-11T11:52:44.246+0000\"\
+        ,\"disabled\":false,\"contacts\":[{\"key\":1638240,\"type\":\"ADMINISTRATIVE_POINT_OF_CONTACT\"\
+        ,\"primary\":false,\"userId\":[],\"firstName\":\"Evgeniy\",\"lastName\":\"\
+        Meyke\",\"position\":[],\"email\":[\"evgeniy@earthcape.com\"],\"phone\":[\"\
+        +358503541114\"],\"homepage\":[],\"organization\":\"EarthCape OY\",\"address\"\
+        :[],\"city\":\"Helsinki\",\"province\":\"Uusimaa\",\"country\":\"FI\",\"postalCode\"\
+        :\"00270\",\"createdBy\":\"earthcape\",\"modifiedBy\":\"earthcape\",\"created\"\
+        :\"2019-08-20T19:14:09.633+0000\",\"modified\":\"2019-08-20T19:14:09.633+0000\"\
+        }],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\"\
+        :[{\"key\":28343,\"content\":\"2019/09/09 [MG] Changed hosting organisation\
+        \ from EC to FinBIF following request from EC.\",\"createdBy\":\"mgrosjean\"\
+        ,\"modifiedBy\":\"mgrosjean\",\"created\":\"2019-09-09T07:27:45.388+0000\"\
+        ,\"modified\":\"2019-09-09T07:27:45.388+0000\"}]},{\"key\":\"9ed662d1-3aca-476a-b261-4b07a2ec29d7\"\
+        ,\"organizationKey\":\"fbca90e3-8aed-48b1-84e3-369afbd000ce\",\"type\":\"\
+        IPT_INSTALLATION\",\"title\":\"Latin America  and Caribbean IPT\",\"description\"\
+        :\"This IPT is hosted by GBIF to publish datasets from countries in Latin\
+        \ America or the Caribbean, who prefer not to run their own IPT.\",\"createdBy\"\
+        :\"fbca90e3-8aed-48b1-84e3-369afbd000ce\",\"modifiedBy\":\"9ed662d1-3aca-476a-b261-4b07a2ec29d7\"\
+        ,\"created\":\"2019-08-20T13:50:51.057+0000\",\"modified\":\"2019-08-21T14:48:32.861+0000\"\
+        ,\"disabled\":false,\"contacts\":[{\"key\":1637308,\"type\":\"TECHNICAL_POINT_OF_CONTACT\"\
+        ,\"primary\":true,\"userId\":[],\"firstName\":\"Helpdesk\",\"position\":[],\"\
+        email\":[\"helpdesk@gbif.org\"],\"phone\":[],\"homepage\":[],\"address\":[],\"\
+        createdBy\":\"fbca90e3-8aed-48b1-84e3-369afbd000ce\",\"modifiedBy\":\"9ed662d1-3aca-476a-b261-4b07a2ec29d7\"\
+        ,\"created\":\"2019-08-20T13:50:51.094+0000\",\"modified\":\"2019-08-21T14:48:32.910+0000\"\
+        }],\"endpoints\":[{\"key\":427219,\"type\":\"FEED\",\"url\":\"https://cloud.gbif.org/lac/rss.do\"\
+        ,\"createdBy\":\"9ed662d1-3aca-476a-b261-4b07a2ec29d7\",\"modifiedBy\":\"\
+        9ed662d1-3aca-476a-b261-4b07a2ec29d7\",\"created\":\"2019-08-21T14:48:33.018+0000\"\
+        ,\"modified\":\"2019-08-21T14:48:33.018+0000\",\"machineTags\":[]}],\"machineTags\"\
+        :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"ea84c10a-efc2-4c32-a13c-9acc4e1a3420\"\
+        ,\"organizationKey\":\"b035747d-16a4-46e1-b599-599d43e1acc9\",\"type\":\"\
+        IPT_INSTALLATION\",\"title\":\"Programa BIOTA/FAPESP - The Virtual Institute\
+        \ of Biodiversity\",\"description\":\"Created in March 1999, by the State\
+        \ of S\xE3o Paulo Research Foundation/FAPESP (www.fapesp.br/en), the BIOTA/FAPESP\
+        \ Program, aimed not only at discovering, mapping and analyzing the origins,\
+        \ diversity and distribution of the flora and fauna of the State of S\xE3\
+        o Paulo, but also at evaluating the possibilities of sustainable exploitation\
+        \ of plants or animals with economic potential and assisting in the formulation\
+        \ of conservation policies on forest remnants. The BIOTA/FAPESP Program, also\
+        \ known as The Virtual Institute of Biodiversity owing to the form of its\
+        \ organization, integrating researchers from several institutions and their\
+        \ students. Scientists from the leading public universities in the state of\
+        \ S\xE3o Paulo, research institutes and non-governmental organizations participate\
+        \ in projects to discover, map and analyze the biodiversity distributed in\
+        \ land and marine environments and in other ecosystems, as well as proposing\
+        \ alternatives and public policies to preserve it. BIOTA/FAPESP involves around\
+        \ 1,200 professionals (900 researchers and students from S\xE3o Paulo, 150\
+        \ collaborators from other states and 80 from abroad). The information produced\
+        \ by the BIOTA/FAPESP Program (www.biota.org.br) is in databases open to the\
+        \ scientific community of Brazil and abroad. Standardization of the collections\
+        \ has made it possible to construct the Environmental Information System,\
+        \ SinBiota 2.1 (http://sinbiota.biota.org.br), which registers and integrates\
+        \ the collections of plants or animals carried out in the State of S\xE3o\
+        \ Paulo, with geographical coordinates of thousands of species, which may\
+        \ be consulted using the scientific name of the plant or animal, or the name\
+        \ of the collector, or the locality or date of collection. Other developments\
+        \ of BIOTA/FAPESP are the electronic scientific magazine Biota Neotropica\
+        \ (www.biotaneotropica.org.br), with the relevant results of studies on biodiversity\
+        \ in the Neotropical region, associated or not with the Program, and the Biota\
+        \ Network of Bioprospection and Biotest (BIOprospecTA \u2013 www.bipprospecta.org.br),\
+        \ which integrates research groups in the State of S\xE3o Paulo engaged, directly\
+        \ or indirectly, with the prospection of new compounds of economic interest\
+        \ in microorganisms, macroscopic fungi, plants, invertebrates (including marine)\
+        \ and vertebrates. In 2007, in conjunction with the State Secretary of the\
+        \ Environment, the Program produced the book Guidelines for the conservation\
+        \ and restoration of the State of S\xE3o Paulo (launched in November 2008)\
+        \ and a series of maps which constitute the scientific support to orient the\
+        \ strategies of conservation, preservation and restoration of the native biodiversity\
+        \ in the State of S\xE3o Paulo. Today, there are 23 legal instruments of environmental\
+        \ legislation of the State of S\xE3o Paulo based in this results and maps.\
+        \ The Science Plan & Strategies for the Next Decade of the BIOTA/FAPESP Program\
+        \ is available at http://www.fapesp.br/biota/10scienceplan.pdf\",\"createdBy\"\
+        :\"b035747d-16a4-46e1-b599-599d43e1acc9\",\"modifiedBy\":\"ea84c10a-efc2-4c32-a13c-9acc4e1a3420\"\
+        ,\"created\":\"2019-08-17T19:17:51.215+0000\",\"modified\":\"2019-08-21T18:24:30.346+0000\"\
+        ,\"disabled\":false,\"contacts\":[{\"key\":1633868,\"type\":\"TECHNICAL_POINT_OF_CONTACT\"\
+        ,\"primary\":true,\"userId\":[],\"firstName\":\"Carlos Rebollo\",\"position\"\
+        :[],\"email\":[\"rebollo@biota.org.br\"],\"phone\":[],\"homepage\":[],\"address\"\
+        :[],\"createdBy\":\"b035747d-16a4-46e1-b599-599d43e1acc9\",\"modifiedBy\"\
+        :\"ea84c10a-efc2-4c32-a13c-9acc4e1a3420\",\"created\":\"2019-08-17T19:17:51.261+0000\"\
+        ,\"modified\":\"2019-08-21T18:24:30.404+0000\"}],\"endpoints\":[{\"key\":427352,\"\
+        type\":\"FEED\",\"url\":\"http://ipt.biota.org.br/ipt/rss.do\",\"createdBy\"\
+        :\"ea84c10a-efc2-4c32-a13c-9acc4e1a3420\",\"modifiedBy\":\"ea84c10a-efc2-4c32-a13c-9acc4e1a3420\"\
+        ,\"created\":\"2019-08-21T18:24:30.512+0000\",\"modified\":\"2019-08-21T18:24:30.512+0000\"\
+        ,\"machineTags\":[]}],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"\
+        comments\":[]},{\"key\":\"5f0fbf72-35e4-4dcd-8d78-f060cb22e817\",\"organizationKey\"\
+        :\"6cb14a23-1f7a-44c2-b1d9-af8d11e9c2b3\",\"type\":\"IPT_INSTALLATION\",\"\
+        title\":\"SPC NAS of Belarus for Bioresources IPT\",\"description\":\"IPT\
+        \ server of SPC NAS of Belarus for Bioresources\",\"createdBy\":\"6cb14a23-1f7a-44c2-b1d9-af8d11e9c2b3\"\
+        ,\"modifiedBy\":\"5f0fbf72-35e4-4dcd-8d78-f060cb22e817\",\"created\":\"2019-08-04T15:48:48.182+0000\"\
+        ,\"modified\":\"2019-08-04T15:51:57.016+0000\",\"disabled\":false,\"contacts\"\
+        :[{\"key\":1626456,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
+        userId\":[],\"firstName\":\"Stanislau\",\"position\":[],\"email\":[\"bio.krasovskiisa@gmail.com\"\
+        ],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"6cb14a23-1f7a-44c2-b1d9-af8d11e9c2b3\"\
+        ,\"modifiedBy\":\"5f0fbf72-35e4-4dcd-8d78-f060cb22e817\",\"created\":\"2019-08-04T15:48:48.214+0000\"\
+        ,\"modified\":\"2019-08-04T15:51:57.061+0000\"}],\"endpoints\":[{\"key\":423160,\"\
+        type\":\"FEED\",\"url\":\"http://84.201.180.149:8080/ipt/rss.do\",\"createdBy\"\
+        :\"5f0fbf72-35e4-4dcd-8d78-f060cb22e817\",\"modifiedBy\":\"5f0fbf72-35e4-4dcd-8d78-f060cb22e817\"\
+        ,\"created\":\"2019-08-04T15:51:57.156+0000\",\"modified\":\"2019-08-04T15:51:57.156+0000\"\
+        ,\"machineTags\":[]}],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"\
+        comments\":[]},{\"key\":\"5462204a-e495-4dc1-bbf6-1dc45bcc4c02\",\"organizationKey\"\
+        :\"1f001218-e6d3-4e97-a129-63475d0dac88\",\"type\":\"IPT_INSTALLATION\",\"\
+        title\":\"CBCGDF\",\"description\":\"China Biodiversity Conservation and Green\
+        \ Development Foundation\",\"createdBy\":\"1f001218-e6d3-4e97-a129-63475d0dac88\"\
+        ,\"modifiedBy\":\"5462204a-e495-4dc1-bbf6-1dc45bcc4c02\",\"created\":\"2019-08-01T07:54:03.065+0000\"\
+        ,\"modified\":\"2019-08-02T03:18:47.581+0000\",\"disabled\":false,\"contacts\"\
+        :[{\"key\":1624885,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
+        userId\":[],\"firstName\":\"zhangsiyuan\",\"position\":[],\"email\":[\"v23@cbcgdf.org\"\
+        ],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"1f001218-e6d3-4e97-a129-63475d0dac88\"\
+        ,\"modifiedBy\":\"5462204a-e495-4dc1-bbf6-1dc45bcc4c02\",\"created\":\"2019-08-01T07:54:03.101+0000\"\
+        ,\"modified\":\"2019-08-02T03:18:47.626+0000\"}],\"endpoints\":[{\"key\":422760,\"\
+        type\":\"FEED\",\"url\":\"http://gbif.cbcgdf.org:8080/ipt/rss.do\",\"createdBy\"\
+        :\"5462204a-e495-4dc1-bbf6-1dc45bcc4c02\",\"modifiedBy\":\"5462204a-e495-4dc1-bbf6-1dc45bcc4c02\"\
+        ,\"created\":\"2019-08-02T03:18:47.724+0000\",\"modified\":\"2019-08-02T03:18:47.724+0000\"\
+        ,\"machineTags\":[]}],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"\
+        comments\":[]},{\"key\":\"7be06443-2b11-4d91-bdd6-0d3263f04815\",\"organizationKey\"\
+        :\"8f6232c3-5523-44ad-825c-e066fc6b15ad\",\"type\":\"IPT_INSTALLATION\",\"\
+        title\":\"Central Siberian Botanical Garden SB RAS\",\"description\":\"IPT\
+        \ server of CSBG SB RAS.\",\"createdBy\":\"8f6232c3-5523-44ad-825c-e066fc6b15ad\"\
+        ,\"modifiedBy\":\"8f6232c3-5523-44ad-825c-e066fc6b15ad\",\"created\":\"2019-07-31T06:41:13.893+0000\"\
+        ,\"modified\":\"2019-07-31T06:41:13.893+0000\",\"disabled\":false,\"contacts\"\
+        :[{\"key\":1623244,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
+        userId\":[],\"firstName\":\"Nataliya Kovtonyuk\",\"position\":[],\"email\"\
+        :[\"knat2008@yandex.ru\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\"\
+        :\"8f6232c3-5523-44ad-825c-e066fc6b15ad\",\"modifiedBy\":\"8f6232c3-5523-44ad-825c-e066fc6b15ad\"\
+        ,\"created\":\"2019-07-31T06:41:13.933+0000\",\"modified\":\"2019-07-31T06:41:13.933+0000\"\
+        }],\"endpoints\":[{\"key\":421707,\"type\":\"FEED\",\"url\":\"http://www.csbg.nsc.ru:8080/ipt/rss.do\"\
+        ,\"createdBy\":\"8f6232c3-5523-44ad-825c-e066fc6b15ad\",\"modifiedBy\":\"\
+        8f6232c3-5523-44ad-825c-e066fc6b15ad\",\"created\":\"2019-07-31T06:41:13.996+0000\"\
+        ,\"modified\":\"2019-07-31T06:41:13.996+0000\",\"machineTags\":[]}],\"machineTags\"\
+        :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"02e5cb1c-4e62-447b-b5d2-d7092bb36fb4\"\
+        ,\"organizationKey\":\"1ef55060-54da-11dd-9d47-b8a03c50a862\",\"type\":\"\
+        IPT_INSTALLATION\",\"title\":\"Army Ant Guest Collection\",\"description\"\
+        :\"To share army ant guest collection specimen data from the Biodiversity\
+        \ Research Collections in the Department of Ecology & Evolutionary Biology\
+        \ at the University of Connecticut\",\"createdBy\":\"1ef55060-54da-11dd-9d47-b8a03c50a862\"\
+        ,\"modifiedBy\":\"1ef55060-54da-11dd-9d47-b8a03c50a862\",\"created\":\"2019-07-30T17:13:04.331+0000\"\
+        ,\"modified\":\"2019-07-30T17:13:04.331+0000\",\"disabled\":false,\"contacts\"\
+        :[{\"key\":1623085,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
+        userId\":[],\"firstName\":\"Janine N. Caira\",\"position\":[],\"email\":[\"\
+        janine.caira@uconn.edu\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\"\
+        :\"1ef55060-54da-11dd-9d47-b8a03c50a862\",\"modifiedBy\":\"1ef55060-54da-11dd-9d47-b8a03c50a862\"\
+        ,\"created\":\"2019-07-30T17:13:04.369+0000\",\"modified\":\"2019-07-30T17:13:04.369+0000\"\
+        }],\"endpoints\":[{\"key\":421592,\"type\":\"FEED\",\"url\":\"http://tomwmdipt.uits.uconn.edu:8080/ipt-2.3.2/rss.do\"\
+        ,\"createdBy\":\"1ef55060-54da-11dd-9d47-b8a03c50a862\",\"modifiedBy\":\"\
+        1ef55060-54da-11dd-9d47-b8a03c50a862\",\"created\":\"2019-07-30T17:13:04.436+0000\"\
+        ,\"modified\":\"2019-07-30T17:13:04.436+0000\",\"machineTags\":[]}],\"machineTags\"\
+        :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"77264ef1-a98d-4750-a504-edc41f05a0ee\"\
+        ,\"organizationKey\":\"a30d7f59-d3d4-4e89-97dc-de9cf837f591\",\"type\":\"\
+        IPT_INSTALLATION\",\"title\":\"ASEAN Centre for Biodiversity IPT\",\"description\"\
+        :\"ASEAN Centre for Biodiversity IPT\\r\\nThis IPT will serve as a single\
+        \ portal for publishing biodiversity data from the ASEAN countries. The IPT\
+        \ is located in Domingo Lantican Ave University of the Philippines, Los Ba\xF1\
+        os, Laguna Philippines.\\r\\n\\r\\nThe ASEAN Centre for Biodiversity (ACB),\
+        \ established in 2005, is ASEAN\u2019s response to the challenge of biodiversity\
+        \ loss. It is an intergovernmental organization that facilitates cooperation\
+        \ and coordination among the ten ASEAN Member States (AMS) and with regional\
+        \ and international organizations on the conservation and sustainable use\
+        \ of biological diversity, and the fair and equitable sharing of benefits\
+        \ arising from the use of such natural treasures.\",\"createdBy\":\"a30d7f59-d3d4-4e89-97dc-de9cf837f591\"\
+        ,\"modifiedBy\":\"77264ef1-a98d-4750-a504-edc41f05a0ee\",\"created\":\"2019-07-10T16:15:08.396+0000\"\
+        ,\"modified\":\"2019-11-07T16:09:43.534+0000\",\"disabled\":false,\"contacts\"\
+        :[{\"key\":1610016,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
+        userId\":[],\"firstName\":\"Christian Elloran\",\"position\":[],\"email\"\
+        :[\"cbelloran@aseanbiodiversity.org\"],\"phone\":[],\"homepage\":[],\"address\"\
+        :[],\"createdBy\":\"a30d7f59-d3d4-4e89-97dc-de9cf837f591\",\"modifiedBy\"\
+        :\"77264ef1-a98d-4750-a504-edc41f05a0ee\",\"created\":\"2019-07-10T16:15:08.435+0000\"\
+        ,\"modified\":\"2019-11-07T16:09:43.589+0000\"}],\"endpoints\":[{\"key\":444582,\"\
+        type\":\"FEED\",\"url\":\"http://bim-mirror.aseanbiodiversity.org:8080/ipt/rss.do\"\
+        ,\"createdBy\":\"77264ef1-a98d-4750-a504-edc41f05a0ee\",\"modifiedBy\":\"\
+        77264ef1-a98d-4750-a504-edc41f05a0ee\",\"created\":\"2019-11-07T16:09:43.699+0000\"\
+        ,\"modified\":\"2019-11-07T16:09:43.699+0000\",\"machineTags\":[]}],\"machineTags\"\
+        :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"a4b376c8-6c35-4bd2-88a8-02fa3ef8b32f\"\
+        ,\"organizationKey\":\"3eeffcbd-0e84-4223-ac65-3d32e7cc8511\",\"type\":\"\
+        IPT_INSTALLATION\",\"title\":\"MIZA-UCV\",\"description\":\"Arthropod occurrence\
+        \ data for Museo del Instituto de Zoologia Agricola, Universidad Central de\
+        \ Venezuela\",\"createdBy\":\"3eeffcbd-0e84-4223-ac65-3d32e7cc8511\",\"modifiedBy\"\
+        :\"a4b376c8-6c35-4bd2-88a8-02fa3ef8b32f\",\"created\":\"2019-07-02T14:37:12.427+0000\"\
+        ,\"modified\":\"2019-07-02T20:17:09.440+0000\",\"disabled\":false,\"contacts\"\
+        :[{\"key\":1603359,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
+        userId\":[],\"firstName\":\"Marco Gaiani\",\"position\":[],\"email\":[\"marco.gaiani@miza-ucv.org.ve\"\
+        ],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"3eeffcbd-0e84-4223-ac65-3d32e7cc8511\"\
+        ,\"modifiedBy\":\"a4b376c8-6c35-4bd2-88a8-02fa3ef8b32f\",\"created\":\"2019-07-02T14:37:12.669+0000\"\
+        ,\"modified\":\"2019-07-02T20:17:09.502+0000\"}],\"endpoints\":[{\"key\":414562,\"\
+        type\":\"FEED\",\"url\":\"http://ipt.miza-ucv.org.ve:8080/ipt/rss.do\",\"\
+        createdBy\":\"a4b376c8-6c35-4bd2-88a8-02fa3ef8b32f\",\"modifiedBy\":\"a4b376c8-6c35-4bd2-88a8-02fa3ef8b32f\"\
+        ,\"created\":\"2019-07-02T20:17:09.687+0000\",\"modified\":\"2019-07-02T20:17:09.687+0000\"\
+        ,\"machineTags\":[]}],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"\
+        comments\":[]},{\"key\":\"cb27a4ab-3360-4cf5-b5de-48a06a9c47ae\",\"organizationKey\"\
+        :\"fb702600-a84e-11de-978d-b8a03c50a862\",\"type\":\"SYMBIOTA_INSTALLATION\"\
+        ,\"title\":\"Consortium of California Herbaria, CCH2 Portal\",\"createdBy\"\
+        :\"cch2\",\"modifiedBy\":\"cch2\",\"created\":\"2019-06-26T14:03:36.715+0000\"\
+        ,\"modified\":\"2019-06-26T14:03:36.715+0000\",\"disabled\":false,\"contacts\"\
+        :[],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"\
+        comments\":[]},{\"key\":\"2cd85091-6352-4fc4-b41a-e184f47ee8dd\",\"organizationKey\"\
+        :\"b87dc34e-ff76-458a-b163-f37e5634d0fb\",\"type\":\"IPT_INSTALLATION\",\"\
+        title\":\"Karelian Research Centre of the Russian Academy of Sciences\",\"\
+        description\":\"Karelian Research Centre of the Russian Academy of Sciences\"\
+        ,\"createdBy\":\"b87dc34e-ff76-458a-b163-f37e5634d0fb\",\"modifiedBy\":\"\
+        b87dc34e-ff76-458a-b163-f37e5634d0fb\",\"created\":\"2019-06-20T08:40:47.951+0000\"\
+        ,\"modified\":\"2019-06-20T08:40:47.951+0000\",\"disabled\":false,\"contacts\"\
+        :[{\"key\":1595687,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
+        userId\":[],\"firstName\":\"Vera Timofeeva\",\"position\":[],\"email\":[\"\
+        krcras@krc.karelia.ru\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\"\
+        :\"b87dc34e-ff76-458a-b163-f37e5634d0fb\",\"modifiedBy\":\"b87dc34e-ff76-458a-b163-f37e5634d0fb\"\
+        ,\"created\":\"2019-06-20T08:40:47.988+0000\",\"modified\":\"2019-06-20T08:40:47.988+0000\"\
+        }],\"endpoints\":[{\"key\":411637,\"type\":\"FEED\",\"url\":\"https://gbif.krc.karelia.ru/ipt/rss.do\"\
+        ,\"createdBy\":\"b87dc34e-ff76-458a-b163-f37e5634d0fb\",\"modifiedBy\":\"\
+        b87dc34e-ff76-458a-b163-f37e5634d0fb\",\"created\":\"2019-06-20T08:40:48.061+0000\"\
+        ,\"modified\":\"2019-06-20T08:40:48.061+0000\",\"machineTags\":[]}],\"machineTags\"\
+        :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"38ba5278-1558-4d63-9cf6-012c29c5078f\"\
+        ,\"organizationKey\":\"a61ab068-5b5f-47c7-9322-170e88b09b0d\",\"type\":\"\
+        IPT_INSTALLATION\",\"title\":\"Bases de datos del Centro de Estudios Parasitol\xF3\
+        gicos y de Vectores (CEPAVE, CONICET-UNLP)\",\"description\":\"Bases de datos\
+        \ DwC-A del CEPAVE\",\"createdBy\":\"a61ab068-5b5f-47c7-9322-170e88b09b0d\"\
+        ,\"modifiedBy\":\"38ba5278-1558-4d63-9cf6-012c29c5078f\",\"created\":\"2019-06-19T13:36:44.098+0000\"\
+        ,\"modified\":\"2019-06-19T13:38:36.073+0000\",\"disabled\":false,\"contacts\"\
+        :[{\"key\":1594905,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
+        userId\":[],\"firstName\":\"Hern\xE1n Lucas Pereira\",\"position\":[],\"email\"\
+        :[\"hernan@cepave.edu.ar\"],\"phone\":[],\"homepage\":[],\"address\":[],\"\
+        createdBy\":\"a61ab068-5b5f-47c7-9322-170e88b09b0d\",\"modifiedBy\":\"38ba5278-1558-4d63-9cf6-012c29c5078f\"\
+        ,\"created\":\"2019-06-19T13:36:44.136+0000\",\"modified\":\"2019-06-19T13:38:36.123+0000\"\
+        }],\"endpoints\":[{\"key\":411410,\"type\":\"FEED\",\"url\":\"https://ipt.cepave.edu.ar/rss.do\"\
+        ,\"createdBy\":\"38ba5278-1558-4d63-9cf6-012c29c5078f\",\"modifiedBy\":\"\
+        38ba5278-1558-4d63-9cf6-012c29c5078f\",\"created\":\"2019-06-19T13:38:36.232+0000\"\
+        ,\"modified\":\"2019-06-19T13:38:36.232+0000\",\"machineTags\":[]}],\"machineTags\"\
+        :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"998fa743-e3d2-41bd-8cd3-754e22581224\"\
+        ,\"organizationKey\":\"927f1e70-cf74-11d8-bf68-b8a03c50a862\",\"type\":\"\
+        SYMBIOTA_INSTALLATION\",\"title\":\"Bell Atlas\",\"createdBy\":\"gweiblen\"\
+        ,\"modifiedBy\":\"gweiblen\",\"created\":\"2019-06-13T19:12:34.719+0000\"\
+        ,\"modified\":\"2019-06-13T19:12:34.719+0000\",\"disabled\":false,\"contacts\"\
+        :[],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"\
+        comments\":[]},{\"key\":\"dc9d8bd0-3c20-4fba-b7ff-26d654817ea7\",\"organizationKey\"\
+        :\"23e067c0-a255-11da-beae-b8a03c50a862\",\"type\":\"IPT_INSTALLATION\",\"\
+        title\":\"IPT GBIF Switzerland\",\"description\":\"IPT installation of the\
+        \ Swiss node.\",\"createdBy\":\"23e067c0-a255-11da-beae-b8a03c50a862\",\"\
+        modifiedBy\":\"dc9d8bd0-3c20-4fba-b7ff-26d654817ea7\",\"created\":\"2019-05-24T14:53:18.324+0000\"\
+        ,\"modified\":\"2019-05-24T14:58:20.926+0000\",\"disabled\":false,\"contacts\"\
+        :[{\"key\":1577892,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
+        userId\":[],\"firstName\":\"Gianni Jacot\",\"position\":[],\"email\":[\"gianni.jacot@unine.ch\"\
+        ],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"23e067c0-a255-11da-beae-b8a03c50a862\"\
+        ,\"modifiedBy\":\"dc9d8bd0-3c20-4fba-b7ff-26d654817ea7\",\"created\":\"2019-05-24T14:53:18.360+0000\"\
+        ,\"modified\":\"2019-05-24T14:58:20.978+0000\"}],\"endpoints\":[{\"key\":405250,\"\
+        type\":\"FEED\",\"url\":\"http://ipt.gbif.ch/rss.do\",\"createdBy\":\"dc9d8bd0-3c20-4fba-b7ff-26d654817ea7\"\
+        ,\"modifiedBy\":\"dc9d8bd0-3c20-4fba-b7ff-26d654817ea7\",\"created\":\"2019-05-24T14:58:21.095+0000\"\
+        ,\"modified\":\"2019-05-24T14:58:21.095+0000\",\"machineTags\":[]}],\"machineTags\"\
+        :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"0d3e9027-73a1-49cb-8e0e-59286ef60400\"\
+        ,\"organizationKey\":\"7d3cd162-288f-42ad-b2ad-915272be963e\",\"type\":\"\
+        IPT_INSTALLATION\",\"title\":\"Madagascar Lemurs Portal IPT\",\"description\"\
+        :\"The lemur portal (http://www.lemursportal.org) tool was established to\
+        \ overcome difficulties in communication of existing data, addressing gaps\
+        \ and facilitating exchanges between stakeholders in lemur conservation. Based\
+        \ on the needs of the users, the lemur portal includes an online forum to\
+        \ promote real-time exchanges between different users, a comprehensive species\
+        \ database, a ready-made and tailored visualizations, and a mobile application\
+        \ integrating iNaturalist for citizen science.\",\"createdBy\":\"7d3cd162-288f-42ad-b2ad-915272be963e\"\
+        ,\"modifiedBy\":\"7d3cd162-288f-42ad-b2ad-915272be963e\",\"created\":\"2019-05-15T07:41:18.122+0000\"\
+        ,\"modified\":\"2019-05-15T07:41:18.122+0000\",\"disabled\":false,\"contacts\"\
+        :[{\"key\":1569953,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
+        userId\":[],\"firstName\":\"Tsiky Rabetrano\",\"position\":[],\"email\":[\"\
+        tsikyrabetrano@gmail.com\"],\"phone\":[],\"homepage\":[],\"address\":[],\"\
+        createdBy\":\"7d3cd162-288f-42ad-b2ad-915272be963e\",\"modifiedBy\":\"7d3cd162-288f-42ad-b2ad-915272be963e\"\
+        ,\"created\":\"2019-05-15T07:41:18.164+0000\",\"modified\":\"2019-05-15T07:41:18.164+0000\"\
+        }],\"endpoints\":[{\"key\":402821,\"type\":\"FEED\",\"url\":\"https://www.lemursportal.org/ipt/rss.do\"\
+        ,\"createdBy\":\"7d3cd162-288f-42ad-b2ad-915272be963e\",\"modifiedBy\":\"\
+        7d3cd162-288f-42ad-b2ad-915272be963e\",\"created\":\"2019-05-15T07:41:18.230+0000\"\
+        ,\"modified\":\"2019-05-15T07:41:18.230+0000\",\"machineTags\":[]}],\"machineTags\"\
+        :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"da058683-45e9-4895-bedf-03fa0b115a45\"\
+        ,\"organizationKey\":\"d33a9c4e-e33c-4311-a2fe-88dbdff7b4b9\",\"type\":\"\
+        IPT_INSTALLATION\",\"title\":\"International Centre for Integrated Mountain\
+        \ Development\",\"description\":\"The International Centre for Integrated\
+        \ Mountain Development (ICIMOD) is a regional intergovernmental learning and\
+        \ knowledge sharing centre serving the eight regional member countries of\
+        \ the Hindu Kush Himalaya \u2013 Afghanistan, Bangladesh, Bhutan, China, India,\
+        \ Myanmar, Nepal, and Pakistan \u2013 and based in Kathmandu, Nepal. Globalization\
+        \ and climate change have an increasing influence on the stability of fragile\
+        \ mountain ecosystems and the livelihoods of mountain people. ICIMOD aims\
+        \ to assist mountain people to understand these changes, adapt to them, and\
+        \ make the most of new opportunities, while addressing upstream-downstream\
+        \ issues.\\r\\nWe support regional transboundary programmes through partnerships\
+        \ with regional partner institutions, facilitate the exchange of experience,\
+        \ and serve as a regional knowledge hub. We strengthen networking among regional\
+        \ and global centres of excellence. Overall, we are working to develop an\
+        \ economically and environmentally sound mountain ecosystem to improve the\
+        \ living standards of mountain populations and to sustain vital ecosystem\
+        \ services for the billions of people living downstream, now and for the future.\"\
+        ,\"createdBy\":\"d33a9c4e-e33c-4311-a2fe-88dbdff7b4b9\",\"modifiedBy\":\"\
+        da058683-45e9-4895-bedf-03fa0b115a45\",\"created\":\"2019-05-10T04:37:25.808+0000\"\
+        ,\"modified\":\"2019-05-10T06:04:15.233+0000\",\"disabled\":false,\"contacts\"\
+        :[{\"key\":1566971,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
+        userId\":[],\"firstName\":\"Sameer Bajracharya\",\"position\":[],\"email\"\
+        :[\"Sameer.Bajracharya@icimod.org\"],\"phone\":[],\"homepage\":[],\"address\"\
+        :[],\"createdBy\":\"d33a9c4e-e33c-4311-a2fe-88dbdff7b4b9\",\"modifiedBy\"\
+        :\"da058683-45e9-4895-bedf-03fa0b115a45\",\"created\":\"2019-05-10T04:37:25.845+0000\"\
+        ,\"modified\":\"2019-05-10T06:04:15.310+0000\"}],\"endpoints\":[{\"key\":401776,\"\
+        type\":\"FEED\",\"url\":\"http://rds.icimod.org:8080/hkh-bif/rss.do\",\"createdBy\"\
+        :\"da058683-45e9-4895-bedf-03fa0b115a45\",\"modifiedBy\":\"da058683-45e9-4895-bedf-03fa0b115a45\"\
+        ,\"created\":\"2019-05-10T06:04:15.463+0000\",\"modified\":\"2019-05-10T06:04:15.463+0000\"\
+        ,\"machineTags\":[]}],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"\
+        comments\":[]},{\"key\":\"bd4746e4-c1e1-4a68-8546-10a853c64853\",\"organizationKey\"\
+        :\"1e9400fa-ce73-4737-9eaa-f25df148945c\",\"type\":\"IPT_INSTALLATION\",\"\
+        title\":\"MBON Pole 2 Pole\",\"description\":\"MBON P2P project. Biodiversity\
+        \ in Rocky Shores and Sandy beaches of the Americas\",\"createdBy\":\"1e9400fa-ce73-4737-9eaa-f25df148945c\"\
+        ,\"modifiedBy\":\"bd4746e4-c1e1-4a68-8546-10a853c64853\",\"created\":\"2019-05-06T09:51:43.207+0000\"\
+        ,\"modified\":\"2019-07-23T20:14:15.741+0000\",\"disabled\":false,\"contacts\"\
+        :[{\"key\":1563680,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
+        userId\":[],\"firstName\":\"Eduardo Klein\",\"position\":[],\"email\":[\"\
+        ekleins@gmail.com\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\"\
+        :\"1e9400fa-ce73-4737-9eaa-f25df148945c\",\"modifiedBy\":\"bd4746e4-c1e1-4a68-8546-10a853c64853\"\
+        ,\"created\":\"2019-05-06T09:51:43.244+0000\",\"modified\":\"2019-07-23T20:14:15.814+0000\"\
+        }],\"endpoints\":[{\"key\":420017,\"type\":\"FEED\",\"url\":\"http://ipt.iobis.org/mbon/rss.do\"\
+        ,\"createdBy\":\"bd4746e4-c1e1-4a68-8546-10a853c64853\",\"modifiedBy\":\"\
+        bd4746e4-c1e1-4a68-8546-10a853c64853\",\"created\":\"2019-07-23T20:14:15.931+0000\"\
+        ,\"modified\":\"2019-07-23T20:14:15.931+0000\",\"machineTags\":[]}],\"machineTags\"\
+        :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"7e9670e7-b45c-4f66-9300-fa8f98c9c79d\"\
+        ,\"organizationKey\":\"605e7170-1123-11d9-8433-b8a03c50a862\",\"type\":\"\
+        IPT_INSTALLATION\",\"title\":\"Herbaria Z+ZT\",\"description\":\"Specimens\
+        \ of the United Herbaria of the University and ETH Zurich (Z+ZT)\",\"createdBy\"\
+        :\"605e7170-1123-11d9-8433-b8a03c50a862\",\"modifiedBy\":\"7e9670e7-b45c-4f66-9300-fa8f98c9c79d\"\
+        ,\"created\":\"2019-04-26T09:24:00.737+0000\",\"modified\":\"2019-05-10T07:37:48.817+0000\"\
+        ,\"disabled\":false,\"contacts\":[{\"key\":1557053,\"type\":\"TECHNICAL_POINT_OF_CONTACT\"\
+        ,\"primary\":true,\"userId\":[],\"firstName\":\"Reto Nyffeler\",\"position\"\
+        :[],\"email\":[\"reto.nyffeler@systbot.uzh.ch\"],\"phone\":[],\"homepage\"\
+        :[],\"address\":[],\"createdBy\":\"605e7170-1123-11d9-8433-b8a03c50a862\"\
+        ,\"modifiedBy\":\"7e9670e7-b45c-4f66-9300-fa8f98c9c79d\",\"created\":\"2019-04-26T09:24:00.769+0000\"\
+        ,\"modified\":\"2019-05-10T07:37:48.865+0000\"}],\"endpoints\":[{\"key\":401795,\"\
+        type\":\"FEED\",\"url\":\"https://www.herbarien.uzh.ch/ipt/rss.do\",\"createdBy\"\
+        :\"7e9670e7-b45c-4f66-9300-fa8f98c9c79d\",\"modifiedBy\":\"7e9670e7-b45c-4f66-9300-fa8f98c9c79d\"\
+        ,\"created\":\"2019-05-10T07:37:48.983+0000\",\"modified\":\"2019-05-10T07:37:48.983+0000\"\
+        ,\"machineTags\":[]}],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"\
+        comments\":[]},{\"key\":\"981941a5-b189-49bf-848e-ad13eb1f6172\",\"organizationKey\"\
+        :\"12308e00-4b80-11da-8809-b8a03c50a862\",\"type\":\"IPT_INSTALLATION\",\"\
+        title\":\"Icelandic node for GBIF\",\"description\":\"Something to have in\
+        \ description\",\"createdBy\":\"12308e00-4b80-11da-8809-b8a03c50a862\",\"\
+        modifiedBy\":\"12308e00-4b80-11da-8809-b8a03c50a862\",\"created\":\"2019-03-28T15:32:31.773+0000\"\
+        ,\"modified\":\"2019-03-28T15:32:31.773+0000\",\"disabled\":false,\"contacts\"\
+        :[{\"key\":1524119,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
+        userId\":[],\"firstName\":\"Kjartan Birgisson\",\"position\":[],\"email\"\
+        :[\"kjartan@ni.is\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\"\
+        :\"12308e00-4b80-11da-8809-b8a03c50a862\",\"modifiedBy\":\"12308e00-4b80-11da-8809-b8a03c50a862\"\
+        ,\"created\":\"2019-03-28T15:32:31.815+0000\",\"modified\":\"2019-03-28T15:32:31.815+0000\"\
+        }],\"endpoints\":[{\"key\":376139,\"type\":\"FEED\",\"url\":\"http://ipt.ni.is/ipt/rss.do\"\
+        ,\"createdBy\":\"12308e00-4b80-11da-8809-b8a03c50a862\",\"modifiedBy\":\"\
+        12308e00-4b80-11da-8809-b8a03c50a862\",\"created\":\"2019-03-28T15:32:31.878+0000\"\
+        ,\"modified\":\"2019-03-28T15:32:31.878+0000\",\"machineTags\":[]}],\"machineTags\"\
+        :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"7bdf9f6d-317a-45ec-8bb7-7ff61345d6a6\"\
+        ,\"organizationKey\":\"d3978a37-635a-4ae3-bb85-7b4d41bc0b88\",\"type\":\"\
+        IPT_INSTALLATION\",\"title\":\"NBIC IPT installation\",\"description\":\"\
+        Publishing datasets from governmental organizations and Citizen Science observations\
+        \ services.\",\"createdBy\":\"d3978a37-635a-4ae3-bb85-7b4d41bc0b88\",\"modifiedBy\"\
+        :\"d3978a37-635a-4ae3-bb85-7b4d41bc0b88\",\"created\":\"2019-03-21T09:08:50.433+0000\"\
+        ,\"modified\":\"2019-03-21T09:08:50.433+0000\",\"disabled\":false,\"contacts\"\
+        :[{\"key\":1513626,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
+        userId\":[],\"firstName\":\"Stein Hoem\",\"position\":[],\"email\":[\"stein.hoem@artsdatabanken.no\"\
+        ],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"d3978a37-635a-4ae3-bb85-7b4d41bc0b88\"\
+        ,\"modifiedBy\":\"d3978a37-635a-4ae3-bb85-7b4d41bc0b88\",\"created\":\"2019-03-21T09:08:50.469+0000\"\
+        ,\"modified\":\"2019-03-21T09:08:50.469+0000\"}],\"endpoints\":[{\"key\":374437,\"\
+        type\":\"FEED\",\"url\":\"https://ipt.artsdatabanken.no/rss.do\",\"createdBy\"\
+        :\"d3978a37-635a-4ae3-bb85-7b4d41bc0b88\",\"modifiedBy\":\"d3978a37-635a-4ae3-bb85-7b4d41bc0b88\"\
+        ,\"created\":\"2019-03-21T09:08:50.519+0000\",\"modified\":\"2019-03-21T09:08:50.519+0000\"\
+        ,\"machineTags\":[]}],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"\
+        comments\":[]},{\"key\":\"b1a7ce87-f741-4c31-8b35-565db6e0cf04\",\"organizationKey\"\
+        :\"154da9ab-c010-422d-8fef-dbc54d10a3c6\",\"type\":\"HTTP_INSTALLATION\",\"\
+        title\":\"HTTP installation - University of New Hampshire Collection of Insects\
+        \ and Arthropods\",\"createdBy\":\"mgrosjean\",\"modifiedBy\":\"mgrosjean\"\
+        ,\"created\":\"2019-03-20T14:44:59.357+0000\",\"modified\":\"2019-03-20T14:44:59.357+0000\"\
+        ,\"disabled\":false,\"contacts\":[],\"endpoints\":[],\"machineTags\":[],\"\
+        tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"18c3e8b0-5f20-42e8-a787-9230bac7f3b6\"\
+        ,\"organizationKey\":\"3fc079e3-9654-4be8-a917-db7394752193\",\"type\":\"\
+        IPT_INSTALLATION\",\"title\":\"IPT-DRC\",\"description\":\"Democratic Republic\
+        \ of the Congo IPT, hosted by the Belgian Biodiversity Platform.\",\"createdBy\"\
+        :\"3fc079e3-9654-4be8-a917-db7394752193\",\"modifiedBy\":\"3fc079e3-9654-4be8-a917-db7394752193\"\
+        ,\"created\":\"2019-03-19T09:48:07.423+0000\",\"modified\":\"2019-03-19T09:48:07.423+0000\"\
+        ,\"disabled\":false,\"contacts\":[{\"key\":1508796,\"type\":\"TECHNICAL_POINT_OF_CONTACT\"\
+        ,\"primary\":true,\"userId\":[],\"firstName\":\"Julien Cigar\",\"position\"\
+        :[],\"email\":[\"j.cigar@biodiversity.be\"],\"phone\":[],\"homepage\":[],\"\
+        address\":[],\"createdBy\":\"3fc079e3-9654-4be8-a917-db7394752193\",\"modifiedBy\"\
+        :\"3fc079e3-9654-4be8-a917-db7394752193\",\"created\":\"2019-03-19T09:48:07.456+0000\"\
+        ,\"modified\":\"2019-03-19T09:48:07.456+0000\"}],\"endpoints\":[{\"key\":372797,\"\
+        type\":\"FEED\",\"url\":\"http://ipt-rdc.bebif.be/rss.do\",\"createdBy\":\"\
+        3fc079e3-9654-4be8-a917-db7394752193\",\"modifiedBy\":\"3fc079e3-9654-4be8-a917-db7394752193\"\
+        ,\"created\":\"2019-03-19T09:48:07.511+0000\",\"modified\":\"2019-03-19T09:48:07.511+0000\"\
+        ,\"machineTags\":[]}],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"\
+        comments\":[]},{\"key\":\"4ec55ebe-9f92-45ec-b076-dd45f61003ab\",\"organizationKey\"\
+        :\"cae7b6c7-669a-4261-9a34-6e8cdc16a125\",\"type\":\"SYMBIOTA_INSTALLATION\"\
+        ,\"title\":\"UC Santa Barbara Collection Network\",\"createdBy\":\"seltmann\"\
+        ,\"modifiedBy\":\"seltmann\",\"created\":\"2019-03-16T00:08:50.908+0000\"\
+        ,\"modified\":\"2019-03-16T00:08:50.908+0000\",\"disabled\":false,\"contacts\"\
+        :[],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"\
+        comments\":[]},{\"key\":\"b7b0168e-8d84-4b82-afee-eb37cd4940d5\",\"organizationKey\"\
+        :\"5ffa575c-fcd4-4583-9611-545f67b04316\",\"type\":\"IPT_INSTALLATION\",\"\
+        title\":\"xBio:D IPT in the Museum of Biological Diversity, The Ohio State\
+        \ University\",\"description\":\"xBioD, the Ohio State University biodiversity\
+        \ cyberinfrastructure, contains biodiversity information on the full spectrum\
+        \ of animal life - dealing with occurrence records, images, sound recording,\
+        \ etc. Located within the Museum of Biological Diversity at Ohio State, the\
+        \ resource is not exclusive to collections within this university but also\
+        \ fosters data sharing from collections in a number of different institutions.\"\
+        ,\"createdBy\":\"5ffa575c-fcd4-4583-9611-545f67b04316\",\"modifiedBy\":\"\
+        5ffa575c-fcd4-4583-9611-545f67b04316\",\"created\":\"2019-03-06T16:14:14.842+0000\"\
+        ,\"modified\":\"2019-03-06T16:14:14.842+0000\",\"disabled\":false,\"contacts\"\
+        :[{\"key\":1499396,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
+        userId\":[],\"firstName\":\"Norman Johnson\",\"position\":[],\"email\":[\"\
+        johnson.2@osu.edu\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\"\
+        :\"5ffa575c-fcd4-4583-9611-545f67b04316\",\"modifiedBy\":\"5ffa575c-fcd4-4583-9611-545f67b04316\"\
+        ,\"created\":\"2019-03-06T16:14:14.889+0000\",\"modified\":\"2019-03-06T16:14:14.889+0000\"\
+        }],\"endpoints\":[{\"key\":370131,\"type\":\"FEED\",\"url\":\"https://hymfiles.asc.ohio-state.edu/ipt/rss.do\"\
+        ,\"createdBy\":\"5ffa575c-fcd4-4583-9611-545f67b04316\",\"modifiedBy\":\"\
+        5ffa575c-fcd4-4583-9611-545f67b04316\",\"created\":\"2019-03-06T16:14:14.977+0000\"\
+        ,\"modified\":\"2019-03-06T16:14:14.977+0000\",\"machineTags\":[]}],\"machineTags\"\
+        :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"13265d81-0a52-4787-8057-5ed4fc434295\"\
+        ,\"organizationKey\":\"4bc4943a-c94f-4bd4-9aa3-2a9cae94398a\",\"type\":\"\
+        IPT_INSTALLATION\",\"title\":\"IPT of GhaBIF\",\"description\":\"This IPT\
+        \ allows the publication of data resources from institutions in Ghana\",\"\
+        createdBy\":\"4bc4943a-c94f-4bd4-9aa3-2a9cae94398a\",\"modifiedBy\":\"4bc4943a-c94f-4bd4-9aa3-2a9cae94398a\"\
+        ,\"created\":\"2019-03-06T14:22:26.518+0000\",\"modified\":\"2019-03-06T14:22:26.518+0000\"\
+        ,\"disabled\":false,\"contacts\":[{\"key\":1499131,\"type\":\"TECHNICAL_POINT_OF_CONTACT\"\
+        ,\"primary\":true,\"userId\":[],\"firstName\":\"DEV\",\"position\":[],\"email\"\
+        :[\"dev@gbif.fr\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\"\
+        :\"4bc4943a-c94f-4bd4-9aa3-2a9cae94398a\",\"modifiedBy\":\"4bc4943a-c94f-4bd4-9aa3-2a9cae94398a\"\
+        ,\"created\":\"2019-03-06T14:22:26.552+0000\",\"modified\":\"2019-03-06T14:22:26.552+0000\"\
+        }],\"endpoints\":[{\"key\":370032,\"type\":\"FEED\",\"url\":\"http://ipt-ghana.gbif.fr/rss.do\"\
+        ,\"createdBy\":\"4bc4943a-c94f-4bd4-9aa3-2a9cae94398a\",\"modifiedBy\":\"\
+        4bc4943a-c94f-4bd4-9aa3-2a9cae94398a\",\"created\":\"2019-03-06T14:22:26.643+0000\"\
+        ,\"modified\":\"2019-03-06T14:22:26.643+0000\",\"machineTags\":[]}],\"machineTags\"\
+        :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"fb5e4c2a-579c-434b-a446-3a665dd732ad\"\
+        ,\"organizationKey\":\"fbca90e3-8aed-48b1-84e3-369afbd000ce\",\"type\":\"\
+        HTTP_INSTALLATION\",\"title\":\"GBIF Hosted Datasets\",\"description\":\"\
+        Datasets hosted on https://hosted-datasets.gbif.org/\",\"createdBy\":\"MattBlissett\"\
+        ,\"modifiedBy\":\"MattBlissett\",\"created\":\"2019-02-27T10:24:10.421+0000\"\
+        ,\"modified\":\"2019-02-27T10:24:10.421+0000\",\"disabled\":false,\"contacts\"\
+        :[],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"\
+        comments\":[]},{\"key\":\"23355623-0d61-422a-a3f2-fe04c417a599\",\"organizationKey\"\
+        :\"a86e9e36-12ec-49a4-a94c-c0c981fffb71\",\"type\":\"SYMBIOTA_INSTALLATION\"\
+        ,\"title\":\"OpenHerbarium\",\"createdBy\":\"symbopenherbarium\",\"modifiedBy\"\
+        :\"symbopenherbarium\",\"created\":\"2019-02-22T15:33:05.868+0000\",\"modified\"\
+        :\"2019-02-22T15:33:05.868+0000\",\"disabled\":false,\"contacts\":[],\"endpoints\"\
+        :[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"\
+        key\":\"2b647789-5156-4a25-86a5-9efc9e4a22cc\",\"organizationKey\":\"a86e9e36-12ec-49a4-a94c-c0c981fffb71\"\
+        ,\"type\":\"SYMBIOTA_INSTALLATION\",\"title\":\"Macroalgal Herbarium Portal\"\
+        ,\"description\":\"The Macroalgal Herbarium Portal (http://macroalgae.org)\
+        \ is a collaboratively compiled datastore established to assist biological\
+        \ collections in digitizing, managing, and publishing macroalgal research\
+        \ data. It also provides tools for researcher, educators, and students to\
+        \ visualize macroalgal distribution patterns and changes in community structure\
+        \ resulting from environmental changes or species introductions. It is built\
+        \ upon an integrated dataset of a million macroalgal specimen records actively\
+        \ curated within more than 50 different institutions across North America\
+        \ and the Pacific.\",\"createdBy\":\"symb-macroalgae\",\"modifiedBy\":\"mgrosjean\"\
+        ,\"created\":\"2019-02-15T19:51:29.017+0000\",\"modified\":\"2019-02-18T08:22:16.278+0000\"\
+        ,\"disabled\":false,\"contacts\":[],\"endpoints\":[],\"machineTags\":[],\"\
+        tags\":[],\"identifiers\":[],\"comments\":[{\"key\":24305,\"content\":\"2019/02/18\
+        \ [MG] Description added after request from Symbiota manager.\",\"createdBy\"\
+        :\"mgrosjean\",\"modifiedBy\":\"mgrosjean\",\"created\":\"2019-02-18T08:22:09.698+0000\"\
+        ,\"modified\":\"2019-02-18T08:22:09.698+0000\"}]},{\"key\":\"78043c5f-d1c5-4f30-86c8-dcbfb8b21064\"\
+        ,\"organizationKey\":\"96710dc8-fecb-440d-ae3e-c34ae8a9616f\",\"type\":\"\
+        SYMBIOTA_INSTALLATION\",\"title\":\"Consortium of North American Lichen Herbaria\
+        \ (CNALH)\",\"description\":\"The Consortium of North American Lichen Herbaria\
+        \ (CNALH, http://lichenportal.org) and its Latin American counterpart, the\
+        \ Consorcio de Herbarios de L\xEDquenes de Am\xE9rica Latina (CHLAL, http://lichenportal.org/chlal/)\
+        \ serve as a gateways to biodiversity data of lichenized fungi throughout\
+        \ the Americas (North, Central and South America). Together these two biodiversity\
+        \ data portals host collection data from more than 100 different lichen herbaria,\
+        \ including more than two million occurrence records and almost one million\
+        \ images of lichens. CNALH & CHLAL provide access to an array of different\
+        \ resources: collection management for specimen data & field observations\
+        \ (occurrence records), dynamic and static checklists, images (of observations\
+        \ and specimens), interactive identification keys, and a taxonomic thesaurus.\"\
+        ,\"createdBy\":\"symb-lichen\",\"modifiedBy\":\"mgrosjean\",\"created\":\"\
+        2019-02-14T16:43:06.967+0000\",\"modified\":\"2019-06-27T14:42:26.384+0000\"\
+        ,\"disabled\":false,\"contacts\":[],\"endpoints\":[],\"machineTags\":[],\"\
+        tags\":[],\"identifiers\":[],\"comments\":[{\"key\":27630,\"content\":\"2019/06/27\
+        \ [MG] Updated hosting organization following request from the technical contact.\"\
+        ,\"createdBy\":\"mgrosjean\",\"modifiedBy\":\"mgrosjean\",\"created\":\"2019-06-27T14:40:26.208+0000\"\
+        ,\"modified\":\"2019-06-27T14:40:26.208+0000\"}]},{\"key\":\"f14b8ea2-5f17-466c-89c4-61f2a0ac425a\"\
+        ,\"organizationKey\":\"96710dc8-fecb-440d-ae3e-c34ae8a9616f\",\"type\":\"\
+        SYMBIOTA_INSTALLATION\",\"title\":\"Consortium of North American Bryophyte\
+        \ Herbaria\",\"description\":\"The Consortium of North American Bryophyte\
+        \ Herbaria (CNABH, http://bryophyteportal.org) is a collaboratively compiled\
+        \ datastore that was established with the main purpose of providing services\
+        \ to assist biological collections in digitizing, managing, and publishing\
+        \ bryophyte research data. The data foundation is built upon an integrated\
+        \ dataset of several million bryophyte specimen records actively curated within\
+        \ more than 100 different institutions distributed across North America. In\
+        \ addition to specimen data, the bryophyte portal provides services for managing\
+        \ and distributing biological resources associated with bryophyte inventories,\
+        \ taxon descriptions, field observations, specimen and field images, interactive\
+        \ identification keys, and taxonomic information.\",\"createdBy\":\"symb-bryophyte\"\
+        ,\"modifiedBy\":\"mgrosjean\",\"created\":\"2019-02-13T16:24:01.786+0000\"\
+        ,\"modified\":\"2019-06-27T14:45:13.133+0000\",\"disabled\":false,\"contacts\"\
+        :[],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"\
+        comments\":[{\"key\":27632,\"content\":\"2019/06/27 [MG] Updated hosting organization\
+        \ following request from the technical contact.\",\"createdBy\":\"mgrosjean\"\
+        ,\"modifiedBy\":\"mgrosjean\",\"created\":\"2019-06-27T14:44:58.996+0000\"\
+        ,\"modified\":\"2019-06-27T14:44:58.996+0000\"},{\"key\":24262,\"content\"\
+        :\"2019/02/13 [MG] Description added after request from the publisher.\",\"\
+        createdBy\":\"mgrosjean\",\"modifiedBy\":\"mgrosjean\",\"created\":\"2019-02-13T17:05:47.568+0000\"\
+        ,\"modified\":\"2019-02-13T17:05:47.568+0000\"}]},{\"key\":\"f240b133-cb4f-43bb-a511-2c6435bb049f\"\
+        ,\"organizationKey\":\"6772852d-ca2e-496f-9bea-dcf86134cb19\",\"type\":\"\
+        IPT_INSTALLATION\",\"title\":\"Ocean Tracking Network IPT\",\"description\"\
+        :\"This IPT is an endpoint for marine animal tracking data held by the Ocean\
+        \ Tracking Network that has become publicly available after their embargo\
+        \ has expired.\",\"createdBy\":\"6772852d-ca2e-496f-9bea-dcf86134cb19\",\"\
+        modifiedBy\":\"6772852d-ca2e-496f-9bea-dcf86134cb19\",\"created\":\"2019-02-11T16:47:59.974+0000\"\
+        ,\"modified\":\"2019-02-11T16:47:59.974+0000\",\"disabled\":false,\"contacts\"\
+        :[{\"key\":1482380,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
+        userId\":[],\"firstName\":\"Jonathan Pye\",\"position\":[],\"email\":[\"jonpye@gmail.com\"\
+        ],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"6772852d-ca2e-496f-9bea-dcf86134cb19\"\
+        ,\"modifiedBy\":\"6772852d-ca2e-496f-9bea-dcf86134cb19\",\"created\":\"2019-02-11T16:48:00.045+0000\"\
+        ,\"modified\":\"2019-02-11T16:48:00.045+0000\"}],\"endpoints\":[{\"key\":364216,\"\
+        type\":\"FEED\",\"url\":\"https://oceantrack.org/ipt/rss.do\",\"createdBy\"\
+        :\"6772852d-ca2e-496f-9bea-dcf86134cb19\",\"modifiedBy\":\"6772852d-ca2e-496f-9bea-dcf86134cb19\"\
+        ,\"created\":\"2019-02-11T16:48:00.592+0000\",\"modified\":\"2019-02-11T16:48:00.592+0000\"\
+        ,\"machineTags\":[]}],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"\
+        comments\":[]},{\"key\":\"fefabf4e-5536-4827-b298-037cc1bcf5af\",\"organizationKey\"\
+        :\"485ff490-e3b7-11db-9acc-b8a03c50a862\",\"type\":\"IPT_INSTALLATION\",\"\
+        title\":\"Harvard University Herbaria IPT\",\"description\":\"Data from the\
+        \ Harvard University Herbaria. The Harvard University Herbaria, with over\
+        \ 5 million specimens, is the world\u2019s largest University Herbaria.\\\
+        r\\n\\r\\nIncluded in the Herbaria are what were once six separate herbarium\
+        \ collections: * Herbarium of the Arnold Arboretum (A) * Economic Herbarium\
+        \ of Oakes Ames (ECON) * Oakes Ames Orchid Herbarium (AMES) * Farlow Herbarium\
+        \ (FH) * Gray Herbarium (GH) * New England Botanical Club Herbarium (NEBC).\\\
+        r\\n\\r\\nDarwinCore data follows the AppleCore guidance https://code.google.com/p/applecore/.\"\
+        ,\"createdBy\":\"485ff490-e3b7-11db-9acc-b8a03c50a862\",\"modifiedBy\":\"\
+        fefabf4e-5536-4827-b298-037cc1bcf5af\",\"created\":\"2019-02-09T00:35:14.333+0000\"\
+        ,\"modified\":\"2019-03-07T14:09:48.115+0000\",\"disabled\":false,\"contacts\"\
+        :[{\"key\":1481551,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
+        userId\":[],\"firstName\":\"Jonathan Kennedy\",\"position\":[],\"email\":[\"\
+        jonathan_kennedy@harvard.edu\"],\"phone\":[],\"homepage\":[],\"address\":[],\"\
+        createdBy\":\"485ff490-e3b7-11db-9acc-b8a03c50a862\",\"modifiedBy\":\"fefabf4e-5536-4827-b298-037cc1bcf5af\"\
+        ,\"created\":\"2019-02-09T00:35:14.499+0000\",\"modified\":\"2019-03-07T14:09:48.177+0000\"\
+        }],\"endpoints\":[{\"key\":370328,\"type\":\"FEED\",\"url\":\"https://ipt.huh.harvard.edu/ipt/rss.do\"\
+        ,\"createdBy\":\"fefabf4e-5536-4827-b298-037cc1bcf5af\",\"modifiedBy\":\"\
+        fefabf4e-5536-4827-b298-037cc1bcf5af\",\"created\":\"2019-03-07T14:09:48.290+0000\"\
+        ,\"modified\":\"2019-03-07T14:09:48.290+0000\",\"machineTags\":[]}],\"machineTags\"\
+        :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"f2773b13-648a-4990-831a-fbd07bd0c23c\"\
+        ,\"organizationKey\":\"471d391b-3e15-4a1d-ba9d-5ea72e6f0a17\",\"type\":\"\
+        IPT_INSTALLATION\",\"title\":\"Deep-sea Sponge Ground Ecosystems\",\"description\"\
+        :\"The SponGIS site and database has been designed to hold data pertaining\
+        \ or related to deep-sea sponges from around the world.\",\"createdBy\":\"\
+        471d391b-3e15-4a1d-ba9d-5ea72e6f0a17\",\"modifiedBy\":\"f2773b13-648a-4990-831a-fbd07bd0c23c\"\
+        ,\"created\":\"2019-02-05T22:00:12.254+0000\",\"modified\":\"2019-03-26T19:28:29.048+0000\"\
+        ,\"disabled\":false,\"contacts\":[{\"key\":1478190,\"type\":\"TECHNICAL_POINT_OF_CONTACT\"\
+        ,\"primary\":true,\"userId\":[],\"firstName\":\"Andrew Davies\",\"position\"\
+        :[],\"email\":[\"davies@uri.edu\"],\"phone\":[],\"homepage\":[],\"address\"\
+        :[],\"createdBy\":\"471d391b-3e15-4a1d-ba9d-5ea72e6f0a17\",\"modifiedBy\"\
+        :\"f2773b13-648a-4990-831a-fbd07bd0c23c\",\"created\":\"2019-02-05T22:00:12.342+0000\"\
+        ,\"modified\":\"2019-03-26T19:28:29.099+0000\"}],\"endpoints\":[{\"key\":375459,\"\
+        type\":\"FEED\",\"url\":\"http://ipt.spongis.org/rss.do\",\"createdBy\":\"\
+        f2773b13-648a-4990-831a-fbd07bd0c23c\",\"modifiedBy\":\"f2773b13-648a-4990-831a-fbd07bd0c23c\"\
+        ,\"created\":\"2019-03-26T19:28:29.233+0000\",\"modified\":\"2019-03-26T19:28:29.233+0000\"\
+        ,\"machineTags\":[]}],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"\
+        comments\":[]},{\"key\":\"dd8ffb07-5f02-4e70-b4cd-dbba0dfae83e\",\"organizationKey\"\
+        :\"b648db34-3bf9-45eb-a65b-8176a3c3be88\",\"type\":\"SYMBIOTA_INSTALLATION\"\
+        ,\"title\":\"MyCoPortal\",\"createdBy\":\"symbiotamycoportal\",\"modifiedBy\"\
+        :\"symbiotamycoportal\",\"created\":\"2019-02-01T16:23:17.271+0000\",\"modified\"\
+        :\"2019-02-01T16:23:17.271+0000\",\"disabled\":false,\"contacts\":[],\"endpoints\"\
+        :[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"\
+        key\":\"992d49ea-1a93-4cc4-8247-06b55680d7a3\",\"organizationKey\":\"e7cc89db-d984-4b46-bf67-fb2ffdcf1e22\"\
+        ,\"type\":\"IPT_INSTALLATION\",\"title\":\"EPA Guyana IPT\",\"description\"\
+        :\"EPA Guyana IPT\",\"createdBy\":\"e7cc89db-d984-4b46-bf67-fb2ffdcf1e22\"\
+        ,\"modifiedBy\":\"992d49ea-1a93-4cc4-8247-06b55680d7a3\",\"created\":\"2019-01-24T17:11:54.025+0000\"\
+        ,\"modified\":\"2019-02-17T20:12:49.725+0000\",\"disabled\":false,\"contacts\"\
+        :[{\"key\":1470849,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
+        userId\":[],\"firstName\":\"Ray Sam\",\"position\":[],\"email\":[\"raywebspace@gmail.com\"\
+        ],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"e7cc89db-d984-4b46-bf67-fb2ffdcf1e22\"\
+        ,\"modifiedBy\":\"992d49ea-1a93-4cc4-8247-06b55680d7a3\",\"created\":\"2019-01-24T17:11:54.107+0000\"\
+        ,\"modified\":\"2019-02-17T20:12:49.785+0000\"}],\"endpoints\":[{\"key\":365457,\"\
         type\":\"FEED\",\"url\":\"http://132.148.241.236:8080/ipt/rss.do\",\"createdBy\"\
         :\"992d49ea-1a93-4cc4-8247-06b55680d7a3\",\"modifiedBy\":\"992d49ea-1a93-4cc4-8247-06b55680d7a3\"\
-        ,\"created\":\"2019-01-24T17:17:40.059+0000\",\"modified\":\"2019-01-24T17:17:40.059+0000\"\
+        ,\"created\":\"2019-02-17T20:12:49.873+0000\",\"modified\":\"2019-02-17T20:12:49.873+0000\"\
         ,\"machineTags\":[]}],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"\
         comments\":[]},{\"key\":\"70914e1e-2dea-46b5-b91d-8128dbacdaeb\",\"organizationKey\"\
         :\"c4e13320-0708-41c8-8aef-2a0f99d95e40\",\"type\":\"IPT_INSTALLATION\",\"\
@@ -45,23 +718,6 @@ interactions:
         :\"70914e1e-2dea-46b5-b91d-8128dbacdaeb\",\"modifiedBy\":\"70914e1e-2dea-46b5-b91d-8128dbacdaeb\"\
         ,\"created\":\"2018-12-31T05:03:34.372+0000\",\"modified\":\"2018-12-31T05:03:34.372+0000\"\
         ,\"machineTags\":[]}],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"\
-        comments\":[]},{\"key\":\"72fbc33c-5d2d-460a-8caf-cbcc8aade513\",\"organizationKey\"\
-        :\"a30d7f59-d3d4-4e89-97dc-de9cf837f591\",\"type\":\"IPT_INSTALLATION\",\"\
-        title\":\"ASEAN Centre for Biodiversity IPT\",\"description\":\"Biodiversity\
-        \ Information Management Unit of ASEAN Centre for Biodiversity Domingo M.\
-        \ Lantican Avenue College, Laguna 4031\",\"createdBy\":\"a30d7f59-d3d4-4e89-97dc-de9cf837f591\"\
-        ,\"modifiedBy\":\"a30d7f59-d3d4-4e89-97dc-de9cf837f591\",\"created\":\"2018-12-29T15:02:05.166+0000\"\
-        ,\"modified\":\"2018-12-29T15:02:05.166+0000\",\"disabled\":false,\"contacts\"\
-        :[{\"key\":1307872,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
-        userId\":[],\"firstName\":\"Christian Elloran\",\"position\":[],\"email\"\
-        :[\"cbelloran@aseanbiodiversity.org\"],\"phone\":[],\"homepage\":[],\"address\"\
-        :[],\"createdBy\":\"a30d7f59-d3d4-4e89-97dc-de9cf837f591\",\"modifiedBy\"\
-        :\"a30d7f59-d3d4-4e89-97dc-de9cf837f591\",\"created\":\"2018-12-29T15:02:05.246+0000\"\
-        ,\"modified\":\"2018-12-29T15:02:05.246+0000\"}],\"endpoints\":[{\"key\":354455,\"\
-        type\":\"FEED\",\"url\":\"http://160.20.43.236:8080/ipt/rss.do\",\"createdBy\"\
-        :\"a30d7f59-d3d4-4e89-97dc-de9cf837f591\",\"modifiedBy\":\"a30d7f59-d3d4-4e89-97dc-de9cf837f591\"\
-        ,\"created\":\"2018-12-29T15:02:05.380+0000\",\"modified\":\"2018-12-29T15:02:05.380+0000\"\
-        ,\"machineTags\":[]}],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"\
         comments\":[]},{\"key\":\"25c96fbf-9abc-49c6-9225-28c73011d157\",\"organizationKey\"\
         :\"c04707c7-f9fe-41e5-a9b7-5f46af21e0b5\",\"type\":\"IPT_INSTALLATION\",\"\
         title\":\"Species database\",\"description\":\"Species database\",\"createdBy\"\
@@ -81,17 +737,17 @@ interactions:
         :\"07acecfd-5994-47a7-bd1b-ccdbf534973b\",\"type\":\"IPT_INSTALLATION\",\"\
         title\":\"Indonesian Institute of Sciences (LIPI)\",\"description\":\"Indonesian\
         \ Biodiversity Information Facility\",\"createdBy\":\"07acecfd-5994-47a7-bd1b-ccdbf534973b\"\
-        ,\"modifiedBy\":\"07acecfd-5994-47a7-bd1b-ccdbf534973b\",\"created\":\"2018-11-19T10:06:38.835+0000\"\
-        ,\"modified\":\"2018-11-19T10:06:38.835+0000\",\"disabled\":false,\"contacts\"\
+        ,\"modifiedBy\":\"cc2eed88-69e8-432c-b6cd-134997f80487\",\"created\":\"2018-11-19T10:06:38.835+0000\"\
+        ,\"modified\":\"2019-03-22T04:04:22.682+0000\",\"disabled\":false,\"contacts\"\
         :[{\"key\":1105510,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
         userId\":[],\"firstName\":\"Dr. Anang Setiawan Achmadi\",\"position\":[],\"\
         email\":[\"gudelly@gmail.com\"],\"phone\":[],\"homepage\":[],\"address\":[],\"\
-        createdBy\":\"07acecfd-5994-47a7-bd1b-ccdbf534973b\",\"modifiedBy\":\"07acecfd-5994-47a7-bd1b-ccdbf534973b\"\
-        ,\"created\":\"2018-11-19T10:06:38.927+0000\",\"modified\":\"2018-11-19T10:06:38.927+0000\"\
-        }],\"endpoints\":[{\"key\":344064,\"type\":\"FEED\",\"url\":\"http://ipt.biologi.lipi.go.id/rss.do\"\
-        ,\"createdBy\":\"07acecfd-5994-47a7-bd1b-ccdbf534973b\",\"modifiedBy\":\"\
-        07acecfd-5994-47a7-bd1b-ccdbf534973b\",\"created\":\"2018-11-19T10:06:39.006+0000\"\
-        ,\"modified\":\"2018-11-19T10:06:39.006+0000\",\"machineTags\":[]}],\"machineTags\"\
+        createdBy\":\"07acecfd-5994-47a7-bd1b-ccdbf534973b\",\"modifiedBy\":\"cc2eed88-69e8-432c-b6cd-134997f80487\"\
+        ,\"created\":\"2018-11-19T10:06:38.927+0000\",\"modified\":\"2019-03-22T04:04:22.725+0000\"\
+        }],\"endpoints\":[{\"key\":374634,\"type\":\"FEED\",\"url\":\"http://ipt.biologi.lipi.go.id/rss.do\"\
+        ,\"createdBy\":\"cc2eed88-69e8-432c-b6cd-134997f80487\",\"modifiedBy\":\"\
+        cc2eed88-69e8-432c-b6cd-134997f80487\",\"created\":\"2019-03-22T04:04:22.811+0000\"\
+        ,\"modified\":\"2019-03-22T04:04:22.811+0000\",\"machineTags\":[]}],\"machineTags\"\
         :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"fc3a51f5-338e-45eb-9192-44a36a7f3373\"\
         ,\"organizationKey\":\"08b96540-e8cb-4c7f-879d-360ad58be6cd\",\"type\":\"\
         IPT_INSTALLATION\",\"title\":\"ESPOBIS\",\"description\":\"The Humboldt Current\
@@ -111,17 +767,17 @@ interactions:
         \ The RON ESPOBIS is currently run and hosted at Universidad de Concepci\xF3\
         n, Chile, as sponsored and managed by the Millennium Institute of Oceanography\
         \ (IMO).\",\"createdBy\":\"08b96540-e8cb-4c7f-879d-360ad58be6cd\",\"modifiedBy\"\
-        :\"08b96540-e8cb-4c7f-879d-360ad58be6cd\",\"created\":\"2018-11-16T08:09:23.094+0000\"\
-        ,\"modified\":\"2018-11-16T08:09:23.094+0000\",\"disabled\":false,\"contacts\"\
+        :\"fc3a51f5-338e-45eb-9192-44a36a7f3373\",\"created\":\"2018-11-16T08:09:23.094+0000\"\
+        ,\"modified\":\"2019-07-30T19:34:48.817+0000\",\"disabled\":false,\"contacts\"\
         :[{\"key\":1101426,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
         userId\":[],\"firstName\":\"Pamela Hidalgo D\xEDaz\",\"position\":[],\"email\"\
         :[\"pahidalg@udec.cl\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\"\
-        :\"08b96540-e8cb-4c7f-879d-360ad58be6cd\",\"modifiedBy\":\"08b96540-e8cb-4c7f-879d-360ad58be6cd\"\
-        ,\"created\":\"2018-11-16T08:09:23.288+0000\",\"modified\":\"2018-11-16T08:09:23.288+0000\"\
-        }],\"endpoints\":[{\"key\":343768,\"type\":\"FEED\",\"url\":\"http://ipt.iobis.org/esp-obis/rss.do\"\
-        ,\"createdBy\":\"08b96540-e8cb-4c7f-879d-360ad58be6cd\",\"modifiedBy\":\"\
-        08b96540-e8cb-4c7f-879d-360ad58be6cd\",\"created\":\"2018-11-16T08:09:23.372+0000\"\
-        ,\"modified\":\"2018-11-16T08:09:23.372+0000\",\"machineTags\":[]}],\"machineTags\"\
+        :\"08b96540-e8cb-4c7f-879d-360ad58be6cd\",\"modifiedBy\":\"fc3a51f5-338e-45eb-9192-44a36a7f3373\"\
+        ,\"created\":\"2018-11-16T08:09:23.288+0000\",\"modified\":\"2019-07-30T19:34:48.872+0000\"\
+        }],\"endpoints\":[{\"key\":421603,\"type\":\"FEED\",\"url\":\"http://ipt.iobis.org/esp-obis/rss.do\"\
+        ,\"createdBy\":\"fc3a51f5-338e-45eb-9192-44a36a7f3373\",\"modifiedBy\":\"\
+        fc3a51f5-338e-45eb-9192-44a36a7f3373\",\"created\":\"2019-07-30T19:34:49.006+0000\"\
+        ,\"modified\":\"2019-07-30T19:34:49.006+0000\",\"machineTags\":[]}],\"machineTags\"\
         :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"c5d2bdee-b245-48a7-9789-9b90e9327c95\"\
         ,\"organizationKey\":\"843c994a-826d-48aa-8caf-c6a709371aab\",\"type\":\"\
         IPT_INSTALLATION\",\"title\":\"INOS-OBIS Malaysia\",\"description\":\"Institute\
@@ -168,16 +824,16 @@ interactions:
         ,\"description\":\"China Biodiversity Conservation and Green Development Foundation\"\
         ,\"createdBy\":\"1f001218-e6d3-4e97-a129-63475d0dac88\",\"modifiedBy\":\"\
         4ecdd523-8918-41d4-b401-66cdb7b6d1b2\",\"created\":\"2018-10-31T02:44:39.863+0000\"\
-        ,\"modified\":\"2018-11-19T02:02:52.274+0000\",\"disabled\":false,\"contacts\"\
+        ,\"modified\":\"2019-07-27T14:45:59.677+0000\",\"disabled\":false,\"contacts\"\
         :[{\"key\":1092099,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
         userId\":[],\"firstName\":\"Yongfei Zhang\",\"position\":[],\"email\":[\"\
         v23@cbcgdf.org\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\"\
         :\"1f001218-e6d3-4e97-a129-63475d0dac88\",\"modifiedBy\":\"4ecdd523-8918-41d4-b401-66cdb7b6d1b2\"\
-        ,\"created\":\"2018-10-31T02:44:39.912+0000\",\"modified\":\"2018-11-19T02:02:52.363+0000\"\
-        }],\"endpoints\":[{\"key\":344035,\"type\":\"FEED\",\"url\":\"http://gbif.cbcgdf.org:8080/ipt/rss.do\"\
+        ,\"created\":\"2018-10-31T02:44:39.912+0000\",\"modified\":\"2019-07-27T14:45:59.733+0000\"\
+        }],\"endpoints\":[{\"key\":421087,\"type\":\"FEED\",\"url\":\"http://gbif.cbcgdf.org:8080/ipt/rss.do\"\
         ,\"createdBy\":\"4ecdd523-8918-41d4-b401-66cdb7b6d1b2\",\"modifiedBy\":\"\
-        4ecdd523-8918-41d4-b401-66cdb7b6d1b2\",\"created\":\"2018-11-19T02:02:52.574+0000\"\
-        ,\"modified\":\"2018-11-19T02:02:52.574+0000\",\"machineTags\":[]}],\"machineTags\"\
+        4ecdd523-8918-41d4-b401-66cdb7b6d1b2\",\"created\":\"2019-07-27T14:45:59.853+0000\"\
+        ,\"modified\":\"2019-07-27T14:45:59.853+0000\",\"machineTags\":[]}],\"machineTags\"\
         :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"2ce06a47-b820-42f2-b4e7-a270282cf419\"\
         ,\"organizationKey\":\"1f001218-e6d3-4e97-a129-63475d0dac88\",\"type\":\"\
         IPT_INSTALLATION\",\"title\":\"China Biodiversity Conservation and Green Development\
@@ -200,16 +856,16 @@ interactions:
         :\"An effort of the Dutch Butterfly Conservation and Butterfly Conservation\
         \ Europe to validate and upload several existing datasets to GBIF.\",\"createdBy\"\
         :\"21c07296-77a8-4adf-aba1-e1035429be3a\",\"modifiedBy\":\"8e10b660-a44b-4071-87dc-09fbd513d4a2\"\
-        ,\"created\":\"2018-10-30T15:26:05.487+0000\",\"modified\":\"2018-10-30T15:30:06.406+0000\"\
+        ,\"created\":\"2018-10-30T15:26:05.487+0000\",\"modified\":\"2019-05-22T12:48:32.405+0000\"\
         ,\"disabled\":false,\"contacts\":[{\"key\":1091981,\"type\":\"TECHNICAL_POINT_OF_CONTACT\"\
         ,\"primary\":true,\"userId\":[],\"firstName\":\"Bas Oteman\",\"position\"\
         :[],\"email\":[\"bas.oteman@vlinderstichting.nl\"],\"phone\":[],\"homepage\"\
         :[],\"address\":[],\"createdBy\":\"21c07296-77a8-4adf-aba1-e1035429be3a\"\
         ,\"modifiedBy\":\"8e10b660-a44b-4071-87dc-09fbd513d4a2\",\"created\":\"2018-10-30T15:26:05.534+0000\"\
-        ,\"modified\":\"2018-10-30T15:30:06.472+0000\"}],\"endpoints\":[{\"key\":340666,\"\
+        ,\"modified\":\"2019-05-22T12:48:32.482+0000\"}],\"endpoints\":[{\"key\":404475,\"\
         type\":\"FEED\",\"url\":\"http://37.97.169.86:8080/ipt/rss.do\",\"createdBy\"\
         :\"8e10b660-a44b-4071-87dc-09fbd513d4a2\",\"modifiedBy\":\"8e10b660-a44b-4071-87dc-09fbd513d4a2\"\
-        ,\"created\":\"2018-10-30T15:30:06.607+0000\",\"modified\":\"2018-10-30T15:30:06.607+0000\"\
+        ,\"created\":\"2019-05-22T12:48:32.653+0000\",\"modified\":\"2019-05-22T12:48:32.653+0000\"\
         ,\"machineTags\":[]}],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"\
         comments\":[]},{\"key\":\"6771cc11-a56e-48e8-85fa-6a8c17348c0d\",\"organizationKey\"\
         :\"9cf743f8-3a4d-42df-9d1a-fd9cbcc3508f\",\"type\":\"SYMBIOTA_INSTALLATION\"\
@@ -281,16 +937,16 @@ interactions:
         title\":\"IPT of the Vermont Atlas of Life (VAL)\",\"description\":\"This\
         \ IPT will serve VCE's VAL project.\",\"createdBy\":\"b6d09100-919d-4026-b35b-22be3dae7156\"\
         ,\"modifiedBy\":\"5ae8b93d-03d9-48f1-8334-f1f251d13f1f\",\"created\":\"2018-09-06T15:00:36.316+0000\"\
-        ,\"modified\":\"2018-09-12T15:28:15.466+0000\",\"disabled\":false,\"contacts\"\
+        ,\"modified\":\"2019-09-26T15:14:22.774+0000\",\"disabled\":false,\"contacts\"\
         :[{\"key\":1026075,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
         userId\":[],\"firstName\":\"Kent McFarland\",\"position\":[],\"email\":[\"\
         kmcfarland@vtecostudies.org\"],\"phone\":[],\"homepage\":[],\"address\":[],\"\
         createdBy\":\"b6d09100-919d-4026-b35b-22be3dae7156\",\"modifiedBy\":\"5ae8b93d-03d9-48f1-8334-f1f251d13f1f\"\
-        ,\"created\":\"2018-09-06T15:00:36.418+0000\",\"modified\":\"2018-09-12T15:28:15.561+0000\"\
-        }],\"endpoints\":[{\"key\":330406,\"type\":\"FEED\",\"url\":\"http://ipt.vtecostudies.org/ipt-2.3.5/rss.do\"\
+        ,\"created\":\"2018-09-06T15:00:36.418+0000\",\"modified\":\"2019-09-26T15:14:22.819+0000\"\
+        }],\"endpoints\":[{\"key\":436252,\"type\":\"FEED\",\"url\":\"http://ipt.vtecostudies.org/ipt-2.3.5/rss.do\"\
         ,\"createdBy\":\"5ae8b93d-03d9-48f1-8334-f1f251d13f1f\",\"modifiedBy\":\"\
-        5ae8b93d-03d9-48f1-8334-f1f251d13f1f\",\"created\":\"2018-09-12T15:28:15.712+0000\"\
-        ,\"modified\":\"2018-09-12T15:28:15.712+0000\",\"machineTags\":[]}],\"machineTags\"\
+        5ae8b93d-03d9-48f1-8334-f1f251d13f1f\",\"created\":\"2019-09-26T15:14:22.925+0000\"\
+        ,\"modified\":\"2019-09-26T15:14:22.925+0000\",\"machineTags\":[]}],\"machineTags\"\
         :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"a0027688-f857-47d1-ab63-9bb881dba404\"\
         ,\"organizationKey\":\"b6d09100-919d-4026-b35b-22be3dae7156\",\"type\":\"\
         IPT_INSTALLATION\",\"title\":\"Vermont Atlas of Life\",\"description\":\"\
@@ -640,17 +1296,17 @@ interactions:
         IPT_INSTALLATION\",\"title\":\"NATIONAL COMMISSION FOR SCIENCE AND TECHNOLOGY-IPT\"\
         ,\"description\":\"National Commission for Science and Technology (NCST),\
         \ Integrated Publishing Toolkit (IPT)\",\"createdBy\":\"b43aa701-bc51-40a4-9f6c-b37e41d0e660\"\
-        ,\"modifiedBy\":\"b43aa701-bc51-40a4-9f6c-b37e41d0e660\",\"created\":\"2018-05-16T13:42:31.232+0000\"\
-        ,\"modified\":\"2018-05-16T13:42:31.232+0000\",\"disabled\":false,\"contacts\"\
+        ,\"modifiedBy\":\"07303f46-d2eb-452c-8a8b-84ed2077ae86\",\"created\":\"2018-05-16T13:42:31.232+0000\"\
+        ,\"modified\":\"2019-04-15T13:10:30.984+0000\",\"disabled\":false,\"contacts\"\
         :[{\"key\":917832,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
         userId\":[],\"firstName\":\"Zacheous Kantchowa\",\"position\":[],\"email\"\
         :[\"zackie993@gmail.com\"],\"phone\":[],\"homepage\":[],\"address\":[],\"\
-        createdBy\":\"b43aa701-bc51-40a4-9f6c-b37e41d0e660\",\"modifiedBy\":\"b43aa701-bc51-40a4-9f6c-b37e41d0e660\"\
-        ,\"created\":\"2018-05-16T13:42:33.652+0000\",\"modified\":\"2018-05-16T13:42:33.652+0000\"\
-        }],\"endpoints\":[{\"key\":280596,\"type\":\"FEED\",\"url\":\"http://41.77.13.208:8081/ipt/rss.do\"\
-        ,\"createdBy\":\"b43aa701-bc51-40a4-9f6c-b37e41d0e660\",\"modifiedBy\":\"\
-        b43aa701-bc51-40a4-9f6c-b37e41d0e660\",\"created\":\"2018-05-16T13:42:36.721+0000\"\
-        ,\"modified\":\"2018-05-16T13:42:36.721+0000\",\"machineTags\":[]}],\"machineTags\"\
+        createdBy\":\"b43aa701-bc51-40a4-9f6c-b37e41d0e660\",\"modifiedBy\":\"07303f46-d2eb-452c-8a8b-84ed2077ae86\"\
+        ,\"created\":\"2018-05-16T13:42:33.652+0000\",\"modified\":\"2019-04-15T13:10:31.032+0000\"\
+        }],\"endpoints\":[{\"key\":394793,\"type\":\"FEED\",\"url\":\"http://41.77.13.208:8081/ipt/rss.do\"\
+        ,\"createdBy\":\"07303f46-d2eb-452c-8a8b-84ed2077ae86\",\"modifiedBy\":\"\
+        07303f46-d2eb-452c-8a8b-84ed2077ae86\",\"created\":\"2019-04-15T13:10:31.171+0000\"\
+        ,\"modified\":\"2019-04-15T13:10:31.171+0000\",\"machineTags\":[]}],\"machineTags\"\
         :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"f97cdfe6-6e75-4eff-902e-3098ac34531e\"\
         ,\"organizationKey\":\"b43aa701-bc51-40a4-9f6c-b37e41d0e660\",\"type\":\"\
         IPT_INSTALLATION\",\"title\":\"NATIONAL COMMISSION FOR SCIENCE AND TECHNOLOGY-IPT\"\
@@ -668,7 +1324,7 @@ interactions:
         b43aa701-bc51-40a4-9f6c-b37e41d0e660\",\"created\":\"2018-05-16T08:07:01.068+0000\"\
         ,\"modified\":\"2018-05-16T08:07:01.068+0000\",\"machineTags\":[]}],\"machineTags\"\
         :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"ac2ad091-91eb-482d-a73f-061744da5dbf\"\
-        ,\"organizationKey\":\"a86e9e36-12ec-49a4-a94c-c0c981fffb71\",\"type\":\"\
+        ,\"organizationKey\":\"96710dc8-fecb-440d-ae3e-c34ae8a9616f\",\"type\":\"\
         SYMBIOTA_INSTALLATION\",\"title\":\"SEINet Portal Network\",\"description\"\
         :\"The SEINet Portal Network supports more than a dozen regional web portals\
         \ distributed across North America (http://symbiota.org/docs/seinet/). Each\
@@ -679,15 +1335,18 @@ interactions:
         \ management services to more than 200 herbaria. Assisting collections in\
         \ publishing this data out to the global research community is considered\
         \ one of the central missions of the network.\",\"createdBy\":\"symb-seinet\"\
-        ,\"modifiedBy\":\"trobertson\",\"created\":\"2018-05-08T13:11:44.781+0000\"\
-        ,\"modified\":\"2018-05-08T13:58:23.684+0000\",\"disabled\":false,\"contacts\"\
+        ,\"modifiedBy\":\"mgrosjean\",\"created\":\"2018-05-08T13:11:44.781+0000\"\
+        ,\"modified\":\"2019-06-27T14:43:53.182+0000\",\"disabled\":false,\"contacts\"\
         :[],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"\
-        comments\":[]},{\"key\":\"8ce9ed97-5f85-4e3c-be19-a6396dae0df8\",\"organizationKey\"\
-        :\"9aef3224-9dd6-4fb5-9e06-2d6c25b42d20\",\"type\":\"BIOCASE_INSTALLATION\"\
-        ,\"title\":\"UfU Biocase installation\",\"createdBy\":\"jlegind\",\"modifiedBy\"\
-        :\"jlegind\",\"created\":\"2018-04-30T09:27:01.298+0000\",\"modified\":\"\
-        2018-04-30T09:27:01.298+0000\",\"disabled\":false,\"contacts\":[],\"endpoints\"\
-        :[{\"key\":276517,\"type\":\"BIOCASE\",\"url\":\"http://85.214.43.90/biocase/pywrapper.cgi?dsa=korina\"\
+        comments\":[{\"key\":27631,\"content\":\"2019/06/27 [MG] Updated hosting organization\
+        \ following request from the technical contact.\",\"createdBy\":\"mgrosjean\"\
+        ,\"modifiedBy\":\"mgrosjean\",\"created\":\"2019-06-27T14:43:37.227+0000\"\
+        ,\"modified\":\"2019-06-27T14:43:37.227+0000\"}]},{\"key\":\"8ce9ed97-5f85-4e3c-be19-a6396dae0df8\"\
+        ,\"organizationKey\":\"9aef3224-9dd6-4fb5-9e06-2d6c25b42d20\",\"type\":\"\
+        BIOCASE_INSTALLATION\",\"title\":\"UfU Biocase installation\",\"createdBy\"\
+        :\"jlegind\",\"modifiedBy\":\"jlegind\",\"created\":\"2018-04-30T09:27:01.298+0000\"\
+        ,\"modified\":\"2018-04-30T09:27:01.298+0000\",\"disabled\":false,\"contacts\"\
+        :[],\"endpoints\":[{\"key\":276517,\"type\":\"BIOCASE\",\"url\":\"http://85.214.43.90/biocase/pywrapper.cgi?dsa=korina\"\
         ,\"createdBy\":\"jlegind\",\"modifiedBy\":\"jlegind\",\"created\":\"2018-04-30T09:50:43.450+0000\"\
         ,\"modified\":\"2018-04-30T09:50:43.450+0000\",\"machineTags\":[]}],\"machineTags\"\
         :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"13d59d13-60ec-4c14-859d-26a896636340\"\
@@ -773,15 +1432,15 @@ interactions:
         title\":\"TanBIF\",\"description\":\"Tanzania Biodiversity  Information  Facility\"\
         ,\"createdBy\":\"76905ca0-1e21-11de-9ca0-cd203b273f5d\",\"modifiedBy\":\"\
         c42b396d-62fe-42e3-a363-c533d7d3a145\",\"created\":\"2018-02-20T08:54:22.477+0000\"\
-        ,\"modified\":\"2018-11-19T12:35:04.459+0000\",\"disabled\":false,\"contacts\"\
+        ,\"modified\":\"2019-10-15T07:09:13.308+0000\",\"disabled\":false,\"contacts\"\
         :[{\"key\":856671,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
         userId\":[],\"firstName\":\"Hulda Gideon\",\"position\":[],\"email\":[\"hgideon@costech.or.tz\"\
         ],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"76905ca0-1e21-11de-9ca0-cd203b273f5d\"\
         ,\"modifiedBy\":\"c42b396d-62fe-42e3-a363-c533d7d3a145\",\"created\":\"2018-02-20T08:54:22.557+0000\"\
-        ,\"modified\":\"2018-11-19T12:35:04.506+0000\"}],\"endpoints\":[{\"key\":344065,\"\
+        ,\"modified\":\"2019-10-15T07:09:13.365+0000\"}],\"endpoints\":[{\"key\":439080,\"\
         type\":\"FEED\",\"url\":\"http://41.93.33.31:8080/ipt/rss.do\",\"createdBy\"\
         :\"c42b396d-62fe-42e3-a363-c533d7d3a145\",\"modifiedBy\":\"c42b396d-62fe-42e3-a363-c533d7d3a145\"\
-        ,\"created\":\"2018-11-19T12:35:04.608+0000\",\"modified\":\"2018-11-19T12:35:04.608+0000\"\
+        ,\"created\":\"2019-10-15T07:09:13.468+0000\",\"modified\":\"2019-10-15T07:09:13.468+0000\"\
         ,\"machineTags\":[]}],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"\
         comments\":[]},{\"key\":\"6985c822-bca9-4819-a653-52ebb2f99678\",\"organizationKey\"\
         :\"02b89818-33ab-4bf7-984d-f88a8e0b0b0f\",\"type\":\"IPT_INSTALLATION\",\"\
@@ -870,17 +1529,17 @@ interactions:
         ,\"organizationKey\":\"a41250f0-7c3e-11d8-a19c-b8a03c50a862\",\"type\":\"\
         IPT_INSTALLATION\",\"title\":\"Canadian Museum of Nature\",\"description\"\
         :\"Canadian Museum of Nature / Mus\xE9e canadien de la nature\",\"createdBy\"\
-        :\"a41250f0-7c3e-11d8-a19c-b8a03c50a862\",\"modifiedBy\":\"a41250f0-7c3e-11d8-a19c-b8a03c50a862\"\
-        ,\"created\":\"2017-12-23T03:03:23.325+0000\",\"modified\":\"2017-12-23T03:03:23.325+0000\"\
+        :\"a41250f0-7c3e-11d8-a19c-b8a03c50a862\",\"modifiedBy\":\"1bd85d67-1c87-4591-988a-44ff22008d3e\"\
+        ,\"created\":\"2017-12-23T03:03:23.325+0000\",\"modified\":\"2019-07-11T17:05:50.563+0000\"\
         ,\"disabled\":false,\"contacts\":[{\"key\":826639,\"type\":\"TECHNICAL_POINT_OF_CONTACT\"\
-        ,\"primary\":true,\"userId\":[],\"firstName\":\"David Shorthouse\",\"position\"\
-        :[],\"email\":[\"dshorthouse@nature.ca\"],\"phone\":[],\"homepage\":[],\"\
-        address\":[],\"createdBy\":\"a41250f0-7c3e-11d8-a19c-b8a03c50a862\",\"modifiedBy\"\
-        :\"a41250f0-7c3e-11d8-a19c-b8a03c50a862\",\"created\":\"2017-12-23T03:03:23.381+0000\"\
-        ,\"modified\":\"2017-12-23T03:03:23.381+0000\"}],\"endpoints\":[{\"key\":243281,\"\
-        type\":\"FEED\",\"url\":\"http://ipt.nature.ca/rss.do\",\"createdBy\":\"a41250f0-7c3e-11d8-a19c-b8a03c50a862\"\
-        ,\"modifiedBy\":\"a41250f0-7c3e-11d8-a19c-b8a03c50a862\",\"created\":\"2017-12-23T03:03:23.464+0000\"\
-        ,\"modified\":\"2017-12-23T03:03:23.464+0000\",\"machineTags\":[]}],\"machineTags\"\
+        ,\"primary\":true,\"userId\":[],\"firstName\":\"Sean Tudor\",\"position\"\
+        :[],\"email\":[\"Studor@nature.ca\"],\"phone\":[],\"homepage\":[],\"address\"\
+        :[],\"createdBy\":\"a41250f0-7c3e-11d8-a19c-b8a03c50a862\",\"modifiedBy\"\
+        :\"1bd85d67-1c87-4591-988a-44ff22008d3e\",\"created\":\"2017-12-23T03:03:23.381+0000\"\
+        ,\"modified\":\"2019-07-11T17:05:50.617+0000\"}],\"endpoints\":[{\"key\":417217,\"\
+        type\":\"FEED\",\"url\":\"http://ipt.nature.ca/rss.do\",\"createdBy\":\"1bd85d67-1c87-4591-988a-44ff22008d3e\"\
+        ,\"modifiedBy\":\"1bd85d67-1c87-4591-988a-44ff22008d3e\",\"created\":\"2019-07-11T17:05:50.731+0000\"\
+        ,\"modified\":\"2019-07-11T17:05:50.731+0000\",\"machineTags\":[]}],\"machineTags\"\
         :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"4eb38b8e-e2ac-4ba8-a2c8-b75752b898ac\"\
         ,\"organizationKey\":\"19a3a4e0-1908-11dc-a07b-b8a03c50a862\",\"type\":\"\
         BIOCASE_INSTALLATION\",\"title\":\"IPK BioCASE\",\"createdBy\":\"jlegind\"\
@@ -923,719 +1582,6 @@ interactions:
         :\"1cd551ae-a109-4b2d-bbbd-9c9184660966\",\"modifiedBy\":\"1cd551ae-a109-4b2d-bbbd-9c9184660966\"\
         ,\"created\":\"2017-12-08T16:40:03.754+0000\",\"modified\":\"2017-12-08T16:40:03.754+0000\"\
         ,\"machineTags\":[]}],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"\
-        comments\":[]},{\"key\":\"dcd20ee4-000a-4869-8d7c-04a836809a21\",\"organizationKey\"\
-        :\"2745f779-21ac-408a-8502-3081d3713d9f\",\"type\":\"BIOCASE_INSTALLATION\"\
-        ,\"title\":\"BioCASE installation, Sapienza University of Rome\",\"createdBy\"\
-        :\"jlegind\",\"modifiedBy\":\"jlegind\",\"created\":\"2017-11-22T15:00:52.318+0000\"\
-        ,\"modified\":\"2017-11-22T15:00:52.318+0000\",\"disabled\":false,\"contacts\"\
-        :[],\"endpoints\":[{\"key\":235670,\"type\":\"BIOCASE\",\"url\":\"http://151.100.127.55/biocase/pywrapper.cgi?dsa=VEGITALY\"\
-        ,\"createdBy\":\"jlegind\",\"modifiedBy\":\"jlegind\",\"created\":\"2017-11-22T15:16:48.429+0000\"\
-        ,\"modified\":\"2017-11-22T15:16:48.429+0000\",\"machineTags\":[]},{\"key\"\
-        :235669,\"type\":\"BIOCASE\",\"url\":\"http://151.100.127.55/biocase/pywrapper.cgi?dsa=INV_FORESTALE\"\
-        ,\"createdBy\":\"jlegind\",\"modifiedBy\":\"jlegind\",\"created\":\"2017-11-22T15:16:29.948+0000\"\
-        ,\"modified\":\"2017-11-22T15:16:29.948+0000\",\"machineTags\":[]},{\"key\"\
-        :235668,\"type\":\"BIOCASE\",\"url\":\"http://151.100.127.55/biocase/pywrapper.cgi?dsa=Georeferenced_Vegetation_Database_Sapienza\"\
-        ,\"createdBy\":\"jlegind\",\"modifiedBy\":\"jlegind\",\"created\":\"2017-11-22T15:16:16.668+0000\"\
-        ,\"modified\":\"2017-11-22T15:16:16.668+0000\",\"machineTags\":[]},{\"key\"\
-        :235665,\"type\":\"BIOCASE\",\"url\":\"http://151.100.127.55/biocase/pywrapper.cgi?dsa=Erbario_RM\"\
-        ,\"createdBy\":\"jlegind\",\"modifiedBy\":\"jlegind\",\"created\":\"2017-11-22T15:03:09.550+0000\"\
-        ,\"modified\":\"2017-11-22T15:03:09.550+0000\",\"machineTags\":[]},{\"key\"\
-        :235664,\"type\":\"BIOCASE\",\"url\":\"http://151.100.127.55/biocase/pywrapper.cgi?dsa=Cites_Orti_Botanici\"\
-        ,\"createdBy\":\"jlegind\",\"modifiedBy\":\"jlegind\",\"created\":\"2017-11-22T15:02:47.920+0000\"\
-        ,\"modified\":\"2017-11-22T15:02:47.920+0000\",\"machineTags\":[]}],\"machineTags\"\
-        :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"f7a2030f-1240-4a15-b50c-574f1482f378\"\
-        ,\"organizationKey\":\"02fce6f4-8dcd-4eaf-afe9-28ba30822751\",\"type\":\"\
-        IPT_INSTALLATION\",\"title\":\"RECOLNAT IPT\",\"description\":\"RECOLNAT Infrastructure\
-        \ Data Publication\",\"createdBy\":\"02fce6f4-8dcd-4eaf-afe9-28ba30822751\"\
-        ,\"modifiedBy\":\"f7a2030f-1240-4a15-b50c-574f1482f378\",\"created\":\"2017-11-06T11:38:32.008+0000\"\
-        ,\"modified\":\"2018-01-19T14:48:56.896+0000\",\"disabled\":false,\"contacts\"\
-        :[{\"key\":796157,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
-        userId\":[],\"firstName\":\"RECOLNAT\",\"position\":[],\"email\":[\"contact@recolnat.org\"\
-        ],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"02fce6f4-8dcd-4eaf-afe9-28ba30822751\"\
-        ,\"modifiedBy\":\"f7a2030f-1240-4a15-b50c-574f1482f378\",\"created\":\"2017-11-06T11:38:32.082+0000\"\
-        ,\"modified\":\"2018-01-19T14:48:56.972+0000\"}],\"endpoints\":[{\"key\":249336,\"\
-        type\":\"FEED\",\"url\":\"https://ipt.recolnat.org/rss.do\",\"createdBy\"\
-        :\"f7a2030f-1240-4a15-b50c-574f1482f378\",\"modifiedBy\":\"f7a2030f-1240-4a15-b50c-574f1482f378\"\
-        ,\"created\":\"2018-01-19T14:48:57.132+0000\",\"modified\":\"2018-01-19T14:48:57.132+0000\"\
-        ,\"machineTags\":[]}],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"\
-        comments\":[]},{\"key\":\"e63134cb-f4eb-4f09-85c6-bdbb2f56e722\",\"organizationKey\"\
-        :\"f0d23bad-fee1-435d-bdb6-d26a600cad62\",\"type\":\"IPT_INSTALLATION\",\"\
-        title\":\"Deep-sea OBIS node IPT\",\"description\":\"Deep-sea OBIS node IPT\"\
-        ,\"createdBy\":\"f0d23bad-fee1-435d-bdb6-d26a600cad62\",\"modifiedBy\":\"\
-        e63134cb-f4eb-4f09-85c6-bdbb2f56e722\",\"created\":\"2017-11-02T19:44:35.411+0000\"\
-        ,\"modified\":\"2018-01-23T00:56:01.971+0000\",\"disabled\":false,\"contacts\"\
-        :[{\"key\":794699,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
-        userId\":[],\"firstName\":\"Pieter Provoost\",\"position\":[],\"email\":[\"\
-        p.provoost@unesco.org\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\"\
-        :\"f0d23bad-fee1-435d-bdb6-d26a600cad62\",\"modifiedBy\":\"e63134cb-f4eb-4f09-85c6-bdbb2f56e722\"\
-        ,\"created\":\"2017-11-02T19:44:35.491+0000\",\"modified\":\"2018-01-23T00:56:02.045+0000\"\
-        }],\"endpoints\":[{\"key\":249806,\"type\":\"FEED\",\"url\":\"http://ipt.iobis.org/obis-deepsea/rss.do\"\
-        ,\"createdBy\":\"e63134cb-f4eb-4f09-85c6-bdbb2f56e722\",\"modifiedBy\":\"\
-        e63134cb-f4eb-4f09-85c6-bdbb2f56e722\",\"created\":\"2018-01-23T00:56:02.160+0000\"\
-        ,\"modified\":\"2018-01-23T00:56:02.160+0000\",\"machineTags\":[]}],\"machineTags\"\
-        :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"a4004902-1284-445a-81ff-8f65bf676b12\"\
-        ,\"organizationKey\":\"8b734449-479a-4924-8f7a-9a2a64112f8f\",\"type\":\"\
-        HTTP_INSTALLATION\",\"title\":\"DOF Repository\",\"description\":\"The repository\
-        \ for sharing the DOFBasen and other DOF datasets to GBIF.\",\"createdBy\"\
-        :\"trobertson\",\"modifiedBy\":\"trobertson\",\"created\":\"2017-11-02T14:31:27.527+0000\"\
-        ,\"modified\":\"2017-11-02T14:31:27.527+0000\",\"disabled\":false,\"contacts\"\
-        :[],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"\
-        comments\":[]},{\"key\":\"91d2f516-bdfa-458f-bad1-66717101b49f\",\"organizationKey\"\
-        :\"f5fc4e61-b7a0-414b-ab68-b41cb23e7fdc\",\"type\":\"IPT_INSTALLATION\",\"\
-        title\":\"National Depository Bank of Live Systems Publishing Toolkit\",\"\
-        description\":\"The project of the Moscow State University \\\"Noah's Ark\\\
-        \" is dedicated to the creation of multi-functional network depository of\
-        \ biological material.\\r\\n\\r\\nIt is planned to work with all possible\
-        \ biomaterials from single biological molecules to separate living organisms.\\\
-        r\\n\\r\\nThe main purpose of depository bank creation is to preserve the\
-        \ biodiversity of our planet and create new ways of biomaterials usage.\"\
-        ,\"createdBy\":\"f5fc4e61-b7a0-414b-ab68-b41cb23e7fdc\",\"modifiedBy\":\"\
-        f5fc4e61-b7a0-414b-ab68-b41cb23e7fdc\",\"created\":\"2017-11-02T14:27:36.540+0000\"\
-        ,\"modified\":\"2017-11-02T14:27:36.540+0000\",\"disabled\":false,\"contacts\"\
-        :[{\"key\":794460,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
-        userId\":[],\"firstName\":\"Andrey Klyukvin\",\"position\":[],\"email\":[\"\
-        aklukvin@gmail.com\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\"\
-        :\"f5fc4e61-b7a0-414b-ab68-b41cb23e7fdc\",\"modifiedBy\":\"f5fc4e61-b7a0-414b-ab68-b41cb23e7fdc\"\
-        ,\"created\":\"2017-11-02T14:27:36.629+0000\",\"modified\":\"2017-11-02T14:27:36.629+0000\"\
-        }],\"endpoints\":[{\"key\":230846,\"type\":\"FEED\",\"url\":\"https://depo.msu.ru/ipt/rss.do\"\
-        ,\"createdBy\":\"f5fc4e61-b7a0-414b-ab68-b41cb23e7fdc\",\"modifiedBy\":\"\
-        f5fc4e61-b7a0-414b-ab68-b41cb23e7fdc\",\"created\":\"2017-11-02T14:27:36.747+0000\"\
-        ,\"modified\":\"2017-11-02T14:27:36.747+0000\",\"machineTags\":[]}],\"machineTags\"\
-        :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"6b459ded-20ca-46f2-8323-5f4eed4b9fde\"\
-        ,\"organizationKey\":\"cd3512e7-886c-4873-b629-740abe8ae74e\",\"type\":\"\
-        IPT_INSTALLATION\",\"title\":\"Secretariat of the Pacific Regional Environment\
-        \ Programme (SPREP)\",\"description\":\"This IPT is hosted by SPREP to publish\
-        \ relevant datasets to GBIF\",\"createdBy\":\"cd3512e7-886c-4873-b629-740abe8ae74e\"\
-        ,\"modifiedBy\":\"6b459ded-20ca-46f2-8323-5f4eed4b9fde\",\"created\":\"2017-10-29T19:19:19.977+0000\"\
-        ,\"modified\":\"2018-04-11T19:51:24.771+0000\",\"disabled\":false,\"contacts\"\
-        :[{\"key\":790514,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
-        userId\":[],\"firstName\":\"Ainsof So'o\",\"position\":[],\"email\":[\"ainsofs@sprep.org\"\
-        ],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"cd3512e7-886c-4873-b629-740abe8ae74e\"\
-        ,\"modifiedBy\":\"6b459ded-20ca-46f2-8323-5f4eed4b9fde\",\"created\":\"2017-10-29T19:19:20.022+0000\"\
-        ,\"modified\":\"2018-04-11T19:51:24.841+0000\"}],\"endpoints\":[{\"key\":272451,\"\
-        type\":\"FEED\",\"url\":\"https://ipt.sprep.org/rss.do\",\"createdBy\":\"\
-        6b459ded-20ca-46f2-8323-5f4eed4b9fde\",\"modifiedBy\":\"6b459ded-20ca-46f2-8323-5f4eed4b9fde\"\
-        ,\"created\":\"2018-04-11T19:51:24.978+0000\",\"modified\":\"2018-04-11T19:51:24.978+0000\"\
-        ,\"machineTags\":[]}],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"\
-        comments\":[]},{\"key\":\"9df8109c-684d-416b-819b-7bc09adc500b\",\"organizationKey\"\
-        :\"c54097e6-0972-4acb-b849-eaeba29c917d\",\"type\":\"IPT_INSTALLATION\",\"\
-        title\":\"MAE - GBIFec\",\"description\":\"El Ministerio del Ambiente es el\
-        \ organismo del Estado ecuatoriano encargado de dise\xF1ar las pol\xEDticas\
-        \ ambientales y coordinar las estrategias, los proyectos y programas para\
-        \ el cuidado de los ecosistemas y el aprovechamiento sostenible de los recursos\
-        \ naturales. Propone y define las normas para conseguir la calidad ambiental\
-        \ adecuada, con un desarrollo basado en la conservaci\xF3n y el uso apropiado\
-        \ de la biodiversidad y de los recursos con los que cuenta el pa\xEDs.\\r\\\
-        n\\r\\nDesde una visi\xF3n solidaria con las poblaciones y su Ambiente, impulsa\
-        \ la participaci\xF3n de todos los actores sociales en la gesti\xF3n ambiental\
-        \ a trav\xE9s del trabajo coordinado, para de esta manera, contribuir a consolidar\
-        \ la capacidad tanto del Estado como de los gobiernos seccionales para el\
-        \ manejo democr\xE1tico y descentrado del tema ambiental y comprometer la\
-        \ participaci\xF3n de diversos actores: las universidades, los centros de\
-        \ investigaci\xF3n, y las ONG.\",\"createdBy\":\"c54097e6-0972-4acb-b849-eaeba29c917d\"\
-        ,\"modifiedBy\":\"9df8109c-684d-416b-819b-7bc09adc500b\",\"created\":\"2017-10-19T19:31:43.178+0000\"\
-        ,\"modified\":\"2017-10-19T20:31:30.259+0000\",\"disabled\":false,\"contacts\"\
-        :[{\"key\":785626,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
-        userId\":[],\"firstName\":\"David Veintimilla\",\"position\":[],\"email\"\
-        :[\"david.veintimilla@ambiente.gob.ec\"],\"phone\":[],\"homepage\":[],\"address\"\
-        :[],\"createdBy\":\"c54097e6-0972-4acb-b849-eaeba29c917d\",\"modifiedBy\"\
-        :\"9df8109c-684d-416b-819b-7bc09adc500b\",\"created\":\"2017-10-19T19:31:43.226+0000\"\
-        ,\"modified\":\"2017-10-19T20:31:30.295+0000\"}],\"endpoints\":[{\"key\":225854,\"\
-        type\":\"FEED\",\"url\":\"http://patrimonio.ambiente.gob.ec/iptmae/rss.do\"\
-        ,\"createdBy\":\"9df8109c-684d-416b-819b-7bc09adc500b\",\"modifiedBy\":\"\
-        9df8109c-684d-416b-819b-7bc09adc500b\",\"created\":\"2017-10-19T20:31:30.403+0000\"\
-        ,\"modified\":\"2017-10-19T20:31:30.403+0000\",\"machineTags\":[]}],\"machineTags\"\
-        :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"9437759e-806c-4520-b75c-914b03a9e86c\"\
-        ,\"organizationKey\":\"6b4fc310-4452-11de-87a1-b8a03c50a862\",\"type\":\"\
-        IPT_INSTALLATION\",\"title\":\"BCRC IPT 2\",\"description\":\"The Bioresource\
-        \ Collection and Research Center (BCRC), originally named the Culture Collection\
-        \ and Research Centre (CCRC) at FIRDI, was launched in 1982 and established\
-        \ for industrial purpose. BCRC is mainly funded by the Ministry of Economic\
-        \ Affairs (MOEA) and is the only institute appointed by the Intellectual Property\
-        \ Office, MOEA for the deposit of patent-related biological materials. BCRC\
-        \ is not only an \u201CAgricultural Microorganisms Bank\u201D of the Council\
-        \ of Agriculture, but also the core facility of National Health Research Institute\
-        \ for \u201CCell Bank\u201D. BCRC is the most systematic and service-oriented\
-        \ bioresource center (BRC) in Asia, and has been a member of World Federation\
-        \ for Culture Collections (WFCC) since 1984. The mission of BCRC is innovation,\
-        \ value-addition and creation. BCRC will continue to assist the development\
-        \ of biotech-related industries in Taiwan by providing customized and value-added\
-        \ services based on the science and technology in the biological resources\
-        \ to promote industrial activities and create industrial values. Furthermore,\
-        \ BCRC joined GBIF and became data provider in 2009. To date, BCRC uses IPT\
-        \ with the Darwin Core standard to reach the goal of microbial data exchange.\"\
-        ,\"createdBy\":\"6b4fc310-4452-11de-87a1-b8a03c50a862\",\"modifiedBy\":\"\
-        9437759e-806c-4520-b75c-914b03a9e86c\",\"created\":\"2017-10-18T08:16:25.953+0000\"\
-        ,\"modified\":\"2017-10-18T08:37:03.428+0000\",\"disabled\":false,\"contacts\"\
-        :[{\"key\":784505,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
-        userId\":[],\"firstName\":\"Chien-Chi Chen\",\"position\":[],\"email\":[\"\
-        chj@firdi.org.tw\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\"\
-        :\"6b4fc310-4452-11de-87a1-b8a03c50a862\",\"modifiedBy\":\"9437759e-806c-4520-b75c-914b03a9e86c\"\
-        ,\"created\":\"2017-10-18T08:16:26.041+0000\",\"modified\":\"2017-10-18T08:37:03.476+0000\"\
-        }],\"endpoints\":[{\"key\":225413,\"type\":\"FEED\",\"url\":\"http://ipt.bcrc.firdi.org.tw/rss.do\"\
-        ,\"createdBy\":\"9437759e-806c-4520-b75c-914b03a9e86c\",\"modifiedBy\":\"\
-        9437759e-806c-4520-b75c-914b03a9e86c\",\"created\":\"2017-10-18T08:37:03.564+0000\"\
-        ,\"modified\":\"2017-10-18T08:37:03.564+0000\",\"machineTags\":[]}],\"machineTags\"\
-        :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"f90451b7-1ce7-4105-96f3-29c0ae779a23\"\
-        ,\"organizationKey\":\"c1b1455b-18ec-4637-9e0f-18cb0524b7ed\",\"type\":\"\
-        BIOCASE_INSTALLATION\",\"title\":\"University of Pisa BioCASE installation\"\
-        ,\"createdBy\":\"jlegind\",\"modifiedBy\":\"jlegind\",\"created\":\"2017-10-11T07:48:13.974+0000\"\
-        ,\"modified\":\"2017-10-11T07:48:13.974+0000\",\"disabled\":false,\"contacts\"\
-        :[],\"endpoints\":[{\"key\":223590,\"type\":\"BIOCASE\",\"url\":\"http://bot.biologia.unipi.it/biocase/pywrapper.cgi?dsa=wikiplantbase\"\
-        ,\"createdBy\":\"jlegind\",\"modifiedBy\":\"jlegind\",\"created\":\"2017-10-11T07:50:23.714+0000\"\
-        ,\"modified\":\"2017-10-11T07:50:23.714+0000\",\"machineTags\":[]}],\"machineTags\"\
-        :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"d91497eb-406a-4c8f-8f41-efc74acede7f\"\
-        ,\"organizationKey\":\"296fe5cf-ae43-4212-8f77-293e807d0d5a\",\"type\":\"\
-        IPT_INSTALLATION\",\"title\":\"University of Guelph - Centre for Biodiversity\
-        \ Genomics IPT\",\"description\":\"IPT Resource hosting for Centre for Biodiversity\
-        \ Genomics, including resources for GGBN Data Release\",\"createdBy\":\"296fe5cf-ae43-4212-8f77-293e807d0d5a\"\
-        ,\"modifiedBy\":\"296fe5cf-ae43-4212-8f77-293e807d0d5a\",\"created\":\"2017-10-05T15:01:55.456+0000\"\
-        ,\"modified\":\"2017-10-05T15:01:55.456+0000\",\"disabled\":false,\"contacts\"\
-        :[{\"key\":775785,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
-        userId\":[],\"firstName\":\"Jeremy deWaard\",\"position\":[],\"email\":[\"\
-        dewaardj@uoguelph.ca\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\"\
-        :\"296fe5cf-ae43-4212-8f77-293e807d0d5a\",\"modifiedBy\":\"296fe5cf-ae43-4212-8f77-293e807d0d5a\"\
-        ,\"created\":\"2017-10-05T15:01:55.521+0000\",\"modified\":\"2017-10-05T15:01:55.521+0000\"\
-        }],\"endpoints\":[{\"key\":222187,\"type\":\"FEED\",\"url\":\"https://ipt.uoguelph.ca/ipt/rss.do\"\
-        ,\"createdBy\":\"296fe5cf-ae43-4212-8f77-293e807d0d5a\",\"modifiedBy\":\"\
-        296fe5cf-ae43-4212-8f77-293e807d0d5a\",\"created\":\"2017-10-05T15:01:55.643+0000\"\
-        ,\"modified\":\"2017-10-05T15:01:55.643+0000\",\"machineTags\":[]}],\"machineTags\"\
-        :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"366f9227-4e63-429e-af84-51043380a280\"\
-        ,\"organizationKey\":\"2f462930-4d96-11d8-b290-b8a03c50a862\",\"type\":\"\
-        IPT_INSTALLATION\",\"title\":\"Department of Forest Sciences, University of\
-        \ Helsinki\",\"description\":\"Research data from the projects of the scientists\
-        \ of the department.\",\"createdBy\":\"2f462930-4d96-11d8-b290-b8a03c50a862\"\
-        ,\"modifiedBy\":\"2f462930-4d96-11d8-b290-b8a03c50a862\",\"created\":\"2017-09-28T10:53:08.129+0000\"\
-        ,\"modified\":\"2017-09-28T10:53:08.129+0000\",\"disabled\":false,\"contacts\"\
-        :[{\"key\":771876,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
-        userId\":[],\"firstName\":\"Hannu Saarenmaa\",\"position\":[],\"email\":[\"\
-        hannu@bioshare.com\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\"\
-        :\"2f462930-4d96-11d8-b290-b8a03c50a862\",\"modifiedBy\":\"2f462930-4d96-11d8-b290-b8a03c50a862\"\
-        ,\"created\":\"2017-09-28T10:53:08.208+0000\",\"modified\":\"2017-09-28T10:53:08.208+0000\"\
-        }],\"endpoints\":[{\"key\":220409,\"type\":\"FEED\",\"url\":\"http://ipt.bioshare.net/rss.do\"\
-        ,\"createdBy\":\"2f462930-4d96-11d8-b290-b8a03c50a862\",\"modifiedBy\":\"\
-        2f462930-4d96-11d8-b290-b8a03c50a862\",\"created\":\"2017-09-28T10:53:08.295+0000\"\
-        ,\"modified\":\"2017-09-28T10:53:08.295+0000\",\"machineTags\":[]}],\"machineTags\"\
-        :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"07ea29ef-e386-4278-ae0f-095778a1b061\"\
-        ,\"organizationKey\":\"1928bdf0-f5d2-11dc-8c12-b8a03c50a862\",\"type\":\"\
-        IPT_INSTALLATION\",\"title\":\"IPT INPN\",\"description\":\"IPT INPN [Field\
-        \ must be at least 10 characters long]\",\"createdBy\":\"1928bdf0-f5d2-11dc-8c12-b8a03c50a862\"\
-        ,\"modifiedBy\":\"1928bdf0-f5d2-11dc-8c12-b8a03c50a862\",\"created\":\"2017-09-26T14:06:26.253+0000\"\
-        ,\"modified\":\"2017-09-26T14:06:26.253+0000\",\"disabled\":false,\"contacts\"\
-        :[{\"key\":770520,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
-        userId\":[],\"firstName\":\"Sophie Pamerlon\",\"position\":[],\"email\":[\"\
-        connexion@gbif.fr\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\"\
-        :\"1928bdf0-f5d2-11dc-8c12-b8a03c50a862\",\"modifiedBy\":\"1928bdf0-f5d2-11dc-8c12-b8a03c50a862\"\
-        ,\"created\":\"2017-09-26T14:06:26.352+0000\",\"modified\":\"2017-09-26T14:06:26.352+0000\"\
-        }],\"endpoints\":[{\"key\":219956,\"type\":\"FEED\",\"url\":\"http://ipt-inpn.gbif.fr/rss.do\"\
-        ,\"createdBy\":\"1928bdf0-f5d2-11dc-8c12-b8a03c50a862\",\"modifiedBy\":\"\
-        1928bdf0-f5d2-11dc-8c12-b8a03c50a862\",\"created\":\"2017-09-26T14:06:26.441+0000\"\
-        ,\"modified\":\"2017-09-26T14:06:26.441+0000\",\"machineTags\":[]}],\"machineTags\"\
-        :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"dec10313-acd6-44c5-80b5-7983e4fc9b49\"\
-        ,\"organizationKey\":\"f4cf14c8-58db-4947-a93c-e43f2b7fe171\",\"type\":\"\
-        IPT_INSTALLATION\",\"title\":\"IPT - Universidade Federal da Para\xEDba\"\
-        ,\"description\":\"A Universidade Federal da Para\xEDba, anteriormente Universidade\
-        \ da Para\xEDba, \xE9 uma Institui\xE7\xE3o aut\xE1rquica de regime especial\
-        \ de ensino, pesquisa e extens\xE3o, vinculada ao Minist\xE9rio da Educa\xE7\
-        \xE3o, com estrutura multi-campi e atua\xE7\xE3o nas cidades de Jo\xE3o Pessoa,\
-        \ Areia, Rio Tinto e Mamanguape, e Bananeiras. A Universidade tem sua origem\
-        \ com a cria\xE7\xE3o, em 1934, da primeira escola de n\xEDvel superior, a\
-        \ Escola de Agronomia do Nordeste, na cidade de Areia, exatamente quando as\
-        \ tend\xEAncias profissionais da comunidade ainda s\xE3o fortemente acentuadas\
-        \ para Medicina, Advocacia ou Sacerd\xF3cio, carreiras j\xE1 tradicionais\
-        \ entre fam\xEDlias da classe dominante rural e \xE0quela altura aspira\xE7\
-        \xF5es dos setores de classe m\xE9dia da popula\xE7\xE3o. http://www.ufpb.br/content/ufpb\u201D\
-        \",\"createdBy\":\"f4cf14c8-58db-4947-a93c-e43f2b7fe171\",\"modifiedBy\":\"\
-        f4cf14c8-58db-4947-a93c-e43f2b7fe171\",\"created\":\"2017-09-04T12:03:37.191+0000\"\
-        ,\"modified\":\"2017-09-04T12:03:37.191+0000\",\"disabled\":false,\"contacts\"\
-        :[{\"key\":756723,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
-        userId\":[],\"firstName\":\"Itamar Barbosa de Lima\",\"position\":[],\"email\"\
-        :[\"ibarbosa@dse.ufpb.br\"],\"phone\":[],\"homepage\":[],\"address\":[],\"\
-        createdBy\":\"f4cf14c8-58db-4947-a93c-e43f2b7fe171\",\"modifiedBy\":\"f4cf14c8-58db-4947-a93c-e43f2b7fe171\"\
-        ,\"created\":\"2017-09-04T12:03:37.268+0000\",\"modified\":\"2017-09-04T12:03:37.268+0000\"\
-        }],\"endpoints\":[{\"key\":214473,\"type\":\"FEED\",\"url\":\"http://www.dse.ufpb.br/ipt/rss.do\"\
-        ,\"createdBy\":\"f4cf14c8-58db-4947-a93c-e43f2b7fe171\",\"modifiedBy\":\"\
-        f4cf14c8-58db-4947-a93c-e43f2b7fe171\",\"created\":\"2017-09-04T12:03:37.379+0000\"\
-        ,\"modified\":\"2017-09-04T12:03:37.379+0000\",\"machineTags\":[]}],\"machineTags\"\
-        :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"1214fea2-4e00-4669-93f0-40617bdb73bc\"\
-        ,\"organizationKey\":\"04fd2e13-6881-4e5c-9dd1-8fdd9ab993c1\",\"type\":\"\
-        IPT_INSTALLATION\",\"title\":\"Finnish Biodiversity Information Facility\"\
-        ,\"description\":\"Finnish Biodiversity Information Facility collects and\
-        \ shares data from national biodiversity databases in Finland\",\"createdBy\"\
-        :\"04fd2e13-6881-4e5c-9dd1-8fdd9ab993c1\",\"modifiedBy\":\"04fd2e13-6881-4e5c-9dd1-8fdd9ab993c1\"\
-        ,\"created\":\"2017-09-01T06:20:43.481+0000\",\"modified\":\"2017-09-01T06:20:43.481+0000\"\
-        ,\"disabled\":false,\"contacts\":[{\"key\":755700,\"type\":\"TECHNICAL_POINT_OF_CONTACT\"\
-        ,\"primary\":true,\"userId\":[],\"firstName\":\"Tapani Lahti\",\"position\"\
-        :[],\"email\":[\"tapani.lahti@helsinki.fi\"],\"phone\":[],\"homepage\":[],\"\
-        address\":[],\"createdBy\":\"04fd2e13-6881-4e5c-9dd1-8fdd9ab993c1\",\"modifiedBy\"\
-        :\"04fd2e13-6881-4e5c-9dd1-8fdd9ab993c1\",\"created\":\"2017-09-01T06:20:43.572+0000\"\
-        ,\"modified\":\"2017-09-01T06:20:43.572+0000\"}],\"endpoints\":[{\"key\":214045,\"\
-        type\":\"FEED\",\"url\":\"https://ipt.laji.fi/ipt/rss.do\",\"createdBy\":\"\
-        04fd2e13-6881-4e5c-9dd1-8fdd9ab993c1\",\"modifiedBy\":\"04fd2e13-6881-4e5c-9dd1-8fdd9ab993c1\"\
-        ,\"created\":\"2017-09-01T06:20:43.655+0000\",\"modified\":\"2017-09-01T06:20:43.655+0000\"\
-        ,\"machineTags\":[]}],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"\
-        comments\":[]},{\"key\":\"411c2bad-24be-43f8-bc6c-da609226e050\",\"organizationKey\"\
-        :\"09b17aee-d3fb-48ca-a30b-303d671a8155\",\"type\":\"IPT_INSTALLATION\",\"\
-        title\":\"SAHFOS\",\"description\":\"Plankton abundance in the North Atlantic\
-        \ and North Pacific\",\"createdBy\":\"09b17aee-d3fb-48ca-a30b-303d671a8155\"\
-        ,\"modifiedBy\":\"09b17aee-d3fb-48ca-a30b-303d671a8155\",\"created\":\"2017-08-30T21:54:16.542+0000\"\
-        ,\"modified\":\"2017-08-30T21:54:16.542+0000\",\"disabled\":false,\"contacts\"\
-        :[{\"key\":754434,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
-        userId\":[],\"firstName\":\"Derek Broughton\",\"position\":[],\"email\":[\"\
-        derbro@sahfos.ac.uk\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\"\
-        :\"09b17aee-d3fb-48ca-a30b-303d671a8155\",\"modifiedBy\":\"09b17aee-d3fb-48ca-a30b-303d671a8155\"\
-        ,\"created\":\"2017-08-30T21:54:16.571+0000\",\"modified\":\"2017-08-30T21:54:16.571+0000\"\
-        }],\"endpoints\":[{\"key\":213545,\"type\":\"FEED\",\"url\":\"http://doi.sahfos.ac.uk/rss.do\"\
-        ,\"createdBy\":\"09b17aee-d3fb-48ca-a30b-303d671a8155\",\"modifiedBy\":\"\
-        09b17aee-d3fb-48ca-a30b-303d671a8155\",\"created\":\"2017-08-30T21:54:16.649+0000\"\
-        ,\"modified\":\"2017-08-30T21:54:16.649+0000\",\"machineTags\":[]}],\"machineTags\"\
-        :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"775151b2-7095-4e85-b145-0e9e7c35f0da\"\
-        ,\"organizationKey\":\"f5fd374b-89cb-4ab6-b3eb-794c65f232c3\",\"type\":\"\
-        IPT_INSTALLATION\",\"title\":\"IPT Parceiros JBRJ\",\"description\":\"Resources\
-        \ from Jardim Bot\xE2nico do Rio de Janeiro partners.\",\"createdBy\":\"f5fd374b-89cb-4ab6-b3eb-794c65f232c3\"\
-        ,\"modifiedBy\":\"f5fd374b-89cb-4ab6-b3eb-794c65f232c3\",\"created\":\"2017-08-22T18:29:02.551+0000\"\
-        ,\"modified\":\"2017-08-22T18:29:02.551+0000\",\"disabled\":false,\"contacts\"\
-        :[{\"key\":750776,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
-        userId\":[],\"firstName\":\"Sistema de Informa\xE7\xE3o sobre a Biodiversidade\
-        \ Brasileira\",\"position\":[],\"email\":[\"participacao@sibbr.gov.br\"],\"\
-        phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"f5fd374b-89cb-4ab6-b3eb-794c65f232c3\"\
-        ,\"modifiedBy\":\"f5fd374b-89cb-4ab6-b3eb-794c65f232c3\",\"created\":\"2017-08-22T18:29:02.673+0000\"\
-        ,\"modified\":\"2017-08-22T18:29:02.673+0000\"}],\"endpoints\":[{\"key\":211419,\"\
-        type\":\"FEED\",\"url\":\"https://ipt.sibbr.gov.br/parceiros_jbrj/rss.do\"\
-        ,\"createdBy\":\"f5fd374b-89cb-4ab6-b3eb-794c65f232c3\",\"modifiedBy\":\"\
-        f5fd374b-89cb-4ab6-b3eb-794c65f232c3\",\"created\":\"2017-08-22T18:29:02.774+0000\"\
-        ,\"modified\":\"2017-08-22T18:29:02.774+0000\",\"machineTags\":[]}],\"machineTags\"\
-        :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"2c22e450-884e-49c5-a32f-bd59c240ed49\"\
-        ,\"organizationKey\":\"f4ce3c03-7b38-445e-86e6-5f6b04b649d4\",\"type\":\"\
-        HTTP_INSTALLATION\",\"title\":\"Github sp2000\",\"description\":\"https://github.com/sp2000\"\
-        ,\"createdBy\":\"markus\",\"modifiedBy\":\"markus\",\"created\":\"2017-08-04T11:58:38.105+0000\"\
-        ,\"modified\":\"2017-08-04T11:58:38.105+0000\",\"disabled\":false,\"contacts\"\
-        :[],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"\
-        comments\":[]},{\"key\":\"2f369909-39c3-4eb7-946a-9155f2ffafca\",\"organizationKey\"\
-        :\"4e11d750-bafb-11d9-8e53-b8a03c50a862\",\"type\":\"BIOCASE_INSTALLATION\"\
-        ,\"title\":\"JACQ BioCASE\",\"createdBy\":\"jlegind\",\"modifiedBy\":\"jlegind\"\
-        ,\"created\":\"2017-08-01T15:08:33.778+0000\",\"modified\":\"2017-08-01T15:08:33.778+0000\"\
-        ,\"disabled\":false,\"contacts\":[],\"endpoints\":[{\"key\":207719,\"type\"\
-        :\"BIOCASE\",\"url\":\"http://131.130.131.9/biocase/pywrapper.cgi?dsa=gbif_lagu\"\
-        ,\"createdBy\":\"jlegind\",\"modifiedBy\":\"jlegind\",\"created\":\"2017-08-02T07:53:52.051+0000\"\
-        ,\"modified\":\"2017-08-02T07:53:52.051+0000\",\"machineTags\":[]}],\"machineTags\"\
-        :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"23c2fb21-e2cc-473e-9651-8d231a82d87b\"\
-        ,\"organizationKey\":\"89602091-d81d-460b-96a5-bbebd4d08529\",\"type\":\"\
-        IPT_INSTALLATION\",\"title\":\"IPT del Ministerio del Ambiente de Per\xFA\"\
-        ,\"description\":\"IPT del Ministerio del Ambiente de Per\xFA\",\"createdBy\"\
-        :\"89602091-d81d-460b-96a5-bbebd4d08529\",\"modifiedBy\":\"23c2fb21-e2cc-473e-9651-8d231a82d87b\"\
-        ,\"created\":\"2017-08-01T02:28:16.357+0000\",\"modified\":\"2017-08-17T21:48:17.541+0000\"\
-        ,\"disabled\":false,\"contacts\":[{\"key\":742474,\"type\":\"TECHNICAL_POINT_OF_CONTACT\"\
-        ,\"primary\":true,\"userId\":[],\"firstName\":\"Jos\xE9 Mart\xEDn Carrasco\
-        \ Montoya\",\"position\":[],\"email\":[\"jcarrasco@minam.gob.pe\"],\"phone\"\
-        :[],\"homepage\":[],\"address\":[],\"createdBy\":\"89602091-d81d-460b-96a5-bbebd4d08529\"\
-        ,\"modifiedBy\":\"23c2fb21-e2cc-473e-9651-8d231a82d87b\",\"created\":\"2017-08-01T02:28:16.503+0000\"\
-        ,\"modified\":\"2017-08-17T21:48:17.669+0000\"}],\"endpoints\":[{\"key\":210785,\"\
-        type\":\"FEED\",\"url\":\"http://ipt.minam.gob.pe/ipt/rss.do\",\"createdBy\"\
-        :\"23c2fb21-e2cc-473e-9651-8d231a82d87b\",\"modifiedBy\":\"23c2fb21-e2cc-473e-9651-8d231a82d87b\"\
-        ,\"created\":\"2017-08-17T21:48:17.811+0000\",\"modified\":\"2017-08-17T21:48:17.811+0000\"\
-        ,\"machineTags\":[]}],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"\
-        comments\":[]},{\"key\":\"f6ed3156-f102-4876-a2b9-85d18bc29b1c\",\"organizationKey\"\
-        :\"f5fd374b-89cb-4ab6-b3eb-794c65f232c3\",\"type\":\"IPT_INSTALLATION\",\"\
-        title\":\"PPBio\",\"description\":\"O Programa de Pesquisa em Biodiversidade\
-        \ (PPBio) foi criado em 2004 com o objetivo de intensificar estudos sobre\
-        \ biodiversidade no Brasil, descentralizar a produ\xE7\xE3o cient\xEDfica\
-        \ dos centros desenvolvidos academicamente, integrar atividades de pesquisa\
-        \ e divulgar os resultados para diferentes finalidades, como gest\xE3o ambiental\
-        \ e educa\xE7\xE3o. Ele est\xE1 estruturado em tr\xEAs componentes principais:\
-        \ Invent\xE1rios, Cole\xE7\xF5es e Tem\xE1ticos e possui diversos N\xFAcleos\
-        \ Regionais e Projeto Parceiros pelo pa\xEDs.\",\"createdBy\":\"f5fd374b-89cb-4ab6-b3eb-794c65f232c3\"\
-        ,\"modifiedBy\":\"f5fd374b-89cb-4ab6-b3eb-794c65f232c3\",\"created\":\"2017-07-21T21:19:03.392+0000\"\
-        ,\"modified\":\"2017-07-21T21:19:03.392+0000\",\"disabled\":false,\"contacts\"\
-        :[{\"key\":738197,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
-        userId\":[],\"firstName\":\"SiBBr Participation Team\",\"position\":[],\"\
-        email\":[\"participacao@sibbr.gov.br\"],\"phone\":[],\"homepage\":[],\"address\"\
-        :[],\"createdBy\":\"f5fd374b-89cb-4ab6-b3eb-794c65f232c3\",\"modifiedBy\"\
-        :\"f5fd374b-89cb-4ab6-b3eb-794c65f232c3\",\"created\":\"2017-07-21T21:19:03.449+0000\"\
-        ,\"modified\":\"2017-07-21T21:19:03.449+0000\"}],\"endpoints\":[{\"key\":205484,\"\
-        type\":\"FEED\",\"url\":\"https://ipt.sibbr.gov.br:/ppbio/rss.do\",\"createdBy\"\
-        :\"f5fd374b-89cb-4ab6-b3eb-794c65f232c3\",\"modifiedBy\":\"f5fd374b-89cb-4ab6-b3eb-794c65f232c3\"\
-        ,\"created\":\"2017-07-21T21:19:03.495+0000\",\"modified\":\"2017-07-21T21:19:03.495+0000\"\
-        ,\"machineTags\":[]}],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"\
-        comments\":[]},{\"key\":\"d8290ac0-b679-49ea-a5a9-9ec3f64201bf\",\"organizationKey\"\
-        :\"b81896a3-05ab-4011-a360-1aededb554a3\",\"type\":\"IPT_INSTALLATION\",\"\
-        title\":\"WSAOBIS\",\"description\":\"This IPT is for use of the Tropical\
-        \ and Subtropical Western South Atlantic OBIS node, in publishing datasets\
-        \ of marine species occurrence that will be accessible to public through the\
-        \ Ocean Biogeographic Information System (OBIS) database.\",\"createdBy\"\
-        :\"b81896a3-05ab-4011-a360-1aededb554a3\",\"modifiedBy\":\"b81896a3-05ab-4011-a360-1aededb554a3\"\
-        ,\"created\":\"2017-07-13T13:08:41.684+0000\",\"modified\":\"2017-07-13T13:08:41.684+0000\"\
-        ,\"disabled\":false,\"contacts\":[{\"key\":735561,\"type\":\"TECHNICAL_POINT_OF_CONTACT\"\
-        ,\"primary\":true,\"userId\":[],\"firstName\":\"Antonio Carlos Marques\",\"\
-        position\":[],\"email\":[\"marques@ib.usp.br\"],\"phone\":[],\"homepage\"\
-        :[],\"address\":[],\"createdBy\":\"b81896a3-05ab-4011-a360-1aededb554a3\"\
-        ,\"modifiedBy\":\"b81896a3-05ab-4011-a360-1aededb554a3\",\"created\":\"2017-07-13T13:08:41.745+0000\"\
-        ,\"modified\":\"2017-07-13T13:08:41.745+0000\"}],\"endpoints\":[{\"key\":203009,\"\
-        type\":\"FEED\",\"url\":\"http://ipt.iobis.org/wsaobis/rss.do\",\"createdBy\"\
-        :\"b81896a3-05ab-4011-a360-1aededb554a3\",\"modifiedBy\":\"b81896a3-05ab-4011-a360-1aededb554a3\"\
-        ,\"created\":\"2017-07-13T13:08:41.803+0000\",\"modified\":\"2017-07-13T13:08:41.803+0000\"\
-        ,\"machineTags\":[]}],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"\
-        comments\":[]},{\"key\":\"10edeef2-130a-4e6e-824e-7bddfe72dcee\",\"organizationKey\"\
-        :\"a3250342-34a5-4101-8831-d1a136483952\",\"type\":\"IPT_INSTALLATION\",\"\
-        title\":\"IPT de C\xF4te-d'Ivoire\",\"description\":\"This is the IPT installation\
-        \ for C\xF4te-d'Ivoire (Ivory Coast), hosted by GBIF France.\",\"createdBy\"\
-        :\"a3250342-34a5-4101-8831-d1a136483952\",\"modifiedBy\":\"a3250342-34a5-4101-8831-d1a136483952\"\
-        ,\"created\":\"2017-07-11T09:31:44.097+0000\",\"modified\":\"2017-07-11T09:31:44.097+0000\"\
-        ,\"disabled\":false,\"contacts\":[{\"key\":734573,\"type\":\"TECHNICAL_POINT_OF_CONTACT\"\
-        ,\"primary\":true,\"userId\":[],\"firstName\":\"Marie-Elise Lecoq\",\"position\"\
-        :[],\"email\":[\"melecoq@gbif.fr\"],\"phone\":[],\"homepage\":[],\"address\"\
-        :[],\"createdBy\":\"a3250342-34a5-4101-8831-d1a136483952\",\"modifiedBy\"\
-        :\"a3250342-34a5-4101-8831-d1a136483952\",\"created\":\"2017-07-11T09:31:44.289+0000\"\
-        ,\"modified\":\"2017-07-11T09:31:44.289+0000\"}],\"endpoints\":[{\"key\":202571,\"\
-        type\":\"FEED\",\"url\":\"http://ipt-cotedivoire.gbif.fr/rss.do\",\"createdBy\"\
-        :\"a3250342-34a5-4101-8831-d1a136483952\",\"modifiedBy\":\"a3250342-34a5-4101-8831-d1a136483952\"\
-        ,\"created\":\"2017-07-11T09:31:44.342+0000\",\"modified\":\"2017-07-11T09:31:44.342+0000\"\
-        ,\"machineTags\":[]}],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"\
-        comments\":[]},{\"key\":\"c4195389-aa85-42ab-a264-bf5e3b3c2966\",\"organizationKey\"\
-        :\"6fbb8fe2-66e2-4a9e-bb39-b84665571f1c\",\"type\":\"IPT_INSTALLATION\",\"\
-        title\":\"NDFF GBIF IPT\",\"description\":\"NDFF GBIF IPT\",\"createdBy\"\
-        :\"6fbb8fe2-66e2-4a9e-bb39-b84665571f1c\",\"modifiedBy\":\"c4195389-aa85-42ab-a264-bf5e3b3c2966\"\
-        ,\"created\":\"2017-07-05T09:32:40.925+0000\",\"modified\":\"2018-04-03T15:01:49.833+0000\"\
-        ,\"disabled\":false,\"contacts\":[{\"key\":732895,\"type\":\"TECHNICAL_POINT_OF_CONTACT\"\
-        ,\"primary\":true,\"userId\":[],\"firstName\":\"Dries Oomen\",\"position\"\
-        :[],\"email\":[\"serviceteamNDFF@natuurloket.nl\"],\"phone\":[],\"homepage\"\
-        :[],\"address\":[],\"createdBy\":\"6fbb8fe2-66e2-4a9e-bb39-b84665571f1c\"\
-        ,\"modifiedBy\":\"c4195389-aa85-42ab-a264-bf5e3b3c2966\",\"created\":\"2017-07-05T09:32:40.981+0000\"\
-        ,\"modified\":\"2018-04-03T15:01:49.937+0000\"}],\"endpoints\":[{\"key\":269815,\"\
-        type\":\"FEED\",\"url\":\"https://ipt.ndff.nl/rss.do\",\"createdBy\":\"c4195389-aa85-42ab-a264-bf5e3b3c2966\"\
-        ,\"modifiedBy\":\"c4195389-aa85-42ab-a264-bf5e3b3c2966\",\"created\":\"2018-04-03T15:01:50.053+0000\"\
-        ,\"modified\":\"2018-04-03T15:01:50.053+0000\",\"machineTags\":[]}],\"machineTags\"\
-        :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"b3d59641-3c6f-4c1a-96a6-27c2a0415816\"\
-        ,\"organizationKey\":\"3de021f8-d842-419a-b4ef-c2779ce27b85\",\"type\":\"\
-        IPT_INSTALLATION\",\"title\":\"GBIF Philippines IPT\",\"description\":\"GBIF-Philippines\
-        \ Node IPT Facility maintained by the Biodiversity Management Bureau of the\
-        \ Department of Environment and Natural Resources. This IPT will be recommended\
-        \ to be used for the GBIF data publication of the Philippine CHM (BIOWEB)\
-        \ partner organizations.\",\"createdBy\":\"3de021f8-d842-419a-b4ef-c2779ce27b85\"\
-        ,\"modifiedBy\":\"b3d59641-3c6f-4c1a-96a6-27c2a0415816\",\"created\":\"2017-06-01T01:49:19.554+0000\"\
-        ,\"modified\":\"2017-06-01T06:55:59.205+0000\",\"disabled\":false,\"contacts\"\
-        :[{\"key\":680430,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
-        userId\":[],\"firstName\":\"Darwin R. Tejerero\",\"position\":[],\"email\"\
-        :[\"radniw518@gmail.com\"],\"phone\":[],\"homepage\":[],\"address\":[],\"\
-        createdBy\":\"3de021f8-d842-419a-b4ef-c2779ce27b85\",\"modifiedBy\":\"b3d59641-3c6f-4c1a-96a6-27c2a0415816\"\
-        ,\"created\":\"2017-06-01T01:49:19.624+0000\",\"modified\":\"2017-06-01T06:55:59.248+0000\"\
-        }],\"endpoints\":[{\"key\":195268,\"type\":\"FEED\",\"url\":\"http://146.88.74.172:8080/ipt/rss.do\"\
-        ,\"createdBy\":\"b3d59641-3c6f-4c1a-96a6-27c2a0415816\",\"modifiedBy\":\"\
-        b3d59641-3c6f-4c1a-96a6-27c2a0415816\",\"created\":\"2017-06-01T06:55:59.329+0000\"\
-        ,\"modified\":\"2017-06-01T06:55:59.329+0000\",\"machineTags\":[]}],\"machineTags\"\
-        :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"faeb021c-ab9f-4c80-9587-3749a8f6fb23\"\
-        ,\"organizationKey\":\"bf0d80b3-46da-4e60-b1cf-39f2320acb43\",\"type\":\"\
-        IPT_INSTALLATION\",\"title\":\"IPT v.2.3.2\",\"description\":\"Legacy installation\
-        \ of IPT, version 2.3.2.\",\"createdBy\":\"bf0d80b3-46da-4e60-b1cf-39f2320acb43\"\
-        ,\"modifiedBy\":\"faeb021c-ab9f-4c80-9587-3749a8f6fb23\",\"created\":\"2017-05-25T15:10:02.038+0000\"\
-        ,\"modified\":\"2018-08-21T14:37:25.897+0000\",\"disabled\":false,\"contacts\"\
-        :[{\"key\":674656,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
-        userId\":[],\"firstName\":\"Francisco Moreno\",\"lastName\":\"Galvez\",\"\
-        position\":[],\"email\":[\"FMoreno@mma.gob.cl\"],\"phone\":[],\"homepage\"\
-        :[],\"address\":[],\"createdBy\":\"bf0d80b3-46da-4e60-b1cf-39f2320acb43\"\
-        ,\"modifiedBy\":\"faeb021c-ab9f-4c80-9587-3749a8f6fb23\",\"created\":\"2017-05-25T15:10:02.138+0000\"\
-        ,\"modified\":\"2018-08-21T14:37:25.995+0000\"}],\"endpoints\":[{\"key\":324099,\"\
-        type\":\"FEED\",\"url\":\"http://gbif-chile.mma.gob.cl/ipt/rss.do\",\"createdBy\"\
-        :\"faeb021c-ab9f-4c80-9587-3749a8f6fb23\",\"modifiedBy\":\"faeb021c-ab9f-4c80-9587-3749a8f6fb23\"\
-        ,\"created\":\"2018-08-21T14:37:26.138+0000\",\"modified\":\"2018-08-21T14:37:26.138+0000\"\
-        ,\"machineTags\":[]}],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"\
-        comments\":[]},{\"key\":\"40dee7df-00ee-4965-bcaf-5291dbab4b08\",\"organizationKey\"\
-        :\"253fc67c-c7fb-4c85-88f5-43ac6d9dc8a9\",\"type\":\"IPT_INSTALLATION\",\"\
-        title\":\"IPT - Hosted by PlantAtlas.org\",\"description\":\"Hosted IPT for\
-        \ PlantAtlas.org parnters to publish species occurrence records using Darwin\
-        \ Core.\",\"createdBy\":\"253fc67c-c7fb-4c85-88f5-43ac6d9dc8a9\",\"modifiedBy\"\
-        :\"253fc67c-c7fb-4c85-88f5-43ac6d9dc8a9\",\"created\":\"2017-05-15T16:17:23.070+0000\"\
-        ,\"modified\":\"2017-05-15T16:17:23.070+0000\",\"disabled\":false,\"contacts\"\
-        :[{\"key\":671008,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
-        userId\":[],\"firstName\":\"Keith Bornhorst\",\"position\":[],\"email\":[\"\
-        bornhorst@usf.edu\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\"\
-        :\"253fc67c-c7fb-4c85-88f5-43ac6d9dc8a9\",\"modifiedBy\":\"253fc67c-c7fb-4c85-88f5-43ac6d9dc8a9\"\
-        ,\"created\":\"2017-05-15T16:17:23.133+0000\",\"modified\":\"2017-05-15T16:17:23.133+0000\"\
-        }],\"endpoints\":[{\"key\":191086,\"type\":\"FEED\",\"url\":\"http://ipt.plantatlas.usf.edu/rss.do\"\
-        ,\"createdBy\":\"253fc67c-c7fb-4c85-88f5-43ac6d9dc8a9\",\"modifiedBy\":\"\
-        253fc67c-c7fb-4c85-88f5-43ac6d9dc8a9\",\"created\":\"2017-05-15T16:17:23.214+0000\"\
-        ,\"modified\":\"2017-05-15T16:17:23.214+0000\",\"machineTags\":[]}],\"machineTags\"\
-        :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"3d5670dd-b51e-4163-90cd-7e509f800e2b\"\
-        ,\"organizationKey\":\"89602091-d81d-460b-96a5-bbebd4d08529\",\"type\":\"\
-        IPT_INSTALLATION\",\"title\":\"IPT del Ministerio del Ambiente de Per\xFA\"\
-        ,\"description\":\"IPT  del Ministerio del Ambiente de Peru\",\"createdBy\"\
-        :\"89602091-d81d-460b-96a5-bbebd4d08529\",\"modifiedBy\":\"89602091-d81d-460b-96a5-bbebd4d08529\"\
-        ,\"created\":\"2017-05-08T15:08:34.466+0000\",\"modified\":\"2017-05-08T15:08:34.466+0000\"\
-        ,\"disabled\":false,\"contacts\":[{\"key\":668266,\"type\":\"TECHNICAL_POINT_OF_CONTACT\"\
-        ,\"primary\":true,\"userId\":[],\"firstName\":\"Jose M. Carrasco Montoya\"\
-        ,\"position\":[],\"email\":[\"jcarrasco@minam.gob.pe\"],\"phone\":[],\"homepage\"\
-        :[],\"address\":[],\"createdBy\":\"89602091-d81d-460b-96a5-bbebd4d08529\"\
-        ,\"modifiedBy\":\"89602091-d81d-460b-96a5-bbebd4d08529\",\"created\":\"2017-05-08T15:08:34.499+0000\"\
-        ,\"modified\":\"2017-05-08T15:08:34.499+0000\"}],\"endpoints\":[{\"key\":189170,\"\
-        type\":\"FEED\",\"url\":\"http://ipt.minam.gob.pe/ipt/rss.do\",\"createdBy\"\
-        :\"89602091-d81d-460b-96a5-bbebd4d08529\",\"modifiedBy\":\"89602091-d81d-460b-96a5-bbebd4d08529\"\
-        ,\"created\":\"2017-05-08T15:08:34.585+0000\",\"modified\":\"2017-05-08T15:08:34.585+0000\"\
-        ,\"machineTags\":[]}],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"\
-        comments\":[]},{\"key\":\"85ccfd1a-a837-48d6-9a87-96c99f6fe012\",\"organizationKey\"\
-        :\"396d5f30-dea9-11db-8ab4-b8a03c50a862\",\"type\":\"HTTP_INSTALLATION\",\"\
-        title\":\"Naturalis2 HTTP installation\",\"createdBy\":\"jeroen\",\"modifiedBy\"\
-        :\"jeroen\",\"created\":\"2017-05-08T13:31:12.505+0000\",\"modified\":\"2017-05-08T13:31:12.505+0000\"\
-        ,\"disabled\":false,\"contacts\":[],\"endpoints\":[],\"machineTags\":[],\"\
-        tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"01f4444c-8912-45bf-89b1-d2257376b43a\"\
-        ,\"organizationKey\":\"9a23b798-ee7e-4593-9348-7016fdca9960\",\"type\":\"\
-        IPT_INSTALLATION\",\"title\":\"GeOMe IPT\",\"description\":\"Hosted IPT for\
-        \ Genomic Observatories Metadatabase (GeOMe) projects to publish species occurrence\
-        \ records using Darwin Core.\",\"createdBy\":\"9a23b798-ee7e-4593-9348-7016fdca9960\"\
-        ,\"modifiedBy\":\"01f4444c-8912-45bf-89b1-d2257376b43a\",\"created\":\"2017-04-26T16:34:09.766+0000\"\
-        ,\"modified\":\"2018-10-09T09:03:00.048+0000\",\"disabled\":false,\"contacts\"\
-        :[{\"key\":661896,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
-        userId\":[],\"firstName\":\"John Deck\",\"position\":[],\"email\":[\"geome.help@gmail.com\"\
-        ],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"9a23b798-ee7e-4593-9348-7016fdca9960\"\
-        ,\"modifiedBy\":\"01f4444c-8912-45bf-89b1-d2257376b43a\",\"created\":\"2017-04-26T16:34:10.107+0000\"\
-        ,\"modified\":\"2018-10-09T09:03:00.127+0000\"}],\"endpoints\":[{\"key\":336303,\"\
-        type\":\"FEED\",\"url\":\"https://ipt.geome-db.org/rss.do\",\"createdBy\"\
-        :\"01f4444c-8912-45bf-89b1-d2257376b43a\",\"modifiedBy\":\"01f4444c-8912-45bf-89b1-d2257376b43a\"\
-        ,\"created\":\"2018-10-09T09:03:00.267+0000\",\"modified\":\"2018-10-09T09:03:00.267+0000\"\
-        ,\"machineTags\":[]}],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"\
-        comments\":[]},{\"key\":\"834a30a5-9170-415c-8411-ea85db9157fb\",\"organizationKey\"\
-        :\"04665d80-7e5f-11d8-a1a0-b8a03c50a862\",\"type\":\"IPT_INSTALLATION\",\"\
-        title\":\"IPT@GBIF.PL\",\"description\":\"IPT of the GBIF Polish Participant\
-        \ Node\",\"createdBy\":\"04665d80-7e5f-11d8-a1a0-b8a03c50a862\",\"modifiedBy\"\
-        :\"04665d80-7e5f-11d8-a1a0-b8a03c50a862\",\"created\":\"2017-04-22T11:27:40.150+0000\"\
-        ,\"modified\":\"2017-04-22T11:27:40.150+0000\",\"disabled\":false,\"contacts\"\
-        :[{\"key\":660025,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
-        userId\":[],\"firstName\":\"Piotr Tykarski\",\"position\":[],\"email\":[\"\
-        ptyk@biol.uw.edu.pl\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\"\
-        :\"04665d80-7e5f-11d8-a1a0-b8a03c50a862\",\"modifiedBy\":\"04665d80-7e5f-11d8-a1a0-b8a03c50a862\"\
-        ,\"created\":\"2017-04-22T11:27:40.207+0000\",\"modified\":\"2017-04-22T11:27:40.207+0000\"\
-        }],\"endpoints\":[{\"key\":185818,\"type\":\"FEED\",\"url\":\"http://ipt.gbif.pl:8080/rss.do\"\
-        ,\"createdBy\":\"04665d80-7e5f-11d8-a1a0-b8a03c50a862\",\"modifiedBy\":\"\
-        04665d80-7e5f-11d8-a1a0-b8a03c50a862\",\"created\":\"2017-04-22T11:27:40.283+0000\"\
-        ,\"modified\":\"2017-04-22T11:27:40.283+0000\",\"machineTags\":[]}],\"machineTags\"\
-        :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"06364965-baad-475c-966c-ac5f963bb69c\"\
-        ,\"organizationKey\":\"3c6ad080-bdbe-11da-ac59-b8a03c50a862\",\"type\":\"\
-        IPT_INSTALLATION\",\"title\":\"University of Texas at Austin, Biodiversity\
-        \ Collections\",\"description\":\"The IPT server hosted at the Texas Advanced\
-        \ Computing Center (TACC) for the University of Texas at Austin, Biodiversity\
-        \ Collections\",\"createdBy\":\"3c6ad080-bdbe-11da-ac59-b8a03c50a862\",\"\
-        modifiedBy\":\"3c6ad080-bdbe-11da-ac59-b8a03c50a862\",\"created\":\"2017-04-18T18:15:46.680+0000\"\
-        ,\"modified\":\"2017-04-18T18:15:46.680+0000\",\"disabled\":false,\"contacts\"\
-        :[{\"key\":657641,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
-        userId\":[],\"firstName\":\"Tomislav Urban\",\"position\":[],\"email\":[\"\
-        turban@tacc.utexas.edu\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\"\
-        :\"3c6ad080-bdbe-11da-ac59-b8a03c50a862\",\"modifiedBy\":\"3c6ad080-bdbe-11da-ac59-b8a03c50a862\"\
-        ,\"created\":\"2017-04-18T18:15:46.757+0000\",\"modified\":\"2017-04-18T18:15:46.757+0000\"\
-        }],\"endpoints\":[{\"key\":184869,\"type\":\"FEED\",\"url\":\"http://ipt.tacc.utexas.edu/rss.do\"\
-        ,\"createdBy\":\"3c6ad080-bdbe-11da-ac59-b8a03c50a862\",\"modifiedBy\":\"\
-        3c6ad080-bdbe-11da-ac59-b8a03c50a862\",\"created\":\"2017-04-18T18:15:46.836+0000\"\
-        ,\"modified\":\"2017-04-18T18:15:46.836+0000\",\"machineTags\":[]}],\"machineTags\"\
-        :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"e2c5974e-6e42-4725-a987-0eb2323df1ef\"\
-        ,\"organizationKey\":\"3c6ad080-bdbe-11da-ac59-b8a03c50a862\",\"type\":\"\
-        IPT_INSTALLATION\",\"title\":\"University of Texas at Austin, Biodiversity\
-        \ Collections IPT Server\",\"description\":\"University of Texas at Austin,\
-        \ Biodiversity Collections IPT server hosted at TACC (Texas Advanced Computing\
-        \ Center)\",\"createdBy\":\"3c6ad080-bdbe-11da-ac59-b8a03c50a862\",\"modifiedBy\"\
-        :\"3c6ad080-bdbe-11da-ac59-b8a03c50a862\",\"created\":\"2017-04-12T21:39:56.680+0000\"\
-        ,\"modified\":\"2017-04-12T21:39:56.680+0000\",\"disabled\":false,\"contacts\"\
-        :[{\"key\":655395,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
-        userId\":[],\"firstName\":\"Tomislav Urban\",\"position\":[],\"email\":[\"\
-        turban@tacc.utexas.edu\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\"\
-        :\"3c6ad080-bdbe-11da-ac59-b8a03c50a862\",\"modifiedBy\":\"3c6ad080-bdbe-11da-ac59-b8a03c50a862\"\
-        ,\"created\":\"2017-04-12T21:39:56.745+0000\",\"modified\":\"2017-04-12T21:39:56.745+0000\"\
-        }],\"endpoints\":[{\"key\":183850,\"type\":\"FEED\",\"url\":\"http://ipt.tacc.utexas.edu/rss.do\"\
-        ,\"createdBy\":\"3c6ad080-bdbe-11da-ac59-b8a03c50a862\",\"modifiedBy\":\"\
-        3c6ad080-bdbe-11da-ac59-b8a03c50a862\",\"created\":\"2017-04-12T21:39:56.822+0000\"\
-        ,\"modified\":\"2017-04-12T21:39:56.822+0000\",\"machineTags\":[]}],\"machineTags\"\
-        :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"61fadb7f-5832-4279-a494-baf3c5415d51\"\
-        ,\"organizationKey\":\"3b5161b7-9831-4444-9822-a60df4df107d\",\"type\":\"\
-        IPT_INSTALLATION\",\"title\":\"Bioinfo Plante Sant\xE9\",\"description\":\"\
-        IPT pour les unit\xE9s plante et sant\xE9 du plateau bioinformatique de l'IRD\"\
-        ,\"createdBy\":\"3b5161b7-9831-4444-9822-a60df4df107d\",\"modifiedBy\":\"\
-        61fadb7f-5832-4279-a494-baf3c5415d51\",\"created\":\"2017-04-12T07:48:20.807+0000\"\
-        ,\"modified\":\"2017-10-18T12:05:48.123+0000\",\"disabled\":false,\"contacts\"\
-        :[{\"key\":654837,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
-        userId\":[],\"firstName\":\"Bruno Granouillac\",\"position\":[],\"email\"\
-        :[\"bruno.granouillac@ird.fr\"],\"phone\":[],\"homepage\":[],\"address\":[],\"\
-        createdBy\":\"3b5161b7-9831-4444-9822-a60df4df107d\",\"modifiedBy\":\"61fadb7f-5832-4279-a494-baf3c5415d51\"\
-        ,\"created\":\"2017-04-12T07:48:20.915+0000\",\"modified\":\"2017-10-18T12:05:48.212+0000\"\
-        }],\"endpoints\":[{\"key\":225428,\"type\":\"FEED\",\"url\":\"http://bioinfo-web.mpl.ird.fr:8080/ipt-2.3.3/rss.do\"\
-        ,\"createdBy\":\"61fadb7f-5832-4279-a494-baf3c5415d51\",\"modifiedBy\":\"\
-        61fadb7f-5832-4279-a494-baf3c5415d51\",\"created\":\"2017-10-18T12:05:48.338+0000\"\
-        ,\"modified\":\"2017-10-18T12:05:48.338+0000\",\"machineTags\":[]}],\"machineTags\"\
-        :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"a4bab280-ae48-4002-abf2-d56392913250\"\
-        ,\"organizationKey\":\"f2f462db-541d-4a24-9921-892d57e1da9f\",\"type\":\"\
-        IPT_INSTALLATION\",\"title\":\"ICZN IPT\",\"description\":\"IPT Instance for\
-        \ the ICZN\",\"createdBy\":\"f2f462db-541d-4a24-9921-892d57e1da9f\",\"modifiedBy\"\
-        :\"f2f462db-541d-4a24-9921-892d57e1da9f\",\"created\":\"2017-04-10T01:09:58.334+0000\"\
-        ,\"modified\":\"2017-04-10T01:09:58.334+0000\",\"disabled\":false,\"contacts\"\
-        :[{\"key\":654067,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
-        userId\":[],\"firstName\":\"Richard L Pyle\",\"position\":[],\"email\":[\"\
-        deepreef@bishopmuseum.org\"],\"phone\":[],\"homepage\":[],\"address\":[],\"\
-        createdBy\":\"f2f462db-541d-4a24-9921-892d57e1da9f\",\"modifiedBy\":\"f2f462db-541d-4a24-9921-892d57e1da9f\"\
-        ,\"created\":\"2017-04-10T01:09:58.437+0000\",\"modified\":\"2017-04-10T01:09:58.437+0000\"\
-        }],\"endpoints\":[{\"key\":183271,\"type\":\"FEED\",\"url\":\"http://zoobank.org:8080/ipt/rss.do\"\
-        ,\"createdBy\":\"f2f462db-541d-4a24-9921-892d57e1da9f\",\"modifiedBy\":\"\
-        f2f462db-541d-4a24-9921-892d57e1da9f\",\"created\":\"2017-04-10T01:09:58.560+0000\"\
-        ,\"modified\":\"2017-04-10T01:09:58.560+0000\",\"machineTags\":[]}],\"machineTags\"\
-        :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"a0191679-0104-4c23-af0f-0ec31b0d33d9\"\
-        ,\"organizationKey\":\"6254d7af-c749-4e10-b828-56c905184c28\",\"type\":\"\
-        IPT_INSTALLATION\",\"title\":\"Permanent Commision for The South Pacific (CPPS)\
-        \ OBIS Node\",\"description\":\"CPPS can collect and/or receive data and metadata\
-        \ on marine biodiversity from regional institutions, universities and researchers\
-        \ who are interested in making their data shareable in public domain\",\"\
-        createdBy\":\"6254d7af-c749-4e10-b828-56c905184c28\",\"modifiedBy\":\"a0191679-0104-4c23-af0f-0ec31b0d33d9\"\
-        ,\"created\":\"2017-03-30T16:51:50.777+0000\",\"modified\":\"2017-03-30T16:51:56.713+0000\"\
-        ,\"disabled\":false,\"contacts\":[{\"key\":650480,\"type\":\"TECHNICAL_POINT_OF_CONTACT\"\
-        ,\"primary\":true,\"userId\":[],\"firstName\":\"Steve Erique\",\"position\"\
-        :[],\"email\":[\"sistemas@cpps-int.org\"],\"phone\":[],\"homepage\":[],\"\
-        address\":[],\"createdBy\":\"6254d7af-c749-4e10-b828-56c905184c28\",\"modifiedBy\"\
-        :\"a0191679-0104-4c23-af0f-0ec31b0d33d9\",\"created\":\"2017-03-30T16:51:50.865+0000\"\
-        ,\"modified\":\"2017-03-30T16:51:56.754+0000\"}],\"endpoints\":[{\"key\":180975,\"\
-        type\":\"FEED\",\"url\":\"http://cpps.dyndns.info:8080/cpps-ipt/rss.do\",\"\
-        createdBy\":\"a0191679-0104-4c23-af0f-0ec31b0d33d9\",\"modifiedBy\":\"a0191679-0104-4c23-af0f-0ec31b0d33d9\"\
-        ,\"created\":\"2017-03-30T16:51:56.841+0000\",\"modified\":\"2017-03-30T16:51:56.841+0000\"\
-        ,\"machineTags\":[]}],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"\
-        comments\":[]},{\"key\":\"a1650468-2c39-4747-85d7-1fb04dd6649f\",\"organizationKey\"\
-        :\"5f2df235-914f-4cc9-b247-08fb981e8b8a\",\"type\":\"IPT_INSTALLATION\",\"\
-        title\":\"Natural History Museum of Zimbabwe IPT\",\"description\":\"This\
-        \ IPT serves biological collections and observation data from the Natural\
-        \ History Museum of Zimbabwe and its stakeholders.\",\"createdBy\":\"5f2df235-914f-4cc9-b247-08fb981e8b8a\"\
-        ,\"modifiedBy\":\"a1650468-2c39-4747-85d7-1fb04dd6649f\",\"created\":\"2017-03-28T10:28:13.795+0000\"\
-        ,\"modified\":\"2018-02-15T10:25:03.847+0000\",\"disabled\":false,\"contacts\"\
-        :[{\"key\":634622,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
-        userId\":[],\"firstName\":\"Dr M.J FitzPatrick\",\"position\":[],\"email\"\
-        :[\"natmuse@netconnect.co.zw\"],\"phone\":[],\"homepage\":[],\"address\":[],\"\
-        createdBy\":\"5f2df235-914f-4cc9-b247-08fb981e8b8a\",\"modifiedBy\":\"a1650468-2c39-4747-85d7-1fb04dd6649f\"\
-        ,\"created\":\"2017-03-28T10:28:13.861+0000\",\"modified\":\"2018-02-15T10:25:03.927+0000\"\
-        }],\"endpoints\":[{\"key\":255460,\"type\":\"FEED\",\"url\":\"http://www.nhmbyo.co.zw/ipt/rss.do\"\
-        ,\"createdBy\":\"a1650468-2c39-4747-85d7-1fb04dd6649f\",\"modifiedBy\":\"\
-        a1650468-2c39-4747-85d7-1fb04dd6649f\",\"created\":\"2018-02-15T10:25:04.029+0000\"\
-        ,\"modified\":\"2018-02-15T10:25:04.029+0000\",\"machineTags\":[]}],\"machineTags\"\
-        :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"c51469db-52ee-4028-9139-b521cbf68dc8\"\
-        ,\"organizationKey\":\"bd14512a-b63d-42c1-b426-4c4f0623b6c3\",\"type\":\"\
-        IPT_INSTALLATION\",\"title\":\"Okavango Research Institute (ORI) IPT Installation\"\
-        ,\"description\":\"University of Botswana, Okavango Research Institute\",\"\
-        createdBy\":\"bd14512a-b63d-42c1-b426-4c4f0623b6c3\",\"modifiedBy\":\"c51469db-52ee-4028-9139-b521cbf68dc8\"\
-        ,\"created\":\"2017-03-13T11:11:18.121+0000\",\"modified\":\"2017-12-08T14:19:58.892+0000\"\
-        ,\"disabled\":false,\"contacts\":[{\"key\":628238,\"type\":\"TECHNICAL_POINT_OF_CONTACT\"\
-        ,\"primary\":true,\"userId\":[],\"firstName\":\"Anastacia Makati\",\"position\"\
-        :[],\"email\":[\"makatia@ub.ac.bw\"],\"phone\":[],\"homepage\":[],\"address\"\
-        :[],\"createdBy\":\"bd14512a-b63d-42c1-b426-4c4f0623b6c3\",\"modifiedBy\"\
-        :\"c51469db-52ee-4028-9139-b521cbf68dc8\",\"created\":\"2017-03-13T11:11:18.266+0000\"\
-        ,\"modified\":\"2017-12-08T14:19:58.934+0000\"}],\"endpoints\":[{\"key\":239613,\"\
-        type\":\"FEED\",\"url\":\"http://obis.ub.bw:8080/ipt/rss.do\",\"createdBy\"\
-        :\"c51469db-52ee-4028-9139-b521cbf68dc8\",\"modifiedBy\":\"c51469db-52ee-4028-9139-b521cbf68dc8\"\
-        ,\"created\":\"2017-12-08T14:19:59.032+0000\",\"modified\":\"2017-12-08T14:19:59.032+0000\"\
-        ,\"machineTags\":[]}],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"\
-        comments\":[]},{\"key\":\"3d7d5ace-c16a-49a5-aa75-9db7b85ba0a5\",\"organizationKey\"\
-        :\"c58ac019-b413-4613-8772-39e57acbeb8e\",\"type\":\"IPT_INSTALLATION\",\"\
-        title\":\"NIWA IPT\",\"description\":\"Freshwater biological observations\
-        \ published by NIWA. NIWA, the National Institute of Water and Atmospheric\
-        \ Research, is a New Zealand Crown Research Institute established in 1992.\
-        \ NIWA's mission is to conduct leading environmental science to enable the\
-        \ sustainable management of natural resources for New Zealand and the planet.\"\
-        ,\"createdBy\":\"c58ac019-b413-4613-8772-39e57acbeb8e\",\"modifiedBy\":\"\
-        3d7d5ace-c16a-49a5-aa75-9db7b85ba0a5\",\"created\":\"2017-03-12T21:17:23.807+0000\"\
-        ,\"modified\":\"2018-08-08T18:15:23.315+0000\",\"disabled\":false,\"contacts\"\
-        :[{\"key\":628063,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
-        userId\":[],\"firstName\":\"Kevin Mackay\",\"position\":[],\"email\":[\"kevin.mackay@niwa.co.nz\"\
-        ],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"c58ac019-b413-4613-8772-39e57acbeb8e\"\
-        ,\"modifiedBy\":\"3d7d5ace-c16a-49a5-aa75-9db7b85ba0a5\",\"created\":\"2017-03-12T21:17:23.848+0000\"\
-        ,\"modified\":\"2018-08-08T18:15:23.365+0000\"}],\"endpoints\":[{\"key\":319648,\"\
-        type\":\"FEED\",\"url\":\"https://gbifipt.niwa.co.nz/rss.do\",\"createdBy\"\
-        :\"3d7d5ace-c16a-49a5-aa75-9db7b85ba0a5\",\"modifiedBy\":\"3d7d5ace-c16a-49a5-aa75-9db7b85ba0a5\"\
-        ,\"created\":\"2018-08-08T18:15:23.496+0000\",\"modified\":\"2018-08-08T18:15:23.496+0000\"\
-        ,\"machineTags\":[]}],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"\
-        comments\":[]},{\"key\":\"0213a1ce-cdd7-44fd-b4de-89ca889a7070\",\"organizationKey\"\
-        :\"fbca90e3-8aed-48b1-84e3-369afbd000ce\",\"type\":\"IPT_INSTALLATION\",\"\
-        title\":\"BID IPT\",\"description\":\"This IPT is hosted by GBIF to publish\
-        \ the datasets coming out of the the Biodiversity Information for Development\
-        \ (BID) programme: http://bid.gbif.org/ For more assistance, please contact\
-        \ the GBIF BID team: bid@gbif.org\",\"createdBy\":\"fbca90e3-8aed-48b1-84e3-369afbd000ce\"\
-        ,\"modifiedBy\":\"0213a1ce-cdd7-44fd-b4de-89ca889a7070\",\"created\":\"2017-03-10T13:48:57.656+0000\"\
-        ,\"modified\":\"2018-11-28T13:48:44.121+0000\",\"disabled\":false,\"contacts\"\
-        :[{\"key\":867364,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
-        userId\":[],\"firstName\":\"Helpdesk\",\"lastName\":\"Helpdesk\",\"position\"\
-        :[],\"email\":[\"helpdesk@gbif.org\"],\"phone\":[],\"homepage\":[],\"address\"\
-        :[],\"createdBy\":\"MattBlissett\",\"modifiedBy\":\"0213a1ce-cdd7-44fd-b4de-89ca889a7070\"\
-        ,\"created\":\"2018-03-07T16:06:48.618+0000\",\"modified\":\"2018-11-28T13:48:44.230+0000\"\
-        }],\"endpoints\":[{\"key\":345558,\"type\":\"FEED\",\"url\":\"https://cloud.gbif.org/bid/rss.do\"\
-        ,\"createdBy\":\"0213a1ce-cdd7-44fd-b4de-89ca889a7070\",\"modifiedBy\":\"\
-        0213a1ce-cdd7-44fd-b4de-89ca889a7070\",\"created\":\"2018-11-28T13:48:44.509+0000\"\
-        ,\"modified\":\"2018-11-28T13:48:44.509+0000\",\"machineTags\":[]}],\"machineTags\"\
-        :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"b68add0c-c5b6-451a-818c-203a0253bac9\"\
-        ,\"organizationKey\":\"1e9400fa-ce73-4737-9eaa-f25df148945c\",\"type\":\"\
-        IPT_INSTALLATION\",\"title\":\"Caribbean OBIS node\",\"description\":\"TIER\
-        \ II OBIS node for the Caribbean region\",\"createdBy\":\"1e9400fa-ce73-4737-9eaa-f25df148945c\"\
-        ,\"modifiedBy\":\"1e9400fa-ce73-4737-9eaa-f25df148945c\",\"created\":\"2017-02-09T03:43:27.283+0000\"\
-        ,\"modified\":\"2017-02-09T03:43:27.283+0000\",\"disabled\":false,\"contacts\"\
-        :[{\"key\":603945,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
-        userId\":[],\"firstName\":\"Eduardo klein\",\"position\":[],\"email\":[\"\
-        eklein@usb.ve\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\"\
-        :\"1e9400fa-ce73-4737-9eaa-f25df148945c\",\"modifiedBy\":\"1e9400fa-ce73-4737-9eaa-f25df148945c\"\
-        ,\"created\":\"2017-02-09T03:43:27.355+0000\",\"modified\":\"2017-02-09T03:43:27.355+0000\"\
-        }],\"endpoints\":[{\"key\":160701,\"type\":\"FEED\",\"url\":\"http://ipt.iobis.org/caribbeanobis/rss.do\"\
-        ,\"createdBy\":\"1e9400fa-ce73-4737-9eaa-f25df148945c\",\"modifiedBy\":\"\
-        1e9400fa-ce73-4737-9eaa-f25df148945c\",\"created\":\"2017-02-09T03:43:27.432+0000\"\
-        ,\"modified\":\"2017-02-09T03:43:27.432+0000\",\"machineTags\":[]}],\"machineTags\"\
-        :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"33f40aac-2870-454e-b8f4-9958e761d826\"\
-        ,\"organizationKey\":\"cdcc4ce1-7f6e-4ed2-b47c-eb451925b038\",\"type\":\"\
-        IPT_INSTALLATION\",\"title\":\"Instituto Superior de Agronomia, Universidade\
-        \ de Lisboa - IPT\",\"description\":\"IPT installation of the Instituto Superior\
-        \ de Agronomia, Universidade de Lisboa\",\"createdBy\":\"cdcc4ce1-7f6e-4ed2-b47c-eb451925b038\"\
-        ,\"modifiedBy\":\"cdcc4ce1-7f6e-4ed2-b47c-eb451925b038\",\"created\":\"2017-02-02T13:02:06.008+0000\"\
-        ,\"modified\":\"2017-02-02T13:02:06.008+0000\",\"disabled\":false,\"contacts\"\
-        :[{\"key\":590160,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
-        userId\":[],\"firstName\":\"Pedro Ars\xE9nio\",\"position\":[],\"email\":[\"\
-        arseniop@isa.ulisboa.pt\"],\"phone\":[],\"homepage\":[],\"address\":[],\"\
-        createdBy\":\"cdcc4ce1-7f6e-4ed2-b47c-eb451925b038\",\"modifiedBy\":\"cdcc4ce1-7f6e-4ed2-b47c-eb451925b038\"\
-        ,\"created\":\"2017-02-02T13:02:06.053+0000\",\"modified\":\"2017-02-02T13:02:06.053+0000\"\
-        }],\"endpoints\":[{\"key\":159461,\"type\":\"FEED\",\"url\":\"http://ipt.isa.ulisboa.pt/ipt_isa/rss.do\"\
-        ,\"createdBy\":\"cdcc4ce1-7f6e-4ed2-b47c-eb451925b038\",\"modifiedBy\":\"\
-        cdcc4ce1-7f6e-4ed2-b47c-eb451925b038\",\"created\":\"2017-02-02T13:02:06.138+0000\"\
-        ,\"modified\":\"2017-02-02T13:02:06.138+0000\",\"machineTags\":[]}],\"machineTags\"\
-        :[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"f0d34585-ddcb-4915-9332-6043585e831a\"\
-        ,\"organizationKey\":\"c58ac019-b413-4613-8772-39e57acbeb8e\",\"type\":\"\
-        IPT_INSTALLATION\",\"title\":\"Southwest Pacific Regional OBIS Node\",\"description\"\
-        :\"The Southwestern Pacific OBIS Node site is a gateway to marine biodiversity\
-        \ data from the Ross Sea (Antarctica), the Southern Ocean south of New Zealand,\
-        \ the New Zealand Exclusive Economic Zone, and surrounding seas, including\
-        \ those to the north as far as Fiji. As they become available, more new data\
-        \ sets will be added to this site and to the main OBIS site. More than 20\
-        \ OBIS nodes around the world connect 500 institutions from 56 countries.\
-        \ Collectively, they have provided over 45 million observations of nearly\
-        \ 120 000 marine species, from Bacteria to Whales, from the surface to 10\
-        \ 900 meters depth, and from the Tropics to the Poles. The datasets are integrated\
-        \ so you can search and map them all seamlessly by species name, higher taxonomic\
-        \ level, geographic area, depth, time and environmental parameters. OBIS emanates\
-        \ from the Census of Marine Life (2000-2010) and was adopted as a project\
-        \ under IOC-UNESCO\u2019s International Oceanographic Data and Information\
-        \ (IODE) programme in 2009.\",\"createdBy\":\"c58ac019-b413-4613-8772-39e57acbeb8e\"\
-        ,\"modifiedBy\":\"f0d34585-ddcb-4915-9332-6043585e831a\",\"created\":\"2017-02-02T00:48:14.650+0000\"\
-        ,\"modified\":\"2018-08-08T08:54:50.850+0000\",\"disabled\":false,\"contacts\"\
-        :[{\"key\":589667,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"\
-        userId\":[],\"firstName\":\"Kevin Mackay\",\"position\":[],\"email\":[\"kevin.mackay@niwa.co.nz\"\
-        ],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"c58ac019-b413-4613-8772-39e57acbeb8e\"\
-        ,\"modifiedBy\":\"f0d34585-ddcb-4915-9332-6043585e831a\",\"created\":\"2017-02-02T00:48:14.751+0000\"\
-        ,\"modified\":\"2018-08-08T08:54:50.939+0000\"}],\"endpoints\":[{\"key\":319141,\"\
-        type\":\"FEED\",\"url\":\"https://nzobisipt.niwa.co.nz/rss.do\",\"createdBy\"\
-        :\"f0d34585-ddcb-4915-9332-6043585e831a\",\"modifiedBy\":\"f0d34585-ddcb-4915-9332-6043585e831a\"\
-        ,\"created\":\"2018-08-08T08:54:51.042+0000\",\"modified\":\"2018-08-08T08:54:51.042+0000\"\
-        ,\"machineTags\":[]}],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"\
-        comments\":[]},{\"key\":\"f9df6cff-21d4-4d4b-8da4-eda454f5a086\",\"organizationKey\"\
-        :\"2089ce96-4fb5-4a20-999c-3ccf45a27a4d\",\"type\":\"IPT_INSTALLATION\",\"\
-        title\":\"European Ocean Biogeographic Information System (EurOBIS)\",\"description\"\
-        :\"European Node of the international Ocean Biogeographic Information System\
-        \ (OBIS) - publishes distribution data on marine species, collected within\
-        \ European marine waters or collected by European researchers outside European\
-        \ marine waters.\\r\\n\\r\\nSee http://www.eurobis.org\",\"createdBy\":\"\
-        2089ce96-4fb5-4a20-999c-3ccf45a27a4d\",\"modifiedBy\":\"f9df6cff-21d4-4d4b-8da4-eda454f5a086\"\
-        ,\"created\":\"2017-01-24T13:24:08.551+0000\",\"modified\":\"2018-08-31T20:20:13.606+0000\"\
-        ,\"disabled\":false,\"contacts\":[{\"key\":582643,\"type\":\"TECHNICAL_POINT_OF_CONTACT\"\
-        ,\"primary\":true,\"userId\":[],\"firstName\":\"Leen Vandepitte\",\"position\"\
-        :[],\"email\":[\"info@eurobis.org\"],\"phone\":[],\"homepage\":[],\"address\"\
-        :[],\"createdBy\":\"2089ce96-4fb5-4a20-999c-3ccf45a27a4d\",\"modifiedBy\"\
-        :\"f9df6cff-21d4-4d4b-8da4-eda454f5a086\",\"created\":\"2017-01-24T13:24:08.640+0000\"\
-        ,\"modified\":\"2018-08-31T20:20:13.655+0000\"}],\"endpoints\":[{\"key\":326383,\"\
-        type\":\"FEED\",\"url\":\"http://ipt.vliz.be/eurobis/rss.do\",\"createdBy\"\
-        :\"f9df6cff-21d4-4d4b-8da4-eda454f5a086\",\"modifiedBy\":\"f9df6cff-21d4-4d4b-8da4-eda454f5a086\"\
-        ,\"created\":\"2018-08-31T20:20:13.752+0000\",\"modified\":\"2018-08-31T20:20:13.752+0000\"\
-        ,\"machineTags\":[]}],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"\
         comments\":[]}]}"}
     headers:
       Accept-Ranges: [bytes]
@@ -1645,9 +1591,10 @@ interactions:
       Cache-Control: ['public, max-age=3601']
       Connection: [keep-alive]
       Content-Type: [application/json]
-      Date: ['Fri, 25 Jan 2019 18:01:32 GMT']
+      Date: ['Wed, 20 Nov 2019 17:58:52 GMT']
       Server: [Jetty(9.3.z-SNAPSHOT)]
+      Transfer-Encoding: [chunked]
       Via: [1.1 varnish (Varnish/5.2)]
-      X-Varnish: ['630128898']
+      X-Varnish: ['1017479949']
     status: {code: 200, message: OK}
 version: 1

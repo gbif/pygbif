@@ -5,9 +5,9 @@ interactions:
       Accept: ['*/*']
       Accept-Encoding: ['gzip, deflate']
       Connection: [keep-alive]
-      user-agent: ['python-requests/2.21.0,pygbif/0.2.2.3']
+      user-agent: ['python-requests/2.22.0,pygbif/0.3.9']
     method: GET
-    uri: http://api.gbif.org/v1/installation/b77901f9-d9b0-47fa-94e0-dd96450aa2b4?limit=100
+    uri: https://api.gbif.org/v1/installation/b77901f9-d9b0-47fa-94e0-dd96450aa2b4?limit=100
   response:
     body: {string: '{"key":"b77901f9-d9b0-47fa-94e0-dd96450aa2b4","organizationKey":"8d30d714-63f5-4f6f-a1a4-d73d09aa60c4","type":"IPT_INSTALLATION","title":"IPT
         VIR N.I. Vavilov","description":"IPT\r\nN.I.Vavilov Institute of Plant Genetic
@@ -22,9 +22,9 @@ interactions:
       Connection: [keep-alive]
       Content-Length: ['1177']
       Content-Type: [application/json]
-      Date: ['Fri, 25 Jan 2019 18:03:01 GMT']
+      Date: ['Wed, 20 Nov 2019 17:58:56 GMT']
       Server: [Jetty(9.3.z-SNAPSHOT)]
       Via: [1.1 varnish (Varnish/5.2)]
-      X-Varnish: ['628884050']
+      X-Varnish: ['994970203']
     status: {code: 200, message: OK}
 version: 1

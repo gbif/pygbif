@@ -9,7 +9,7 @@ def test_networks():
     res = registry.networks()
     assert dict == res.__class__
     assert 2 == len(res)
-    assert 1 == len(res['data'])
+    assert 4 == len(res['data'])
     assert ['data', 'meta'] == sorted(res.keys())
 
 @vcr.use_cassette('test/vcr_cassettes/test_networks_limit.yaml')
@@ -17,7 +17,7 @@ def test_networks_limit():
     "registry.networks - limit param "
     res = registry.networks(limit=5)
     assert dict == res.__class__
-    assert 1 == len(res['data'])
+    assert 4 == len(res['data'])
 
 @vcr.use_cassette('test/vcr_cassettes/test_networks_uuid.yaml')
 def test_networks_uuid():

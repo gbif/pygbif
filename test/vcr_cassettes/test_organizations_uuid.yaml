@@ -5,13 +5,13 @@ interactions:
       Accept: ['*/*']
       Accept-Encoding: ['gzip, deflate']
       Connection: [keep-alive]
-      user-agent: ['python-requests/2.21.0,pygbif/0.2.2.3']
+      user-agent: ['python-requests/2.22.0,pygbif/0.3.9']
     method: GET
-    uri: http://api.gbif.org/v1/organization/e2e717bf-551a-4917-bdc9-4fa0f342c530?limit=100
+    uri: https://api.gbif.org/v1/organization/e2e717bf-551a-4917-bdc9-4fa0f342c530?limit=100
   response:
     body: {string: '{"key":"e2e717bf-551a-4917-bdc9-4fa0f342c530","endorsingNodeKey":"8618c64a-93e0-4300-b546-7249e5148ed2","endorsementApproved":true,"title":"Cornell
         Lab of Ornithology","description":"The Cornell Lab of Ornithology is a world
-        leader in the study, appreciation, and conservation of birds.","language":"eng","homepage":["http://www.birds.cornell.edu"],"address":["159
+        leader in the study, appreciation, and conservation of birds.","language":"eng","email":[],"phone":[],"homepage":["http://www.birds.cornell.edu"],"address":["159
         Sapsucker Woods Rd."],"city":"Ithaca","country":"US","postalCode":"NY/14850","latitude":42.47999,"longitude":-76.45109,"numPublishedDatasets":3,"createdBy":"ADMIN","modifiedBy":"ADMIN","created":"2013-08-01T08:38:21.000+0000","modified":"2013-08-01T08:38:21.000+0000","contacts":[{"key":19957,"type":"ADMINISTRATIVE_POINT_OF_CONTACT","primary":true,"userId":[],"firstName":"Tim","lastName":"Levatich","position":["Database
         Manager"],"email":["tpl10@cornell.edu"],"phone":["+01 607 254 2113"],"homepage":[],"address":["Cornell
         Lab of Ornithology"],"createdBy":"registry-migration.gbif.org","modifiedBy":"registry-migration.gbif.org","created":"2013-10-24T09:04:58.000+0000","modified":"2013-10-24T09:04:58.000+0000"},{"key":19958,"type":"TECHNICAL_POINT_OF_CONTACT","primary":true,"userId":[],"firstName":"David","lastName":"Bloom","position":["VertNet
@@ -28,11 +28,11 @@ interactions:
       Age: ['0']
       Cache-Control: ['public, max-age=3601']
       Connection: [keep-alive]
-      Content-Length: ['3021']
+      Content-Length: ['3043']
       Content-Type: [application/json]
-      Date: ['Fri, 25 Jan 2019 18:13:46 GMT']
+      Date: ['Wed, 20 Nov 2019 17:59:15 GMT']
       Server: [Jetty(9.3.z-SNAPSHOT)]
       Via: [1.1 varnish (Varnish/5.2)]
-      X-Varnish: ['633636042']
+      X-Varnish: ['1001064386']
     status: {code: 200, message: OK}
 version: 1

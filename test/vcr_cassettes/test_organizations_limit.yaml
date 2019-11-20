@@ -5,209 +5,251 @@ interactions:
       Accept: ['*/*']
       Accept-Encoding: ['gzip, deflate']
       Connection: [keep-alive]
-      user-agent: ['python-requests/2.21.0,pygbif/0.2.2.3']
+      user-agent: ['python-requests/2.22.0,pygbif/0.3.9']
     method: GET
-    uri: http://api.gbif.org/v1/organization?limit=5
+    uri: https://api.gbif.org/v1/organization?limit=5
   response:
-    body: {string: "{\"offset\":0,\"limit\":5,\"endOfRecords\":false,\"count\":1742,\"\
-        results\":[{\"key\":\"2e3408a2-7d79-478f-875b-2b6a669b9026\",\"endorsingNodeKey\"\
-        :\"46e3639a-27f8-45af-bfbe-d19b77efb040\",\"endorsementApproved\":true,\"\
-        title\":\"Servicio Nacional de Areas Naturales Protegidas por el Estado\"\
-        ,\"description\":\"El Servicio Nacional de \xC1reas Naturales Protegidas por\
-        \ el Estado - SERNANP, es un Organismo P\xFAblico T\xE9cnico Especializado\
-        \ adscrito al Ministerio del Ambiente, a trav\xE9s del Decreto Legislativo\
-        \ 1013 del 14 de mayo de 2008, encargado de dirigir y establecer los criterios\
-        \ t\xE9cnicos y administrativos para la conservaci\xF3n de las \xC1reas Naturales\
-        \ Protegidas \u2013 ANP, y de cautelar el mantenimiento de la diversidad biol\xF3\
-        gica. El SERNANP es el ente rector del Sistema Nacional de \xC1reas Naturales\
-        \ Protegidas por el Estado \u2013 SINANPE, y en su calidad de autoridad t\xE9\
-        cnico-normativa realiza su trabajo en coordinaci\xF3n con gobiernos regionales,\
-        \ locales y propietarios de predios reconocidos como \xE1reas de conservaci\xF3\
-        n privada.\",\"language\":\"eng\",\"email\":[\"sernanp@sernanp.gob.pe\"],\"\
-        phone\":[\"51 1 7177500\"],\"homepage\":[\"http://www.sernanp.gob.pe\"],\"\
-        logoUrl\":\"http://www.sernanp.gob.pe/documents/10181/0/logoSernanp.png\"\
-        ,\"address\":[\"Calle Diecisiete N\xB0 355. Urbanizaci\xF3n El Palomar\"],\"\
-        city\":\"San Isidro\",\"province\":\"Lima\",\"country\":\"PE\",\"postalCode\"\
-        :\"27\",\"numPublishedDatasets\":0,\"createdBy\":\"gbif.express\",\"modifiedBy\"\
-        :\"gbif.express\",\"created\":\"2019-01-22T23:31:49.087+0000\",\"modified\"\
-        :\"2019-01-23T15:16:42.044+0000\",\"contacts\":[{\"key\":1468669,\"type\"\
-        :\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\"\
-        :\"Giovanna\",\"lastName\":\"Chipana\",\"position\":[],\"email\":[\"gchipana@sernanp.gob.pe\"\
-        ],\"phone\":[\"51 1 7177500\"],\"homepage\":[],\"address\":[],\"createdBy\"\
-        :\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2019-01-22T23:31:49.115+0000\"\
-        ,\"modified\":\"2019-01-22T23:31:49.115+0000\"},{\"key\":1468670,\"type\"\
-        :\"POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Carlos\"\
-        ,\"lastName\":\"Sanchez Rojas\",\"position\":[],\"email\":[\"csanchezrojas@sernanp.gob.pe\"\
-        ],\"phone\":[\"51 1 7177500\"],\"homepage\":[],\"address\":[],\"createdBy\"\
-        :\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2019-01-22T23:31:49.151+0000\"\
-        ,\"modified\":\"2019-01-22T23:31:49.151+0000\"}],\"endpoints\":[],\"machineTags\"\
-        :[],\"tags\":[],\"identifiers\":[],\"comments\":[{\"key\":23436,\"content\"\
-        :\"Is associated with a GBIF-funded project: no\\n\\n\\nExpects to publish:\\\
-        n\\n\\n - OccurenceData\\n - SamplingEventData\\n - ResourceMetaData\\n\\\
-        nWill run a server which exposes data: no\\n\\n\\nPlans to run publishing\
-        \ software (e.g. an IPT): no\\n\\n\\nNeeds help for data publishing: yes\"\
-        ,\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\"\
-        :\"2019-01-22T23:31:49.193+0000\",\"modified\":\"2019-01-22T23:31:49.193+0000\"\
-        }]},{\"key\":\"76f68a9a-c7e9-4628-8ed2-fca4f81fe87d\",\"endorsingNodeKey\"\
-        :\"efb9c00e-f802-45dd-8826-a52ec45b89ff\",\"endorsementApproved\":true,\"\
-        title\":\"Centre d'Etudes de Recherches et de Formation Foresti\xE8res (CERF)\"\
-        ,\"description\":\"Le Centre d'Etudes de Recherche et de Formation Foresti\xE8\
-        res (CERF) est un office \xE0 caract\xE8re scientifique qui contribue \xE0\
-        \ la mise en \u0153uvre de la politique foresti\xE8re nationale et \xE0 l'avancement\
-        \ de la science. Le CERF est une structure publique appartenant au Minist\xE8\
-        re du Cadre de vie et du D\xE9veloppement Durable.  En tant que Centre de\
-        \ Recherche, le CERF dispose fr\xE9quemment de donn\xE9es d'occurrences issues\
-        \ des \xE9tudes diverses r\xE9alis\xE9es y compris les inventaires sur le\
-        \ territoire national. De ce fait, le CERF dispose d'une importante base de\
-        \ donn\xE9es de biodiversit\xE9 que nous souhaitons rendre visible sur le\
-        \ site du GBIF.\",\"language\":\"eng\",\"email\":[\"cerfbenin@gmail.com\"\
-        ],\"phone\":[\"229 21333771\"],\"homepage\":[],\"address\":[\"06 BP 707 PK3,5\
-        \ Cotonou\"],\"city\":\"Cotonou\",\"province\":\"Littoral\",\"country\":\"\
-        BJ\",\"postalCode\":\"06BP 707\",\"numPublishedDatasets\":0,\"createdBy\"\
-        :\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2019-01-22T21:42:37.047+0000\"\
-        ,\"modified\":\"2019-01-22T22:10:22.745+0000\",\"contacts\":[{\"key\":1468515,\"\
+    body: {string: "{\"offset\":0,\"limit\":5,\"endOfRecords\":false,\"count\":1967,\"\
+        results\":[{\"key\":\"d3fa50b3-ed10-420a-a289-5c0a60dadbf5\",\"endorsingNodeKey\"\
+        :\"7f48e0c8-5c96-49ec-b972-30748e339115\",\"endorsementApproved\":true,\"\
+        title\":\"A.L.Takhtajan Institute of Botany Yerevan\",\"description\":\"NOT\
+        \ PART OF TEXT: PLEASE NOTE: We want to get confirmation through the German\
+        \ GBIF Node (this cannot be chosen in the list below)\\nThe A.L. Takhtajan\
+        \ Institute of Botany of the Armenian National Academy of Sciences was established\
+        \ in 1938. It became one of the leading botanical institutions in the South\
+        \ Caucasus, which carries out fundamental investigations of the Armenian flora\
+        \ and vegetation. The main scientific field are 1) research and conservation\
+        \ of Armenia\u2019s flora, vegetation and plant resources 2) development of\
+        \ a scientific basis for improvement of productivity of the main forest formations\
+        \ of the country\u2019s, introduction and acclimatization of plants 4) elaboration\
+        \ of a scientific basis for planting of trees in settlements 4) studies of\
+        \ the dynamics of the vegetation changes in Armenia 5) publication of the\
+        \ Flora of Armenia and the Red Data Book of Armenia.\\nThe herbarium of the\
+        \ Institute of Botany (ERE) contains over 500.000 of herbarium specimens of\
+        \ which collected mainly from Armenia and the Caucasus region, including numerous\
+        \ type specimens. Inventory of the herbarium is done using the JACQ collection\
+        \ management system and digitizing of the collections is continuously made.\"\
+        ,\"language\":\"eng\",\"email\":[\"botanyinst@sci.am\"],\"phone\":[],\"homepage\"\
+        :[],\"address\":[\"Achyryan Street 1\"],\"city\":\"Yerevan\",\"country\":\"\
+        AM\",\"postalCode\":\"0040\",\"numPublishedDatasets\":0,\"createdBy\":\"gbif.express\"\
+        ,\"modifiedBy\":\"gbif.express\",\"created\":\"2019-11-18T14:10:18.572+0000\"\
+        ,\"modified\":\"2019-11-19T13:34:11.373+0000\",\"contacts\":[{\"key\":1894511,\"\
         type\":\"ADMINISTRATIVE_POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"\
-        firstName\":\"Gaston\",\"lastName\":\"AKOUEHOU\",\"position\":[],\"email\"\
-        :[\"gastonakouehou@gmail.com\"],\"phone\":[\"229 97367678\"],\"homepage\"\
-        :[],\"address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\"\
-        ,\"created\":\"2019-01-22T21:42:37.064+0000\",\"modified\":\"2019-01-22T21:42:37.064+0000\"\
-        },{\"key\":1468516,\"type\":\"POINT_OF_CONTACT\",\"primary\":false,\"userId\"\
-        :[],\"firstName\":\"Augustin\",\"lastName\":\"OROU MATILO TIMOTHEE B.\",\"\
-        position\":[],\"email\":[\"matilorou@yahoo.fr\"],\"phone\":[\"22997842182\"\
-        ],\"homepage\":[],\"address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\"\
-        :\"gbif.express\",\"created\":\"2019-01-22T21:42:37.096+0000\",\"modified\"\
-        :\"2019-01-22T21:42:37.096+0000\"}],\"endpoints\":[],\"machineTags\":[],\"\
-        tags\":[],\"identifiers\":[],\"comments\":[{\"key\":23435,\"content\":\"Is\
-        \ associated with a GBIF-funded project: yes\\n\\n\\nExpects to publish:\\\
-        n\\n\\n - ResourceMetaData\\n - ChecklistData\\n - SamplingEventData\\n\\\
-        nWill run a server which exposes data: yes\\n\\n\\nPlans to run publishing\
+        firstName\":\"Heimo\",\"lastName\":\"Rainer\",\"position\":[],\"email\":[\"\
+        heimo.rainer@nhm-wien.ac.at\"],\"phone\":[],\"homepage\":[],\"address\":[],\"\
+        createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"\
+        2019-11-18T14:10:18.591+0000\",\"modified\":\"2019-11-18T14:10:18.591+0000\"\
+        },{\"key\":1894512,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":false,\"\
+        userId\":[],\"firstName\":\"Dominik\",\"lastName\":\"R\xF6pert\",\"position\"\
+        :[],\"email\":[\"d.roepert@bgbm.org\"],\"phone\":[],\"homepage\":[],\"address\"\
+        :[],\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\"\
+        :\"2019-11-18T14:10:18.627+0000\",\"modified\":\"2019-11-18T14:10:18.627+0000\"\
+        },{\"key\":1894513,\"type\":\"POINT_OF_CONTACT\",\"primary\":false,\"userId\"\
+        :[],\"firstName\":\"Marine\",\"lastName\":\"Oganesian\",\"position\":[],\"\
+        email\":[\"oganesianm@yahoo.com\"],\"phone\":[],\"homepage\":[],\"address\"\
+        :[],\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\"\
+        :\"2019-11-18T14:10:18.660+0000\",\"modified\":\"2019-11-18T14:10:18.660+0000\"\
+        }],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\"\
+        :[{\"key\":29353,\"content\":\"Expects to publish:\\n\\n\\n - OccurrenceData\\\
+        n\\nExpected data content:\\n\\n> Herbarium specimen records served through\
+        \ the JACQ specimen database (residing at the University of Vienna and the\
+        \ Botanic Garden and Botanical Museum Berlin, with a BioCASe provider).\\\
+        n\\n\\nWill run a server which exposes data: yes\\n\\n\\nPlans to run publishing\
+        \ software (e.g. an IPT): yes\\n\\n\\nNeeds help for data publishing: no\"\
+        ,\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\"\
+        :\"2019-11-18T14:10:18.696+0000\",\"modified\":\"2019-11-18T14:10:18.696+0000\"\
+        }]},{\"key\":\"6ec85876-81d2-466a-afc9-e7c0f66e6cc7\",\"endorsingNodeKey\"\
+        :\"da44cd31-5901-4687-a106-6d1c7734ee3a\",\"endorsementApproved\":true,\"\
+        title\":\"Agence Territoriale de l'Environnement de Saint-Barth\xE9lemy\"\
+        ,\"description\":\"L\u2019Agence Territoriale de l\u2019Environnement est\
+        \ un \xE9tablissement public \xE0 caract\xE8re industriel et commercial. Cr\xE9\
+        \xE9e en 2013, elle reprend notamment l\u2019ensemble des missions de l'association\
+        \ GRENAT, dont la gestion de la R\xE9serve Naturelle\",\"language\":\"eng\"\
+        ,\"email\":[\"karl.questel@agence-environnement.fr\"],\"phone\":[\"+590 590\
+        \ 27 88 18\"],\"homepage\":[\"https://agencedelenvironnement.fr/\"],\"logoUrl\"\
+        :\"https://agencedelenvironnement.fr/wp-content/uploads/2019/08/LOGO-ATE-StBarth-Bleu-400x300.png\"\
+        ,\"address\":[\"Rue de la Republique, Gustavia, Saint-Barth\xE9lemy\"],\"\
+        city\":\"Gustavia\",\"country\":\"BL\",\"postalCode\":\"97133\",\"latitude\"\
+        :17.89802,\"longitude\":-62.84984,\"numPublishedDatasets\":0,\"createdBy\"\
+        :\"gbif.express\",\"modifiedBy\":\"jlegind\",\"created\":\"2019-11-18T10:05:11.245+0000\"\
+        ,\"modified\":\"2019-11-20T15:03:13.435+0000\",\"contacts\":[{\"key\":1894449,\"\
+        type\":\"ADMINISTRATIVE_POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"\
+        firstName\":\"S\xE9bastien\",\"lastName\":\"Gr\xE9aux\",\"position\":[],\"\
+        email\":[\"sebastien.greaux@agence-environnement.fr\"],\"phone\":[\"+590 590\
+        \ 27 88 18\"],\"homepage\":[],\"address\":[],\"createdBy\":\"gbif.express\"\
+        ,\"modifiedBy\":\"gbif.express\",\"created\":\"2019-11-18T10:05:11.268+0000\"\
+        ,\"modified\":\"2019-11-18T10:05:11.268+0000\"},{\"key\":1894450,\"type\"\
+        :\"POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Karl\"\
+        ,\"lastName\":\"Questel\",\"position\":[],\"email\":[\"karl.questel@agence-environnement.fr\"\
+        ],\"phone\":[\"+590 590 27 88 18\"],\"homepage\":[],\"address\":[],\"createdBy\"\
+        :\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2019-11-18T10:05:11.310+0000\"\
+        ,\"modified\":\"2019-11-18T10:05:11.310+0000\"}],\"endpoints\":[],\"machineTags\"\
+        :[],\"tags\":[],\"identifiers\":[],\"comments\":[{\"key\":29351,\"content\"\
+        :\"Is associated with a GBIF-funded project: no\\n\\n\\nExpects to publish:\\\
+        n\\n\\n - ChecklistData\\n - OccurrenceData\\n - SamplingEventData\\n\\nExpected\
+        \ data content:\\n\\n> Selon les publications de l'Agence Territoriale de\
+        \ l'Environnement de Saint-Barth\xE9lemy.\\n> Principalement des confirmations\
+        \ de pr\xE9sence d'un taxon, et parfois des donn\xE9es sur sa biologie.\\\
+        n\\n\\nWill run a server which exposes data: yes\\n\\n\\nPlans to run publishing\
         \ software (e.g. an IPT): no\\n\\n\\nNeeds help for data publishing: yes\"\
         ,\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\"\
-        :\"2019-01-22T21:42:37.128+0000\",\"modified\":\"2019-01-22T21:42:37.128+0000\"\
-        }]},{\"key\":\"b648db34-3bf9-45eb-a65b-8176a3c3be88\",\"endorsingNodeKey\"\
-        :\"7f48e0c8-5c96-49ec-b972-30748e339115\",\"endorsementApproved\":false,\"\
-        title\":\"MyCoPortal\",\"description\":\"The Mycology Collections data Portal\
-        \ (MyCoPortal) is a suite of user-friendly, web-based data access technologies\
-        \ to aid taxonomists, field biologists, ecologists, educators, and citizen\
-        \ scientists in the study of fungal diversity. The data are derived from a\
-        \ network of universities, botanical gardens, museums, and agencies that provide\
-        \ taxonomic, environmental, and specimen-based information. Using the Symbiota\
-        \ (http://symbiota.org) system of virtual online floras, these data are directly\
-        \ accessible to dynamically generate georeferenced species checklists, distribution\
-        \ maps, and interactive identification keys, all linked with a rich collection\
-        \ of digital imagery documenting fungal diversity throughout the World.\"\
-        ,\"language\":\"eng\",\"email\":[\"help@mycoportal.org\"],\"phone\":[\"2172440439\"\
-        ],\"homepage\":[\"https://www.mycoportal.org\"],\"logoUrl\":\"https://www.microfungi.org/files/8413/5976/3006/index.jpeg\"\
-        ,\"address\":[\"University of Illinois, Illinois Natural History Survey, 1816\
-        \ South Oak Street\"],\"city\":\"Champaign\",\"province\":\"Illinois\",\"\
-        country\":\"US\",\"postalCode\":\"61820\",\"latitude\":40.09269,\"longitude\"\
-        :-88.24098,\"numPublishedDatasets\":0,\"createdBy\":\"gbif.express\",\"modifiedBy\"\
-        :\"gbif.express\",\"created\":\"2019-01-21T22:16:33.120+0000\",\"modified\"\
-        :\"2019-01-21T22:16:33.120+0000\",\"contacts\":[{\"key\":1468014,\"type\"\
-        :\"ADMINISTRATIVE_POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\"\
-        :\"Scott\",\"lastName\":\"Bates\",\"position\":[],\"email\":[\"help@mycoportal.org\"\
+        :\"2019-11-18T10:05:11.346+0000\",\"modified\":\"2019-11-18T10:05:11.346+0000\"\
+        }]},{\"key\":\"75811dd9-e46e-4f33-82b4-6ff71a702e88\",\"endorsingNodeKey\"\
+        :\"7f48e0c8-5c96-49ec-b972-30748e339115\",\"endorsementApproved\":true,\"\
+        title\":\"National Herbarium of Georgia TBI, Botanical Institute of Ilia State\
+        \ University\",\"description\":\"The Georgian National Herbarium at the Institute\
+        \ of Botany of the Ilia State University is the oldest herbarium in the Caucasus\
+        \ and one of the largest and most valuable in the former USSR. It was established\
+        \ in 1891 at the Tbilisi Botanical Garden.\\nDirector of the Institute of\
+        \ Botany of the Ilia State University: Prof. Shalva Sikharulidze. \\nThe herbarium\
+        \ TBI contains about 1 Mio herbarium specimens. Inventorying using the JACQ\
+        \ is ongoing.\",\"language\":\"eng\",\"email\":[\"info@iliauni.edu.ge\"],\"\
+        phone\":[\"+995 32 222 00 09\"],\"homepage\":[\"https://iliauni.edu.ge/en/iliauni/institutebi-451/botanikis-insitituti\"\
+        ],\"address\":[\"Botanikuri Street 1\"],\"city\":\"Tbilisi\",\"country\":\"\
+        GE\",\"postalCode\":\"0105\",\"numPublishedDatasets\":0,\"createdBy\":\"gbif.express\"\
+        ,\"modifiedBy\":\"dnoesgaard\",\"created\":\"2019-11-15T13:51:51.361+0000\"\
+        ,\"modified\":\"2019-11-19T21:10:11.393+0000\",\"contacts\":[{\"key\":1893266,\"\
+        type\":\"ADMINISTRATIVE_POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"\
+        firstName\":\"Heimo\",\"lastName\":\"Rainer\",\"position\":[],\"email\":[\"\
+        heimo.rainer@nhm-wien.ac.at\"],\"phone\":[],\"homepage\":[],\"address\":[],\"\
+        createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"\
+        2019-11-15T13:51:51.381+0000\",\"modified\":\"2019-11-15T13:51:51.381+0000\"\
+        },{\"key\":1893267,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":false,\"\
+        userId\":[],\"firstName\":\"Dominik\",\"lastName\":\"R\xF6pert\",\"position\"\
+        :[],\"email\":[\"d.roepert@bgbm.org\"],\"phone\":[],\"homepage\":[],\"address\"\
+        :[],\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\"\
+        :\"2019-11-15T13:51:51.419+0000\",\"modified\":\"2019-11-15T13:51:51.419+0000\"\
+        },{\"key\":1893268,\"type\":\"POINT_OF_CONTACT\",\"primary\":false,\"userId\"\
+        :[],\"firstName\":\"Manana\",\"lastName\":\"Khutsishvili\",\"position\":[],\"\
+        email\":[\"mananakhuts@yahoo.com\"],\"phone\":[\"+995 599304353\"],\"homepage\"\
+        :[],\"address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\"\
+        ,\"created\":\"2019-11-15T13:51:51.455+0000\",\"modified\":\"2019-11-15T13:51:51.455+0000\"\
+        }],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\"\
+        :[{\"key\":29341,\"content\":\"Is associated with a GBIF-funded project: no\\\
+        n\\n\\nExpects to publish:\\n\\n\\n - OccurrenceData\\n\\nExpected data content:\\\
+        n\\n> herbarium data from TBI\\n\\n\\nWill run a server which exposes data:\
+        \ yes\\n\\n\\nPlans to run publishing software (e.g. an IPT): yes\\n\\n\\\
+        nNeeds help for data publishing: no\",\"createdBy\":\"gbif.express\",\"modifiedBy\"\
+        :\"gbif.express\",\"created\":\"2019-11-15T13:51:51.525+0000\",\"modified\"\
+        :\"2019-11-15T13:51:51.525+0000\"}]},{\"key\":\"9de1b9bc-f71f-4ac8-9a2e-872e4e42a204\"\
+        ,\"endorsingNodeKey\":\"4f6826f2-4ff6-443d-b966-e6913bd24013\",\"endorsementApproved\"\
+        :true,\"title\":\"Institute of Botany, Azerbaijan National Academy of Sciences\"\
+        ,\"description\":\"The Institute of Botany of the  of Azerbaijan National\
+        \ Academy of Sciences (ANAS) is the multidirectional research center studying\
+        \ flora of Azerbaijan Republic. In 1936 it was established on the basis of\
+        \ the Azerbaijanian Sector of Transcaucasian branch of the USSR Academy of\
+        \ Sciences. The first director of the Institute was a well-known botanist,\
+        \ the famous researcher of flora of Caucasus, Academician A.A.Grossheim who\
+        \ played major role in the formation of the Institute. Later, Academician\
+        \ M.H.Abutalibov (1947-1950; 1962-1978), Academician H.A.Aliyev (1950-1952),\
+        \ Prof. Dr. Sh.O.Barkhalov (1952-1957), Academician V.J.Hajiyev (1988-2008),\
+        \ Corresponding member of the ANAS S.H.Musayev (2008-2010) headed the Institute.\
+        \ Currently, Academician V.M. Ali-zade is the director of the Institute of\
+        \ Botany of ANAS (since 2010). \\nMain scientific activities include the assessment\
+        \ of the current state and dynamics of plant biodiversity, identification,\
+        \ protection and rational utilization of resources, preparation of databases\
+        \ and interactive maps; clarification of the adaptive mechanisms of stress\
+        \ and organisms to the environment changes in the biochemical, cellular and\
+        \ organism level, increasing the productivity of plants of agricultural significance.\\\
+        nThe Herbarium Foundation of the Institute of Botany, ANAS, which contains\
+        \ the historical and recent herbarium collections, was organized in 1936.\
+        \ \\nThe herbarium collection contains nearly 600.000 specimens belonging\
+        \ to 135 families and 1065 genera. The majority of the specimens represent\
+        \ the flora of Azerbaijan as well as the Caucasian flora. Flora of Iran, Turkey,\
+        \ Germany, Ukraine, Russia, USA, Israel and etc. are also present. There are\
+        \ at least 270 type specimens in the collection.\\n On the basis of the Memorandum\
+        \ of Understanding signed between the Institute of Botany of ANAS and Botanic\
+        \ Garden and Botanical Museum Berlin (Germany) successful steps are made in\
+        \ the direction of conservation and digitalization of herbarium materials\
+        \ and the inclusion of their data and photographs in international networks\
+        \ (using the JACQ collection management system).\",\"language\":\"eng\",\"\
+        email\":[\"direktor@botany.science.az\"],\"phone\":[\"+994 12 502 43 94\"\
+        ],\"homepage\":[\"https://botany.az/en/\"],\"address\":[\"Badamdar Highway\
+        \ 40\"],\"city\":\"Baku\",\"country\":\"AZ\",\"postalCode\":\"Az1004\",\"\
+        latitude\":40.35771,\"longitude\":49.81459,\"numPublishedDatasets\":0,\"createdBy\"\
+        :\"gbif.express\",\"modifiedBy\":\"mgrosjean\",\"created\":\"2019-11-13T15:34:00.428+0000\"\
+        ,\"modified\":\"2019-11-13T15:49:10.913+0000\",\"contacts\":[{\"key\":1891654,\"\
+        type\":\"ADMINISTRATIVE_POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"\
+        firstName\":\"Dominik\",\"lastName\":\"R\xF6pert\",\"position\":[],\"email\"\
+        :[\"d.roepert@bgbm.org\"],\"phone\":[\"+49 30 83850 172\"],\"homepage\":[],\"\
+        address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\"\
+        ,\"created\":\"2019-11-13T15:34:00.453+0000\",\"modified\":\"2019-11-13T15:34:00.453+0000\"\
+        },{\"key\":1891655,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":false,\"\
+        userId\":[],\"firstName\":\"Heimo\",\"lastName\":\"Rainer\",\"position\":[],\"\
+        email\":[\"heimo.rainer@nhm-wien.ac.at\"],\"phone\":[],\"homepage\":[],\"\
+        address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\"\
+        ,\"created\":\"2019-11-13T15:34:00.489+0000\",\"modified\":\"2019-11-13T15:34:00.489+0000\"\
+        },{\"key\":1891656,\"type\":\"POINT_OF_CONTACT\",\"primary\":false,\"userId\"\
+        :[],\"firstName\":\"Rashad\",\"lastName\":\"Salimov\",\"position\":[],\"email\"\
+        :[\"resad_selimov@yahoo.com\"],\"phone\":[\"(+994 12) 502 49 34\"],\"homepage\"\
+        :[],\"address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\"\
+        ,\"created\":\"2019-11-13T15:34:00.533+0000\",\"modified\":\"2019-11-13T15:34:00.533+0000\"\
+        }],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\"\
+        :[{\"key\":29312,\"content\":\"2019-11-13 [MG] Original description included:\
+        \ [NOT PART OF TEXT: PLEASE NOTE: We want to get confirmation through the\
+        \ German GBIF Node (this cannot be chosen in the list below)]\\nTherefore\
+        \ endorsing node was updated from NSG to GBIF Germany\",\"createdBy\":\"mgrosjean\"\
+        ,\"modifiedBy\":\"mgrosjean\",\"created\":\"2019-11-13T15:43:35.817+0000\"\
+        ,\"modified\":\"2019-11-13T15:43:35.817+0000\"},{\"key\":29311,\"content\"\
+        :\"Is associated with a GBIF-funded project: no\\n\\n\\nExpects to publish:\\\
+        n\\n\\n - OccurrenceData\\n\\nExpected data content:\\n\\n> Herbarium specimen\
+        \ records served through the JACQ specimen database (residing at the University\
+        \ of Vienna and the Botanic Garden and Botanical Museum Berlin, with a BioCASe\
+        \ provider).\\n\\n\\nWill run a server which exposes data: yes\\n\\n\\nPlans\
+        \ to run publishing software (e.g. an IPT): yes\\n\\n\\nNeeds help for data\
+        \ publishing: no\",\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\"\
+        ,\"created\":\"2019-11-13T15:34:00.586+0000\",\"modified\":\"2019-11-13T15:34:00.586+0000\"\
+        }]},{\"key\":\"2d7ea901-0128-4a7a-8207-425020c1fd99\",\"endorsingNodeKey\"\
+        :\"1f94b3ca-9345-4d65-afe2-4bace93aa0fe\",\"endorsementApproved\":true,\"\
+        title\":\"LafargeHolcim Spain\",\"description\":\"LafargeHolcim is a leading\
+        \ global company that provides innovative construction products and building\
+        \ solutions and is committed to social and environmental sustainability. LafargeHolcim\
+        \ is a leader in the mining sector, developing innovative rehabilitation projects\
+        \ which reach beyond legal requirements. We incorporate a broad external group\
+        \ of conservationists who transmit their expertise to our employees, generating\
+        \ a company culture towards promoting conservation policies and integrating\
+        \ biodiversity management in our sites. Through these partnerships, we also\
+        \ promote research and monitoring initiatives of the biodiversity at our sites.\"\
+        ,\"language\":\"eng\",\"email\":[\"pilar.gegundez@lafargeholcim.com\"],\"\
+        phone\":[\"+34 912133107\"],\"homepage\":[\"https://www.lafargeholcim.com/\"\
+        ],\"logoUrl\":\"https://www.google.com/url?sa=i&source=imgres&cd=&cad=rja&uact=8&ved=2ahUKEwjl38rR6eLlAhUE1hoKHduWC4YQjRx6BAgBEAQ&url=https%3A%2F%2Ftwitter.com%2Flafargeholcimes&psig=AOvVaw3XjVjDANbqoU8SdNIodbX8&ust=1573584614636111\"\
+        ,\"address\":[\"Avenida Manoteras 20, edificio Tokio, 1st Floor\"],\"city\"\
+        :\"Madrid\",\"province\":\"Madrid\",\"country\":\"ES\",\"postalCode\":\"28050\"\
+        ,\"latitude\":40.43343,\"longitude\":-3.69965,\"numPublishedDatasets\":0,\"\
+        createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"\
+        2019-11-11T18:54:50.150+0000\",\"modified\":\"2019-11-12T08:15:48.683+0000\"\
+        ,\"contacts\":[{\"key\":1890988,\"type\":\"ADMINISTRATIVE_POINT_OF_CONTACT\"\
+        ,\"primary\":false,\"userId\":[],\"firstName\":\"Pilar\",\"lastName\":\"Geg\xFA\
+        ndez\",\"position\":[],\"email\":[\"pilar.gegundez@lafargeholcim.com\"],\"\
+        phone\":[\"+34 912133107\"],\"homepage\":[],\"address\":[],\"createdBy\":\"\
+        gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2019-11-11T18:54:50.177+0000\"\
+        ,\"modified\":\"2019-11-11T18:54:50.177+0000\"},{\"key\":1890989,\"type\"\
+        :\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\"\
+        :\"Pilar\",\"lastName\":\"Geg\xFAndez\",\"position\":[],\"email\":[\"pilar.gegundez@lafargeholcim.com\"\
+        ],\"phone\":[\"+34 912133107\"],\"homepage\":[],\"address\":[],\"createdBy\"\
+        :\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2019-11-11T18:54:50.213+0000\"\
+        ,\"modified\":\"2019-11-11T18:54:50.213+0000\"},{\"key\":1890990,\"type\"\
+        :\"POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Zo\xEB\
+        \",\"lastName\":\"Rohrer\",\"position\":[],\"email\":[\"zoe.rohrer@cinclus.net\"\
         ],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"gbif.express\"\
-        ,\"modifiedBy\":\"gbif.express\",\"created\":\"2019-01-21T22:16:33.138+0000\"\
-        ,\"modified\":\"2019-01-21T22:16:33.138+0000\"},{\"key\":1468015,\"type\"\
-        :\"POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Andrew\"\
-        ,\"lastName\":\"Miller\",\"position\":[],\"email\":[\"amiller7@illinois.edu\"\
-        ],\"phone\":[\"2172440439\"],\"homepage\":[],\"address\":[],\"createdBy\"\
-        :\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2019-01-21T22:16:33.173+0000\"\
-        ,\"modified\":\"2019-01-21T22:16:33.173+0000\"}],\"endpoints\":[],\"machineTags\"\
-        :[],\"tags\":[],\"identifiers\":[],\"comments\":[{\"key\":23408,\"content\"\
+        ,\"modifiedBy\":\"gbif.express\",\"created\":\"2019-11-11T18:54:50.246+0000\"\
+        ,\"modified\":\"2019-11-11T18:54:50.246+0000\"}],\"endpoints\":[],\"machineTags\"\
+        :[],\"tags\":[],\"identifiers\":[],\"comments\":[{\"key\":29221,\"content\"\
         :\"Is associated with a GBIF-funded project: no\\n\\n\\nExpects to publish:\\\
-        n\\n\\n - ResourceMetaData\\n - ChecklistData\\n - OccurenceData\\n\\nWill\
-        \ run a server which exposes data: yes\\n\\n\\nPlans to run publishing software\
-        \ (e.g. an IPT): yes\\n\\n\\nNeeds help for data publishing: no\",\"createdBy\"\
-        :\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2019-01-21T22:16:33.204+0000\"\
-        ,\"modified\":\"2019-01-21T22:16:33.204+0000\"}]},{\"key\":\"296d6619-3af7-47fd-825b-3e4e3b77fe94\"\
-        ,\"endorsingNodeKey\":\"7f48e0c8-5c96-49ec-b972-30748e339115\",\"endorsementApproved\"\
-        :false,\"title\":\"Institute of Plant Sciences, University of Sindh Jamshoro\"\
-        ,\"description\":\"The herbarium of the University of Sindh Jamshoro is one\
-        \ of two key components of the Institute of Plant Sciences, the other being\
-        \ establishment of a botanic garden. The herbarium was initiated in the 1950s,\
-        \ primarily as a teaching resource. In 2018, with support from the Higher\
-        \ Education Commission of Pakistan, it is being transformed into a research\
-        \ herbarium. A key part of this transformation has been identifying its primary\
-        \ goals as 1) documentation of the flora of Sindh and adjacent regions of\
-        \ Balochistan; 2) providing instruction in the importance and preparation\
-        \ of voucher specimens in botanical research; and sharing of what is learned\
-        \ with diverse audiences through multiple outlets.  In December 2018, the\
-        \ herbarium began sharing its data via OpenHerbarium, a Symbiota network,\
-        \ and, early in 2019, via the Global Biodiversity Information Facility. In\
-        \ 2018, the collection included about 15,000 specimens, essentially all of\
-        \ which are of vascular plants.\",\"language\":\"eng\",\"email\":[\"rabia.memon@usindh.edu.pk\"\
-        ],\"phone\":[\"+923338709966\"],\"homepage\":[],\"logoUrl\":\"http://openherbarium.org/portal/content/collicon/sindh.jpg\"\
-        ,\"address\":[\"Institute of Plant Sciences, Faculty of Natural Sciences University\
-        \ of Sindh, Jamshoro  Sindh  Pakistan\"],\"city\":\"Jamshoro\",\"province\"\
-        :\"Sindh\",\"country\":\"PK\",\"postalCode\":\"76080\",\"numPublishedDatasets\"\
-        :0,\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\"\
-        :\"2019-01-21T19:55:17.022+0000\",\"modified\":\"2019-01-21T19:55:17.022+0000\"\
-        ,\"contacts\":[{\"key\":1467867,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"\
-        primary\":false,\"userId\":[],\"firstName\":\"Mary\",\"lastName\":\"Barkworth\"\
-        ,\"position\":[],\"email\":[\"mary.barkworth@usu.edu\"],\"phone\":[\"14352133124\"\
-        ],\"homepage\":[],\"address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\"\
-        :\"gbif.express\",\"created\":\"2019-01-21T19:55:17.042+0000\",\"modified\"\
-        :\"2019-01-21T19:55:17.042+0000\"},{\"key\":1467868,\"type\":\"POINT_OF_CONTACT\"\
-        ,\"primary\":false,\"userId\":[],\"firstName\":\"Rabia\",\"lastName\":\"Memon\"\
-        ,\"position\":[],\"email\":[\"rabia.memon@usindh.edu.pk\"],\"phone\":[\"+923338709966\"\
-        ],\"homepage\":[],\"address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\"\
-        :\"gbif.express\",\"created\":\"2019-01-21T19:55:17.080+0000\",\"modified\"\
-        :\"2019-01-21T19:55:17.080+0000\"}],\"endpoints\":[],\"machineTags\":[],\"\
-        tags\":[],\"identifiers\":[],\"comments\":[{\"key\":23407,\"content\":\"Is\
-        \ associated with a GBIF-funded project: no\\n\\n\\nExpects to publish:\\\
-        n\\n\\n - OccurenceData\\n - ResourceMetaData\\n\\nWill run a server which\
-        \ exposes data: no\\n\\n\\nPlans to run publishing software (e.g. an IPT):\
-        \ no\\n\\n\\nNeeds help for data publishing: yes\",\"createdBy\":\"gbif.express\"\
-        ,\"modifiedBy\":\"gbif.express\",\"created\":\"2019-01-21T19:55:17.113+0000\"\
-        ,\"modified\":\"2019-01-21T19:55:17.113+0000\"}]},{\"key\":\"b16e38a9-0cd4-4c3f-bb28-e7bb9260f4f1\"\
-        ,\"endorsingNodeKey\":\"7e865cba-7c46-417b-ade5-97f2cf5b7be0\",\"endorsementApproved\"\
-        :false,\"title\":\"Jard\xEDn Bot\xE1nico de La Macarena\",\"description\"\
-        :\"We need a major change of attitude talking about environment. It is imperative\
-        \ to understand that we are interdependent. So we have to study, manage, review\
-        \ the topics of biodiversity and maintenance of vegetation cover, of food\
-        \ production, agriculture, the seeds, the use of pesticides, food sovereignty,\
-        \ human rights. Protection of the environment means also guaranteed human\
-        \ rights. And it is no less important to assume the rights of the Amazon Rainforest\
-        \ protecting it against mining and oil extraction. The garden has a list of\
-        \ more than 1050 different plantspecies and more than 1200 trees and shrubs\
-        \ numbered and named.\\n\\nwww.vivos4life.org\\nCada Bosque es un Jard\xED\
-        n Bot\xE1nico. Significa que en La Macarena el bosque es tan megadiverso que\
-        \ sin hacer nada tienes la diversidad de un Jard\xEDn Bot\xE1nico. \\nEl Jard\xED\
-        n Bot\xE1nico de La Macarena tiene el inter\xE9s de mantener y desarrollar\
-        \ dos actividades conjuntas : una actividad de protecci\xF3n, conservaci\xF3\
-        n, estudio del ambiente y  la otra mantener un desarrollo de una actividad\
-        \ agropecuaria como el ejercicio pr\xE1ctico de convivencia de dos sistemas\
-        \ el uno de la naturaleza la otra de vida campesina con una filosofia de agro-ecologia....\
-        \ sabiendo que ecologia se conecta con la palabra de sostenibilidad y soberania\
-        \ alimentaria y en esto podemos compartirlo con el ecoturismo. En el Jard\xED\
-        n Bot\xE1nico de La Macarena hay de este manera una caracterizaci\xF3n  bot\xE1\
-        nica, con m\xE1s de 1000 especies identificadas. M\xE1s de  1200 arbustos\
-        \ y \xE1rboles tienen identificaci\xF3n con plaquetas.\",\"language\":\"eng\"\
-        ,\"email\":[\"michel@boutsen.onmicrosoft.com\"],\"phone\":[\"+32 475 680873\"\
-        ],\"homepage\":[\"https://es.wikipedia.org/wiki/Jard%C3%ADn_Bot%C3%A1nico_de_La_Macarena\"\
-        ],\"address\":[\"Jard\xEDn Bot\xE1nico de La Macarena\"],\"city\":\"La Macarena\"\
-        ,\"province\":\"Meta\",\"country\":\"CO\",\"latitude\":2.06139,\"longitude\"\
-        :-73.86105,\"numPublishedDatasets\":0,\"createdBy\":\"gbif.express\",\"modifiedBy\"\
-        :\"gbif.express\",\"created\":\"2019-01-21T10:09:59.987+0000\",\"modified\"\
-        :\"2019-01-21T10:09:59.987+0000\",\"contacts\":[{\"key\":1465057,\"type\"\
-        :\"ADMINISTRATIVE_POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\"\
-        :\"Aleja\",\"lastName\":\"Medaglia\",\"position\":[],\"email\":[\"alemedaglia@hotmail.com\"\
-        ],\"phone\":[\"+57 312 658 1004\"],\"homepage\":[],\"address\":[],\"createdBy\"\
-        :\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2019-01-21T10:10:00.013+0000\"\
-        ,\"modified\":\"2019-01-21T10:10:00.013+0000\"},{\"key\":1465058,\"type\"\
-        :\"POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Michel\"\
-        ,\"lastName\":\"Boutsen\",\"position\":[],\"email\":[\"michel@boutsen.onmicrosoft.com\"\
-        ],\"phone\":[\"+32 475 680873\"],\"homepage\":[],\"address\":[],\"createdBy\"\
-        :\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2019-01-21T10:10:00.072+0000\"\
-        ,\"modified\":\"2019-01-21T10:10:00.072+0000\"}],\"endpoints\":[],\"machineTags\"\
-        :[],\"tags\":[],\"identifiers\":[],\"comments\":[{\"key\":23406,\"content\"\
-        :\"Is associated with a GBIF-funded project: no\\n\\n\\nExpects to publish:\\\
-        n\\n\\n - OccurenceData\\n - SamplingEventData\\n\\nWill run a server which\
-        \ exposes data: yes\\n\\n\\nPlans to run publishing software (e.g. an IPT):\
-        \ yes\\n\\n\\nNeeds help for data publishing: yes\",\"createdBy\":\"gbif.express\"\
-        ,\"modifiedBy\":\"gbif.express\",\"created\":\"2019-01-21T10:10:00.120+0000\"\
-        ,\"modified\":\"2019-01-21T10:10:00.120+0000\"}]}]}"}
+        n\\n\\n - ChecklistData\\n - OccurrenceData\\n - SamplingEventData\\n\\nExpected\
+        \ data content:\\n\\n> Information regarding a long-term study of 12 years\
+        \ carried out in partnership with the University of Castilla-La Mancha, regarding\
+        \ the plant biodiversity found at a site in central Spain. This site has 400\
+        \ registered plant species.\\n> \\n> Information regarding cliff-nesting bird\
+        \ censusing at 28 sites, carried out in collaboration with the University\
+        \ of Alcal\xE1.\\n> \\n> Information regarding a permanent surveillance point\
+        \ for diurnal butterflies at one of our sites in Catala\xF1a. This surveillance\
+        \ point is connected to the CBMS (Catalan Butterfly Monitoring Scheme).\\\
+        n\\n\\nWill run a server which exposes data: no\\n\\n\\nPlans to run publishing\
+        \ software (e.g. an IPT): no\\n\\n\\nNeeds help for data publishing: no\"\
+        ,\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\"\
+        :\"2019-11-11T18:54:50.278+0000\",\"modified\":\"2019-11-11T18:54:50.278+0000\"\
+        }]}]}"}
     headers:
       Accept-Ranges: [bytes]
       Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT, OPTIONS']
@@ -215,11 +257,11 @@ interactions:
       Age: ['0']
       Cache-Control: ['public, max-age=3601']
       Connection: [keep-alive]
-      Content-Length: ['14292']
+      Content-Length: ['17391']
       Content-Type: [application/json]
-      Date: ['Fri, 25 Jan 2019 18:13:46 GMT']
+      Date: ['Wed, 20 Nov 2019 17:59:13 GMT']
       Server: [Jetty(9.3.z-SNAPSHOT)]
       Via: [1.1 varnish (Varnish/5.2)]
-      X-Varnish: ['597003884']
+      X-Varnish: ['992741901']
     status: {code: 200, message: OK}
 version: 1

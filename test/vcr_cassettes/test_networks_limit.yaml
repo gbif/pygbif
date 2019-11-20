@@ -5,16 +5,32 @@ interactions:
       Accept: ['*/*']
       Accept-Encoding: ['gzip, deflate']
       Connection: [keep-alive]
-      user-agent: ['python-requests/2.21.0,pygbif/0.2.2.3']
+      user-agent: ['python-requests/2.22.0,pygbif/0.3.9']
     method: GET
-    uri: http://api.gbif.org/v1/network?limit=5
+    uri: https://api.gbif.org/v1/network?limit=5
   response:
-    body: {string: '{"offset":0,"limit":5,"endOfRecords":true,"count":1,"results":[{"key":"2b7c7b4f-4d4f-40d3-94de-c28b6fa054a6","title":"Ocean
+    body: {string: '{"offset":0,"limit":5,"endOfRecords":true,"count":4,"results":[{"key":"b153643d-735a-440f-a0e9-428b4f9d1cd2","title":"TrIAS","description":"TrIAS
+        is Belgian project building an open data-driven framework to support policy
+        on invasive species.","language":"eng","numConstituents":32,"email":[],"phone":[],"homepage":[],"address":[],"createdBy":"Andrea","modifiedBy":"Andrea","created":"2019-06-17T10:59:35.820+0000","modified":"2019-06-17T10:59:35.820+0000","contacts":[],"endpoints":[],"machineTags":[],"tags":[],"identifiers":[],"comments":[]},{"key":"1f2c0cbe-40df-43f6-ba07-e76133e78c31","title":"Arctos","description":"Arctos
+        is a community, a collection management information system, and a provider
+        of research-grade data. It provides fundamental research infrastructure and
+        is intended for curators, collection managers, investigators, educators, and
+        anyone interested in natural and cultural history.","language":"eng","numConstituents":82,"email":[],"phone":[],"homepage":[],"address":[],"createdBy":"trobertson","modifiedBy":"trobertson","created":"2019-04-30T09:05:56.259+0000","modified":"2019-04-30T09:05:56.259+0000","contacts":[{"key":1673408,"type":"ADMINISTRATIVE_POINT_OF_CONTACT","primary":false,"userId":[],"firstName":"Dusty
+        L.","lastName":"McDonald","position":[],"email":[],"phone":[],"homepage":[],"address":[],"createdBy":"mgrosjean","modifiedBy":"mgrosjean","created":"2019-09-24T07:45:55.731+0000","modified":"2019-09-24T07:45:55.731+0000"},{"key":1673409,"type":"TECHNICAL_POINT_OF_CONTACT","primary":true,"userId":[],"firstName":"Michelle","lastName":"Koo","position":["Staff
+        Curator of Biodiversity Informatics"],"email":["mkoo@berkeley.edu"],"phone":["5106428547"],"homepage":[],"organization":"Museum
+        of Vertebrate Zoology, University of California Berkeley","address":[],"city":"Berkeley","province":"CA","country":"US","postalCode":"94720-3160","createdBy":"mgrosjean","modifiedBy":"mgrosjean","created":"2019-09-24T07:47:08.876+0000","modified":"2019-09-24T07:47:08.876+0000"},{"key":1673434,"type":"ADMINISTRATIVE_POINT_OF_CONTACT","primary":false,"userId":[],"firstName":"Mariel
+        L.","lastName":"Campbell","position":["Collection Manager"],"email":["msbdgr@unm.edu"],"phone":["505-277-1360"],"homepage":[],"organization":"Museum
+        of Southwestern Biology","address":[],"city":"Albuquerque","province":"NM","country":"US","postalCode":"87131","createdBy":"mgrosjean","modifiedBy":"mgrosjean","created":"2019-09-24T07:48:28.639+0000","modified":"2019-09-24T07:48:28.639+0000"},{"key":1673445,"type":"ADMINISTRATIVE_POINT_OF_CONTACT","primary":false,"userId":[],"firstName":"Teresa
+        J","lastName":"Mayfield","position":[],"email":["tmayfield@utep.edu"],"phone":["915-747-5479"],"homepage":[],"organization":"University
+        of Texas at El Paso Biodiversity Collections","address":[],"city":"El Paso","province":"Texas","country":"US","postalCode":"79968","createdBy":"mgrosjean","modifiedBy":"mgrosjean","created":"2019-09-24T07:49:40.016+0000","modified":"2019-09-24T07:49:40.016+0000"}],"endpoints":[],"machineTags":[],"tags":[],"identifiers":[],"comments":[]},{"key":"d1627240-04ab-4162-aee9-b16df6bc8308","title":"Freshwater
+        Network","description":"The Freshwater Network is an initiative of the Freshwater
+        Information Platform, supported by the Alliance for Freshwater Life and Freshwater
+        BON","language":"eng","numConstituents":45,"email":[],"phone":[],"homepage":["http://www.freshwaterplatform.eu"],"address":[],"createdBy":"mgrosjean","modifiedBy":"mgrosjean","created":"2019-02-28T10:57:05.677+0000","modified":"2019-02-28T10:57:05.677+0000","contacts":[],"endpoints":[],"machineTags":[],"tags":[],"identifiers":[],"comments":[]},{"key":"2b7c7b4f-4d4f-40d3-94de-c28b6fa054a6","title":"Ocean
         Biogeographic Information System (OBIS)","description":"The Ocean Biogeographic
         Information System (OBIS) is the information component of the Census of Marine
         Life (CoML), a growing network of more than 1000 researchers in 73 nations
         engaged in a 10-year initiative to assess and explain the diversity, distribution,
-        and abundance of life in the oceans - past, present, and future.","language":"eng","numConstituents":152,"homepage":["http://www.iobis.org/"],"logoUrl":"http://www.coml.org/comlfiles/images/obis_logo_large.gif","createdBy":"ADMIN","modifiedBy":"ADMIN","created":"2007-04-03T08:31:37.000+0000","modified":"2012-12-13T11:00:12.000+0000","contacts":[],"endpoints":[],"machineTags":[],"tags":[],"identifiers":[],"comments":[]}]}'}
+        and abundance of life in the oceans - past, present, and future.","language":"eng","numConstituents":273,"email":[],"phone":[],"homepage":["http://www.iobis.org/"],"logoUrl":"http://www.coml.org/comlfiles/images/obis_logo_large.gif","address":[],"createdBy":"ADMIN","modifiedBy":"ADMIN","created":"2007-04-03T08:31:37.000+0000","modified":"2012-12-13T11:00:12.000+0000","contacts":[],"endpoints":[],"machineTags":[],"tags":[],"identifiers":[],"comments":[]}]}'}
     headers:
       Accept-Ranges: [bytes]
       Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT, OPTIONS']
@@ -22,10 +38,11 @@ interactions:
       Age: ['0']
       Cache-Control: ['public, max-age=3601']
       Connection: [keep-alive]
+      Content-Length: ['4502']
       Content-Type: [application/json]
-      Date: ['Fri, 25 Jan 2019 18:13:42 GMT']
+      Date: ['Wed, 20 Nov 2019 17:58:58 GMT']
       Server: [Jetty(9.3.z-SNAPSHOT)]
       Via: [1.1 varnish (Varnish/5.2)]
-      X-Varnish: ['633636007']
+      X-Varnish: ['989005876']
     status: {code: 200, message: OK}
 version: 1

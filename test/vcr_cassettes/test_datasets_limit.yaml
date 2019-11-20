@@ -5,31 +5,36 @@ interactions:
       Accept: ['*/*']
       Accept-Encoding: ['gzip, deflate']
       Connection: [keep-alive]
-      user-agent: ['python-requests/2.18.4,pygbif/0.2.2.1']
+      user-agent: ['python-requests/2.22.0,pygbif/0.3.9']
     method: GET
-    uri: http://api.gbif.org/v1/dataset?limit=1
+    uri: https://api.gbif.org/v1/dataset?limit=1
   response:
-    body: {string: '{"offset":0,"limit":1,"endOfRecords":false,"count":37519,"results":[{"key":"159daa05-c182-432d-88ce-df0b2ef467ae","installationKey":"7ce8aef1-9e92-11dc-8740-b8a03c50a999","publishingOrganizationKey":"7ce8aef0-9e92-11dc-8738-b8a03c50a862","doi":"doi:10.15468/bgnijn","external":false,"numConstituents":0,"type":"CHECKLIST","title":"Reduction
-        of the Hawaiian genus Platydesma into MelicopesectionPelea (Rutaceae) and
-        notes on the monophyly of the section","language":"eng","citation":{"text":"Plazi.org
-        taxonomic treatments database. Reduction of the Hawaiian genus Platydesma
-        into MelicopesectionPelea (Rutaceae) and notes on the monophyly of the section.
-        Checklist Dataset https://doi.org/10.15468/bgnijn accessed via GBIF.org on
-        2017-12-19."},"lockedForAutoUpdate":false,"createdBy":"plazi","modifiedBy":"plazi","created":"2017-12-19T18:50:35.188+0000","modified":"2017-12-19T18:50:35.188+0000","contacts":[],"endpoints":[{"key":242687,"type":"DWC_ARCHIVE","url":"http://tb.plazi.org/GgServer/dwca/FFE18C0AFFF6415F2C7B7427FFF60B6E.zip","createdBy":"plazi","modifiedBy":"plazi","created":"2017-12-19T18:50:36.029+0000","modified":"2017-12-19T18:50:36.029+0000","machineTags":[]}],"machineTags":[],"tags":[],"identifiers":[{"key":108912,"type":"UUID","identifier":"FFE18C0AFFF6415F2C7B7427FFF60B6E","createdBy":"plazi","created":"2017-12-19T18:50:35.561+0000"}],"comments":[],"bibliographicCitations":[],"curatorialUnits":[],"taxonomicCoverages":[],"geographicCoverages":[],"temporalCoverages":[],"keywordCollections":[],"countryCoverage":[],"collections":[],"dataDescriptions":[],"license":"http://creativecommons.org/licenses/by/4.0/legalcode"}]}'}
+    body: {string: '{"offset":0,"limit":1,"endOfRecords":false,"count":47962,"results":[{"key":"21486ce5-48a9-4b34-97fc-7892ba053a7e","installationKey":"7ce8aef1-9e92-11dc-8740-b8a03c50a999","publishingOrganizationKey":"7ce8aef0-9e92-11dc-8738-b8a03c50a862","doi":"10.11646/zootaxa.4700.3.7","external":false,"numConstituents":0,"type":"CHECKLIST","title":"A
+        new stiletto fly in the genus Anabarhynchus Macquart (Diptera: Therevidae)
+        from Fiji","description":"This dataset contains the digitized treatments in
+        Plazi based on the original journal article Irwin, Michael E., Winterton,
+        Shaun L. (2019): A new stiletto fly in the genus Anabarhynchus Macquart (Diptera:
+        Therevidae) from Fiji. Zootaxa 4700 (3): 385-393, DOI: https://doi.org/10.11646/zootaxa.4700.3.7","language":"eng","homepage":"http://tb.plazi.org/GgServer/summary/FFCC9939FFDFFFF1FFACFFA76630FF9F","citation":{"text":"Irwin
+        M E, Winterton S L (2019). A new stiletto fly in the genus Anabarhynchus Macquart
+        (Diptera: Therevidae) from Fiji. Plazi.org taxonomic treatments database.
+        Checklist dataset https://doi.org/10.11646/zootaxa.4700.3.7 accessed via GBIF.org
+        on 2019-11-20."},"lockedForAutoUpdate":false,"createdBy":"plazi","modifiedBy":"crawler.gbif.org","created":"2019-11-20T14:59:03.847+0000","modified":"2019-11-20T15:09:19.869+0000","contacts":[{"key":1896394,"type":"ORIGINATOR","primary":true,"userId":[],"firstName":"Michael
+        E.","lastName":"Irwin","position":[],"email":[],"phone":[],"homepage":[],"address":[],"createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2019-11-20T15:09:19.792+0000","modified":"2019-11-20T15:09:19.792+0000"},{"key":1896395,"type":"ORIGINATOR","primary":false,"userId":[],"firstName":"Shaun
+        L.","lastName":"Winterton","position":[],"email":[],"phone":[],"homepage":[],"address":[],"createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2019-11-20T15:09:19.795+0000","modified":"2019-11-20T15:09:19.795+0000"},{"key":1896396,"type":"ADMINISTRATIVE_POINT_OF_CONTACT","primary":true,"userId":[],"firstName":"Guido","lastName":"Sautter","position":[],"email":["gsautter@gmail.com"],"phone":[],"homepage":["http://plazi.org"],"address":[],"createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2019-11-20T15:09:19.798+0000","modified":"2019-11-20T15:09:19.798+0000"},{"key":1896397,"type":"PUBLISHER","primary":false,"userId":[],"position":[],"email":["magnolia@mapress.com"],"phone":[],"homepage":["http://www.mapress.com/"],"organization":"Magnolia
+        Press","address":["St. Lukes 1346"],"city":"Auckland","country":"NZ","createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2019-11-20T15:09:19.803+0000","modified":"2019-11-20T15:09:19.803+0000"},{"key":1896398,"type":"DISTRIBUTOR","primary":false,"userId":[],"position":[],"email":["info@plazi.org"],"phone":[],"homepage":["http://plazi.org/"],"organization":"Plazi","address":[],"city":"Bern","country":"CH","createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2019-11-20T15:09:19.817+0000","modified":"2019-11-20T15:09:19.817+0000"},{"key":1896399,"type":"METADATA_AUTHOR","primary":true,"userId":[],"lastName":"plazi","position":[],"email":[],"phone":[],"homepage":[],"organization":"Plazi","address":[],"createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2019-11-20T15:09:19.826+0000","modified":"2019-11-20T15:09:19.826+0000"}],"endpoints":[{"key":446860,"type":"DWC_ARCHIVE","url":"http://tb.plazi.org/GgServer/dwca/FFCC9939FFDFFFF1FFACFFA76630FF9F.zip","createdBy":"plazi","modifiedBy":"plazi","created":"2019-11-20T14:59:04.280+0000","modified":"2019-11-20T14:59:04.280+0000","machineTags":[]}],"machineTags":[{"key":4494690,"namespace":"crawler.gbif.org","name":"crawl_attempt","value":"4","createdBy":"crawler.gbif.org","created":"2019-11-20T15:10:20.100+0000"}],"tags":[],"identifiers":[{"key":202547,"type":"UUID","identifier":"21486ce5-48a9-4b34-97fc-7892ba053a7e","createdBy":"crawler.gbif.org","created":"2019-11-20T15:09:19.841+0000"},{"key":202546,"type":"DOI","identifier":"10.15468/8kmiv8","createdBy":"crawler.gbif.org","created":"2019-11-20T15:00:05.257+0000"},{"key":202545,"type":"UUID","identifier":"6791B2A0-C327-409C-8E9F-BBC28E77AC83","createdBy":"crawler.gbif.org","created":"2019-11-20T15:00:05.242+0000"},{"key":202544,"type":"UUID","identifier":"FFCC9939FFDFFFF1FFACFFA76630FF9F","createdBy":"plazi","created":"2019-11-20T14:59:04.075+0000"}],"comments":[],"bibliographicCitations":[],"curatorialUnits":[],"taxonomicCoverages":[],"geographicCoverages":[],"temporalCoverages":[],"keywordCollections":[],"countryCoverage":[],"collections":[],"dataDescriptions":[],"dataLanguage":"eng","pubDate":"2019-01-01T00:00:00.000+0000","license":"http://creativecommons.org/publicdomain/zero/1.0/legalcode"}]}'}
     headers:
       Accept-Ranges: [bytes]
-      Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT']
+      Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT, OPTIONS']
       Access-Control-Allow-Origin: ['*']
       Age: ['0']
       Cache-Control: ['public, max-age=3601']
       Connection: [keep-alive]
-      Content-Length: ['1647']
+      Content-Length: ['4783']
       Content-Type: [application/json]
-      Date: ['Tue, 19 Dec 2017 20:58:28 GMT']
+      Date: ['Wed, 20 Nov 2019 17:58:43 GMT']
       Server: [Jetty(9.3.z-SNAPSHOT)]
       Via: [1.1 varnish (Varnish/5.2)]
-      X-API-URL: ['/v1/dataset?limit=1']
-      X-Varnish: ['444335582']
+      X-Varnish: ['1002931643']
     status: {code: 200, message: OK}
 - request:
     body: null
@@ -37,47 +42,247 @@ interactions:
       Accept: ['*/*']
       Accept-Encoding: ['gzip, deflate']
       Connection: [keep-alive]
-      user-agent: ['python-requests/2.18.4,pygbif/0.2.2.1']
+      user-agent: ['python-requests/2.22.0,pygbif/0.3.9']
     method: GET
-    uri: http://api.gbif.org/v1/dataset?limit=3
+    uri: https://api.gbif.org/v1/dataset?limit=3
   response:
-    body: {string: '{"offset":0,"limit":3,"endOfRecords":false,"count":37519,"results":[{"key":"159daa05-c182-432d-88ce-df0b2ef467ae","installationKey":"7ce8aef1-9e92-11dc-8740-b8a03c50a999","publishingOrganizationKey":"7ce8aef0-9e92-11dc-8738-b8a03c50a862","doi":"doi:10.15468/bgnijn","external":false,"numConstituents":0,"type":"CHECKLIST","title":"Reduction
-        of the Hawaiian genus Platydesma into MelicopesectionPelea (Rutaceae) and
-        notes on the monophyly of the section","language":"eng","citation":{"text":"Plazi.org
-        taxonomic treatments database. Reduction of the Hawaiian genus Platydesma
-        into MelicopesectionPelea (Rutaceae) and notes on the monophyly of the section.
-        Checklist Dataset https://doi.org/10.15468/bgnijn accessed via GBIF.org on
-        2017-12-19."},"lockedForAutoUpdate":false,"createdBy":"plazi","modifiedBy":"plazi","created":"2017-12-19T18:50:35.188+0000","modified":"2017-12-19T18:50:35.188+0000","contacts":[],"endpoints":[{"key":242687,"type":"DWC_ARCHIVE","url":"http://tb.plazi.org/GgServer/dwca/FFE18C0AFFF6415F2C7B7427FFF60B6E.zip","createdBy":"plazi","modifiedBy":"plazi","created":"2017-12-19T18:50:36.029+0000","modified":"2017-12-19T18:50:36.029+0000","machineTags":[]}],"machineTags":[],"tags":[],"identifiers":[{"key":108912,"type":"UUID","identifier":"FFE18C0AFFF6415F2C7B7427FFF60B6E","createdBy":"plazi","created":"2017-12-19T18:50:35.561+0000"}],"comments":[],"bibliographicCitations":[],"curatorialUnits":[],"taxonomicCoverages":[],"geographicCoverages":[],"temporalCoverages":[],"keywordCollections":[],"countryCoverage":[],"collections":[],"dataDescriptions":[],"license":"http://creativecommons.org/licenses/by/4.0/legalcode"},{"key":"b69ae625-e97f-48f9-b698-42ae0b60ae1d","installationKey":"7ce8aef1-9e92-11dc-8740-b8a03c50a999","publishingOrganizationKey":"7ce8aef0-9e92-11dc-8738-b8a03c50a862","doi":"doi:10.15468/2fr4sg","external":false,"numConstituents":0,"type":"CHECKLIST","title":"Morphological
-        and anatomical evidence support a new wild cassava: Manihotfallax (Crotonoideae,
-        Euphorbiaceae), from Mato Grosso, Brazil","language":"eng","citation":{"text":"Plazi.org
-        taxonomic treatments database. Morphological and anatomical evidence support
-        a new wild cassava: Manihotfallax (Crotonoideae, Euphorbiaceae), from Mato
-        Grosso, Brazil. Checklist Dataset https://doi.org/10.15468/2fr4sg accessed
-        via GBIF.org on 2017-12-19."},"lockedForAutoUpdate":false,"createdBy":"plazi","modifiedBy":"plazi","created":"2017-12-19T18:50:21.498+0000","modified":"2017-12-19T18:50:21.498+0000","contacts":[],"endpoints":[{"key":242686,"type":"DWC_ARCHIVE","url":"http://tb.plazi.org/GgServer/dwca/D16CC228FF96FFDF6704FFE09506FFC0.zip","createdBy":"plazi","modifiedBy":"plazi","created":"2017-12-19T18:50:22.273+0000","modified":"2017-12-19T18:50:22.273+0000","machineTags":[]}],"machineTags":[],"tags":[],"identifiers":[{"key":108911,"type":"UUID","identifier":"D16CC228FF96FFDF6704FFE09506FFC0","createdBy":"plazi","created":"2017-12-19T18:50:21.869+0000"}],"comments":[],"bibliographicCitations":[],"curatorialUnits":[],"taxonomicCoverages":[],"geographicCoverages":[],"temporalCoverages":[],"keywordCollections":[],"countryCoverage":[],"collections":[],"dataDescriptions":[],"license":"http://creativecommons.org/licenses/by/4.0/legalcode"},{"key":"a9735e8f-4740-4048-84e7-7c3dda638783","installationKey":"97dfec69-b198-43ba-a8fa-c5edbc04e324","publishingOrganizationKey":"1121cbc9-17eb-4ba0-b95d-bc3ec19a5b74","doi":"doi:10.15468/czjoss","external":false,"numConstituents":0,"type":"METADATA","title":"Earthworm
-        survey Hoeksche Waard 2012","description":"This dataset consists of a sampling
-        campaign of earthworms in arable fields and field margins in the Southwest
-        of the Netherlands. Samples were taken in September and October 2012 with
-        a combination of two methods: handsorting a soil monolith of 20x20x20 cm,
-        and formaldehyde solution (500 ml of 0.2% solution) pored after removing the
-        material to be hand-sorted.","language":"eng","homepage":"https://www.researchgate.net/profile/Joana_Frazao4/contributions?ev=prf_act","logoUrl":"http://ipt.nlbif.nl/ipt/logo.do?r=earthwormshw2012","citation":{"text":"Dept.
-        Soil Quality, Wageningen University. Earthworm survey Hoeksche Waard 2012.
-        Metadata Dataset https://doi.org/10.15468/czjoss accessed via GBIF.org on
-        2017-12-19."},"lockedForAutoUpdate":false,"createdBy":"1121cbc9-17eb-4ba0-b95d-bc3ec19a5b74","modifiedBy":"1121cbc9-17eb-4ba0-b95d-bc3ec19a5b74","created":"2017-12-19T14:04:53.492+0000","modified":"2017-12-19T14:29:53.247+0000","contacts":[{"key":825005,"type":"ADMINISTRATIVE_POINT_OF_CONTACT","primary":true,"userId":[],"firstName":"Mirjam
-        Pulleman","position":[],"email":["mirjam.pulleman@wur.nl"],"phone":[null],"homepage":[],"address":["Droevendaalsesteeg
-        4, Wageningen NL, 6708 PB"],"createdBy":"1121cbc9-17eb-4ba0-b95d-bc3ec19a5b74","modifiedBy":"1121cbc9-17eb-4ba0-b95d-bc3ec19a5b74","created":"2017-12-19T14:04:53.601+0000","modified":"2017-12-19T14:29:53.317+0000"}],"endpoints":[{"key":242669,"type":"EML","url":"http://ipt.nlbif.nl/ipt/eml.do?r=earthwormshw2012","createdBy":"1121cbc9-17eb-4ba0-b95d-bc3ec19a5b74","modifiedBy":"1121cbc9-17eb-4ba0-b95d-bc3ec19a5b74","created":"2017-12-19T14:29:53.439+0000","modified":"2017-12-19T14:29:53.439+0000","machineTags":[]}],"machineTags":[],"tags":[],"identifiers":[],"comments":[],"bibliographicCitations":[],"curatorialUnits":[],"taxonomicCoverages":[],"geographicCoverages":[],"temporalCoverages":[],"keywordCollections":[],"countryCoverage":[],"collections":[],"dataDescriptions":[],"license":"http://creativecommons.org/licenses/by/4.0/legalcode"}]}'}
+    body: {string: "{\"offset\":0,\"limit\":3,\"endOfRecords\":false,\"count\":47962,\"\
+        results\":[{\"key\":\"21486ce5-48a9-4b34-97fc-7892ba053a7e\",\"installationKey\"\
+        :\"7ce8aef1-9e92-11dc-8740-b8a03c50a999\",\"publishingOrganizationKey\":\"\
+        7ce8aef0-9e92-11dc-8738-b8a03c50a862\",\"doi\":\"10.11646/zootaxa.4700.3.7\"\
+        ,\"external\":false,\"numConstituents\":0,\"type\":\"CHECKLIST\",\"title\"\
+        :\"A new stiletto fly in the genus Anabarhynchus Macquart (Diptera: Therevidae)\
+        \ from Fiji\",\"description\":\"This dataset contains the digitized treatments\
+        \ in Plazi based on the original journal article Irwin, Michael E., Winterton,\
+        \ Shaun L. (2019): A new stiletto fly in the genus Anabarhynchus Macquart\
+        \ (Diptera: Therevidae) from Fiji. Zootaxa 4700 (3): 385-393, DOI: https://doi.org/10.11646/zootaxa.4700.3.7\"\
+        ,\"language\":\"eng\",\"homepage\":\"http://tb.plazi.org/GgServer/summary/FFCC9939FFDFFFF1FFACFFA76630FF9F\"\
+        ,\"citation\":{\"text\":\"Irwin M E, Winterton S L (2019). A new stiletto\
+        \ fly in the genus Anabarhynchus Macquart (Diptera: Therevidae) from Fiji.\
+        \ Plazi.org taxonomic treatments database. Checklist dataset https://doi.org/10.11646/zootaxa.4700.3.7\
+        \ accessed via GBIF.org on 2019-11-20.\"},\"lockedForAutoUpdate\":false,\"\
+        createdBy\":\"plazi\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2019-11-20T14:59:03.847+0000\"\
+        ,\"modified\":\"2019-11-20T15:09:19.869+0000\",\"contacts\":[{\"key\":1896394,\"\
+        type\":\"ORIGINATOR\",\"primary\":true,\"userId\":[],\"firstName\":\"Michael\
+        \ E.\",\"lastName\":\"Irwin\",\"position\":[],\"email\":[],\"phone\":[],\"\
+        homepage\":[],\"address\":[],\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\"\
+        :\"crawler.gbif.org\",\"created\":\"2019-11-20T15:09:19.792+0000\",\"modified\"\
+        :\"2019-11-20T15:09:19.792+0000\"},{\"key\":1896395,\"type\":\"ORIGINATOR\"\
+        ,\"primary\":false,\"userId\":[],\"firstName\":\"Shaun L.\",\"lastName\":\"\
+        Winterton\",\"position\":[],\"email\":[],\"phone\":[],\"homepage\":[],\"address\"\
+        :[],\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\"\
+        ,\"created\":\"2019-11-20T15:09:19.795+0000\",\"modified\":\"2019-11-20T15:09:19.795+0000\"\
+        },{\"key\":1896396,\"type\":\"ADMINISTRATIVE_POINT_OF_CONTACT\",\"primary\"\
+        :true,\"userId\":[],\"firstName\":\"Guido\",\"lastName\":\"Sautter\",\"position\"\
+        :[],\"email\":[\"gsautter@gmail.com\"],\"phone\":[],\"homepage\":[\"http://plazi.org\"\
+        ],\"address\":[],\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\"\
+        ,\"created\":\"2019-11-20T15:09:19.798+0000\",\"modified\":\"2019-11-20T15:09:19.798+0000\"\
+        },{\"key\":1896397,\"type\":\"PUBLISHER\",\"primary\":false,\"userId\":[],\"\
+        position\":[],\"email\":[\"magnolia@mapress.com\"],\"phone\":[],\"homepage\"\
+        :[\"http://www.mapress.com/\"],\"organization\":\"Magnolia Press\",\"address\"\
+        :[\"St. Lukes 1346\"],\"city\":\"Auckland\",\"country\":\"NZ\",\"createdBy\"\
+        :\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2019-11-20T15:09:19.803+0000\"\
+        ,\"modified\":\"2019-11-20T15:09:19.803+0000\"},{\"key\":1896398,\"type\"\
+        :\"DISTRIBUTOR\",\"primary\":false,\"userId\":[],\"position\":[],\"email\"\
+        :[\"info@plazi.org\"],\"phone\":[],\"homepage\":[\"http://plazi.org/\"],\"\
+        organization\":\"Plazi\",\"address\":[],\"city\":\"Bern\",\"country\":\"CH\"\
+        ,\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"\
+        created\":\"2019-11-20T15:09:19.817+0000\",\"modified\":\"2019-11-20T15:09:19.817+0000\"\
+        },{\"key\":1896399,\"type\":\"METADATA_AUTHOR\",\"primary\":true,\"userId\"\
+        :[],\"lastName\":\"plazi\",\"position\":[],\"email\":[],\"phone\":[],\"homepage\"\
+        :[],\"organization\":\"Plazi\",\"address\":[],\"createdBy\":\"crawler.gbif.org\"\
+        ,\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2019-11-20T15:09:19.826+0000\"\
+        ,\"modified\":\"2019-11-20T15:09:19.826+0000\"}],\"endpoints\":[{\"key\":446860,\"\
+        type\":\"DWC_ARCHIVE\",\"url\":\"http://tb.plazi.org/GgServer/dwca/FFCC9939FFDFFFF1FFACFFA76630FF9F.zip\"\
+        ,\"createdBy\":\"plazi\",\"modifiedBy\":\"plazi\",\"created\":\"2019-11-20T14:59:04.280+0000\"\
+        ,\"modified\":\"2019-11-20T14:59:04.280+0000\",\"machineTags\":[]}],\"machineTags\"\
+        :[{\"key\":4494690,\"namespace\":\"crawler.gbif.org\",\"name\":\"crawl_attempt\"\
+        ,\"value\":\"4\",\"createdBy\":\"crawler.gbif.org\",\"created\":\"2019-11-20T15:10:20.100+0000\"\
+        }],\"tags\":[],\"identifiers\":[{\"key\":202547,\"type\":\"UUID\",\"identifier\"\
+        :\"21486ce5-48a9-4b34-97fc-7892ba053a7e\",\"createdBy\":\"crawler.gbif.org\"\
+        ,\"created\":\"2019-11-20T15:09:19.841+0000\"},{\"key\":202546,\"type\":\"\
+        DOI\",\"identifier\":\"10.15468/8kmiv8\",\"createdBy\":\"crawler.gbif.org\"\
+        ,\"created\":\"2019-11-20T15:00:05.257+0000\"},{\"key\":202545,\"type\":\"\
+        UUID\",\"identifier\":\"6791B2A0-C327-409C-8E9F-BBC28E77AC83\",\"createdBy\"\
+        :\"crawler.gbif.org\",\"created\":\"2019-11-20T15:00:05.242+0000\"},{\"key\"\
+        :202544,\"type\":\"UUID\",\"identifier\":\"FFCC9939FFDFFFF1FFACFFA76630FF9F\"\
+        ,\"createdBy\":\"plazi\",\"created\":\"2019-11-20T14:59:04.075+0000\"}],\"\
+        comments\":[],\"bibliographicCitations\":[],\"curatorialUnits\":[],\"taxonomicCoverages\"\
+        :[],\"geographicCoverages\":[],\"temporalCoverages\":[],\"keywordCollections\"\
+        :[],\"countryCoverage\":[],\"collections\":[],\"dataDescriptions\":[],\"dataLanguage\"\
+        :\"eng\",\"pubDate\":\"2019-01-01T00:00:00.000+0000\",\"license\":\"http://creativecommons.org/publicdomain/zero/1.0/legalcode\"\
+        },{\"key\":\"a96fe539-8bd2-4121-99cc-dd0b7943a7e0\",\"installationKey\":\"\
+        7ce8aef1-9e92-11dc-8740-b8a03c50a999\",\"publishingOrganizationKey\":\"7ce8aef0-9e92-11dc-8738-b8a03c50a862\"\
+        ,\"doi\":\"10.11646/zootaxa.4700.3.5\",\"external\":false,\"numConstituents\"\
+        :0,\"type\":\"CHECKLIST\",\"title\":\"A new Anaulacomera species (Orthoptera:\
+        \ Tettigoniidae: Phaneropterinae) from the Igua\xE7u National Park, southern\
+        \ Brazil\",\"description\":\"This dataset contains the digitized treatments\
+        \ in Plazi based on the original journal article Fianco, Marcos, Cadena-Casta\xF1\
+        eda, Oscar J., Szinwelski, Neucir, Faria, Luiz R. R. (2019): A new Anaulacomera\
+        \ species (Orthoptera: Tettigoniidae: Phaneropterinae) from the Igua\xE7u\
+        \ National Park, southern Brazil. Zootaxa 4700 (3): 365-376, DOI: https://doi.org/10.11646/zootaxa.4700.3.5\"\
+        ,\"language\":\"eng\",\"homepage\":\"http://tb.plazi.org/GgServer/summary/FFA2582CFFECFFF2FFC4FF8D2A387A36\"\
+        ,\"citation\":{\"text\":\"Fianco M, Cadena-Casta\xF1eda O J, Szinwelski N,\
+        \ Faria L R R (2019). A new Anaulacomera species (Orthoptera: Tettigoniidae:\
+        \ Phaneropterinae) from the Igua\xE7u National Park, southern Brazil. Plazi.org\
+        \ taxonomic treatments database. Checklist dataset https://doi.org/10.11646/zootaxa.4700.3.5\
+        \ accessed via GBIF.org on 2019-11-20.\"},\"lockedForAutoUpdate\":false,\"\
+        createdBy\":\"plazi\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2019-11-20T14:43:05.819+0000\"\
+        ,\"modified\":\"2019-11-20T14:53:11.538+0000\",\"contacts\":[{\"key\":1896372,\"\
+        type\":\"ORIGINATOR\",\"primary\":true,\"userId\":[],\"firstName\":\"Marcos\"\
+        ,\"lastName\":\"Fianco\",\"position\":[],\"email\":[],\"phone\":[],\"homepage\"\
+        :[],\"address\":[],\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\"\
+        ,\"created\":\"2019-11-20T14:53:11.491+0000\",\"modified\":\"2019-11-20T14:53:11.491+0000\"\
+        },{\"key\":1896373,\"type\":\"ORIGINATOR\",\"primary\":false,\"userId\":[],\"\
+        firstName\":\"Oscar J.\",\"lastName\":\"Cadena-Casta\xF1eda\",\"position\"\
+        :[],\"email\":[],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\"\
+        :\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2019-11-20T14:53:11.497+0000\"\
+        ,\"modified\":\"2019-11-20T14:53:11.497+0000\"},{\"key\":1896374,\"type\"\
+        :\"ORIGINATOR\",\"primary\":false,\"userId\":[],\"firstName\":\"Neucir\",\"\
+        lastName\":\"Szinwelski\",\"position\":[],\"email\":[],\"phone\":[],\"homepage\"\
+        :[],\"address\":[],\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\"\
+        ,\"created\":\"2019-11-20T14:53:11.498+0000\",\"modified\":\"2019-11-20T14:53:11.498+0000\"\
+        },{\"key\":1896375,\"type\":\"ORIGINATOR\",\"primary\":false,\"userId\":[],\"\
+        firstName\":\"Luiz R. R.\",\"lastName\":\"Faria\",\"position\":[],\"email\"\
+        :[],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"crawler.gbif.org\"\
+        ,\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2019-11-20T14:53:11.500+0000\"\
+        ,\"modified\":\"2019-11-20T14:53:11.500+0000\"},{\"key\":1896376,\"type\"\
+        :\"ADMINISTRATIVE_POINT_OF_CONTACT\",\"primary\":true,\"userId\":[],\"firstName\"\
+        :\"Guido\",\"lastName\":\"Sautter\",\"position\":[],\"email\":[\"gsautter@gmail.com\"\
+        ],\"phone\":[],\"homepage\":[\"http://plazi.org\"],\"address\":[],\"createdBy\"\
+        :\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2019-11-20T14:53:11.502+0000\"\
+        ,\"modified\":\"2019-11-20T14:53:11.502+0000\"},{\"key\":1896377,\"type\"\
+        :\"PUBLISHER\",\"primary\":false,\"userId\":[],\"position\":[],\"email\":[\"\
+        magnolia@mapress.com\"],\"phone\":[],\"homepage\":[\"http://www.mapress.com/\"\
+        ],\"organization\":\"Magnolia Press\",\"address\":[\"St. Lukes 1346\"],\"\
+        city\":\"Auckland\",\"country\":\"NZ\",\"createdBy\":\"crawler.gbif.org\"\
+        ,\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2019-11-20T14:53:11.504+0000\"\
+        ,\"modified\":\"2019-11-20T14:53:11.504+0000\"},{\"key\":1896378,\"type\"\
+        :\"DISTRIBUTOR\",\"primary\":false,\"userId\":[],\"position\":[],\"email\"\
+        :[\"info@plazi.org\"],\"phone\":[],\"homepage\":[\"http://plazi.org/\"],\"\
+        organization\":\"Plazi\",\"address\":[],\"city\":\"Bern\",\"country\":\"CH\"\
+        ,\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"\
+        created\":\"2019-11-20T14:53:11.506+0000\",\"modified\":\"2019-11-20T14:53:11.506+0000\"\
+        },{\"key\":1896379,\"type\":\"METADATA_AUTHOR\",\"primary\":true,\"userId\"\
+        :[],\"lastName\":\"plazi\",\"position\":[],\"email\":[],\"phone\":[],\"homepage\"\
+        :[],\"organization\":\"Plazi\",\"address\":[],\"createdBy\":\"crawler.gbif.org\"\
+        ,\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2019-11-20T14:53:11.507+0000\"\
+        ,\"modified\":\"2019-11-20T14:53:11.507+0000\"}],\"endpoints\":[{\"key\":446859,\"\
+        type\":\"DWC_ARCHIVE\",\"url\":\"http://tb.plazi.org/GgServer/dwca/FFA2582CFFECFFF2FFC4FF8D2A387A36.zip\"\
+        ,\"createdBy\":\"plazi\",\"modifiedBy\":\"plazi\",\"created\":\"2019-11-20T14:43:06.236+0000\"\
+        ,\"modified\":\"2019-11-20T14:43:06.236+0000\",\"machineTags\":[]}],\"machineTags\"\
+        :[{\"key\":4494435,\"namespace\":\"crawler.gbif.org\",\"name\":\"crawl_attempt\"\
+        ,\"value\":\"4\",\"createdBy\":\"crawler.gbif.org\",\"created\":\"2019-11-20T14:54:11.768+0000\"\
+        }],\"tags\":[],\"identifiers\":[{\"key\":202543,\"type\":\"UUID\",\"identifier\"\
+        :\"a96fe539-8bd2-4121-99cc-dd0b7943a7e0\",\"createdBy\":\"crawler.gbif.org\"\
+        ,\"created\":\"2019-11-20T14:53:11.509+0000\"},{\"key\":202542,\"type\":\"\
+        DOI\",\"identifier\":\"10.15468/3xowjz\",\"createdBy\":\"crawler.gbif.org\"\
+        ,\"created\":\"2019-11-20T14:44:06.977+0000\"},{\"key\":202541,\"type\":\"\
+        UUID\",\"identifier\":\"89B4C431-D7F6-4FFC-872C-2991757C2AAD\",\"createdBy\"\
+        :\"crawler.gbif.org\",\"created\":\"2019-11-20T14:44:06.962+0000\"},{\"key\"\
+        :202540,\"type\":\"UUID\",\"identifier\":\"FFA2582CFFECFFF2FFC4FF8D2A387A36\"\
+        ,\"createdBy\":\"plazi\",\"created\":\"2019-11-20T14:43:06.031+0000\"}],\"\
+        comments\":[],\"bibliographicCitations\":[],\"curatorialUnits\":[],\"taxonomicCoverages\"\
+        :[],\"geographicCoverages\":[],\"temporalCoverages\":[],\"keywordCollections\"\
+        :[],\"countryCoverage\":[],\"collections\":[],\"dataDescriptions\":[],\"dataLanguage\"\
+        :\"eng\",\"pubDate\":\"2019-01-01T00:00:00.000+0000\",\"license\":\"http://creativecommons.org/publicdomain/zero/1.0/legalcode\"\
+        },{\"key\":\"59b59e23-9086-48e0-a2db-33213ffd1e53\",\"installationKey\":\"\
+        7ce8aef1-9e92-11dc-8740-b8a03c50a999\",\"publishingOrganizationKey\":\"7ce8aef0-9e92-11dc-8738-b8a03c50a862\"\
+        ,\"doi\":\"10.11646/zootaxa.4700.3.4\",\"external\":false,\"numConstituents\"\
+        :0,\"type\":\"CHECKLIST\",\"title\":\"Descriptions of Pedesta wangi sp. nov.\
+        \ and the female of P. xiaoqingae (Huang & Zhan, 2004) from China (Lepidoptera:\
+        \ Hesperiidae)\",\"description\":\"This dataset contains the digitized treatments\
+        \ in Plazi based on the original journal article Xue, Guoxi, Li, Meng, Zhu,\
+        \ Jianqing, Lu, Weicheng, Li, Jialing, Zheng, Bowen (2019): Descriptions of\
+        \ Pedesta wangi sp. nov. and the female of P. xiaoqingae (Huang & Zhan, 2004)\
+        \ from China (Lepidoptera: Hesperiidae). Zootaxa 4700 (3): 356-364, DOI: https://doi.org/10.11646/zootaxa.4700.3.4\"\
+        ,\"language\":\"eng\",\"homepage\":\"http://tb.plazi.org/GgServer/summary/DD45FD62FFD6577EFFD6FF9039043C6F\"\
+        ,\"citation\":{\"text\":\"Xue G, Li M, Zhu J, Lu W, Li J, Zheng B (2019).\
+        \ Descriptions of Pedesta wangi sp. nov. and the female of P. xiaoqingae (Huang\
+        \ & Zhan, 2004) from China (Lepidoptera: Hesperiidae). Plazi.org taxonomic\
+        \ treatments database. Checklist dataset https://doi.org/10.11646/zootaxa.4700.3.4\
+        \ accessed via GBIF.org on 2019-11-20.\"},\"lockedForAutoUpdate\":false,\"\
+        createdBy\":\"plazi\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2019-11-20T14:29:05.883+0000\"\
+        ,\"modified\":\"2019-11-20T14:39:19.276+0000\",\"contacts\":[{\"key\":1896354,\"\
+        type\":\"ORIGINATOR\",\"primary\":true,\"userId\":[],\"firstName\":\"Guoxi\"\
+        ,\"lastName\":\"Xue\",\"position\":[],\"email\":[],\"phone\":[],\"homepage\"\
+        :[],\"address\":[],\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\"\
+        ,\"created\":\"2019-11-20T14:39:19.238+0000\",\"modified\":\"2019-11-20T14:39:19.238+0000\"\
+        },{\"key\":1896355,\"type\":\"ORIGINATOR\",\"primary\":false,\"userId\":[],\"\
+        firstName\":\"Meng\",\"lastName\":\"Li\",\"position\":[],\"email\":[],\"phone\"\
+        :[],\"homepage\":[],\"address\":[],\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\"\
+        :\"crawler.gbif.org\",\"created\":\"2019-11-20T14:39:19.240+0000\",\"modified\"\
+        :\"2019-11-20T14:39:19.240+0000\"},{\"key\":1896356,\"type\":\"ORIGINATOR\"\
+        ,\"primary\":false,\"userId\":[],\"firstName\":\"Jianqing\",\"lastName\":\"\
+        Zhu\",\"position\":[],\"email\":[],\"phone\":[],\"homepage\":[],\"address\"\
+        :[],\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\"\
+        ,\"created\":\"2019-11-20T14:39:19.241+0000\",\"modified\":\"2019-11-20T14:39:19.241+0000\"\
+        },{\"key\":1896357,\"type\":\"ORIGINATOR\",\"primary\":false,\"userId\":[],\"\
+        firstName\":\"Weicheng\",\"lastName\":\"Lu\",\"position\":[],\"email\":[],\"\
+        phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"crawler.gbif.org\"\
+        ,\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2019-11-20T14:39:19.242+0000\"\
+        ,\"modified\":\"2019-11-20T14:39:19.242+0000\"},{\"key\":1896358,\"type\"\
+        :\"ORIGINATOR\",\"primary\":false,\"userId\":[],\"firstName\":\"Jialing\"\
+        ,\"lastName\":\"Li\",\"position\":[],\"email\":[],\"phone\":[],\"homepage\"\
+        :[],\"address\":[],\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\"\
+        ,\"created\":\"2019-11-20T14:39:19.243+0000\",\"modified\":\"2019-11-20T14:39:19.243+0000\"\
+        },{\"key\":1896359,\"type\":\"ORIGINATOR\",\"primary\":false,\"userId\":[],\"\
+        firstName\":\"Bowen\",\"lastName\":\"Zheng\",\"position\":[],\"email\":[],\"\
+        phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"crawler.gbif.org\"\
+        ,\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2019-11-20T14:39:19.244+0000\"\
+        ,\"modified\":\"2019-11-20T14:39:19.244+0000\"},{\"key\":1896360,\"type\"\
+        :\"ADMINISTRATIVE_POINT_OF_CONTACT\",\"primary\":true,\"userId\":[],\"firstName\"\
+        :\"Guido\",\"lastName\":\"Sautter\",\"position\":[],\"email\":[\"gsautter@gmail.com\"\
+        ],\"phone\":[],\"homepage\":[\"http://plazi.org\"],\"address\":[],\"createdBy\"\
+        :\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2019-11-20T14:39:19.245+0000\"\
+        ,\"modified\":\"2019-11-20T14:39:19.245+0000\"},{\"key\":1896361,\"type\"\
+        :\"PUBLISHER\",\"primary\":false,\"userId\":[],\"position\":[],\"email\":[\"\
+        magnolia@mapress.com\"],\"phone\":[],\"homepage\":[\"http://www.mapress.com/\"\
+        ],\"organization\":\"Magnolia Press\",\"address\":[\"St. Lukes 1346\"],\"\
+        city\":\"Auckland\",\"country\":\"NZ\",\"createdBy\":\"crawler.gbif.org\"\
+        ,\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2019-11-20T14:39:19.247+0000\"\
+        ,\"modified\":\"2019-11-20T14:39:19.247+0000\"},{\"key\":1896362,\"type\"\
+        :\"DISTRIBUTOR\",\"primary\":false,\"userId\":[],\"position\":[],\"email\"\
+        :[\"info@plazi.org\"],\"phone\":[],\"homepage\":[\"http://plazi.org/\"],\"\
+        organization\":\"Plazi\",\"address\":[],\"city\":\"Bern\",\"country\":\"CH\"\
+        ,\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"\
+        created\":\"2019-11-20T14:39:19.248+0000\",\"modified\":\"2019-11-20T14:39:19.248+0000\"\
+        },{\"key\":1896363,\"type\":\"METADATA_AUTHOR\",\"primary\":true,\"userId\"\
+        :[],\"lastName\":\"plazi\",\"position\":[],\"email\":[],\"phone\":[],\"homepage\"\
+        :[],\"organization\":\"Plazi\",\"address\":[],\"createdBy\":\"crawler.gbif.org\"\
+        ,\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2019-11-20T14:39:19.249+0000\"\
+        ,\"modified\":\"2019-11-20T14:39:19.249+0000\"}],\"endpoints\":[{\"key\":446858,\"\
+        type\":\"DWC_ARCHIVE\",\"url\":\"http://tb.plazi.org/GgServer/dwca/DD45FD62FFD6577EFFD6FF9039043C6F.zip\"\
+        ,\"createdBy\":\"plazi\",\"modifiedBy\":\"plazi\",\"created\":\"2019-11-20T14:29:06.317+0000\"\
+        ,\"modified\":\"2019-11-20T14:29:06.317+0000\",\"machineTags\":[]}],\"machineTags\"\
+        :[{\"key\":4494431,\"namespace\":\"crawler.gbif.org\",\"name\":\"crawl_attempt\"\
+        ,\"value\":\"3\",\"createdBy\":\"crawler.gbif.org\",\"created\":\"2019-11-20T14:39:18.519+0000\"\
+        }],\"tags\":[],\"identifiers\":[{\"key\":202539,\"type\":\"UUID\",\"identifier\"\
+        :\"59b59e23-9086-48e0-a2db-33213ffd1e53\",\"createdBy\":\"crawler.gbif.org\"\
+        ,\"created\":\"2019-11-20T14:39:19.251+0000\"},{\"key\":202538,\"type\":\"\
+        DOI\",\"identifier\":\"10.15468/vqzjfq\",\"createdBy\":\"crawler.gbif.org\"\
+        ,\"created\":\"2019-11-20T14:30:07.199+0000\"},{\"key\":202537,\"type\":\"\
+        UUID\",\"identifier\":\"54F0D6EE-3126-45C1-9BF8-831729827ABE\",\"createdBy\"\
+        :\"crawler.gbif.org\",\"created\":\"2019-11-20T14:30:07.183+0000\"},{\"key\"\
+        :202536,\"type\":\"UUID\",\"identifier\":\"DD45FD62FFD6577EFFD6FF9039043C6F\"\
+        ,\"createdBy\":\"plazi\",\"created\":\"2019-11-20T14:29:06.118+0000\"}],\"\
+        comments\":[],\"bibliographicCitations\":[],\"curatorialUnits\":[],\"taxonomicCoverages\"\
+        :[],\"geographicCoverages\":[],\"temporalCoverages\":[],\"keywordCollections\"\
+        :[],\"countryCoverage\":[],\"collections\":[],\"dataDescriptions\":[],\"dataLanguage\"\
+        :\"eng\",\"pubDate\":\"2019-01-01T00:00:00.000+0000\",\"license\":\"http://creativecommons.org/publicdomain/zero/1.0/legalcode\"\
+        }]}"}
     headers:
       Accept-Ranges: [bytes]
-      Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT']
+      Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT, OPTIONS']
       Access-Control-Allow-Origin: ['*']
       Age: ['0']
       Cache-Control: ['public, max-age=3601']
       Connection: [keep-alive]
-      Content-Length: ['5586']
+      Content-Length: ['16440']
       Content-Type: [application/json]
-      Date: ['Tue, 19 Dec 2017 20:58:29 GMT']
+      Date: ['Wed, 20 Nov 2019 17:58:44 GMT']
       Server: [Jetty(9.3.z-SNAPSHOT)]
       Via: [1.1 varnish (Varnish/5.2)]
-      X-API-URL: ['/v1/dataset?limit=3']
-      X-Varnish: ['449708400']
+      X-Varnish: ['1009550713']
     status: {code: 200, message: OK}
 version: 1

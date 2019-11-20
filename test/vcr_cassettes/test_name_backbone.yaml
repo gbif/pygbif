@@ -5,26 +5,25 @@ interactions:
       Accept: ['*/*']
       Accept-Encoding: ['gzip, deflate']
       Connection: [keep-alive]
-      user-agent: ['python-requests/2.18.4,pygbif/0.2.2.1']
+      user-agent: ['python-requests/2.22.0,pygbif/0.3.9']
     method: GET
-    uri: http://api.gbif.org/v1/species/match?name=Helianthus+annuus&strict=False&verbose=False&limit=100
+    uri: https://api.gbif.org/v1/species/match?name=Helianthus+annuus&strict=False&verbose=False&limit=100
   response:
-    body: {string: '{"usageKey":3119195,"scientificName":"Helianthus annuus","canonicalName":"Helianthus
+    body: {string: '{"usageKey":9206251,"scientificName":"Helianthus annuus L.","canonicalName":"Helianthus
         annuus","rank":"SPECIES","status":"ACCEPTED","confidence":98,"matchType":"EXACT","kingdom":"Plantae","phylum":"Tracheophyta","order":"Asterales","family":"Asteraceae","genus":"Helianthus","species":"Helianthus
-        annuus","kingdomKey":6,"phylumKey":7707728,"classKey":220,"orderKey":414,"familyKey":3065,"genusKey":3119134,"speciesKey":3119195,"synonym":false,"class":"Magnoliopsida"}'}
+        annuus","kingdomKey":6,"phylumKey":7707728,"classKey":220,"orderKey":414,"familyKey":3065,"genusKey":3119134,"speciesKey":9206251,"synonym":false,"class":"Magnoliopsida"}'}
     headers:
       Accept-Ranges: [bytes]
-      Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT']
+      Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT, OPTIONS']
       Access-Control-Allow-Origin: ['*']
-      Age: ['766']
+      Age: ['0']
       Cache-Control: ['public, max-age=3601']
       Connection: [keep-alive]
-      Content-Length: ['465']
+      Content-Length: ['468']
       Content-Type: [application/json]
-      Date: ['Tue, 19 Dec 2017 20:45:55 GMT']
+      Date: ['Wed, 20 Nov 2019 17:59:16 GMT']
       Server: [Jetty(9.3.z-SNAPSHOT)]
       Via: [1.1 varnish (Varnish/5.2)]
-      X-API-URL: ['/v1/species/match?name=Helianthus+annuus&strict=False&verbose=False&limit=100']
-      X-Varnish: [448529737 444301935]
+      X-Varnish: ['994085233']
     status: {code: 200, message: OK}
 version: 1
