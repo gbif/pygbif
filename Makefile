@@ -16,6 +16,9 @@ docs:
 	make html
 	# open _build/html/index.html
 
+check:
+	python3 -m twine check dist/*
+
 distclean:
 	rm dist/*
 
