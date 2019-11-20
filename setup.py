@@ -16,7 +16,7 @@ with codecs.open('README.rst', 'r', 'utf-8') as f:
 
 with codecs.open('Changelog.rst', 'r', 'utf-8') as f:
     changes = f.read()
-
+changes = changes.replace(':issue:', '')
 long_description = readme + '\n\n' + changes
 
 setup(
