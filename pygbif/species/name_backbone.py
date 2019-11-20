@@ -20,9 +20,9 @@ def name_backbone(name, rank=None, kingdom=None, phylum=None, clazz=None,
      if no direct match is found for the name alone. (optional)
   :param genus: [str] If provided default matching will also try to match against this
      if no direct match is found for the name alone. (optional)
-  :param strict: [bool] If True it (fuzzy) matches only the given name, but never a
+  :param strict: [bool] If ``True`` it (fuzzy) matches only the given name, but never a
      taxon in the upper classification (optional)
-  :param verbose: [bool] If True show alternative matches considered which had been rejected.
+  :param verbose: [bool] If ``True`` show alternative matches considered which had been rejected.
   :param offset: [int] Record to start at. Default: ``0``
   :param limit: [int] Number of results to return. Default: ``100``
 
@@ -64,6 +64,7 @@ def name_backbone(name, rank=None, kingdom=None, phylum=None, clazz=None,
   url = gbif_baseurl + 'species/match'
   args = {'name': name, 'rank': rank, 'kingdom': kingdom, 'phylum': phylum,
          'class': clazz, 'order': order, 'family': family, 'genus': genus,
-         'strict': strict, 'verbose': verbose, 'offset': offset, 'limit': limit}
+         'strict': bool2str(strict), 'verbose': bool2str(verbose),
+         'offset': offset, 'limit': limit}
   tt = gbif_GET(url, args, **kwargs)
   return tt

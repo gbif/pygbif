@@ -17,7 +17,7 @@ def name_lookup(q=None, rank=None, higherTaxonKey=None, status=None, isExtinct=N
 		 ``SUBFAMILY``, ``SUBFORM``, ``SUBGENUS``, ``SUBKINGDOM``, ``SUBORDER``, ``SUBPHYLUM``, ``SUBSECTION``, ``SUBSERIES``,
 		 ``SUBSPECIES``, ``SUBTRIBE``, ``SUBVARIETY``, ``SUPERCLASS``, ``SUPERFAMILY``, ``SUPERORDER``, ``SUPERPHYLUM``,
 		 ``SUPRAGENERIC_NAME``, ``TRIBE``, ``UNRANKED``, ``VARIETY`` (optional)
-	:param verbose: [bool] If True show alternative matches considered which had been rejected.
+	:param verbose: [bool] If ``True`` show alternative matches considered which had been rejected.
 	:param higherTaxonKey: [str] Filters by any of the higher Linnean rank keys. Note this
 			is within the respective checklist and not searching nub keys across all checklists (optional)
 	:param status: [str] (optional) Filters by the taxonomic status as one of:
@@ -128,11 +128,12 @@ def name_lookup(q=None, rank=None, higherTaxonKey=None, status=None, isExtinct=N
 			species.name_lookup(datasetKey='3f8a1297-3259-4700-91fc-acc4170b27ce')
 	'''
 	args = {'q': q, 'rank': rank, 'higherTaxonKey': higherTaxonKey,
-		'status': status, 'isExtinct': isExtinct, 'habitat': habitat,
+		'status': status, 'isExtinct': bool2str(isExtinct), 'habitat': habitat,
 		'nameType': nameType, 'datasetKey': datasetKey,
 		'nomenclaturalStatus': nomenclaturalStatus, 'limit': limit, 'offset': offset,
-		'facet': bn(facet), 'facetMincount': facetMincount, 'facetMultiselect': facetMultiselect,
-		'hl': bn(hl), 'verbose': bn(verbose), 'type': type}
+		'facet': bn(facet), 'facetMincount': facetMincount,
+		'facetMultiselect': bool2str(facetMultiselect),
+		'hl': bool2str(hl), 'verbose': bool2str(verbose), 'type': type}
 	gbif_kwargs = {key: kwargs[key] for key in kwargs if key not in requests_argset}
 	if gbif_kwargs is not None:
 			xx = dict(zip( [ re.sub('_', '.', x) for x in gbif_kwargs.keys() ], gbif_kwargs.values() ))

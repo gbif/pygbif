@@ -5,9 +5,9 @@ interactions:
       Accept: ['*/*']
       Accept-Encoding: ['gzip, deflate']
       Connection: [keep-alive]
-      user-agent: ['python-requests/2.22.0,pygbif/0.3.9']
+      user-agent: ['python-requests/2.22.0,pygbif/0.4.0']
     method: GET
-    uri: https://api.gbif.org/v1/species/search?q=Helianthus+annuus&rank=species&limit=10
+    uri: https://api.gbif.org/v1/species/search?q=Helianthus+annuus&rank=species&limit=10&hl=false&verbose=false
   response:
     body: {string: '{"offset":0,"limit":10,"endOfRecords":false,"count":181,"results":[{"key":114910965,"datasetKey":"ee2aac07-de9a-47a2-b828-37430d537633","nubKey":9206251,"parentKey":144238801,"parent":"Helianthus","kingdom":"Plantae","phylum":"Tracheophyta","order":"Asterales","family":"Asteraceae","genus":"Helianthus","species":"Helianthus
         annuus","kingdomKey":144235950,"phylumKey":144238385,"classKey":144238449,"orderKey":144238723,"familyKey":144238731,"genusKey":144238801,"speciesKey":114910965,"scientificName":"Helianthus
@@ -42,9 +42,9 @@ interactions:
       Connection: [keep-alive]
       Content-Length: ['8450']
       Content-Type: [application/json]
-      Date: ['Wed, 20 Nov 2019 17:59:22 GMT']
+      Date: ['Wed, 20 Nov 2019 21:03:14 GMT']
       Server: [Jetty(9.3.z-SNAPSHOT)]
       Via: [1.1 varnish (Varnish/5.2)]
-      X-Varnish: ['1009583210']
+      X-Varnish: ['46694604']
     status: {code: 200, message: OK}
 version: 1

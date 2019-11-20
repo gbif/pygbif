@@ -5,11 +5,11 @@ interactions:
       Accept: ['*/*']
       Accept-Encoding: ['gzip, deflate']
       Connection: [keep-alive]
-      user-agent: ['python-requests/2.22.0,pygbif/0.3.9']
+      user-agent: ['python-requests/2.22.0,pygbif/0.4.0']
     method: GET
-    uri: https://api.gbif.org/v1/species/search?limit=0&facet=status
+    uri: https://api.gbif.org/v1/species/search?limit=0&facet=status&hl=false&verbose=false
   response:
-    body: {string: '{"offset":0,"limit":0,"endOfRecords":false,"count":26711981,"results":[],"facets":[{"field":"STATUS","counts":[{"name":"ACCEPTED","count":17601008},{"name":"SYNONYM","count":7186942},{"name":"DOUBTFUL","count":1191366},{"name":"HOMOTYPIC_SYNONYM","count":367785},{"name":"HETEROTYPIC_SYNONYM","count":269553},{"name":"MISAPPLIED","count":24644},{"name":"PROPARTE_SYNONYM","count":21160}]}]}'}
+    body: {string: '{"offset":0,"limit":0,"endOfRecords":false,"count":26712033,"results":[],"facets":[{"field":"STATUS","counts":[{"name":"ACCEPTED","count":17601016},{"name":"SYNONYM","count":7186982},{"name":"DOUBTFUL","count":1191370},{"name":"HOMOTYPIC_SYNONYM","count":367785},{"name":"HETEROTYPIC_SYNONYM","count":269553},{"name":"MISAPPLIED","count":24644},{"name":"PROPARTE_SYNONYM","count":21160}]}]}'}
     headers:
       Accept-Ranges: [bytes]
       Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT, OPTIONS']
@@ -19,9 +19,9 @@ interactions:
       Connection: [keep-alive]
       Content-Length: ['390']
       Content-Type: [application/json]
-      Date: ['Wed, 20 Nov 2019 17:59:24 GMT']
+      Date: ['Wed, 20 Nov 2019 21:03:47 GMT']
       Server: [Jetty(9.3.z-SNAPSHOT)]
       Via: [1.1 varnish (Varnish/5.2)]
-      X-Varnish: ['1015120740']
+      X-Varnish: ['23856041']
     status: {code: 200, message: OK}
 version: 1

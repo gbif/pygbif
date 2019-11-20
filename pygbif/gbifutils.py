@@ -132,3 +132,9 @@ def has(str, pattern):
   w = re.search(pattern, str)
   return w is not None
 
+def bool2str(x):
+  if x is not None:
+    z = str(x).lower()
+    return z
+  else:
+    return x

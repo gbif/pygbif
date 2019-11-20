@@ -76,8 +76,8 @@ def search(taxonKey=None, repatriated=None,
        record with or without spatial issues.
     :param issue: [str] One or more of many possible issues with each occurrence record. See
        Details. Issues passed to this parameter filter results by the issue.
-    :param hasCoordinate: [bool] Return only occurence records with lat/long data (``true``) or
-       all records (``false``, default).
+    :param hasCoordinate: [bool] Return only occurence records with lat/long data (``True``) or
+       all records (``False``, default).
     :param typeStatus: [str] Type status of the specimen. One of many options. See ?typestatus
     :param recordNumber: [int] Number recorded by collector of the data, different from GBIF record
        number. See http://rs.tdwg.org/dwc/terms/#recordNumber} for more info
@@ -98,8 +98,8 @@ def search(taxonKey=None, repatriated=None,
     :param establishmentMeans: [str] EstablishmentMeans, possible values include: INTRODUCED,
         INVASIVE, MANAGED, NATIVE, NATURALISED, UNCERTAIN
     :param facetMincount: [int] minimum number of records to be included in the faceting results
-    :param facetMultiselect: [bool] Set to ``true`` to still return counts for values that are not currently
-        filtered. See examples. Default: ``false``
+    :param facetMultiselect: [bool] Set to ``True`` to still return counts for values that are not currently
+        filtered. See examples. Default: ``False``
 
     :return: A dictionary
 
@@ -313,18 +313,18 @@ def search(taxonKey=None, repatriated=None,
         'orderKey': orderKey, 'familyKey': familyKey, 'genusKey': genusKey,
         'subgenusKey': subgenusKey, 'scientificName': scientificName,
         'country': country, 'publishingCountry': publishingCountry,
-        'hasCoordinate': hasCoordinate, 'typeStatus': typeStatus,
+        'hasCoordinate': bool2str(hasCoordinate), 'typeStatus': typeStatus,
         'recordNumber': recordNumber, 'lastInterpreted': lastInterpreted,
         'continent': continent, 'geometry': geometry, 'recordedBy': recordedBy,
         'basisOfRecord': basisOfRecord, 'datasetKey': datasetKey, 'eventDate': eventDate,
         'catalogNumber': catalogNumber, 'year': year, 'month': month,
         'decimalLatitude': decimalLatitude, 'decimalLongitude': decimalLongitude,
         'elevation': elevation, 'depth': depth, 'institutionCode': institutionCode,
-        'collectionCode': collectionCode, 'hasGeospatialIssue': hasGeospatialIssue,
-        'issue': issue, 'q': q, 'spellCheck': spellCheck, 'mediatype': mediatype,
+        'collectionCode': collectionCode, 'hasGeospatialIssue': bool2str(hasGeospatialIssue),
+        'issue': issue, 'q': q, 'spellCheck': bool2str(spellCheck), 'mediatype': mediatype,
         'limit': limit, 'offset': offset, 'establishmentMeans': establishmentMeans,
         'facetMincount': facetMincount, 'facet': facet,
-        'facetMultiselect': facetMultiselect}
+        'facetMultiselect': bool2str(facetMultiselect)}
     gbif_kwargs = {key: kwargs[key] for key in kwargs if key not in requests_argset}
     if gbif_kwargs is not None:
         xx = dict(zip( [ re.sub('_', '.', x) for x in gbif_kwargs.keys() ], gbif_kwargs.values() ))

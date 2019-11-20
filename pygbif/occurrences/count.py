@@ -27,6 +27,7 @@ def count(taxonKey=None, basisOfRecord=None, country=None, isGeoreferenced=None,
         occurrences.count(basisOfRecord = 'OBSERVATION')
     '''
     url = gbif_baseurl + 'occurrence/count'
+    isGeoreferenced = bool2str(isGeoreferenced)
     out = gbif_GET(url, {'taxonKey': taxonKey, 'basisOfRecord': basisOfRecord,
         'country': country, 'isGeoreferenced': isGeoreferenced,
         'datasetKey': datasetKey, 'publishingCountry': publishingCountry,

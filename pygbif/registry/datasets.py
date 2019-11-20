@@ -177,11 +177,11 @@ def dataset_search(q=None, type=None, keyword=None,
 			only shows the type value 'OCCURRENCE' because 'CHECKLIST' and 'METADATA' have
 			counts less than 10000.
 	:param facetMultiselect: [bool] Used in combination with the facet parameter. Set
-			facetMultiselect=True to still return counts for values that are not currently
+			``facetMultiselect=True`` to still return counts for values that are not currently
 			filtered, e.g.
 			http://api.gbif.org/v1/dataset/search?facet=type&limit=0&type=CHECKLIST&facetMultiselect=true
 			still shows type values 'OCCURRENCE' and 'METADATA' even though type is being
-			filtered by type=CHECKLIST
+			filtered by ``type=CHECKLIST``
 	:param hl: [bool] Set ``hl=True`` to highlight terms matching the query when in fulltext
 			search fields. The highlight will be an emphasis tag of class 'gbifH1' e.g.
 			http://api.gbif.org/v1/dataset/search?q=plant&hl=true
@@ -246,8 +246,8 @@ def dataset_search(q=None, type=None, keyword=None,
 				'owningOrg': owningOrg, 'publishingOrg': publishingOrg,
 				'hostingOrg': hostingOrg, 'decade': decade,
 				'publishingCountry': publishingCountry, 'facet': facet,
-				'facetMincount': facetMincount, 'facetMultiselect': facetMultiselect,
-				'hl': hl, 'limit': limit, 'offset': offset}
+				'facetMincount': facetMincount, 'facetMultiselect': bool2str(facetMultiselect),
+				'hl': bool2str(hl), 'limit': limit, 'offset': offset}
 	gbif_kwargs = {key: kwargs[key] for key in kwargs if key not in requests_argset}
 	if gbif_kwargs is not None:
 		xx = dict(zip( [ re.sub('_', '.', x) for x in gbif_kwargs.keys() ], gbif_kwargs.values() ))

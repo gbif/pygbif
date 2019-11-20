@@ -7,6 +7,7 @@ Changelog
 - occurrences, species, and registry modules gain docstrings with brief summary of each method
 - pygbif gains ability to cache http requests. caching is off by default. See `?pygbif.caching` for all the details :issue:`52` :issue:`56` via @nleguillarme
 - made note in docs that if you are trying to get the same behavior as the GBIF website for name searching, `species.name_backbone` is likely what you want :issue:`55` thanks @qgroom
+- for parameters that expect a `bool`, convert them to lowercase strings internally before doing HTTP requests
 
 0.3.0 (2019-01-25)
 ------------------

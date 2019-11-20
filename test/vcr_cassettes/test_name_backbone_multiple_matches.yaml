@@ -5,9 +5,9 @@ interactions:
       Accept: ['*/*']
       Accept-Encoding: ['gzip, deflate']
       Connection: [keep-alive]
-      user-agent: ['python-requests/2.22.0,pygbif/0.3.9']
+      user-agent: ['python-requests/2.22.0,pygbif/0.4.0']
     method: GET
-    uri: https://api.gbif.org/v1/species/match?name=Aso&strict=False&verbose=False&limit=100
+    uri: https://api.gbif.org/v1/species/match?name=Aso&strict=false&verbose=false&limit=100
   response:
     body: {string: '{"confidence":100,"note":"No match because of too little confidence","matchType":"NONE","synonym":false}'}
     headers:
@@ -19,9 +19,9 @@ interactions:
       Connection: [keep-alive]
       Content-Length: ['104']
       Content-Type: [application/json]
-      Date: ['Wed, 20 Nov 2019 17:59:18 GMT']
+      Date: ['Wed, 20 Nov 2019 21:03:09 GMT']
       Server: [Jetty(9.3.z-SNAPSHOT)]
       Via: [1.1 varnish (Varnish/5.2)]
-      X-Varnish: ['960403369']
+      X-Varnish: ['37486836']
     status: {code: 200, message: OK}
 version: 1

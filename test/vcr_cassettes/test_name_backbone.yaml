@@ -5,9 +5,9 @@ interactions:
       Accept: ['*/*']
       Accept-Encoding: ['gzip, deflate']
       Connection: [keep-alive]
-      user-agent: ['python-requests/2.22.0,pygbif/0.3.9']
+      user-agent: ['python-requests/2.22.0,pygbif/0.4.0']
     method: GET
-    uri: https://api.gbif.org/v1/species/match?name=Helianthus+annuus&strict=False&verbose=False&limit=100
+    uri: https://api.gbif.org/v1/species/match?name=Helianthus+annuus&strict=false&verbose=false&limit=100
   response:
     body: {string: '{"usageKey":9206251,"scientificName":"Helianthus annuus L.","canonicalName":"Helianthus
         annuus","rank":"SPECIES","status":"ACCEPTED","confidence":98,"matchType":"EXACT","kingdom":"Plantae","phylum":"Tracheophyta","order":"Asterales","family":"Asteraceae","genus":"Helianthus","species":"Helianthus
@@ -19,11 +19,11 @@ interactions:
       Age: ['0']
       Cache-Control: ['public, max-age=3601']
       Connection: [keep-alive]
-      Content-Length: ['468']
       Content-Type: [application/json]
-      Date: ['Wed, 20 Nov 2019 17:59:16 GMT']
+      Date: ['Wed, 20 Nov 2019 21:03:07 GMT']
       Server: [Jetty(9.3.z-SNAPSHOT)]
+      Transfer-Encoding: [chunked]
       Via: [1.1 varnish (Varnish/5.2)]
-      X-Varnish: ['994085233']
+      X-Varnish: ['35225949']
     status: {code: 200, message: OK}
 version: 1
