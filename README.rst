@@ -4,13 +4,14 @@ pygbif
 |pypi| |docs| |travis| |coverage|
 
 Python client for the `GBIF API
-<http://www.gbif.org/developer/summary>`_
+<https://www.gbif.org/developer/summary>`_
 
 `Source on GitHub at sckott/pygbif <https://github.com/sckott/pygbif>`_
 
 Other GBIF clients:
 
 * R: `rgbif`, `ropensci/rgbif <https://github.com/ropensci/rgbif>`_
+* Ruby: `gbifrb`, `sckott/gbifrb <https://github.com/sckott/gbifrb>`_
 
 Installation
 ============
@@ -36,7 +37,8 @@ Development version
 
 You can import the entire library, or each module individually as needed.
 
-In addition there is a utils module, currently with one method: `wkt_rewind`
+In addition there is a utils module, currently with one method: `wkt_rewind`, and
+a `caching` method to manage whether HTTP requests are cached or not. See `?pygbif.caching`.
 
 Registry module
 ===============
