@@ -59,6 +59,7 @@ Modules
    :hidden:
 
    modules/intro
+   modules/caching
    modules/occurrence
    modules/registry
    modules/species
