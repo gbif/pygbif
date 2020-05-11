@@ -1,19 +1,53 @@
 import re
 from ..gbifutils import *
 
-def search(taxonKey=None, repatriated=None,
-    kingdomKey=None, phylumKey=None, classKey=None, orderKey=None,
-    familyKey=None, genusKey=None, subgenusKey=None, scientificName=None,
-    country=None, publishingCountry=None, hasCoordinate=None, typeStatus=None,
-    recordNumber=None, lastInterpreted=None, continent=None,
-    geometry=None, recordedBy=None, basisOfRecord=None, datasetKey=None,
-    eventDate=None, catalogNumber=None, year=None, month=None,
-    decimalLatitude=None, decimalLongitude=None, elevation=None,
-    depth=None, institutionCode=None, collectionCode=None,
-    hasGeospatialIssue=None, issue=None, q=None, spellCheck=None, mediatype=None,
-    limit=300, offset=0, establishmentMeans=None,
-    facet=None, facetMincount=None, facetMultiselect=None, **kwargs):
-    '''
+
+def search(
+    taxonKey=None,
+    repatriated=None,
+    kingdomKey=None,
+    phylumKey=None,
+    classKey=None,
+    orderKey=None,
+    familyKey=None,
+    genusKey=None,
+    subgenusKey=None,
+    scientificName=None,
+    country=None,
+    publishingCountry=None,
+    hasCoordinate=None,
+    typeStatus=None,
+    recordNumber=None,
+    lastInterpreted=None,
+    continent=None,
+    geometry=None,
+    recordedBy=None,
+    basisOfRecord=None,
+    datasetKey=None,
+    eventDate=None,
+    catalogNumber=None,
+    year=None,
+    month=None,
+    decimalLatitude=None,
+    decimalLongitude=None,
+    elevation=None,
+    depth=None,
+    institutionCode=None,
+    collectionCode=None,
+    hasGeospatialIssue=None,
+    issue=None,
+    q=None,
+    spellCheck=None,
+    mediatype=None,
+    limit=300,
+    offset=0,
+    establishmentMeans=None,
+    facet=None,
+    facetMincount=None,
+    facetMultiselect=None,
+    **kwargs
+):
+    """
     Search GBIF occurrences
 
     :param taxonKey: [int] A GBIF occurrence identifier
@@ -306,28 +340,57 @@ def search(taxonKey=None, repatriated=None,
         ## 'allow_redirects', 'proxies', 'verify', 'stream', 'cert']) you can pass
         ## in via **kwargs, e.g., set a timeout
         x = occurrences.search(timeout = 1)
-    '''
-    url = gbif_baseurl + 'occurrence/search'
-    args = {'taxonKey': taxonKey, 'repatriated': repatriated,
-        'kingdomKey': kingdomKey, 'phylumKey': phylumKey, 'classKey': classKey,
-        'orderKey': orderKey, 'familyKey': familyKey, 'genusKey': genusKey,
-        'subgenusKey': subgenusKey, 'scientificName': scientificName,
-        'country': country, 'publishingCountry': publishingCountry,
-        'hasCoordinate': bool2str(hasCoordinate), 'typeStatus': typeStatus,
-        'recordNumber': recordNumber, 'lastInterpreted': lastInterpreted,
-        'continent': continent, 'geometry': geometry, 'recordedBy': recordedBy,
-        'basisOfRecord': basisOfRecord, 'datasetKey': datasetKey, 'eventDate': eventDate,
-        'catalogNumber': catalogNumber, 'year': year, 'month': month,
-        'decimalLatitude': decimalLatitude, 'decimalLongitude': decimalLongitude,
-        'elevation': elevation, 'depth': depth, 'institutionCode': institutionCode,
-        'collectionCode': collectionCode, 'hasGeospatialIssue': bool2str(hasGeospatialIssue),
-        'issue': issue, 'q': q, 'spellCheck': bool2str(spellCheck), 'mediatype': mediatype,
-        'limit': limit, 'offset': offset, 'establishmentMeans': establishmentMeans,
-        'facetMincount': facetMincount, 'facet': facet,
-        'facetMultiselect': bool2str(facetMultiselect)}
+    """
+    url = gbif_baseurl + "occurrence/search"
+    args = {
+        "taxonKey": taxonKey,
+        "repatriated": repatriated,
+        "kingdomKey": kingdomKey,
+        "phylumKey": phylumKey,
+        "classKey": classKey,
+        "orderKey": orderKey,
+        "familyKey": familyKey,
+        "genusKey": genusKey,
+        "subgenusKey": subgenusKey,
+        "scientificName": scientificName,
+        "country": country,
+        "publishingCountry": publishingCountry,
+        "hasCoordinate": bool2str(hasCoordinate),
+        "typeStatus": typeStatus,
+        "recordNumber": recordNumber,
+        "lastInterpreted": lastInterpreted,
+        "continent": continent,
+        "geometry": geometry,
+        "recordedBy": recordedBy,
+        "basisOfRecord": basisOfRecord,
+        "datasetKey": datasetKey,
+        "eventDate": eventDate,
+        "catalogNumber": catalogNumber,
+        "year": year,
+        "month": month,
+        "decimalLatitude": decimalLatitude,
+        "decimalLongitude": decimalLongitude,
+        "elevation": elevation,
+        "depth": depth,
+        "institutionCode": institutionCode,
+        "collectionCode": collectionCode,
+        "hasGeospatialIssue": bool2str(hasGeospatialIssue),
+        "issue": issue,
+        "q": q,
+        "spellCheck": bool2str(spellCheck),
+        "mediatype": mediatype,
+        "limit": limit,
+        "offset": offset,
+        "establishmentMeans": establishmentMeans,
+        "facetMincount": facetMincount,
+        "facet": facet,
+        "facetMultiselect": bool2str(facetMultiselect),
+    }
     gbif_kwargs = {key: kwargs[key] for key in kwargs if key not in requests_argset}
     if gbif_kwargs is not None:
-        xx = dict(zip( [ re.sub('_', '.', x) for x in gbif_kwargs.keys() ], gbif_kwargs.values() ))
+        xx = dict(
+            zip([re.sub("_", ".", x) for x in gbif_kwargs.keys()], gbif_kwargs.values())
+        )
         args.update(xx)
     kwargs = {key: kwargs[key] for key in kwargs if key in requests_argset}
     out = gbif_GET(url, args, **kwargs)

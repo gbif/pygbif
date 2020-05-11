@@ -3,9 +3,16 @@ from requests_cache.core import remove_expired_responses
 import os.path
 import tempfile
 
-def caching(cache = False, name = None, backend = "sqlite", expire_after = 86400,
-    allowable_codes = (200,), allowable_methods = ('GET',)):
-    '''
+
+def caching(
+    cache=False,
+    name=None,
+    backend="sqlite",
+    expire_after=86400,
+    allowable_codes=(200,),
+    allowable_methods=("GET",),
+):
+    """
     pygbif caching management
 
     :param cache: [bool] if ``True`` all http requests are cached. if ``False`` (default),
@@ -64,8 +71,8 @@ def caching(cache = False, name = None, backend = "sqlite", expire_after = 86400
         
         # set path to a sqlite file
         pygbif.caching(name = "some/path/my_file")
-    '''
-    default_name = 'pygbif_requests_cache'
+    """
+    default_name = "pygbif_requests_cache"
     if not cache:
         requests_cache.uninstall_cache()
         CACHE_NAME = None
@@ -74,12 +81,18 @@ def caching(cache = False, name = None, backend = "sqlite", expire_after = 86400
             CACHE_NAME = os.path.join(tempfile.gettempdir(), default_name)
         else:
             CACHE_NAME = default_name
-        
+
         requests_cache.install_cache(
-            cache_name=CACHE_NAME, backend=backend, expire_after=expire_after)
+            cache_name=CACHE_NAME, backend=backend, expire_after=expire_after
+        )
         remove_expired_responses()
 
-    cache_settings = {'cache': cache, 'name': CACHE_NAME, 'backend': backend,
-        'expire_after': expire_after, 'allowable_codes': allowable_codes,
-        'allowable_methods': allowable_methods}
+    cache_settings = {
+        "cache": cache,
+        "name": CACHE_NAME,
+        "backend": backend,
+        "expire_after": expire_after,
+        "allowable_codes": allowable_codes,
+        "allowable_methods": allowable_methods,
+    }
     return cache_settings

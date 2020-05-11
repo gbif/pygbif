@@ -3,8 +3,9 @@ from geomet import wkt
 import decimal
 import statistics
 
-def wkt_rewind(x, digits = None):
-    '''
+
+def wkt_rewind(x, digits=None):
+    """
     reverse WKT winding order
 
     :param x: [str] WKT string
@@ -21,19 +22,20 @@ def wkt_rewind(x, digits = None):
         wkt_rewind(x, digits = 0)
         wkt_rewind(x, digits = 3)
         wkt_rewind(x, digits = 7)
-    '''
+    """
     z = wkt.loads(x)
     if digits is None:
-      coords = z['coordinates']
-      nums = __flatten(coords)
-      dec_n = [ decimal.Decimal(str(w)).as_tuple().exponent for w in nums ]
-      digits = abs(statistics.mean(dec_n))
+        coords = z["coordinates"]
+        nums = __flatten(coords)
+        dec_n = [decimal.Decimal(str(w)).as_tuple().exponent for w in nums]
+        digits = abs(statistics.mean(dec_n))
     else:
-      if not isinstance(digits, int):
-        raise TypeError("'digits' must be an int")
+        if not isinstance(digits, int):
+            raise TypeError("'digits' must be an int")
     wound = rewind(z)
-    back_to_wkt = wkt.dumps(wound, decimals = digits)
+    back_to_wkt = wkt.dumps(wound, decimals=digits)
     return back_to_wkt
+
 
 # from https://stackoverflow.com/a/12472564/1091766
 def __flatten(S):

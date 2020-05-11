@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-'''
+"""
 GBIF occurrences APIs methods
 
 * `search`: Search GBIF occurrences
@@ -18,10 +18,17 @@ GBIF occurrences APIs methods
 * `download_meta`: Retrieve occurrence download metadata by unique download key
 * `download_list`: Lists the downloads created by a user
 * `download_get`: Get a download from GBIF
-'''
+"""
 
 from .search import search
 from .get import get, get_verbatim, get_fragment
-from .count import count, count_basisofrecord, count_year, \
-    count_datasets, count_countries, count_schema, count_publishingcountries
+from .count import (
+    count,
+    count_basisofrecord,
+    count_year,
+    count_datasets,
+    count_countries,
+    count_schema,
+    count_publishingcountries,
+)
 from .download import download, download_meta, download_list, download_get

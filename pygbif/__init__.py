@@ -2,7 +2,7 @@
 
 # pygbif
 
-'''
+"""
 pygbif library
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -34,12 +34,12 @@ Usage::
 		### then make request
 		from pygbif import occurrences
 		occurrences.search(geometry='POLYGON((30.1 10.1, 10 20, 20 40, 40 40, 30.1 10.1))', limit=20)
-'''
+"""
 
-__version__ = '0.4.0'
-__title__ = 'pygbif'
-__author__ = 'Scott Chamberlain'
-__license__ = 'MIT'
+__version__ = "0.4.0"
+__title__ = "pygbif"
+__author__ = "Scott Chamberlain"
+__license__ = "MIT"
 
 from .occurrences import search, get, count, download
 from .species import name_parser, name_suggest, name_backbone, name_lookup, name_usage

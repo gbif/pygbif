@@ -2,6 +2,7 @@
 import os
 from pygbif import occurrences as occ
 
+
 def test_download_get():
     "occurrences.download_get - basic test"
     key = "0089857-160910150852091"

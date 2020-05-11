@@ -1,9 +1,21 @@
 from ..gbifutils import *
 
-def name_usage(key = None, name = None, data = 'all', language = None,
-	datasetKey = None, uuid = None, sourceId = None, rank = None, shortname = None,
-	limit = 100, offset = None, **kwargs):
-	'''
+
+def name_usage(
+    key=None,
+    name=None,
+    data="all",
+    language=None,
+    datasetKey=None,
+    uuid=None,
+    sourceId=None,
+    rank=None,
+    shortname=None,
+    limit=100,
+    offset=None,
+    **kwargs
+):
+    """
 	Lookup details for specific names in all taxonomies in GBIF.
 
 	:param key: [fixnum] A GBIF key for a taxon
@@ -62,35 +74,69 @@ def name_usage(key = None, name = None, data = 'all', language = None,
 
 			# Search for a particular language
 			species.name_usage(key=3119195, language="FRENCH", data='vernacularNames')
-	'''
-	args = {'language': language, 'name': name, 'datasetKey': datasetKey,
-		'rank': rank, 'sourceId': sourceId, 'limit': limit, 'offset': offset}
-	data_choices = ['all', 'verbatim', 'name', 'parents', 'children',
-								'related', 'synonyms', 'descriptions',
-								'distributions', 'media', 'references', 'speciesProfiles',
-								'vernacularNames', 'typeSpecimens', 'root']
-	check_data(data, data_choices)
-	if len2(data) == 1:
-		return name_usage_fetch(data, key, shortname, uuid, args, **kwargs)
-	else:
-		return [name_usage_fetch(x, key, shortname, uuid, args, **kwargs) for x in data]
+	"""
+    args = {
+        "language": language,
+        "name": name,
+        "datasetKey": datasetKey,
+        "rank": rank,
+        "sourceId": sourceId,
+        "limit": limit,
+        "offset": offset,
+    }
+    data_choices = [
+        "all",
+        "verbatim",
+        "name",
+        "parents",
+        "children",
+        "related",
+        "synonyms",
+        "descriptions",
+        "distributions",
+        "media",
+        "references",
+        "speciesProfiles",
+        "vernacularNames",
+        "typeSpecimens",
+        "root",
+    ]
+    check_data(data, data_choices)
+    if len2(data) == 1:
+        return name_usage_fetch(data, key, shortname, uuid, args, **kwargs)
+    else:
+        return [name_usage_fetch(x, key, shortname, uuid, args, **kwargs) for x in data]
+
 
 def name_usage_fetch(x, key, shortname, uuid, args, **kwargs):
-	if x is not 'all' and key is None:
-		raise TypeError('You must specify `key` if `data` does not equal `all`')
+    if x is not "all" and key is None:
+        raise TypeError("You must specify `key` if `data` does not equal `all`")
 
-	if x is 'all' and key is None:
-		url = gbif_baseurl + 'species'
-	else:
-		if x is 'all' and key is not None:
-			url = gbif_baseurl + 'species/' + str(key)
-		else:
-			if x in ['verbatim', 'name', 'parents', 'children', 'related', 'synonyms', 'descriptions',
-			'distributions', 'media', 'references', 'speciesProfiles', 'vernacularNames', 'typeSpecimens']:
-				url = gbif_baseurl + 'species/%s/%s' % (str(key), x)
-			else:
-				if x is 'root':
-					url = gbif_baseurl + 'species/%s/%s' % (uuid, shortname)
+    if x is "all" and key is None:
+        url = gbif_baseurl + "species"
+    else:
+        if x is "all" and key is not None:
+            url = gbif_baseurl + "species/" + str(key)
+        else:
+            if x in [
+                "verbatim",
+                "name",
+                "parents",
+                "children",
+                "related",
+                "synonyms",
+                "descriptions",
+                "distributions",
+                "media",
+                "references",
+                "speciesProfiles",
+                "vernacularNames",
+                "typeSpecimens",
+            ]:
+                url = gbif_baseurl + "species/%s/%s" % (str(key), x)
+            else:
+                if x is "root":
+                    url = gbif_baseurl + "species/%s/%s" % (uuid, shortname)
 
-	res = gbif_GET(url, args, **kwargs)
-	return res
+    res = gbif_GET(url, args, **kwargs)
+    return res

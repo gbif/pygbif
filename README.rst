@@ -1,7 +1,7 @@
 pygbif
 ======
 
-|pypi| |docs| |travis| |coverage|
+|pypi| |docs| |travis| |coverage| |black|
 
 Python client for the `GBIF API
 <https://www.gbif.org/developer/summary>`_
@@ -181,3 +181,6 @@ Meta
 
 .. |coverage| image:: https://coveralls.io/repos/sckott/pygbif/badge.svg?branch=master&service=github
    :target: https://coveralls.io/github/sckott/pygbif?branch=master
+
+.. |black| image:: https://img.shields.io/badge/code%20style-black-000000.svg
+   :target: https://github.com/psf/black

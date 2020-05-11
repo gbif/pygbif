@@ -1,8 +1,17 @@
 from ..gbifutils import *
 
-def organizations(data = 'all', uuid = None, q = None, identifier = None,
-  identifierType = None, limit = 100, offset = None, **kwargs):
-  '''
+
+def organizations(
+    data="all",
+    uuid=None,
+    q=None,
+    identifier=None,
+    identifierType=None,
+    limit=100,
+    offset=None,
+    **kwargs
+):
+    """
   Organizations metadata.
 
   :param data: [str] The type of data to get. Default is all data. If not ``all``, then one
@@ -36,34 +45,53 @@ def organizations(data = 'all', uuid = None, q = None, identifier = None,
       registry.organizations(data='deleted', limit=2)
       registry.organizations(data=['deleted','nonPublishing'], limit=2)
       registry.organizations(identifierType='DOI', limit=2)
-  '''
-  args = {'q': q, 'limit': limit, 'offset': offset, 'identifier': identifier,
-    'identifierType': identifierType}
-  data_choices = ['all', 'contact', 'endpoint',
-    'identifier', 'tag', 'machineTag', 'comment', 'hostedDataset',
-    'ownedDataset', 'deleted', 'pending', 'nonPublishing']
-  check_data(data, data_choices)
+  """
+    args = {
+        "q": q,
+        "limit": limit,
+        "offset": offset,
+        "identifier": identifier,
+        "identifierType": identifierType,
+    }
+    data_choices = [
+        "all",
+        "contact",
+        "endpoint",
+        "identifier",
+        "tag",
+        "machineTag",
+        "comment",
+        "hostedDataset",
+        "ownedDataset",
+        "deleted",
+        "pending",
+        "nonPublishing",
+    ]
+    check_data(data, data_choices)
 
-  def getdata(x, uuid, args, **kwargs):
-    nouuid = ['all', 'deleted', 'pending', 'nonPublishing']
-    if x not in nouuid and uuid is None:
-      stop('You must specify a uuid if data does not equal "all" and data does not equal one of ' + ', '.join(nouuid))
+    def getdata(x, uuid, args, **kwargs):
+        nouuid = ["all", "deleted", "pending", "nonPublishing"]
+        if x not in nouuid and uuid is None:
+            stop(
+                'You must specify a uuid if data does not equal "all" and data does not equal one of '
+                + ", ".join(nouuid)
+            )
 
-    if uuid is None:
-      if x is 'all':
-        url = gbif_baseurl + 'organization'
-      else:
-        url = gbif_baseurl + 'organization/' + x
+        if uuid is None:
+            if x is "all":
+                url = gbif_baseurl + "organization"
+            else:
+                url = gbif_baseurl + "organization/" + x
+        else:
+            if x is "all":
+                url = gbif_baseurl + "organization/" + uuid
+            else:
+                url = gbif_baseurl + "organization/" + uuid + "/" + x
+
+        res = gbif_GET(url, args, **kwargs)
+        return {"meta": get_meta(res), "data": parse_results(res, uuid)}
+
+    if len2(data) == 1:
+        return getdata(data, uuid, args, **kwargs)
     else:
-      if x is 'all':
-        url = gbif_baseurl + 'organization/' + uuid
-      else:
-        url = gbif_baseurl + 'organization/' + uuid + '/' + x
-
-    res = gbif_GET(url, args, **kwargs)
-    return {'meta': get_meta(res), 'data': parse_results(res, uuid)}
-
-  if len2(data) == 1:
-    return getdata(data, uuid, args, **kwargs)
-  else:
-    return [getdata(x, uuid, args, **kwargs) for x in data]
+        return [getdata(x, uuid, args, **kwargs) for x in data]

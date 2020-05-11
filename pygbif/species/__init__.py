@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-'''
+"""
 GBIF taxonomic names APIs methods
 
 * `name_backbone`: Lookup names in the GBIF backbone taxonomy
@@ -14,7 +14,7 @@ for a name, `name_backbone` may be what you want. For example, a search for
 *Lantanophaga pusillidactyla* on the GBIF website and with `name_backbone`
 will give back as a first result the correct name
 *Lantanophaga pusillidactylus*.
-'''
+"""
 
 from .name_suggest import name_suggest
 from .name_backbone import name_backbone

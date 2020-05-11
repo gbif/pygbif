@@ -1,7 +1,8 @@
 from ..gbifutils import *
 
+
 def name_suggest(q=None, datasetKey=None, rank=None, limit=100, offset=None, **kwargs):
-  '''
+    """
   A quick and simple autocomplete service that returns up to 20 name usages by
   doing prefix matching against the scientific name. Results are ordered by relevance.
 
@@ -33,20 +34,49 @@ def name_suggest(q=None, datasetKey=None, rank=None, limit=100, offset=None, **k
       species.name_suggest(q='Puma', rank="species")
       species.name_suggest(q='Puma', rank="infraspecific_name")
       species.name_suggest(q='Puma', limit=2)
-  '''
-  url = gbif_baseurl + 'species/suggest'
-  args = {'q':q, 'rank':rank, 'offset':offset, 'limit':limit}
-  return gbif_GET(url, args, **kwargs)
+  """
+    url = gbif_baseurl + "species/suggest"
+    args = {"q": q, "rank": rank, "offset": offset, "limit": limit}
+    return gbif_GET(url, args, **kwargs)
 
 
 def suggestfields():
-  '''
+    """
   Fields available in ``gbif_suggest()`` function
-  '''
-  return ["key","datasetTitle","datasetKey","nubKey","parentKey","parent",
-    "kingdom","phylum","class","order","family","genus","species",
-    "kingdomKey","phylumKey","classKey","orderKey","familyKey","genusKey",
-    "speciesKey","species","canonicalName","authorship",
-    "accordingTo","nameType","taxonomicStatus","rank","numDescendants",
-    "numOccurrences","sourceId","nomenclaturalStatus","threatStatuses",
-    "synonym","higherClassificationMap"]
+  """
+    return [
+        "key",
+        "datasetTitle",
+        "datasetKey",
+        "nubKey",
+        "parentKey",
+        "parent",
+        "kingdom",
+        "phylum",
+        "class",
+        "order",
+        "family",
+        "genus",
+        "species",
+        "kingdomKey",
+        "phylumKey",
+        "classKey",
+        "orderKey",
+        "familyKey",
+        "genusKey",
+        "speciesKey",
+        "species",
+        "canonicalName",
+        "authorship",
+        "accordingTo",
+        "nameType",
+        "taxonomicStatus",
+        "rank",
+        "numDescendants",
+        "numOccurrences",
+        "sourceId",
+        "nomenclaturalStatus",
+        "threatStatuses",
+        "synonym",
+        "higherClassificationMap",
+    ]

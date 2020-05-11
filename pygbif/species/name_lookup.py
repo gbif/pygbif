@@ -1,10 +1,27 @@
 from ..gbifutils import *
 
-def name_lookup(q=None, rank=None, higherTaxonKey=None, status=None, isExtinct=None,
-	habitat=None, nameType=None, datasetKey=None, nomenclaturalStatus=None,
-	limit=100, offset=None, facet=False, facetMincount=None, facetMultiselect=None,
-	type=None, hl=False, verbose=False, **kwargs):
-	'''
+
+def name_lookup(
+    q=None,
+    rank=None,
+    higherTaxonKey=None,
+    status=None,
+    isExtinct=None,
+    habitat=None,
+    nameType=None,
+    datasetKey=None,
+    nomenclaturalStatus=None,
+    limit=100,
+    offset=None,
+    facet=False,
+    facetMincount=None,
+    facetMultiselect=None,
+    type=None,
+    hl=False,
+    verbose=False,
+    **kwargs
+):
+    """
 	Lookup names in all taxonomies in GBIF.
 
 	This service uses fuzzy lookup so that you can put in partial names and
@@ -126,17 +143,31 @@ def name_lookup(q=None, rank=None, higherTaxonKey=None, status=None, isExtinct=N
 
 			# Lookup by datasetKey
 			species.name_lookup(datasetKey='3f8a1297-3259-4700-91fc-acc4170b27ce')
-	'''
-	args = {'q': q, 'rank': rank, 'higherTaxonKey': higherTaxonKey,
-		'status': status, 'isExtinct': bool2str(isExtinct), 'habitat': habitat,
-		'nameType': nameType, 'datasetKey': datasetKey,
-		'nomenclaturalStatus': nomenclaturalStatus, 'limit': limit, 'offset': offset,
-		'facet': bn(facet), 'facetMincount': facetMincount,
-		'facetMultiselect': bool2str(facetMultiselect),
-		'hl': bool2str(hl), 'verbose': bool2str(verbose), 'type': type}
-	gbif_kwargs = {key: kwargs[key] for key in kwargs if key not in requests_argset}
-	if gbif_kwargs is not None:
-			xx = dict(zip( [ re.sub('_', '.', x) for x in gbif_kwargs.keys() ], gbif_kwargs.values() ))
-			args.update(xx)
-	kwargs = {key: kwargs[key] for key in kwargs if key in requests_argset}
-	return gbif_GET(gbif_baseurl + 'species/search', args, **kwargs)
+	"""
+    args = {
+        "q": q,
+        "rank": rank,
+        "higherTaxonKey": higherTaxonKey,
+        "status": status,
+        "isExtinct": bool2str(isExtinct),
+        "habitat": habitat,
+        "nameType": nameType,
+        "datasetKey": datasetKey,
+        "nomenclaturalStatus": nomenclaturalStatus,
+        "limit": limit,
+        "offset": offset,
+        "facet": bn(facet),
+        "facetMincount": facetMincount,
+        "facetMultiselect": bool2str(facetMultiselect),
+        "hl": bool2str(hl),
+        "verbose": bool2str(verbose),
+        "type": type,
+    }
+    gbif_kwargs = {key: kwargs[key] for key in kwargs if key not in requests_argset}
+    if gbif_kwargs is not None:
+        xx = dict(
+            zip([re.sub("_", ".", x) for x in gbif_kwargs.keys()], gbif_kwargs.values())
+        )
+        args.update(xx)
+    kwargs = {key: kwargs[key] for key in kwargs if key in requests_argset}
+    return gbif_GET(gbif_baseurl + "species/search", args, **kwargs)

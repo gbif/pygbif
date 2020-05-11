@@ -5,11 +5,27 @@ import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 from appdirs import user_cache_dir
 
-def map(source = 'density', z = 0, x = 0, y = 0, format = '@1x.png', 
-    srs='EPSG:4326', bin=None, hexPerTile=None, style='classic.point', 
-    taxonKey=None, country=None,  publishingCountry=None, publisher=None,
-    datasetKey=None, year=None, basisOfRecord=None, **kwargs):
-    '''
+
+def map(
+    source="density",
+    z=0,
+    x=0,
+    y=0,
+    format="@1x.png",
+    srs="EPSG:4326",
+    bin=None,
+    hexPerTile=None,
+    style="classic.point",
+    taxonKey=None,
+    country=None,
+    publishingCountry=None,
+    publisher=None,
+    datasetKey=None,
+    year=None,
+    basisOfRecord=None,
+    **kwargs
+):
+    """
     GBIF maps API
 
     :param source: [str] Either ``density`` for fast, precalculated tiles,
@@ -110,42 +126,51 @@ def map(source = 'density', z = 0, x = 0, y = 0, format = '@1x.png',
         x.img # None
         import mapbox_vector_tile
         mapbox_vector_tile.decode(x.response.content)
-    '''
-    if format not in ['.mvt', '@Hx.png', '@1x.png', '@2x.png', '@3x.png', '@4x.png']:
-      raise ValueError("'format' not in allowed set, see docs")
-    if source not in ['density', 'adhoc']:
-      raise ValueError("'source' not in allowed set, see docs")
-    if srs not in ['EPSG:3857', 'EPSG:4326', 'EPSG:3575', 'EPSG:3031']:
-      raise ValueError("'srs' not in allowed set, see docs")
+    """
+    if format not in [".mvt", "@Hx.png", "@1x.png", "@2x.png", "@3x.png", "@4x.png"]:
+        raise ValueError("'format' not in allowed set, see docs")
+    if source not in ["density", "adhoc"]:
+        raise ValueError("'source' not in allowed set, see docs")
+    if srs not in ["EPSG:3857", "EPSG:4326", "EPSG:3575", "EPSG:3031"]:
+        raise ValueError("'srs' not in allowed set, see docs")
     if bin is not None:
-      if bin not in ['square', 'hex']:
-        raise ValueError("'bin' not in allowed set, see docs")
+        if bin not in ["square", "hex"]:
+            raise ValueError("'bin' not in allowed set, see docs")
     if style is not None:
-      if style not in map_styles:
-        raise ValueError("'style' not in allowed set, see docs")
+        if style not in map_styles:
+            raise ValueError("'style' not in allowed set, see docs")
 
-    maps_baseurl = 'https://api.gbif.org'
-    url = maps_baseurl + '/v2/map/occurrence/%s/%s/%s/%s%s'
-    url = url % ( source, z, x, y, format )
+    maps_baseurl = "https://api.gbif.org"
+    url = maps_baseurl + "/v2/map/occurrence/%s/%s/%s/%s%s"
+    url = url % (source, z, x, y, format)
     year = __handle_year(year)
     basisOfRecord = __handle_bor(basisOfRecord)
-    args = {'srs': srs, 'bin': bin, 'hexPerTile': hexPerTile, 'style': style,
-        'taxonKey': taxonKey, 'country': country,
-        'publishingCountry': publishingCountry, 'publisher': publisher,
-        'datasetKey': datasetKey, 'year': year,
-        'basisOfRecord': basisOfRecord}
+    args = {
+        "srs": srs,
+        "bin": bin,
+        "hexPerTile": hexPerTile,
+        "style": style,
+        "taxonKey": taxonKey,
+        "country": country,
+        "publishingCountry": publishingCountry,
+        "publisher": publisher,
+        "datasetKey": datasetKey,
+        "year": year,
+        "basisOfRecord": basisOfRecord,
+    }
     kw = {key: kwargs[key] for key in kwargs if key not in requests_argset}
     if kw is not None:
-        xx = dict(zip( [ re.sub('_', '.', x) for x in kw.keys() ], kw.values() ))
+        xx = dict(zip([re.sub("_", ".", x) for x in kw.keys()], kw.values()))
         args.update(xx)
     kwargs = {key: kwargs[key] for key in kwargs if key in requests_argset}
-    ctype = 'image/png' if has(format, "png") else 'application/x-protobuf'
+    ctype = "image/png" if has(format, "png") else "application/x-protobuf"
     out = gbif_GET_map(url, args, ctype, **kwargs)
     # return out
     return GbifMap(out)
 
+
 class GbifMap(object):
-    '''
+    """
     GbifMap response class
 
     contains:
@@ -154,17 +179,18 @@ class GbifMap(object):
     - path: the path to the image
     - img: the image data, of class matplotlib AxesImage
     - plot(): a method to plot the image with matplotlib
-    '''
+    """
+
     def __init__(self, x):
         super(GbifMap, self).__init__()
         self.response = x
         self.path = self.__make_path()
         self.__write_file()
-        if has(self.response.headers['Content-Type'], "png"):
-          self.img = self.__prep_plot()
+        if has(self.response.headers["Content-Type"], "png"):
+            self.img = self.__prep_plot()
         else:
-          self.img = None
-        
+            self.img = None
+
     def __write_file(self):
         fh = open(self.path, "wb")
         fh.write(self.response.content)
@@ -175,16 +201,19 @@ class GbifMap(object):
         return plt.imshow(img)
 
     def __make_path(self):
-      uu = hashlib.sha256(self.response.content).hexdigest()
-      base_path = user_cache_dir('python/pygbif')
-      if not os.path.exists(base_path):
-        os.makedirs(base_path)
-      file_ext = '.png' if has(self.response.headers['Content-Type'], "png") else '.mvt'
-      path = base_path + '/' + uu + file_ext
-      return path
+        uu = hashlib.sha256(self.response.content).hexdigest()
+        base_path = user_cache_dir("python/pygbif")
+        if not os.path.exists(base_path):
+            os.makedirs(base_path)
+        file_ext = (
+            ".png" if has(self.response.headers["Content-Type"], "png") else ".mvt"
+        )
+        path = base_path + "/" + uu + file_ext
+        return path
 
     def plot(self):
         plt.show(self.img)
+
 
 def __handle_year(year):
     if year is not None:
@@ -192,55 +221,57 @@ def __handle_year(year):
             year = [year]
         if isinstance(year, range):
             year = list(year)
-        bools = [ w in range(0, 2200) for w in year ]
+        bools = [w in range(0, 2200) for w in year]
         if not all(bools):
             raise ValueError("one or more 'year' values not in acceptable set")
         if len(year) > 1:
-            year = ','.join([str(min(year)), str(max(year))])
+            year = ",".join([str(min(year)), str(max(year))])
         else:
             year = str(year[0])
         return year
-    
+
+
 def __handle_bor(basisOfRecord):
     if basisOfRecord is not None:
         if isinstance(basisOfRecord, str):
-          basisOfRecord = [basisOfRecord]
-        bools = [ w in basis_of_record_values for w in basisOfRecord ]
+            basisOfRecord = [basisOfRecord]
+        bools = [w in basis_of_record_values for w in basisOfRecord]
         if not all(bools):
             raise ValueError("one or more 'basisOfRecord' values not in acceptable set")
         return basisOfRecord
 
+
 map_styles = [
-  'purpleHeat.point',
-  'blueHeat.point',
-  'orangeHeat.point',
-  'greenHeat.point',
-  'classic.point',
-  'purpleYellow.point',
-  'fire.point',
-  'glacier.point',
-  'classic.poly',
-  'classic-noborder.poly',
-  'purpleYellow.poly',
-  'purpleYellow-noborder.poly',
-  'green.poly',
-  'green2.poly',
-  'iNaturalist.poly',
-  'purpleWhite.poly',
-  'red.poly',
-  'blue.marker',
-  'orange.marker',
-  'outline.poly'
+    "purpleHeat.point",
+    "blueHeat.point",
+    "orangeHeat.point",
+    "greenHeat.point",
+    "classic.point",
+    "purpleYellow.point",
+    "fire.point",
+    "glacier.point",
+    "classic.poly",
+    "classic-noborder.poly",
+    "purpleYellow.poly",
+    "purpleYellow-noborder.poly",
+    "green.poly",
+    "green2.poly",
+    "iNaturalist.poly",
+    "purpleWhite.poly",
+    "red.poly",
+    "blue.marker",
+    "orange.marker",
+    "outline.poly",
 ]
 
 basis_of_record_values = [
-  'OBSERVATION',
-  'HUMAN_OBSERVATION',
-  'MACHINE_OBSERVATION',
-  'MATERIAL_SAMPLE',
-  'PRESERVED_SPECIMEN',
-  'FOSSIL_SPECIMEN',
-  'LIVING_SPECIMEN',
-  'LITERATURE',
-  'UNKNOWN'
+    "OBSERVATION",
+    "HUMAN_OBSERVATION",
+    "MACHINE_OBSERVATION",
+    "MATERIAL_SAMPLE",
+    "PRESERVED_SPECIMEN",
+    "FOSSIL_SPECIMEN",
+    "LIVING_SPECIMEN",
+    "LITERATURE",
+    "UNKNOWN",
 ]

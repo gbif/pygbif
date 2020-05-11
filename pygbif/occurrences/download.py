@@ -9,10 +9,10 @@ from ..gbifutils import *
 
 
 def _parse_args(x):
-    tmp = re.split('\s', x)
+    tmp = re.split("\s", x)
     pred_type = operator_lkup.get(tmp[1])
     key = key_lkup.get(tmp[0])
-    return {'type': pred_type, 'key': key, 'value': tmp[2]}
+    return {"type": pred_type, "key": key, "value": tmp[2]}
 
 
 def _check_environ(variable, value):
@@ -22,15 +22,20 @@ def _check_environ(variable, value):
     else:
         value = os.environ.get(variable)
         if is_none(value):
-            stop(''.join([variable,
-                          """ not supplied and no entry in environmental
-                           variables"""]))
+            stop(
+                "".join(
+                    [
+                        variable,
+                        """ not supplied and no entry in environmental
+                           variables""",
+                    ]
+                )
+            )
         else:
             return value
 
 
-def download(queries, user=None, pwd=None,
-             email=None, pred_type='and'):
+def download(queries, user=None, pwd=None, email=None, pred_type="and"):
     """
     Spin up a download request for GBIF occurrence data.
 
@@ -122,9 +127,9 @@ def download(queries, user=None, pwd=None,
         occ.download(['country = CR', 'repatriated = true'])
     """
 
-    user = _check_environ('GBIF_USER', user)
-    pwd = _check_environ('GBIF_PWD', pwd)
-    email = _check_environ('GBIF_EMAIL', email)
+    user = _check_environ("GBIF_USER", user)
+    pwd = _check_environ("GBIF_PWD", pwd)
+    email = _check_environ("GBIF_EMAIL", email)
 
     if isinstance(queries, str):
         queries = [queries]
@@ -135,16 +140,13 @@ def download(queries, user=None, pwd=None,
     req = GbifDownload(user, email)
     req.main_pred_type = pred_type
     for predicate in keyval:
-        req.add_predicate(predicate['key'],
-                          predicate['value'],
-                          predicate['type'])
+        req.add_predicate(predicate["key"], predicate["value"], predicate["type"])
 
     out = req.post_download(user, pwd)
     return out, req.payload
 
 
 class GbifDownload(object):
-
     def __init__(self, creator, email, polygon=None):
         """class to setup a JSON doc with the query and POST a request
 
@@ -157,27 +159,29 @@ class GbifDownload(object):
         :param polygon: Polygon of points to extract data from
         """
         self.predicates = []
-        self._main_pred_type = 'and'
+        self._main_pred_type = "and"
 
-        self.url = 'http://api.gbif.org/v1/occurrence/download/request'
-        self.header = {'accept': 'application/json',
-                       'content-type': 'application/json',
-                       'user-agent': ''.join(['python-requests/',
-                                              requests.__version__,
-                                              ',pygbif/',
-                                              pygbif.__version__
-                                              ])
-                       }
+        self.url = "http://api.gbif.org/v1/occurrence/download/request"
+        self.header = {
+            "accept": "application/json",
+            "content-type": "application/json",
+            "user-agent": "".join(
+                [
+                    "python-requests/",
+                    requests.__version__,
+                    ",pygbif/",
+                    pygbif.__version__,
+                ]
+            ),
+        }
 
-        self.payload = {'creator': creator,
-                        'notification_address': [email],
-                        'send_notification': 'true',
-                        'created': datetime.date.today().year,
-                        'predicate': {
-                            'type': self._main_pred_type,
-                            'predicates': self.predicates
-                            }
-                        }
+        self.payload = {
+            "creator": creator,
+            "notification_address": [email],
+            "send_notification": "true",
+            "created": datetime.date.today().year,
+            "predicate": {"type": self._main_pred_type, "predicates": self.predicates},
+        }
         self.request_id = None
 
         # prepare the geometry polygon constructions
@@ -201,11 +205,11 @@ class GbifDownload(object):
             value = operator_lkup.get(value)
         if value:
             self._main_pred_type = value
-            self.payload['predicate']['type'] = self._main_pred_type
+            self.payload["predicate"]["type"] = self._main_pred_type
         else:
             raise Exception("main predicate combiner not a valid operator")
 
-    def add_predicate(self, key, value, predicate_type='equals'):
+    def add_predicate(self, key, value, predicate_type="equals"):
         """
         add key, value, type combination of a predicate
 
@@ -216,10 +220,7 @@ class GbifDownload(object):
         if predicate_type not in operators:
             predicate_type = operator_lkup.get(predicate_type)
         if predicate_type:
-            self.predicates.append({'type': predicate_type,
-                                    'key': key,
-                                    'value': value
-                                    })
+            self.predicates.append({"type": predicate_type, "key": key, "value": value})
         else:
             raise Exception("predicate type not a valid operator")
 
@@ -259,21 +260,21 @@ class GbifDownload(object):
         """
         values = self._extract_values(values_list)
 
-        predicate = {'type': 'equals', 'key': key, 'value': None}
+        predicate = {"type": "equals", "key": key, "value": None}
         predicates = []
         while values:
-            predicate['value'] = values.pop()
+            predicate["value"] = values.pop()
             predicates.append(predicate.copy())
-        self.predicates.append({'type': 'or', 'predicates': predicates})
+        self.predicates.append({"type": "or", "predicates": predicates})
 
-    def add_geometry(self, polygon, geom_type='within'):
+    def add_geometry(self, polygon, geom_type="within"):
         """add a geometry type of predicate
 
         :param polygon: In this format ``POLYGON((x1 y1, x2 y2,... xn yn))``
         :param geom_type: type of predicate, e.g. ``within``
         :return:
         """
-        self.predicates.append({'type': geom_type, 'geometry': polygon})
+        self.predicates.append({"type": geom_type, "geometry": polygon})
 
     def post_download(self, user=None, pwd=None):
         """
@@ -282,22 +283,27 @@ class GbifDownload(object):
         :param pwd: Password
         :return:
         """
-        user = _check_environ('GBIF_USER', user)
-        pwd = _check_environ('GBIF_PWD', pwd)
+        user = _check_environ("GBIF_USER", user)
+        pwd = _check_environ("GBIF_PWD", pwd)
 
         # pprint.pprint(self.payload)
-        r = requests.post(self.url,
-                          auth=auth.HTTPBasicAuth(user, pwd),
-                          data=json.dumps(self.payload),
-                          headers=self.header)
+        r = requests.post(
+            self.url,
+            auth=auth.HTTPBasicAuth(user, pwd),
+            data=json.dumps(self.payload),
+            headers=self.header,
+        )
         if r.status_code > 203:
-            raise Exception('error: ' + r.text +
-                            ', with error status code ' +
-                            str(r.status_code) +
-                            'check your number of active downloads.')
+            raise Exception(
+                "error: "
+                + r.text
+                + ", with error status code "
+                + str(r.status_code)
+                + "check your number of active downloads."
+            )
         else:
             self.request_id = r.text
-            print('Your download key is ', self.request_id)
+            print("Your download key is ", self.request_id)
         return self.request_id
 
     def get_status(self):
@@ -307,7 +313,7 @@ class GbifDownload(object):
 
 def get_download_status(request_key):
     """get the current download status"""
-    return download_meta(request_key).get('status')
+    return download_meta(request_key).get("status")
 
 
 def download_meta(key, **kwargs):
@@ -324,7 +330,7 @@ def download_meta(key, **kwargs):
       occ.download_meta(key = "0003970-140910143529206")
       occ.download_meta(key = "0000099-140929101555934")
     """
-    url = 'http://api.gbif.org/v1/occurrence/download/' + key
+    url = "http://api.gbif.org/v1/occurrence/download/" + key
     return gbif_GET(url, {}, **kwargs)
 
 
@@ -345,17 +351,21 @@ def download_list(user=None, pwd=None, limit=20, offset=0):
       occ.download_list(user = "sckott", offset = 21)
     """
 
-    user = _check_environ('GBIF_USER', user)
-    pwd = _check_environ('GBIF_PWD', pwd)
+    user = _check_environ("GBIF_USER", user)
+    pwd = _check_environ("GBIF_PWD", pwd)
 
-    url = 'http://api.gbif.org/v1/occurrence/download/user/' + user
-    args = {'limit': limit, 'offset': offset}
+    url = "http://api.gbif.org/v1/occurrence/download/user/" + user
+    args = {"limit": limit, "offset": offset}
     res = gbif_GET(url, args, auth=(user, pwd))
-    return {'meta': {'offset': res['offset'],
-                     'limit': res['limit'],
-                     'endofrecords': res['endOfRecords'],
-                     'count': res['count']},
-            'results': res['results']}
+    return {
+        "meta": {
+            "offset": res["offset"],
+            "limit": res["limit"],
+            "endofrecords": res["endOfRecords"],
+            "count": res["count"],
+        },
+        "results": res["results"],
+    }
 
 
 def download_get(key, path=".", **kwargs):
@@ -380,48 +390,71 @@ def download_get(key, path=".", **kwargs):
       occ.download_get("0003983-140910143529206")
     """
     meta = pygbif.occurrences.download_meta(key)
-    if meta['status'] != 'SUCCEEDED':
+    if meta["status"] != "SUCCEEDED":
         raise Exception('download "%s" not of status SUCCEEDED' % key)
     else:
-        print('Download file size: %s bytes' % meta['size'])
-        url = 'http://api.gbif.org/v1/occurrence/download/request/' + key
+        print("Download file size: %s bytes" % meta["size"])
+        url = "http://api.gbif.org/v1/occurrence/download/request/" + key
         path = "%s/%s.zip" % (path, key)
         gbif_GET_write(url, path, **kwargs)
         print("On disk at " + path)
-        return {'path': path, 'size': meta['size'], 'key': key}
+        return {"path": path, "size": meta["size"], "key": key}
 
-operators = ['equals', 'and', 'or', 'lessThan', 'lessThanOrEquals',
-             'greaterThan', 'greaterThanOrEquals', 'in', 'within',
-             'not', 'like']
 
-operator_lkup = {'=': 'equals', '&': 'and', '|': 'or', '<': 'lessThan',
-                 '<=': 'lessThanOrEquals', '>': 'greaterThan',
-                 '>=': 'greaterThanOrEquals', '!': 'not',
-                 'in': 'in', 'within': 'within', 'like': 'like'}
+operators = [
+    "equals",
+    "and",
+    "or",
+    "lessThan",
+    "lessThanOrEquals",
+    "greaterThan",
+    "greaterThanOrEquals",
+    "in",
+    "within",
+    "not",
+    "like",
+]
 
-key_lkup = {'taxonKey': 'TAXON_KEY',
-            'scientificName': 'SCIENTIFIC_NAME',
-            'country': 'COUNTRY',
-            'publishingCountry': 'PUBLISHING_COUNTRY',
-            'hasCoordinate': 'HAS_COORDINATE',
-            'hasGeospatialIssue': 'HAS_GEOSPATIAL_ISSUE',
-            'typeStatus': 'TYPE_STATUS',
-            'recordNumber': 'RECORD_NUMBER',
-            'lastInterpreted': 'LAST_INTERPRETED',
-            'continent': 'CONTINENT',
-            'geometry': 'GEOMETRY',
-            'basisOfRecord': 'BASIS_OF_RECORD',
-            'datasetKey': 'DATASET_KEY',
-            'eventDate': 'EVENT_DATE',
-            'catalogNumber': 'CATALOG_NUMBER',
-            'year': 'YEAR', 'month': 'MONTH',
-            'decimalLatitude': 'DECIMAL_LATITUDE',
-            'decimalLongitude': 'DECIMAL_LONGITUDE',
-            'elevation': 'ELEVATION',
-            'depth': 'DEPTH',
-            'institutionCode': 'INSTITUTION_CODE',
-            'collectionCode': 'COLLECTION_CODE',
-            'issue': 'ISSUE',
-            'mediatype': 'MEDIA_TYPE',
-            'recordedBy': 'RECORDED_BY',
-            'repatriated': 'REPATRIATED'}
+operator_lkup = {
+    "=": "equals",
+    "&": "and",
+    "|": "or",
+    "<": "lessThan",
+    "<=": "lessThanOrEquals",
+    ">": "greaterThan",
+    ">=": "greaterThanOrEquals",
+    "!": "not",
+    "in": "in",
+    "within": "within",
+    "like": "like",
+}
+
+key_lkup = {
+    "taxonKey": "TAXON_KEY",
+    "scientificName": "SCIENTIFIC_NAME",
+    "country": "COUNTRY",
+    "publishingCountry": "PUBLISHING_COUNTRY",
+    "hasCoordinate": "HAS_COORDINATE",
+    "hasGeospatialIssue": "HAS_GEOSPATIAL_ISSUE",
+    "typeStatus": "TYPE_STATUS",
+    "recordNumber": "RECORD_NUMBER",
+    "lastInterpreted": "LAST_INTERPRETED",
+    "continent": "CONTINENT",
+    "geometry": "GEOMETRY",
+    "basisOfRecord": "BASIS_OF_RECORD",
+    "datasetKey": "DATASET_KEY",
+    "eventDate": "EVENT_DATE",
+    "catalogNumber": "CATALOG_NUMBER",
+    "year": "YEAR",
+    "month": "MONTH",
+    "decimalLatitude": "DECIMAL_LATITUDE",
+    "decimalLongitude": "DECIMAL_LONGITUDE",
+    "elevation": "ELEVATION",
+    "depth": "DEPTH",
+    "institutionCode": "INSTITUTION_CODE",
+    "collectionCode": "COLLECTION_CODE",
+    "issue": "ISSUE",
+    "mediatype": "MEDIA_TYPE",
+    "recordedBy": "RECORDED_BY",
+    "repatriated": "REPATRIATED",
+}

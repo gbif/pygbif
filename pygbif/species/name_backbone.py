@@ -1,9 +1,22 @@
 from ..gbifutils import *
 
-def name_backbone(name, rank=None, kingdom=None, phylum=None, clazz=None,
-  order=None, family=None, genus=None, strict=False, verbose=False,
-  offset=None, limit=100, **kwargs):
-  '''
+
+def name_backbone(
+    name,
+    rank=None,
+    kingdom=None,
+    phylum=None,
+    clazz=None,
+    order=None,
+    family=None,
+    genus=None,
+    strict=False,
+    verbose=False,
+    offset=None,
+    limit=100,
+    **kwargs
+):
+    """
   Lookup names in the GBIF backbone taxonomy.
 
   :param name: [str] Full scientific name potentially with authorship (required)
@@ -60,11 +73,21 @@ def name_backbone(name, rank=None, kingdom=None, phylum=None, clazz=None,
 
       # Multiple equal matches
       species.name_backbone(name='Oenante')
-  '''
-  url = gbif_baseurl + 'species/match'
-  args = {'name': name, 'rank': rank, 'kingdom': kingdom, 'phylum': phylum,
-         'class': clazz, 'order': order, 'family': family, 'genus': genus,
-         'strict': bool2str(strict), 'verbose': bool2str(verbose),
-         'offset': offset, 'limit': limit}
-  tt = gbif_GET(url, args, **kwargs)
-  return tt
+  """
+    url = gbif_baseurl + "species/match"
+    args = {
+        "name": name,
+        "rank": rank,
+        "kingdom": kingdom,
+        "phylum": phylum,
+        "class": clazz,
+        "order": order,
+        "family": family,
+        "genus": genus,
+        "strict": bool2str(strict),
+        "verbose": bool2str(verbose),
+        "offset": offset,
+        "limit": limit,
+    }
+    tt = gbif_GET(url, args, **kwargs)
+    return tt

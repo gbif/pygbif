@@ -1,8 +1,18 @@
 from ..gbifutils import *
 
-def nodes(data = 'all', uuid = None, q = None, identifier = None,
-  identifierType = None, limit = 100, offset = None, isocode = None, **kwargs):
-  '''
+
+def nodes(
+    data="all",
+    uuid=None,
+    q=None,
+    identifier=None,
+    identifierType=None,
+    limit=100,
+    offset=None,
+    isocode=None,
+    **kwargs
+):
+    """
   Nodes metadata.
 
   :param data: [str] The type of data to get. Default: ``all``
@@ -43,37 +53,52 @@ def nodes(data = 'all', uuid = None, q = None, identifier = None,
       "1e789bc9-79fc-4e60-a49e-89dfc45a7188","1f94b3ca-9345-4d65-afe2-4bace93aa0fe"]
 
       [ registry.nodes(data='identifier', uuid=x) for x in uuids ]
-  '''
-  args = {'q': q, 'limit': limit, 'offset': offset, 'identifier': identifier,
-    'identifierType': identifierType }
-  data_choices = ['all', 'organization', 'endpoint',
-     'identifier', 'tag', 'machineTag', 'comment',
-     'pendingEndorsement', 'country', 'dataset', 'installation']
-  check_data(data, data_choices)
+  """
+    args = {
+        "q": q,
+        "limit": limit,
+        "offset": offset,
+        "identifier": identifier,
+        "identifierType": identifierType,
+    }
+    data_choices = [
+        "all",
+        "organization",
+        "endpoint",
+        "identifier",
+        "tag",
+        "machineTag",
+        "comment",
+        "pendingEndorsement",
+        "country",
+        "dataset",
+        "installation",
+    ]
+    check_data(data, data_choices)
 
-  def getdata(x, uuid, args, **kwargs):
-    if x is not 'all' and uuid is None:
-      stop('You must specify a uuid if data does not equal "all"')
+    def getdata(x, uuid, args, **kwargs):
+        if x is not "all" and uuid is None:
+            stop('You must specify a uuid if data does not equal "all"')
 
-    if uuid is None:
-      if x is 'all':
-        url = gbif_baseurl + 'node'
-      else:
-        if isocode is not None and x is 'country':
-          url = gbif_baseurl + 'node/country/' + isocode
+        if uuid is None:
+            if x is "all":
+                url = gbif_baseurl + "node"
+            else:
+                if isocode is not None and x is "country":
+                    url = gbif_baseurl + "node/country/" + isocode
+                else:
+                    url = gbif_baseurl + "node/" + x
         else:
-          url = gbif_baseurl + 'node/' + x
+            if x is "all":
+                url = gbif_baseurl + "node/" + uuid
+            else:
+                url = gbif_baseurl + "node/" + uuid + "/" + x
+
+        res = gbif_GET(url, args, **kwargs)
+        return {"meta": get_meta(res), "data": parse_results(res, uuid)}
+
+    # Get data
+    if len2(data) == 1:
+        return getdata(data, uuid, args, **kwargs)
     else:
-      if x is 'all':
-        url = gbif_baseurl + 'node/' + uuid
-      else:
-        url = gbif_baseurl + 'node/' + uuid + '/' + x
-
-    res = gbif_GET(url, args, **kwargs)
-    return {'meta': get_meta(res), 'data': parse_results(res, uuid)}
-
-  # Get data
-  if len2(data) == 1:
-    return getdata(data, uuid, args, **kwargs)
-  else:
-    return [getdata(x, uuid, args, **kwargs) for x in data]
+        return [getdata(x, uuid, args, **kwargs) for x in data]
