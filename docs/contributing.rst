@@ -42,14 +42,30 @@ here.
 Writing tests
 -------------
 
-We're using `nosetests` for testing. See the `nosetests docs`_ for
-help on contributing to or writing tests.
+We're using `nose` for testing. See the `nose docs`_ for help on
+contributing to or writing tests.
 
-The Makefile has tasks for testing under python 2 and 3
+Before running tests for the first time, you'll need install pygbif
+dependencies, but also nose and a couple other packages:
 
 .. code-block:: shell
 
-    make test
-    make test3
+    $ pip install -e .
+    $ pip install nose vcrpy coverage
 
-.. _nosetests docs: http://nose.readthedocs.io/en/latest/
+The Makefile has a task for testing under Python 3:
+
+.. code-block:: shell
+
+    $ make test
+
+.. _nose docs: http://nose.readthedocs.io/en/latest/
+
+Code formatting
+---------------
+
+We're using the `Black`_  formatter, so make sure you use that before
+submitting code - there's lots of text editor integrations, a command
+line tool, etc.
+
+.. _Black: https://github.com/psf/black
