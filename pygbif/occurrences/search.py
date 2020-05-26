@@ -1,4 +1,3 @@
-import re
 from ..gbifutils import *
 
 

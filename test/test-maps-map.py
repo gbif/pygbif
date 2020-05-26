@@ -1,7 +1,6 @@
 """Tests for maps module - maps"""
 from nose.tools import *
 import unittest
-import os
 import vcr
 import requests
 import matplotlib

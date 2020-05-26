@@ -1,6 +1,6 @@
 """Tests for registry module - nodes methods"""
-import os
 import vcr
+
 from pygbif import registry
 
 

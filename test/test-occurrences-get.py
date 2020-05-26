@@ -1,5 +1,4 @@
 """Tests for occurrences module - get methods"""
-import os
 import vcr
 from pygbif import occurrences
 

@@ -1,5 +1,4 @@
 """Tests for registry module - datasets method"""
-import os
 import vcr
 from pygbif import registry
 
