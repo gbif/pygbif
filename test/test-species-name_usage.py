@@ -1,5 +1,4 @@
 """Tests for species module - name_usage methods"""
-import os
 import vcr
 from pygbif import species
 

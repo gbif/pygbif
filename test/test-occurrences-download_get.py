@@ -1,5 +1,4 @@
 """Tests for occurrences module - download_get methods"""
-import os
 from pygbif import occurrences as occ
 
 

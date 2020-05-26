@@ -1,5 +1,4 @@
 """Tests for species module - name_suggest methods"""
-import os
 import vcr
 import re
 from pygbif import species
