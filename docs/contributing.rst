@@ -3,10 +3,6 @@
 Contributing
 ============
 
-.. important::
-
-    Double check you are reading the most recent version of this document at
-    http://pygbif.readthedocs.io/en/latest/registry.html
 
 Bug reports
 -----------
