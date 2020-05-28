@@ -1,10 +1,12 @@
 import os
 import csv
 import json
+import re
 import datetime
-from requests import auth
+import requests
+import pygbif
 
-from ..gbifutils import *
+from ..gbifutils import is_not_none, is_none, stop, gbif_GET, gbif_GET_write
 
 
 def _parse_args(x):
@@ -288,7 +290,7 @@ class GbifDownload(object):
         # pprint.pprint(self.payload)
         r = requests.post(
             self.url,
-            auth=auth.HTTPBasicAuth(user, pwd),
+            auth=requests.auth.HTTPBasicAuth(user, pwd),
             data=json.dumps(self.payload),
             headers=self.header,
         )
