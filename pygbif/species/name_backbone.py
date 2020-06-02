@@ -1,4 +1,4 @@
-from ..gbifutils import *
+from pygbif.gbifutils import gbif_baseurl, bool2str, gbif_GET
 
 
 def name_backbone(

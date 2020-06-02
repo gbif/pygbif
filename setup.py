@@ -1,16 +1,8 @@
 import codecs
-import re
 from setuptools import setup
 from setuptools import find_packages
 
-version = ""
-with open("pygbif/__init__.py", "r") as fd:
-    version = re.search(
-        r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]', fd.read(), re.MULTILINE
-    ).group(1)
-
-if not version:
-    raise RuntimeError("Cannot find version information")
+from pygbif import package_metadata
 
 with codecs.open("README.rst", "r", "utf-8") as f:
     readme = f.read()
@@ -22,7 +14,7 @@ long_description = readme + "\n\n" + changes
 
 setup(
     name="pygbif",
-    version=version,
+    version=package_metadata.__version__,
     description="Python client for GBIF",
     long_description=long_description,
     author="Scott Chamberlain",

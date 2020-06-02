@@ -1,4 +1,4 @@
-from ..gbifutils import *
+from pygbif.gbifutils import check_data, len2, gbif_baseurl, gbif_GET
 
 
 def name_usage(

@@ -1,4 +1,6 @@
-from ..gbifutils import *
+import re
+
+from pygbif.gbifutils import bool2str, bn, requests_argset, gbif_GET, gbif_baseurl
 
 
 def name_lookup(

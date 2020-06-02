@@ -4,8 +4,8 @@ import json
 import re
 import datetime
 import requests
-import pygbif
 
+from .. import package_metadata, occurrences
 from ..gbifutils import is_not_none, is_none, stop, gbif_GET, gbif_GET_write
 
 
@@ -171,7 +171,7 @@ class GbifDownload(object):
                     "python-requests/",
                     requests.__version__,
                     ",pygbif/",
-                    pygbif.__version__,
+                    package_metadata.__version__,
                 ]
             ),
         }
@@ -390,7 +390,7 @@ def download_get(key, path=".", **kwargs):
       occ.download_get("0000066-140928181241064")
       occ.download_get("0003983-140910143529206")
     """
-    meta = pygbif.occurrences.download_meta(key)
+    meta = occurrences.download_meta(key)
     if meta["status"] != "SUCCEEDED":
         raise Exception('download "%s" not of status SUCCEEDED' % key)
     else:
