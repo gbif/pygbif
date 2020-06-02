@@ -98,15 +98,15 @@ def datasets_fetch(x, uuid, args, **kwargs):
         )
 
     if uuid is None:
-        if x is "all":
+        if x == "all":
             url = gbif_baseurl + "dataset"
         else:
-            if id is not None and x is "metadata":
+            if id is not None and x == "metadata":
                 url = gbif_baseurl + "dataset/metadata/" + id + "/document"
             else:
                 url = gbif_baseurl + "dataset/" + x
     else:
-        if x is "all":
+        if x == "all":
             url = gbif_baseurl + "dataset/" + uuid
         else:
             url = gbif_baseurl + "dataset/" + uuid + "/" + x

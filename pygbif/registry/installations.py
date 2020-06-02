@@ -74,12 +74,12 @@ def installations(
             )
 
         if uuid is None:
-            if x is "all":
+            if x == "all":
                 url = gbif_baseurl + "installation"
             else:
                 url = gbif_baseurl + "installation/" + x
         else:
-            if x is "all":
+            if x == "all":
                 url = gbif_baseurl + "installation/" + uuid
             else:
                 url = gbif_baseurl + "installation/" + uuid + "/" + x

@@ -58,13 +58,13 @@ def networks(
     check_data(data, data_choices)
 
     def getdata(x, uuid, args, **kwargs):
-        if x is not "all" and uuid is None:
+        if x != "all" and uuid is None:
             stop('You must specify a uuid if data does not equal "all"')
 
         if uuid is None:
             url = gbif_baseurl + "network"
         else:
-            if x is "all":
+            if x == "all":
                 url = gbif_baseurl + "network/" + uuid
             else:
                 url = gbif_baseurl + "network/" + uuid + "/" + x

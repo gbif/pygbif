@@ -78,12 +78,12 @@ def organizations(
             )
 
         if uuid is None:
-            if x is "all":
+            if x == "all":
                 url = gbif_baseurl + "organization"
             else:
                 url = gbif_baseurl + "organization/" + x
         else:
-            if x is "all":
+            if x == "all":
                 url = gbif_baseurl + "organization/" + uuid
             else:
                 url = gbif_baseurl + "organization/" + uuid + "/" + x

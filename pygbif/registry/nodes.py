@@ -77,19 +77,19 @@ def nodes(
     check_data(data, data_choices)
 
     def getdata(x, uuid, args, **kwargs):
-        if x is not "all" and uuid is None:
+        if x != "all" and uuid is None:
             stop('You must specify a uuid if data does not equal "all"')
 
         if uuid is None:
-            if x is "all":
+            if x == "all":
                 url = gbif_baseurl + "node"
             else:
-                if isocode is not None and x is "country":
+                if isocode is not None and x == "country":
                     url = gbif_baseurl + "node/country/" + isocode
                 else:
                     url = gbif_baseurl + "node/" + x
         else:
-            if x is "all":
+            if x == "all":
                 url = gbif_baseurl + "node/" + uuid
             else:
                 url = gbif_baseurl + "node/" + uuid + "/" + x
