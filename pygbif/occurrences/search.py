@@ -23,6 +23,8 @@ def search(
     continent=None,
     geometry=None,
     recordedBy=None,
+    recordedByID=None,
+    identifiedByID=None,
     basisOfRecord=None,
     datasetKey=None,
     eventDate=None,
@@ -67,6 +69,8 @@ def search(
     :param datasetKey: [str] The occurrence dataset key (a uuid)
     :param catalogNumber: [str] An identifier of any form assigned by the source within a physical collection or digital dataset for the record which may not unique, but should be fairly unique in combination with the institution and collection code.
     :param recordedBy: [str] The person who recorded the occurrence.
+    :param recordedByID: [str] Identifier (e.g. ORCID) for the person who recorded the occurrence
+    :param identifiedByID: [str] Identifier (e.g. ORCID) for the person who provided the taxonomic identification of the occurrence.
     :param collectionCode: [str] An identifier of any form assigned by the source to identify the physical collection or digital dataset uniquely within the text of an institution.
     :param institutionCode: [str] An identifier of any form assigned by the source to identify the institution the record belongs to. Not guaranteed to be que.
     :param country: [str] The 2-letter country code (as per ISO-3166-1) of the country in which the occurrence was recorded. See here http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
@@ -177,6 +181,12 @@ def search(
 
         # Many collector names
         # occurrences.search(recordedBy=["smith","BJ Stacey"], limit=20)
+        
+        # recordedByID
+        occurrences.search(recordedByID="https://orcid.org/0000-0003-1691-239X", limit = 3)
+
+        # identifiedByID
+        occurrences.search(identifiedByID="https://orcid.org/0000-0003-1691-239X", limit = 3)
 
         # Search for many species
         splist = ['Cyanocitta stelleri', 'Junco hyemalis', 'Aix sponsa']
@@ -363,6 +373,8 @@ def search(
         "continent": continent,
         "geometry": geometry,
         "recordedBy": recordedBy,
+        "recordedByID": recordedByID,
+        "identifiedByID": identifiedByID,
         "basisOfRecord": basisOfRecord,
         "datasetKey": datasetKey,
         "eventDate": eventDate,

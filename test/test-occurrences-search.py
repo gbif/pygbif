@@ -3,7 +3,7 @@ import vcr
 from pygbif import occurrences
 
 keyz = ["count", "facets", "results", "endOfRecords", "limit", "offset"]
-
+x = "https://orcid.org/0000-0003-1691-239X"
 
 @vcr.use_cassette("test/vcr_cassettes/test_search.yaml")
 def test_search():
@@ -30,3 +30,19 @@ def test_search_key2():
     assert "dict" == res.__class__.__name__
     assert 6 == len(res)
     assert 2683264 == res["results"][0]["taxonKey"]
+
+@vcr.use_cassette("test/vcr_cassettes/test_search_recorded_by_id.yaml")
+def test_search_recorded_by_id():
+    "occurrences.search - recordedByID"
+    res = occurrences.search(recordedByID=x, limit=3)
+    assert "dict" == res.__class__.__name__
+    assert 6 == len(res)
+    assert x == res["results"][0]["recordedByIDs"][0]['value']
+
+@vcr.use_cassette("test/vcr_cassettes/test_search_identified_by_id.yaml")
+def test_search_identified_by_id():
+    "occurrences.search - identifiedByID"
+    res = occurrences.search(identifiedByID=x, limit=3)
+    assert "dict" == res.__class__.__name__
+    assert 6 == len(res)
+    assert x == res["results"][0]["identifiedByIDs"][0]['value']

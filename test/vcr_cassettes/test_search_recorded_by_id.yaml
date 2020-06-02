@@ -1,0 +1,156 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - python-requests/2.23.0,pygbif/0.4.1
+    method: GET
+    uri: https://api.gbif.org/v1/occurrence/search?recordedByID=https%3A%2F%2Forcid.org%2F0000-0003-1691-239X&limit=3&offset=0
+  response:
+    body:
+      string: "{\"offset\":0,\"limit\":3,\"endOfRecords\":false,\"count\":1688,\"\
+        results\":[{\"key\":2575119654,\"datasetKey\":\"84d26682-f762-11e1-a439-00145eb45e9a\"\
+        ,\"publishingOrgKey\":\"ccc2e3ec-98ba-4e74-878d-7dcf0f57baba\",\"installationKey\"\
+        :\"fe25aaf4-d236-4dd8-a9a9-3b2e3d24622e\",\"publishingCountry\":\"DK\",\"\
+        protocol\":\"DWC_ARCHIVE\",\"lastCrawled\":\"2020-06-01T03:02:11.978+0000\"\
+        ,\"lastParsed\":\"2020-06-01T03:07:19.803+0000\",\"crawlId\":233,\"extensions\"\
+        :{},\"basisOfRecord\":\"HUMAN_OBSERVATION\",\"taxonKey\":8796319,\"kingdomKey\"\
+        :5,\"phylumKey\":34,\"classKey\":186,\"orderKey\":1499,\"familyKey\":7821354,\"\
+        genusKey\":2528214,\"speciesKey\":8796319,\"acceptedTaxonKey\":8796319,\"\
+        scientificName\":\"Tubaria furfuracea (Pers.) Gillet\",\"acceptedScientificName\"\
+        :\"Tubaria furfuracea (Pers.) Gillet\",\"kingdom\":\"Fungi\",\"phylum\":\"\
+        Basidiomycota\",\"order\":\"Agaricales\",\"family\":\"Tubariaceae\",\"genus\"\
+        :\"Tubaria\",\"species\":\"Tubaria furfuracea\",\"genericName\":\"Tubaria\"\
+        ,\"specificEpithet\":\"furfuracea\",\"taxonRank\":\"SPECIES\",\"taxonomicStatus\"\
+        :\"ACCEPTED\",\"decimalLongitude\":11.910556,\"decimalLatitude\":55.915278,\"\
+        coordinateUncertaintyInMeters\":15.0,\"year\":2020,\"month\":2,\"day\":22,\"\
+        eventDate\":\"2020-02-22T00:00:00\",\"issues\":[\"COORDINATE_ROUNDED\"],\"\
+        modified\":\"2020-02-29T10:19:10.000+0000\",\"lastInterpreted\":\"2020-06-01T03:07:19.803+0000\"\
+        ,\"license\":\"http://creativecommons.org/licenses/by-nc/4.0/legalcode\",\"\
+        identifiers\":[],\"media\":[{\"type\":\"StillImage\",\"format\":\"image/jpeg\"\
+        ,\"identifier\":\"https://svampe.databasen.org/uploads/2020-10084842_HJo0zhDVU.JPG\"\
+        ,\"creator\":\"Thomas Stjernegaard Jeppesen\",\"rightsHolder\":\"Thomas Stjernegaard\
+        \ Jeppesen\"}],\"facts\":[],\"relations\":[],\"geodeticDatum\":\"WGS84\",\"\
+        class\":\"Agaricomycetes\",\"countryCode\":\"DK\",\"recordedByIDs\":[{\"type\"\
+        :\"ORCID\",\"value\":\"https://orcid.org/0000-0003-1691-239X\"}],\"identifiedByIDs\"\
+        :[{\"type\":\"ORCID\",\"value\":\"https://orcid.org/0000-0003-1691-239X\"\
+        }],\"country\":\"Denmark\",\"identifier\":\"10084842\",\"habitat\":\"garden\"\
+        ,\"scientificNameID\":\"urn:lsid:indexfungorum.org:names:197499\",\"dynamicProperties\"\
+        :\"{\\\"Substrate\\\":\\\"soil\\\"}\",\"locality\":\"Hornsved\",\"language\"\
+        :\"da\",\"gbifID\":\"2575119654\",\"occurrenceID\":\"https://svampe.databasen.org/observations/10084842\"\
+        ,\"taxonID\":\"21234\",\"locationAccordingTo\":\"Danish Mycological Society\"\
+        ,\"recordedBy\":\"Thomas Stjernegaard Jeppesen\",\"catalogNumber\":\"DMS-10084842\"\
+        ,\"vernacularName\":\"kliddet fnughat\",\"locationID\":\"23921\",\"bibliographicCitation\"\
+        :\"Danish Mycological Society, Fungal Records Database (https://svampe.databasen.org),\
+        \ contributed by Fr\xF8slev, T., Heilmann-Clausen, J., Jeppesen, T.S., Lange,\
+        \ C., L\xE6ss\xF8e, T., Petersen, J.H., S\xF8chting, U., Vesterholt, J.\"\
+        ,\"identifiedBy\":\"Thomas Stjernegaard Jeppesen\"},{\"key\":2575120314,\"\
+        datasetKey\":\"84d26682-f762-11e1-a439-00145eb45e9a\",\"publishingOrgKey\"\
+        :\"ccc2e3ec-98ba-4e74-878d-7dcf0f57baba\",\"installationKey\":\"fe25aaf4-d236-4dd8-a9a9-3b2e3d24622e\"\
+        ,\"publishingCountry\":\"DK\",\"protocol\":\"DWC_ARCHIVE\",\"lastCrawled\"\
+        :\"2020-06-01T03:02:11.978+0000\",\"lastParsed\":\"2020-06-01T03:07:19.740+0000\"\
+        ,\"crawlId\":233,\"extensions\":{},\"basisOfRecord\":\"HUMAN_OBSERVATION\"\
+        ,\"taxonKey\":10364983,\"kingdomKey\":5,\"phylumKey\":34,\"classKey\":186,\"\
+        orderKey\":1499,\"familyKey\":4184,\"genusKey\":2534499,\"speciesKey\":3319892,\"\
+        acceptedTaxonKey\":3319892,\"scientificName\":\"Parasola conopilea (Fr.) \xD6\
+        rstadius & E.Larss., 2008\",\"acceptedScientificName\":\"Parasola conopilus\
+        \ (Fr.) \xD6rstadius & E.Larss., 2008\",\"kingdom\":\"Fungi\",\"phylum\":\"\
+        Basidiomycota\",\"order\":\"Agaricales\",\"family\":\"Psathyrellaceae\",\"\
+        genus\":\"Parasola\",\"species\":\"Parasola conopilus\",\"genericName\":\"\
+        Parasola\",\"specificEpithet\":\"conopilea\",\"taxonRank\":\"SPECIES\",\"\
+        taxonomicStatus\":\"SYNONYM\",\"decimalLongitude\":11.921667,\"decimalLatitude\"\
+        :55.650278,\"coordinateUncertaintyInMeters\":15.0,\"year\":2020,\"month\"\
+        :2,\"day\":23,\"eventDate\":\"2020-02-23T00:00:00\",\"issues\":[\"COORDINATE_ROUNDED\"\
+        ],\"modified\":\"2020-05-05T08:20:35.000+0000\",\"lastInterpreted\":\"2020-06-01T03:07:19.740+0000\"\
+        ,\"license\":\"http://creativecommons.org/licenses/by-nc/4.0/legalcode\",\"\
+        identifiers\":[],\"media\":[{\"type\":\"StillImage\",\"format\":\"image/jpeg\"\
+        ,\"identifier\":\"https://svampe.databasen.org/uploads/2020-10084843_BJvL7hwN8.JPG\"\
+        ,\"creator\":\"Thomas Stjernegaard Jeppesen\",\"rightsHolder\":\"Thomas Stjernegaard\
+        \ Jeppesen\"}],\"facts\":[],\"relations\":[],\"geodeticDatum\":\"WGS84\",\"\
+        class\":\"Agaricomycetes\",\"countryCode\":\"DK\",\"recordedByIDs\":[{\"type\"\
+        :\"ORCID\",\"value\":\"https://orcid.org/0000-0003-1691-239X\"}],\"identifiedByIDs\"\
+        :[{\"type\":\"ORCID\",\"value\":\"https://orcid.org/0000-0003-1691-239X\"\
+        }],\"country\":\"Denmark\",\"identifier\":\"10084843\",\"habitat\":\"Deciduous\
+        \ woodland\",\"scientificNameID\":\"urn:lsid:indexfungorum.org:names:631980\"\
+        ,\"dynamicProperties\":\"{\\\"Substrate\\\":\\\"soil\\\"}\",\"locality\":\"\
+        Borrevejle Skov\",\"language\":\"da\",\"gbifID\":\"2575120314\",\"occurrenceID\"\
+        :\"https://svampe.databasen.org/observations/10084843\",\"taxonID\":\"19113\"\
+        ,\"locationAccordingTo\":\"Danish Mycological Society\",\"recordedBy\":\"\
+        Thomas Stjernegaard Jeppesen\",\"catalogNumber\":\"DMS-10084843\",\"vernacularName\"\
+        :\"kegle-hjulhat\",\"locationID\":\"11316\",\"bibliographicCitation\":\"Danish\
+        \ Mycological Society, Fungal Records Database (https://svampe.databasen.org),\
+        \ contributed by Fr\xF8slev, T., Heilmann-Clausen, J., Jeppesen, T.S., Lange,\
+        \ C., L\xE6ss\xF8e, T., Petersen, J.H., S\xF8chting, U., Vesterholt, J.\"\
+        ,\"identifiedBy\":\"Thomas Stjernegaard Jeppesen\"},{\"key\":2625349302,\"\
+        datasetKey\":\"84d26682-f762-11e1-a439-00145eb45e9a\",\"publishingOrgKey\"\
+        :\"ccc2e3ec-98ba-4e74-878d-7dcf0f57baba\",\"installationKey\":\"fe25aaf4-d236-4dd8-a9a9-3b2e3d24622e\"\
+        ,\"publishingCountry\":\"DK\",\"protocol\":\"DWC_ARCHIVE\",\"lastCrawled\"\
+        :\"2020-06-01T03:02:11.978+0000\",\"lastParsed\":\"2020-06-01T03:07:19.903+0000\"\
+        ,\"crawlId\":233,\"extensions\":{},\"basisOfRecord\":\"HUMAN_OBSERVATION\"\
+        ,\"taxonKey\":3346903,\"kingdomKey\":5,\"phylumKey\":34,\"classKey\":186,\"\
+        orderKey\":1499,\"familyKey\":4174,\"genusKey\":2530002,\"speciesKey\":3346903,\"\
+        acceptedTaxonKey\":3346903,\"scientificName\":\"Entoloma sepium (Noulet &\
+        \ Dass.) Richon & Roze, 1880\",\"acceptedScientificName\":\"Entoloma sepium\
+        \ (Noulet & Dass.) Richon & Roze, 1880\",\"kingdom\":\"Fungi\",\"phylum\"\
+        :\"Basidiomycota\",\"order\":\"Agaricales\",\"family\":\"Entolomataceae\"\
+        ,\"genus\":\"Entoloma\",\"species\":\"Entoloma sepium\",\"genericName\":\"\
+        Entoloma\",\"specificEpithet\":\"sepium\",\"taxonRank\":\"SPECIES\",\"taxonomicStatus\"\
+        :\"ACCEPTED\",\"decimalLongitude\":11.912994,\"decimalLatitude\":55.915168,\"\
+        coordinateUncertaintyInMeters\":5.0,\"year\":2020,\"month\":5,\"day\":17,\"\
+        eventDate\":\"2020-05-17T00:00:00\",\"issues\":[\"COORDINATE_ROUNDED\"],\"\
+        modified\":\"2020-05-18T09:47:42.000+0000\",\"lastInterpreted\":\"2020-06-01T03:07:19.903+0000\"\
+        ,\"license\":\"http://creativecommons.org/licenses/by-nc/4.0/legalcode\",\"\
+        identifiers\":[],\"media\":[{\"type\":\"StillImage\",\"format\":\"image/jpeg\"\
+        ,\"identifier\":\"https://svampe.databasen.org/uploads/2020-10091853_H1EHHyJsU.JPG\"\
+        ,\"creator\":\"Thomas Stjernegaard Jeppesen\",\"rightsHolder\":\"Thomas Stjernegaard\
+        \ Jeppesen\"}],\"facts\":[],\"relations\":[],\"geodeticDatum\":\"WGS84\",\"\
+        class\":\"Agaricomycetes\",\"countryCode\":\"DK\",\"recordedByIDs\":[{\"type\"\
+        :\"ORCID\",\"value\":\"https://orcid.org/0000-0003-1691-239X\"}],\"identifiedByIDs\"\
+        :[{\"type\":\"ORCID\",\"value\":\"https://orcid.org/0000-0003-1691-239X\"\
+        }],\"country\":\"Denmark\",\"identifier\":\"10091853\",\"habitat\":\"garden\"\
+        ,\"scientificNameID\":\"urn:lsid:indexfungorum.org:names:438320\",\"dynamicProperties\"\
+        :\"{\\\"Substrate\\\":\\\"soil\\\"}\",\"associatedTaxa\":\"mirabel (Prunus\
+        \ cerasifera)\",\"locality\":\"Hornsved\",\"language\":\"da\",\"gbifID\":\"\
+        2625349302\",\"occurrenceID\":\"https://svampe.databasen.org/observations/10091853\"\
+        ,\"taxonID\":\"13759\",\"locationAccordingTo\":\"Danish Mycological Society\"\
+        ,\"recordedBy\":\"Thomas Stjernegaard Jeppesen\",\"catalogNumber\":\"DMS-10091853\"\
+        ,\"vernacularName\":\"sl\xE5en-r\xF8dblad\",\"locationID\":\"23921\",\"bibliographicCitation\"\
+        :\"Danish Mycological Society, Fungal Records Database (https://svampe.databasen.org),\
+        \ contributed by Fr\xF8slev, T., Heilmann-Clausen, J., Jeppesen, T.S., Lange,\
+        \ C., L\xE6ss\xF8e, T., Petersen, J.H., S\xF8chting, U., Vesterholt, J.\"\
+        ,\"identifiedBy\":\"Thomas Stjernegaard Jeppesen\"}],\"facets\":[]}"
+    headers:
+      Accept-Ranges:
+      - bytes
+      Access-Control-Allow-Methods:
+      - HEAD, GET, POST, DELETE, PUT, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Age:
+      - '0'
+      Cache-Control:
+      - public, max-age=600
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '7887'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 02 Jun 2020 21:48:59 GMT
+      Server:
+      - Jetty(9.3.z-SNAPSHOT)
+      Via:
+      - 1.1 varnish (Varnish/5.2)
+      X-Varnish:
+      - '327123839'
+    status:
+      code: 200
+      message: OK
+version: 1
