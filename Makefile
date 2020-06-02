@@ -5,7 +5,7 @@ all: build install
 build:
 	python3 setup.py build
 
-install:
+install: build
 	python3 setup.py install
 
 test:
