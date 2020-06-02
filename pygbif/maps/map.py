@@ -1,9 +1,12 @@
-from ..gbifutils import *
 import os
 import hashlib
+import re
+
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 from appdirs import user_cache_dir
+
+from pygbif.gbifutils import requests_argset, has, gbif_GET_map
 
 
 def map(

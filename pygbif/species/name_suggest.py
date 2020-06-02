@@ -1,4 +1,4 @@
-from ..gbifutils import *
+from pygbif.gbifutils import gbif_baseurl, gbif_GET
 
 
 def name_suggest(q=None, datasetKey=None, rank=None, limit=100, offset=None, **kwargs):

@@ -1,4 +1,4 @@
-from ..gbifutils import *
+from pygbif.gbifutils import check_data, stop, gbif_baseurl, gbif_GET, get_meta, parse_results, len2
 
 
 def nodes(

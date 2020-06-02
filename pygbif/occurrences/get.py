@@ -1,4 +1,4 @@
-from ..gbifutils import *
+from pygbif.gbifutils import gbif_baseurl, gbif_GET
 
 
 def get(key, **kwargs):

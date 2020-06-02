@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 """
 GBIF registry APIs methods
 

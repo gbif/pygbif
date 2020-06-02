@@ -1,4 +1,6 @@
-from ..gbifutils import *
+import re
+
+from pygbif.gbifutils import gbif_baseurl, gbif_GET, len2, bool2str, check_data, requests_argset
 
 
 def dataset_metrics(uuid):
