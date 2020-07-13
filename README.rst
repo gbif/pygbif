@@ -28,6 +28,7 @@ Development version
 
     [sudo] pip install git+git://github.com/sckott/pygbif.git#egg=pygbif
 
+
 `pygbif` is split up into modules for each of the major groups of API methods.
 
 * Registry - Datasets, Nodes, Installations, Networks, Organizations
