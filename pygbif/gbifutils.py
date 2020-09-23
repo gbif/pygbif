@@ -51,9 +51,9 @@ def gbif_GET_write(url, path, **kwargs):
             for chunk in out.iter_content(chunk_size=1024):
                 if chunk:
                     f.write(chunk)
-    ctype = "application/octet-stream; qs=0.5"
-    if out.headers["content-type"] != ctype:
-        raise NoResultException("content-type did not = '%s'" % ctype)
+    ctype = "application/octet-stream"
+    if not re.match(ctype, out.headers["content-type"]):
+        raise NoResultException("content-type did not contain '%s'" % ctype)
     return path
 
 
