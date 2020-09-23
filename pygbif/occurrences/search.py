@@ -92,7 +92,6 @@ def search(
        smaller,larger (e.g., ``1990,1991``, whereas ``1991,1990`` wouldn't work)
     :param month: [int] The month of the year, starting with 1 for January. Supports range queries,
        smaller,larger (e.g., ``1,2``, whereas ``2,1`` wouldn't work)
-    :param q: [str] Query terms. The value for this parameter can be a simple word or a phrase.
     :param decimalLatitude: [float] Latitude in decimals between -90 and 90 based on WGS 84.
        Supports range queries, smaller,larger (e.g., ``25,30``, whereas ``30,25`` wouldn't work)
     :param decimalLongitude: [float] Longitude in decimals between -180 and 180 based on WGS 84.
