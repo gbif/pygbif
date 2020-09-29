@@ -17,6 +17,7 @@ setup(
     version=package_metadata.__version__,
     description="Python client for GBIF",
     long_description=long_description,
+    long_description_content_type="text/x-rst",
     author="Scott Chamberlain",
     author_email="myrmecocystus@gmail.com",
     url="http://github.com/sckott/pygbif",
