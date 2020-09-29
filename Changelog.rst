@@ -1,6 +1,15 @@
 Changelog
 =========
 
+0.5.0 (2020-09-29)
+------------------
+- `occurrences.search` now supports `recordedByID` and `identifiedByID` search parameters :issue:`62`
+- clean up the Contributing file, thanks @niconoe :issue:`64`
+- clean up internal imports in the library, thanks @niconoe :issue:`65`
+- fix usage of `is` and `==`, was using them inappropriately sometimes (via https://realpython.com/python-is-identity-vs-equality/), :issue:`69`
+- remove redundant parameter in a doc string, thanks @faroit :issue:`71`
+- make a test for internal fxn `gbif_GET_write` more general to avoid errors if GBIF changes content type response header slightly :issue:`72`
+
 0.4.0 (2019-11-20)
 ------------------
 - changed base url to https for all requests; was already https for maps and downloads in previous versions
