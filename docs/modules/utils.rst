@@ -21,5 +21,6 @@ utils API
 =========
 
 .. py:module:: pygbif
+  :noindex:
 
 .. automethod:: utils.wkt_rewind
