@@ -1,4 +1,4 @@
-from pygbif.gbifutils import gbif_baseurl, bool2str, gbif_GET
+from pygbif.gbifutils import gbif_baseurl, bool2str, gbif_GET, check_param_lens
 
 
 def count(
@@ -15,6 +15,10 @@ def count(
 ):
     """
     Returns occurrence counts for a predefined set of dimensions
+
+    For all parameters below, only one value allowed per function call.
+    See :func:`~occurrences.search` for passing more than one value
+    per parameter.
 
     :param taxonKey: [int] A GBIF occurrence identifier
     :param basisOfRecord: [str] A GBIF occurrence identifier
@@ -36,6 +40,10 @@ def count(
         occurrences.count(isGeoreferenced = True)
         occurrences.count(basisOfRecord = 'OBSERVATION')
     """
+    check_param_lens(taxonKey=taxonKey,basisOfRecord=basisOfRecord,
+        country=country,isGeoreferenced=isGeoreferenced,
+        datasetKey=datasetKey,publishingCountry=publishingCountry,
+        typeStatus=typeStatus,issue=issue,year=year)
     url = gbif_baseurl + "occurrence/count"
     isGeoreferenced = bool2str(isGeoreferenced)
     out = gbif_GET(
