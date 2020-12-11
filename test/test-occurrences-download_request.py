@@ -57,7 +57,7 @@ class TestGbifClass(unittest.TestCase):
         req = GbifDownload("name", "email")
         req.add_predicate("COUNTRY", "BE", "equals")
         self.assertIsInstance(req.payload["predicate"]["predicates"], list)
-        self.assertEquals(len(req.payload["predicate"]["predicates"]), 1)
+        self.assertEqual(len(req.payload["predicate"]["predicates"]), 1)
         self.assertIsInstance(req.payload["predicate"]["predicates"][0], dict)
         self.assertDictEqual(
             req.payload["predicate"]["predicates"][0],
@@ -69,16 +69,16 @@ class TestGbifClass(unittest.TestCase):
         req = GbifDownload("name", "email")
         req.add_iterative_predicate("TAXONKEY", [3189866, 2498252])
         self.assertIsInstance(req.payload["predicate"]["predicates"], list)
-        self.assertEquals(len(req.payload["predicate"]["predicates"]), 1)
+        self.assertEqual(len(req.payload["predicate"]["predicates"]), 1)
         self.assertIsInstance(req.payload["predicate"]["predicates"][0], dict)
 
         temp_pred = req.payload["predicate"]["predicates"][0]["predicates"]
         self.assertIsInstance(temp_pred, list)
-        self.assertEquals(len(temp_pred), 2)
+        self.assertEqual(len(temp_pred), 2)
         self.assertIsInstance(temp_pred[0], dict)
 
-        self.assertEquals(set(list(temp_pred[0].keys())), set(["key", "type", "value"]))
-        self.assertEquals(req.payload["predicate"]["predicates"][0]["type"], "or")
+        self.assertEqual(set(list(temp_pred[0].keys())), set(["key", "type", "value"]))
+        self.assertEqual(req.payload["predicate"]["predicates"][0]["type"], "or")
 
     def test_add_geometry(self):
         """check predicate after adding a geometry"""
@@ -87,8 +87,8 @@ class TestGbifClass(unittest.TestCase):
             "POLYGON((-14.06 42.55, 9.84 38.27, -7.03 26.43, -14.06 42.55))"
         )
         self.assertIsInstance(req.payload["predicate"]["predicates"], list)
-        self.assertEquals(len(req.payload["predicate"]["predicates"]), 1)
-        self.assertEquals(
+        self.assertEqual(len(req.payload["predicate"]["predicates"]), 1)
+        self.assertEqual(
             set(req.payload["predicate"]["predicates"][0].keys()),
             set(["type", "geometry"]),
         )
@@ -168,11 +168,11 @@ class TestDownload(unittest.TestCase):
         )
         temp_pred = payload["predicate"]["predicates"]
         self.assertIsInstance(temp_pred, list)
-        self.assertEquals(len(temp_pred), 2)
+        self.assertEqual(len(temp_pred), 2)
         self.assertIsInstance(temp_pred[0], dict)
         self.assertIsInstance(temp_pred[1], dict)
-        self.assertEquals(set(list(temp_pred[0].keys())), set(["key", "type", "value"]))
-        self.assertEquals(set(list(temp_pred[1].keys())), set(["key", "type", "value"]))
+        self.assertEqual(set(list(temp_pred[0].keys())), set(["key", "type", "value"]))
+        self.assertEqual(set(list(temp_pred[1].keys())), set(["key", "type", "value"]))
 
     def test_alternative_main_type(self):
         dl_key, payload = download(

@@ -1,5 +1,5 @@
 """Tests for utils module - wkt_rewind"""
-from nose.tools import *
+import pytest
 import unittest
 import re
 from pygbif import utils
@@ -22,7 +22,7 @@ class TestWKTClass(unittest.TestCase):
         self.assertIsInstance(out.string, str)
 
 
-@raises(TypeError)
 def test_wkt_rewind_fails_well():
     "utils.wkt_rewind - fails well"
-    utils.wkt_rewind(x, digits="foo")
+    with pytest.raises(TypeError):
+        utils.wkt_rewind(x, digits="foo")

@@ -9,7 +9,7 @@ install: build
 	python3 setup.py install
 
 test:
-	python3 -m "nose" -v --with-coverage --cover-package=pygbif
+	python3 -m "pytest" --cov-report term --cov=pygbif
 
 docs:
 	cd docs;\

@@ -1,5 +1,5 @@
 """Tests for maps module - maps"""
-from nose.tools import *
+import pytest
 import unittest
 import vcr
 import requests
@@ -48,14 +48,14 @@ class TestMapsClass(unittest.TestCase):
         self.assertRegex(res.response.request.path_url, "HUMAN_OBSERVATION")
         self.assertRegex(res.response.request.path_url, "LIVING_SPECIMEN")
 
-    @raises(ValueError)
     def test_maps_fails_well(self):
         "maps.map - fails well"
-        pygbif.maps.map(year=2300)
-        pygbif.maps.map(year="2010")
-        pygbif.maps.map(basisOfRecord="foobar")
-        pygbif.maps.map(format="foobar")
-        pygbif.maps.map(source="foobar")
-        pygbif.maps.map(srs="foobar")
-        pygbif.maps.map(bin="foobar")
-        pygbif.maps.map(style="foobar")
+        with pytest.raises(ValueError):
+            pygbif.maps.map(year=2300)
+            pygbif.maps.map(year="2010")
+            pygbif.maps.map(basisOfRecord="foobar")
+            pygbif.maps.map(format="foobar")
+            pygbif.maps.map(source="foobar")
+            pygbif.maps.map(srs="foobar")
+            pygbif.maps.map(bin="foobar")
+            pygbif.maps.map(style="foobar")
