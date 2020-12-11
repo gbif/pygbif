@@ -5,3 +5,5 @@ appdirs>=1.4.3
 matplotlib
 sphinx_issues
 requests-cache
+shapely>=1.5.13
+vcrpy
