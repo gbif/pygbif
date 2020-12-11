@@ -7,3 +7,6 @@ sphinx_issues
 requests-cache
 shapely>=1.5.13
 vcrpy
+pytest
+pytest-cov
+codecov
