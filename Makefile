@@ -9,7 +9,7 @@ install: build
 	python3 setup.py install
 
 test:
-	python3 -m "pytest" --cov-report term --cov=pygbif
+	pytest --cov-report term --cov=pygbif test/
 
 docs:
 	cd docs;\
