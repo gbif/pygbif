@@ -7,7 +7,7 @@ import requests
 
 from .. import package_metadata, occurrences
 from ..gbifutils import is_not_none, is_none, stop, gbif_GET, gbif_GET_write
-
+import logging
 
 def _parse_args(x):
     tmp = re.split("\s", x)
@@ -126,6 +126,14 @@ def download(queries, user=None, pwd=None, email=None, pred_type="and"):
 
         # Repratriated data for Costa Rica
         occ.download(['country = CR', 'repatriated = true'])
+
+        # turn off logging
+        import logging
+        logger = logging.getLogger()
+        logger.disabled = True
+        z = occ.download('elevation >= 95000')
+        logger.disabled = False
+        w = occ.download('elevation >= 10000')
     """
 
     user = _check_environ("GBIF_USER", user)
@@ -304,7 +312,7 @@ class GbifDownload(object):
             )
         else:
             self.request_id = r.text
-            print("Your download key is ", self.request_id)
+            logging.info("Your download key is " + self.request_id)
         return self.request_id
 
     def get_status(self):
@@ -387,18 +395,28 @@ def download_get(key, path=".", **kwargs):
     Usage::
 
       from pygbif import occurrences as occ
-      occ.download_get("0000066-140928181241064")
+      x=occ.download_get("0000066-140928181241064")
       occ.download_get("0003983-140910143529206")
+      
+      # turn off logging
+      import logging
+      logger = logging.getLogger()
+      logger.disabled = True
+      x = occ.download_get("0000066-140928181241064")
+      
+      # turn back on
+      logger.disabled = False
+      x = occ.download_get("0000066-140928181241064")
     """
     meta = occurrences.download_meta(key)
     if meta["status"] != "SUCCEEDED":
         raise Exception('download "%s" not of status SUCCEEDED' % key)
     else:
-        print("Download file size: %s bytes" % meta["size"])
+        logging.info("Download file size: %s bytes" % meta["size"])
         url = "http://api.gbif.org/v1/occurrence/download/request/" + key
         path = "%s/%s.zip" % (path, key)
         gbif_GET_write(url, path, **kwargs)
-        print("On disk at " + path)
+        logging.info("On disk at " + path)
         return {"path": path, "size": meta["size"], "key": key}
 
 

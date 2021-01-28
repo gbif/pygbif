@@ -42,3 +42,10 @@ from .maps import map, GbifMap
 from .gbifissues import occ_issues_lookup
 from .utils import *
 from .caching import caching
+
+# Set default logging handler to avoid "No handler found" warnings.
+import logging
+from logging import NullHandler
+
+logging.getLogger(__name__).addHandler(NullHandler())
+logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.INFO)
