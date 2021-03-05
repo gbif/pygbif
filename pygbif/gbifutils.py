@@ -64,6 +64,12 @@ def gbif_POST(url, body, **kwargs):
     stopifnot(out.headers["content-type"])
     return out.json()
 
+def gbif_DELETE(url, body, **kwargs):
+    head = make_ua()
+    out = requests.delete(url, json=False, headers=head, **kwargs)
+    out.raise_for_status()
+    return out.status_code == 204
+
 
 def stopifnot(x, ctype="application/json"):
     if x != ctype:

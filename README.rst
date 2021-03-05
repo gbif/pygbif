@@ -12,6 +12,7 @@ Other GBIF clients:
 
 * R: `rgbif`, `ropensci/rgbif <https://github.com/ropensci/rgbif>`_
 * Ruby: `gbifrb`, `sckott/gbifrb <https://github.com/sckott/gbifrb>`_
+* PHP: `php-gbif`, `restelae/php-gbif <https://gitlab.res-telae.cat/restelae/php-gbif>`_
 
 Installation
 ============

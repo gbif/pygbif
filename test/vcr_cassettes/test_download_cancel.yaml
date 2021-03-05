@@ -1,0 +1,50 @@
+interactions:
+- request:
+    body: 'false'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '5'
+      Content-Type:
+      - application/json
+      user-agent:
+      - python-requests/2.25.1,pygbif/0.5.1
+    method: DELETE
+    uri: http://api.gbif.org/v1/occurrence/download/request/0003970-140910143529206
+  response:
+    body:
+      string: ''
+    headers:
+      Age:
+      - '0'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Date:
+      - Thu, 28 Jan 2021 02:30:43 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Vary:
+      - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      Via:
+      - 1.1 varnish (Varnish/6.0)
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Varnish:
+      - '955582058'
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 204
+      message: No Content
+version: 1
