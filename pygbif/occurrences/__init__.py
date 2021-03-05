@@ -16,6 +16,7 @@ GBIF occurrences APIs methods
 * `download_meta`: Retrieve occurrence download metadata by unique download key
 * `download_list`: Lists the downloads created by a user
 * `download_get`: Get a download from GBIF
+* `download_cancel`: Cancel a download from GBIF
 """
 
 from .search import search
@@ -29,4 +30,4 @@ from .count import (
     count_schema,
     count_publishingcountries,
 )
-from .download import download, download_meta, download_list, download_get
+from .download import download, download_meta, download_list, download_get, download_cancel

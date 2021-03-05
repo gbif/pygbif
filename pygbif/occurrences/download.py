@@ -6,7 +6,7 @@ import datetime
 import requests
 
 from .. import package_metadata, occurrences
-from ..gbifutils import is_not_none, is_none, stop, gbif_GET, gbif_GET_write
+from ..gbifutils import is_not_none, is_none, stop, gbif_GET, gbif_GET_write, gbif_DELETE
 import logging
 
 def _parse_args(x):
@@ -342,6 +342,32 @@ def download_meta(key, **kwargs):
     url = "http://api.gbif.org/v1/occurrence/download/" + key
     return gbif_GET(url, {}, **kwargs)
 
+def download_cancel(key, user=None, pwd=None, **kwargs):
+    """
+    Delete a download request by its unique key. Further
+    named arguments passed on to ``requests.get`` can be included as additional
+    arguments
+
+    :param key: [str] A key generated from a request, like that from ``download``
+    :param user: [str] A user name, look at env var ``GBIF_USER`` first
+    :param pwd: [str] Your password, look at env var ``GBIF_PWD`` first
+
+    :return: a bool, `True` if cancel request successful, otherwise `False`
+
+    Usage::
+
+      from pygbif import occurrences as occ
+      # first, make a download request
+      x = occ.download('taxonKey = 156780401')
+      occ.download_meta(x[0])
+      # then cancel it - do so before the download is ready, or it will have no effect
+      occ.download_cancel(key = x[0])
+    """
+    user = _check_environ("GBIF_USER", user)
+    pwd = _check_environ("GBIF_PWD", pwd)
+
+    url = "http://api.gbif.org/v1/occurrence/download/request/" + key
+    return gbif_DELETE(url, {}, auth=(user, pwd), **kwargs)
 
 def download_list(user=None, pwd=None, limit=20, offset=0):
     """
