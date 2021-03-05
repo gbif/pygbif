@@ -143,11 +143,21 @@ def check_data(x, y):
 
 
 def len2(x):
-    if x.__class__ is str:
+    if isinstance(x, int):
+        return len([x])
+    elif isinstance(x, str):
         return len([x])
     else:
         return len(x)
 
+def stuff(**kwargs):
+    return kwargs
+
+def check_param_lens(**kwargs):
+    tmp = {k: v for k, v in kwargs.items() if v is not None}
+    for k,v in tmp.items():
+        if len2(v) > 1:
+            raise TypeError(k + " must be length 1")
 
 def get_meta(x):
     if has_meta(x):

@@ -10,6 +10,9 @@ jobs:
         python-version: [3.6, 3.7, 3.8, 3.9]
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      GBIF_USER: ${{ secrets.GBIF_USER }}
+      GBIF_PWD: ${{ secrets.GBIF_PWD }}
+      GBIF_EMAIL: ${{ secrets.GBIF_EMAIL }}
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python ${{ matrix.python-version }}
