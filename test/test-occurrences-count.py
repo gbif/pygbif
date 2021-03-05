@@ -1,5 +1,5 @@
 """Tests for occurrences module - count methods"""
-from nose.tools import *
+import pytest
 import vcr
 from pygbif import occurrences
 
@@ -36,10 +36,10 @@ def test_count():
     res = occurrences.count(taxonKey=3329049)
     assert int == res.__class__
 
-@raises(TypeError)
 def test_count_param_length():
     "occurrences.count_param_length"
-    occurrences.count(datasetKey=['foo', 'bar'])
+    with pytest.raises(TypeError):
+        occurrences.count(datasetKey=['foo', 'bar'])
 
 @vcr.use_cassette("test/vcr_cassettes/test_count_basisofrecord.yaml")
 def test_count_basisofrecord():
