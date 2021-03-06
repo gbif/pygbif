@@ -26,7 +26,12 @@ def name_usage(
         ``related``, ``synonyms``, ``descriptions``, ``distributions``, ``media``,
         ``references``, ``speciesProfiles``, ``vernacularNames``, ``typeSpecimens``,
         ``root``
-    :param language: [str] Language, default is english
+    :param language: [str] Language. Expects a ISO 639-1 language codes using 2 lower
+        case letters. Languages returned are 3 letter codes. The language parameter
+        only applies to the ``/species``, ``/species/{int}``,
+        ``/species/{int}/parents``, ``/species/{int}/children``, ``/species/{int}/related``,
+        ``/species/{int}/synonyms`` routes (here routes are determined by the ``data``
+        parameter).
     :param datasetKey: [str] Filters by the dataset's key (a uuid)
     :param uuid: [str] A uuid for a dataset. Should give exact same results as datasetKey.
     :param sourceId: [fixnum] Filters by the source identifier.
@@ -41,7 +46,7 @@ def name_usage(
     :param limit: [fixnum] Number of records to return. Default: ``100``. Maximum: ``1000``. (optional)
     :param offset: [fixnum] Record number to start at. (optional)
 
-    References: http://www.gbif.org/developer/species#nameUsages
+    References: See http://www.gbif.org/developer/species#nameUsages for details
 
     Usage::
 
@@ -59,21 +64,18 @@ def name_usage(
             species.name_usage(key=2435099, data='references')
 
             # Species profiles, descriptions
-            species.name_usage(key=3119195, data='speciesProfiles')
-            species.name_usage(key=3119195, data='descriptions')
+            species.name_usage(key=5231190, data='speciesProfiles')
+            species.name_usage(key=5231190, data='descriptions')
             species.name_usage(key=2435099, data='children')
 
             # Vernacular names for a name usage
-            species.name_usage(key=3119195, data='vernacularNames')
+            species.name_usage(key=5231190, data='vernacularNames')
 
             # Limit number of results returned
-            species.name_usage(key=3119195, data='vernacularNames', limit=3)
+            species.name_usage(key=5231190, data='vernacularNames', limit=3)
 
             # Search for names by dataset with datasetKey parameter
             species.name_usage(datasetKey="d7dddbf4-2cf0-4f39-9b2a-bb099caae36c")
-
-            # Search for a particular language
-            species.name_usage(key=3119195, language="FRENCH", data='vernacularNames')
     """
     args = {
         "language": language,
