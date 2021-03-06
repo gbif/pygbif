@@ -20,5 +20,6 @@ caching API
 ===========
 
 .. py:module:: pygbif
+  :noindex:
 
 .. autofunction:: caching
