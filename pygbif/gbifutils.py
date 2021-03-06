@@ -64,6 +64,7 @@ def gbif_POST(url, body, **kwargs):
     stopifnot(out.headers["content-type"])
     return out.json()
 
+
 def gbif_DELETE(url, body, **kwargs):
     head = make_ua()
     out = requests.delete(url, json=False, headers=head, **kwargs)
@@ -150,14 +151,17 @@ def len2(x):
     else:
         return len(x)
 
+
 def stuff(**kwargs):
     return kwargs
 
+
 def check_param_lens(**kwargs):
     tmp = {k: v for k, v in kwargs.items() if v is not None}
-    for k,v in tmp.items():
+    for k, v in tmp.items():
         if len2(v) > 1:
             raise TypeError(k + " must be length 1")
+
 
 def get_meta(x):
     if has_meta(x):

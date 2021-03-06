@@ -40,10 +40,17 @@ def count(
         occurrences.count(isGeoreferenced = True)
         occurrences.count(basisOfRecord = 'OBSERVATION')
     """
-    check_param_lens(taxonKey=taxonKey,basisOfRecord=basisOfRecord,
-        country=country,isGeoreferenced=isGeoreferenced,
-        datasetKey=datasetKey,publishingCountry=publishingCountry,
-        typeStatus=typeStatus,issue=issue,year=year)
+    check_param_lens(
+        taxonKey=taxonKey,
+        basisOfRecord=basisOfRecord,
+        country=country,
+        isGeoreferenced=isGeoreferenced,
+        datasetKey=datasetKey,
+        publishingCountry=publishingCountry,
+        typeStatus=typeStatus,
+        issue=issue,
+        year=year,
+    )
     url = gbif_baseurl + "occurrence/count"
     isGeoreferenced = bool2str(isGeoreferenced)
     out = gbif_GET(
