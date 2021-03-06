@@ -14,6 +14,8 @@ Other GBIF clients:
 * Ruby: `gbifrb`, `sckott/gbifrb <https://github.com/sckott/gbifrb>`_
 * PHP: `php-gbif`, `restelae/php-gbif <https://gitlab.res-telae.cat/restelae/php-gbif>`_
 
+Contributing: `CONTRIBUTING.md <https://github.com/sckott/pygbif/blob/master/.github/CONTRIBUTING.md>`_
+
 Installation
 ============
 
