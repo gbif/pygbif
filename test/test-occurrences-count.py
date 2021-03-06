@@ -36,10 +36,12 @@ def test_count():
     res = occurrences.count(taxonKey=3329049)
     assert int == res.__class__
 
+
 def test_count_param_length():
     "occurrences.count_param_length"
     with pytest.raises(TypeError):
-        occurrences.count(datasetKey=['foo', 'bar'])
+        occurrences.count(datasetKey=["foo", "bar"])
+
 
 @vcr.use_cassette("test/vcr_cassettes/test_count_basisofrecord.yaml")
 def test_count_basisofrecord():
@@ -83,6 +85,7 @@ def test_count_schema():
     assert list == res.__class__
     assert dict == res[0].__class__
     assert "dimensions" == list(res[0].keys())[0]
+
 
 @vcr.use_cassette("test/vcr_cassettes/test_count_publishingcountries.yaml")
 def test_count_publishingcountries():
