@@ -184,3 +184,14 @@ class TestDownload(unittest.TestCase):
         )
 
         self.assertEqual(payload["predicate"]["type"], "or")
+
+    def test_geometry_predicate(self):
+        dl_key, payload = download(
+            ["geometry within POLYGON((-82.7 36.9, -85.0 35.6, -81.0 33.5, -79.4 36.3, -79.4 36.3, -82.7 36.9))"], 
+            user="dummy", email="dummy", pwd="dummy"
+        )
+
+        self.assertDictEqual(
+            payload["predicate"]["predicates"][0],
+            {"type": "within", "geometry": "POLYGON((-82.7 36.9, -85.0 35.6, -81.0 33.5, -79.4 36.3, -79.4 36.3, -82.7 36.9))"},
+        )

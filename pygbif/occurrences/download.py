@@ -18,6 +18,9 @@ import logging
 
 
 def _parse_args(x):
+    if re.match("geometry", x):
+        geometry = re.search("(POLY|MULTIPOLY).+", x, re.IGNORECASE).group()
+        return {"type": "within", "geometry": geometry}
     tmp = re.split("\s", x)
     pred_type = operator_lkup.get(tmp[1])
     key = key_lkup.get(tmp[0])
@@ -157,7 +160,10 @@ def download(queries, user=None, pwd=None, email=None, pred_type="and"):
     req = GbifDownload(user, email)
     req.main_pred_type = pred_type
     for predicate in keyval:
-        req.add_predicate(predicate["key"], predicate["value"], predicate["type"])
+        if "geometry" in predicate.keys():
+            req.add_geometry(predicate["geometry"])
+        else:
+            req.add_predicate(predicate["key"], predicate["value"], predicate["type"])
 
     out = req.post_download(user, pwd)
     return out, req.payload
