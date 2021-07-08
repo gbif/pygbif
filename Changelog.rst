@@ -1,6 +1,14 @@
 Changelog
 =========
 
+0.6.0 (2021-07-08)
+------------------
+- Fixe for `occurrences.download` when giving `geometry` as a string rather than using `add_geometry`; predicates were being split on whitespace, which doesn't work for WKT :issue:`81` :issue:`84`
+- Moved to using the `logging` module instead of `print()` for giving information on occurrence download methods :issue:`78`
+- Clarify that `occurrences.count` for length 1 inputs only; see `occurrences.search` for > 1 value :issue:`75` :issue:`77`
+- Improved documentation for `species.name_usage` method, mostly for the `language` parameter :issue:`68`
+- Gains download method `download_cancel` for cancelling/deleting a download request :issue:`59`
+
 0.5.0 (2020-09-29)
 ------------------
 - `occurrences.search` now supports `recordedByID` and `identifiedByID` search parameters :issue:`62`
