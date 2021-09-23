@@ -1,8 +1,11 @@
 import requests_cache
-from requests_cache.core import remove_expired_responses
 import os.path
 import tempfile
 
+try:
+    from requests_cache import remove_expired_responses
+except ModuleNotFoundError:
+    from requests_cache.core import remove_expired_responses
 
 def caching(
     cache=False,
