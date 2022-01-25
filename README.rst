@@ -112,7 +112,7 @@ Example usage:
     occ.search(taxonKey = 3329049)
     occ.get(key = 252408386)
     occ.count(isGeoreferenced = True)
-    occ.download('basisOfRecord = LITERATURE')
+    occ.download('basisOfRecord = PRESERVED_SPECIMEN')
     occ.download('taxonKey = 3119195')
     occ.download('decimalLatitude > 50')
     occ.download_list(user = "sckott", limit = 5)

@@ -115,7 +115,7 @@ def download(queries, user=None, pwd=None, email=None, pred_type="and"):
 
         from pygbif import occurrences as occ
 
-        occ.download('basisOfRecord = LITERATURE')
+        occ.download('basisOfRecord = PRESERVED_SPECIMEN')
         occ.download('taxonKey = 3119195')
         occ.download('decimalLatitude > 50')
         occ.download('elevation >= 9000')

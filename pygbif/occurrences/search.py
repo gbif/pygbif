@@ -78,12 +78,12 @@ def search(
 
      - ``FOSSIL_SPECIMEN`` An occurrence record describing a fossilized specimen.
      - ``HUMAN_OBSERVATION`` An occurrence record describing an observation made by one or more people.
-     - ``LITERATURE`` An occurrence record based on literature alone.
-     - ``LIVING_SPECIMEN`` An occurrence record describing a living specimen, e.g.
+     - ``LIVING_SPECIMEN`` An occurrence record describing a living specimen.
      - ``MACHINE_OBSERVATION`` An occurrence record describing an observation made by a machine.
+     - ``MATERIAL_CITATION`` An occurrence record based on a reference to a scholarly publication.
      - ``OBSERVATION`` An occurrence record describing an observation.
+     - ``OCCURRENCE`` An existence of an organism at a particular place and time. No more specific basis.
      - ``PRESERVED_SPECIMEN`` An occurrence record describing a preserved specimen.
-     - ``UNKNOWN`` Unknown basis for the record.
 
     :param eventDate: [date] Occurrence date in ISO 8601 format: yyyy, yyyy-MM, yyyy-MM-dd, or
        MM-dd. Supports range queries, smaller,larger (e.g., ``1990,1991``, whereas ``1991,1990``
