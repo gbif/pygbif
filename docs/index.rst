@@ -7,7 +7,7 @@ pygbif |version| documentation
 Python client for the `GBIF API
 <http://www.gbif.org/developer/summary>`_
 
-Source on GitHub at `sckott/pygbif <https://github.com/sckott/pygbif>`_
+Source on GitHub at `gbif/pygbif <https://github.com/gbif/pygbif>`_
 
 Getting help
 ============
@@ -18,7 +18,7 @@ Having trouble? Or want to know how to get started?
 * Looking for specific information? Try the :ref:`genindex`
 * Report bugs with pygbif in our `issue tracker`_.
 
-.. _issue tracker: https://github.com/sckott/pygbif/issues
+.. _issue tracker: https://github.com/gbif/pygbif/issues
 
 
 Installation
@@ -126,8 +126,8 @@ Indices and tables
 .. |docs| image:: https://readthedocs.org/projects/pygbif/badge/?version=latest
    :target: http://pygbif.rtfd.org/
 
-.. |ghactions| image:: https://github.com/sckott/pygbif/workflows/Python/badge.svg
-   :target: https://github.com/sckott/pygbif/actions?query=workflow%3APython
+.. |ghactions| image:: https://github.com/gbif/pygbif/workflows/Python/badge.svg
+   :target: https://github.com/gbif/pygbif/actions?query=workflow%3APython
 
-.. |coverage| image:: https://codecov.io/gh/sckott/pygbif/branch/master/graph/badge.svg?token=frXPREGk1D
-   :target: https://codecov.io/gh/sckott/pygbif
+.. |coverage| image:: https://codecov.io/gh/gbif/pygbif/branch/master/graph/badge.svg?token=frXPREGk1D
+   :target: https://codecov.io/gh/gbif/pygbif

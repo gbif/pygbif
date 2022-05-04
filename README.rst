@@ -6,7 +6,7 @@ pygbif
 Python client for the `GBIF API
 <https://www.gbif.org/developer/summary>`_
 
-`Source on GitHub at sckott/pygbif <https://github.com/sckott/pygbif>`_
+`Source on GitHub at gbif/pygbif <https://github.com/gbif/pygbif>`_
 
 Other GBIF clients:
 
@@ -14,7 +14,7 @@ Other GBIF clients:
 * Ruby: `gbifrb`, `sckott/gbifrb <https://github.com/sckott/gbifrb>`_
 * PHP: `php-gbif`, `restelae/php-gbif <https://gitlab.res-telae.cat/restelae/php-gbif>`_
 
-Contributing: `CONTRIBUTING.md <https://github.com/sckott/pygbif/blob/master/.github/CONTRIBUTING.md>`_
+Contributing: `CONTRIBUTING.md <https://github.com/gbif/pygbif/blob/master/.github/CONTRIBUTING.md>`_
 
 Installation
 ============
@@ -29,7 +29,7 @@ Development version
 
 .. code-block:: console
 
-    [sudo] pip install git+git://github.com/sckott/pygbif.git#egg=pygbif
+    [sudo] pip install git+git://github.com/gbif/pygbif.git#egg=pygbif
 
 
 `pygbif` is split up into modules for each of the major groups of API methods.
@@ -138,7 +138,7 @@ Example usage:
     out.img
     out.plot()
 
-.. image:: https://github.com/sckott/pygbif/raw/master/gbif_map.png
+.. image:: https://github.com/gbif/pygbif/raw/master/gbif_map.png
         :width: 25%
         :scale: 25%
 
@@ -181,11 +181,11 @@ Meta
 .. |docs| image:: https://readthedocs.org/projects/pygbif/badge/?version=latest
    :target: http://pygbif.rtfd.org/
 
-.. |ghactions| image:: https://github.com/sckott/pygbif/workflows/Python/badge.svg
-   :target: https://github.com/sckott/pygbif/actions?query=workflow%3APython
+.. |ghactions| image:: https://github.com/gbif/pygbif/workflows/Python/badge.svg
+   :target: https://github.com/gbif/pygbif/actions?query=workflow%3APython
 
-.. |coverage| image:: https://codecov.io/gh/sckott/pygbif/branch/master/graph/badge.svg?token=frXPREGk1D
-   :target: https://codecov.io/gh/sckott/pygbif
+.. |coverage| image:: https://codecov.io/gh/gbif/pygbif/branch/master/graph/badge.svg?token=frXPREGk1D
+   :target: https://codecov.io/gh/gbif/pygbif
 
 .. |black| image:: https://img.shields.io/badge/code%20style-black-000000.svg
    :target: https://github.com/psf/black

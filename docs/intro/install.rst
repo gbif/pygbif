@@ -17,4 +17,4 @@ Development version
 
 .. code-block:: console
 
-    [sudo] pip install git+git://github.com/sckott/pygbif.git#egg=pygbif
+    [sudo] pip install git+git://github.com/gbif/pygbif.git#egg=pygbif

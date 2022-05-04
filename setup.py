@@ -20,7 +20,7 @@ setup(
     long_description_content_type="text/x-rst",
     author="Scott Chamberlain",
     author_email="myrmecocystus@gmail.com",
-    url="http://github.com/sckott/pygbif",
+    url="http://github.com/gbif/pygbif",
     license="MIT",
     packages=find_packages(exclude=["test-*"]),
     install_requires=[

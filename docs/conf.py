@@ -38,7 +38,7 @@ extensions = [
 ]
 
 # Github repo
-issues_github_path = "sckott/pygbif"
+issues_github_path = "gbif/pygbif"
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
