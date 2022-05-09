@@ -28,8 +28,8 @@ def caching(
 
      - ``sqlite`` sqlite database (default)
      - ``memory`` not persistent, stores all data in Python dict in memory
-     - ``mongodb`` (experimental) MongoDB database (pymongo < 3.0 required)
-     - ``redis`` stores all data on a redis data store (redis required)
+     - ``mongodb`` (experimental) MongoDB database (pymongo < 3.0 required and configured)
+     - ``redis`` stores all data on a redis data store (redis required and configured)
 
     :param expire_after: [str] timedelta or number of seconds after cache will be expired
         or None (default) to ignore expiration. default: 86400 seconds (24 hrs)
