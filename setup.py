@@ -21,6 +21,7 @@ setup(
     author="Scott Chamberlain",
     author_email="myrmecocystus@gmail.com",
     url="http://github.com/gbif/pygbif",
+    download_url="https://github.com/gbif/pygbif/archive/refs/tags/v0.6.1.tar.gz",
     license="MIT",
     packages=find_packages(exclude=["test-*"]),
     install_requires=[
@@ -41,6 +42,8 @@ setup(
         "Programming Language :: Python :: 3.5",
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
-        "Programming Language :: Python :: 3.8"
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9"
     ],
+    keywords = ['gbif', 'biodiversity', 'specimens', 'API', 'web-services', 'occurrences', 'species', 'taxonomy'],
 )
