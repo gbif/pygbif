@@ -3,8 +3,7 @@ pygbif
 
 |pypi| |docs| |ghactions| |coverage| |black|
 
-Python client for the `GBIF API
-<https://www.gbif.org/developer/summary>`_
+Python client for the `GBIF API <https://www.gbif.org/developer/summary>`_
 
 `Source on GitHub at gbif/pygbif <https://github.com/gbif/pygbif>`_
 
@@ -139,8 +138,8 @@ Example usage:
     out.plot()
 
 .. image:: https://github.com/gbif/pygbif/raw/master/gbif_map.png
-        :width: 25%
-        :scale: 25%
+   :width: 25%
+   :scale: 25%
 
 utils module
 ============
@@ -189,3 +188,5 @@ Meta
 
 .. |black| image:: https://img.shields.io/badge/code%20style-black-000000.svg
    :target: https://github.com/psf/black
+
+

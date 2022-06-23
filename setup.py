@@ -2,19 +2,17 @@ import codecs
 from setuptools import setup
 from setuptools import find_packages
 
-from pygbif import package_metadata
-
 with codecs.open("README.rst", "r", "utf-8") as f:
-    readme = f.read()
+    readme = f.read().replace("\r", '')
 
 with codecs.open("Changelog.rst", "r", "utf-8") as f:
-    changes = f.read()
+    changes = f.read().replace("\r", '')
 changes = changes.replace(":issue:", "")
 long_description = readme + "\n\n" + changes
 
 setup(
     name="pygbif",
-    version=package_metadata.__version__,
+    version="0.6.1",
     description="Python client for GBIF",
     long_description=long_description,
     long_description_content_type="text/x-rst",
