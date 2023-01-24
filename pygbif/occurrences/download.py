@@ -201,8 +201,7 @@ class GbifDownload(object):
         self.payload = {
             "creator": creator,
             "notification_address": [email],
-            "send_notification": "true",
-            "created": datetime.date.today().year,
+            "sendNotification": True,
             "predicate": {"type": self._main_pred_type, "predicates": self.predicates},
         }
         self.request_id = None

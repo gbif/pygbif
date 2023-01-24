@@ -14,7 +14,7 @@ class DummyClass(object):
 
 
 def dummypost(*args, **kwargs):
-    """function ot mock the usage of the requests.post functionality"""
+    """function to mock the usage of the requests.post functionality"""
     return DummyClass()
 
 
@@ -27,11 +27,10 @@ class TestGbifClass(unittest.TestCase):
         self.assertDictEqual(
             req.payload,
             {
-                "created": int(time.strftime("%Y")),
                 "creator": "name",
                 "notification_address": ["email"],
                 "predicate": {"predicates": [], "type": "and"},
-                "send_notification": "true",
+                "sendNotification": True,
             },
         )
         self.assertIsNone(req.request_id)
@@ -44,11 +43,10 @@ class TestGbifClass(unittest.TestCase):
         self.assertDictEqual(
             req.payload,
             {
-                "created": int(time.strftime("%Y")),
                 "creator": "name",
                 "notification_address": ["email"],
                 "predicate": {"predicates": [], "type": "or"},
-                "send_notification": "true",
+                "sendNotification": True,
             },
         )
 
