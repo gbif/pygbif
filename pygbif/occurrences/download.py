@@ -104,10 +104,10 @@ def download(queries, user=None, pwd=None, email=None, pred_type="and"):
     for more info, and the predicates docs
     http://www.gbif.org/developer/occurrence#predicates
 
-    GBIF has a limit of 12,000 characters for download queries - so
-    if you're download request is really, really long and complex,
-    consider breaking it up into multiple requests by one factor or
-    another.
+    GBIF has a limit of 100,000 predicates and 10,000 points (in within
+    predicates) for download queries – so if your download request is
+    particularly complex, you may need to split it into multiple
+    requests by one factor or another.
 
     :return: A dictionary, of results
 

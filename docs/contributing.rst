@@ -9,7 +9,7 @@ Bug reports
 
 Please report bug reports on our `issue tracker`_.
 
-.. _issue tracker: https://github.com/sckotr/pygbif/issues
+.. _issue tracker: https://github.com/gbif/pygbif/issues
 
 
 Feature requests

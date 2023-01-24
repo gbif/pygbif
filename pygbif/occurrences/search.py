@@ -127,7 +127,7 @@ def search(
        or ``south_america``
     :param fields: [str] Default (``all``) returns all fields. ``minimal`` returns just taxon name,
        key, latitude, and longitude. Or specify each field you want returned by name, e.g.
-       ``fields = c('name','latitude','elevation')``.
+       ``fields = ['name','latitude','elevation']``.
     :param mediatype: [str] Media type. Default is ``NULL``, so no filtering on mediatype. Options:
        ``NULL``, ``MovingImage``, ``Sound``, and ``StillImage``
     :param limit: [int] Number of results to return. Default: ``300``

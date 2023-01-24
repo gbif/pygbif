@@ -1,6 +1,11 @@
 Changelog
 =========
 
+0.6.2 (2023-01-24)
+------------------
+- update to fix requesting GBIF downloads
+- minor documentation updates :issue:`95` and :issue:`99`
+
 0.6.1 (2022-06-23)
 ------------------
 - update to fix broken dependencies :issue:`93`

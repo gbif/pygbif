@@ -12,14 +12,14 @@ long_description = readme + "\n\n" + changes
 
 setup(
     name="pygbif",
-    version="0.6.1",
+    version="0.6.2",
     description="Python client for GBIF",
     long_description=long_description,
     long_description_content_type="text/x-rst",
     author="Scott Chamberlain",
     author_email="myrmecocystus@gmail.com",
     url="http://github.com/gbif/pygbif",
-    download_url="https://github.com/gbif/pygbif/archive/refs/tags/v0.6.1.tar.gz",
+    download_url="https://github.com/gbif/pygbif/archive/refs/tags/v0.6.2.tar.gz",
     license="MIT",
     packages=find_packages(exclude=["test-*"]),
     install_requires=[
