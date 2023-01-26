@@ -131,9 +131,9 @@ def download(queries, user=None, pwd=None, email=None, pred_type="and"):
 
         # Multiple queries
         gg = occ.download(['decimalLatitude >= 65',
-                          'decimalLatitude <= -65'], type='or')
+                          'decimalLatitude <= -65'], pred_type ='or')
         gg = occ.download(['depth = 80', 'taxonKey = 2343454'],
-                          type='or')
+                          pred_type ='or')
 
         # Repratriated data for Costa Rica
         occ.download(['country = CR', 'repatriated = true'])
