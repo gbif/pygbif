@@ -22,6 +22,7 @@ This is based on the documentation at https://setuptools.pypa.io/en/latest/userg
 
 - Update `Changelog.rst` with a new section describing the changes in this release
 - Change the version number in `setup.py`.  It is in the version line and the download_url line.
+- Change the version number in `pygbif/package_metadata.py`
   - For a trial run, just use a version like "0.6.1.dev1".
   - Otherwise, commit and push the changes to both files.
 
