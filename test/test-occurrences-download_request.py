@@ -47,7 +47,8 @@ class TestGbifClass(unittest.TestCase):
                 "notification_address": ["email"],
                 "predicate": {"predicates": [], "type": "or"},
                 "sendNotification": True,
-            },
+                "format": "SIMPLE_CSV"
+            }
         )
 
     def test_add_predicate(self):
