@@ -30,12 +30,12 @@ def _parse_args(x):
         if re.search(r"not|\!", x):
             pred_type = "isNotNull"
         return {"type": pred_type,"parameter": key}
-    if re.search(r"not|\!", x):
+    if re.search(r"\s+not|\!", x):
         return {"type": "not","predicate": _parse_args(re.sub(r"not\s*|\!\s*", "", x))}
     if re.match("geometry", x):
         geometry = re.search("(POLY|MULTIPOLY).+", x, re.IGNORECASE).group()
         return {"type": "within", "geometry": geometry}
-    if re.search(r"in", x):
+    if re.search(r"\s+in", x):
         value_list = re.search(r"\[.*\]", x)
         if not value_list: 
             raise Exception(
