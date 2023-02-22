@@ -1,10 +1,14 @@
+# import external libraries
 import os
 import csv
 import json
 import re
 import datetime
 import requests
+import logging
+from warnings import warn
 
+# import internal libraries
 from .. import package_metadata, occurrences
 from ..gbifutils import (
     is_not_none,
@@ -14,18 +18,33 @@ from ..gbifutils import (
     gbif_GET_write,
     gbif_DELETE,
 )
-import logging
 
-
+# how to parse arguments/predicates 
 def _parse_args(x):
+    x = x.replace("'", '"')
+    tmp = re.split("\s", x) 
+    key = key_lkup.get(tmp[0])
+    # check special predicates
+    if re.search(r"Null|NULL|null", x):
+        pred_type = "isNull"
+        if re.search(r"not|\!", x):
+            pred_type = "isNotNull"
+        return {"type": pred_type,"parameter": key}
+    if re.search(r"not|\!", x):
+        return {"type": "not","predicate": _parse_args(re.sub(r"not\s*|\!\s*", "", x))}
     if re.match("geometry", x):
         geometry = re.search("(POLY|MULTIPOLY).+", x, re.IGNORECASE).group()
         return {"type": "within", "geometry": geometry}
-    tmp = re.split("\s", x)
+    if re.search(r"in", x):
+        value_list = re.search(r"\[.*\]", x)
+        if not value_list: 
+            raise Exception(
+                "error: in predicate has to be associated with a list in square brackets (for example [1, 2, 3])"
+            )
+        else:
+            return {"type": "in", "key": key, "values": json.loads(value_list.group(0))}
     pred_type = operator_lkup.get(tmp[1])
-    key = key_lkup.get(tmp[0])
-    return {"type": pred_type, "key": key, "value": tmp[2]}
-
+    return {"type": pred_type, "key": key, "value": tmp[2]} # does not work for in, within, geodistance, not, like, isnull and isnotnull predicate values
 
 def _check_environ(variable, value):
     """check if a variable is present in the environmental variables"""
@@ -46,18 +65,19 @@ def _check_environ(variable, value):
         else:
             return value
 
-
-def download(queries, user=None, pwd=None, email=None, pred_type="and"):
+# download function, TODO: add type queries: dictionaries (or JSON)
+def download(queries, format = "SIMPLE_CSV", user=None, pwd=None, email=None, pred_type="and"):
     """
     Spin up a download request for GBIF occurrence data.
 
     :param queries: One or more of query arguments to kick of a download job.
         See Details.
-    :type queries: str or list
+    :type queries: str or list 
+    :param format: (character) One of the GBIF accepted download formats https://www.gbif.org/faq?question=download-formats
     :param pred_type: (character) One of ``equals`` (``=``), ``and`` (``&``),
         `or`` (``|``), ``lessThan`` (``<``), ``lessThanOrEquals`` (``<=``),
         ``greaterThan`` (``>``), ``greaterThanOrEquals`` (``>=``),
-        ``in``, ``within``, ``not`` (``!``), ``like``
+        ``in``, ``within``, ``not`` (``!``), ``like`` TODO: in and not supported - either support or remove
     :param user: (character) User name within GBIF's website.
         Required. Set in your env vars with the option ``GBIF_USER``
     :param pwd: (character) User password within GBIF's website. Required.
@@ -70,7 +90,7 @@ def download(queries, user=None, pwd=None, email=None, pred_type="and"):
     See the ``type`` parameter for possible options for the operator.
     This character string is parsed internally.
 
-    Acceptable arguments to ``...`` (args) are:
+    Acceptable arguments to ``...`` (args) are: TODO: check if list is up to date by looking in the API documentation or functional thing (bottom of page = key_lkup)
 
      - taxonKey = ``TAXON_KEY``
      - scientificName = ``SCIENTIFIC_NAME``
@@ -111,7 +131,7 @@ def download(queries, user=None, pwd=None, email=None, pred_type="and"):
 
     :return: A dictionary, of results
 
-    Usage::
+    Usage:: TODO: add additional examples of more complex queries
 
         from pygbif import occurrences as occ
 
@@ -151,19 +171,24 @@ def download(queries, user=None, pwd=None, email=None, pred_type="and"):
     pwd = _check_environ("GBIF_PWD", pwd)
     email = _check_environ("GBIF_EMAIL", email)
 
-    if isinstance(queries, str):
-        queries = [queries]
-
-    keyval = [_parse_args(z) for z in queries]
-
-    # USE GBIFDownload class to set up the predicates
+# if it is a dictionary then use directly as a query otherwise if it is a string turn it into a list
     req = GbifDownload(user, email)
-    req.main_pred_type = pred_type
-    for predicate in keyval:
-        if "geometry" in predicate.keys():
-            req.add_geometry(predicate["geometry"])
-        else:
-            req.add_predicate(predicate["key"], predicate["value"], predicate["type"])
+    req.format = format
+
+    if isinstance(queries, dict):
+        req.predicate = queries
+
+    else: # retro-compatible
+
+        if isinstance(queries, str):
+            queries = [queries]
+
+        keyval = [_parse_args(z) for z in queries]
+
+        # USE GBIFDownload class to set up the predicates
+        req.main_pred_type = pred_type
+        for predicate in keyval:
+            req.add_predicate_dict(predicate)
 
     out = req.post_download(user, pwd)
     return out, req.payload
@@ -177,12 +202,14 @@ class GbifDownload(object):
         values) are combined with an AND statement. Iterative predicates are
         creating a subset equal statements combined with OR
 
-        :param creator: User name.
+        :param creator: user name
         :param email: user email
         :param polygon: Polygon of points to extract data from
         """
-        self.predicates = []
+        self._format = "SIMPLE_CSV"
+        self.predicates = [] 
         self._main_pred_type = "and"
+        self._predicate = {"type": self._main_pred_type, "predicates": self.predicates} 
 
         self.url = "http://api.gbif.org/v1/occurrence/download/request"
         self.header = {
@@ -202,7 +229,8 @@ class GbifDownload(object):
             "creator": creator,
             "notification_address": [email],
             "sendNotification": True,
-            "predicate": {"type": self._main_pred_type, "predicates": self.predicates},
+            "predicate": self._predicate,
+            "format": self._format
         }
         self.request_id = None
 
@@ -231,20 +259,70 @@ class GbifDownload(object):
         else:
             raise Exception("main predicate combiner not a valid operator")
 
+    @property
+    def predicate(self):
+        """get main predicate combination type"""
+        return self._predicate
+
+    @predicate.setter
+    def predicate(self, value):
+        """set predicate
+
+        :param value: python dictionary formatted as API compatible JSON query (https://www.gbif.org/developer/occurrence#download)
+        """
+        if isinstance(value, dict):
+            self._predicate = value
+            self.payload["predicate"] = self._predicate
+        else:
+            raise Exception("predicate must be a dictionary")
+
+    @property
+    def format(self):
+        """get ¨download format"""
+        return self._format
+
+    @format.setter
+    def format(self, value):
+        """set format
+
+        :param value: the format must be one of the accepted download formats of GBIF https://www.gbif.org/faq?question=download-formats 
+        """
+        if value in formats:
+            self._format = value
+            self.payload["format"] = self._format
+        else:
+            raise Exception("format must be one of the accepted download formats of GBIF " + ", ".join(formats))   
+
     def add_predicate(self, key, value, predicate_type="equals"):
         """
+        this function is deprecated, please use add_predicate_dict instead
         add key, value, type combination of a predicate
 
         :param key: query KEY parameter
         :param value: the value used in the predicate
         :param predicate_type: the type of predicate (e.g. ``equals``)
         """
+        warn('This method is deprecated. Please use add_predicate_dict() instead', DeprecationWarning, stacklevel=2)
+
         if predicate_type not in operators:
             predicate_type = operator_lkup.get(predicate_type)
         if predicate_type:
             self.predicates.append({"type": predicate_type, "key": key, "value": value})
         else:
             raise Exception("predicate type not a valid operator")
+
+    def add_predicate_dict(self, predicate_dictionary):
+        """
+        allows for nested queries and will take a predicate and add it to a list of predicates
+
+        :param predicate_dictionary: has to be a predicate formatted as a dictionary, for example {"type": "in", "key": "TAXON_KEY", "values": ["2387246","2399391","2364604"]} or {"type": "isNotNull",
+        "parameter": "YEAR"} see the API documentation for more information: https://www.gbif.org/developer/occurrence#predicates 
+        """
+
+        if isinstance(predicate_dictionary, dict):
+            self.predicates.append(predicate_dictionary)
+        else:
+            raise Exception("argument must be a dictionary")
 
     @staticmethod
     def _extract_values(values_list):
@@ -473,6 +551,8 @@ operators = [
     "within",
     "not",
     "like",
+    "isNull",
+    "isNotNull"
 ]
 
 operator_lkup = {
@@ -487,6 +567,8 @@ operator_lkup = {
     "in": "in",
     "within": "within",
     "like": "like",
+    "is NULL" : "isNull",
+    "is not NULL" : "isNotNull"
 }
 
 key_lkup = {
@@ -518,3 +600,5 @@ key_lkup = {
     "recordedBy": "RECORDED_BY",
     "repatriated": "REPATRIATED",
 }
+
+formats = ["SIMPLE_CSV", "DWCA", "SPECIES_LIST"]
