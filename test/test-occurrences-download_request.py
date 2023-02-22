@@ -31,7 +31,8 @@ class TestGbifClass(unittest.TestCase):
                 "notification_address": ["email"],
                 "predicate": {"predicates": [], "type": "and"},
                 "sendNotification": True,
-            },
+                "format": "SIMPLE_CSV"
+            }
         )
         self.assertIsNone(req.request_id)
 
