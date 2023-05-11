@@ -65,19 +65,19 @@ def _check_environ(variable, value):
         else:
             return value
 
-# download function, TODO: add type queries: dictionaries (or JSON)
+# download function 
 def download(queries, format = "SIMPLE_CSV", user=None, pwd=None, email=None, pred_type="and"):
     """
     Spin up a download request for GBIF occurrence data.
 
     :param queries: One or more of query arguments to kick of a download job.
         See Details.
-    :type queries: str or list 
+    :type queries: str, list or dictionary  
     :param format: (character) One of the GBIF accepted download formats https://www.gbif.org/faq?question=download-formats
     :param pred_type: (character) One of ``equals`` (``=``), ``and`` (``&``),
         `or`` (``|``), ``lessThan`` (``<``), ``lessThanOrEquals`` (``<=``),
         ``greaterThan`` (``>``), ``greaterThanOrEquals`` (``>=``),
-        ``in``, ``within``, ``not`` (``!``), ``like`` TODO: in and not supported - either support or remove
+        ``in``, ``within``, ``not`` (``!``), ``like``
     :param user: (character) User name within GBIF's website.
         Required. Set in your env vars with the option ``GBIF_USER``
     :param pwd: (character) User password within GBIF's website. Required.
@@ -103,7 +103,7 @@ def download(queries, format = "SIMPLE_CSV", user=None, pwd=None, email=None, pr
      - lastInterpreted = ``LAST_INTERPRETED``
      - continent = ``CONTINENT``
      - geometry = ``GEOMETRY``
-     - basisOfRecord = ``BASIS_OF_RECORD``
+     - basisOfRecord = ``BASIS_OF_RECORD`` 
      - datasetKey = ``DATASET_KEY``
      - eventDate = ``EVENT_DATE``
      - catalogNumber = ``CATALOG_NUMBER``
@@ -119,10 +119,60 @@ def download(queries, format = "SIMPLE_CSV", user=None, pwd=None, email=None, pr
      - mediatype = ``MEDIA_TYPE``
      - recordedBy = ``RECORDED_BY``
      - repatriated = ``REPATRIATED``
+     
+     - classKey = ``CLASS_KEY``
+     - coordinateUncertaintyInMeters = ``COORDINATE_UNCERTAINTY_IN_METERS``
+     - crawlId = ``CRAWL_ID``
+     - datasetId = ``DATASET_ID``
+     - datasetName = ``DATASET_NAME``
+     - distanceFromCentroidInMeters = ``DISTANCE_FROM_CENTROID_IN_METERS``
+     - establishmentMeans = ``ESTABLISHMENT_MEANS``
+     - eventId = ``EVENT_ID``
+     - familyKey = ``FAMILY_KEY``
+     - format = ``FORMAT``
+     - fromDate = ``FROM_DATE``
+     - genusKey = ``GENUS_KEY``
+     - geoDistance = ``GEO_DISTANCE``
+     - identifiedBy = ``IDENTIFIED_BY``
+     - identifiedByID = ``IDENTIFIED_BY_ID``
+     - kingdomKey = ``KINGDON_KEY``
+     - license = ``LICENSE``
+     - locality = ``LOCALITY``
+     - modified = ``MODIFIED``
+     - networkKey = ``NETWORK_KEY``
+     - occurrenceId = ``OCCURRENCE_ID``
+     - occurrenceStatus = ``OCCURRENCE_STATUS``
+     - orderKey = ``ORDER_KEY``
+     - organismId = ``ORGANISM_ID``
+     - organismQuantity = ``ORGANISM_QUANTITY``
+     - organismQuantityType = ``ORGANISM_QUANTITY_TYPE``
+     - otherCatalogNumbers = ``OTHER_CATALOG_NUMBERS``
+     - phylumKey = ``PHYLUM_KEY``
+     - preparations = ``PREPARATIONS``
+     - programme = ``PROGRAMME``
+     - projectId = ``PROJECT_ID``
+     - protocol = ``PROTOCOL``
+     - publishingCountry = ``PUBLISHING_COUNTRY``
+     - publishingOrg = ``PUBLISHING_ORG``
+     - publishingOrgKey = ``PUBLISHING_ORG_KEY``
+     - recordedByID = ``RECORDED_BY_ID``
+     - recordNumber = ``RECORD_NUMBER``
+     - relativeOrganismQuantity = ``RELATIVE_ORGANISM_QUANTITY``
+     - sampleSizeUnit = ``SAMPLE_SIZE_UNIT``
+     - sampleSizeValue = ``SAMPLE_SIZE_VALUE``
+     - samplingProtocol = ``SAMPLING_PROTOCOL``
+     - speciesKey = ``SPECIES_KEY``
+     - stateProvince = ``STATE_PROVINCE``
+     - subgenusKey = ``SUBGENUS_KEY``
+     - taxonId = ``TAXON_ID``
+     - toDate = ``TO_DATE``
+     - userCountry = ``USER_COUNTRY``
+     - verbatimScientificName = ``VERBATIM_SCIENTIFIC_NAME``
+     - waterBody = ``WATER_BODY``
 
-    See the API docs http://www.gbif.org/developer/occurrence#download
-    for more info, and the predicates docs
-    http://www.gbif.org/developer/occurrence#predicates
+
+    See the API docs http://www.gbif.org/developer/occurrence#download and the predicates docs
+    http://www.gbif.org/developer/occurrence#predicates for more info.
 
     GBIF has a limit of 100,000 predicates and 10,000 points (in within
     predicates) for download queries – so if your download request is
@@ -599,6 +649,55 @@ key_lkup = {
     "mediatype": "MEDIA_TYPE",
     "recordedBy": "RECORDED_BY",
     "repatriated": "REPATRIATED",
+    "classKey": "CLASS_KEY",
+    "coordinateUncertaintyInMeters" = "COORDINATE_UNCERTAINTY_IN_METERS",
+    "crawlId" = "CRAWL_ID",
+    "datasetId" = "DATASET_ID",
+    "datasetName" = "DATASET_NAME",
+    "distanceFromCentroidInMeters" = "DISTANCE_FROM_CENTROID_IN_METERS",
+    "establishmentMeans" = "ESTABLISHMENT_MEANS",
+    "eventId" = "EVENT_ID",
+    "familyKey" = "FAMILY_KEY",
+    "format" = "FORMAT",
+    "fromDate" = "FROM_DATE",
+    "genusKey" = "GENUS_KEY",
+    "geoDistance" = "GEO_DISTANCE",
+    "identifiedBy" = "IDENTIFIED_BY",
+    "identifiedByID" = "IDENTIFIED_BY_ID",
+    "kingdomKey" = "KINGDON_KEY",
+    "license" = "LICENSE",
+    "locality" = "LOCALITY",
+    "modified" = "MODIFIED",
+    "networkKey" = "NETWORK_KEY",
+    "occurrenceId" = "OCCURRENCE_ID",
+    "occurrenceStatus" = "OCCURRENCE_STATUS",
+    "orderKey" = "ORDER_KEY",
+    "organismId" = "ORGANISM_ID",
+    "organismQuantity" = "ORGANISM_QUANTITY",
+    "organismQuantityType" = "ORGANISM_QUANTITY_TYPE",
+    "otherCatalogNumbers" = "OTHER_CATALOG_NUMBERS",
+    "phylumKey" = "PHYLUM_KEY",
+    "preparations" = "PREPARATIONS",
+    "programme" = "PROGRAMME",
+    "projectId" = "PROJECT_ID",
+    "protocol" = "PROTOCOL",
+    "publishingCountry" = "PUBLISHING_COUNTRY",
+    "publishingOrg" = "PUBLISHING_ORG",
+    "publishingOrgKey" = "PUBLISHING_ORG_KEY",
+    "recordedByID" = "RECORDED_BY_ID",
+    "recordNumber" = "RECORD_NUMBER",
+    "relativeOrganismQuantity" = "RELATIVE_ORGANISM_QUANTITY",
+    "sampleSizeUnit" = "SAMPLE_SIZE_UNIT",
+    "sampleSizeValue" = "SAMPLE_SIZE_VALUE",
+    "samplingProtocol" = "SAMPLING_PROTOCOL",
+    "speciesKey" = "SPECIES_KEY",
+    "stateProvince" = "STATE_PROVINCE",
+    "subgenusKey" = "SUBGENUS_KEY",
+    "taxonId" = "TAXON_ID",
+    "toDate" = "TO_DATE",
+    "userCountry" = "USER_COUNTRY",
+    "verbatimScientificName" = "VERBATIM_SCIENTIFIC_NAME",
+    "waterBody" = "WATER_BODY"
 }
 
 formats = ["SIMPLE_CSV", "DWCA", "SPECIES_LIST"]
