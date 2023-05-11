@@ -90,7 +90,7 @@ def download(queries, format = "SIMPLE_CSV", user=None, pwd=None, email=None, pr
     See the ``type`` parameter for possible options for the operator.
     This character string is parsed internally.
 
-    Acceptable arguments to ``...`` (args) are: TODO: check if list is up to date by looking in the API documentation or functional thing (bottom of page = key_lkup)
+    Acceptable arguments to ``...`` (args) are: 
 
      - taxonKey = ``TAXON_KEY``
      - scientificName = ``SCIENTIFIC_NAME``
@@ -119,7 +119,6 @@ def download(queries, format = "SIMPLE_CSV", user=None, pwd=None, email=None, pr
      - mediatype = ``MEDIA_TYPE``
      - recordedBy = ``RECORDED_BY``
      - repatriated = ``REPATRIATED``
-     
      - classKey = ``CLASS_KEY``
      - coordinateUncertaintyInMeters = ``COORDINATE_UNCERTAINTY_IN_METERS``
      - crawlId = ``CRAWL_ID``
@@ -215,6 +214,31 @@ def download(queries, format = "SIMPLE_CSV", user=None, pwd=None, email=None, pr
         z = occ.download('elevation >= 95000')
         logger.disabled = False
         w = occ.download('elevation >= 10000')
+        
+        # Nested and complex queries with multiple predicates
+        
+        # For more complex queries, it may be advantagous to format the query in JSON format. It must follow the predicate format described in the API documentation (https://www.gbif.org/developer/occurrence#download):
+        
+        query = { "type": "and",
+          "predicates": [
+            {  "type": "in",
+                "key": "TAXON_KEY",
+                "values": ["2387246","2399391","2364604"]},
+            {   "type": "isNotNull",
+                "parameter": "YEAR"},
+            {  "type": "not",
+               "predicate": {  "type": "in",
+                                        "key": "ISSUE",
+                                        "values": ["RECORDED_DATE_INVALID",
+                                                         "TAXON_MATCH_FUZZY",
+                                                         "TAXON_MATCH_HIGHERRANK"] }} ]}
+    
+        occ.download(query)
+    
+        # The same query can also be applied in the occ.download function:
+    
+        occ.download(['taxonKey in ["2387246", "2399391","2364604"]', 'year !Null', "issue !in ['RECORDED_DATE_INVALID', 'TAXON_MATCH_FUZZY', 'TAXON_MATCH_HIGHERRANK']"], "DWCA")
+    
     """
 
     user = _check_environ("GBIF_USER", user)
