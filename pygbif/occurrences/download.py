@@ -180,7 +180,7 @@ def download(queries, format = "SIMPLE_CSV", user=None, pwd=None, email=None, pr
 
     :return: A dictionary, of results
 
-    Usage:: TODO: add additional examples of more complex queries
+    Usage::
 
         from pygbif import occurrences as occ
 
@@ -198,13 +198,13 @@ def download(queries, format = "SIMPLE_CSV", user=None, pwd=None, email=None, pr
         # pass output to download_meta for more information
         occ.download_meta(occ.download('decimalLatitude > 75'))
 
-        # Multiple queries
+        # multiple queries
         gg = occ.download(['decimalLatitude >= 65',
                           'decimalLatitude <= -65'], pred_type ='or')
         gg = occ.download(['depth = 80', 'taxonKey = 2343454'],
                           pred_type ='or')
 
-        # Repratriated data for Costa Rica
+        # repratriated data for Costa Rica
         occ.download(['country = CR', 'repatriated = true'])
 
         # turn off logging
@@ -215,10 +215,8 @@ def download(queries, format = "SIMPLE_CSV", user=None, pwd=None, email=None, pr
         logger.disabled = False
         w = occ.download('elevation >= 10000')
         
-        # Nested and complex queries with multiple predicates
-        
-        # For more complex queries, it may be advantagous to format the query in JSON format. It must follow the predicate format described in the API documentation (https://www.gbif.org/developer/occurrence#download):
-        
+        # nested and complex queries with multiple predicates
+        ## For more complex queries, it may be advantagous to format the query in JSON format. It must follow the predicate format described in the API documentation (https://www.gbif.org/developer/occurrence#download):
         query = { "type": "and",
           "predicates": [
             {  "type": "in",
@@ -232,11 +230,9 @@ def download(queries, format = "SIMPLE_CSV", user=None, pwd=None, email=None, pr
                                         "values": ["RECORDED_DATE_INVALID",
                                                          "TAXON_MATCH_FUZZY",
                                                          "TAXON_MATCH_HIGHERRANK"] }} ]}
-    
         occ.download(query)
     
-        # The same query can also be applied in the occ.download function:
-    
+        # The same query can also be applied in the occ.download function (including download format specified):
         occ.download(['taxonKey in ["2387246", "2399391","2364604"]', 'year !Null', "issue !in ['RECORDED_DATE_INVALID', 'TAXON_MATCH_FUZZY', 'TAXON_MATCH_HIGHERRANK']"], "DWCA")
     
     """
