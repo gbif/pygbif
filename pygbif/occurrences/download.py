@@ -241,7 +241,7 @@ def download(queries, format = "SIMPLE_CSV", user=None, pwd=None, email=None, pr
     pwd = _check_environ("GBIF_PWD", pwd)
     email = _check_environ("GBIF_EMAIL", email)
 
-# if it is a dictionary then use directly as a query otherwise if it is a string turn it into a list
+# if it is a dictionary then use directly as a query, otherwise if it is a string turn it into a list
     req = GbifDownload(user, email)
     req.format = format
 
