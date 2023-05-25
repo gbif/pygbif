@@ -1,6 +1,15 @@
 Changelog
 =========
 
+0.6.3 (2023-05-25)
+------------------
+- added support for predicates: ``isNull``, ``isNotNull``, ``in`` and ``not`` :issue:`92`, :issue:`102` and :issue:`103` 
+- added support for nested queries/dictionaries :issue:`104`
+- deprecated the ``add_predicate`` function and added ``add_pred_dict`` to accomodate for newly supported predicates to ensure that the arguments that are sent are added in the payload function :issue:`108`
+- added support for multiple download formats :issue:`105`
+- updated operators and look-up tables :issue:`107`
+- included documentation on newly supported predicates and dictionaries :issue:`106`
+
 0.6.2 (2023-01-24)
 ------------------
 - update to fix requesting GBIF downloads
