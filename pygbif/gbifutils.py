@@ -1,6 +1,7 @@
 import requests
 import re
 import pygbif
+from tqdm import tqdm
 
 # import requests_cache
 # from requests_cache.core import remove_expired_responses
@@ -45,12 +46,19 @@ def gbif_GET_map(url, args, ctype, **kwargs):
 
 def gbif_GET_write(url, path, **kwargs):
     out = requests.get(url, headers=make_ua(), stream=True, **kwargs)
+
+    # Sizes in bytes.
+    total_size = int(out.headers.get("content-length", 0))
+    block_size = 1024
+
     out.raise_for_status()
     if out.status_code == 200:
-        with open(path, "wb") as f:
-            for chunk in out.iter_content(chunk_size=1024):
-                if chunk:
-                    f.write(chunk)
+        with tqdm(total=total_size, unit="B", unit_scale=True) as progress_bar:
+            with open(path, "wb") as f:
+                for chunk in out.iter_content(chunk_size=block_size):
+                    if chunk:
+                        progress_bar.update(len(chunk))
+                        f.write(chunk)
     # FIXME: removing response content-type check for now, maybe add later
     # ctype = "application/octet-stream"
     # if not re.match(ctype, out.headers["content-type"]):
