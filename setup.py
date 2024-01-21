@@ -1,12 +1,12 @@
 import codecs
-from setuptools import setup
-from setuptools import find_packages
+
+from setuptools import find_packages, setup
 
 with codecs.open("README.rst", "r", "utf-8") as f:
-    readme = f.read().replace("\r", '')
+    readme = f.read().replace("\r", "")
 
 with codecs.open("Changelog.rst", "r", "utf-8") as f:
-    changes = f.read().replace("\r", '')
+    changes = f.read().replace("\r", "")
 changes = changes.replace(":issue:", "")
 long_description = readme + "\n\n" + changes
 
@@ -29,6 +29,7 @@ setup(
         "geomet",
         "appdirs>=1.4.3",
         "matplotlib",
+        "tqdm>=4.66.1",
     ],
     classifiers=[
         "Development Status :: 5 - Production/Stable",
@@ -41,7 +42,16 @@ setup(
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
-        "Programming Language :: Python :: 3.9"
+        "Programming Language :: Python :: 3.9",
     ],
-    keywords = ['gbif', 'biodiversity', 'specimens', 'API', 'web-services', 'occurrences', 'species', 'taxonomy'],
+    keywords=[
+        "gbif",
+        "biodiversity",
+        "specimens",
+        "API",
+        "web-services",
+        "occurrences",
+        "species",
+        "taxonomy",
+    ],
 )
