@@ -82,7 +82,7 @@ def download(
     :param queries: One or more of query arguments to kick of a download job.
         See Details.
     :type queries: str, list or dictionary
-    :param format: (character) One of the GBIF accepted download formats https://www.gbif.org/faq?question=download-formats
+    :param format: (character) One of the GBIF accepted download formats https://techdocs.gbif.org/en/openapi/v1/occurrence#/Occurrence%20download%20formats
     :param pred_type: (character) One of ``equals`` (``=``), ``and`` (``&``),
         `or`` (``|``), ``lessThan`` (``<``), ``lessThanOrEquals`` (``<=``),
         ``greaterThan`` (``>``), ``greaterThanOrEquals`` (``>=``),
@@ -91,10 +91,10 @@ def download(
         Required. Set in your env vars with the option ``GBIF_USER``
     :param pwd: (character) User password within GBIF's website. Required.
         Set in your env vars with the option ``GBIF_PWD``
-    :param email: (character) Email address to recieve download notice done
+    :param email: (character) Email address to receive download notice done
         email. Required. Set in your env vars with the option ``GBIF_EMAIL``
 
-    Argument passed have to be passed as character (e.g., ``country = US``),
+    Argument passed have to be passed as characters (e.g., ``country = US``),
     with a space between key (``country``), operator (``=``), and value (``US``).
     See the ``type`` parameter for possible options for the operator.
     This character string is parsed internally.
@@ -735,4 +735,4 @@ key_lkup = {
     "waterBody": "WATER_BODY",
 }
 
-formats = ["SIMPLE_CSV", "SIMPLE_PARQUET", "DWCA", "SPECIES_LIST"]
+formats = ["SIMPLE_CSV", "SIMPLE_PARQUET", "DWCA", "SPECIES_LIST", "SIMPLE_AVRO"]
