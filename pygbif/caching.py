@@ -2,11 +2,6 @@ import requests_cache
 import os.path
 import tempfile
 
-try:
-    from requests_cache import remove_expired_responses
-except ModuleNotFoundError:
-    from requests_cache.core import remove_expired_responses
-
 def caching(
     cache=False,
     name=None,
@@ -88,7 +83,7 @@ def caching(
         requests_cache.install_cache(
             cache_name=CACHE_NAME, backend=backend, expire_after=expire_after
         )
-        remove_expired_responses()
+        requests_cache.delete(expired=True)
 
     cache_settings = {
         "cache": cache,
