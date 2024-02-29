@@ -2,26 +2,51 @@ interactions:
 - request:
     body: null
     headers:
-      Accept: ['*/*']
-      Accept-Encoding: ['gzip, deflate']
-      Connection: [keep-alive]
-      user-agent: ['python-requests/2.22.0,pygbif/0.3.9']
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - python-requests/2.31.0,pygbif/0.6.3
     method: GET
     uri: https://api.gbif.org/v1/occurrence/counts/basisOfRecord
   response:
-    body: {string: '{"HUMAN_OBSERVATION":1105239040,"PRESERVED_SPECIMEN":166101035,"MATERIAL_SAMPLE":25326157,"OBSERVATION":19633469,"UNKNOWN":17292300,"MACHINE_OBSERVATION":11917524,"FOSSIL_SPECIMEN":8961546,"LIVING_SPECIMEN":1629229,"LITERATURE":219727}'}
+    body:
+      string: '{"HUMAN_OBSERVATION":2300677236,"PRESERVED_SPECIMEN":237823454,"MATERIAL_SAMPLE":55644452,"OBSERVATION":20774268,"MACHINE_OBSERVATION":20542140,"OCCURRENCE":19297806,"FOSSIL_SPECIMEN":10245933,"MATERIAL_CITATION":2664542,"LIVING_SPECIMEN":2000677}'
     headers:
-      Accept-Ranges: [bytes]
-      Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT, OPTIONS']
-      Access-Control-Allow-Origin: ['*']
-      Age: ['0']
-      Cache-Control: ['public, max-age=600']
-      Connection: [keep-alive]
-      Content-Length: ['235']
-      Content-Type: [application/json]
-      Date: ['Wed, 20 Nov 2019 17:57:49 GMT']
-      Server: [Jetty(9.3.z-SNAPSHOT)]
-      Via: [1.1 varnish (Varnish/5.2)]
-      X-Varnish: ['1006275396']
-    status: {code: 200, message: OK}
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Cache-Control:
+      - public, max-age=600
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 29 Feb 2024 14:11:56 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      Via:
+      - 1.1 varnish (Varnish/6.0)
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Varnish:
+      - '412910048'
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
 version: 1

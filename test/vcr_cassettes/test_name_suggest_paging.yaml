@@ -2,34 +2,54 @@ interactions:
 - request:
     body: null
     headers:
-      Accept: ['*/*']
-      Accept-Encoding: ['gzip, deflate']
-      Connection: [keep-alive]
-      user-agent: ['python-requests/2.22.0,pygbif/0.3.9']
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - python-requests/2.31.0,pygbif/0.6.3
     method: GET
     uri: https://api.gbif.org/v1/species/suggest?q=Aso&limit=3
   response:
-    body: {string: '[{"key":1268023,"kingdom":"Animalia","phylum":"Arthropoda","order":"Hymenoptera","family":"Braconidae","genus":"Apanteles","species":"Apanteles
-        aso","kingdomKey":1,"phylumKey":54,"classKey":216,"orderKey":1457,"familyKey":6910,"genusKey":8411933,"speciesKey":1268023,"parent":"Apanteles","parentKey":8411933,"scientificName":"Apanteles
-        aso Nixon, 1967","canonicalName":"Apanteles aso","rank":"SPECIES","status":"ACCEPTED","higherClassificationMap":{"1":"Animalia","54":"Arthropoda","216":"Insecta","1457":"Hymenoptera","6910":"Braconidae","8411933":"Apanteles"},"synonym":false,"class":"Insecta"},{"key":4499084,"kingdom":"Animalia","phylum":"Arthropoda","order":"Hymenoptera","family":"Eulophidae","genus":"Chrysocharis","species":"Chrysocharis
-        viridis","kingdomKey":1,"phylumKey":54,"classKey":216,"orderKey":1457,"familyKey":5505,"genusKey":1382102,"speciesKey":1384781,"parent":"Chrysocharis","parentKey":1382102,"scientificName":"Chrysocharis
-        aso Walker, 1839","canonicalName":"Chrysocharis aso","rank":"SPECIES","status":"HETEROTYPIC_SYNONYM","higherClassificationMap":{"1":"Animalia","54":"Arthropoda","216":"Insecta","1457":"Hymenoptera","5505":"Eulophidae","1382102":"Chrysocharis","1384781":"Chrysocharis
-        viridis"},"synonym":true,"class":"Insecta"},{"key":1384797,"kingdom":"Animalia","phylum":"Arthropoda","order":"Hymenoptera","family":"Eulophidae","genus":"Chrysocharis","species":"Chrysocharis
-        viridis","kingdomKey":1,"phylumKey":54,"classKey":216,"orderKey":1457,"familyKey":5505,"genusKey":1382102,"speciesKey":1384781,"parent":"Chrysocharis","parentKey":1382102,"scientificName":"Entedon
-        aso Walker, 1839","canonicalName":"Entedon aso","rank":"SPECIES","status":"SYNONYM","higherClassificationMap":{"1":"Animalia","54":"Arthropoda","216":"Insecta","1457":"Hymenoptera","5505":"Eulophidae","1382102":"Chrysocharis","1384781":"Chrysocharis
-        viridis"},"synonym":true,"class":"Insecta"}]'}
+    body:
+      string: '[{"key":4887074,"nameKey":17291904,"kingdom":"Plantae","phylum":"Tracheophyta","family":"Sigillariaceae","genus":"Asolanus","kingdomKey":6,"phylumKey":7707728,"classKey":245,"familyKey":3229165,"genusKey":4887074,"parent":"Sigillariaceae","parentKey":3229165,"nubKey":4887074,"scientificName":"Asolanus
+        H.C.Wood, 1861","canonicalName":"Asolanus","rank":"GENUS","status":"ACCEPTED","higherClassificationMap":{"6":"Plantae","7707728":"Tracheophyta","245":"Lycopodiopsida","3229165":"Sigillariaceae"},"synonym":false,"class":"Lycopodiopsida"},{"key":1459644,"nameKey":1047180,"kingdom":"Animalia","phylum":"Arthropoda","order":"Diptera","family":"Acroceridae","genus":"Asopsebius","kingdomKey":1,"phylumKey":54,"classKey":216,"orderKey":811,"familyKey":3328,"genusKey":1459644,"parent":"Acroceridae","parentKey":3328,"nubKey":1459644,"scientificName":"Asopsebius
+        Nartshuk, 1982","canonicalName":"Asopsebius","rank":"GENUS","status":"ACCEPTED","higherClassificationMap":{"1":"Animalia","54":"Arthropoda","216":"Insecta","811":"Diptera","3328":"Acroceridae"},"synonym":false,"class":"Insecta"},{"key":1058266,"nameKey":1047077,"kingdom":"Animalia","phylum":"Arthropoda","order":"Coleoptera","family":"Scarabaeidae","genus":"Asophrops","kingdomKey":1,"phylumKey":54,"classKey":216,"orderKey":1470,"familyKey":5840,"genusKey":1058266,"parent":"Scarabaeidae","parentKey":5840,"nubKey":1058266,"scientificName":"Asophrops
+        Petrovitz, 1961","canonicalName":"Asophrops","rank":"GENUS","status":"ACCEPTED","higherClassificationMap":{"1":"Animalia","54":"Arthropoda","216":"Insecta","1470":"Coleoptera","5840":"Scarabaeidae"},"synonym":false,"class":"Insecta"}]'
     headers:
-      Accept-Ranges: [bytes]
-      Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT, OPTIONS']
-      Access-Control-Allow-Origin: ['*']
-      Age: ['0']
-      Cache-Control: ['public, max-age=3601']
-      Connection: [keep-alive]
-      Content-Length: ['1899']
-      Content-Type: [application/json]
-      Date: ['Wed, 20 Nov 2019 17:59:28 GMT']
-      Server: [Jetty(9.3.z-SNAPSHOT)]
-      Via: [1.1 varnish (Varnish/5.2)]
-      X-Varnish: ['1007781127']
-    status: {code: 200, message: OK}
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Cache-Control:
+      - public, max-age=3601
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1647'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 29 Feb 2024 14:12:41 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Vary:
+      - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      Via:
+      - 1.1 varnish (Varnish/6.0)
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Varnish:
+      - '436863055'
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
 version: 1

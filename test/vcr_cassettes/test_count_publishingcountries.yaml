@@ -2,26 +2,51 @@ interactions:
 - request:
     body: null
     headers:
-      Accept: ['*/*']
-      Accept-Encoding: ['gzip, deflate']
-      Connection: [keep-alive]
-      user-agent: ['python-requests/2.22.0,pygbif/0.3.9']
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - python-requests/2.31.0,pygbif/0.6.3
     method: GET
     uri: https://api.gbif.org/v1/occurrence/counts/publishingCountries?country=DE
   response:
-    body: {string: '{"GERMANY":35275236,"UNITED_KINGDOM":647657,"UNITED_STATES":343844,"NETHERLANDS":338854,"LUXEMBOURG":152822,"AUSTRIA":62815,"COLOMBIA":56482,"SWEDEN":51180,"BELGIUM":35973,"DENMARK":33672,"SWITZERLAND":30057,"FINLAND":27015,"FRANCE":26001,"ESTONIA":20322,"NORWAY":15897,"SPAIN":15599,"BRAZIL":8946,"AUSTRALIA":8343,"POLAND":6115,"JAPAN":4962,"CANADA":4524,"RUSSIAN_FEDERATION":3671,"SOUTH_AFRICA":3189,"NEW_ZEALAND":2902,"ARGENTINA":946,"MEXICO":746,"BULGARIA":682,"CZECH_REPUBLIC":360,"NICARAGUA":232,"ITALY":211,"COSTA_RICA":177,"TAIWAN":122,"GHANA":102,"PORTUGAL":82,"PERU":31,"KOREA_SOUTH":24,"MOROCCO":7,"TRINIDAD_TOBAGO":2,"SLOVENIA":2,"ZIMBABWE":1,"UKRAINE":1,"NIGERIA":1}'}
+    body:
+      string: '{"GERMANY":46156637,"NETHERLANDS":3177769,"UNITED_STATES":2054794,"FRANCE":1853329,"UNITED_KINGDOM":1029846,"BELGIUM":499598,"UNKNOWN":253872,"SWITZERLAND":174439,"AUSTRIA":118061,"ESTONIA":117088,"SWEDEN":70428,"COLOMBIA":64490,"FINLAND":40346,"DENMARK":38689,"LUXEMBOURG":37201,"POLAND":28959,"NORWAY":24433,"SPAIN":20947,"AUSTRALIA":17396,"BRAZIL":10976,"CANADA":10560,"JAPAN":8970,"RUSSIAN_FEDERATION":7729,"CZECH_REPUBLIC":7386,"NEW_ZEALAND":6559,"SOUTH_AFRICA":5751,"CHINA":5419,"MEXICO":2280,"ARGENTINA":2047,"PORTUGAL":2025,"ITALY":2001,"ECUADOR":1839,"BULGARIA":1469,"PANAMA":1222,"UKRAINE":721,"ISRAEL":425,"COSTA_RICA":363,"TAIWAN":240,"NICARAGUA":232,"GREECE":117,"CHILE":83,"GHANA":73,"VENEZUELA":36,"PERU":31,"KOREA_SOUTH":24,"URUGUAY":12,"ARMENIA":8,"TAJIKISTAN":7,"MOROCCO":7,"NIGERIA":4,"GUATEMALA":3,"TRINIDAD_TOBAGO":2,"SLOVENIA":2,"ZIMBABWE":1}'
     headers:
-      Accept-Ranges: [bytes]
-      Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT, OPTIONS']
-      Access-Control-Allow-Origin: ['*']
-      Age: ['0']
-      Cache-Control: ['public, max-age=600']
-      Connection: [keep-alive]
-      Content-Length: ['679']
-      Content-Type: [application/json]
-      Date: ['Wed, 20 Nov 2019 17:57:58 GMT']
-      Server: [Jetty(9.3.z-SNAPSHOT)]
-      Via: [1.1 varnish (Varnish/5.2)]
-      X-Varnish: ['1020527154']
-    status: {code: 200, message: OK}
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Cache-Control:
+      - public, max-age=600
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '864'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 29 Feb 2024 14:11:59 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Vary:
+      - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      Via:
+      - 1.1 varnish (Varnish/6.0)
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Varnish:
+      - '394265506'
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
 version: 1

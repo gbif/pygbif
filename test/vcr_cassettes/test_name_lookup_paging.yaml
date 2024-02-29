@@ -2,26 +2,145 @@ interactions:
 - request:
     body: null
     headers:
-      Accept: ['*/*']
-      Accept-Encoding: ['gzip, deflate']
-      Connection: [keep-alive]
-      user-agent: ['python-requests/2.22.0,pygbif/0.4.0']
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - python-requests/2.31.0,pygbif/0.6.3
     method: GET
     uri: https://api.gbif.org/v1/species/search?q=mammalia&limit=1&hl=false&verbose=false
   response:
-    body: {string: '{"offset":0,"limit":1,"endOfRecords":false,"count":1106,"results":[{"key":114079693,"datasetKey":"bd0a2b6d-69d1-4650-8bb1-829c8f92035f","nubKey":359,"parentKey":114079410,"parent":"Animalia","scientificName":"Mammalia","canonicalName":"Mammalia","authorship":"","nameType":"SCIENTIFIC","taxonomicStatus":"ACCEPTED","origin":"SOURCE","numDescendants":0,"numOccurrences":0,"habitats":[],"nomenclaturalStatus":[],"threatStatuses":[],"descriptions":[],"vernacularNames":[],"higherClassificationMap":{"114079410":"Animalia"},"synonym":false}],"facets":[]}'}
+    body:
+      string: "{\"offset\":0,\"limit\":1,\"endOfRecords\":false,\"count\":3556,\"results\":[{\"key\":100559475,\"datasetKey\":\"16c3f9cb-4b19-4553-ac8e-ebb90003aa02\",\"scientificName\":\"Mammaliaformes\",\"canonicalName\":\"Mammaliaformes\",\"nameType\":\"SCIENTIFIC\",\"taxonomicStatus\":\"ACCEPTED\",\"origin\":\"SOURCE\",\"numDescendants\":0,\"numOccurrences\":0,\"extinct\":true,\"habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\":[{\"description\":\"Die
+        Docodonta sind eine Gruppe ausgestorbener S\xE4ugetiervorfahren (Mammaliaformes),
+        die im Jura und in der Kreidezeit lebte. Bekanntester Vertreter dieser Gruppe
+        ist wohl die 2004 entdeckte und 2006 erstmals beschriebene, an das Leben im
+        Wasser angepasste Gattung Castorocauda.\"},{\"description\":\"Haldanodon ist
+        ein vergleichsweise urspr\xFCnglicher Vertreter der Docodonta. Ein nahezu
+        vollst\xE4ndiges Skelett wurde in den 1970er-Jahren in der Kohlengrube Guimarota
+        in Portugal entdeckt, daneben noch zahlreiche Sch\xE4del- und Zahnfunde. Die
+        Gattung wird auf ein Alter von rund 152 Millionen Jahre datiert und war das
+        erste bekannte S\xE4ugetier aus dem Oberjura, von dem mehr als nur sp\xE4rliche
+        Funde vorhanden waren. Wie oben erw\xE4hnt, k\xF6nnten die st\xE4mmigen, waagrecht
+        angebrachten Gliedma\xDFen auf eine wasserbewohnende Lebensweise hindeuten.
+        Docodon lebte ebenfalls im oberen Jura, Funde (von Othniel Charles Marsh)
+        sind aus Nordamerika und eventuell England bekannt. Die Gattung zeigt besonders
+        verbreiterte Molaren, sonst ist aber wenig \xFCber sie bekannt. Castorocauda
+        aus dem oberen Jura wurde 2004 in China entdeckt und ist durch seine Anpassungen
+        an das Wasserleben und durch seine Gr\xF6\xDFe bemerkenswert. Reigitherium
+        ist durch einen Kieferteil mit drei Z\xE4hnen bekannt, der in Patagonien gefunden
+        wurde und aus der Oberkreide (vor rund 70 Millionen Jahren) stammt. Sowohl
+        das geringere Alter als auch der Fundort stehen zu den \xFCbrigen Vertretern
+        dieser Gruppe in Widerspruch. Die starke Abnutzung der Z\xE4hne und der schlechte
+        Zustand der Funde lassen eine zweifelsfreie systematische Zuordnung nicht
+        zu. Wie bereits erw\xE4hnt, ist es aber denkbar, dass der Fund ein Hinweis
+        daf\xFCr sein k\xF6nnte, dass die Gruppe in manchen Regionen l\xE4nger \xFCberlebt
+        hat. Docofossor wurde 2015 anhand eines nahezu vollst\xE4ndigen Skelettes
+        aus dem Oberen Jura Chinas beschrieben. Es zeigte deutliche Anpassungen an
+        eine grabende (fossoriale) Lebensweise, wie der verl\xE4ngerte obere Gelenkfortsatz
+        der Elle (das Olecranon) und die breiten, schaufelartigen Krallen zeigen.
+        Es ma\xDF 9 cm von der Schnauze bis zum Becken und wog zwischen 13 und 17
+        g. Die reduzierte Anzahl an Finger- und Zehengliedern erinnert an die Goldmulle
+        in Afrika, die ebenfalls unterirdisch leben.Zhe-Xi Luo, Qing-Jin Meng, Qiang
+        Ji, Di Liu, Yu-Guang Zhang und April I. Neander: Evolutionary development
+        in basal mammaliaforms as revealed by a docodontan. Science 347, 2015, S.
+        760\u2013764 Agilodocodon war ein Baumkletterer, was unter anderem anhand
+        der verl\xE4ngerten und seitlich verschm\xE4lerten Krallen, dem mobilen Ellenbogen
+        und m\xF6glicherweise auch anhand des sehr beweglichen Schwanzes erkennbar
+        ist. Zudem zeigt es im Gebissaufbau eine Anpassung an eine pflanzliche Ern\xE4hrungsweise,
+        was innerhalb der Docodonta bisher nicht beobachtet wurde. Die Gattung wurde
+        ebenfalls im Jahr 2015 anhand eines gut erhaltenen Skelettes beschrieben.
+        Dieses stammt aus dem Mittleren Jura von China. Die Tiere wiesen eine Gesamtl\xE4nge
+        von 14 cm auf (einschlie\xDFlich Schwanz) und wogen sch\xE4tzungsweise 27
+        bis 40 g.Qing-Jin Meng, Qiang Ji, Yu-Guang Zhang, Di Liu, David M. Grossnickle
+        und Zhe-Xi Luo: An arboreal docodont from the Jurassic and mammaliaform ecological
+        diversification. Science 347, 2015, S. 764\u2013768 Microdocodon wurde im
+        Jahr 2019 erstbeschrieben und lebte im ausgehenden Mitteljura vor 166 bis
+        164 Millionen Jahren. Der Fund eines nahezu vollst\xE4ndigen Skelettes stammt
+        aus Daohugou im nord\xF6stlichen China. Die Tiere wogen nur 5 bis 9 g, wiesen
+        einen schlanken K\xF6rper mit ausgesprochen langem Schwanz auf und lebten
+        gem\xE4\xDF der Proportion ihrer Gliedma\xDFen vermutlich in B\xE4umen. Das
+        vollst\xE4ndig ausgebildete Zungenbein war wie bei heutigen S\xE4ugetieren
+        U-f\xF6rmig und gelenkig. Es zeigt somit an, dass schon die urt\xFCmlichen,
+        s\xE4ugetierartigen Formen ihre Nahrung kauend zerkleinerten und in dosierten
+        Portionen schlucken konnten, abweichend von den meisten anderen Wirbeltieren,
+        die ihre Nahrung meist vollst\xE4ndig oder in gro\xDFen Portionen verschlingen.
+        Gegen\xFCber dem modern wirkenden Zungenbein waren die Knochen des Mittelohrs
+        noch primitiv gestaltet und wie bei anderen fr\xFChen s\xE4ugetierartigen
+        Formen mit dem Unterkiefer verbunden.Chang-Fu Zhou, Bhart-Anjan S. Bhullar,
+        April I. Neander, Thomas Martin und Zhe-Xi Luo: New Jurassic mammaliaform
+        sheds light on early evolution of mammal-like hyoid bones. Science 365, 2019,
+        S. 276\u2013279, doi:10.1126/science.aau9345\"},{\"description\":\"Herausragendes
+        Merkmal der Docodonta waren die verbreiterten Molaren (Backenz\xE4hne) mit
+        komplexen Kaufl\xE4chen. rasterelektronenmikroskopische Aufnahmen von Docodonten-Z\xE4hnen
+        Diese Z\xE4hne erm\xF6glichten einen st\xE4rker mahlenden Kauvorgang als bei
+        anderen S\xE4ugetieren.Universit\xE4t T\xFCbingen: Modell zur Ermittlung der
+        Kaubewegungen von Docoodonten Die Z\xE4hne sind meist nur rund 0,5 bis 1,5
+        Millimeter gro\xDF. F\xFCr welche Nahrung diese Z\xE4hne optimiert waren,
+        ist umstritten, diskutiert werden eine pflanzen- oder allesfressende Ern\xE4hrung.
+        Castorocauda hingegen k\xF6nnte sich von Fischen ern\xE4hrt haben. Von vielen
+        Gattungen ist au\xDFer Z\xE4hnen oder Kieferteilen nichts bekannt. Von Haldanodon
+        allerdings wurde ein nahezu vollst\xE4ndiges Skelett entdeckt, das Tier besa\xDF
+        sehr st\xE4mmige und waagrecht orientierte Gliedma\xDFen. Dieser Bau hat zu
+        Spekulationen \xFCber eine unterirdisch grabende oder schwimmende Lebensweise
+        gef\xFChrt, wobei die zweite M\xF6glichkeit seit der Entdeckung von Castorocauda
+        mit seiner eindeutigen Anpassung an das Wasserleben wahrscheinlicher geworden
+        ist.\"},{\"description\":\"Nahezu alle Funde der Docodonta stammen aus der
+        Zeit zwischen dem Mittleren und Oberen Jura beziehungsweise der fr\xFChesten
+        Kreide und sind fast ausschlie\xDFlich aus Europa, Asien und Nordamerika bekannt,
+        was daf\xFCr spricht, dass diese Gruppe \xFCber den ehemaligen Kontinent Laurasia,
+        dem n\xF6rdlichen, aus Pangaea hervorgegangenen Gro\xDFkontinent, verbreitet
+        war. Es gibt allerdings Funde von Z\xE4hnen und Kieferteilen aus der oberen
+        Kreidezeit aus S\xFCdamerika. Die betreffende Gattung wurde Reigitherium genannt
+        und k\xF6nnte ein Anzeichen daf\xFCr sein, dass die Docodonta in isolierten
+        Regionen l\xE4nger \xFCberlebt haben k\xF6nnten. Allerdings sind die Funde
+        sehr schlecht erhalten, was eine eindeutige systematische Zuordnung erschwert.\"},{\"description\":\"Aufgrund
+        des urt\xFCmlichen Baus des Kiefergelenks werden die Docodonta zu einer Reihe
+        von Tieren gez\xE4hlt, die fortgeschrittene s\xE4ugetier\xE4hnliche Merkmale
+        aufweisen, sich aber in Details noch von den heutigen S\xE4ugern unterscheiden
+        und darum als Mammaliaformes (S\xE4ugetierartige) oder als Mammalia sensu
+        lato (im weiteren Sinn) zusammengefasst werden. Ob man sie bereits als S\xE4ugetier
+        oder noch als S\xE4ugetiervorfahren bezeichnet, ist eine Definitionsfrage.
+        Kladistische Analysen ordnen sie weiter entwickelt als die Morganucodonta
+        oder Sinoconodon, aber urt\xFCmlicher als Hadrocodium oder die eigentlichen
+        S\xE4ugetiere ein. Die Funde von Castorocauda waren insofern \xFCberraschend,
+        als auff\xE4llige Spezialisierungen bei S\xE4ugetieren weit \xE4lter waren
+        als bisher angenommen.\"}],\"vernacularNames\":[{\"vernacularName\":\"10.1126/science.aau9345\"}],\"higherClassificationMap\":{},\"synonym\":false}],\"facets\":[]}"
     headers:
-      Accept-Ranges: [bytes]
-      Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT, OPTIONS']
-      Access-Control-Allow-Origin: ['*']
-      Age: ['0']
-      Cache-Control: ['public, max-age=600']
-      Connection: [keep-alive]
-      Content-Length: ['550']
-      Content-Type: [application/json]
-      Date: ['Wed, 20 Nov 2019 21:03:13 GMT']
-      Server: [Jetty(9.3.z-SNAPSHOT)]
-      Via: [1.1 varnish (Varnish/5.2)]
-      X-Varnish: ['34701843']
-    status: {code: 200, message: OK}
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Cache-Control:
+      - public, max-age=600
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '7614'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 29 Feb 2024 14:12:39 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Vary:
+      - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      Via:
+      - 1.1 varnish (Varnish/6.0)
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Varnish:
+      - '385483944'
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
 version: 1

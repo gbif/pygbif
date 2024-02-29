@@ -2,26 +2,51 @@ interactions:
 - request:
     body: null
     headers:
-      Accept: ['*/*']
-      Accept-Encoding: ['gzip, deflate']
-      Connection: [keep-alive]
-      user-agent: ['python-requests/2.22.0,pygbif/0.3.9']
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - python-requests/2.31.0,pygbif/0.6.3
     method: GET
     uri: https://api.gbif.org/v1/occurrence/count/schema
   response:
-    body: {string: '[{"dimensions":[{"key":"basisOfRecord","type":"org.gbif.api.vocabulary.BasisOfRecord"}]},{"dimensions":[{"key":"basisOfRecord","type":"org.gbif.api.vocabulary.BasisOfRecord"},{"key":"country","type":"org.gbif.api.vocabulary.Country"}]},{"dimensions":[{"key":"basisOfRecord","type":"org.gbif.api.vocabulary.BasisOfRecord"},{"key":"country","type":"org.gbif.api.vocabulary.Country"},{"key":"isGeoreferenced","type":"java.lang.Boolean"}]},{"dimensions":[{"key":"basisOfRecord","type":"org.gbif.api.vocabulary.BasisOfRecord"},{"key":"country","type":"org.gbif.api.vocabulary.Country"},{"key":"isGeoreferenced","type":"java.lang.Boolean"},{"key":"taxonKey","type":"java.lang.Integer"}]},{"dimensions":[{"key":"basisOfRecord","type":"org.gbif.api.vocabulary.BasisOfRecord"},{"key":"country","type":"org.gbif.api.vocabulary.Country"},{"key":"taxonKey","type":"java.lang.Integer"}]},{"dimensions":[{"key":"basisOfRecord","type":"org.gbif.api.vocabulary.BasisOfRecord"},{"key":"datasetKey","type":"java.util.UUID"}]},{"dimensions":[{"key":"basisOfRecord","type":"org.gbif.api.vocabulary.BasisOfRecord"},{"key":"datasetKey","type":"java.util.UUID"},{"key":"isGeoreferenced","type":"java.lang.Boolean"}]},{"dimensions":[{"key":"basisOfRecord","type":"org.gbif.api.vocabulary.BasisOfRecord"},{"key":"datasetKey","type":"java.util.UUID"},{"key":"isGeoreferenced","type":"java.lang.Boolean"},{"key":"taxonKey","type":"java.lang.Integer"}]},{"dimensions":[{"key":"basisOfRecord","type":"org.gbif.api.vocabulary.BasisOfRecord"},{"key":"datasetKey","type":"java.util.UUID"},{"key":"taxonKey","type":"java.lang.Integer"}]},{"dimensions":[{"key":"basisOfRecord","type":"org.gbif.api.vocabulary.BasisOfRecord"},{"key":"isGeoreferenced","type":"java.lang.Boolean"},{"key":"taxonKey","type":"java.lang.Integer"}]},{"dimensions":[{"key":"basisOfRecord","type":"org.gbif.api.vocabulary.BasisOfRecord"},{"key":"isGeoreferenced","type":"java.lang.Boolean"},{"key":"publishingCountry","type":"org.gbif.api.vocabulary.Country"}]},{"dimensions":[{"key":"basisOfRecord","type":"org.gbif.api.vocabulary.BasisOfRecord"},{"key":"isGeoreferenced","type":"java.lang.Boolean"},{"key":"publishingCountry","type":"org.gbif.api.vocabulary.Country"},{"key":"taxonKey","type":"java.lang.Integer"}]},{"dimensions":[{"key":"basisOfRecord","type":"org.gbif.api.vocabulary.BasisOfRecord"},{"key":"publishingCountry","type":"org.gbif.api.vocabulary.Country"}]},{"dimensions":[{"key":"basisOfRecord","type":"org.gbif.api.vocabulary.BasisOfRecord"},{"key":"publishingCountry","type":"org.gbif.api.vocabulary.Country"},{"key":"taxonKey","type":"java.lang.Integer"}]},{"dimensions":[{"key":"basisOfRecord","type":"org.gbif.api.vocabulary.BasisOfRecord"},{"key":"taxonKey","type":"java.lang.Integer"}]},{"dimensions":[{"key":"country","type":"org.gbif.api.vocabulary.Country"}]},{"dimensions":[{"key":"country","type":"org.gbif.api.vocabulary.Country"},{"key":"datasetKey","type":"java.util.UUID"},{"key":"isGeoreferenced","type":"java.lang.Boolean"}]},{"dimensions":[{"key":"country","type":"org.gbif.api.vocabulary.Country"},{"key":"isGeoreferenced","type":"java.lang.Boolean"}]},{"dimensions":[{"key":"country","type":"org.gbif.api.vocabulary.Country"},{"key":"isGeoreferenced","type":"java.lang.Boolean"},{"key":"publishingCountry","type":"org.gbif.api.vocabulary.Country"}]},{"dimensions":[{"key":"country","type":"org.gbif.api.vocabulary.Country"},{"key":"isGeoreferenced","type":"java.lang.Boolean"},{"key":"taxonKey","type":"java.lang.Integer"}]},{"dimensions":[{"key":"country","type":"org.gbif.api.vocabulary.Country"},{"key":"publishingCountry","type":"org.gbif.api.vocabulary.Country"}]},{"dimensions":[{"key":"country","type":"org.gbif.api.vocabulary.Country"},{"key":"taxonKey","type":"java.lang.Integer"}]},{"dimensions":[{"key":"country","type":"org.gbif.api.vocabulary.Country"},{"key":"typeStatus","type":"org.gbif.api.vocabulary.TypeStatus"}]},{"dimensions":[{"key":"datasetKey","type":"java.util.UUID"}]},{"dimensions":[{"key":"datasetKey","type":"java.util.UUID"},{"key":"isGeoreferenced","type":"java.lang.Boolean"}]},{"dimensions":[{"key":"datasetKey","type":"java.util.UUID"},{"key":"isGeoreferenced","type":"java.lang.Boolean"},{"key":"taxonKey","type":"java.lang.Integer"}]},{"dimensions":[{"key":"datasetKey","type":"java.util.UUID"},{"key":"issue","type":"org.gbif.api.vocabulary.OccurrenceIssue"}]},{"dimensions":[{"key":"datasetKey","type":"java.util.UUID"},{"key":"taxonKey","type":"java.lang.Integer"}]},{"dimensions":[{"key":"datasetKey","type":"java.util.UUID"},{"key":"typeStatus","type":"org.gbif.api.vocabulary.TypeStatus"}]},{"dimensions":[{"key":"isGeoreferenced","type":"java.lang.Boolean"}]},{"dimensions":[{"key":"isGeoreferenced","type":"java.lang.Boolean"},{"key":"publishingCountry","type":"org.gbif.api.vocabulary.Country"}]},{"dimensions":[{"key":"isGeoreferenced","type":"java.lang.Boolean"},{"key":"publishingCountry","type":"org.gbif.api.vocabulary.Country"},{"key":"taxonKey","type":"java.lang.Integer"}]},{"dimensions":[{"key":"isGeoreferenced","type":"java.lang.Boolean"},{"key":"taxonKey","type":"java.lang.Integer"}]},{"dimensions":[{"key":"issue","type":"org.gbif.api.vocabulary.OccurrenceIssue"}]},{"dimensions":[{"key":"publishingCountry","type":"org.gbif.api.vocabulary.Country"}]},{"dimensions":[{"key":"publishingCountry","type":"org.gbif.api.vocabulary.Country"},{"key":"taxonKey","type":"java.lang.Integer"}]},{"dimensions":[{"key":"publishingCountry","type":"org.gbif.api.vocabulary.Country"},{"key":"typeStatus","type":"org.gbif.api.vocabulary.TypeStatus"}]},{"dimensions":[{"key":"taxonKey","type":"java.lang.Integer"}]},{"dimensions":[{"key":"taxonKey","type":"java.lang.Integer"},{"key":"typeStatus","type":"org.gbif.api.vocabulary.TypeStatus"}]},{"dimensions":[{"key":"typeStatus","type":"org.gbif.api.vocabulary.TypeStatus"}]},{"dimensions":[{"key":"protocol","type":"org.gbif.api.vocabulary.EndpointType"}]},{"dimensions":[{"key":"year","type":"java.lang.Integer"}]}]'}
+    body:
+      string: '[{"dimensions":[{"key":"basisOfRecord","type":"org.gbif.api.vocabulary.BasisOfRecord"}]},{"dimensions":[{"key":"country","type":"org.gbif.api.vocabulary.Country"},{"key":"basisOfRecord","type":"org.gbif.api.vocabulary.BasisOfRecord"}]},{"dimensions":[{"key":"country","type":"org.gbif.api.vocabulary.Country"},{"key":"isGeoreferenced","type":"java.lang.Boolean"},{"key":"basisOfRecord","type":"org.gbif.api.vocabulary.BasisOfRecord"}]},{"dimensions":[{"key":"taxonKey","type":"java.lang.Integer"},{"key":"country","type":"org.gbif.api.vocabulary.Country"},{"key":"isGeoreferenced","type":"java.lang.Boolean"},{"key":"basisOfRecord","type":"org.gbif.api.vocabulary.BasisOfRecord"}]},{"dimensions":[{"key":"taxonKey","type":"java.lang.Integer"},{"key":"country","type":"org.gbif.api.vocabulary.Country"},{"key":"basisOfRecord","type":"org.gbif.api.vocabulary.BasisOfRecord"}]},{"dimensions":[{"key":"basisOfRecord","type":"org.gbif.api.vocabulary.BasisOfRecord"},{"key":"datasetKey","type":"java.util.UUID"}]},{"dimensions":[{"key":"isGeoreferenced","type":"java.lang.Boolean"},{"key":"basisOfRecord","type":"org.gbif.api.vocabulary.BasisOfRecord"},{"key":"datasetKey","type":"java.util.UUID"}]},{"dimensions":[{"key":"taxonKey","type":"java.lang.Integer"},{"key":"isGeoreferenced","type":"java.lang.Boolean"},{"key":"basisOfRecord","type":"org.gbif.api.vocabulary.BasisOfRecord"},{"key":"datasetKey","type":"java.util.UUID"}]},{"dimensions":[{"key":"taxonKey","type":"java.lang.Integer"},{"key":"basisOfRecord","type":"org.gbif.api.vocabulary.BasisOfRecord"},{"key":"datasetKey","type":"java.util.UUID"}]},{"dimensions":[{"key":"taxonKey","type":"java.lang.Integer"},{"key":"isGeoreferenced","type":"java.lang.Boolean"},{"key":"basisOfRecord","type":"org.gbif.api.vocabulary.BasisOfRecord"}]},{"dimensions":[{"key":"isGeoreferenced","type":"java.lang.Boolean"},{"key":"publishingCountry","type":"org.gbif.api.vocabulary.Country"},{"key":"basisOfRecord","type":"org.gbif.api.vocabulary.BasisOfRecord"}]},{"dimensions":[{"key":"taxonKey","type":"java.lang.Integer"},{"key":"isGeoreferenced","type":"java.lang.Boolean"},{"key":"publishingCountry","type":"org.gbif.api.vocabulary.Country"},{"key":"basisOfRecord","type":"org.gbif.api.vocabulary.BasisOfRecord"}]},{"dimensions":[{"key":"publishingCountry","type":"org.gbif.api.vocabulary.Country"},{"key":"basisOfRecord","type":"org.gbif.api.vocabulary.BasisOfRecord"}]},{"dimensions":[{"key":"taxonKey","type":"java.lang.Integer"},{"key":"publishingCountry","type":"org.gbif.api.vocabulary.Country"},{"key":"basisOfRecord","type":"org.gbif.api.vocabulary.BasisOfRecord"}]},{"dimensions":[{"key":"taxonKey","type":"java.lang.Integer"},{"key":"basisOfRecord","type":"org.gbif.api.vocabulary.BasisOfRecord"}]},{"dimensions":[{"key":"country","type":"org.gbif.api.vocabulary.Country"}]},{"dimensions":[{"key":"country","type":"org.gbif.api.vocabulary.Country"},{"key":"isGeoreferenced","type":"java.lang.Boolean"},{"key":"datasetKey","type":"java.util.UUID"}]},{"dimensions":[{"key":"country","type":"org.gbif.api.vocabulary.Country"},{"key":"isGeoreferenced","type":"java.lang.Boolean"}]},{"dimensions":[{"key":"country","type":"org.gbif.api.vocabulary.Country"},{"key":"isGeoreferenced","type":"java.lang.Boolean"},{"key":"publishingCountry","type":"org.gbif.api.vocabulary.Country"}]},{"dimensions":[{"key":"taxonKey","type":"java.lang.Integer"},{"key":"country","type":"org.gbif.api.vocabulary.Country"},{"key":"isGeoreferenced","type":"java.lang.Boolean"}]},{"dimensions":[{"key":"country","type":"org.gbif.api.vocabulary.Country"},{"key":"publishingCountry","type":"org.gbif.api.vocabulary.Country"}]},{"dimensions":[{"key":"taxonKey","type":"java.lang.Integer"},{"key":"country","type":"org.gbif.api.vocabulary.Country"}]},{"dimensions":[{"key":"country","type":"org.gbif.api.vocabulary.Country"},{"key":"typeStatus","type":"org.gbif.api.vocabulary.TypeStatus"}]},{"dimensions":[{"key":"datasetKey","type":"java.util.UUID"}]},{"dimensions":[{"key":"isGeoreferenced","type":"java.lang.Boolean"},{"key":"datasetKey","type":"java.util.UUID"}]},{"dimensions":[{"key":"taxonKey","type":"java.lang.Integer"},{"key":"isGeoreferenced","type":"java.lang.Boolean"},{"key":"datasetKey","type":"java.util.UUID"}]},{"dimensions":[{"key":"issue","type":"org.gbif.api.vocabulary.OccurrenceIssue"},{"key":"datasetKey","type":"java.util.UUID"}]},{"dimensions":[{"key":"taxonKey","type":"java.lang.Integer"},{"key":"datasetKey","type":"java.util.UUID"}]},{"dimensions":[{"key":"typeStatus","type":"org.gbif.api.vocabulary.TypeStatus"},{"key":"datasetKey","type":"java.util.UUID"}]},{"dimensions":[{"key":"isGeoreferenced","type":"java.lang.Boolean"}]},{"dimensions":[{"key":"isGeoreferenced","type":"java.lang.Boolean"},{"key":"publishingCountry","type":"org.gbif.api.vocabulary.Country"}]},{"dimensions":[{"key":"taxonKey","type":"java.lang.Integer"},{"key":"isGeoreferenced","type":"java.lang.Boolean"},{"key":"publishingCountry","type":"org.gbif.api.vocabulary.Country"}]},{"dimensions":[{"key":"taxonKey","type":"java.lang.Integer"},{"key":"isGeoreferenced","type":"java.lang.Boolean"}]},{"dimensions":[{"key":"issue","type":"org.gbif.api.vocabulary.OccurrenceIssue"}]},{"dimensions":[{"key":"publishingCountry","type":"org.gbif.api.vocabulary.Country"}]},{"dimensions":[{"key":"taxonKey","type":"java.lang.Integer"},{"key":"publishingCountry","type":"org.gbif.api.vocabulary.Country"}]},{"dimensions":[{"key":"typeStatus","type":"org.gbif.api.vocabulary.TypeStatus"},{"key":"publishingCountry","type":"org.gbif.api.vocabulary.Country"}]},{"dimensions":[{"key":"taxonKey","type":"java.lang.Integer"}]},{"dimensions":[{"key":"taxonKey","type":"java.lang.Integer"},{"key":"typeStatus","type":"org.gbif.api.vocabulary.TypeStatus"}]},{"dimensions":[{"key":"typeStatus","type":"org.gbif.api.vocabulary.TypeStatus"}]},{"dimensions":[{"key":"protocol","type":"org.gbif.api.vocabulary.EndpointType"}]},{"dimensions":[{"key":"year","type":"java.lang.Integer"}]}]'
     headers:
-      Accept-Ranges: [bytes]
-      Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT, OPTIONS']
-      Access-Control-Allow-Origin: ['*']
-      Age: ['2718']
-      Cache-Control: ['public, max-age=600']
-      Connection: [keep-alive]
-      Content-Length: ['5987']
-      Content-Type: [application/json]
-      Date: ['Wed, 20 Nov 2019 17:12:39 GMT']
-      Server: [Jetty(9.3.z-SNAPSHOT)]
-      Via: [1.1 varnish (Varnish/5.2)]
-      X-Varnish: [968003985 980387465]
-    status: {code: 200, message: OK}
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Cache-Control:
+      - public, max-age=600
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '5987'
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 29 Feb 2024 14:11:57 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Vary:
+      - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      Via:
+      - 1.1 varnish (Varnish/6.0)
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Varnish:
+      - '250585232'
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
 version: 1

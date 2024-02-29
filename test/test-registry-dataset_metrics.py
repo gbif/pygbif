@@ -8,7 +8,7 @@ def test_dataset_metrics():
     "registry.dataset_metrics - basic test"
     res = registry.dataset_metrics(uuid="3f8a1297-3259-4700-91fc-acc4170b27ce")
     assert dict == res.__class__
-    assert 19 == len(res)
+    assert 18 == len(res)
 
 
 @vcr.use_cassette("test/vcr_cassettes/test_dataset_metrics_multiple_uuids.yaml")

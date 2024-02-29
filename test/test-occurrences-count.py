@@ -4,15 +4,15 @@ import vcr
 from pygbif import occurrences
 
 brecord_res = [
-    "LITERATURE",
-    "OBSERVATION",
-    "LIVING_SPECIMEN",
-    "UNKNOWN",
-    "MATERIAL_SAMPLE",
-    "PRESERVED_SPECIMEN",
-    "MACHINE_OBSERVATION",
     "HUMAN_OBSERVATION",
-    "FOSSIL_SPECIMEN",
+    "PRESERVED_SPECIMEN", 
+    "MATERIAL_SAMPLE", 
+    "OBSERVATION", 
+    "MACHINE_OBSERVATION", 
+    "OCCURRENCE", 
+    "FOSSIL_SPECIMEN", 
+    "MATERIAL_CITATION", 
+    "LIVING_SPECIMEN"
 ]
 
 year_res = [
