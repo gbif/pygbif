@@ -39,6 +39,7 @@ jobs:
       run: |
         for file in test/vcr_cassettes/*; do
           file_date=$(stat -c %y "$file" | cut -d ' ' -f 1)
+          echo "File $file was created on $file_date"
           current_date=$(date +%Y-%m-%d)
           if [[ "$file_date" != "$current_date" ]]; then
             echo "File $file was not created today"
