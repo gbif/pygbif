@@ -77,7 +77,7 @@ interactions:
         Paso\",\"province\":\"Texas\",\"country\":\"US\",\"postalCode\":\"79968\",\"createdBy\":\"mgrosjean\",\"modifiedBy\":\"mgrosjean\",\"created\":\"2019-09-24T07:49:40.016+00:00\",\"modified\":\"2019-09-24T07:49:40.016+00:00\"}],\"endpoints\":[],\"machineTags\":[{\"key\":7655749,\"namespace\":\"registry.gbif.org\",\"name\":\"visibleOnDatasetPage\",\"value\":\"true\",\"createdBy\":\"trobertson\",\"created\":\"2021-01-26T15:56:23.571+00:00\"}],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"d1627240-04ab-4162-aee9-b16df6bc8308\",\"title\":\"Freshwater
         Network\",\"description\":\"The Freshwater Network is an initiative of the
         Freshwater Information Platform, supported by the Alliance for Freshwater
-        Life and Freshwater BON\",\"language\":\"eng\",\"numConstituents\":57,\"email\":[],\"phone\":[],\"homepage\":[\"http://www.freshwaterplatform.eu\"],\"address\":[],\"createdBy\":\"mgrosjean\",\"modifiedBy\":\"mgrosjean\",\"created\":\"2019-02-28T10:57:05.677+00:00\",\"modified\":\"2019-02-28T10:57:05.677+00:00\",\"contacts\":[],\"endpoints\":[],\"machineTags\":[{\"key\":7655747,\"namespace\":\"registry.gbif.org\",\"name\":\"visibleOnDatasetPage\",\"value\":\"true\",\"createdBy\":\"trobertson\",\"created\":\"2021-01-26T15:55:08.507+00:00\"}],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"2b7c7b4f-4d4f-40d3-94de-c28b6fa054a6\",\"title\":\"Ocean
+        Life and Freshwater BON\",\"language\":\"eng\",\"numConstituents\":58,\"email\":[],\"phone\":[],\"homepage\":[\"http://www.freshwaterplatform.eu\"],\"address\":[],\"createdBy\":\"mgrosjean\",\"modifiedBy\":\"mgrosjean\",\"created\":\"2019-02-28T10:57:05.677+00:00\",\"modified\":\"2019-02-28T10:57:05.677+00:00\",\"contacts\":[],\"endpoints\":[],\"machineTags\":[{\"key\":7655747,\"namespace\":\"registry.gbif.org\",\"name\":\"visibleOnDatasetPage\",\"value\":\"true\",\"createdBy\":\"trobertson\",\"created\":\"2021-01-26T15:55:08.507+00:00\"}],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"2b7c7b4f-4d4f-40d3-94de-c28b6fa054a6\",\"title\":\"Ocean
         Biodiversity Information System (OBIS)\",\"description\":\"The Ocean Biodiversity
         Information System (OBIS) is a global open-access data and information clearing-house
         on marine biodiversity for science, conservation and sustainable development.\",\"language\":\"eng\",\"numConstituents\":2696,\"email\":[],\"phone\":[],\"homepage\":[\"https://obis.org\"],\"logoUrl\":\"https://obis.org/images/logo.png\",\"address\":[],\"createdBy\":\"ADMIN\",\"modifiedBy\":\"MattBlissett\",\"created\":\"2007-04-03T08:31:37.000+00:00\",\"modified\":\"2020-06-17T11:34:47.474+00:00\",\"contacts\":[],\"endpoints\":[],\"machineTags\":[{\"key\":7598741,\"namespace\":\"registry.gbif.org\",\"name\":\"visibleOnDatasetPage\",\"value\":\"true\",\"createdBy\":\"MattBlissett\",\"created\":\"2021-01-20T15:54:18.923+00:00\"}],\"tags\":[],\"identifiers\":[],\"comments\":[]}]}"
@@ -90,16 +90,16 @@ interactions:
       - public, max-age=3601
       Connection:
       - keep-alive
+      Content-Length:
+      - '13673'
       Content-Type:
       - application/json
       Date:
-      - Thu, 29 Feb 2024 15:19:09 GMT
+      - Fri, 01 Mar 2024 08:32:31 GMT
       Expires:
       - '0'
       Pragma:
       - no-cache
-      Transfer-Encoding:
-      - chunked
       Vary:
       - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
       Via:
@@ -109,7 +109,7 @@ interactions:
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '479659567'
+      - '727450795'
       X-XSS-Protection:
       - 1; mode=block
     status:

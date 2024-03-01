@@ -74,7 +74,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 29 Feb 2024 15:21:43 GMT
+      - Fri, 01 Mar 2024 08:32:32 GMT
       Expires:
       - '0'
       Pragma:
@@ -88,7 +88,7 @@ interactions:
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '414879790'
+      - '702417147'
       X-XSS-Protection:
       - 1; mode=block
     status:

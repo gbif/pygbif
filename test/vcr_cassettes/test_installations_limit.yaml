@@ -41,16 +41,16 @@ interactions:
       - public, max-age=3601
       Connection:
       - keep-alive
-      Content-Length:
-      - '5764'
       Content-Type:
       - application/json
       Date:
-      - Thu, 29 Feb 2024 14:12:29 GMT
+      - Fri, 01 Mar 2024 08:32:30 GMT
       Expires:
       - '0'
       Pragma:
       - no-cache
+      Transfer-Encoding:
+      - chunked
       Vary:
       - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
       Via:
@@ -60,7 +60,7 @@ interactions:
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '413500352'
+      - '728564310'
       X-XSS-Protection:
       - 1; mode=block
     status:

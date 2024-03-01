@@ -674,7 +674,7 @@ interactions:
         and anthropogenic variability of the Baltic Sea environment\\nIII. Contemporary
         changes in the coastal ecosystems of shelf seas\\nIV. Genetic and physiological
         mechanisms of the functioning of marine organisms; the basics of marine biotechnology.\",\"language\":\"eng\",\"email\":[\"office@iopan.pl\"],\"phone\":[],\"homepage\":[\"https://www.iopan.pl/\"],\"logoUrl\":\"https://old.iopan.pl/PAN.png\",\"address\":[\"ul.
-        Powstancow Warszawy 55\"],\"city\":\"Sopot\",\"country\":\"PL\",\"postalCode\":\"81-712\",\"latitude\":54.47189,\"longitude\":19.21653,\"numPublishedDatasets\":0,\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-01-12T13:50:38.163+00:00\",\"modified\":\"2024-01-12T13:50:38.163+00:00\",\"endorsed\":\"2024-02-22T12:46:36.833+00:00\",\"contacts\":[{\"key\":5128431,\"type\":\"ADMINISTRATIVE_POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Marcin\",\"lastName\":\"Wichorowski\",\"position\":[],\"email\":[\"wichor@iopan.pl\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-01-12T13:50:38.163+00:00\",\"modified\":\"2024-01-12T13:50:38.163+00:00\"},{\"key\":5128432,\"type\":\"POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Marta\",\"lastName\":\"Ronowicz\",\"position\":[],\"email\":[\"martar@iopan.pl\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-01-12T13:50:38.163+00:00\",\"modified\":\"2024-01-12T13:50:38.163+00:00\"}],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[{\"key\":35532,\"content\":\"\\nIs
+        Powstancow Warszawy 55\"],\"city\":\"Sopot\",\"country\":\"PL\",\"postalCode\":\"81-712\",\"latitude\":54.45097,\"longitude\":18.56337,\"numPublishedDatasets\":0,\"createdBy\":\"gbif.express\",\"modifiedBy\":\"tykapio\",\"created\":\"2024-01-12T13:50:38.163+00:00\",\"modified\":\"2024-02-29T18:10:32.548+00:00\",\"endorsed\":\"2024-02-22T12:46:36.833+00:00\",\"contacts\":[{\"key\":5128431,\"type\":\"ADMINISTRATIVE_POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Marcin\",\"lastName\":\"Wichorowski\",\"position\":[],\"email\":[\"wichor@iopan.pl\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-01-12T13:50:38.163+00:00\",\"modified\":\"2024-01-12T13:50:38.163+00:00\"},{\"key\":5128432,\"type\":\"POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Marta\",\"lastName\":\"Ronowicz\",\"position\":[],\"email\":[\"martar@iopan.pl\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-01-12T13:50:38.163+00:00\",\"modified\":\"2024-01-12T13:50:38.163+00:00\"}],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[{\"key\":35532,\"content\":\"\\nIs
         associated with a GBIF-funded project: no\\n\\n\\nExpects to publish:\\n\\n\\n
         - ResourceMetaData\\n - ChecklistData\\n\\nExpected data content:\\n\\n> Species
         distribution data\\n\\n\\nWill run a server which exposes data: no\\n\\n\\nPlans
@@ -1862,7 +1862,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 29 Feb 2024 14:12:36 GMT
+      - Fri, 01 Mar 2024 08:32:36 GMT
       Expires:
       - '0'
       Pragma:
@@ -1878,7 +1878,7 @@ interactions:
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '328668225'
+      - '727745060'
       X-XSS-Protection:
       - 1; mode=block
     status:

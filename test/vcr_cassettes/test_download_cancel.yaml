@@ -1,59 +1,5 @@
 interactions:
 - request:
-    body: '{"creator": "jwaller", "notification_address": ["jwaller@gbif.org"], "sendNotification":
-      true, "predicate": {"type": "and", "predicates": [{"type": "equals", "key":
-      "TAXON_KEY", "value": "156780401"}]}, "format": "SIMPLE_CSV"}'
-    headers:
-      Accept-Encoding:
-      - gzip, deflate
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '226'
-      accept:
-      - application/json
-      content-type:
-      - application/json
-      user-agent:
-      - python-requests/2.31.0,pygbif/0.6.3
-    method: POST
-    uri: http://api.gbif.org/v1/occurrence/download/request
-  response:
-    body:
-      string: 0027553-240216155721649
-    headers:
-      Age:
-      - '0'
-      Cache-Control:
-      - public, max-age=3601
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '23'
-      Content-Type:
-      - application/json
-      Date:
-      - Thu, 29 Feb 2024 15:36:32 GMT
-      Expires:
-      - '0'
-      Pragma:
-      - no-cache
-      Vary:
-      - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
-      Via:
-      - 1.1 varnish (Varnish/6.0)
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - DENY
-      X-Varnish:
-      - '373201779'
-      X-XSS-Protection:
-      - 1; mode=block
-    status:
-      code: 201
-      message: Created
-- request:
     body: 'false'
     headers:
       Accept:
@@ -69,7 +15,7 @@ interactions:
       user-agent:
       - python-requests/2.31.0,pygbif/0.6.3
     method: DELETE
-    uri: http://api.gbif.org/v1/occurrence/download/request/0027553-240216155721649
+    uri: http://api.gbif.org/v1/occurrence/download/request/0003970-140910143529206
   response:
     body:
       string: ''
@@ -81,7 +27,7 @@ interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 29 Feb 2024 15:36:33 GMT
+      - Fri, 01 Mar 2024 08:32:20 GMT
       Expires:
       - '0'
       Pragma:
@@ -95,7 +41,7 @@ interactions:
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '478841275'
+      - '724895319'
       X-XSS-Protection:
       - 1; mode=block
     status:

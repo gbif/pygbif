@@ -14,26 +14,26 @@ interactions:
     uri: https://api.gbif.org/v1/occurrence/counts/basisOfRecord
   response:
     body:
-      string: '{"HUMAN_OBSERVATION":2300677236,"PRESERVED_SPECIMEN":237823454,"MATERIAL_SAMPLE":55644452,"OBSERVATION":20774268,"MACHINE_OBSERVATION":20542140,"OCCURRENCE":19297806,"FOSSIL_SPECIMEN":10245933,"MATERIAL_CITATION":2664542,"LIVING_SPECIMEN":2000677}'
+      string: '{"HUMAN_OBSERVATION":2300698840,"PRESERVED_SPECIMEN":237830598,"MATERIAL_SAMPLE":55644452,"OBSERVATION":20774268,"MACHINE_OBSERVATION":20542140,"OCCURRENCE":19297806,"FOSSIL_SPECIMEN":10246202,"MATERIAL_CITATION":2664586,"LIVING_SPECIMEN":2000680}'
     headers:
       Accept-Ranges:
       - bytes
       Age:
-      - '0'
+      - '657'
       Cache-Control:
       - public, max-age=600
       Connection:
       - keep-alive
+      Content-Length:
+      - '247'
       Content-Type:
       - application/json
       Date:
-      - Thu, 29 Feb 2024 14:11:56 GMT
+      - Fri, 01 Mar 2024 08:21:17 GMT
       Expires:
       - '0'
       Pragma:
       - no-cache
-      Transfer-Encoding:
-      - chunked
       Vary:
       - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
       Via:
@@ -43,7 +43,7 @@ interactions:
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '412910048'
+      - 704940086 710148283
       X-XSS-Protection:
       - 1; mode=block
     status:

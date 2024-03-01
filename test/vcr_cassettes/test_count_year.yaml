@@ -14,7 +14,7 @@ interactions:
     uri: https://api.gbif.org/v1/occurrence/counts/year?year=1990%2C2000
   response:
     body:
-      string: '{"2000":21400998,"1999":20031169,"1998":16825989,"1997":16440949,"1995":15607561,"1996":15452005,"1994":13661511,"1993":13489718,"1992":13022934,"1991":12230779,"1990":11924776}'
+      string: '{"2000":21401035,"1999":20031184,"1998":16826147,"1997":16441141,"1995":15607921,"1996":15452594,"1994":13661530,"1993":13489771,"1992":13022941,"1991":12230805,"1990":11924683}'
     headers:
       Accept-Ranges:
       - bytes
@@ -29,7 +29,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 29 Feb 2024 14:11:56 GMT
+      - Fri, 01 Mar 2024 08:32:15 GMT
       Expires:
       - '0'
       Pragma:
@@ -43,7 +43,7 @@ interactions:
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '387582424'
+      - '707725907'
       X-XSS-Protection:
       - 1; mode=block
     status:

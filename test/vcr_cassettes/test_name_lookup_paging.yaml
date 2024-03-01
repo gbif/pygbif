@@ -14,7 +14,7 @@ interactions:
     uri: https://api.gbif.org/v1/species/search?q=mammalia&limit=1&hl=false&verbose=false
   response:
     body:
-      string: "{\"offset\":0,\"limit\":1,\"endOfRecords\":false,\"count\":3556,\"results\":[{\"key\":100559475,\"datasetKey\":\"16c3f9cb-4b19-4553-ac8e-ebb90003aa02\",\"scientificName\":\"Mammaliaformes\",\"canonicalName\":\"Mammaliaformes\",\"nameType\":\"SCIENTIFIC\",\"taxonomicStatus\":\"ACCEPTED\",\"origin\":\"SOURCE\",\"numDescendants\":0,\"numOccurrences\":0,\"extinct\":true,\"habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\":[{\"description\":\"Die
+      string: "{\"offset\":0,\"limit\":1,\"endOfRecords\":false,\"count\":3562,\"results\":[{\"key\":100559475,\"datasetKey\":\"16c3f9cb-4b19-4553-ac8e-ebb90003aa02\",\"scientificName\":\"Mammaliaformes\",\"canonicalName\":\"Mammaliaformes\",\"nameType\":\"SCIENTIFIC\",\"taxonomicStatus\":\"ACCEPTED\",\"origin\":\"SOURCE\",\"numDescendants\":0,\"numOccurrences\":0,\"extinct\":true,\"habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\":[{\"description\":\"Die
         Docodonta sind eine Gruppe ausgestorbener S\xE4ugetiervorfahren (Mammaliaformes),
         die im Jura und in der Kreidezeit lebte. Bekanntester Vertreter dieser Gruppe
         ist wohl die 2004 entdeckte und 2006 erstmals beschriebene, an das Leben im
@@ -118,16 +118,16 @@ interactions:
       - public, max-age=600
       Connection:
       - keep-alive
-      Content-Length:
-      - '7614'
       Content-Type:
       - application/json
       Date:
-      - Thu, 29 Feb 2024 14:12:39 GMT
+      - Fri, 01 Mar 2024 08:32:38 GMT
       Expires:
       - '0'
       Pragma:
       - no-cache
+      Transfer-Encoding:
+      - chunked
       Vary:
       - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
       Via:
@@ -137,7 +137,7 @@ interactions:
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '385483944'
+      - '700810632'
       X-XSS-Protection:
       - 1; mode=block
     status:
