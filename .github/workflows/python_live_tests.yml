@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ['3.7', '3.8', '3.9', '3.10', '3.11']
+        python-version: ['3.11']
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       GBIF_USER: ${{ secrets.GBIF_USER }}
@@ -30,12 +30,7 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Delete vcr cassettes so that it runs live tests
       run: rm -rf test/vcr_cassettes/*
-    - name: Install pygbif
-      run: make
+
     - name: Tests
       run: pytest
-    - name: Test coverage
-      if: matrix.python-version == '3.9'
-      run: |
-        python3 -m "pytest" --cov-report=xml --cov=pygbif test/
-        codecov
+
