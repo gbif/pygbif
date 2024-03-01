@@ -30,13 +30,19 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     
     - name: Delete vcr cassettes so that it runs live tests
-      run: |
-        for file in test/vcr_cassettes/*; do
-          if [[ $file != "test/vcr_cassettes/test_download_cancel.yaml"]]; then
-            rm "$file"
-          fi
-        done
+      run: rm -rf test/vcr_cassettes/*
 
     - name: Tests
       run: pytest
+
+      - name: Check if vcr cassettes were created today
+      run: |
+        for file in test/vcr_cassettes/*; do
+          file_date=$(stat -c %y "$file" | cut -d ' ' -f 1)
+          current_date=$(date +%Y-%m-%d)
+          if [[ "$file_date" != "$current_date" ]]; then
+            echo "File $file was not created today"
+            exit 1
+          fi
+        done  
 
