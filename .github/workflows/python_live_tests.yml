@@ -28,8 +28,14 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    
     - name: Delete vcr cassettes so that it runs live tests
-      run: rm -rf test/vcr_cassettes/*
+      run: |
+        for file in test/vcr_cassettes/*; do
+          if [[ $file != "test/vcr_cassettes/test_download_cancel.yaml"]]; then
+            rm "$file"
+          fi
+        done
 
     - name: Tests
       run: pytest
