@@ -35,7 +35,7 @@ jobs:
     - name: Tests
       run: pytest
 
-      - name: Check if vcr cassettes were created today
+    - name: Check if vcr cassettes were created today
       run: |
         for file in test/vcr_cassettes/*; do
           file_date=$(stat -c %y "$file" | cut -d ' ' -f 1)
