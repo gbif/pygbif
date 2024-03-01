@@ -1,4 +1,4 @@
-name: Python
+name: Python live API tests
 
 on: [push, pull_request]
 
@@ -28,7 +28,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Delete vcr cassettes
+    - name: Delete vcr cassettes so that it runs live tests
       run: rm -rf test/vcr_cassettes/*
     - name: Install pygbif
       run: make
