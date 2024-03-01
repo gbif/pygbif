@@ -32,8 +32,10 @@ jobs:
     - name: Delete vcr cassettes so that it runs live tests
       run: |
         rm -rf test/vcr_cassettes/*
-        echo ls test/vcr_cassettes/*
-
+        if [ "$(ls -A test/vcr_cassettes)" ]; then
+          echo "Directory is not empty"
+          exit 1
+        fi
 
     - name: Tests
       run: pytest
