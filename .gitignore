@@ -23,6 +23,9 @@ docs/_build/
 # test DwcA
 *.zip
 
+# vscode project info
+.vscode/
+
 # pycharm project info
 .idea/
 
