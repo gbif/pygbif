@@ -2,7 +2,6 @@
 from pygbif import occurrences as occ
 import vcr
 
-
 @vcr.use_cassette(
     "test/vcr_cassettes/test_download_cancel.yaml", filter_headers=["authorization"]
 )

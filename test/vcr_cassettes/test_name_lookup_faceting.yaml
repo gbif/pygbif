@@ -2,26 +2,51 @@ interactions:
 - request:
     body: null
     headers:
-      Accept: ['*/*']
-      Accept-Encoding: ['gzip, deflate']
-      Connection: [keep-alive]
-      user-agent: ['python-requests/2.22.0,pygbif/0.4.0']
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - python-requests/2.31.0,pygbif/0.6.3
     method: GET
     uri: https://api.gbif.org/v1/species/search?limit=0&facet=status&hl=false&verbose=false
   response:
-    body: {string: '{"offset":0,"limit":0,"endOfRecords":false,"count":26712033,"results":[],"facets":[{"field":"STATUS","counts":[{"name":"ACCEPTED","count":17601016},{"name":"SYNONYM","count":7186982},{"name":"DOUBTFUL","count":1191370},{"name":"HOMOTYPIC_SYNONYM","count":367785},{"name":"HETEROTYPIC_SYNONYM","count":269553},{"name":"MISAPPLIED","count":24644},{"name":"PROPARTE_SYNONYM","count":21160}]}]}'}
+    body:
+      string: '{"offset":0,"limit":0,"endOfRecords":false,"count":39694860,"results":[],"facets":[{"field":"STATUS","counts":[{"name":"ACCEPTED","count":25186488},{"name":"SYNONYM","count":12712647},{"name":"DOUBTFUL","count":909453},{"name":"HOMOTYPIC_SYNONYM","count":458489},{"name":"HETEROTYPIC_SYNONYM","count":360708},{"name":"MISAPPLIED","count":40369},{"name":"PROPARTE_SYNONYM","count":19695}]}]}'
     headers:
-      Accept-Ranges: [bytes]
-      Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT, OPTIONS']
-      Access-Control-Allow-Origin: ['*']
-      Age: ['0']
-      Cache-Control: ['public, max-age=600']
-      Connection: [keep-alive]
-      Content-Length: ['390']
-      Content-Type: [application/json]
-      Date: ['Wed, 20 Nov 2019 21:03:47 GMT']
-      Server: [Jetty(9.3.z-SNAPSHOT)]
-      Via: [1.1 varnish (Varnish/5.2)]
-      X-Varnish: ['23856041']
-    status: {code: 200, message: OK}
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Cache-Control:
+      - public, max-age=600
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '390'
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 01 Mar 2024 08:32:39 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Vary:
+      - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      Via:
+      - 1.1 varnish (Varnish/6.0)
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Varnish:
+      - '670830250'
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
 version: 1

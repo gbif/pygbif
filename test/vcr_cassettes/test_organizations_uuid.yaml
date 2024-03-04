@@ -2,37 +2,63 @@ interactions:
 - request:
     body: null
     headers:
-      Accept: ['*/*']
-      Accept-Encoding: ['gzip, deflate']
-      Connection: [keep-alive]
-      user-agent: ['python-requests/2.22.0,pygbif/0.3.9']
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - python-requests/2.31.0,pygbif/0.6.3
     method: GET
     uri: https://api.gbif.org/v1/organization/e2e717bf-551a-4917-bdc9-4fa0f342c530?limit=100
   response:
-    body: {string: '{"key":"e2e717bf-551a-4917-bdc9-4fa0f342c530","endorsingNodeKey":"8618c64a-93e0-4300-b546-7249e5148ed2","endorsementApproved":true,"title":"Cornell
+    body:
+      string: '{"key":"e2e717bf-551a-4917-bdc9-4fa0f342c530","endorsingNodeKey":"8618c64a-93e0-4300-b546-7249e5148ed2","endorsementApproved":true,"endorsementStatus":"ENDORSED","title":"Cornell
         Lab of Ornithology","description":"The Cornell Lab of Ornithology is a world
         leader in the study, appreciation, and conservation of birds.","language":"eng","email":[],"phone":[],"homepage":["http://www.birds.cornell.edu"],"address":["159
-        Sapsucker Woods Rd."],"city":"Ithaca","country":"US","postalCode":"NY/14850","latitude":42.47999,"longitude":-76.45109,"numPublishedDatasets":3,"createdBy":"ADMIN","modifiedBy":"ADMIN","created":"2013-08-01T08:38:21.000+0000","modified":"2013-08-01T08:38:21.000+0000","contacts":[{"key":19957,"type":"ADMINISTRATIVE_POINT_OF_CONTACT","primary":true,"userId":[],"firstName":"Tim","lastName":"Levatich","position":["Database
+        Sapsucker Woods Rd."],"city":"Ithaca","province":"New York","country":"US","postalCode":"14850","latitude":42.47999,"longitude":-76.45109,"numPublishedDatasets":3,"createdBy":"ADMIN","modifiedBy":"sformel","created":"2013-08-01T08:38:21.000+00:00","modified":"2023-03-03T01:57:24.373+00:00","contacts":[{"key":19957,"type":"ADMINISTRATIVE_POINT_OF_CONTACT","primary":true,"userId":[],"firstName":"Tim","lastName":"Levatich","position":["Database
         Manager"],"email":["tpl10@cornell.edu"],"phone":["+01 607 254 2113"],"homepage":[],"address":["Cornell
-        Lab of Ornithology"],"createdBy":"registry-migration.gbif.org","modifiedBy":"registry-migration.gbif.org","created":"2013-10-24T09:04:58.000+0000","modified":"2013-10-24T09:04:58.000+0000"},{"key":19958,"type":"TECHNICAL_POINT_OF_CONTACT","primary":true,"userId":[],"firstName":"David","lastName":"Bloom","position":["VertNet
-        Programmer"],"email":["dbloom@vertnet.org"],"phone":["+01 785 813-1496"],"homepage":[],"address":[],"createdBy":"registry-migration.gbif.org","modifiedBy":"registry-migration.gbif.org","created":"2013-10-24T09:04:58.000+0000","modified":"2013-10-24T09:04:58.000+0000"},{"key":19959,"type":"TECHNICAL_POINT_OF_CONTACT","primary":false,"userId":[],"firstName":"Jeff","lastName":"Gerbracht","position":["Applications
+        Lab of Ornithology"],"createdBy":"registry-migration.gbif.org","modifiedBy":"registry-migration.gbif.org","created":"2013-10-24T09:04:58.000+00:00","modified":"2013-10-24T09:04:58.000+00:00"},{"key":19958,"type":"TECHNICAL_POINT_OF_CONTACT","primary":true,"userId":[],"firstName":"David","lastName":"Bloom","position":["VertNet
+        Programmer"],"email":["dbloom@vertnet.org"],"phone":["+01 785 813-1496"],"homepage":[],"address":[],"createdBy":"registry-migration.gbif.org","modifiedBy":"registry-migration.gbif.org","created":"2013-10-24T09:04:58.000+00:00","modified":"2013-10-24T09:04:58.000+00:00"},{"key":19959,"type":"TECHNICAL_POINT_OF_CONTACT","primary":false,"userId":[],"firstName":"Jeff","lastName":"Gerbracht","position":["Applications
         Leader for Information Science"],"email":["jag73@cornell.edu"],"phone":["+01
-        607 254 2117"],"homepage":[],"address":["Cornell Lab of Ornithology"],"createdBy":"registry-migration.gbif.org","modifiedBy":"jlegind","created":"2013-10-24T09:04:58.000+0000","modified":"2015-11-12T14:01:57.541+0000"},{"key":19960,"type":"TECHNICAL_POINT_OF_CONTACT","primary":false,"userId":[],"firstName":"John","lastName":"Wieczorek","position":["Information
+        607 254 2117"],"homepage":[],"address":["Cornell Lab of Ornithology"],"createdBy":"registry-migration.gbif.org","modifiedBy":"jlegind","created":"2013-10-24T09:04:58.000+00:00","modified":"2015-11-12T14:01:57.541+00:00"},{"key":19960,"type":"TECHNICAL_POINT_OF_CONTACT","primary":false,"userId":[],"firstName":"John","lastName":"Wieczorek","position":["Information
         Architect"],"email":["tuco@berkeley.edu"],"phone":["+01 510 642 5409"],"homepage":[],"address":["Museum
-        of Vertebrate Zoology, University of California, Berkeley"],"createdBy":"registry-migration.gbif.org","modifiedBy":"registry-migration.gbif.org","created":"2013-10-24T09:04:58.000+0000","modified":"2013-10-24T09:04:58.000+0000"},{"key":19961,"type":"TECHNICAL_POINT_OF_CONTACT","primary":false,"userId":[],"firstName":"David","lastName":"Bloom","position":["VertNet
-        Coordinator"],"email":["Dbloom@vertnet.org"],"phone":["+01 510 643 1620"],"homepage":[],"address":[],"createdBy":"registry-migration.gbif.org","modifiedBy":"registry-migration.gbif.org","created":"2013-10-24T09:04:58.000+0000","modified":"2013-10-24T09:04:58.000+0000"}],"endpoints":[],"machineTags":[],"tags":[],"identifiers":[{"key":13528,"type":"GBIF_PORTAL","identifier":"602","createdBy":"registry-migration.gbif.org","created":"2013-08-08T09:34:37.000+0000"}],"comments":[]}'}
+        of Vertebrate Zoology, University of California, Berkeley"],"createdBy":"registry-migration.gbif.org","modifiedBy":"registry-migration.gbif.org","created":"2013-10-24T09:04:58.000+00:00","modified":"2013-10-24T09:04:58.000+00:00"},{"key":19961,"type":"TECHNICAL_POINT_OF_CONTACT","primary":false,"userId":[],"firstName":"David","lastName":"Bloom","position":["VertNet
+        Coordinator"],"email":["Dbloom@vertnet.org"],"phone":["+01 510 643 1620"],"homepage":[],"address":[],"createdBy":"registry-migration.gbif.org","modifiedBy":"registry-migration.gbif.org","created":"2013-10-24T09:04:58.000+00:00","modified":"2013-10-24T09:04:58.000+00:00"}],"endpoints":[],"machineTags":[],"tags":[],"identifiers":[{"key":13528,"type":"GBIF_PORTAL","identifier":"602","createdBy":"registry-migration.gbif.org","created":"2013-08-08T09:34:37.000+00:00"}],"comments":[{"key":33423,"content":"2023-03-02
+        [SF] added address information","createdBy":"sformel","modifiedBy":"sformel","created":"2023-03-03T01:57:24.682+00:00","modified":"2023-03-03T01:57:24.682+00:00"}]}'
     headers:
-      Accept-Ranges: [bytes]
-      Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT, OPTIONS']
-      Access-Control-Allow-Origin: ['*']
-      Age: ['0']
-      Cache-Control: ['public, max-age=3601']
-      Connection: [keep-alive]
-      Content-Length: ['3043']
-      Content-Type: [application/json]
-      Date: ['Wed, 20 Nov 2019 17:59:15 GMT']
-      Server: [Jetty(9.3.z-SNAPSHOT)]
-      Via: [1.1 varnish (Varnish/5.2)]
-      X-Varnish: ['1001064386']
-    status: {code: 200, message: OK}
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Cache-Control:
+      - public, max-age=3601
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '3305'
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 01 Mar 2024 08:32:36 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Vary:
+      - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      Via:
+      - 1.1 varnish (Varnish/6.0)
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Varnish:
+      - '693569246'
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
 version: 1

@@ -2,26 +2,51 @@ interactions:
 - request:
     body: null
     headers:
-      Accept: ['*/*']
-      Accept-Encoding: ['gzip, deflate']
-      Connection: [keep-alive]
-      user-agent: ['python-requests/2.22.0,pygbif/0.3.9']
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - python-requests/2.31.0,pygbif/0.6.3
     method: GET
     uri: https://api.gbif.org/v1/dataset/3f8a1297-3259-4700-91fc-acc4170b27ce/metrics
   response:
-    body: {string: '{"key":330801,"datasetKey":"3f8a1297-3259-4700-91fc-acc4170b27ce","usagesCount":31469,"synonymsCount":21034,"distinctNamesCount":31439,"nubMatchingCount":30026,"colMatchingCount":24563,"nubCoveragePct":95,"colCoveragePct":78,"countByConstituent":{},"countByKingdom":{"PLANTAE":9089},"countByRank":{"SPECIES":6176,"GENUS":1271,"VARIETY":902,"SUBSPECIES":723,"SECTION":356,"TRIBE":334,"FAMILY":176,"SUBFAMILY":156,"SUBGENUS":106,"SUBTRIBE":61,"SUBSECTION":60,"ORDER":55,"SERIES":40,"SUPERORDER":12,"SUBCLASS":6,"CLASS":1},"countNamesByLanguage":{"ENGLISH":20940,"FRENCH":11373},"countExtRecordsByExtension":{"VERNACULAR_NAME":32313,"DISTRIBUTION":29607,"DESCRIPTION":10395,"IDENTIFIER":0,"MULTIMEDIA":0,"REFERENCE":0,"SPECIES_PROFILE":0,"TYPES_AND_SPECIMEN":0},"countByOrigin":{"SOURCE":31460,"PROPARTE":9},"countByIssue":{"SCIENTIFIC_NAME_ASSEMBLED":1841,"BACKBONE_MATCH_NONE":1443,"PARTIALLY_PARSABLE":45},"otherCount":{},"created":"2019-09-07T22:21:22.047+0000","downloaded":"2019-09-07T22:21:19.617+0000"}'}
+    body:
+      string: '{"key":1968315,"datasetKey":"3f8a1297-3259-4700-91fc-acc4170b27ce","usagesCount":33188,"synonymsCount":22438,"distinctNamesCount":33158,"nubMatchingCount":31629,"colMatchingCount":27282,"nubCoveragePct":95,"colCoveragePct":82,"countByConstituent":{},"countByKingdom":{"PLANTAE":9373},"countByRank":{"SPECIES":6310,"GENUS":1280,"VARIETY":917,"SUBSPECIES":723,"SECTION":461,"TRIBE":336,"FAMILY":182,"SUBFAMILY":162,"SUBGENUS":134,"SUBTRIBE":69,"SUBSECTION":61,"ORDER":56,"SERIES":39,"SUPERORDER":13,"SUBCLASS":6,"CLASS":1},"countNamesByLanguage":{"ENGLISH":20978,"FRENCH":11601},"countExtRecordsByExtension":{"VERNACULAR_NAME":32579,"DISTRIBUTION":30080,"DESCRIPTION":10732,"IDENTIFIER":0,"MULTIMEDIA":0,"REFERENCE":0,"SPECIES_PROFILE":0,"TYPES_AND_SPECIMEN":0},"countByOrigin":{"SOURCE":33180,"PROPARTE":8},"countByIssue":{"SCIENTIFIC_NAME_ASSEMBLED":1945,"BACKBONE_MATCH_NONE":1559,"PARTIALLY_PARSABLE":44,"UNPARSABLE":3},"otherCount":{},"downloaded":"2024-01-08T18:29:00.683+00:00"}'
     headers:
-      Accept-Ranges: [bytes]
-      Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT, OPTIONS']
-      Access-Control-Allow-Origin: ['*']
-      Age: ['0']
-      Cache-Control: ['public, max-age=3601']
-      Connection: [keep-alive]
-      Content-Length: ['1007']
-      Content-Type: [application/json]
-      Date: ['Wed, 20 Nov 2019 17:58:30 GMT']
-      Server: [Jetty(9.3.z-SNAPSHOT)]
-      Via: [1.1 varnish (Varnish/5.2)]
-      X-Varnish: ['1015743286']
-    status: {code: 200, message: OK}
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Cache-Control:
+      - public, max-age=3601
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '983'
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 01 Mar 2024 08:32:25 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Vary:
+      - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      Via:
+      - 1.1 varnish (Varnish/6.0)
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Varnish:
+      - '730431507'
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
 version: 1

@@ -10,7 +10,7 @@ def test_name_lookup():
     assert dict == res.__class__
     assert 6 == len(res)
     assert 100 == len(res["results"])
-    assert "Mammalia" == res["results"][0]["canonicalName"]
+    assert "Mammaliaformes" == res["results"][0]["canonicalName"]
 
 
 @vcr.use_cassette("test/vcr_cassettes/test_name_lookup_paging.yaml")

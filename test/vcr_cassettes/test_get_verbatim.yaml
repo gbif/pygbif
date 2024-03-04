@@ -2,51 +2,58 @@ interactions:
 - request:
     body: null
     headers:
-      Accept: ['*/*']
-      Accept-Encoding: ['gzip, deflate']
-      Connection: [keep-alive]
-      user-agent: ['python-requests/2.22.0,pygbif/0.3.9']
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - python-requests/2.31.0,pygbif/0.6.3
     method: GET
-    uri: https://api.gbif.org/v1/occurrence/1248387548/verbatim
+    uri: https://api.gbif.org/v1/occurrence/1986620884/verbatim
   response:
-    body: {string: "{\"key\":1248387548,\"datasetKey\":\"492d63a8-4978-4bc7-acd8-7d0e3ac0e744\"\
-        ,\"publishingOrgKey\":\"d3978a37-635a-4ae3-bb85-7b4d41bc0b88\",\"installationKey\"\
-        :\"7bdf9f6d-317a-45ec-8bb7-7ff61345d6a6\",\"publishingCountry\":\"NO\",\"\
-        protocol\":\"DWC_ARCHIVE\",\"lastCrawled\":\"2019-11-13T17:35:37.650+0000\"\
-        ,\"lastParsed\":\"2019-11-15T08:10:33.307+0000\",\"crawlId\":275,\"extensions\"\
-        :{},\"http://rs.tdwg.org/dwc/terms/maximumElevationInMeters\":\"0\",\"http://rs.tdwg.org/dwc/terms/country\"\
-        :\"Norge\",\"http://rs.tdwg.org/dwc/terms/collectionCode\":\"fugl\",\"http://rs.tdwg.org/dwc/terms/order\"\
-        :\"Accipitriformes\",\"http://rs.tdwg.org/dwc/terms/minimumElevationInMeters\"\
-        :\"0\",\"http://rs.tdwg.org/dwc/terms/municipality\":\"H\xF8yanger\",\"http://rs.tdwg.org/dwc/terms/year\"\
-        :\"2016\",\"http://rs.tdwg.org/dwc/terms/locality\":\"H\xF8gebakkane\",\"\
-        http://rs.tdwg.org/dwc/terms/basisOfRecord\":\"HumanObservation\",\"http://rs.tdwg.org/dwc/terms/family\"\
-        :\"Accipitridae\",\"http://rs.tdwg.org/dwc/terms/decimalLatitude\":\"61.22544055\"\
-        ,\"http://purl.org/dc/terms/modified\":\"2018-01-30 00:00:00.0\",\"http://rs.tdwg.org/dwc/terms/month\"\
-        :\"1\",\"http://rs.tdwg.org/dwc/terms/stateProvince\":\"Sogn og Fjordane\"\
-        ,\"http://rs.tdwg.org/dwc/terms/recordedBy\":\"Magn Arne Jensen\",\"http://rs.tdwg.org/dwc/terms/scientificName\"\
-        :\"Accipiter nisus\",\"http://rs.tdwg.org/dwc/terms/phylum\":\"Chordata\"\
-        ,\"http://rs.tdwg.org/dwc/terms/day\":\"25\",\"http://rs.gbif.org/terms/1.0/gbifID\"\
-        :\"1248387548\",\"http://rs.tdwg.org/dwc/terms/genus\":\"Accipiter\",\"http://rs.tdwg.org/dwc/terms/kingdom\"\
-        :\"Animalia\",\"http://purl.org/dc/terms/identifier\":\"miljolare:fugl:1001099\"\
-        ,\"http://rs.tdwg.org/dwc/terms/class\":\"Aves\",\"http://rs.tdwg.org/dwc/terms/county\"\
-        :\"Sogn og Fjordane\",\"http://rs.tdwg.org/dwc/terms/individualCount\":\"\
-        1\",\"http://rs.tdwg.org/dwc/terms/specificEpithet\":\"nisus\",\"http://rs.tdwg.org/dwc/terms/occurrenceID\"\
-        :\"miljolare:fugl:1001099\",\"http://rs.tdwg.org/dwc/terms/scientificNameAuthorship\"\
-        :\"(Linnaeus, 1758)\",\"http://rs.tdwg.org/dwc/terms/catalogNumber\":\"1001099\"\
-        ,\"http://rs.tdwg.org/dwc/terms/decimalLongitude\":\"6.08158592\",\"http://rs.tdwg.org/dwc/terms/coordinatePrecision\"\
-        :\"0\",\"http://rs.tdwg.org/dwc/terms/institutionCode\":\"miljolare\"}"}
+    body:
+      string: '{"key":1986620884,"datasetKey":"50c9509d-22c7-4a22-a47d-8c48425ef4a7","publishingOrgKey":"28eb1a3f-1c15-4a95-931a-4af90ecb574d","installationKey":"997448a8-f762-11e1-a439-00145eb45e9a","publishingCountry":"US","protocol":"DWC_ARCHIVE","lastCrawled":"2024-02-23T05:16:29.968+00:00","lastParsed":"2024-02-23T14:29:43.197+00:00","crawlId":437,"extensions":{"http://rs.gbif.org/terms/1.0/Multimedia":[{"http://rs.tdwg.org/dwc/terms/catalogNumber":"30065447","http://purl.org/dc/terms/format":"image/jpeg","http://purl.org/dc/terms/identifier":"https://inaturalist-open-data.s3.amazonaws.com/photos/30065447/original.jpg","http://purl.org/dc/terms/rightsHolder":"John
+        Waller","http://purl.org/dc/terms/creator":"John Waller","http://purl.org/dc/terms/created":"2019-01-09T16:06:54Z","http://purl.org/dc/terms/publisher":"iNaturalist","http://purl.org/dc/terms/type":"StillImage","http://purl.org/dc/terms/references":"https://www.inaturalist.org/photos/30065447","http://purl.org/dc/terms/license":"http://creativecommons.org/licenses/by-nc/4.0/"}]},"publishedByGbifRegion":"NORTH_AMERICA","http://rs.tdwg.org/dwc/terms/verbatimEventDate":"Wed
+        Jan 09 2019 20:06:54 GMT+0200 (GMT+2)","http://rs.tdwg.org/dwc/terms/collectionCode":"Observations","http://rs.tdwg.org/dwc/terms/taxonID":"43997","http://rs.tdwg.org/dwc/terms/order":"Rodentia","http://rs.tdwg.org/dwc/terms/verbatimLocality":"Khotymyr,
+        Khotymyr, Ivano-Frankivsk Oblast, UA","http://rs.tdwg.org/dwc/terms/taxonRank":"species","http://rs.tdwg.org/dwc/terms/lifeStage":"adult","http://rs.tdwg.org/dwc/terms/basisOfRecord":"HumanObservation","http://purl.org/dc/terms/rightsHolder":"John
+        Waller","http://rs.tdwg.org/dwc/terms/identificationID":"42848020","http://rs.tdwg.org/dwc/terms/family":"Echimyidae","http://purl.org/dc/terms/modified":"2023-02-10T01:24:27Z","http://rs.tdwg.org/dwc/terms/decimalLatitude":"48.7551693647","http://rs.tdwg.org/dwc/terms/eventTime":"18:06:54+02:00","http://rs.tdwg.org/dwc/terms/stateProvince":"Ivano-Frankivs''k","http://rs.tdwg.org/dwc/terms/scientificName":"Myocastor
+        coypus","http://rs.tdwg.org/dwc/terms/recordedBy":"John Waller","http://rs.tdwg.org/dwc/terms/phylum":"Chordata","http://purl.org/dc/terms/license":"http://creativecommons.org/publicdomain/zero/1.0/","http://rs.gbif.org/terms/1.0/gbifID":"1986620884","http://rs.tdwg.org/dwc/terms/datasetName":"iNaturalist
+        research-grade observations","http://rs.tdwg.org/dwc/terms/genus":"Myocastor","http://rs.tdwg.org/dwc/terms/kingdom":"Animalia","http://rs.tdwg.org/dwc/terms/coordinateUncertaintyInMeters":"19","http://purl.org/dc/terms/identifier":"19535428","https://www.inaturalist.org/schema/terms/captive":"wild","http://rs.tdwg.org/dwc/terms/class":"Mammalia","http://rs.tdwg.org/dwc/terms/occurrenceID":"https://www.inaturalist.org/observations/19535428","http://rs.tdwg.org/dwc/terms/identifiedBy":"John
+        Waller","http://rs.tdwg.org/dwc/terms/eventDate":"2019-01-09T18:06:54+02:00","http://rs.tdwg.org/dwc/terms/catalogNumber":"19535428","http://purl.org/dc/terms/references":"https://www.inaturalist.org/observations/19535428","http://rs.tdwg.org/dwc/terms/decimalLongitude":"25.1021547229","http://rs.tdwg.org/dwc/terms/countryCode":"UA","http://rs.tdwg.org/dwc/terms/institutionCode":"iNaturalist","http://xmlns.com/foaf/0.1/nick":"pigeonspotters1888","http://rs.tdwg.org/dwc/terms/geodeticDatum":"EPSG:4326","http://rs.tdwg.org/dwc/terms/dateIdentified":"2019-01-09T18:12:11Z"}'
     headers:
-      Accept-Ranges: [bytes]
-      Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT, OPTIONS']
-      Access-Control-Allow-Origin: ['*']
-      Age: ['0']
-      Cache-Control: ['public, max-age=3601']
-      Connection: [keep-alive]
-      Content-Length: ['2134']
-      Content-Type: [application/json]
-      Date: ['Wed, 20 Nov 2019 17:58:03 GMT']
-      Server: [Jetty(9.3.z-SNAPSHOT)]
-      Via: [1.1 varnish (Varnish/5.2)]
-      X-Varnish: ['1005224983']
-    status: {code: 200, message: OK}
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Cache-Control:
+      - public, max-age=3601
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '3438'
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 01 Mar 2024 08:32:21 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Vary:
+      - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      Via:
+      - 1.1 varnish (Varnish/6.0)
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Varnish:
+      - '709396787'
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
 version: 1

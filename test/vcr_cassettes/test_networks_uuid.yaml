@@ -2,31 +2,54 @@ interactions:
 - request:
     body: null
     headers:
-      Accept: ['*/*']
-      Accept-Encoding: ['gzip, deflate']
-      Connection: [keep-alive]
-      user-agent: ['python-requests/2.22.0,pygbif/0.3.9']
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - python-requests/2.31.0,pygbif/0.6.3
     method: GET
     uri: https://api.gbif.org/v1/network/2b7c7b4f-4d4f-40d3-94de-c28b6fa054a6?limit=100
   response:
-    body: {string: '{"key":"2b7c7b4f-4d4f-40d3-94de-c28b6fa054a6","title":"Ocean Biogeographic
-        Information System (OBIS)","description":"The Ocean Biogeographic Information
-        System (OBIS) is the information component of the Census of Marine Life (CoML),
-        a growing network of more than 1000 researchers in 73 nations engaged in a
-        10-year initiative to assess and explain the diversity, distribution, and
-        abundance of life in the oceans - past, present, and future.","language":"eng","numConstituents":273,"email":[],"phone":[],"homepage":["http://www.iobis.org/"],"logoUrl":"http://www.coml.org/comlfiles/images/obis_logo_large.gif","address":[],"createdBy":"ADMIN","modifiedBy":"ADMIN","created":"2007-04-03T08:31:37.000+0000","modified":"2012-12-13T11:00:12.000+0000","contacts":[],"endpoints":[],"machineTags":[],"tags":[],"identifiers":[],"comments":[]}'}
+    body:
+      string: '{"key":"2b7c7b4f-4d4f-40d3-94de-c28b6fa054a6","title":"Ocean Biodiversity
+        Information System (OBIS)","description":"The Ocean Biodiversity Information
+        System (OBIS) is a global open-access data and information clearing-house
+        on marine biodiversity for science, conservation and sustainable development.","language":"eng","numConstituents":2696,"email":[],"phone":[],"homepage":["https://obis.org"],"logoUrl":"https://obis.org/images/logo.png","address":[],"createdBy":"ADMIN","modifiedBy":"MattBlissett","created":"2007-04-03T08:31:37.000+00:00","modified":"2020-06-17T11:34:47.474+00:00","contacts":[],"endpoints":[],"machineTags":[{"key":7598741,"namespace":"registry.gbif.org","name":"visibleOnDatasetPage","value":"true","createdBy":"MattBlissett","created":"2021-01-20T15:54:18.923+00:00"}],"tags":[],"identifiers":[],"comments":[]}'
     headers:
-      Accept-Ranges: [bytes]
-      Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT, OPTIONS']
-      Access-Control-Allow-Origin: ['*']
-      Age: ['0']
-      Cache-Control: ['public, max-age=3601']
-      Connection: [keep-alive]
-      Content-Length: ['835']
-      Content-Type: [application/json]
-      Date: ['Wed, 20 Nov 2019 17:58:59 GMT']
-      Server: [Jetty(9.3.z-SNAPSHOT)]
-      Via: [1.1 varnish (Varnish/5.2)]
-      X-Varnish: ['967874342']
-    status: {code: 200, message: OK}
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Cache-Control:
+      - public, max-age=3601
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '837'
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 01 Mar 2024 08:32:32 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Vary:
+      - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      Via:
+      - 1.1 varnish (Varnish/6.0)
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Varnish:
+      - '717161070'
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
 version: 1

@@ -2,167 +2,100 @@ interactions:
 - request:
     body: null
     headers:
-      Accept: ['*/*']
-      Accept-Encoding: ['gzip, deflate']
-      Connection: [keep-alive]
-      user-agent: ['python-requests/2.22.0,pygbif/0.3.9']
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - python-requests/2.31.0,pygbif/0.6.3
     method: GET
     uri: https://api.gbif.org/v1/node?limit=5
   response:
-    body: {string: "{\"offset\":0,\"limit\":5,\"endOfRecords\":false,\"count\":145,\"\
-        results\":[{\"key\":\"61865b24-70a8-4e04-a53c-a6c1ebe2fd48\",\"type\":\"COUNTRY\"\
-        ,\"participationStatus\":\"VOTING\",\"gbifRegion\":\"OCEANIA\",\"continent\"\
-        :\"OCEANIA\",\"title\":\"GBIF Tonga\",\"participantTitle\":\"Tonga, Kingdom\
-        \ of\",\"email\":[],\"phone\":[],\"homepage\":[],\"address\":[null],\"country\"\
-        :\"TO\",\"createdBy\":\"directory-update-robot\",\"modifiedBy\":\"directory-update-robot\"\
-        ,\"created\":\"2019-09-18T05:34:54.258+0000\",\"modified\":\"2019-09-18T05:34:54.258+0000\"\
-        ,\"contacts\":[{\"key\":4096,\"type\":\"HEAD_OF_DELEGATION\",\"primary\":false,\"\
-        userId\":[],\"firstName\":\"Paula\",\"lastName\":\"Ma'u\",\"position\":[],\"\
-        email\":[\"paulm@mic.gov.to\"],\"phone\":[\"(676) 28173\"],\"homepage\":[],\"\
-        organization\":\"Tonga, Kingdom of\",\"address\":[\"Nuku'alofa\"],\"country\"\
-        :\"TO\",\"modified\":\"2019-09-18T06:40:20.576+0000\"},{\"key\":4097,\"type\"\
-        :\"ADDITIONAL_DELEGATE\",\"primary\":false,\"userId\":[],\"firstName\":\"\
-        'Atelaite Lupe\",\"lastName\":\"Matoto\",\"position\":[],\"email\":[\"lupe.matoto@gmail.com\"\
-        ],\"phone\":[\"(676) 25050\"],\"homepage\":[],\"organization\":\"Tonga, Kingdom\
-        \ of\",\"address\":[\"Nuku'alofa\"],\"country\":\"TO\",\"modified\":\"2019-09-18T17:19:22.513+0000\"\
-        },{\"key\":4098,\"type\":\"ADDITIONAL_DELEGATE\",\"primary\":false,\"userId\"\
-        :[],\"firstName\":\"Viliami\",\"lastName\":\"Hakaumotu\",\"position\":[],\"\
-        email\":[\"viliamihakau@gmail.com\"],\"phone\":[\"(676) 25050\"],\"homepage\"\
-        :[],\"organization\":\"Tonga, Kingdom of\",\"address\":[\"Nuku'alofa\"],\"\
-        country\":\"TO\",\"modified\":\"2019-09-18T06:55:30.841+0000\"},{\"key\":4099,\"\
-        type\":\"NODE_MANAGER\",\"primary\":false,\"userId\":[],\"firstName\":\"Siosiua\
-        \ Moa\",\"lastName\":\"Latu\",\"position\":[],\"email\":[\"Siosiua.latu@gmail.com\"\
-        ],\"phone\":[\"(676) 25050\"],\"homepage\":[],\"organization\":\"GBIF Tonga\"\
-        ,\"address\":[\"Nuku'alofa\"],\"country\":\"TO\",\"modified\":\"2019-09-18T06:52:10.344+0000\"\
-        }],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[{\"key\"\
-        :180680,\"type\":\"GBIF_PARTICIPANT\",\"identifier\":\"419\",\"createdBy\"\
-        :\"directory-update-robot\",\"created\":\"2019-09-18T05:34:54.264+0000\"}],\"\
-        comments\":[]},{\"key\":\"07b1b3f9-e3fa-4348-8f0c-4077974ce177\",\"type\"\
-        :\"OTHER\",\"participationStatus\":\"ASSOCIATE\",\"gbifRegion\":\"EUROPE\"\
-        ,\"continent\":\"EUROPE\",\"title\":\"DiSSCo\",\"participantTitle\":\"Distributed\
-        \ System of Scientific Collections\",\"abbreviation\":\"DiSSCo\",\"email\"\
-        :[],\"phone\":[],\"homepage\":[\"https://www.dissco.eu/\"],\"address\":[null],\"\
-        country\":\"NL\",\"createdBy\":\"directory-update-robot\",\"modifiedBy\":\"\
-        directory-update-robot\",\"created\":\"2019-09-04T05:34:54.998+0000\",\"modified\"\
-        :\"2019-09-04T05:34:54.998+0000\",\"contacts\":[{\"key\":3671,\"type\":\"\
-        HEAD_OF_DELEGATION\",\"primary\":false,\"userId\":[],\"firstName\":\"Edwin\"\
-        ,\"lastName\":\"van Huis\",\"position\":[],\"email\":[\"edwin.vanhuis@naturalis.nl\"\
-        ],\"phone\":[\"+31 (0)71 751 92 58\"],\"homepage\":[],\"organization\":\"\
-        Distributed System of Scientific Collections\",\"address\":[\"Naturalis Biodiversity\
-        \ Center\\nDarwinweg 2\\n2333 CR, Leiden\"],\"country\":\"NL\",\"modified\"\
-        :\"2019-09-03T11:53:43.546+0000\"},{\"key\":3898,\"type\":\"ADDITIONAL_DELEGATE\"\
-        ,\"primary\":false,\"userId\":[],\"firstName\":\"Dimitris\",\"lastName\":\"\
-        Koureas\",\"position\":[],\"email\":[\"dimitris.koureas@naturalis.nl\"],\"\
-        phone\":[\"+31 (0) 71 751 9251\"],\"homepage\":[],\"organization\":\"Distributed\
-        \ System of Scientific Collections\",\"address\":[\"Naturalis Biodiversity\
-        \ Center \\nDarwinweg 2\\n2333 CR, Leiden\"],\"country\":\"NL\",\"modified\"\
-        :\"2019-09-03T11:55:41.970+0000\"},{\"key\":39,\"type\":\"NODE_MANAGER\",\"\
-        primary\":false,\"userId\":[],\"firstName\":\"Wouter\",\"lastName\":\"Addink\"\
-        ,\"position\":[],\"email\":[\"wouter.addink@naturalis.nl\"],\"phone\":[\"\
-        +31-71 - 7519 600\"],\"homepage\":[],\"organization\":\"DiSSCo\",\"address\"\
-        :[\"Naturalis Biodiversity Center\\nDarwinweg 2\\n2333 CR, Leiden\"],\"country\"\
-        :\"NL\",\"modified\":\"2019-09-04T06:42:14.232+0000\"}],\"endpoints\":[],\"\
-        machineTags\":[],\"tags\":[],\"identifiers\":[{\"key\":180366,\"type\":\"\
-        GBIF_PARTICIPANT\",\"identifier\":\"418\",\"createdBy\":\"directory-update-robot\"\
-        ,\"created\":\"2019-09-04T05:34:55.009+0000\"}],\"comments\":[]},{\"key\"\
-        :\"ca03735a-eee6-4e54-a6b5-8be588adc3c0\",\"type\":\"COUNTRY\",\"participationStatus\"\
-        :\"ASSOCIATE\",\"gbifRegion\":\"EUROPE\",\"continent\":\"EUROPE\",\"title\"\
-        :\"GBIF Republic of Belarus\",\"participantTitle\":\"Belarus, Republic of\"\
-        ,\"email\":[],\"phone\":[],\"homepage\":[],\"address\":[null],\"country\"\
-        :\"BY\",\"createdBy\":\"directory-update-robot\",\"modifiedBy\":\"directory-update-robot\"\
-        ,\"created\":\"2019-07-02T05:34:44.180+0000\",\"modified\":\"2019-07-02T05:34:44.180+0000\"\
-        ,\"contacts\":[{\"key\":4081,\"type\":\"HEAD_OF_DELEGATION\",\"primary\":false,\"\
-        userId\":[],\"firstName\":\"Alexander\",\"lastName\":\"Tchaikovsky\",\"position\"\
-        :[],\"email\":[\"chaikovski@biobel.by\"],\"phone\":[\"(+37517)284-15-93\"\
-        ],\"homepage\":[],\"organization\":\"Belarus, Republic of\",\"address\":[\"\
-        Akademicheskaya str., 27\"],\"country\":\"BY\",\"modified\":\"2019-07-23T09:36:37.412+0000\"\
-        },{\"key\":4082,\"type\":\"ADDITIONAL_DELEGATE\",\"primary\":false,\"userId\"\
-        :[],\"firstName\":\"Dmitry\",\"lastName\":\"Lukashanets\",\"position\":[],\"\
-        email\":[\"lukashanetzdm@tut.by\"],\"phone\":[\"(+37517)284-15-93\"],\"homepage\"\
-        :[],\"organization\":\"Belarus, Republic of\",\"address\":[\"Akademicheskaya\
-        \ str., 27\"],\"country\":\"BY\",\"modified\":\"2019-07-23T09:39:19.841+0000\"\
-        },{\"key\":4083,\"type\":\"ADDITIONAL_DELEGATE\",\"primary\":false,\"userId\"\
-        :[],\"firstName\":\"Tatsiana\",\"lastName\":\"Lipinskaya\",\"position\":[],\"\
-        email\":[\"tatsiana.lipinskaya@gmail.com\"],\"phone\":[\"(+37517)284-15-93\"\
-        ],\"homepage\":[],\"organization\":\"Belarus, Republic of\",\"address\":[\"\
-        Akademicheskaya str., 27\"],\"country\":\"BY\",\"modified\":\"2019-07-23T10:27:33.119+0000\"\
-        },{\"key\":4084,\"type\":\"NODE_MANAGER\",\"primary\":false,\"userId\":[],\"\
-        firstName\":\"Oleg\",\"lastName\":\"Borodin\",\"position\":[],\"email\":[\"\
-        borodinoi_zoo@mail.ru\"],\"phone\":[\"(+37517)284-15-93\"],\"homepage\":[],\"\
-        organization\":\"GBIF Republic of Belarus\",\"address\":[\"Akademicheskaya\
-        \ str., 27\"],\"country\":\"BY\",\"modified\":\"2019-07-23T09:43:03.420+0000\"\
-        }],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[{\"key\"\
-        :160002,\"type\":\"GBIF_PARTICIPANT\",\"identifier\":\"417\",\"createdBy\"\
-        :\"directory-update-robot\",\"created\":\"2019-07-02T05:34:44.191+0000\"}],\"\
-        comments\":[]},{\"key\":\"a4d35bb9-3d44-46ff-a96f-e60714280bd5\",\"type\"\
-        :\"COUNTRY\",\"participationStatus\":\"ASSOCIATE\",\"gbifRegion\":\"AFRICA\"\
-        ,\"continent\":\"AFRICA\",\"title\":\"GBIF Angola\",\"participantTitle\":\"\
-        Angola, Republic of\",\"email\":[],\"phone\":[],\"homepage\":[],\"address\"\
-        :[null],\"country\":\"AO\",\"createdBy\":\"directory-update-robot\",\"modifiedBy\"\
-        :\"directory-update-robot\",\"created\":\"2019-03-28T04:34:28.996+0000\",\"\
-        modified\":\"2019-04-18T04:34:31.670+0000\",\"contacts\":[{\"key\":3620,\"\
-        type\":\"HEAD_OF_DELEGATION\",\"primary\":false,\"userId\":[],\"firstName\"\
-        :\"Domingos\",\"lastName\":\"Neto\",\"position\":[],\"email\":[\"domingos.neto@ciencia.ao\"\
-        ],\"phone\":[\"+244 222 331 820\"],\"homepage\":[],\"organization\":\"Angola,\
-        \ Republic of\",\"address\":[\"Luanda\"],\"country\":\"AO\",\"modified\":\"\
-        2019-08-07T06:40:38.103+0000\"},{\"key\":4085,\"type\":\"ADDITIONAL_DELEGATE\"\
-        ,\"primary\":false,\"userId\":[],\"firstName\":\"Esperan\xE7a\",\"lastName\"\
-        :\"da Costa\",\"position\":[],\"email\":[\"esperancacosta@yahoo.com\"],\"\
-        phone\":[],\"homepage\":[],\"organization\":\"Angola, Republic of\",\"address\"\
-        :[\"Centro de Botanica. University Agostinho  Neto\\nAvenida HO CHI MINH\\\
-        nEdificio CNIC, 1 andar\\nPo Box 815\\nLuanda\"],\"country\":\"AO\",\"modified\"\
-        :\"2019-08-12T08:26:29.383+0000\"},{\"key\":4085,\"type\":\"NODE_MANAGER\"\
-        ,\"primary\":false,\"userId\":[],\"firstName\":\"Esperan\xE7a\",\"lastName\"\
-        :\"da Costa\",\"position\":[],\"email\":[\"esperancacosta@yahoo.com\"],\"\
-        phone\":[],\"homepage\":[],\"organization\":\"GBIF Angola\",\"address\":[\"\
-        Centro de Botanica. University Agostinho  Neto\\nAvenida HO CHI MINH\\nEdificio\
-        \ CNIC, 1 andar\\nPo Box 815\\nLuanda\"],\"country\":\"AO\",\"modified\":\"\
-        2019-08-12T08:26:29.383+0000\"}],\"endpoints\":[],\"machineTags\":[],\"tags\"\
-        :[],\"identifiers\":[{\"key\":155094,\"type\":\"GBIF_PARTICIPANT\",\"identifier\"\
-        :\"416\",\"createdBy\":\"directory-update-robot\",\"created\":\"2019-03-28T04:34:29.007+0000\"\
-        }],\"comments\":[]},{\"key\":\"aabd2545-5e25-48c3-8839-7b4ddafec3c4\",\"type\"\
-        :\"OTHER\",\"participationStatus\":\"ASSOCIATE\",\"gbifRegion\":\"EUROPE\"\
-        ,\"continent\":\"EUROPE\",\"title\":\"GBIF LifeWatch ERIC\",\"participantTitle\"\
-        :\"LifeWatch ERIC\",\"email\":[],\"phone\":[],\"homepage\":[],\"address\"\
-        :[null],\"country\":\"ES\",\"createdBy\":\"directory-update-robot\",\"modifiedBy\"\
-        :\"directory-update-robot\",\"created\":\"2018-10-05T03:34:28.215+0000\",\"\
-        modified\":\"2018-10-05T03:34:28.215+0000\",\"contacts\":[{\"key\":141,\"\
-        type\":\"ADDITIONAL_DELEGATE\",\"primary\":false,\"userId\":[],\"firstName\"\
-        :\"Francisco\",\"lastName\":\"Pando\",\"position\":[],\"email\":[\"pando@rjb.csic.es\"\
-        ],\"phone\":[\"+34 91 420 30 17 x 172\"],\"homepage\":[],\"organization\"\
-        :\"LifeWatch ERIC\",\"address\":[\"Plaza de Murillo, 2                   \
-        \     \\n28014 Madrid\"],\"country\":\"ES\",\"modified\":\"2018-10-15T10:29:01.852+0000\"\
-        },{\"key\":3404,\"type\":\"HEAD_OF_DELEGATION\",\"primary\":false,\"userId\"\
-        :[],\"firstName\":\"Juan Miguel\",\"lastName\":\"Gonzalez Aranda\",\"position\"\
-        :[],\"email\":[\"cto@lifewatch.eu\"],\"phone\":[\"+34 91 603 83 30\"],\"homepage\"\
-        :[],\"organization\":\"LifeWatch ERIC\",\"address\":[\"Plaza de Espa\xF1a\\\
-        nSector II-III \\n41071 Seville\"],\"country\":\"ES\",\"modified\":\"2018-10-04T08:41:49.822+0000\"\
-        },{\"key\":4009,\"type\":\"ADDITIONAL_DELEGATE\",\"primary\":false,\"userId\"\
-        :[],\"firstName\":\"Jes\xFAs Miguel\",\"lastName\":\"Santamar\xEDa Ulecia\"\
-        ,\"position\":[],\"email\":[\"ceo@lifewatch.eu\"],\"phone\":[],\"homepage\"\
-        :[],\"organization\":\"LifeWatch ERIC\",\"address\":[\"Plaza de Espa\xF1a\\\
-        nSector II-III \\n41071 Seville\"],\"country\":\"ES\",\"modified\":\"2018-10-04T08:44:05.384+0000\"\
-        },{\"key\":4089,\"type\":\"TEMPORARY_HEAD_OF_DELEGATION\",\"primary\":false,\"\
-        userId\":[],\"firstName\":\"Christos\",\"lastName\":\"Arvanitidis\",\"position\"\
-        :[],\"email\":[\"ceo@lifewatch.eu\"],\"phone\":[\"+34 696 619460\"],\"homepage\"\
-        :[],\"organization\":\"LifeWatch ERIC\",\"address\":[\"Sector II-III \\nPlaza\
-        \ de Espa\xF1a\\n41071 Seville\"],\"country\":\"ES\",\"modified\":\"2019-09-11T14:57:59.287+0000\"\
-        }],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[{\"key\"\
-        :126149,\"type\":\"GBIF_PARTICIPANT\",\"identifier\":\"383\",\"createdBy\"\
-        :\"directory-update-robot\",\"created\":\"2018-10-05T03:34:28.400+0000\"}],\"\
-        comments\":[]}]}"}
+    body:
+      string: "{\"offset\":0,\"limit\":5,\"endOfRecords\":false,\"count\":160,\"results\":[{\"key\":\"c2690fde-5930-4c9b-b477-2e480d8659a3\",\"type\":\"COUNTRY\",\"participationStatus\":\"VOTING\",\"gbifRegion\":\"ASIA\",\"continent\":\"ASIA\",\"title\":\"GBIF
+        Timor-Leste\",\"participantTitle\":\"Timor-Leste, Democratic Republic of\",\"email\":[],\"phone\":[],\"homepage\":[],\"address\":[null],\"country\":\"TL\",\"createdBy\":\"directory-update-robot\",\"modifiedBy\":\"directory-update-robot\",\"created\":\"2024-02-06T05:34:51.837+00:00\",\"modified\":\"2024-02-06T05:34:51.837+00:00\",\"contacts\":[{\"key\":4460,\"type\":\"HEAD_OF_DELEGATION\",\"primary\":false,\"userId\":[],\"firstName\":\"Antonio\",\"lastName\":\"Gusm\xE3o\",\"position\":[],\"email\":[\"atoygusmao18@gmail.com\"],\"phone\":[\"+67075293310\"],\"homepage\":[],\"organization\":\"Timor-Leste,
+        Democratic Republic of\",\"address\":[\"Manleuana, Dili\"],\"country\":\"TL\",\"modified\":\"2024-02-13T07:52:06.432+00:00\"},{\"key\":4461,\"primary\":false,\"userId\":[],\"firstName\":\"Olderita\",\"lastName\":\"Marques\",\"position\":[],\"email\":[\"olderitamarques10@gmail.com\"],\"phone\":[\"+67077290022\"],\"homepage\":[],\"organization\":\"Timor-Leste,
+        Democratic Republic of\",\"address\":[\"Fatuhada, Dili\"],\"country\":\"TL\",\"modified\":\"2024-02-16T08:44:42.095+00:00\"},{\"key\":4462,\"type\":\"NODE_MANAGER\",\"primary\":false,\"userId\":[],\"firstName\":\"Natalia\",\"lastName\":\"Gonzaga\",\"position\":[],\"email\":[\"Nataliagonzaga801@gmail.com\"],\"phone\":[\"+67077136412\"],\"homepage\":[],\"organization\":\"GBIF
+        Timor-Leste\",\"address\":[\"Bairo Pite\"],\"country\":\"TL\",\"modified\":\"2024-02-13T07:58:42.263+00:00\"}],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[{\"key\":360499,\"type\":\"GBIF_PARTICIPANT\",\"identifier\":\"434\",\"createdBy\":\"directory-update-robot\",\"created\":\"2024-02-06T05:34:51.855+00:00\"}],\"comments\":[]},{\"key\":\"47f8cdaf-8418-420b-b7b8-2aeb6c357f43\",\"type\":\"COUNTRY\",\"participationStatus\":\"ASSOCIATE\",\"gbifRegion\":\"EUROPE\",\"continent\":\"EUROPE\",\"title\":\"GBIF
+        Georgia\",\"participantTitle\":\"Georgia\",\"email\":[],\"phone\":[],\"homepage\":[],\"address\":[null],\"country\":\"GE\",\"createdBy\":\"directory-update-robot\",\"modifiedBy\":\"directory-update-robot\",\"created\":\"2023-03-08T05:34:28.850+00:00\",\"modified\":\"2023-03-08T05:34:28.850+00:00\",\"contacts\":[{\"key\":4400,\"type\":\"HEAD_OF_DELEGATION\",\"primary\":false,\"userId\":[],\"firstName\":\"Carl\",\"lastName\":\"Amirgulashvili\",\"position\":[],\"email\":[\"Karlo.Amirgulashvili@mepa.gov.ge\"],\"phone\":[\"+995
+        591 819 613\"],\"homepage\":[],\"organization\":\"Georgia\",\"address\":[\"6
+        Marshal Gelovani\\nTbilisi\"],\"country\":\"GE\",\"modified\":\"2023-05-26T07:44:11.507+00:00\"},{\"key\":4401,\"primary\":false,\"userId\":[],\"firstName\":\"Lika\",\"lastName\":\"Giorgadze\",\"position\":[],\"email\":[\"Lika.Giorgadze@mepa.gov.ge\"],\"phone\":[\"+995
+        593 969 808\"],\"homepage\":[],\"organization\":\"Georgia\",\"address\":[\"6
+        Marshal Gelovani\\nTbilisi\"],\"country\":\"GE\",\"modified\":\"2023-05-26T07:45:51.723+00:00\"},{\"key\":4402,\"type\":\"ADDITIONAL_DELEGATE\",\"primary\":false,\"userId\":[],\"firstName\":\"Salome\",\"lastName\":\"Nozadze\",\"position\":[],\"email\":[\"Salome.nozadze@mepa.gov.ge\"],\"phone\":[\"+995
+        599 139 969\"],\"homepage\":[],\"organization\":\"Georgia\",\"address\":[\"6
+        Marshal Gelovani\\nTbilisi\"],\"country\":\"GE\",\"modified\":\"2023-05-26T07:47:26.210+00:00\"},{\"key\":4403,\"type\":\"NODE_MANAGER\",\"primary\":false,\"userId\":[],\"firstName\":\"Mikheili\",\"lastName\":\"Joglidze\",\"position\":[],\"email\":[\"Mikheili.joglidze@mepa.gov.ge\"],\"phone\":[\"+995
+        571 521 493\"],\"homepage\":[],\"organization\":\"GBIF Georgia\",\"address\":[\"6
+        Marshal Gelovani\\nTbilisi\"],\"country\":\"GE\",\"modified\":\"2023-05-26T07:48:56.701+00:00\"},{\"key\":4437,\"type\":\"NODE_STAFF\",\"primary\":false,\"userId\":[],\"firstName\":\"Daviti\",\"lastName\":\"Kobakhidze\",\"position\":[],\"email\":[\"davit.kobakhidze@apa.gov.ge\"],\"phone\":[],\"homepage\":[],\"organization\":\"GBIF
+        Georgia\",\"address\":[\"G. Gulua Str. # 6\\n0114 Tbilisi\"],\"country\":\"GE\",\"modified\":\"2023-09-14T14:28:29.421+00:00\"},{\"key\":4441,\"type\":\"NODE_STAFF\",\"primary\":false,\"userId\":[],\"firstName\":\"Guram\",\"lastName\":\"Chkhikvishvili\",\"position\":[],\"email\":[\"gugachkhikvishvili@gmail.com\"],\"phone\":[],\"homepage\":[],\"organization\":\"GBIF
+        Georgia\",\"address\":[\"34 Marshal Gelovani Ave.\"],\"country\":\"GE\",\"modified\":\"2023-09-26T08:11:49.294+00:00\"}],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[{\"key\":336857,\"type\":\"GBIF_PARTICIPANT\",\"identifier\":\"433\",\"createdBy\":\"directory-update-robot\",\"created\":\"2023-03-08T05:34:28.867+00:00\"}],\"comments\":[]},{\"key\":\"4bae30c8-ee96-44ca-9bbe-b5b4e28d188c\",\"type\":\"COUNTRY\",\"participationStatus\":\"VOTING\",\"gbifRegion\":\"EUROPE\",\"continent\":\"EUROPE\",\"title\":\"GBIF
+        Croatia\",\"participantTitle\":\"Croatia, Republic of\",\"email\":[],\"phone\":[],\"homepage\":[],\"address\":[null],\"country\":\"HR\",\"createdBy\":\"directory-update-robot\",\"modifiedBy\":\"directory-update-robot\",\"created\":\"2022-11-03T05:34:31.239+00:00\",\"modified\":\"2022-11-03T05:34:31.239+00:00\",\"contacts\":[{\"key\":4383,\"type\":\"HEAD_OF_DELEGATION\",\"primary\":false,\"userId\":[],\"firstName\":\"Petra\",\"lastName\":\"Rodi\u0107\",\"position\":[],\"email\":[\"petra.rodic@mingor.hr\"],\"phone\":[\"+385
+        1 5502 930\"],\"homepage\":[],\"organization\":\"Croatia, Republic of\",\"address\":[\"Radni\u010Dka
+        cesta 80\\nZagreb\"],\"country\":\"HR\",\"modified\":\"2023-03-13T14:46:19.530+00:00\"},{\"key\":4384,\"primary\":false,\"userId\":[],\"firstName\":\"Gabrijela\",\"lastName\":\"\u0160estani\",\"position\":[],\"email\":[\"gabrijela.sestani@mingor.hr\"],\"phone\":[\"+385
+        1 5502 969\"],\"homepage\":[],\"organization\":\"Croatia, Republic of\",\"address\":[\"Radni\u010Dka
+        cesta 80\\nZagreb\"],\"country\":\"HR\",\"modified\":\"2023-03-13T14:47:55.710+00:00\"},{\"key\":4385,\"type\":\"ADDITIONAL_DELEGATE\",\"primary\":false,\"userId\":[],\"firstName\":\"Luka\",\"lastName\":\"Katu\u0161i\u0107\",\"position\":[],\"email\":[\"luka.katusic@mingor.hr\"],\"phone\":[\"+385
+        1 5502-950\"],\"homepage\":[],\"organization\":\"Croatia, Republic of\",\"address\":[\"Radni\u010Dka
+        cesta 80\\nZagreb\"],\"country\":\"HR\",\"modified\":\"2023-03-17T08:44:09.666+00:00\"},{\"key\":4385,\"type\":\"NODE_MANAGER\",\"primary\":false,\"userId\":[],\"firstName\":\"Luka\",\"lastName\":\"Katu\u0161i\u0107\",\"position\":[],\"email\":[\"luka.katusic@mingor.hr\"],\"phone\":[\"+385
+        1 5502-950\"],\"homepage\":[],\"organization\":\"GBIF Croatia\",\"address\":[\"Radni\u010Dka
+        cesta 80\\nZagreb\"],\"country\":\"HR\",\"modified\":\"2023-03-17T08:44:09.666+00:00\"}],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[{\"key\":323568,\"type\":\"GBIF_PARTICIPANT\",\"identifier\":\"432\",\"createdBy\":\"directory-update-robot\",\"created\":\"2022-11-03T05:34:31.273+00:00\"}],\"comments\":[]},{\"key\":\"ec7ce1b6-5b82-4276-bbb0-c1ce87ca8695\",\"type\":\"COUNTRY\",\"participationStatus\":\"ASSOCIATE\",\"gbifRegion\":\"LATIN_AMERICA\",\"continent\":\"SOUTH_AMERICA\",\"title\":\"GBIF
+        Suriname\",\"participantTitle\":\"Suriname, Republic of\",\"email\":[],\"phone\":[],\"homepage\":[],\"address\":[null],\"country\":\"SR\",\"createdBy\":\"directory-update-robot\",\"modifiedBy\":\"directory-update-robot\",\"created\":\"2022-06-15T05:34:49.252+00:00\",\"modified\":\"2022-06-15T05:34:49.252+00:00\",\"contacts\":[{\"key\":4371,\"type\":\"ADDITIONAL_DELEGATE\",\"primary\":false,\"userId\":[],\"firstName\":\"Donovan\",\"lastName\":\"Bogor\",\"position\":[],\"email\":[\"dbogor@nimos.org\"],\"phone\":[\"+59
+        74 90044\"],\"homepage\":[],\"organization\":\"Suriname, Republic of\",\"address\":[\"mr.
+        Jaggernath Lachmonstraat 100\"],\"country\":\"SR\",\"modified\":\"2022-12-05T15:00:28.204+00:00\"},{\"key\":4372,\"type\":\"HEAD_OF_DELEGATION\",\"primary\":false,\"userId\":[],\"firstName\":\"Rathna\",\"lastName\":\"Kewal\",\"position\":[],\"email\":[\"rathna.kewal@gmail.com\"],\"phone\":[\"+59
+        75 22022\"],\"homepage\":[],\"organization\":\"Suriname, Republic of\",\"address\":[\"Prins
+        Hendrikstraat # 22\"],\"country\":\"SR\",\"modified\":\"2022-12-05T14:56:45.401+00:00\"},{\"key\":4373,\"primary\":false,\"userId\":[],\"firstName\":\"Jiechel\",\"lastName\":\"Kasandiredjo\",\"position\":[],\"email\":[\"jiechel.kasandiredjo@gov.sr\"],\"phone\":[\"+59
+        75 22022\"],\"homepage\":[],\"organization\":\"Suriname, Republic of\",\"address\":[\"Prins
+        Hendrikstraat # 22\"],\"country\":\"SR\",\"modified\":\"2022-12-05T14:58:52.438+00:00\"},{\"key\":4371,\"type\":\"NODE_MANAGER\",\"primary\":false,\"userId\":[],\"firstName\":\"Donovan\",\"lastName\":\"Bogor\",\"position\":[],\"email\":[\"dbogor@nimos.org\"],\"phone\":[\"+59
+        74 90044\"],\"homepage\":[],\"organization\":\"GBIF Suriname\",\"address\":[\"mr.
+        Jaggernath Lachmonstraat 100\"],\"country\":\"SR\",\"modified\":\"2022-12-05T15:00:28.204+00:00\"}],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[{\"key\":303785,\"type\":\"GBIF_PARTICIPANT\",\"identifier\":\"431\",\"createdBy\":\"directory-update-robot\",\"created\":\"2022-06-15T05:34:49.269+00:00\"}],\"comments\":[]},{\"key\":\"b6f5a2c1-c54b-48d9-9766-7c1a17eb633a\",\"type\":\"COUNTRY\",\"participationStatus\":\"VOTING\",\"gbifRegion\":\"AFRICA\",\"continent\":\"AFRICA\",\"title\":\"GBIF
+        Sierra Leone\",\"participantTitle\":\"Sierra Leone\",\"email\":[],\"phone\":[],\"homepage\":[],\"address\":[null],\"country\":\"SL\",\"createdBy\":\"directory-update-robot\",\"modifiedBy\":\"directory-update-robot\",\"created\":\"2022-03-30T05:34:22.321+00:00\",\"modified\":\"2022-03-30T05:34:22.321+00:00\",\"contacts\":[{\"key\":4326,\"type\":\"HEAD_OF_DELEGATION\",\"primary\":false,\"userId\":[],\"firstName\":\"Arthur\",\"lastName\":\"Chinsman-Williams\",\"position\":[],\"email\":[\"awilliams@ctf.gov.sl\"],\"phone\":[\"+232
+        79 792308\"],\"homepage\":[],\"organization\":\"Sierra Leone\",\"address\":[\"6
+        FA John Avenue\\nCongo Town Freetown\"],\"country\":\"SL\",\"modified\":\"2022-08-04T10:00:33.694+00:00\"},{\"key\":4327,\"primary\":false,\"userId\":[],\"firstName\":\"Samuel
+        Ibrahim\",\"lastName\":\"Kobba\",\"position\":[],\"email\":[\"skobba@ctf.gov.sl\"],\"phone\":[\"+232
+        78 676166\"],\"homepage\":[],\"organization\":\"Sierra Leone\",\"address\":[\"6
+        FA John Avenue\\nCongo Town Freetown\"],\"country\":\"SL\",\"modified\":\"2022-03-31T09:53:32.523+00:00\"},{\"key\":4328,\"type\":\"ADDITIONAL_DELEGATE\",\"primary\":false,\"userId\":[],\"firstName\":\"Moses\",\"lastName\":\"Nsanyi
+        Sainge\",\"position\":[],\"email\":[\"tropeg.cam@gmail.com\"],\"phone\":[\"+23274336355\"],\"homepage\":[],\"organization\":\"Sierra
+        Leone\",\"address\":[\"C/O Reptile and Amphibian Program (RAPSL)\\n7 McCauley
+        Street\\nMurray Town Freetown\"],\"country\":\"SL\",\"modified\":\"2022-03-31T07:30:09.664+00:00\"},{\"key\":4342,\"type\":\"ADDITIONAL_DELEGATE\",\"primary\":false,\"userId\":[],\"firstName\":\"Philip
+        Patrick\",\"lastName\":\"Turay\",\"position\":[],\"email\":[\"pturay.conservationtrustfund@gmail.com\"],\"phone\":[],\"homepage\":[],\"organization\":\"Sierra
+        Leone\",\"address\":[null],\"country\":\"SL\",\"modified\":\"2022-08-09T09:37:25.759+00:00\"},{\"key\":4343,\"type\":\"ADDITIONAL_DELEGATE\",\"primary\":false,\"userId\":[],\"firstName\":\"Yatta
+        Hellen\",\"lastName\":\"Kamara\",\"position\":[],\"email\":[\"yattahkamara@gmail.com\"],\"phone\":[],\"homepage\":[],\"organization\":\"Sierra
+        Leone\",\"address\":[null],\"country\":\"SL\",\"modified\":\"2022-08-09T09:39:37.292+00:00\"},{\"key\":4328,\"type\":\"NODE_MANAGER\",\"primary\":false,\"userId\":[],\"firstName\":\"Moses\",\"lastName\":\"Nsanyi
+        Sainge\",\"position\":[],\"email\":[\"tropeg.cam@gmail.com\"],\"phone\":[\"+23274336355\"],\"homepage\":[],\"organization\":\"GBIF
+        Sierra Leone\",\"address\":[\"C/O Reptile and Amphibian Program (RAPSL)\\n7
+        McCauley Street\\nMurray Town Freetown\"],\"country\":\"SL\",\"modified\":\"2022-03-31T07:30:09.664+00:00\"}],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[{\"key\":298968,\"type\":\"GBIF_PARTICIPANT\",\"identifier\":\"430\",\"createdBy\":\"directory-update-robot\",\"created\":\"2022-03-30T05:34:22.335+00:00\"}],\"comments\":[]}]}"
     headers:
-      Accept-Ranges: [bytes]
-      Access-Control-Allow-Methods: ['HEAD, GET, POST, DELETE, PUT, OPTIONS']
-      Access-Control-Allow-Origin: ['*']
-      Age: ['0']
-      Cache-Control: ['public, max-age=3601']
-      Connection: [keep-alive]
-      Content-Type: [application/json]
-      Date: ['Wed, 20 Nov 2019 17:59:06 GMT']
-      Server: [Jetty(9.3.z-SNAPSHOT)]
-      Transfer-Encoding: [chunked]
-      Via: [1.1 varnish (Varnish/5.2)]
-      X-Varnish: ['957650907']
-    status: {code: 200, message: OK}
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Cache-Control:
+      - public, max-age=3601
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '10967'
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 01 Mar 2024 08:32:35 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Vary:
+      - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      Via:
+      - 1.1 varnish (Varnish/6.0)
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Varnish:
+      - '699401944'
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
 version: 1
