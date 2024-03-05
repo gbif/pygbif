@@ -12,7 +12,7 @@ Source on GitHub at `gbif/pygbif <https://github.com/gbif/pygbif>`_
 Getting help
 ============
 
-Having trouble? Or want to know how to get started?
+Having trouble or want to know how to get started?
 
 * Try the :doc:`FAQ <../docs/faq>` -- it's got answers to some common questions.
 * Looking for specific information? Try the :ref:`genindex`
