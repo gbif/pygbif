@@ -9,7 +9,7 @@ def test_networks():
     res = registry.networks()
     assert dict == res.__class__
     assert 2 == len(res)
-    assert 11 == len(res["data"])
+    assert 12 == len(res["data"])
     assert ["data", "meta"] == sorted(res.keys())
 
 
