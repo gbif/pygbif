@@ -83,7 +83,7 @@ def caching(
         requests_cache.install_cache(
             cache_name=CACHE_NAME, backend=backend, expire_after=expire_after
         )
-        requests_cache.delete(expired=True)()
+        requests_cache.delete(expired=True)
 
     cache_settings = {
         "cache": cache,
