@@ -22,3 +22,5 @@ maps API
 .. py:module:: pygbif
 
 .. automethod:: maps.map
+   :noindex:
+
