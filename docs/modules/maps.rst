@@ -20,7 +20,7 @@ maps API
 ========
 
 .. py:module:: pygbif
+   :noindex:
 
 .. automethod:: maps.map
-   :noindex:
 
