@@ -1,5 +1,10 @@
 Changelog
 =========
+0.6.4 (2024-03-12)
+------------------
+- fixed a bug in building the documentation with readthedocs :issue:`138`, :issue:`129`
+- tests now run against live GBIF APIs :issue:`101`, :issue:`128`  
+- updated caching.py since the ``remove_expired_responses`` method is deprecated. :issue:`126`
 
 0.6.3 (2023-05-25)
 ------------------
