@@ -24,6 +24,7 @@ species API
 ===========
 
 .. py:module:: pygbif
+   :noindex:
 
 .. automethod:: species.name_backbone
 .. automethod:: species.name_suggest

@@ -13,3 +13,4 @@ vcrpy==4.2.1
 pytest
 pytest-cov
 codecov
+sphinx_rtd_theme

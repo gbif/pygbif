@@ -27,6 +27,7 @@ registry API
 ============
 
 .. py:module:: pygbif
+   :noindex:
 
 .. automethod:: registry.datasets
 .. automethod:: registry.dataset_metrics
