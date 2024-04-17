@@ -195,3 +195,13 @@ class TestDownload(unittest.TestCase):
             payload["predicate"]["predicates"][0],
             {"type": "within", "geometry": "POLYGON((-82.7 36.9, -85.0 35.6, -81.0 33.5, -79.4 36.3, -79.4 36.3, -82.7 36.9))"},
         )
+    def test_verbatim_extensions(self): 
+        dl_key, payload = download(
+            ["verbatimExtensions = ['http://rs.gbif.org/terms/1.0/DNADerivedData','http://rs.tdwg.org/dwc/terms/MeasurementOrFact']"],
+            user="dummy", email="dummy", pwd="dummy", format="DWCA"
+        )
+    
+        self.assertListEqual(
+            payload["verbatimExtensions"],
+            ['http://rs.gbif.org/terms/1.0/DNADerivedData','http://rs.tdwg.org/dwc/terms/MeasurementOrFact'],
+        )

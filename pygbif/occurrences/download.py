@@ -23,9 +23,15 @@ from ..gbifutils import (
 # how to parse arguments/predicates
 def _parse_args(x):
     x = x.replace("'", '"')
-    tmp = re.split("\s", x)
+    tmp = re.split(r"\s", x)
     key = key_lkup.get(tmp[0])
     # check special predicates
+    if re.search(r"verbatimExtensions", x):
+        if len(tmp) != 3:
+            raise ValueError("Please use form 'verbatimExtensions = [...]'")
+        if "[" not in tmp[2] or "]" not in tmp[2]:
+            raise ValueError("Please use bracekts for your verbatimExtensions [...]'")
+        return {"verbatimExtensions" : tmp[2]}
     if re.search(r"Null|NULL|null", x):
         pred_type = "isNull"
         if re.search(r"not|\!", x):
@@ -45,6 +51,7 @@ def _parse_args(x):
         else:
             return {"type": "in", "key": key, "values": json.loads(value_list.group(0))}
     pred_type = operator_lkup.get(tmp[1])
+ 
     return {
         "type": pred_type,
         "key": key,
@@ -74,7 +81,7 @@ def _check_environ(variable, value):
 
 # download function
 def download(
-    queries, format="SIMPLE_CSV", user=None, pwd=None, email=None, pred_type="and"
+    queries, format="SIMPLE_CSV", user=None, pwd=None, email=None, pred_type="and", prep=False
 ):
     """
     Spin up a download request for GBIF occurrence data.
@@ -93,6 +100,7 @@ def download(
         Set in your env vars with the option ``GBIF_PWD``
     :param email: (character) Email address to receive download notice done
         email. Required. Set in your env vars with the option ``GBIF_EMAIL``
+    :param prep: (logical) If True, the function will only prepare the download, but not execute it. Default: False.     
 
     Argument passed have to be passed as characters (e.g., ``country = US``),
     with a space between key (``country``), operator (``=``), and value (``US``).
@@ -261,16 +269,18 @@ def download(
         if isinstance(queries, str):
             queries = [queries]
 
-        keyval = [_parse_args(z) for z in queries]
+        keyval = req.chk_vrb_ext([_parse_args(z) for z in queries])
 
         # USE GBIFDownload class to set up the predicates
         req.main_pred_type = pred_type
         for predicate in keyval:
             req.add_predicate_dict(predicate)
 
-    out = req.post_download(user, pwd)
+    if(prep) : 
+        out = "download request prepared, but not executed." 
+    else :    
+        out = req.post_download(user, pwd)
     return out, req.payload
-
 
 class GbifDownload(object):
     def __init__(self, creator, email, polygon=None):
@@ -396,6 +406,32 @@ class GbifDownload(object):
         else:
             raise Exception("predicate type not a valid operator")
 
+    def chk_vrb_ext(self, keyval):
+        """
+        Checks for verbatimExtensions in the keyval list and sets the verbatimExtensions attribute. 
+        If the format is DWCA, the verbatimExtensions are added to the payload as a JSON object.
+
+        :param keyval: list of dictionaries with the predicates
+        """
+        ve = []
+        kv = []
+        for k in keyval:
+            if 'verbatimExtensions' in k:
+                ve.append(k.pop('verbatimExtensions', None))
+            if k:  
+                kv.append(k)
+        if len(ve) == 0 : 
+            return kv
+        if len(ve) != 1 :
+            raise ValueError("Only one verbatimExtensions expression is allowed")
+        else :           
+            self.verbatimExtensions = ve[0]
+            if(self.format != "DWCA") : 
+                raise ValueError("verbatimExtensions are only allowed for DWCA format")
+            if(self.verbatimExtensions is not None) :
+                self.payload["verbatimExtensions"] = json.loads(ve[0])
+        return kv
+
     def add_predicate_dict(self, predicate_dictionary):
         """
         allows for nested queries and will take a predicate and add it to a list of predicates
@@ -471,7 +507,6 @@ class GbifDownload(object):
         user = _check_environ("GBIF_USER", user)
         pwd = _check_environ("GBIF_PWD", pwd)
 
-        # pprint.pprint(self.payload)
         r = requests.post(
             self.url,
             auth=requests.auth.HTTPBasicAuth(user, pwd),
@@ -733,6 +768,7 @@ key_lkup = {
     "userCountry": "USER_COUNTRY",
     "verbatimScientificName": "VERBATIM_SCIENTIFIC_NAME",
     "waterBody": "WATER_BODY",
+    "verbatimExtensions" : "verbatimExtensions"
 }
 
 formats = ["SIMPLE_CSV", "SIMPLE_PARQUET", "DWCA", "SPECIES_LIST", "SIMPLE_AVRO"]
