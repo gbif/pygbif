@@ -257,7 +257,7 @@ def download(
     req.format = format
 
     if is_not_none(verbatim_extensions):
-        req.payload["verbatimExtensions"] = verbatim_extensions
+        req.verbatim_extensions = verbatim_extensions
 
     if isinstance(queries, dict):
         req.predicate = queries
@@ -295,7 +295,7 @@ class GbifDownload(object):
         self.predicates = []
         self._main_pred_type = "and"
         self._predicate = {"type": self._main_pred_type, "predicates": self.predicates}
-        self.verbatim_extensions = None
+        # self._verbatim_extensions = None
 
         self.url = "http://api.gbif.org/v1/occurrence/download/request"
         self.header = {
@@ -360,6 +360,23 @@ class GbifDownload(object):
             self.payload["predicate"] = self._predicate
         else:
             raise Exception("predicate must be a dictionary")
+    
+    @property
+    def verbatim_extensions(self):
+        """get verbatim extensions"""
+        return self._verbatim_extensions
+
+    @verbatim_extensions.setter
+    def verbatim_extensions(self, value):
+        """set verbatim extensions
+
+        :param value: list of verbatim extensions to include in the download
+        """
+        if(self.format == "DWCA"): 
+            self._verbatim_extensions = value
+            self.payload["verbatimExtensions"] = self._verbatim_extensions
+        else: 
+            raise Exception("verbatim extensions can only be used with the DWCA format")    
 
     @property
     def format(self):
