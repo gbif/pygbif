@@ -74,7 +74,7 @@ def _check_environ(variable, value):
 
 # download function
 def download(
-    queries, format="SIMPLE_CSV", user=None, pwd=None, email=None, pred_type="and"
+    queries, format="SIMPLE_CSV", user=None, pwd=None, email=None, pred_type="and", verbatim_extensions=None, prep=False
 ):
     """
     Spin up a download request for GBIF occurrence data.
@@ -93,6 +93,8 @@ def download(
         Set in your env vars with the option ``GBIF_PWD``
     :param email: (character) Email address to receive download notice done
         email. Required. Set in your env vars with the option ``GBIF_EMAIL``
+    :param verbatim_extensions: (list) A list of verbatim extensions to include in the download. For example, ['http://rs.gbif.org/terms/1.0/DNADerivedData', 'http://rs.tdwg.org/dwc/terms/MeasurementOrFact']
+    :prep: (logical) If True, the function will return the payload that would be sent to the API, but will not actually send the request. Default: False
 
     Argument passed have to be passed as characters (e.g., ``country = US``),
     with a space between key (``country``), operator (``=``), and value (``US``).
@@ -254,6 +256,9 @@ def download(
     req = GbifDownload(user, email)
     req.format = format
 
+    if is_not_none(verbatim_extensions):
+        req.verbatim_extensions = verbatim_extensions
+
     if isinstance(queries, dict):
         req.predicate = queries
 
@@ -267,8 +272,10 @@ def download(
         req.main_pred_type = pred_type
         for predicate in keyval:
             req.add_predicate_dict(predicate)
-
-    out = req.post_download(user, pwd)
+    if prep:
+        out = "Prepared but not sent to GBIF API"
+    else:     
+        out = req.post_download(user, pwd)
     return out, req.payload
 
 
@@ -288,6 +295,7 @@ class GbifDownload(object):
         self.predicates = []
         self._main_pred_type = "and"
         self._predicate = {"type": self._main_pred_type, "predicates": self.predicates}
+        self.verbatim_extensions = None
 
         self.url = "http://api.gbif.org/v1/occurrence/download/request"
         self.header = {
@@ -302,7 +310,6 @@ class GbifDownload(object):
                 ]
             ),
         }
-
         self.payload = {
             "creator": creator,
             "notification_address": [email],
@@ -311,6 +318,8 @@ class GbifDownload(object):
             "format": self._format,
         }
         self.request_id = None
+        if is_not_none(self.verbatim_extensions):
+            self.payload["verbatimExtensions"] = self.verbatim_extensions
 
         # prepare the geometry polygon constructions
         if polygon:
