@@ -257,7 +257,7 @@ def download(
     req.format = format
 
     if is_not_none(verbatim_extensions):
-        req.verbatim_extensions = verbatim_extensions
+        req.payload["verbatimExtensions"] = verbatim_extensions
 
     if isinstance(queries, dict):
         req.predicate = queries
@@ -318,8 +318,6 @@ class GbifDownload(object):
             "format": self._format,
         }
         self.request_id = None
-        if is_not_none(self.verbatim_extensions):
-            self.payload["verbatimExtensions"] = self.verbatim_extensions
 
         # prepare the geometry polygon constructions
         if polygon:
