@@ -1,6 +1,7 @@
 import time
 import requests
 import unittest
+import pytest
 
 from pygbif.occurrences.download import GbifDownload, download
 
@@ -195,3 +196,20 @@ class TestDownload(unittest.TestCase):
             payload["predicate"]["predicates"][0],
             {"type": "within", "geometry": "POLYGON((-82.7 36.9, -85.0 35.6, -81.0 33.5, -79.4 36.3, -79.4 36.3, -82.7 36.9))"},
         )
+
+    def test_verbatim_extension(self):
+        dl_key, payload = download(
+            ["taxonKey = 1"], user="dummy", email="dummy", pwd="dummy", format="DWCA", verbatim_extensions = ["http://rs.tdwg.org/ac/terms/Multimedia","http://data.ggbn.org/schemas/ggbn/terms/Amplification"]
+        )
+
+        self.assertListEqual(
+            payload["verbatimExtensions"],
+            ["http://rs.tdwg.org/ac/terms/Multimedia","http://data.ggbn.org/schemas/ggbn/terms/Amplification"],
+        )
+
+    def test_verbatim_extension_fails_well(self):
+        with self.assertRaisesRegex(Exception, "verbatim_extensions can only be used with the DWCA format"):
+            dl_key, payload = download(
+                ["taxonKey = 1"], user="dummy", email="dummy", pwd="dummy", format="SIMPLE_CSV", verbatim_extensions = ["http://rs.tdwg.org/ac/terms/Multimedia","http://data.ggbn.org/schemas/ggbn/terms/Amplification"]
+            )
+

@@ -295,7 +295,7 @@ class GbifDownload(object):
         self.predicates = []
         self._main_pred_type = "and"
         self._predicate = {"type": self._main_pred_type, "predicates": self.predicates}
-        # self._verbatim_extensions = None
+        self._verbatim_extensions = None
 
         self.url = "http://api.gbif.org/v1/occurrence/download/request"
         self.header = {
@@ -376,7 +376,7 @@ class GbifDownload(object):
             self._verbatim_extensions = value
             self.payload["verbatimExtensions"] = self._verbatim_extensions
         else: 
-            raise Exception("verbatim extensions can only be used with the DWCA format")    
+            raise Exception("verbatim_extensions can only be used with the DWCA format")    
 
     @property
     def format(self):
