@@ -9,12 +9,44 @@ interactions:
       Connection:
       - keep-alive
       user-agent:
-      - python-requests/2.31.0,pygbif/0.6.3
+      - python-requests/2.31.0,pygbif/0.6.4
     method: GET
     uri: https://api.gbif.org/v1/network?limit=5
   response:
     body:
-      string: "{\"offset\":0,\"limit\":5,\"endOfRecords\":false,\"count\":11,\"results\":[{\"key\":\"2ee1bff7-0b34-4fa3-9433-feaa7c6ee08b\",\"title\":\"Biodiversidad
+      string: "{\"offset\":0,\"limit\":5,\"endOfRecords\":false,\"count\":13,\"results\":[{\"key\":\"a6cdb5d1-d358-4ac0-b75c-2c33cf6c8936\",\"title\":\"Long-term
+        Ecological Research Program - PELD/CNPq, Brazil\",\"description\":\"The PELD
+        program, held for 23 years by the National Council for Scientific and Technological
+        Development (CNPq) is maintained by ongoing Public Calls. The PELD network
+        currently has 34 reference sites distributed in all biomes from Brazil, operating
+        in dozens of protected areas and areas subject to anthropic impacts. The Program
+        has a well-established and active management structure, in which the Management
+        and Scientific Committees act in an integrated manner for strategic decisions
+        in order to improve the Program. It is a member of the International Network
+        for Long Term Ecological Research - ILTER, which brings together 44 member
+        countries and their networks of long-term research sites. The program has
+        been pooling efforts to foster a national culture devoted to long-term ecological
+        research that can address environmental issues and point to solutions and
+        practices for sustainable use of natural resources and ecosystem services,
+        with important contributions to the proposition of public policies, promoting
+        biodiversity conservation and human welfare.\\n\\nhttps://www.gov.br/cnpq/pt-br/acesso-a-informacao/acoes-e-programas/programas/peld\",\"language\":\"eng\",\"numConstituents\":17,\"email\":[],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"andrea\",\"modifiedBy\":\"andrea\",\"created\":\"2024-03-11T14:48:10.451+00:00\",\"modified\":\"2024-03-11T14:54:56.037+00:00\",\"contacts\":[{\"key\":5179449,\"type\":\"ADMINISTRATIVE_POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Conselho
+        Nacional de Desenvolvimento Cient\xEDfico e Tecnol\xF3gico (CNPq/MCTI)\",\"position\":[],\"email\":[\"peld@cnpq.br\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"andrea\",\"modifiedBy\":\"andrea\",\"created\":\"2024-03-11T14:48:56.732+00:00\",\"modified\":\"2024-03-11T14:53:54.442+00:00\"},{\"key\":5179450,\"type\":\"ADMINISTRATIVE_POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Sistema
+        de Informa\xE7\xE3o sobre a biodiversidade Brasileira (SiBBr)\",\"position\":[],\"email\":[\"atendimento_sibbr@rnp.br\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"andrea\",\"modifiedBy\":\"andrea\",\"created\":\"2024-03-11T14:49:36.777+00:00\",\"modified\":\"2024-03-11T14:54:04.531+00:00\"}],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"0b00b924-016b-4954-96a7-2d9264b5d0ba\",\"title\":\"SwissBIF
+        (swissbif.ch) : Swiss Biodiversity Information Facility [Daten Biodiversit\xE4t
+        Schweiz \u2013 Donn\xE9es Biodiversit\xE9 Suisse]\",\"description\":\"The
+        Swiss Biodiversity Information Facility (SwissBIF) operates a network of partners
+        who contribute at responding to the Swiss Federal Council\u2019s commitment
+        of sharing standardized biodiversity data with the global initiative (Global
+        Biodiversity Information Facility). Under the auspices of the Swiss Federal
+        Office for the Environment, SwissBIF brings together active actors that strengthen
+        the international exchange of primary information on biodiversity, assists
+        the mobilization and reuse of relevant data that support conservation activities
+        and increase biodiversity-based knowledge. This collaborative network associates
+        national centers of biodiversity records, scientific collections, research
+        contributions, cantonal agencies for conservation, administrations of protected
+        areas, federal offices. Participants to the network work under common procedures,
+        an agreed ethical framework and coordinated data flow that ease providing
+        access to multidimensional and coherent data.\",\"language\":\"eng\",\"numConstituents\":2,\"email\":[],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"andrea\",\"modifiedBy\":\"andrea\",\"created\":\"2024-03-01T14:17:44.135+00:00\",\"modified\":\"2024-03-01T14:17:44.135+00:00\",\"contacts\":[],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"2ee1bff7-0b34-4fa3-9433-feaa7c6ee08b\",\"title\":\"Biodiversidad
         y Desarrollo Colombia\",\"description\":\"Biodiversidad y Desarrollo es una
         plataforma para promover y amplificar la gesti\xF3n empresarial en biodiversidad.
         Inicia en el a\xF1o 2014 en la Asociaci\xF3n Nacional de Empresarios de Colombia
@@ -30,8 +62,8 @@ interactions:
         para garantizar la participaci\xF3n del sector empresarial a nivel nacional
         e internacional, acelerando la generaci\xF3n de conocimiento de la biodiversidad
         a partir de la publicaci\xF3n de datos a trav\xE9s del SiB Colombia y GBIF,
-        de una manera organizada y sistem\xE1tica.\",\"language\":\"spa\",\"numConstituents\":360,\"email\":[],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"andrea\",\"modifiedBy\":\"andrea\",\"created\":\"2023-05-15T07:13:37.374+00:00\",\"modified\":\"2023-05-15T07:13:37.374+00:00\",\"contacts\":[],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"8534dd20-c368-4a1f-bdaf-e6b390710f89\",\"title\":\"SCAR
-        Scientific Committee on Antarctic Research\",\"language\":\"eng\",\"numConstituents\":234,\"email\":[],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"andrea\",\"modifiedBy\":\"andrea\",\"created\":\"2022-02-18T13:27:40.670+00:00\",\"modified\":\"2022-02-18T14:56:04.788+00:00\",\"contacts\":[{\"key\":3394109,\"type\":\"ADMINISTRATIVE_POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Anton\",\"lastName\":\"Van
+        de una manera organizada y sistem\xE1tica.\",\"language\":\"spa\",\"numConstituents\":382,\"email\":[],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"andrea\",\"modifiedBy\":\"andrea\",\"created\":\"2023-05-15T07:13:37.374+00:00\",\"modified\":\"2023-05-15T07:13:37.374+00:00\",\"contacts\":[],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"8534dd20-c368-4a1f-bdaf-e6b390710f89\",\"title\":\"SCAR
+        Scientific Committee on Antarctic Research\",\"language\":\"eng\",\"numConstituents\":235,\"email\":[],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"andrea\",\"modifiedBy\":\"andrea\",\"created\":\"2022-02-18T13:27:40.670+00:00\",\"modified\":\"2022-02-18T14:56:04.788+00:00\",\"contacts\":[{\"key\":3394109,\"type\":\"ADMINISTRATIVE_POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Anton\",\"lastName\":\"Van
         de Putte\",\"position\":[],\"email\":[\"antonarctica@gmail.com\",\"avandeputte@naturalsciences.be\"],\"phone\":[],\"homepage\":[],\"organization\":\"Royal
         Belgian Institute of Natural Sciences\",\"address\":[\"Vautierstraat 29\"],\"city\":\"Brussels\",\"country\":\"BE\",\"postalCode\":\"1000\",\"createdBy\":\"andrea\",\"modifiedBy\":\"andrea\",\"created\":\"2022-03-01T14:06:23.259+00:00\",\"modified\":\"2022-03-01T14:06:23.259+00:00\"},{\"key\":3394209,\"type\":\"POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Yi
         Ming\",\"lastName\":\"Gan\",\"position\":[],\"email\":[\"ymgan@naturalsciences.be\"],\"phone\":[],\"homepage\":[],\"organization\":\"Royal
@@ -39,27 +71,7 @@ interactions:
         delegate\"],\"email\":[\"hjg@bas.ac.uk\"],\"phone\":[],\"homepage\":[],\"organization\":\"British
         Antarctic Survey\",\"address\":[\"High Cross, Madingley Road \"],\"city\":\"Cambridge\",\"country\":\"GB\",\"postalCode\":\"CB3
         0ET\",\"createdBy\":\"andrea\",\"modifiedBy\":\"andrea\",\"created\":\"2022-03-01T14:08:49.658+00:00\",\"modified\":\"2022-03-01T14:08:49.658+00:00\"}],\"endpoints\":[],\"machineTags\":[{\"key\":11982375,\"namespace\":\"registry.gbif.org\",\"name\":\"visibleOnDatasetPage\",\"value\":\"true\",\"createdBy\":\"andrea\",\"created\":\"2022-07-21T07:32:59.808+00:00\"}],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"4b0d8edb-7504-42c4-9349-63e86c01bf97\",\"title\":\"The
-        Virtual Herbarium Reflora\",\"language\":\"eng\",\"numConstituents\":66,\"email\":[],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"andrea\",\"modifiedBy\":\"andrea\",\"created\":\"2021-11-09T10:25:07.055+00:00\",\"modified\":\"2021-11-09T10:25:07.055+00:00\",\"contacts\":[{\"key\":3402098,\"type\":\"ADMINISTRATIVE_POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Reflora\",\"position\":[],\"email\":[\"reflora@jbrj.gov.br\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"andrea\",\"modifiedBy\":\"andrea\",\"created\":\"2022-03-10T09:48:04.909+00:00\",\"modified\":\"2022-03-10T09:48:04.909+00:00\"}],\"endpoints\":[],\"machineTags\":[{\"key\":10781268,\"namespace\":\"registry.gbif.org\",\"name\":\"visibleOnDatasetPage\",\"value\":\"true\",\"createdBy\":\"andrea\",\"created\":\"2022-03-09T09:06:18.608+00:00\"}],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"17abcf75-2f1e-46dd-bf75-a5b21dd02655\",\"title\":\"Distributed
-        System of Scientific Collections (DiSSCo)\",\"description\":\"The Distributed
-        System of Scientific Collections is a new world-class Research Infrastructure
-        (RI) for natural science collections. The DiSSCo RI works for the digital
-        unification of all European natural science assets under common curation,
-        access, policies and practices, and aims to ensure that the data is easily
-        Findable, Accessible, Interoperable and Reusable (FAIR). As such, DiSSCo will
-        transform a fragmented landscape of crucial natural science collections into
-        an integrated knowledge base that provides interconnected hard evidence of
-        the natural world. DiSSCo represents with 120+ collection holding institutions
-        in 21 countries, the largest ever formal agreement between organisations of
-        this type. These organisations join forces to develop and operate as a distributed
-        Research Infrastructure. DiSSCo began its so-called Preparatory Phase in September
-        2018 to develop a comprehensive Construction Masterplan, which will be followed
-        by a construction phase. The RI will become fully operational in 2025. More
-        information is available at the https://dissco.eu. Information about the technical
-        architecture can be found at: https://blog.dissco.tech.\",\"language\":\"eng\",\"numConstituents\":622,\"email\":[],\"phone\":[],\"homepage\":[\"https://www.dissco.eu\"],\"address\":[],\"createdBy\":\"mgrosjean\",\"modifiedBy\":\"wouter.addink\",\"created\":\"2021-04-09T13:02:15.137+00:00\",\"modified\":\"2021-04-09T15:35:54.762+00:00\",\"contacts\":[{\"key\":2371590,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"userId\":[],\"firstName\":\"Wouter\",\"lastName\":\"Addink\",\"position\":[\"GBIF
-        node manager for DiSSCo\",\"Coordinator Research-data and E-infrastructure\"],\"email\":[\"info@dissco.eu\"],\"phone\":[],\"homepage\":[\"dissco.eu\"],\"organization\":\"Naturalis
-        Biodiversity Center\",\"address\":[],\"city\":\"Leiden\",\"country\":\"NL\",\"postalCode\":\"2300
-        RA\",\"createdBy\":\"mgrosjean\",\"modifiedBy\":\"wouter.addink\",\"created\":\"2021-04-09T13:04:41.842+00:00\",\"modified\":\"2021-04-09T15:41:50.300+00:00\"}],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"3aee7756-565e-4dc5-b22c-f997fbd7105c\",\"title\":\"Virtuelles
-        Herbarium Deutschland / Virtual Herbarium Germany\",\"language\":\"eng\",\"numConstituents\":25,\"email\":[],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"Andrea\",\"modifiedBy\":\"Andrea\",\"created\":\"2021-02-01T09:45:30.307+00:00\",\"modified\":\"2021-02-01T09:45:30.307+00:00\",\"contacts\":[{\"key\":2301987,\"type\":\"ADMINISTRATIVE_POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"J\xF6rg\",\"lastName\":\"Holetschek\",\"position\":[],\"email\":[\"J.Holetschek@bgbm.org\"],\"phone\":[],\"homepage\":[],\"address\":[],\"city\":\"Berlin\",\"country\":\"DE\",\"createdBy\":\"Andrea\",\"modifiedBy\":\"Andrea\",\"created\":\"2021-02-01T10:36:10.175+00:00\",\"modified\":\"2021-02-01T10:36:10.175+00:00\"},{\"key\":2301988,\"type\":\"ADMINISTRATIVE_POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Wolf-Henning\",\"lastName\":\"Kusber\",\"position\":[],\"email\":[\"w.h.kusber@bgbm.org\"],\"phone\":[],\"homepage\":[],\"address\":[],\"city\":\"Berlin\",\"country\":\"DE\",\"createdBy\":\"Andrea\",\"modifiedBy\":\"Andrea\",\"created\":\"2021-02-01T10:37:11.523+00:00\",\"modified\":\"2021-02-01T10:37:11.523+00:00\"}],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[]}]}"
+        Virtual Herbarium Reflora\",\"language\":\"eng\",\"numConstituents\":66,\"email\":[],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"andrea\",\"modifiedBy\":\"andrea\",\"created\":\"2021-11-09T10:25:07.055+00:00\",\"modified\":\"2021-11-09T10:25:07.055+00:00\",\"contacts\":[{\"key\":3402098,\"type\":\"ADMINISTRATIVE_POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Reflora\",\"position\":[],\"email\":[\"reflora@jbrj.gov.br\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"andrea\",\"modifiedBy\":\"andrea\",\"created\":\"2022-03-10T09:48:04.909+00:00\",\"modified\":\"2022-03-10T09:48:04.909+00:00\"}],\"endpoints\":[],\"machineTags\":[{\"key\":10781268,\"namespace\":\"registry.gbif.org\",\"name\":\"visibleOnDatasetPage\",\"value\":\"true\",\"createdBy\":\"andrea\",\"created\":\"2022-03-09T09:06:18.608+00:00\"}],\"tags\":[],\"identifiers\":[],\"comments\":[]}]}"
     headers:
       Accept-Ranges:
       - bytes
@@ -70,11 +82,11 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '7812'
+      - '8333'
       Content-Type:
       - application/json
       Date:
-      - Fri, 01 Mar 2024 08:32:32 GMT
+      - Thu, 02 May 2024 11:37:06 GMT
       Expires:
       - '0'
       Pragma:
@@ -88,7 +100,7 @@ interactions:
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '702417147'
+      - '702417061'
       X-XSS-Protection:
       - 1; mode=block
     status:

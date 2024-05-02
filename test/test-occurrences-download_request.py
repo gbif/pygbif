@@ -52,17 +52,18 @@ class TestGbifClass(unittest.TestCase):
             }
         )
 
-    def test_add_predicate(self):
-        """test the predicate addition"""
-        req = GbifDownload("name", "email")
-        req.add_predicate("COUNTRY", "BE", "equals")
-        self.assertIsInstance(req.payload["predicate"]["predicates"], list)
-        self.assertEqual(len(req.payload["predicate"]["predicates"]), 1)
-        self.assertIsInstance(req.payload["predicate"]["predicates"][0], dict)
-        self.assertDictEqual(
-            req.payload["predicate"]["predicates"][0],
-            {"key": "COUNTRY", "type": "equals", "value": "BE"},
-        )
+    # deprecated method - to be removed
+    # def test_add_predicate(self):
+        # """test the predicate addition"""
+        # req = GbifDownload("name", "email")
+        # req.add_predicate("COUNTRY", "BE", "equals")
+        # self.assertIsInstance(req.payload["predicate"]["predicates"], list)
+        # self.assertEqual(len(req.payload["predicate"]["predicates"]), 1)
+        # self.assertIsInstance(req.payload["predicate"]["predicates"][0], dict)
+        # self.assertDictEqual(
+            # req.payload["predicate"]["predicates"][0],
+            # {"key": "COUNTRY", "type": "equals", "value": "BE"},
+        # )
 
     def test_add_iterative_predicate(self):
         """the the predicate addition of an iterative sequence"""

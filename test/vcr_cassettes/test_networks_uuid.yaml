@@ -9,7 +9,7 @@ interactions:
       Connection:
       - keep-alive
       user-agent:
-      - python-requests/2.31.0,pygbif/0.6.3
+      - python-requests/2.31.0,pygbif/0.6.4
     method: GET
     uri: https://api.gbif.org/v1/network/2b7c7b4f-4d4f-40d3-94de-c28b6fa054a6?limit=100
   response:
@@ -17,7 +17,7 @@ interactions:
       string: '{"key":"2b7c7b4f-4d4f-40d3-94de-c28b6fa054a6","title":"Ocean Biodiversity
         Information System (OBIS)","description":"The Ocean Biodiversity Information
         System (OBIS) is a global open-access data and information clearing-house
-        on marine biodiversity for science, conservation and sustainable development.","language":"eng","numConstituents":2696,"email":[],"phone":[],"homepage":["https://obis.org"],"logoUrl":"https://obis.org/images/logo.png","address":[],"createdBy":"ADMIN","modifiedBy":"MattBlissett","created":"2007-04-03T08:31:37.000+00:00","modified":"2020-06-17T11:34:47.474+00:00","contacts":[],"endpoints":[],"machineTags":[{"key":7598741,"namespace":"registry.gbif.org","name":"visibleOnDatasetPage","value":"true","createdBy":"MattBlissett","created":"2021-01-20T15:54:18.923+00:00"}],"tags":[],"identifiers":[],"comments":[]}'
+        on marine biodiversity for science, conservation and sustainable development.","language":"eng","numConstituents":2713,"email":[],"phone":[],"homepage":["https://obis.org"],"logoUrl":"https://obis.org/images/logo.png","address":[],"createdBy":"ADMIN","modifiedBy":"MattBlissett","created":"2007-04-03T08:31:37.000+00:00","modified":"2020-06-17T11:34:47.474+00:00","contacts":[],"endpoints":[],"machineTags":[{"key":7598741,"namespace":"registry.gbif.org","name":"visibleOnDatasetPage","value":"true","createdBy":"MattBlissett","created":"2021-01-20T15:54:18.923+00:00"}],"tags":[],"identifiers":[],"comments":[]}'
     headers:
       Accept-Ranges:
       - bytes
@@ -27,16 +27,16 @@ interactions:
       - public, max-age=3601
       Connection:
       - keep-alive
-      Content-Length:
-      - '837'
       Content-Type:
       - application/json
       Date:
-      - Fri, 01 Mar 2024 08:32:32 GMT
+      - Thu, 02 May 2024 11:37:08 GMT
       Expires:
       - '0'
       Pragma:
       - no-cache
+      Transfer-Encoding:
+      - chunked
       Vary:
       - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
       Via:
@@ -46,7 +46,7 @@ interactions:
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '717161070'
+      - '721093350'
       X-XSS-Protection:
       - 1; mode=block
     status:
