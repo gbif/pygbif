@@ -215,7 +215,7 @@ class GbifMap(object):
         return path
 
     def plot(self):
-        plt.show(self.img)
+        plt.show()
 
 
 def __handle_year(year):
