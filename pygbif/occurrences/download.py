@@ -143,7 +143,7 @@ def download(
      - geoDistance = ``GEO_DISTANCE``
      - identifiedBy = ``IDENTIFIED_BY``
      - identifiedByID = ``IDENTIFIED_BY_ID``
-     - kingdomKey = ``KINGDON_KEY``
+     - kingdomKey = ``KINGDOM_KEY``
      - license = ``LICENSE``
      - locality = ``LOCALITY``
      - modified = ``MODIFIED``
@@ -699,7 +699,7 @@ key_lkup = {
     "geoDistance": "GEO_DISTANCE",
     "identifiedBy": "IDENTIFIED_BY",
     "identifiedByID": "IDENTIFIED_BY_ID",
-    "kingdomKey": "KINGDON_KEY",
+    "kingdomKey": "KINGDOM_KEY",
     "license": "LICENSE",
     "locality": "LOCALITY",
     "modified": "MODIFIED",
