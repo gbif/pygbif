@@ -25,6 +25,7 @@ docs/_build/
 
 # vscode project info
 .vscode/
+.history/
 
 # pycharm project info
 .idea/

@@ -92,18 +92,7 @@ def search(
         literature.search(year="2010,2024", limit=10)
 
         # search for count only 
-        literature.search(year="2010,2024", limit=0)["count"]
-
-
-
-
-
-
-
-        
-    
-    
-    
+        literature.search(year="2010,2024", limit=0)["count"]    
     """
     url = gbif_baseurl + "literature/search"
     args = {
