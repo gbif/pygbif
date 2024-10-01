@@ -74,7 +74,7 @@ def search(
     :param facet: [str] A facet name used to retrieve the most frequent values for a field.
     :param facetMincount: [int] Used in combination with the facet parameter. Set facetMincount={#} to exclude facets with a count less than {#}.
     :param facetMultiselect: [bool] Used in combination with the facet parameter. Set facetMultiselect=true to still return counts for values that are not currently filtered.
-    :param facetLimit [int] Limit the number of facet values returned.
+    :param facetLimit: [int] Limit the number of facet values returned.
     :param facetOffset: [int] Facet parameters allow paging requests using the parameters facetOffset and facetLimit.
     :param q: [str] Full text query. 
     
