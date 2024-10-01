@@ -35,6 +35,9 @@ def gbif_GET(url, args, **kwargs):
     stopifnot(out.headers["content-type"])
     return out.json()
 
+def gbif_GET_raw(url):
+    out = requests.get(url)
+    return out.content
 
 def gbif_GET_map(url, args, ctype, **kwargs):
     out = requests.get(url, params=args, headers=make_ua(), **kwargs)

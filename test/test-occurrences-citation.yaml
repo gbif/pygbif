@@ -1,0 +1,54 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.32.3
+    method: GET
+    uri: https://api.gbif.org/v1/occurrence/download/0235283-220831081235567/citation
+  response:
+    body:
+      string: 'GBIF.org (2 January 2023) GBIF Occurrence Download https://doi.org/10.15468/dl.29wbtx
+
+        '
+    headers:
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '3579'
+      Cache-Control:
+      - public, max-age=3603
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '86'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 01 Oct 2024 13:41:47 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Vary:
+      - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      Via:
+      - 1.1 varnish (Varnish/6.0)
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Varnish:
+      - 277220298 270598439
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+version: 1
