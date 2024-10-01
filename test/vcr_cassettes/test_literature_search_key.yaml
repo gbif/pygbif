@@ -1,0 +1,57 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - python-requests/2.32.3,pygbif/0.6.4
+    method: GET
+    uri: https://api.gbif.org/v1/literature/search?gbifDownloadKey=0235283-220831081235567&limit=100&offset=0
+  response:
+    body:
+      string: '{"offset":0,"limit":100,"endOfRecords":true,"count":1,"results":[{"discovered":"2024-09-24","authors":[{"firstName":"John","lastName":"Waller"}],"countriesOfCoverage":[],"countriesOfResearcher":["DK"],"added":"2024-09-24T13:25:01.323+00:00","published":"2024-09-23T00:00:00.000+00:00","day":23,"gbifDownloadKey":["0235283-220831081235567","0026791-240906103802322"],"gbifOccurrenceKey":[],"gbifTaxonKey":[],"gbifHigherTaxonKey":[],"gbifNetworkKey":["99d66b6c-9087-452f-a9d4-f15f2c2d0e7e","379a0de5-f377-4661-9a30-33dd844e7b9a","17abcf75-2f1e-46dd-bf75-a5b21dd02655","0b00b924-016b-4954-96a7-2d9264b5d0ba","1f2c0cbe-40df-43f6-ba07-e76133e78c31","2ee1bff7-0b34-4fa3-9433-feaa7c6ee08b","d1627240-04ab-4162-aee9-b16df6bc8308"],"gbifProjectIdentifier":["SBP-BioBlitz
+        2017","BID-CA2016-0006-REG","IMBIO","CESP2022-010","meetnetten.be","34873-1"],"gbifProgramme":["CESP"],"citationType":"DOI","gbifRegion":[],"id":"89c37dab-cce3-34ee-a03e-4d6d9940c68b","identifiers":{},"keywords":[],"language":"eng","literatureType":"JOURNAL","month":9,"notes":"No
+        specific funding information provided.","openAccess":false,"peerReview":false,"publisher":"GBIF
+        Secretariat","relevance":["GBIF_USED"],"tags":["2024","Biodiversity_science","DK","GBIF_used","citation_scope:ok","citation_type:DOI","gbifDOI:10.15468/dl.29wbtx","gbifDOI:10.15468/dl.jg2m96","lit_source:user","open_access:FALSE","peer_review:FALSE"],"title":"(used
+        for rgbif testing)","topics":["BIODIVERSITY_SCIENCE"],"modified":"2024-09-24T13:25:01.323+00:00","websites":[],"year":2024,"abstract":"(no
+        abstract available)"}],"facets":[]}'
+    headers:
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Cache-Control:
+      - public, max-age=600
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1579'
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 27 Sep 2024 14:41:40 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Vary:
+      - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      Via:
+      - 1.1 varnish (Varnish/6.0)
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Varnish:
+      - '120360998'
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+version: 1
