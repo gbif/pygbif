@@ -17,13 +17,14 @@ from ..gbifutils import (
     gbif_GET,
     gbif_GET_write,
     gbif_DELETE,
+    gbif_baseurl
 )
 
 
 # how to parse arguments/predicates
 def _parse_args(x):
     x = x.replace("'", '"')
-    tmp = re.split("\s", x)
+    tmp = re.split(r"\s", x)
     key = key_lkup.get(tmp[0])
     # check special predicates
     if re.search(r"Null|NULL|null", x):
@@ -622,6 +623,35 @@ def download_get(key, path=".", **kwargs):
         gbif_GET_write(url, path, **kwargs)
         logging.info("On disk at " + path)
         return {"path": path, "size": meta["size"], "key": key}
+
+def download_describe(format, **kwargs):
+    """
+    Get a description the download format. This is useful for understanding 
+    what fields are available in a given download format without having to run a download.
+
+    :param format: [str] A format to describe. One of "simpleCsv", "simpleParquet", "dwca", "speciesList", "simpleAvro", "sql"
+    :param **kwargs: Further named arguments passed on to ``requests.get`` 
+
+    :return: A dictionary, of results
+
+    Usage::
+
+        from pygbif import occurrences as occ
+
+        occ.download_describe("dwca")
+        occ.download_describe("simpleCsv")
+        occ.download_describe("simpleParquet")
+        occ.download_describe("speciesList")
+        occ.download_describe("simpleAvro")
+        occ.download_describe("sql")
+
+    """
+    camel_formats = ["simpleCsv", "simpleParquet", "dwca", "speciesList", "simpleAvro","sql"]
+    if format in camel_formats: 
+        url = gbif_baseurl + "occurrence/download/describe/" + str(format)
+        return gbif_GET(url,{}, **kwargs)
+    else:
+        raise ValueError("format not in list of acceptable formats")
 
 
 operators = [

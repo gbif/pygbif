@@ -37,5 +37,6 @@ from .download import (
     download_list,
     download_get,
     download_cancel,
+    download_describe
 )
 from .citation import citation

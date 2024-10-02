@@ -1,0 +1,53 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - python-requests/2.32.3,pygbif/0.6.4
+    method: GET
+    uri: https://api.gbif.org/v1/occurrence/download/describe/simpleCsv
+  response:
+    body:
+      string: '{"fields":[{"name":"gbifID","type":"STRING","term":"http://rs.gbif.org/terms/1.0/gbifID","nullable":false},{"name":"datasetKey","type":"STRING","term":"http://rs.gbif.org/terms/1.0/datasetKey","nullable":false},{"name":"occurrenceID","type":"STRING","term":"http://rs.tdwg.org/dwc/terms/occurrenceID","nullable":true},{"name":"kingdom","type":"STRING","term":"http://rs.tdwg.org/dwc/terms/kingdom","nullable":true},{"name":"phylum","type":"STRING","term":"http://rs.tdwg.org/dwc/terms/phylum","nullable":true},{"name":"class","type":"STRING","term":"http://rs.tdwg.org/dwc/terms/class","nullable":true},{"name":"order","type":"STRING","term":"http://rs.tdwg.org/dwc/terms/order","nullable":true},{"name":"family","type":"STRING","term":"http://rs.tdwg.org/dwc/terms/family","nullable":true},{"name":"genus","type":"STRING","term":"http://rs.tdwg.org/dwc/terms/genus","nullable":true},{"name":"species","type":"STRING","term":"http://rs.gbif.org/terms/1.0/species","nullable":true},{"name":"infraspecificEpithet","type":"STRING","term":"http://rs.tdwg.org/dwc/terms/infraspecificEpithet","nullable":true},{"name":"taxonRank","type":"STRING","term":"http://rs.tdwg.org/dwc/terms/taxonRank","nullable":true},{"name":"scientificName","type":"STRING","term":"http://rs.tdwg.org/dwc/terms/scientificName","nullable":true},{"name":"verbatimScientificName","type":"STRING","term":"http://rs.tdwg.org/dwc/terms/scientificName","nullable":true},{"name":"verbatimScientificNameAuthorship","type":"STRING","term":"http://rs.tdwg.org/dwc/terms/scientificNameAuthorship","nullable":true},{"name":"countryCode","type":"STRING","term":"http://rs.tdwg.org/dwc/terms/countryCode","nullable":true},{"name":"locality","type":"STRING","term":"http://rs.tdwg.org/dwc/terms/locality","nullable":true},{"name":"stateProvince","type":"STRING","term":"http://rs.tdwg.org/dwc/terms/stateProvince","nullable":true},{"name":"occurrenceStatus","type":"STRING","term":"http://rs.tdwg.org/dwc/terms/occurrenceStatus","nullable":true},{"name":"individualCount","type":"INT","term":"http://rs.tdwg.org/dwc/terms/individualCount","nullable":true},{"name":"publishingOrgKey","type":"STRING","term":"http://rs.gbif.org/terms/internal/publishingOrgKey","nullable":true},{"name":"decimalLatitude","type":"DOUBLE","term":"http://rs.tdwg.org/dwc/terms/decimalLatitude","nullable":true},{"name":"decimalLongitude","type":"DOUBLE","term":"http://rs.tdwg.org/dwc/terms/decimalLongitude","nullable":true},{"name":"coordinateUncertaintyInMeters","type":"DOUBLE","term":"http://rs.tdwg.org/dwc/terms/coordinateUncertaintyInMeters","nullable":true},{"name":"coordinatePrecision","type":"DOUBLE","term":"http://rs.tdwg.org/dwc/terms/coordinatePrecision","nullable":true},{"name":"elevation","type":"DOUBLE","term":"http://rs.gbif.org/terms/1.0/elevation","nullable":true},{"name":"elevationAccuracy","type":"DOUBLE","term":"http://rs.gbif.org/terms/1.0/elevationAccuracy","nullable":true},{"name":"depth","type":"DOUBLE","term":"http://rs.gbif.org/terms/1.0/depth","nullable":true},{"name":"depthAccuracy","type":"DOUBLE","term":"http://rs.gbif.org/terms/1.0/depthAccuracy","nullable":true},{"name":"eventDate","type":"STRING","term":"http://rs.tdwg.org/dwc/terms/eventDate","nullable":true},{"name":"day","type":"INT","term":"http://rs.tdwg.org/dwc/terms/day","nullable":true},{"name":"month","type":"INT","term":"http://rs.tdwg.org/dwc/terms/month","nullable":true},{"name":"year","type":"INT","term":"http://rs.tdwg.org/dwc/terms/year","nullable":true},{"name":"taxonKey","type":"INT","term":"http://rs.gbif.org/terms/1.0/taxonKey","nullable":true},{"name":"speciesKey","type":"INT","term":"http://rs.gbif.org/terms/1.0/speciesKey","nullable":true},{"name":"basisOfRecord","type":"STRING","term":"http://rs.tdwg.org/dwc/terms/basisOfRecord","nullable":true},{"name":"institutionCode","type":"STRING","term":"http://rs.tdwg.org/dwc/terms/institutionCode","nullable":true},{"name":"collectionCode","type":"STRING","term":"http://rs.tdwg.org/dwc/terms/collectionCode","nullable":true},{"name":"catalogNumber","type":"STRING","term":"http://rs.tdwg.org/dwc/terms/catalogNumber","nullable":true},{"name":"recordNumber","type":"STRING","term":"http://rs.tdwg.org/dwc/terms/recordNumber","nullable":true},{"name":"identifiedBy","type":"ARRAY<STRING>","delimiter":";","term":"http://rs.tdwg.org/dwc/terms/identifiedBy","nullable":true},{"name":"dateIdentified","type":"DATE","typeFormat":"yyyy-MM-ddTHH:mm:ss","term":"http://rs.tdwg.org/dwc/terms/dateIdentified","nullable":true},{"name":"license","type":"STRING","term":"http://purl.org/dc/terms/license","nullable":true},{"name":"rightsHolder","type":"STRING","term":"http://purl.org/dc/terms/rightsHolder","nullable":true},{"name":"recordedBy","type":"ARRAY<STRING>","delimiter":";","term":"http://rs.tdwg.org/dwc/terms/recordedBy","nullable":true},{"name":"typeStatus","type":"ARRAY<STRING>","delimiter":";","term":"http://rs.tdwg.org/dwc/terms/typeStatus","nullable":true},{"name":"establishmentMeans","type":"STRUCT<concept:
+        STRING,lineage: ARRAY<STRING>>","term":"http://rs.tdwg.org/dwc/terms/establishmentMeans","nullable":true},{"name":"lastInterpreted","type":"DATE","typeFormat":"yyyy-MM-ddTHH:mm:ss.SSSZ","term":"http://rs.gbif.org/terms/1.0/lastInterpreted","nullable":true},{"name":"mediaType","type":"ARRAY<STRING>","delimiter":";","term":"http://rs.gbif.org/terms/1.0/mediaType","nullable":true},{"name":"issue","type":"ARRAY<STRING>","delimiter":";","term":"http://rs.gbif.org/terms/1.0/issue","nullable":true}]}'
+    headers:
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Cache-Control:
+      - public, max-age=3601
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '5525'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 02 Oct 2024 14:04:55 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Vary:
+      - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      Via:
+      - 1.1 varnish (Varnish/6.0)
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Varnish:
+      - '766683002'
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+version: 1
