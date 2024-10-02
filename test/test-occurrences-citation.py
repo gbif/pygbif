@@ -1,7 +1,7 @@
 from pygbif import occurrences
 import vcr
 
-@vcr.use_cassette('test/test-occurrences-citation.yaml')
+@vcr.use_cassette('test/vcr_cassettes/test-occurrences-citation.yaml')
 def test_citation():
     res=occurrences.citation("0235283-220831081235567")
     assert "str" == res.__class__.__name__

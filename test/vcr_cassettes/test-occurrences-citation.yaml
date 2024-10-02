@@ -21,7 +21,7 @@ interactions:
       Accept-Ranges:
       - bytes
       Age:
-      - '3579'
+      - '1789'
       Cache-Control:
       - public, max-age=3603
       Connection:
@@ -31,7 +31,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Tue, 01 Oct 2024 13:41:47 GMT
+      - Wed, 02 Oct 2024 08:19:22 GMT
       Expires:
       - '0'
       Pragma:
@@ -45,7 +45,7 @@ interactions:
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - 277220298 270598439
+      - 537231613 407639130
       X-XSS-Protection:
       - 1; mode=block
     status:
