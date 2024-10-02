@@ -17,6 +17,7 @@ GBIF occurrences APIs methods
 * `download_list`: Lists the downloads created by a user
 * `download_get`: Get a download from GBIF
 * `download_cancel`: Cancel a download from GBIF
+* `citation`: Get citation from a download key
 """
 
 from .search import search
@@ -37,3 +38,4 @@ from .download import (
     download_get,
     download_cancel,
 )
+from .citation import citation
