@@ -653,6 +653,63 @@ def download_describe(format, **kwargs):
     else:
         raise ValueError("format not in list of acceptable formats")
 
+def download_sql(sql, 
+                 format="SQL_TSV_ZIP", 
+                 user=None, 
+                 pwd=None, 
+                 email=None
+                 ):
+    """
+    Download data using a SQL query. 
+
+    :param sql: [str] A SQL query
+    :param format: [str] The format to download the data in. Only ``SQL_TSV_ZIP`` is currently supported.
+    :param user: [str] A user name, will look at env var ``GBIF_USER`` first.
+    :param pwd: [str] Your password, will look at env var ``GBIF_PWD`` first.
+    :param email: [str] Your email, will look at env var ``GBIF_EMAIL`` first.
+
+    """
+    url = "https://api.gbif.org/v1/occurrence/download/request"
+    user = _check_environ("GBIF_USER", user)
+    pwd = _check_environ("GBIF_PWD", pwd)
+
+    header = {
+        "accept": "application/json",
+        "content-type": "application/json",
+        "user-agent": "".join(
+            [
+                "python-requests/",
+                requests.__version__,
+                ",pygbif/",
+                package_metadata.__version__,
+            ]
+        ),
+    }
+    payload = {
+        "sendNotification": True,
+        "notificationAddresses": [email],
+        "format": format,
+        "sql": sql
+    }
+
+    r = requests.post(
+        url,
+        auth=requests.auth.HTTPBasicAuth(user, pwd),
+        data=json.dumps(payload),
+        headers=header,
+    )
+    if r.status_code > 203:
+        raise Exception(
+            "error: "
+            + r.text
+            + ", with error status code "
+            + str(r.status_code)
+            + "check your number of active downloads."
+        )
+    else:
+        request_id = r.text
+        logging.info("Your sql download key is " + request_id)
+    return request_id
 
 operators = [
     "equals",
