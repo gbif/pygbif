@@ -662,11 +662,23 @@ def download_sql(sql,
     """
     Download data using a SQL query. 
 
+    This is an experimental feature, and the implementation may change throughout 2024. 
+    The feature is currently only available for preview by invited users. Contact helpdesk@gbif.org 
+    to request access.
+
     :param sql: [str] A SQL query
     :param format: [str] The format to download the data in. Only ``SQL_TSV_ZIP`` is currently supported.
     :param user: [str] A user name, will look at env var ``GBIF_USER`` first.
     :param pwd: [str] Your password, will look at env var ``GBIF_PWD`` first.
     :param email: [str] Your email, will look at env var ``GBIF_EMAIL`` first.
+
+    :return: A string, the request id
+
+    Usage::
+    
+            from pygbif import occurrences as occ
+    
+            occ.download_sql("SELECT gbifid,publishingCountry FROM occurrence WHERE publishingCountry=GB'")
 
     """
     url = "https://api.gbif.org/v1/occurrence/download/request"
