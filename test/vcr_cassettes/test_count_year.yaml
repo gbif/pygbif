@@ -9,12 +9,12 @@ interactions:
       Connection:
       - keep-alive
       user-agent:
-      - python-requests/2.31.0,pygbif/0.6.3
+      - python-requests/2.31.0,pygbif/0.6.4
     method: GET
     uri: https://api.gbif.org/v1/occurrence/counts/year?year=1990%2C2000
   response:
     body:
-      string: '{"2000":21401035,"1999":20031184,"1998":16826147,"1997":16441141,"1995":15607921,"1996":15452594,"1994":13661530,"1993":13489771,"1992":13022941,"1991":12230805,"1990":11924683}'
+      string: '{"2000":22335684,"1999":20895839,"1998":17614219,"1997":17262502,"1996":16266871,"1995":16263991,"1994":14286353,"1993":14017430,"1992":13441921,"1991":12624594,"1990":12320321}'
     headers:
       Accept-Ranges:
       - bytes
@@ -29,7 +29,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 01 Mar 2024 08:32:15 GMT
+      - Fri, 04 Oct 2024 07:00:02 GMT
       Expires:
       - '0'
       Pragma:
@@ -43,7 +43,7 @@ interactions:
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '707725907'
+      - '650777135'
       X-XSS-Protection:
       - 1; mode=block
     status:

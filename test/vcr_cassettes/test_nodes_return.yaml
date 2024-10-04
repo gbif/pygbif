@@ -9,7 +9,7 @@ interactions:
       Connection:
       - keep-alive
       user-agent:
-      - python-requests/2.31.0,pygbif/0.6.3
+      - python-requests/2.31.0,pygbif/0.6.4
     method: GET
     uri: https://api.gbif.org/v1/node/03e816b3-8f58-49ae-bc12-4e18b358d6d9/identifier?limit=100
   response:
@@ -24,16 +24,16 @@ interactions:
       - public, max-age=3601
       Connection:
       - keep-alive
-      Content-Length:
-      - '144'
       Content-Type:
       - application/json
       Date:
-      - Fri, 01 Mar 2024 08:32:35 GMT
+      - Fri, 04 Oct 2024 07:00:33 GMT
       Expires:
       - '0'
       Pragma:
       - no-cache
+      Transfer-Encoding:
+      - chunked
       Vary:
       - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
       Via:
@@ -43,7 +43,7 @@ interactions:
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '716113613'
+      - '689635465'
       X-XSS-Protection:
       - 1; mode=block
     status:

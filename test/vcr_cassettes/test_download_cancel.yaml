@@ -15,12 +15,12 @@ interactions:
       content-type:
       - application/json
       user-agent:
-      - python-requests/2.32.3,pygbif/0.6.4
+      - python-requests/2.31.0,pygbif/0.6.4
     method: POST
     uri: http://api.gbif.org/v1/occurrence/download/request
   response:
     body:
-      string: 0039342-240906103802322
+      string: 0040513-240906103802322
     headers:
       Age:
       - '0'
@@ -33,7 +33,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 03 Oct 2024 14:48:08 GMT
+      - Fri, 04 Oct 2024 07:08:24 GMT
       Expires:
       - '0'
       Pragma:
@@ -47,7 +47,7 @@ interactions:
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '706415156'
+      - '687112497'
       X-XSS-Protection:
       - 1; mode=block
     status:
@@ -67,9 +67,9 @@ interactions:
       Content-Type:
       - application/json
       user-agent:
-      - python-requests/2.32.3,pygbif/0.6.4
+      - python-requests/2.31.0,pygbif/0.6.4
     method: DELETE
-    uri: http://api.gbif.org/v1/occurrence/download/request/0039342-240906103802322
+    uri: http://api.gbif.org/v1/occurrence/download/request/0040513-240906103802322
   response:
     body:
       string: ''
@@ -81,7 +81,7 @@ interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 03 Oct 2024 14:48:08 GMT
+      - Fri, 04 Oct 2024 07:08:25 GMT
       Expires:
       - '0'
       Pragma:
@@ -95,7 +95,7 @@ interactions:
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '720309810'
+      - '649268088'
       X-XSS-Protection:
       - 1; mode=block
     status:

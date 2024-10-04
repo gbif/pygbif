@@ -9,7 +9,7 @@ interactions:
       Connection:
       - keep-alive
       user-agent:
-      - python-requests/2.32.3,pygbif/0.6.4
+      - python-requests/2.31.0,pygbif/0.6.4
     method: GET
     uri: https://api.gbif.org/v1/literature/search?gbifDownloadKey=0235283-220831081235567&limit=100&offset=0
   response:
@@ -29,16 +29,16 @@ interactions:
       - public, max-age=600
       Connection:
       - keep-alive
-      Content-Length:
-      - '1579'
       Content-Type:
       - application/json
       Date:
-      - Fri, 27 Sep 2024 14:41:40 GMT
+      - Fri, 04 Oct 2024 06:59:53 GMT
       Expires:
       - '0'
       Pragma:
       - no-cache
+      Transfer-Encoding:
+      - chunked
       Vary:
       - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
       Via:
@@ -48,7 +48,7 @@ interactions:
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '120360998'
+      - '688816639'
       X-XSS-Protection:
       - 1; mode=block
     status:

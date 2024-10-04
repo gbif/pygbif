@@ -9,27 +9,27 @@ interactions:
       Connection:
       - keep-alive
       user-agent:
-      - python-requests/2.31.0,pygbif/0.6.3
+      - python-requests/2.31.0,pygbif/0.6.4
     method: GET
     uri: https://api.gbif.org/v1/occurrence/counts/basisOfRecord
   response:
     body:
-      string: '{"HUMAN_OBSERVATION":2300698840,"PRESERVED_SPECIMEN":237830598,"MATERIAL_SAMPLE":55644452,"OBSERVATION":20774268,"MACHINE_OBSERVATION":20542140,"OCCURRENCE":19297806,"FOSSIL_SPECIMEN":10246202,"MATERIAL_CITATION":2664586,"LIVING_SPECIMEN":2000680}'
+      string: '{"HUMAN_OBSERVATION":2646518467,"PRESERVED_SPECIMEN":251695785,"MATERIAL_SAMPLE":64609236,"MACHINE_OBSERVATION":23363833,"OCCURRENCE":21038441,"OBSERVATION":17281076,"FOSSIL_SPECIMEN":9145348,"MATERIAL_CITATION":8383909,"LIVING_SPECIMEN":2025864}'
     headers:
       Accept-Ranges:
       - bytes
       Age:
-      - '657'
+      - '0'
       Cache-Control:
       - public, max-age=600
       Connection:
       - keep-alive
       Content-Length:
-      - '247'
+      - '246'
       Content-Type:
       - application/json
       Date:
-      - Fri, 01 Mar 2024 08:21:17 GMT
+      - Fri, 04 Oct 2024 07:00:01 GMT
       Expires:
       - '0'
       Pragma:
@@ -43,7 +43,7 @@ interactions:
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - 704940086 710148283
+      - '689340585'
       X-XSS-Protection:
       - 1; mode=block
     status:

@@ -9,12 +9,12 @@ interactions:
       Connection:
       - keep-alive
       user-agent:
-      - python-requests/2.31.0,pygbif/0.6.3
+      - python-requests/2.31.0,pygbif/0.6.4
     method: GET
     uri: https://api.gbif.org/v1/dataset/3f8a1297-3259-4700-91fc-acc4170b27ce/metrics
   response:
     body:
-      string: '{"key":1968315,"datasetKey":"3f8a1297-3259-4700-91fc-acc4170b27ce","usagesCount":33188,"synonymsCount":22438,"distinctNamesCount":33158,"nubMatchingCount":31629,"colMatchingCount":27282,"nubCoveragePct":95,"colCoveragePct":82,"countByConstituent":{},"countByKingdom":{"PLANTAE":9373},"countByRank":{"SPECIES":6310,"GENUS":1280,"VARIETY":917,"SUBSPECIES":723,"SECTION":461,"TRIBE":336,"FAMILY":182,"SUBFAMILY":162,"SUBGENUS":134,"SUBTRIBE":69,"SUBSECTION":61,"ORDER":56,"SERIES":39,"SUPERORDER":13,"SUBCLASS":6,"CLASS":1},"countNamesByLanguage":{"ENGLISH":20978,"FRENCH":11601},"countExtRecordsByExtension":{"VERNACULAR_NAME":32579,"DISTRIBUTION":30080,"DESCRIPTION":10732,"IDENTIFIER":0,"MULTIMEDIA":0,"REFERENCE":0,"SPECIES_PROFILE":0,"TYPES_AND_SPECIMEN":0},"countByOrigin":{"SOURCE":33180,"PROPARTE":8},"countByIssue":{"SCIENTIFIC_NAME_ASSEMBLED":1945,"BACKBONE_MATCH_NONE":1559,"PARTIALLY_PARSABLE":44,"UNPARSABLE":3},"otherCount":{},"downloaded":"2024-01-08T18:29:00.683+00:00"}'
+      string: '{"key":3171613,"datasetKey":"3f8a1297-3259-4700-91fc-acc4170b27ce","usagesCount":33312,"synonymsCount":22536,"distinctNamesCount":33282,"nubMatchingCount":31698,"colMatchingCount":28003,"nubCoveragePct":95,"colCoveragePct":84,"countByConstituent":{},"countByKingdom":{"PLANTAE":9369},"countByRank":{"SPECIES":6327,"GENUS":1284,"VARIETY":907,"SUBSPECIES":723,"SECTION":472,"TRIBE":332,"FAMILY":182,"SUBFAMILY":164,"SUBGENUS":140,"SUBTRIBE":69,"SUBSECTION":61,"ORDER":56,"SERIES":39,"SUPERORDER":13,"SUBCLASS":6,"CLASS":1},"countNamesByLanguage":{"ENGLISH":21095,"FRENCH":11592},"countExtRecordsByExtension":{"VERNACULAR_NAME":32687,"DISTRIBUTION":30141,"DESCRIPTION":10759,"IDENTIFIER":0,"MULTIMEDIA":0,"REFERENCE":0,"SPECIES_PROFILE":0,"TYPES_AND_SPECIMEN":0},"countByOrigin":{"SOURCE":33304,"PROPARTE":8},"countByIssue":{"SCIENTIFIC_NAME_ASSEMBLED":1951,"BACKBONE_MATCH_NONE":1614,"PARTIALLY_PARSABLE":44,"UNPARSABLE":3},"otherCount":{},"downloaded":"2024-08-29T19:02:34.364+00:00"}'
     headers:
       Accept-Ranges:
       - bytes
@@ -29,7 +29,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 01 Mar 2024 08:32:25 GMT
+      - Fri, 04 Oct 2024 07:00:18 GMT
       Expires:
       - '0'
       Pragma:
@@ -43,7 +43,7 @@ interactions:
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '730431507'
+      - '676004044'
       X-XSS-Protection:
       - 1; mode=block
     status:

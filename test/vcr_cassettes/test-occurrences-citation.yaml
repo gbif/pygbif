@@ -9,7 +9,7 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.32.3
+      - python-requests/2.31.0
     method: GET
     uri: https://api.gbif.org/v1/occurrence/download/0235283-220831081235567/citation
   response:
@@ -21,7 +21,7 @@ interactions:
       Accept-Ranges:
       - bytes
       Age:
-      - '1789'
+      - '0'
       Cache-Control:
       - public, max-age=3603
       Connection:
@@ -31,7 +31,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Wed, 02 Oct 2024 08:19:22 GMT
+      - Fri, 04 Oct 2024 06:59:59 GMT
       Expires:
       - '0'
       Pragma:
@@ -45,7 +45,7 @@ interactions:
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - 537231613 407639130
+      - '658835659'
       X-XSS-Protection:
       - 1; mode=block
     status:

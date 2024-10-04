@@ -9,241 +9,63 @@ interactions:
       Connection:
       - keep-alive
       user-agent:
-      - python-requests/2.32.3,pygbif/0.6.4
+      - python-requests/2.31.0,pygbif/0.6.4
     method: GET
     uri: https://api.gbif.org/v1/literature/search?limit=10&offset=0&facet=year
   response:
     body:
-      string: "{\"offset\":0,\"limit\":10,\"endOfRecords\":false,\"count\":48132,\"results\":[{\"discovered\":\"2024-09-24\",\"authors\":[{\"firstName\":\"John\",\"lastName\":\"Waller\"}],\"countriesOfCoverage\":[],\"countriesOfResearcher\":[\"DK\"],\"added\":\"2024-09-24T13:25:01.323+00:00\",\"published\":\"2024-09-23T00:00:00.000+00:00\",\"day\":23,\"gbifDownloadKey\":[\"0235283-220831081235567\",\"0026791-240906103802322\"],\"gbifOccurrenceKey\":[],\"gbifTaxonKey\":[],\"gbifHigherTaxonKey\":[],\"gbifNetworkKey\":[\"99d66b6c-9087-452f-a9d4-f15f2c2d0e7e\",\"379a0de5-f377-4661-9a30-33dd844e7b9a\",\"17abcf75-2f1e-46dd-bf75-a5b21dd02655\",\"0b00b924-016b-4954-96a7-2d9264b5d0ba\",\"1f2c0cbe-40df-43f6-ba07-e76133e78c31\",\"2ee1bff7-0b34-4fa3-9433-feaa7c6ee08b\",\"d1627240-04ab-4162-aee9-b16df6bc8308\"],\"gbifProjectIdentifier\":[\"SBP-BioBlitz
-        2017\",\"BID-CA2016-0006-REG\",\"IMBIO\",\"CESP2022-010\",\"meetnetten.be\",\"34873-1\"],\"gbifProgramme\":[\"CESP\"],\"citationType\":\"DOI\",\"gbifRegion\":[],\"id\":\"89c37dab-cce3-34ee-a03e-4d6d9940c68b\",\"identifiers\":{},\"keywords\":[],\"language\":\"eng\",\"literatureType\":\"JOURNAL\",\"month\":9,\"notes\":\"No
-        specific funding information provided.\",\"openAccess\":false,\"peerReview\":false,\"publisher\":\"GBIF
-        Secretariat\",\"relevance\":[\"GBIF_USED\"],\"tags\":[\"2024\",\"Biodiversity_science\",\"DK\",\"GBIF_used\",\"citation_scope:ok\",\"citation_type:DOI\",\"gbifDOI:10.15468/dl.29wbtx\",\"gbifDOI:10.15468/dl.jg2m96\",\"lit_source:user\",\"open_access:FALSE\",\"peer_review:FALSE\"],\"title\":\"(used
-        for rgbif testing)\",\"topics\":[\"BIODIVERSITY_SCIENCE\"],\"modified\":\"2024-09-24T13:25:01.323+00:00\",\"websites\":[],\"year\":2024,\"abstract\":\"(no
-        abstract available)\"},{\"discovered\":\"2024-07-21\",\"authors\":[{\"firstName\":\"Iyan\",\"lastName\":\"Robiansyah\"},{\"firstName\":\"Arief\",\"lastName\":\"Hamidi\"},{\"firstName\":\"Mokhamad\",\"lastName\":\"Nur
-        Zaman\"},{\"firstName\":\"Imam\",\"lastName\":\"Syafii\"},{\"firstName\":\"Enggal\",\"lastName\":\"Primananda\"},{\"firstName\":\"Arida\",\"lastName\":\"Susilowati\"},{\"firstName\":\"Henti\",\"lastName\":\"Hendalastuti
-        Rachmat\"},{\"firstName\":\"Afifatul\",\"lastName\":\"Achyar\"},{\"firstName\":\"Eka\",\"lastName\":\"Martha
-        Della Rahayu\"}],\"countriesOfCoverage\":[\"ID\"],\"countriesOfResearcher\":[\"ID\"],\"added\":\"2024-09-24T07:55:18.032+00:00\",\"published\":\"2024-09-30T00:00:00.000+00:00\",\"day\":30,\"gbifDownloadKey\":[],\"gbifOccurrenceKey\":[],\"gbifTaxonKey\":[],\"gbifHigherTaxonKey\":[],\"gbifNetworkKey\":[],\"gbifProjectIdentifier\":[],\"gbifProgramme\":[],\"citationType\":\"generic\",\"gbifRegion\":[\"ASIA\"],\"id\":\"c020c262-a241-3d54-91aa-e9d233924c78\",\"identifiers\":{\"doi\":\"10.1016/j.jnc.2024.126688\"},\"keywords\":[\"Dipterocarpaceae\",\"Endemic
-        plant\",\"IPA\",\"Lowland forest\",\"Red List of Ecosystem\"],\"language\":\"eng\",\"literatureType\":\"JOURNAL\",\"month\":9,\"notes\":\"No
-        specific funding information provided.\",\"openAccess\":false,\"peerReview\":true,\"publisher\":\"Elsevier
-        BV\",\"relevance\":[\"GBIF_USED\"],\"source\":\"Journal for Nature Conservation\",\"tags\":[\"2024\",\"Conservation\",\"GBIF_used\",\"ID\",\"ID_biodiversity\",\"SDG15\",\"citation_scope:na\",\"citation_type:generic\",\"lit_source:gs\",\"open_access:FALSE\",\"peer_review:TRUE\"],\"title\":\"Ecosystem
-        red listing and identification of Mursala Island as the first important plant
-        area in Indonesia\",\"topics\":[\"CONSERVATION\"],\"modified\":\"2024-09-24T07:55:18.032+00:00\",\"websites\":[\"https://doi.org/10.1016/j.jnc.2024.126688\"],\"year\":2024,\"abstract\":\"Important
-        plant area (IPA) is one of the global approaches to conserving threatened
-        species and their habitats in situ. In the present study, we assess the risk
-        of ecosystem collapse of Mursala Island and identify the island\u2019s potential
-        as the first IPA site in Indonesia. Mursala Island is located on the west
-        coast of the Sumatera Utara Province and is known as one of the hotspots for
-        dipterocarps species diversity. Our compiled data records at least 178 species
-        of plant on Mursala Island, which belong to 47 families. A total of 104 species
-        have been assessed for their conservation status according to the IUCN Red
-        List, of which 27 (25.96%) are threatened with extinction with the category
-        of Critically Endangered (CR; 4), Endangered (10), and Vulnerable (13). The
-        majority (24 or more than 88%) of these threatened species are from the Family
-        Dipterocarpaceae. Following the IUCN Red List of Ecosystems protocol, we propose
-        CR B1c as the risk category of Mursala Island\u2019s ecosystem. Under this
-        category, the ecosystem is considered to be at an extremely high risk of collapse.
-        Furthermore, our assessment shows that Mursala Island qualifies as an IPA
-        under criteria Ai and Aii. Increasing the protection level of the island is
-        recommended to conserve the ecosystem and its plant diversity.\"},{\"discovered\":\"2024-07-21\",\"authors\":[{\"firstName\":\"Junjie\",\"lastName\":\"Zhong\"},{\"firstName\":\"Erlian\",\"lastName\":\"Shu\"},{\"firstName\":\"Shuwen\",\"lastName\":\"Zhang\"},{\"firstName\":\"Qiaoling\",\"lastName\":\"Yang\"},{\"firstName\":\"Qin\",\"lastName\":\"Chen\"},{\"firstName\":\"Bing\",\"lastName\":\"Niu\"}],\"countriesOfCoverage\":[\"CN\"],\"countriesOfResearcher\":[\"CN\"],\"added\":\"2024-09-24T07:53:49.351+00:00\",\"published\":\"2024-09-30T00:00:00.000+00:00\",\"day\":30,\"gbifDownloadKey\":[],\"gbifOccurrenceKey\":[],\"gbifTaxonKey\":[1631084],\"gbifHigherTaxonKey\":[1,54,216,811,3340],\"gbifNetworkKey\":[],\"gbifProjectIdentifier\":[],\"gbifProgramme\":[],\"citationType\":\"generic\",\"gbifRegion\":[\"ASIA\"],\"id\":\"604688ad-f60d-3979-87c7-e494d292c17b\",\"identifiers\":{\"doi\":\"10.1016/j.prevetmed.2024.106290\"},\"keywords\":[\"Bluetongue
-        disease\",\"Cattle\",\"Culicoides\",\"Distribution of suitable areas\",\"MaxEnt\",\"Sheep\"],\"language\":\"eng\",\"literatureType\":\"JOURNAL\",\"month\":9,\"notes\":\"10.13039/501100009002;10.13039/501100012166\",\"openAccess\":false,\"peerReview\":true,\"publisher\":\"Elsevier
-        BV\",\"relevance\":[\"GBIF_USED\"],\"source\":\"Preventive Veterinary Medicine\",\"tags\":[\"2024\",\"CN\",\"CN_biodiversity\",\"GBIF_used\",\"Human_health\",\"SDG3\",\"citation_scope:na\",\"citation_type:generic\",\"gbifTaxon:1631084\",\"lit_source:gs\",\"open_access:FALSE\",\"peer_review:TRUE\"],\"title\":\"Prediction
-        and transmission analysis of bluetongue disease in China\",\"topics\":[\"HUMAN_HEALTH\"],\"modified\":\"2024-09-24T07:53:49.351+00:00\",\"websites\":[\"https://doi.org/10.1016/j.prevetmed.2024.106290\"],\"year\":2024,\"abstract\":\"Bluetongue
-        disease is an infectious disease transmitted by Culicoides as vectors, mainly
-        infecting ruminants. Because ruminants play an important role in animal husbandry
-        in China, the outbreak of bluetongue disease can cause serious economic losses.
-        Maxent model was applied to predict the distribution of bluetongue in China
-        based on the data derived from domestic and foreign academic literature databases
-        including CNKI, Wanfang Database, PubMed, Web of Science and Google Scholar.
-        The results showed that annual mean temperature (BIO1), precipitation in driest
-        month (BIO14), sheep density (SD) and altitude (Elev) were the relevant variables
-        of bioclimatic suitable zones for bluetongue disease. Precipitation in wettest
-        month (BIO13), BIO1, BIO14, Elev were the main variables affecting the habitat
-        of the bluetongue vector Culicoides. The most suitable climate for bluetongue
-        infection occurs in southern China, central China and parts of Xinjiang. The
-        suitable living areas of Culicoides are mainly located in southern, central
-        and eastern China, and the overlap of the two suitable areas is high. The
-        study suggested that southern, central, and eastern China are high-risk areas
-        for bluetongue due to the significant overlap of suitable habitats for both
-        the disease and its vector. Implementing effective surveillance and targeted
-        control strategies in these regions is crucial for mitigating the impact of
-        bluetongue disease.\"},{\"discovered\":\"2024-07-21\",\"authors\":[{\"firstName\":\"Emily
-        F.\",\"lastName\":\"Morris\"},{\"firstName\":\"Anil\",\"lastName\":\"Madhavapeddy\"},{\"firstName\":\"Sadiq\",\"lastName\":\"Jaffer\"},{\"firstName\":\"David\",\"lastName\":\"Coomes\"}],\"countriesOfCoverage\":[],\"countriesOfResearcher\":[\"GB\"],\"added\":\"2024-09-24T07:45:27.309+00:00\",\"published\":\"2024-05-11T00:00:00.000+00:00\",\"day\":11,\"gbifDownloadKey\":[],\"gbifOccurrenceKey\":[],\"gbifTaxonKey\":[],\"gbifHigherTaxonKey\":[],\"gbifNetworkKey\":[],\"gbifProjectIdentifier\":[],\"gbifProgramme\":[],\"citationType\":\"generic\",\"gbifRegion\":[],\"id\":\"a8fd6e1b-b133-37e0-b0c1-36f96cca8476\",\"identifiers\":{},\"keywords\":[],\"language\":\"eng\",\"literatureType\":\"CONFERENCE_PROCEEDINGS\",\"month\":5,\"notes\":\"10.13039/501100000735\",\"openAccess\":false,\"peerReview\":false,\"publisher\":\"International
-        Conference on Learning Representations\",\"relevance\":[\"GBIF_USED\"],\"source\":\"Tackling
-        Climate Change with Machine Learning\u201D, ICLR 2024\",\"tags\":[\"2024\",\"Biodiversity_science\",\"Ecology\",\"GB\",\"GBIF_used\",\"SDG15\",\"citation_scope:na\",\"citation_type:generic\",\"lit_source:gs\",\"open_access:FALSE\",\"peer_review:FALSE\"],\"title\":\"TOWARDS
-        SCALABLE DEEP SPECIES DISTRIBUTION MODELLING USING GLOBAL REMOTE SENSING\",\"topics\":[\"ECOLOGY\",\"BIODIVERSITY_SCIENCE\"],\"modified\":\"2024-09-24T07:45:27.309+00:00\",\"websites\":[\"https://toao.com/static/papers/2024-sdm-sa.pdf\"],\"year\":2024,\"abstract\":\"Destruction
-        of natural habitats and anthropogenic climate change are threatening biodiversity
-        globally. Addressing this loss necessitates enhanced monitoring tech- niques
-        to assess the impact of environmental shifts and to guide policy-making efforts.
-        Species distribution models are crucial tools that predict species locations
-        by interpolating observed field data with environmental information. We develop
-        an improved, scalable method for species distribution modelling by proposing
-        a dataset pipeline that incorporates global remote sensing imagery, land use
-        classifi- cation data, environmental variables, and observation data, and
-        utilising this with convolutional neural network (CNN) models to predict species
-        presence at higher spatial and temporal resolutions than well-established
-        species distribution mod- elling methods. We apply our approach to modelling
-        Protea species distributions in the Cape Floristic Region of South Africa,
-        demonstrating its performance in a region of high biodiversity. We train two
-        CNN models and compare their perfor- mance to Maxent, a popular conventional
-        species distribution modelling method. We find that the CNN models trained
-        with remote sensing data outperform Max- ent, underscoring the potential of
-        our method as an effective and scalable solution for modelling species distribution.\"},{\"discovered\":\"2024-07-21\",\"authors\":[{\"firstName\":\"Gideon\",\"lastName\":\"Gywa\"},{\"firstName\":\"Yoila\",\"lastName\":\"Malann\"},{\"firstName\":\"Christopher\",\"lastName\":\"Whelan\"},{\"firstName\":\"Abdel\",\"lastName\":\"Halloway\"},{\"firstName\":\"Joel\",\"lastName\":\"Brown\"}],\"countriesOfCoverage\":[],\"countriesOfResearcher\":[\"NG\",\"US\"],\"added\":\"2024-09-24T07:40:40.163+00:00\",\"published\":\"2024-07-19T00:00:00.000+00:00\",\"day\":19,\"gbifDownloadKey\":[],\"gbifOccurrenceKey\":[],\"gbifTaxonKey\":[8868,5289],\"gbifHigherTaxonKey\":[1,212,54,216,1448,44,797],\"gbifNetworkKey\":[],\"gbifProjectIdentifier\":[],\"gbifProgramme\":[],\"citationType\":\"generic\",\"gbifRegion\":[],\"id\":\"b58a7e4f-8466-3e0a-a5ec-4a7ebc5ec95a\",\"identifiers\":{\"doi\":\"10.32942/x2pp7c\"},\"keywords\":[\"Biodiversity\",\"Hawk
-        moths\",\"Hummingbirds\",\"coexistence\",\"the Americas\"],\"language\":\"eng\",\"literatureType\":\"WORKING_PAPER\",\"month\":7,\"notes\":\"No
-        specific funding information provided.\",\"openAccess\":true,\"peerReview\":false,\"publisher\":\"California
-        Digital Library (CDL)\",\"relevance\":[\"GBIF_USED\"],\"source\":\"EcoEvoRxiv\",\"tags\":[\"2024\",\"Biodiversity_science\",\"Ecology\",\"GBIF_used\",\"NG\",\"SDG15\",\"US\",\"citation_scope:na\",\"citation_type:generic\",\"gbifTaxon:5289\",\"gbifTaxon:8868\",\"lit_source:gs\",\"open_access:TRUE\",\"peer_review:FALSE\"],\"title\":\"A
-        pilot analysis shows that climatic conditions and resource availability along
-        tropical and temperate gradients of the Americas impact the co-occurrence
-        pattern of nectarivorous species\",\"topics\":[\"ECOLOGY\",\"BIODIVERSITY_SCIENCE\"],\"modified\":\"2024-09-24T07:40:40.163+00:00\",\"websites\":[\"https://doi.org/10.32942/x2pp7c\"],\"year\":2024,\"abstract\":\"Abstract
-        Aim While biodiversity trends and patterns are shaped by both biotic interactions
-        and abiotic factors, biodiversity may vary in space and time when responding
-        to environmental conditions across clines. However, we lack the knowledge
-        of how biotic and abiotic factors determine species co-occurrence to influence
-        community assemblage that can impact biodiversity trends and patterns across
-        scales. Location The Americas Methods We downloaded a sample of species occurrence
-        data from the Global Biodiversity Information Facility (GBIF) and environmental
-        variables that are hypothesized to influence the association between hawk
-        moths and hummingbirds\u2019 co-occurrence across gradients. We then used
-        the generalized additive models to understand how variations in environmental
-        conditions across gradients will influence the co-occurrence between species.
-        Results We found that the peak of species abundance and richness of both families
-        was highest at the equator along latitude, while species abundance and richness
-        increased with longitude. Increased colder temperatures, drier conditions,
-        and low resource availability simultaneously reduced the occurrence of both
-        hummingbirds and hawk moths across clines. In contrast, warmer annual temperatures
-        and reduced seasonality concurrently increased the occurrence of both hummingbirds
-        and hawk moth species. Interestingly, we found that hummingbird abundance
-        and species richness persisted with increasing elevation when compared to
-        hawk moths. Main Conclusion Our results suggest that hummingbirds and hawk
-        moths co-occur more along the tropics and in certain areas of the temperate
-        regions of the Americas that have suitable environmental conditions. We also
-        found a pattern that suggests the possibility of niche partitioning between
-        hummingbirds and hawk moths with increasing elevations, indicating hummingbirds
-        with higher abundance and richness at higher elevations compared to hawk moths.
-        We hypothesize that hummingbirds have traits that offer them certain advantages
-        to occupy higher elevations, necessitating the need for future studies to
-        use a multi-scale approach (e.g., integrating occurrences records and traits)
-        when assessing biodiversity trends and patterns, and how these trends and
-        patterns are shaped by both biotic interactions and abiotic factors are essential
-        for the successful implementation of regional conservation programs of species.\"},{\"discovered\":\"2024-07-21\",\"authors\":[{\"firstName\":\"Jos\xE9
-        Luis\",\"lastName\":\"Rodr\xEDguez-Bautista\"},{\"firstName\":\"Patricia\",\"lastName\":\"Fuya-Oviedo\"},{\"firstName\":\"Ard
-        Menzo\",\"lastName\":\"Nijhof\"},{\"firstName\":\"Lidia\",\"lastName\":\"Chitimia-Dobler\"},{\"firstName\":\"Isaiah\",\"lastName\":\"Obara\"},{\"firstName\":\"Adivaldo\",\"lastName\":\"Fonseca\"}],\"countriesOfCoverage\":[\"CO\"],\"countriesOfResearcher\":[\"CO\"],\"added\":\"2024-09-24T07:37:44.555+00:00\",\"published\":\"2024-07-17T00:00:00.000+00:00\",\"day\":17,\"gbifDownloadKey\":[],\"gbifOccurrenceKey\":[],\"gbifTaxonKey\":[9167],\"gbifHigherTaxonKey\":[1,1425,54,367],\"gbifNetworkKey\":[],\"gbifProjectIdentifier\":[],\"gbifProgramme\":[],\"citationType\":\"DOI\",\"gbifRegion\":[\"LATIN_AMERICA\"],\"id\":\"eaaed299-afb0-3771-bc2c-172f7d5b08a7\",\"identifiers\":{\"doi\":\"10.21203/rs.3.rs-4602293/v1\"},\"keywords\":[\"Amblyomma\",\"Colombia\",\"Spotted
-        Fever Group Rickettsia\"],\"language\":\"eng\",\"literatureType\":\"WORKING_PAPER\",\"month\":7,\"notes\":\"10.13039/100005230;10.13039/501100002322;10.13039/501100001655\",\"openAccess\":true,\"peerReview\":false,\"publisher\":\"Springer
-        Science and Business Media LLC\",\"relevance\":[\"GBIF_PUBLISHED\"],\"source\":\"Research
-        Square\",\"tags\":[\"2024\",\"CO\",\"CO_biodiversity\",\"Ecology\",\"GBIF_published\",\"Human_health\",\"SDG15\",\"citation_scope:ok\",\"citation_type:DOI\",\"gbifDOI:10.15472/aadaa0\",\"gbifTaxon:9167\",\"lit_source:gs\",\"open_access:TRUE\",\"peer_review:FALSE\"],\"title\":\"Detection
-        of Rickettsia spp. in questing ticks (Acari: Ixodidae) from forest fragments
-        adjacent to agricultural and livestock farms in Casanare, Colombia\",\"topics\":[\"HUMAN_HEALTH\",\"ECOLOGY\"],\"modified\":\"2024-09-24T07:37:44.555+00:00\",\"websites\":[\"https://doi.org/10.21203/rs.3.rs-4602293/v1\"],\"year\":2024,\"abstract\":\"Abstract
-        \        This study aimed to describe the diversity of ixodid tick species
-        in rural forest areas of Yopal and Aguazul, Department of Casanare, Colombia,
-        and to evaluate the presence of tick-borne Rickettsia sp., potentially impacting
-        animal and human health. A cross-sectional study was conducted on questing
-        ticks collected from forested farm areas that keep livestock and/or conduct
-        agricultural activities. All ticks were subjected to DNA extraction and tested
-        by PCR amplifying fragments of three rickettsial genes: gltA, htrA, and ompA.
-        A total of 852 individual ticks (larvae, nymphs, and adults) and 15 additional
-        larvae clusters were collected and identified as Amblyomma mixtum, Amblyomma
-        cf. parvum, Amblyomma dissimile, Amblyomma spp., and Dermacentor spp. Rickettsia
-        organisms were detected by PCR in 7.0% (16/230) of the individual larvae,
-        0.2% (1/488) of the nymphs, and 1.5% (2/134) of the adults. \u201CCandidatus
-        Rickettsia colombianensi\u201D and Rickettsia amblyommatis were detected in
-        1.52% (13/852) and 0.47% (4/852) of the ticks, respectively. In addition,
-        a novel genotype, Rickettsia sp. genotype Yopal, phylogenetically closest
-        to Rickettsia canadensis, was identified in two A. mixtum males. Several tick
-        and Rickettsia species were found in the study areas, suggesting the need
-        for an in-depth study of rickettsiosis in the Department of Casanare and across
-        Colombia. Priority areas for future studies include investigating the molecular,
-        clinical, and epidemiological features of the presentation of tick species
-        and the possible participation of \u201CCa. R. colombianensi\u201D, R. amblyommatis,
-        and \u201CRickettsia sp. Yopal genotype of A. mixtum\u201D to understand their
-        role in human rickettsiosis in the study region.\"},{\"discovered\":\"2024-07-20\",\"authors\":[{\"firstName\":\"Nergiz\",\"lastName\":\"Dukan\"},{\"firstName\":\"Isolde\",\"lastName\":\"Cornelis\"},{\"firstName\":\"Sara\",\"lastName\":\"Maes\"},{\"firstName\":\"Kris\",\"lastName\":\"Hostens\"},{\"firstName\":\"Annelies\",\"lastName\":\"Backer\"},{\"firstName\":\"Sofie\",\"lastName\":\"Derycke\"}],\"countriesOfCoverage\":[\"BE\"],\"countriesOfResearcher\":[\"BE\"],\"added\":\"2024-09-24T07:32:25.569+00:00\",\"published\":\"2024-07-20T00:00:00.000+00:00\",\"day\":20,\"gbifDownloadKey\":[],\"gbifOccurrenceKey\":[],\"gbifTaxonKey\":[],\"gbifHigherTaxonKey\":[],\"gbifNetworkKey\":[\"2b7c7b4f-4d4f-40d3-94de-c28b6fa054a6\"],\"gbifProjectIdentifier\":[],\"gbifProgramme\":[],\"citationType\":\"DOI\",\"gbifRegion\":[\"EUROPE\"],\"id\":\"ee6ddffa-1664-3d9f-8c18-30c34a4aa9c6\",\"identifiers\":{\"doi\":\"10.1038/s41598-024-66912-2\"},\"keywords\":[],\"language\":\"eng\",\"literatureType\":\"JOURNAL\",\"month\":7,\"notes\":\"10.13039/100014510\",\"openAccess\":true,\"peerReview\":true,\"publisher\":\"Springer
-        Science and Business Media LLC\",\"relevance\":[\"GBIF_PUBLISHED\"],\"source\":\"Scientific
-        Reports\",\"tags\":[\"2024\",\"BE\",\"BE_biodiversity\",\"Ecology\",\"GBIF_published\",\"Marine\",\"SDG14\",\"citation_scope:ok\",\"citation_type:DOI\",\"gbifDOI:10.15468/3ygzac\",\"lit_source:publisher\",\"open_access:TRUE\",\"peer_review:TRUE\"],\"title\":\"Vertical
-        and horizontal environmental DNA (eDNA) patterns of fish in a shallow and
-        well-mixed North Sea area\",\"topics\":[\"MARINE\",\"ECOLOGY\"],\"modified\":\"2024-09-24T07:32:25.569+00:00\",\"websites\":[\"https://doi.org/10.1038/s41598-024-66912-2\"],\"year\":2024,\"abstract\":\"The
-        integration of eDNA metabarcoding into monitoring programs provides valuable
-        information about fish community structures. Despite the growing body of evidence
-        supporting the method's effectiveness in distinguishing fine-scale eDNA signals,
-        there is a limited understanding of eDNA distribution in shallow, well-mixed
-        environments, especially related to sampling depth. We analyzed 167 samples
-        collected from the surface and bottom water at 17 locations of the Belgian
-        Part of the North Sea (BPNS), where the deepest sampling point was 31 m, and
-        compared this to beam trawl catch data collected simultaneously at the same
-        locations. eDNA metabarcoding identified an additional 22 species compared
-        to beam trawl catch data. Diversity measures and patterns were very similar
-        between surface and bottom samples and revealed community patterns that were
-        previously described by long-term beam trawl catch data. Surface and bottom
-        samples had 39 fish species in common, while six and eight rare species were
-        uniquely detected, respectively. Our results demonstrate that eDNA metabarcoding
-        effectively identifies spatial community patterns of fishes in the highly
-        dynamic environment of the BPNS regardless of sampling depth. Out of the six
-        most common species tested, eDNA metabarcoding read abundances correlated
-        strongly with catch-based abundance data for one species, but moderately for
-        two others, indicating that inferring fish abundance and biomass via eDNA
-        metabarcoding remains challenging.\"},{\"discovered\":\"2024-07-20\",\"authors\":[{\"firstName\":\"Dipak\",\"lastName\":\"Barman\"},{\"firstName\":\"Aaratrik\",\"lastName\":\"Pal\"},{\"firstName\":\"Monoranjan\",\"lastName\":\"Chowdhury\"}],\"countriesOfCoverage\":[\"IN\"],\"countriesOfResearcher\":[\"IN\"],\"added\":\"2024-09-24T07:30:24.692+00:00\",\"published\":\"2024-07-20T00:00:00.000+00:00\",\"day\":20,\"gbifDownloadKey\":[\"0006467-230828120925497\"],\"gbifOccurrenceKey\":[],\"gbifTaxonKey\":[2991970],\"gbifHigherTaxonKey\":[691,2988638,7707728,6,5015,220],\"gbifNetworkKey\":[],\"gbifProjectIdentifier\":[],\"gbifProgramme\":[],\"citationType\":\"DOI\",\"gbifRegion\":[\"ASIA\"],\"id\":\"bf4ae91e-ec80-3b59-bf56-67a9bcf45a2b\",\"identifiers\":{\"doi\":\"10.1007/s42535-024-00978-1\"},\"keywords\":[\"Eastern
-        Himalaya\",\"New record\",\"Rubus L.\",\"Sect. Idaeobatus\",\"West Bengal\"],\"language\":\"eng\",\"literatureType\":\"JOURNAL\",\"month\":7,\"notes\":\"No
-        specific funding information provided.\",\"openAccess\":false,\"peerReview\":true,\"publisher\":\"Springer
-        Science and Business Media LLC\",\"relevance\":[\"GBIF_USED\"],\"source\":\"Vegetos\",\"tags\":[\"2024\",\"GBIF_used\",\"IN\",\"IN_biodiversity\",\"SDG15\",\"Species_distributions\",\"citation_scope:ok\",\"citation_type:DOI\",\"gbifDOI:10.15468/dl.w8fbxx\",\"gbifTaxon:2991970\",\"lit_source:publisher\",\"open_access:FALSE\",\"peer_review:TRUE\"],\"title\":\"Rubus
-        linearifoliolus (Rosaceae), a new record for India\",\"topics\":[\"SPECIES_DISTRIBUTIONS\"],\"modified\":\"2024-09-24T07:30:24.692+00:00\",\"websites\":[\"https://doi.org/10.1007/s42535-024-00978-1\"],\"year\":2024,\"abstract\":\"Rubus
-        linearifoliolus is reported here for the first time from India. It belongs
-        to the Idaeobatus subdivision of Rubus L. and is native to South-Central China,
-        Taiwan. In India, the genus Rubus comprises about 75 species and characterized
-        by having imparipinnate leaves with 5\u201311 leaflets (or, occasionally,
-        3-foliate leaves in flowering branches), stems with dense glandular hairs
-        and curved prickles, and\_stipules with\_linear-lanceolate, prickle and glandular
-        hair along\_the\_midvein of leaflets. Fruits turn\_red when mature. Based
-        on\_the\_localities of the collected areas, the geographical distribution
-        of the species is mapped.\"},{\"discovered\":\"2024-07-20\",\"authors\":[{\"firstName\":\"Gustavo
-        F.\",\"lastName\":\"de Carvalho-Souza\"},{\"firstName\":\"\xC1ngela\",\"lastName\":\"Rodr\xEDguez-Ruiz\"},{\"firstName\":\"Crist\xF3bal
-        Lobato\",\"lastName\":\"G\xF3mez\"},{\"firstName\":\"Enrique\",\"lastName\":\"Gonz\xE1lez-Orteg\xF3n\"}],\"countriesOfCoverage\":[\"ES\"],\"countriesOfResearcher\":[\"ES\"],\"added\":\"2024-09-24T07:28:40.965+00:00\",\"published\":\"2024-07-20T00:00:00.000+00:00\",\"day\":20,\"gbifDownloadKey\":[\"0015417-240506114902167\"],\"gbifOccurrenceKey\":[],\"gbifTaxonKey\":[5204672],\"gbifHigherTaxonKey\":[1,1105,7171,2356469,44],\"gbifNetworkKey\":[\"99d66b6c-9087-452f-a9d4-f15f2c2d0e7e\",\"17abcf75-2f1e-46dd-bf75-a5b21dd02655\",\"2b7c7b4f-4d4f-40d3-94de-c28b6fa054a6\"],\"gbifProjectIdentifier\":[\"BID-AF2015-0032-NAC\",\"SNIB-KE002-KE0022012F-vertebrados\",\"FoTX\"],\"gbifProgramme\":[],\"citationType\":\"generic_DOIs_provided\",\"gbifRegion\":[\"EUROPE\"],\"id\":\"842ba309-a54a-3ab0-ba43-f21273587544\",\"identifiers\":{\"doi\":\"10.1007/s41208-024-00742-x\"},\"keywords\":[\"Deep-sea
-        fish\",\"Feeding habits\",\"Iberian Peninsula\",\"New observation\"],\"language\":\"eng\",\"literatureType\":\"JOURNAL\",\"month\":7,\"notes\":\"10.13039/501100011033\",\"openAccess\":true,\"peerReview\":true,\"publisher\":\"Springer
-        Science and Business Media LLC\",\"relevance\":[\"GBIF_USED\"],\"source\":\"Thalassas:
-        An International Journal of Marine Sciences\",\"tags\":[\"2024\",\"ES\",\"ES_biodiversity\",\"GBIF_used\",\"Marine\",\"SDG14\",\"Species_distributions\",\"citation_scope:na\",\"citation_type:generic_DOIs_provided\",\"gbifDOI:10.15468/dl.pg2nse\",\"gbifTaxon:5204672\",\"lit_source:publisher\",\"open_access:TRUE\",\"peer_review:TRUE\"],\"title\":\"First
-        Record of Loppe's Tadpole Fish Ijimaia Loppei (Ateleopodidae) in the Gulf
-        of Cadiz (SW Iberian Peninsula), Including Notes on its Diet\",\"topics\":[\"SPECIES_DISTRIBUTIONS\",\"MARINE\"],\"modified\":\"2024-09-24T13:22:43.395+00:00\",\"websites\":[\"https://doi.org/10.1007/s41208-024-00742-x\"],\"year\":2024,\"abstract\":\"This
-        paper reports the first record of a rare deep-sea fish Ijimaia loppei Roule,
-        1922 (Ateleopodiformes: Ateleopodidae) in the Southwest Iberian Peninsula,
-        based on a single specimen (total length 1271\_mm) bottom trawled in the mud
-        volcano field in the Gulf of Cadiz, Spain (36\xBA 28\u2032 54'' N, 7\xBA 07\u2032
-        47'' W), at a depth of 585\_m, on April 24, 2024. The morphometric and meristic
-        measurements of I. loppei and its congener, I. antillarum , are presented
-        and compared to previously published data. Further, this study provides insights
-        into the diet of I. loppei and fills a gap in the known geographical distribution
-        of the species, thereby contributing to the understanding of the ichthyofaunal
-        biodiversity in the Gulf of Cadiz and establishing conservation strategies
-        for habitats of ecological importance, such as the mud volcanoes.\"},{\"discovered\":\"2024-07-20\",\"authors\":[{\"firstName\":\"Gija
-        Anna\",\"lastName\":\"Abraham\"},{\"firstName\":\"K. A\",\"lastName\":\"Subramanian\"}],\"countriesOfCoverage\":[\"IN\"],\"countriesOfResearcher\":[\"IN\"],\"added\":\"2024-09-24T07:25:24.646+00:00\",\"published\":\"2024-06-01T00:00:00.000+00:00\",\"day\":1,\"gbifDownloadKey\":[],\"gbifOccurrenceKey\":[],\"gbifTaxonKey\":[],\"gbifHigherTaxonKey\":[],\"gbifNetworkKey\":[],\"gbifProjectIdentifier\":[],\"gbifProgramme\":[],\"citationType\":\"generic\",\"gbifRegion\":[\"ASIA\"],\"id\":\"0bc23fe0-7ff1-3dfb-904e-73453180cd31\",\"identifiers\":{\"doi\":\"10.26515/rzsi/v124/i1s/2024/172753\"},\"keywords\":[\"GIS\",\"Threatened
-        species\",\"Western Ghats\"],\"language\":\"eng\",\"literatureType\":\"JOURNAL\",\"month\":6,\"notes\":\"No
-        specific funding information provided.\",\"openAccess\":false,\"peerReview\":true,\"publisher\":\"Zoological
-        Survey of India\",\"relevance\":[\"GBIF_USED\"],\"source\":\"Records of the
-        Zoological Survey of India\",\"tags\":[\"2024\",\"Conservation\",\"GBIF_used\",\"IN\",\"IN_biodiversity\",\"SDG15\",\"citation_scope:na\",\"citation_type:generic\",\"lit_source:gs\",\"open_access:FALSE\",\"peer_review:TRUE\"],\"title\":\"Village
-        Level Distribution Mapping of Threatened Fauna of the Western Ghats\",\"topics\":[\"CONSERVATION\"],\"modified\":\"2024-09-24T07:25:24.646+00:00\",\"websites\":[\"https://www.researchgate.net/publication/382066957_Village_Level_Distribution_Mapping_of_Threatened_Fauna_of_the_Western_Ghats\"],\"year\":2024,\"abstract\":\"India
-        is one of the 17 megadiverse countries with high species richness and endemism
-        which is largely restricted to the four biodiversity hotspots. Among this,
-        the Western Ghats with its long evolutionary history has a unique species
-        composition with a higher incidence of threatened species and an exceptional
-        concentration of endemic species. Several species of the endemic and threatened
-        fauna of the region are found outside the protected areas as well. Hence,
-        for the long-term conservation of biodiversity, it is important to map the
-        distribution of the threatened species at a fine scale and develop strategies
-        for conserving species outside the protected area network. Further, such an
-        exercise will also provide crucial inputs for identifying eco-sensitive villages
-        and involve the public in conserving species. Towards this goal, the present
-        study collated data on regionally or globally threatened fauna of the Western
-        Ghats from published sources. A GIS database of 512 species was created which
-        includes 133 species of fishes, 81 species of birds, 91 species of reptiles,
-        79 species of amphibians, 47 species of insects, 37 species of mammals, 31
-        species of malacostraca, 7 species of arachnids, 4 species of gastropods,1
-        species of maxillopoda and 1 species of bivalves. The data was analyzed and
-        village- level distribution maps for the Western Ghats states were prepared
-        in the QGIS platform. Among the 512 species, 27 were Critically Endangered,
-        131 Endangered, 117 Vulnerable, and 88 Near Threatened species and the rest
-        of the species were Least Concern, Data Deficient or Not Evaluated under IUCN
-        threat categories but these non threatened species in the Redlist were assessed
-        as regionally threatened and were included in this study. Our study shows
-        that the distribution of threatened species varies across taxa and geography
-        with a higher concentration of threatened species in the states of Kerala
-        and Tamil Nadu. The study maps and identifies key villages for the conservation
-        of threatened fauna in the Western Ghats and highlights the need for strategies
-        to conserve species outside protected areas.\"}],\"facets\":[{\"field\":\"YEAR\",\"counts\":[{\"name\":\"2020\",\"count\":9002},{\"name\":\"2023\",\"count\":7661},{\"name\":\"2021\",\"count\":7173},{\"name\":\"2022\",\"count\":6811},{\"name\":\"2019\",\"count\":5969},{\"name\":\"2018\",\"count\":2406},{\"name\":\"2024\",\"count\":2183},{\"name\":\"2017\",\"count\":1472},{\"name\":\"2016\",\"count\":1090},{\"name\":\"2015\",\"count\":1008}]}]}"
+      string: "{\"offset\":0,\"limit\":10,\"endOfRecords\":false,\"count\":51500,\"results\":[{\"discovered\":\"2024-10-02\",\"authors\":[{\"firstName\":\"H.\",\"lastName\":\"Rankou\"},{\"firstName\":\"S.\",\"lastName\":\"M'Sou\"},{\"firstName\":\"R.A.\",\"lastName\":\"Ait
+        Babahmad\"},{\"firstName\":\"A.\",\"lastName\":\"Ouhammou\"},{\"firstName\":\"M.\",\"lastName\":\"Alifriqui\"},{\"firstName\":\"G.\",\"lastName\":\"Martin\"}],\"countriesOfCoverage\":[],\"countriesOfResearcher\":[],\"added\":\"2024-10-02T20:59:19.730+00:00\",\"published\":\"2024-06-20T00:00:00.000+00:00\",\"day\":20,\"gbifDownloadKey\":[],\"gbifOccurrenceKey\":[],\"gbifTaxonKey\":[3190581],\"gbifHigherTaxonKey\":[7707728,933,6,3190459,220,2398],\"gbifNetworkKey\":[],\"gbifProjectIdentifier\":[],\"gbifProgramme\":[],\"citationType\":\"generic\",\"gbifRegion\":[],\"id\":\"e66c6fd7-93bf-35ba-b32b-9785bb493900\",\"identifiers\":{},\"keywords\":[],\"language\":\"eng\",\"literatureType\":\"REPORT\",\"month\":6,\"openAccess\":false,\"peerReview\":false,\"publisher\":\"IUCN\",\"relevance\":[\"GBIF_CITED\"],\"source\":\"IUCN
+        Red List of Threatened Species\",\"tags\":[\"2024\",\"Conservation\",\"GBIF_cited\",\"citation_scope:na\",\"citation_type:generic\",\"gbifTaxon:3190581\",\"lit_source:iucn\",\"open_access:false\",\"peer_review:false\"],\"title\":\"Pistacia
+        atlantica\",\"topics\":[\"CONSERVATION\"],\"modified\":\"2024-10-02T20:59:19.730+00:00\",\"websites\":[\"https://www.iucnredlist.org/species/19365844/254242568\"],\"year\":2024,\"abstract\":\"Pistacia
+        atlantica has most recently been assessed for The IUCN Red List of Threatened
+        Species in 2024. Pistacia atlantica has been listed as Near Threatened under
+        criteria A3cde.\"},{\"discovered\":\"2024-10-02\",\"authors\":[{\"firstName\":\"Susana
+        C.\",\"lastName\":\"Gon\xE7alves\"},{\"firstName\":\"Susana\",\"lastName\":\"Cunha\"}],\"countriesOfCoverage\":[],\"countriesOfResearcher\":[],\"added\":\"2024-10-02T20:49:19.849+00:00\",\"published\":\"2024-06-20T00:00:00.000+00:00\",\"day\":20,\"gbifDownloadKey\":[],\"gbifOccurrenceKey\":[],\"gbifTaxonKey\":[2524400],\"gbifHigherTaxonKey\":[34,5,8789,1063,2524399,186],\"gbifNetworkKey\":[],\"gbifProjectIdentifier\":[],\"gbifProgramme\":[],\"citationType\":\"generic\",\"gbifRegion\":[],\"id\":\"8d4a3c4e-d6fc-31c8-bd47-975376c4d9c1\",\"identifiers\":{},\"keywords\":[],\"language\":\"eng\",\"literatureType\":\"REPORT\",\"month\":6,\"openAccess\":false,\"peerReview\":false,\"publisher\":\"IUCN\",\"relevance\":[\"GBIF_CITED\"],\"source\":\"IUCN
+        Red List of Threatened Species\",\"tags\":[\"2024\",\"Conservation\",\"GBIF_cited\",\"citation_scope:na\",\"citation_type:generic\",\"gbifTaxon:2524400\",\"lit_source:iucn\",\"open_access:false\",\"peer_review:false\"],\"title\":\"Setogyroporus
+        verus\",\"topics\":[\"CONSERVATION\"],\"modified\":\"2024-10-02T20:49:19.849+00:00\",\"websites\":[\"https://www.iucnredlist.org/species/238745270/252903205\"],\"year\":2024,\"abstract\":\"Setogyroporus
+        verus has most recently been assessed for The IUCN Red List of Threatened
+        Species in 2024. Setogyroporus verus has been listed as Data Deficient.\"},{\"discovered\":\"2024-10-02\",\"authors\":[{\"firstName\":\"Susana
+        C.\",\"lastName\":\"Gon\xE7alves\"},{\"firstName\":\"Susana\",\"lastName\":\"Cunha\"}],\"countriesOfCoverage\":[],\"countriesOfResearcher\":[],\"added\":\"2024-10-02T17:59:17.387+00:00\",\"published\":\"2024-06-20T00:00:00.000+00:00\",\"day\":20,\"gbifDownloadKey\":[],\"gbifOccurrenceKey\":[],\"gbifTaxonKey\":[7559171],\"gbifHigherTaxonKey\":[34,5,8789,1063,186],\"gbifNetworkKey\":[],\"gbifProjectIdentifier\":[],\"gbifProgramme\":[],\"citationType\":\"generic\",\"gbifRegion\":[],\"id\":\"6b59c2ce-5df0-3a9c-8e11-f0c2fc74aff7\",\"identifiers\":{},\"keywords\":[],\"language\":\"eng\",\"literatureType\":\"REPORT\",\"month\":6,\"openAccess\":false,\"peerReview\":false,\"publisher\":\"IUCN\",\"relevance\":[\"GBIF_CITED\"],\"source\":\"IUCN
+        Red List of Threatened Species\",\"tags\":[\"2024\",\"Conservation\",\"GBIF_cited\",\"citation_scope:na\",\"citation_type:generic\",\"gbifTaxon:7559171\",\"lit_source:iucn\",\"open_access:false\",\"peer_review:false\"],\"title\":\"Cyanoboletus
+        poikilochromus\",\"topics\":[\"CONSERVATION\"],\"modified\":\"2024-10-02T17:59:17.387+00:00\",\"websites\":[\"https://www.iucnredlist.org/species/227506140/258434990\"],\"year\":2024,\"abstract\":\"Cyanoboletus
+        poikilochromus has most recently been assessed for The IUCN Red List of Threatened
+        Species in 2024. Cyanoboletus poikilochromus has been listed as Vulnerable
+        under criteria C2a(i).\"},{\"discovered\":\"2024-10-02\",\"authors\":[{\"firstName\":\"Susana
+        C.\",\"lastName\":\"Gon\xE7alves\"},{\"firstName\":\"Susana\",\"lastName\":\"Cunha\"}],\"countriesOfCoverage\":[],\"countriesOfResearcher\":[],\"added\":\"2024-10-02T17:59:16.536+00:00\",\"published\":\"2024-06-20T00:00:00.000+00:00\",\"day\":20,\"gbifDownloadKey\":[],\"gbifOccurrenceKey\":[],\"gbifTaxonKey\":[5243039],\"gbifHigherTaxonKey\":[34,11081530,5,8789,1063,186],\"gbifNetworkKey\":[],\"gbifProjectIdentifier\":[],\"gbifProgramme\":[],\"citationType\":\"generic\",\"gbifRegion\":[],\"id\":\"02167a12-c848-3f81-a0c6-923f17c8a629\",\"identifiers\":{},\"keywords\":[],\"language\":\"eng\",\"literatureType\":\"REPORT\",\"month\":6,\"openAccess\":false,\"peerReview\":false,\"publisher\":\"IUCN\",\"relevance\":[\"GBIF_CITED\"],\"source\":\"IUCN
+        Red List of Threatened Species\",\"tags\":[\"2024\",\"Conservation\",\"GBIF_cited\",\"citation_scope:na\",\"citation_type:generic\",\"gbifTaxon:5243039\",\"lit_source:iucn\",\"open_access:false\",\"peer_review:false\"],\"title\":\"Gymnogaster
+        boletoides\",\"topics\":[\"CONSERVATION\"],\"modified\":\"2024-10-02T17:59:16.536+00:00\",\"websites\":[\"https://www.iucnredlist.org/species/258432971/258434799\"],\"year\":2024,\"abstract\":\"Gymnogaster
+        boletoides has most recently been assessed for The IUCN Red List of Threatened
+        Species in 2024. Gymnogaster boletoides has been listed as Vulnerable under
+        criteria A3c+4c.\"},{\"discovered\":\"2024-10-02\",\"authors\":[{\"firstName\":\"Nelson\",\"lastName\":\"Zamora\"}],\"countriesOfCoverage\":[],\"countriesOfResearcher\":[],\"added\":\"2024-10-02T17:59:15.838+00:00\",\"published\":\"2024-06-20T00:00:00.000+00:00\",\"day\":20,\"gbifDownloadKey\":[],\"gbifOccurrenceKey\":[],\"gbifTaxonKey\":[4185677],\"gbifHigherTaxonKey\":[404,7707728,6,6678,3075433,220],\"gbifNetworkKey\":[],\"gbifProjectIdentifier\":[],\"gbifProgramme\":[],\"citationType\":\"generic\",\"gbifRegion\":[],\"id\":\"e2adf4ab-d630-309f-bb60-0ed9fc6e14f3\",\"identifiers\":{},\"keywords\":[],\"language\":\"eng\",\"literatureType\":\"REPORT\",\"month\":6,\"openAccess\":false,\"peerReview\":false,\"publisher\":\"IUCN\",\"relevance\":[\"GBIF_CITED\"],\"source\":\"IUCN
+        Red List of Threatened Species\",\"tags\":[\"2024\",\"Conservation\",\"GBIF_cited\",\"citation_scope:na\",\"citation_type:generic\",\"gbifTaxon:4185677\",\"lit_source:iucn\",\"open_access:false\",\"peer_review:false\"],\"title\":\"Piper
+        melanocladum\",\"topics\":[\"CONSERVATION\"],\"modified\":\"2024-10-02T17:59:15.838+00:00\",\"websites\":[\"https://www.iucnredlist.org/species/152001573/255924988\"],\"year\":2024,\"abstract\":\"Piper
+        melanocladum has most recently been assessed for The IUCN Red List of Threatened
+        Species in 2024. Piper melanocladum has been listed as Least Concern.\"},{\"discovered\":\"2024-10-02\",\"authors\":[{\"firstName\":\"Marie-St\xE9phanie\",\"lastName\":\"Samain\"},{\"firstName\":\"Esteban
+        \ Mart\xEDnez\",\"lastName\":\"Salas\"},{\"firstName\":\"Karina Machuca\",\"lastName\":\"Machuca\"}],\"countriesOfCoverage\":[],\"countriesOfResearcher\":[],\"added\":\"2024-10-02T17:59:15.022+00:00\",\"published\":\"2024-06-20T00:00:00.000+00:00\",\"day\":20,\"gbifDownloadKey\":[],\"gbifOccurrenceKey\":[],\"gbifTaxonKey\":[2921898],\"gbifHigherTaxonKey\":[7707728,6,2898662,220,412,8798],\"gbifNetworkKey\":[],\"gbifProjectIdentifier\":[],\"gbifProgramme\":[],\"citationType\":\"generic\",\"gbifRegion\":[],\"id\":\"365f673a-88d1-3895-a0cd-4692aa9c040b\",\"identifiers\":{},\"keywords\":[],\"language\":\"eng\",\"literatureType\":\"REPORT\",\"month\":6,\"openAccess\":false,\"peerReview\":false,\"publisher\":\"IUCN\",\"relevance\":[\"GBIF_CITED\"],\"source\":\"IUCN
+        Red List of Threatened Species\",\"tags\":[\"2024\",\"Conservation\",\"GBIF_cited\",\"citation_scope:na\",\"citation_type:generic\",\"gbifTaxon:2921898\",\"lit_source:iucn\",\"open_access:false\",\"peer_review:false\"],\"title\":\"Palicourea
+        phanerandra\",\"topics\":[\"CONSERVATION\"],\"modified\":\"2024-10-02T17:59:15.022+00:00\",\"websites\":[\"https://www.iucnredlist.org/species/205388701/255923206\"],\"year\":2024,\"abstract\":\"Palicourea
+        phanerandra has most recently been assessed for The IUCN Red List of Threatened
+        Species in 2024. Palicourea phanerandra has been listed as Least Concern.\"},{\"discovered\":\"2024-10-02\",\"authors\":[{\"lastName\":\"false.email@globaltrees.org\"},{\"firstName\":\"Botanic
+        Gardens Conservation\",\"lastName\":\"International\"}],\"countriesOfCoverage\":[],\"countriesOfResearcher\":[],\"added\":\"2024-10-02T17:59:14.303+00:00\",\"published\":\"2024-06-20T00:00:00.000+00:00\",\"day\":20,\"gbifDownloadKey\":[],\"gbifOccurrenceKey\":[],\"gbifTaxonKey\":[3073653],\"gbifHigherTaxonKey\":[4691,7707728,3073435,6,1414,220],\"gbifNetworkKey\":[],\"gbifProjectIdentifier\":[],\"gbifProgramme\":[],\"citationType\":\"generic\",\"gbifRegion\":[],\"id\":\"3cc0424b-6534-3548-b4e7-45421dbb0e14\",\"identifiers\":{},\"keywords\":[],\"language\":\"eng\",\"literatureType\":\"REPORT\",\"month\":6,\"openAccess\":false,\"peerReview\":false,\"publisher\":\"IUCN\",\"relevance\":[\"GBIF_CITED\"],\"source\":\"IUCN
+        Red List of Threatened Species\",\"tags\":[\"2024\",\"Conservation\",\"GBIF_cited\",\"citation_scope:na\",\"citation_type:generic\",\"gbifTaxon:3073653\",\"lit_source:iucn\",\"open_access:false\",\"peer_review:false\"],\"title\":\"Cnidoscolus
+        urens\",\"topics\":[\"CONSERVATION\"],\"modified\":\"2024-10-02T17:59:14.303+00:00\",\"websites\":[\"https://www.iucnredlist.org/species/150016331/255465627\"],\"year\":2024,\"abstract\":\"Cnidoscolus
+        urens has most recently been assessed for The IUCN Red List of Threatened
+        Species in 2024. Cnidoscolus urens has been listed as Least Concern.\"},{\"discovered\":\"2024-10-02\",\"authors\":[{\"firstName\":\"Rogier
+        de\",\"lastName\":\"Kok\"}],\"countriesOfCoverage\":[],\"countriesOfResearcher\":[],\"added\":\"2024-10-02T17:59:13.397+00:00\",\"published\":\"2024-06-20T00:00:00.000+00:00\",\"day\":20,\"gbifDownloadKey\":[],\"gbifOccurrenceKey\":[],\"gbifTaxonKey\":[4178082],\"gbifHigherTaxonKey\":[6688,7707728,6,3033976,407,220],\"gbifNetworkKey\":[],\"gbifProjectIdentifier\":[],\"gbifProgramme\":[],\"citationType\":\"generic\",\"gbifRegion\":[],\"id\":\"d79473b7-ac52-3a48-b662-be76e312dfd3\",\"identifiers\":{},\"keywords\":[],\"language\":\"eng\",\"literatureType\":\"REPORT\",\"month\":6,\"openAccess\":false,\"peerReview\":false,\"publisher\":\"IUCN\",\"relevance\":[\"GBIF_CITED\"],\"source\":\"IUCN
+        Red List of Threatened Species\",\"tags\":[\"2024\",\"Conservation\",\"GBIF_cited\",\"citation_scope:na\",\"citation_type:generic\",\"gbifTaxon:4178082\",\"lit_source:iucn\",\"open_access:false\",\"peer_review:false\"],\"title\":\"Litsea
+        caulocarpa\",\"topics\":[\"CONSERVATION\"],\"modified\":\"2024-10-02T17:59:13.397+00:00\",\"websites\":[\"https://www.iucnredlist.org/species/153268545/254592921\"],\"year\":2024,\"abstract\":\"Litsea
+        caulocarpa has most recently been assessed for The IUCN Red List of Threatened
+        Species in 2024. Litsea caulocarpa has been listed as Least Concern.\"},{\"discovered\":\"2024-10-02\",\"authors\":[{\"firstName\":\"Megan\",\"lastName\":\"Barstow\"}],\"countriesOfCoverage\":[],\"countriesOfResearcher\":[],\"added\":\"2024-10-02T17:59:12.560+00:00\",\"published\":\"2024-06-20T00:00:00.000+00:00\",\"day\":20,\"gbifDownloadKey\":[],\"gbifOccurrenceKey\":[],\"gbifTaxonKey\":[4096343],\"gbifHigherTaxonKey\":[7707728,6645,6,10803341,220,941],\"gbifNetworkKey\":[],\"gbifProjectIdentifier\":[],\"gbifProgramme\":[],\"citationType\":\"generic\",\"gbifRegion\":[],\"id\":\"f4016f88-bf0a-3bd6-b46f-f8f699ac285b\",\"identifiers\":{},\"keywords\":[],\"language\":\"eng\",\"literatureType\":\"REPORT\",\"month\":6,\"openAccess\":false,\"peerReview\":false,\"publisher\":\"IUCN\",\"relevance\":[\"GBIF_CITED\"],\"source\":\"IUCN
+        Red List of Threatened Species\",\"tags\":[\"2024\",\"Conservation\",\"GBIF_cited\",\"citation_scope:na\",\"citation_type:generic\",\"gbifTaxon:4096343\",\"lit_source:iucn\",\"open_access:false\",\"peer_review:false\"],\"title\":\"Shorea
+        parvifolia\",\"topics\":[\"CONSERVATION\"],\"modified\":\"2024-10-02T17:59:12.560+00:00\",\"websites\":[\"https://www.iucnredlist.org/species/63045/254584878\"],\"year\":2024,\"abstract\":\"Shorea
+        parvifolia has most recently been assessed for The IUCN Red List of Threatened
+        Species in 2024. Shorea parvifolia has been listed as Least Concern.\"},{\"discovered\":\"2024-10-02\",\"authors\":[{\"firstName\":\"Susana
+        C.\",\"lastName\":\"Gon\xE7alves\"},{\"firstName\":\"Susana\",\"lastName\":\"Cunha\"}],\"countriesOfCoverage\":[],\"countriesOfResearcher\":[],\"added\":\"2024-10-02T17:58:52.049+00:00\",\"published\":\"2024-06-20T00:00:00.000+00:00\",\"day\":20,\"gbifDownloadKey\":[],\"gbifOccurrenceKey\":[],\"gbifTaxonKey\":[2528621],\"gbifHigherTaxonKey\":[34,11109178,5,8789,1063,186],\"gbifNetworkKey\":[],\"gbifProjectIdentifier\":[],\"gbifProgramme\":[],\"citationType\":\"generic\",\"gbifRegion\":[],\"id\":\"3c43dbfa-2d6c-3904-8e7a-99b81520187b\",\"identifiers\":{},\"keywords\":[],\"language\":\"eng\",\"literatureType\":\"REPORT\",\"month\":6,\"openAccess\":false,\"peerReview\":false,\"publisher\":\"IUCN\",\"relevance\":[\"GBIF_CITED\"],\"source\":\"IUCN
+        Red List of Threatened Species\",\"tags\":[\"2024\",\"Conservation\",\"GBIF_cited\",\"citation_scope:na\",\"citation_type:generic\",\"gbifTaxon:2528621\",\"lit_source:iucn\",\"open_access:false\",\"peer_review:false\"],\"title\":\"Mackintoshia
+        persica\",\"topics\":[\"CONSERVATION\"],\"modified\":\"2024-10-02T17:58:52.049+00:00\",\"websites\":[\"https://www.iucnredlist.org/species/238745687/252902914\"],\"year\":2024,\"abstract\":\"Mackintoshia
+        persica has most recently been assessed for The IUCN Red List of Threatened
+        Species in 2024. Mackintoshia persica has been listed as Least Concern.\"}],\"facets\":[{\"field\":\"YEAR\",\"counts\":[{\"name\":\"2020\",\"count\":9002},{\"name\":\"2023\",\"count\":7662},{\"name\":\"2021\",\"count\":7173},{\"name\":\"2022\",\"count\":6813},{\"name\":\"2019\",\"count\":5970},{\"name\":\"2024\",\"count\":5544},{\"name\":\"2018\",\"count\":2406},{\"name\":\"2017\",\"count\":1472},{\"name\":\"2016\",\"count\":1090},{\"name\":\"2015\",\"count\":1009}]}]}"
     headers:
       Accept-Ranges:
       - bytes
@@ -256,7 +78,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Tue, 01 Oct 2024 08:42:17 GMT
+      - Fri, 04 Oct 2024 06:59:54 GMT
       Expires:
       - '0'
       Pragma:
@@ -272,7 +94,7 @@ interactions:
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '936871543'
+      - '649398953'
       X-XSS-Protection:
       - 1; mode=block
     status:

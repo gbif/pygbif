@@ -14,15 +14,15 @@ interactions:
     uri: https://api.gbif.org/v1/occurrence/142316497/verbatim
   response:
     body:
-      string: "{\"key\":142316497,\"datasetKey\":\"8575f23e-f762-11e1-a439-00145eb45e9a\",\"publishingOrgKey\":\"57254bd0-8256-11d8-b7ed-b8a03c50a862\",\"networkKeys\":[\"17abcf75-2f1e-46dd-bf75-a5b21dd02655\"],\"installationKey\":\"60454014-f762-11e1-a439-00145eb45e9a\",\"publishingCountry\":\"DE\",\"protocol\":\"BIOCASE\",\"lastCrawled\":\"2024-04-28T21:25:35.174+00:00\",\"lastParsed\":\"2024-04-28T21:31:42.450+00:00\",\"crawlId\":275,\"extensions\":{},\"publishedByGbifRegion\":\"EUROPE\",\"http://rs.gbif.org/terms/1.0/gbifID\":\"142316497\",\"http://rs.tdwg.org/dwc/terms/kingdom\":\"Plantae\",\"http://purl.org/dc/terms/identifier\":\"urn:catalog:BGBM:Pontaurus:1\",\"http://rs.tdwg.org/dwc/terms/country\":\"Turkey\",\"http://rs.tdwg.org/dwc/terms/class\":\"Magnoliopsida\",\"http://rs.tdwg.org/dwc/terms/collectionCode\":\"Pontaurus\",\"http://rs.tdwg.org/dwc/terms/order\":\"Lamiales\",\"http://rs.tdwg.org/dwc/terms/minimumElevationInMeters\":\"0\",\"http://rs.tdwg.org/dwc/terms/identifiedBy\":\"Markus
-        D\xF6ring\",\"http://rs.tdwg.org/dwc/terms/basisOfRecord\":\"specimen\",\"http://rs.tdwg.org/dwc/terms/eventDate\":\"1999-06-18T00:00:00\",\"http://rs.tdwg.org/dwc/terms/catalogNumber\":\"1\",\"http://rs.tdwg.org/dwc/terms/family\":\"Lamiaceae\",\"http://rs.tdwg.org/dwc/terms/decimalLongitude\":\"26.85083\",\"http://rs.tdwg.org/dwc/terms/decimalLatitude\":\"38.10695\",\"http://rs.tdwg.org/dwc/terms/institutionCode\":\"BGBM\",\"http://rs.tdwg.org/dwc/terms/scientificName\":\"Ballota
-        acetabulosa (L.) Benth.\",\"http://rs.tdwg.org/dwc/terms/recordedBy\":\"Markus
-        D\xF6ring\",\"http://rs.tdwg.org/dwc/terms/phylum\":\"Magnoliophyta\"}"
+      string: "{\"key\":142316497,\"datasetKey\":\"8575f23e-f762-11e1-a439-00145eb45e9a\",\"publishingOrgKey\":\"57254bd0-8256-11d8-b7ed-b8a03c50a862\",\"networkKeys\":[\"17abcf75-2f1e-46dd-bf75-a5b21dd02655\"],\"installationKey\":\"60454014-f762-11e1-a439-00145eb45e9a\",\"publishingCountry\":\"DE\",\"protocol\":\"BIOCASE\",\"lastCrawled\":\"2024-10-04T00:56:46.740+00:00\",\"lastParsed\":\"2024-10-04T01:02:34.417+00:00\",\"crawlId\":300,\"extensions\":{},\"publishedByGbifRegion\":\"EUROPE\",\"http://rs.gbif.org/terms/1.0/gbifID\":\"142316497\",\"http://rs.tdwg.org/dwc/terms/kingdom\":\"Plantae\",\"http://purl.org/dc/terms/identifier\":\"urn:catalog:BGBM:Pontaurus:1\",\"http://rs.tdwg.org/dwc/terms/country\":\"Turkey\",\"http://rs.tdwg.org/dwc/terms/class\":\"Magnoliopsida\",\"http://rs.tdwg.org/dwc/terms/collectionCode\":\"Pontaurus\",\"http://rs.tdwg.org/dwc/terms/order\":\"Lamiales\",\"http://rs.tdwg.org/dwc/terms/minimumElevationInMeters\":\"0\",\"http://rs.tdwg.org/dwc/terms/identifiedBy\":\"Markus
+        D\xF6ring\",\"http://rs.tdwg.org/dwc/terms/basisOfRecord\":\"specimen\",\"http://rs.tdwg.org/dwc/terms/eventDate\":\"1999-06-18T00:00:00\",\"http://rs.tdwg.org/dwc/terms/catalogNumber\":\"1\",\"http://rs.tdwg.org/dwc/terms/family\":\"Lamiaceae\",\"http://rs.tdwg.org/dwc/terms/decimalLatitude\":\"38.10695\",\"http://rs.tdwg.org/dwc/terms/decimalLongitude\":\"26.85083\",\"http://rs.tdwg.org/dwc/terms/institutionCode\":\"BGBM\",\"http://rs.tdwg.org/dwc/terms/recordedBy\":\"Markus
+        D\xF6ring\",\"http://rs.tdwg.org/dwc/terms/scientificName\":\"Ballota acetabulosa
+        (L.) Benth.\",\"http://rs.tdwg.org/dwc/terms/phylum\":\"Magnoliophyta\"}"
     headers:
       Accept-Ranges:
       - bytes
       Age:
-      - '372'
+      - '0'
       Cache-Control:
       - public, max-age=3601
       Connection:
@@ -32,7 +32,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Thu, 02 May 2024 09:55:28 GMT
+      - Fri, 04 Oct 2024 07:00:09 GMT
       Expires:
       - '0'
       Pragma:
@@ -46,7 +46,7 @@ interactions:
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - 293846355 581601578
+      - '643600117'
       X-XSS-Protection:
       - 1; mode=block
     status:
