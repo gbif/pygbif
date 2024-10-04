@@ -38,6 +38,6 @@ from .download import (
     download_get,
     download_cancel,
     download_describe,
-    download_sql
+    download_sql,
+    download_citation
 )
-from .citation import citation
