@@ -9,7 +9,7 @@ interactions:
       Connection:
       - keep-alive
       user-agent:
-      - python-requests/2.31.0,pygbif/0.6.3
+      - python-requests/2.31.0,pygbif/0.6.4
     method: GET
     uri: https://api.gbif.org/v1/organization/e2e717bf-551a-4917-bdc9-4fa0f342c530?limit=100
   response:
@@ -17,15 +17,14 @@ interactions:
       string: '{"key":"e2e717bf-551a-4917-bdc9-4fa0f342c530","endorsingNodeKey":"8618c64a-93e0-4300-b546-7249e5148ed2","endorsementApproved":true,"endorsementStatus":"ENDORSED","title":"Cornell
         Lab of Ornithology","description":"The Cornell Lab of Ornithology is a world
         leader in the study, appreciation, and conservation of birds.","language":"eng","email":[],"phone":[],"homepage":["http://www.birds.cornell.edu"],"address":["159
-        Sapsucker Woods Rd."],"city":"Ithaca","province":"New York","country":"US","postalCode":"14850","latitude":42.47999,"longitude":-76.45109,"numPublishedDatasets":3,"createdBy":"ADMIN","modifiedBy":"sformel","created":"2013-08-01T08:38:21.000+00:00","modified":"2023-03-03T01:57:24.373+00:00","contacts":[{"key":19957,"type":"ADMINISTRATIVE_POINT_OF_CONTACT","primary":true,"userId":[],"firstName":"Tim","lastName":"Levatich","position":["Database
-        Manager"],"email":["tpl10@cornell.edu"],"phone":["+01 607 254 2113"],"homepage":[],"address":["Cornell
-        Lab of Ornithology"],"createdBy":"registry-migration.gbif.org","modifiedBy":"registry-migration.gbif.org","created":"2013-10-24T09:04:58.000+00:00","modified":"2013-10-24T09:04:58.000+00:00"},{"key":19958,"type":"TECHNICAL_POINT_OF_CONTACT","primary":true,"userId":[],"firstName":"David","lastName":"Bloom","position":["VertNet
-        Programmer"],"email":["dbloom@vertnet.org"],"phone":["+01 785 813-1496"],"homepage":[],"address":[],"createdBy":"registry-migration.gbif.org","modifiedBy":"registry-migration.gbif.org","created":"2013-10-24T09:04:58.000+00:00","modified":"2013-10-24T09:04:58.000+00:00"},{"key":19959,"type":"TECHNICAL_POINT_OF_CONTACT","primary":false,"userId":[],"firstName":"Jeff","lastName":"Gerbracht","position":["Applications
-        Leader for Information Science"],"email":["jag73@cornell.edu"],"phone":["+01
-        607 254 2117"],"homepage":[],"address":["Cornell Lab of Ornithology"],"createdBy":"registry-migration.gbif.org","modifiedBy":"jlegind","created":"2013-10-24T09:04:58.000+00:00","modified":"2015-11-12T14:01:57.541+00:00"},{"key":19960,"type":"TECHNICAL_POINT_OF_CONTACT","primary":false,"userId":[],"firstName":"John","lastName":"Wieczorek","position":["Information
-        Architect"],"email":["tuco@berkeley.edu"],"phone":["+01 510 642 5409"],"homepage":[],"address":["Museum
-        of Vertebrate Zoology, University of California, Berkeley"],"createdBy":"registry-migration.gbif.org","modifiedBy":"registry-migration.gbif.org","created":"2013-10-24T09:04:58.000+00:00","modified":"2013-10-24T09:04:58.000+00:00"},{"key":19961,"type":"TECHNICAL_POINT_OF_CONTACT","primary":false,"userId":[],"firstName":"David","lastName":"Bloom","position":["VertNet
-        Coordinator"],"email":["Dbloom@vertnet.org"],"phone":["+01 510 643 1620"],"homepage":[],"address":[],"createdBy":"registry-migration.gbif.org","modifiedBy":"registry-migration.gbif.org","created":"2013-10-24T09:04:58.000+00:00","modified":"2013-10-24T09:04:58.000+00:00"}],"endpoints":[],"machineTags":[],"tags":[],"identifiers":[{"key":13528,"type":"GBIF_PORTAL","identifier":"602","createdBy":"registry-migration.gbif.org","created":"2013-08-08T09:34:37.000+00:00"}],"comments":[{"key":33423,"content":"2023-03-02
+        Sapsucker Woods Rd."],"city":"Ithaca","province":"New York","country":"US","postalCode":"14850","latitude":42.47999,"longitude":-76.45109,"numPublishedDatasets":3,"createdBy":"ADMIN","modifiedBy":"sformel","created":"2013-08-01T08:38:21.000+00:00","modified":"2023-03-03T01:57:24.373+00:00","contacts":[{"key":19959,"type":"TECHNICAL_POINT_OF_CONTACT","primary":false,"userId":[],"firstName":"Jeff","lastName":"Gerbracht","position":["
+        Technical Lead"],"email":["jag73@cornell.edu"],"phone":["+01 607 254 2117"],"homepage":[],"organization":"Cornell
+        Lab of Ornithology","address":["Center for Avian Population Studies"],"createdBy":"registry-migration.gbif.org","modifiedBy":"mgrosjean","created":"2013-10-24T09:04:58.000+00:00","modified":"2024-03-25T07:45:10.496+00:00"},{"key":5261061,"type":"ADMINISTRATIVE_POINT_OF_CONTACT","primary":true,"userId":[],"firstName":"Chris","lastName":"Wood","position":["Managing
+        Director"],"email":["clw37@cornell.edu"],"phone":[" +01 607 254 2195"],"homepage":[],"organization":"Cornell
+        Lab of Ornithology","address":["Center for Avian Population Studies"],"createdBy":"mgrosjean","modifiedBy":"mgrosjean","created":"2024-03-25T07:41:21.878+00:00","modified":"2024-03-25T07:42:14.597+00:00"},{"key":5261062,"type":"TECHNICAL_POINT_OF_CONTACT","primary":true,"userId":[],"firstName":"Jadev","lastName":"Imani","position":["Technical
+        Lead"],"email":["jasdev.imani@cornell.edu"],"phone":["+01 607 254 2187"],"homepage":[],"organization":"Cornell
+        Lab of Ornithology","address":["Center for Avian Population Studies"],"createdBy":"mgrosjean","modifiedBy":"mgrosjean","created":"2024-03-25T07:44:08.736+00:00","modified":"2024-03-25T07:44:08.736+00:00"}],"endpoints":[],"machineTags":[],"tags":[],"identifiers":[{"key":13528,"type":"GBIF_PORTAL","identifier":"602","createdBy":"registry-migration.gbif.org","created":"2013-08-08T09:34:37.000+00:00"}],"comments":[{"key":35635,"content":"2023-03-25
+        [MG] Updated the contacts at the request of the institution.","createdBy":"mgrosjean","modifiedBy":"mgrosjean","created":"2024-03-25T07:39:32.978+00:00","modified":"2024-03-25T07:39:32.978+00:00"},{"key":33423,"content":"2023-03-02
         [SF] added address information","createdBy":"sformel","modifiedBy":"sformel","created":"2023-03-03T01:57:24.682+00:00","modified":"2023-03-03T01:57:24.682+00:00"}]}'
     headers:
       Accept-Ranges:
@@ -37,11 +36,11 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '3305'
+      - '2744'
       Content-Type:
       - application/json
       Date:
-      - Fri, 01 Mar 2024 08:32:36 GMT
+      - Fri, 04 Oct 2024 07:00:35 GMT
       Expires:
       - '0'
       Pragma:
@@ -55,7 +54,7 @@ interactions:
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '693569246'
+      - '693077130'
       X-XSS-Protection:
       - 1; mode=block
     status:

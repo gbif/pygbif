@@ -9,12 +9,12 @@ interactions:
       Connection:
       - keep-alive
       user-agent:
-      - python-requests/2.31.0,pygbif/0.6.3
+      - python-requests/2.31.0,pygbif/0.6.4
     method: GET
     uri: https://api.gbif.org/v1/occurrence/count?taxonKey=3329049
   response:
     body:
-      string: '874'
+      string: '765'
     headers:
       Accept-Ranges:
       - bytes
@@ -24,16 +24,16 @@ interactions:
       - public, max-age=600
       Connection:
       - keep-alive
-      Content-Length:
-      - '3'
       Content-Type:
       - application/json
       Date:
-      - Fri, 01 Mar 2024 08:32:14 GMT
+      - Fri, 04 Oct 2024 07:00:00 GMT
       Expires:
       - '0'
       Pragma:
       - no-cache
+      Transfer-Encoding:
+      - chunked
       Vary:
       - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
       Via:
@@ -43,7 +43,7 @@ interactions:
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '726239410'
+      - '690717278'
       X-XSS-Protection:
       - 1; mode=block
     status:

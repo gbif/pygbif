@@ -9,7 +9,7 @@ interactions:
       Connection:
       - keep-alive
       user-agent:
-      - python-requests/2.32.3,pygbif/0.6.4
+      - python-requests/2.31.0,pygbif/0.6.4
     method: GET
     uri: https://api.gbif.org/v1/occurrence/download/describe/simpleCsv
   response:
@@ -25,16 +25,16 @@ interactions:
       - public, max-age=3601
       Connection:
       - keep-alive
-      Content-Length:
-      - '5525'
       Content-Type:
       - application/json
       Date:
-      - Wed, 02 Oct 2024 14:04:55 GMT
+      - Fri, 04 Oct 2024 07:00:06 GMT
       Expires:
       - '0'
       Pragma:
       - no-cache
+      Transfer-Encoding:
+      - chunked
       Vary:
       - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
       Via:
@@ -44,7 +44,7 @@ interactions:
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '766683002'
+      - '649562921'
       X-XSS-Protection:
       - 1; mode=block
     status:

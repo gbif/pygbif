@@ -9,29 +9,30 @@ interactions:
       Connection:
       - keep-alive
       user-agent:
-      - python-requests/2.31.0,pygbif/0.6.3
+      - python-requests/2.31.0,pygbif/0.6.4
     method: GET
     uri: https://api.gbif.org/v1/installation?limit=5
   response:
     body:
-      string: '{"offset":0,"limit":5,"endOfRecords":false,"count":653,"results":[{"key":"dbc06549-1795-4167-a247-9dcf90228ae7","organizationKey":"04fd2e13-6881-4e5c-9dd1-8fdd9ab993c1","type":"IPT_INSTALLATION","title":"FinBIF
-        IPT","description":"The Finnish Biodiversity Information Facility (FinBIF)
-        is an open access data repository for researchers, government and the public.
-        FinBIF consolidates many collections and datasets of living Finland in a single
-        source. Our online portal, laji.fi, allows you to browse, search and download
-        information about all forms of biological life, and to record and share your
-        own observations. FinBIF is committed to the sharing and promotion of open
-        access data.","createdBy":"04fd2e13-6881-4e5c-9dd1-8fdd9ab993c1","modifiedBy":"04fd2e13-6881-4e5c-9dd1-8fdd9ab993c1","created":"2024-02-27T12:54:21.005+00:00","modified":"2024-02-27T12:54:21.005+00:00","disabled":false,"contacts":[{"key":5168045,"type":"TECHNICAL_POINT_OF_CONTACT","primary":true,"userId":[],"firstName":"FinBIF","position":[],"email":["helpdesk@laji.fi"],"phone":[],"homepage":[],"address":[],"createdBy":"04fd2e13-6881-4e5c-9dd1-8fdd9ab993c1","modifiedBy":"04fd2e13-6881-4e5c-9dd1-8fdd9ab993c1","created":"2024-02-27T12:54:21.070+00:00","modified":"2024-02-27T12:54:21.070+00:00"}],"endpoints":[{"key":970640,"type":"FEED","url":"https://ipt.laji.fi/rss.do","createdBy":"04fd2e13-6881-4e5c-9dd1-8fdd9ab993c1","modifiedBy":"04fd2e13-6881-4e5c-9dd1-8fdd9ab993c1","created":"2024-02-27T12:54:21.087+00:00","modified":"2024-02-27T12:54:21.087+00:00","machineTags":[]}],"machineTags":[],"tags":[],"identifiers":[],"comments":[]},{"key":"3bd087fc-7add-4574-93a9-9208d624fba7","organizationKey":"f9b67ad0-9c9b-11d9-b9db-b8a03c50a862","type":"IPT_INSTALLATION","title":"ANSP
-        IPT Installation","description":"This is the first IPT installation for the
-        Academy of Natural Sciences","createdBy":"f9b67ad0-9c9b-11d9-b9db-b8a03c50a862","modifiedBy":"f9b67ad0-9c9b-11d9-b9db-b8a03c50a862","created":"2024-02-01T16:18:10.484+00:00","modified":"2024-02-01T16:18:10.484+00:00","disabled":false,"contacts":[{"key":5144745,"type":"TECHNICAL_POINT_OF_CONTACT","primary":true,"userId":[],"firstName":"BDIM","position":[],"email":["ans_bdim@drexel.edu"],"phone":[],"homepage":[],"address":[],"createdBy":"f9b67ad0-9c9b-11d9-b9db-b8a03c50a862","modifiedBy":"f9b67ad0-9c9b-11d9-b9db-b8a03c50a862","created":"2024-02-01T16:18:10.506+00:00","modified":"2024-02-01T16:18:10.506+00:00"}],"endpoints":[{"key":963609,"type":"FEED","url":"http://ans-collectweb.ansp.org:8080/ipt-2.7.7/rss.do","createdBy":"f9b67ad0-9c9b-11d9-b9db-b8a03c50a862","modifiedBy":"f9b67ad0-9c9b-11d9-b9db-b8a03c50a862","created":"2024-02-01T16:18:10.538+00:00","modified":"2024-02-01T16:18:10.538+00:00","machineTags":[]}],"machineTags":[],"tags":[],"identifiers":[],"comments":[]},{"key":"2af88c45-c995-4d1e-9c92-1647b3dea4bc","organizationKey":"a2fa5b68-3ebf-4845-abc5-f456d251386f","type":"IPT_INSTALLATION","title":"GBIF
-        CAS Node","description":"This is homepage of Chinese Academy of Sciences (CAS)
-        Node of GBIF. We are focusing on publishing biodiversity from herberia, museum,
-        universities, protect areas, literature and citizen sciences.","createdBy":"a2fa5b68-3ebf-4845-abc5-f456d251386f","modifiedBy":"a2fa5b68-3ebf-4845-abc5-f456d251386f","created":"2024-01-27T14:22:01.340+00:00","modified":"2024-01-27T14:22:01.340+00:00","disabled":false,"contacts":[{"key":5139988,"type":"TECHNICAL_POINT_OF_CONTACT","primary":true,"userId":[],"firstName":"Zheping
-        Xu","position":[],"email":["xuzp@mail.las.ac.cn"],"phone":[],"homepage":[],"address":[],"createdBy":"a2fa5b68-3ebf-4845-abc5-f456d251386f","modifiedBy":"a2fa5b68-3ebf-4845-abc5-f456d251386f","created":"2024-01-27T14:22:01.361+00:00","modified":"2024-01-27T14:22:01.361+00:00"}],"endpoints":[{"key":962540,"type":"FEED","url":"http://www.gbifchina.org.cn/rss.do","createdBy":"a2fa5b68-3ebf-4845-abc5-f456d251386f","modifiedBy":"a2fa5b68-3ebf-4845-abc5-f456d251386f","created":"2024-01-27T14:22:01.391+00:00","modified":"2024-01-27T14:22:01.391+00:00","machineTags":[]}],"machineTags":[],"tags":[],"identifiers":[],"comments":[]},{"key":"d6b813e6-0de3-40b2-9021-397d3af02956","organizationKey":"38aff03b-85a9-406a-85df-cb1a9359cbef","type":"IPT_INSTALLATION","title":"DiSSCo
-        UK IPT","description":"IPT for use by DiSSCo UK partner institutions when
-        publishing occurrence data to GBIF.","createdBy":"38aff03b-85a9-406a-85df-cb1a9359cbef","modifiedBy":"38aff03b-85a9-406a-85df-cb1a9359cbef","created":"2024-01-24T15:17:10.453+00:00","modified":"2024-01-24T15:17:10.453+00:00","disabled":false,"contacts":[{"key":5138699,"type":"TECHNICAL_POINT_OF_CONTACT","primary":true,"userId":[],"firstName":"Josh
-        Humphries","position":[],"email":["j.humphries@nhm.ac.uk"],"phone":[],"homepage":[],"address":[],"createdBy":"38aff03b-85a9-406a-85df-cb1a9359cbef","modifiedBy":"38aff03b-85a9-406a-85df-cb1a9359cbef","created":"2024-01-24T15:17:10.467+00:00","modified":"2024-01-24T15:17:10.467+00:00"}],"endpoints":[{"key":962081,"type":"FEED","url":"https://ipt.dissco-uk.org/rss.do","createdBy":"38aff03b-85a9-406a-85df-cb1a9359cbef","modifiedBy":"38aff03b-85a9-406a-85df-cb1a9359cbef","created":"2024-01-24T15:17:10.494+00:00","modified":"2024-01-24T15:17:10.494+00:00","machineTags":[]}],"machineTags":[],"tags":[],"identifiers":[],"comments":[]},{"key":"75c5d4ef-378e-4f25-984a-f32510926d7c","organizationKey":"2d6e0e40-2aee-11d8-aa2d-b8a03c50a862","type":"HTTP_INSTALLATION","title":"Biologiezentrum
-        Linz Oberoesterreich installation","createdBy":"mgrosjean","modifiedBy":"mgrosjean","created":"2024-01-23T13:14:25.461+00:00","modified":"2024-01-23T13:14:25.461+00:00","disabled":false,"contacts":[],"endpoints":[],"machineTags":[],"tags":[],"identifiers":[],"comments":[]}]}'
+      string: "{\"offset\":0,\"limit\":5,\"endOfRecords\":false,\"count\":667,\"results\":[{\"key\":\"49b268f4-e5db-49a3-87ad-ee23f397eadd\",\"organizationKey\":\"37e82b90-1e21-11de-ab90-f72009d2669b\",\"type\":\"HTTP_INSTALLATION\",\"title\":\"GBIF.be
+        Metabarcoding Datasets\",\"description\":\"Metabarcoding publication tool
+        for Belgian data holders.\",\"createdBy\":\"MattBlissett\",\"modifiedBy\":\"MattBlissett\",\"created\":\"2024-10-03T10:59:26.782+00:00\",\"modified\":\"2024-10-03T10:59:26.782+00:00\",\"disabled\":false,\"contacts\":[],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"18d23510-5b63-4ead-93d2-09061bf0b50e\",\"organizationKey\":\"04fd2e13-6881-4e5c-9dd1-8fdd9ab993c1\",\"type\":\"HTTP_INSTALLATION\",\"title\":\"FinBIF
+        Metabarcoding Datasets\",\"description\":\"This is the Finnish Biodiversity
+        Information Facility's installation of GBIF's Metabarcoding Data Toolkit.
+        It facilitates the conversion and mobilization of DNA metabarcoding datasets
+        for Finnish data providers.\",\"createdBy\":\"MattBlissett\",\"modifiedBy\":\"MattBlissett\",\"created\":\"2024-10-03T10:44:07.699+00:00\",\"modified\":\"2024-10-03T10:44:07.699+00:00\",\"disabled\":false,\"contacts\":[],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"a3d3cdb4-4bf9-4e13-b50b-94b6b000a1d6\",\"organizationKey\":\"fbca90e3-8aed-48b1-84e3-369afbd000ce\",\"type\":\"HTTP_INSTALLATION\",\"title\":\"ECA
+        Metabarcoding Data Toolkit\",\"description\":\"The Europe and Central Asia
+        (ECA) Metabarcoding Data Toolkit (MDT) is available for the eDNA barcoding
+        community to facilitate biodiversity data sharing with GBIF and to recognize
+        the contributions of the data publishers to GBIF.\",\"createdBy\":\"MattBlissett\",\"modifiedBy\":\"MattBlissett\",\"created\":\"2024-10-02T16:53:14.697+00:00\",\"modified\":\"2024-10-02T16:53:14.697+00:00\",\"disabled\":false,\"contacts\":[],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"1f8ecebe-7091-4e0c-8f2d-34b944d9297d\",\"organizationKey\":\"64795dcb-ad74-41b3-95e5-cc52ba754776\",\"type\":\"HTTP_INSTALLATION\",\"title\":\"GBIF
+        Norway Metabarcoding Datasets\",\"description\":\"GBIF Norway\u2019s installation
+        of the Metabarcoding Data Toolkit (MDT) helps standardize and publish DNA
+        metabarcoding datasets according to GBIF\u2019s guidelines. It\u2019s designed
+        to make it easier to share and integrate these datasets into the global biodiversity
+        data network.\",\"createdBy\":\"thomasgbif\",\"modifiedBy\":\"thomasgbif\",\"created\":\"2024-10-02T15:24:24.001+00:00\",\"modified\":\"2024-10-02T15:24:24.001+00:00\",\"disabled\":false,\"contacts\":[],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"fb91678b-fb9e-4bb8-96e3-99775a8f3386\",\"organizationKey\":\"06a11821-bcc9-4417-bd6a-0a9b796139f0\",\"type\":\"IPT_INSTALLATION\",\"title\":\"GBIF
+        Uruguay\",\"description\":\"This IPT is hosted by GBIF to publish datasets
+        from Uruguay.\",\"createdBy\":\"06a11821-bcc9-4417-bd6a-0a9b796139f0\",\"modifiedBy\":\"fb91678b-fb9e-4bb8-96e3-99775a8f3386\",\"created\":\"2024-09-24T14:15:01.715+00:00\",\"modified\":\"2024-09-24T14:16:25.761+00:00\",\"disabled\":false,\"contacts\":[{\"key\":5474096,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"userId\":[],\"firstName\":\"Ana
+        Laura Mello\",\"position\":[],\"email\":[\"ana.mello@ambiente.gub.uy\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"06a11821-bcc9-4417-bd6a-0a9b796139f0\",\"modifiedBy\":\"fb91678b-fb9e-4bb8-96e3-99775a8f3386\",\"created\":\"2024-09-24T14:15:01.729+00:00\",\"modified\":\"2024-09-24T14:16:25.778+00:00\"}],\"endpoints\":[{\"key\":1046479,\"type\":\"FEED\",\"url\":\"https://cloud.gbif.org/uy/rss.do\",\"createdBy\":\"fb91678b-fb9e-4bb8-96e3-99775a8f3386\",\"modifiedBy\":\"fb91678b-fb9e-4bb8-96e3-99775a8f3386\",\"created\":\"2024-09-24T14:16:25.808+00:00\",\"modified\":\"2024-09-24T14:16:25.808+00:00\",\"machineTags\":[]}],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[]}]}"
     headers:
       Accept-Ranges:
       - bytes
@@ -41,16 +42,16 @@ interactions:
       - public, max-age=3601
       Connection:
       - keep-alive
+      Content-Length:
+      - '3751'
       Content-Type:
       - application/json
       Date:
-      - Fri, 01 Mar 2024 08:32:30 GMT
+      - Fri, 04 Oct 2024 07:00:26 GMT
       Expires:
       - '0'
       Pragma:
       - no-cache
-      Transfer-Encoding:
-      - chunked
       Vary:
       - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
       Via:
@@ -60,7 +61,7 @@ interactions:
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '728564310'
+      - '687571504'
       X-XSS-Protection:
       - 1; mode=block
     status:

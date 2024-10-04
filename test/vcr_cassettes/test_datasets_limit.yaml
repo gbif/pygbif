@@ -9,179 +9,37 @@ interactions:
       Connection:
       - keep-alive
       user-agent:
-      - python-requests/2.31.0,pygbif/0.6.3
+      - python-requests/2.31.0,pygbif/0.6.4
     method: GET
     uri: https://api.gbif.org/v1/dataset?limit=1
   response:
     body:
-      string: "{\"offset\":0,\"limit\":1,\"endOfRecords\":false,\"count\":92919,\"results\":[{\"key\":\"3c4d3e45-4a7a-4ce6-8ead-6474004952c6\",\"installationKey\":\"791e3715-7452-4dd0-a906-db21a3852427\",\"publishingOrganizationKey\":\"3b5161b7-9831-4444-9822-a60df4df107d\",\"doi\":\"10.15468/q4tq5q\",\"external\":false,\"numConstituents\":0,\"type\":\"SAMPLING_EVENT\",\"subtype\":\"OBSERVATION\",\"title\":\"Aedes
-        albopictus oviposition activity in Sainte Marie, R\xE9union Island, 2013-2018\",\"description\":\"This
-        dataset contains the results of a longitudinal survey of Aedes albopictus
-        mosquitoes (Diptera : Culicidae) oviposition performed in the municipality
-        of Sainte-Marie, Reunion Island, between 2013 and 2018. \\n\\nThese collections
-        were carried-out by two public agencies (Institut de Recherche pour le D\xE9veloppement
-        (IRD) and Agence R\xE9gionale de Sant\xE9-Oc\xE9an Indien (ARS-OI)) in the
-        frame of a project aiming at establishing the feasibility of deploying the
-        Sterile Insect Technique for mosquito control in Reunion Island.\\n\\nThe
-        data were collected using ovitraps, in three distinct sites of Sainte-Marie:
-        Duparc and Bois-Rouge (residential areas) and a buffer zone separating these
-        two urban areas. Every weeks during the survey from 2013 to 2018, the ovitraps
-        were repeatedly placed in the same position in each defined zone. The egg
-        laying papers were collected weekly and annotated with the trap number and
-        collection date before being taken to the lab for egg counting.\\n\\nDetailed
-        sampling methods area provided in the \\\"Sampling methods\\\" section of
-        the metadata.\",\"language\":\"eng\",\"citation\":{\"text\":\"Le Goff G, Damiens
-        D, Ruttee A, Jean F, Payet L, Lebon C, Taconet P, Dehecq J, Gouagna L (2024).
-        Aedes albopictus oviposition activity in Sainte Marie, R\xE9union Island,
-        2013-2018. IRD - Institute of Research for Development. Sampling event dataset
-        https://doi.org/10.15468/q4tq5q accessed via GBIF.org on 2024-03-01.\",\"citationProvidedBySource\":false},\"contactsCitation\":[{\"key\":5171014,\"abbreviatedName\":\"Le
-        Goff G\",\"firstName\":\"Gilbert\",\"lastName\":\"Le Goff\",\"roles\":[\"ORIGINATOR\"],\"userId\":[]},{\"key\":5171015,\"abbreviatedName\":\"Damiens
-        D\",\"firstName\":\"David\",\"lastName\":\"Damiens\",\"roles\":[\"ORIGINATOR\"],\"userId\":[]},{\"key\":5171016,\"abbreviatedName\":\"Ruttee
-        A\",\"firstName\":\"Abdoul-Hamid\",\"lastName\":\"Ruttee\",\"roles\":[\"ORIGINATOR\"],\"userId\":[]},{\"key\":5171017,\"abbreviatedName\":\"Jean
-        F\",\"firstName\":\"Fr\xE9d\xE9ric\",\"lastName\":\"Jean\",\"roles\":[\"ORIGINATOR\"],\"userId\":[]},{\"key\":5171018,\"abbreviatedName\":\"Payet
-        L\",\"firstName\":\"Laurent\",\"lastName\":\"Payet\",\"roles\":[\"ORIGINATOR\"],\"userId\":[]},{\"key\":5171019,\"abbreviatedName\":\"Lebon
-        C\",\"firstName\":\"Cyrille\",\"lastName\":\"Lebon\",\"roles\":[\"ORIGINATOR\"],\"userId\":[]},{\"key\":5171020,\"abbreviatedName\":\"Taconet
-        P\",\"firstName\":\"Paul\",\"lastName\":\"Taconet\",\"roles\":[\"ORIGINATOR\",\"METADATA_AUTHOR\"],\"userId\":[]},{\"key\":5171021,\"abbreviatedName\":\"Dehecq
-        J\",\"firstName\":\"Jean-S\xE9bastien\",\"lastName\":\"Dehecq\",\"roles\":[\"ORIGINATOR\"],\"userId\":[]},{\"key\":5171022,\"abbreviatedName\":\"Gouagna
-        L\",\"firstName\":\"Louis-Cl\xE9ment\",\"lastName\":\"Gouagna\",\"roles\":[\"ORIGINATOR\",\"METADATA_AUTHOR\"],\"userId\":[]}],\"lockedForAutoUpdate\":false,\"createdBy\":\"3b5161b7-9831-4444-9822-a60df4df107d\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-03-01T00:34:37.042+00:00\",\"modified\":\"2024-03-01T00:35:46.026+00:00\",\"contacts\":[{\"key\":5171014,\"type\":\"ORIGINATOR\",\"primary\":true,\"userId\":[],\"firstName\":\"Gilbert\",\"lastName\":\"Le
-        Goff\",\"position\":[\"Research engineer\"],\"email\":[\"gilbert.legoff@ird.fr\"],\"phone\":[],\"homepage\":[],\"organization\":\"MIVEGEC,
-        IRD, CNRS, Univ. Montpellier, Montpellier, France\",\"address\":[],\"country\":\"FR\",\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-03-01T00:35:45.982+00:00\",\"modified\":\"2024-03-01T00:35:45.982+00:00\"},{\"key\":5171015,\"type\":\"ORIGINATOR\",\"primary\":false,\"userId\":[],\"firstName\":\"David\",\"lastName\":\"Damiens\",\"position\":[\"Engineer\"],\"email\":[\"david.damiens@ird.fr\"],\"phone\":[],\"homepage\":[],\"organization\":\"IRD
-        R\xE9union / GIP CYROI (Recherche Sant\xE9 Bio-innovation), Sainte Clotilde,
-        Reunion Island- France\",\"address\":[],\"country\":\"FR\",\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-03-01T00:35:45.985+00:00\",\"modified\":\"2024-03-01T00:35:45.985+00:00\"},{\"key\":5171016,\"type\":\"ORIGINATOR\",\"primary\":false,\"userId\":[],\"firstName\":\"Abdoul-Hamid\",\"lastName\":\"Ruttee\",\"position\":[\"Engineer\"],\"email\":[\"RUTTEE@ars.sante.fr\"],\"phone\":[],\"homepage\":[],\"organization\":\"Service
-        de lutte anti vectorielle, Agence R\xE9gionale de Sant\xE9-Oc\xE9an Indien
-        (ARS-OI), Saint-Denis, Reunion Island, France\",\"address\":[],\"country\":\"FR\",\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-03-01T00:35:45.987+00:00\",\"modified\":\"2024-03-01T00:35:45.987+00:00\"},{\"key\":5171017,\"type\":\"ORIGINATOR\",\"primary\":false,\"userId\":[],\"firstName\":\"Fr\xE9d\xE9ric\",\"lastName\":\"Jean\",\"position\":[\"Engineer\"],\"email\":[\"frederic.jean2@gmail.com\"],\"phone\":[],\"homepage\":[],\"organization\":\"IRD
-        R\xE9union / GIP CYROI (Recherche Sant\xE9 Bio-innovation), Sainte Clotilde,
-        Reunion Island- France\",\"address\":[],\"country\":\"FR\",\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-03-01T00:35:45.989+00:00\",\"modified\":\"2024-03-01T00:35:45.989+00:00\"},{\"key\":5171018,\"type\":\"ORIGINATOR\",\"primary\":false,\"userId\":[],\"firstName\":\"Laurent\",\"lastName\":\"Payet\",\"position\":[\"Engineer\"],\"email\":[\"Laurent.payet@ars.sante.fr\"],\"phone\":[],\"homepage\":[],\"organization\":\"Service
-        de lutte anti vectorielle, Agence R\xE9gionale de Sant\xE9-Oc\xE9an Indien
-        (ARS-OI), Saint-Denis, Reunion Island, France\",\"address\":[],\"country\":\"FR\",\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-03-01T00:35:45.991+00:00\",\"modified\":\"2024-03-01T00:35:45.991+00:00\"},{\"key\":5171019,\"type\":\"ORIGINATOR\",\"primary\":false,\"userId\":[],\"firstName\":\"Cyrille\",\"lastName\":\"Lebon\",\"position\":[\"Engineer\"],\"email\":[\"cyrille.lebon@ird.fr\"],\"phone\":[],\"homepage\":[],\"organization\":\"MIVEGEC,
-        IRD, CNRS, Univ. Montpellier, Montpellier, France\",\"address\":[],\"country\":\"FR\",\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-03-01T00:35:45.993+00:00\",\"modified\":\"2024-03-01T00:35:45.993+00:00\"},{\"key\":5171020,\"type\":\"ORIGINATOR\",\"primary\":false,\"userId\":[],\"firstName\":\"Paul\",\"lastName\":\"Taconet\",\"position\":[\"Engineer\"],\"email\":[\"paul.taconet@ird.fr\"],\"phone\":[],\"homepage\":[],\"organization\":\"MIVEGEC,
-        IRD, CNRS, Univ. Montpellier, Montpellier, France\",\"address\":[],\"country\":\"FR\",\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-03-01T00:35:45.994+00:00\",\"modified\":\"2024-03-01T00:35:45.994+00:00\"},{\"key\":5171021,\"type\":\"ORIGINATOR\",\"primary\":false,\"userId\":[],\"firstName\":\"Jean-S\xE9bastien\",\"lastName\":\"Dehecq\",\"position\":[\"Engineer\"],\"email\":[\"Jean-sebastien.DEHECQ@ars.sante.fr\"],\"phone\":[],\"homepage\":[],\"organization\":\"Service
-        de lutte anti vectorielle, Agence R\xE9gionale de Sant\xE9-Oc\xE9an Indien
-        (ARS-OI), Saint-Denis, Reunion Island, France\",\"address\":[],\"country\":\"FR\",\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-03-01T00:35:45.996+00:00\",\"modified\":\"2024-03-01T00:35:45.996+00:00\"},{\"key\":5171022,\"type\":\"ORIGINATOR\",\"primary\":false,\"userId\":[],\"firstName\":\"Louis-Cl\xE9ment\",\"lastName\":\"Gouagna\",\"position\":[\"Researcher\"],\"email\":[\"louis-clement.gouagna@ird.fr\"],\"phone\":[],\"homepage\":[],\"organization\":\"MIVEGEC,
-        IRD, CNRS, Univ. Montpellier, Montpellier, France\",\"address\":[],\"country\":\"FR\",\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-03-01T00:35:45.997+00:00\",\"modified\":\"2024-03-01T00:35:45.997+00:00\"},{\"key\":5171023,\"type\":\"METADATA_AUTHOR\",\"primary\":true,\"userId\":[],\"firstName\":\"Louis-Cl\xE9ment\",\"lastName\":\"Gouagna\",\"position\":[\"Researcher\"],\"email\":[\"louis-clement.gouagna@ird.fr\"],\"phone\":[],\"homepage\":[],\"organization\":\"MIVEGEC,
-        IRD, CNRS, Univ. Montpellier, Montpellier, France\",\"address\":[],\"country\":\"FR\",\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-03-01T00:35:45.998+00:00\",\"modified\":\"2024-03-01T00:35:45.998+00:00\"},{\"key\":5171024,\"type\":\"METADATA_AUTHOR\",\"primary\":false,\"userId\":[],\"firstName\":\"Paul\",\"lastName\":\"Taconet\",\"position\":[\"Research
-        engineer\"],\"email\":[\"paul.taconet@ird.fr\"],\"phone\":[],\"homepage\":[],\"organization\":\"MIVEGEC,
-        IRD, CNRS, Univ. Montpellier, Montpellier, France\",\"address\":[],\"country\":\"FR\",\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-03-01T00:35:45.999+00:00\",\"modified\":\"2024-03-01T00:35:45.999+00:00\"},{\"key\":5171025,\"type\":\"AUTHOR\",\"primary\":false,\"userId\":[],\"firstName\":\"Gilbert\",\"lastName\":\"Le
-        Goff\",\"position\":[\"Research engineer\"],\"email\":[\"gilbert.legoff@ird.fr\"],\"phone\":[],\"homepage\":[],\"organization\":\"MIVEGEC,
-        IRD, CNRS, Univ. Montpellier, Montpellier, France\",\"address\":[],\"city\":\"Montpellier\",\"country\":\"FR\",\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-03-01T00:35:46.000+00:00\",\"modified\":\"2024-03-01T00:35:46.000+00:00\"},{\"key\":5171026,\"type\":\"PRINCIPAL_INVESTIGATOR\",\"primary\":false,\"userId\":[],\"firstName\":\"Louis-Cl\xE9ment\",\"lastName\":\"Gouagna\",\"position\":[\"Researcher\"],\"email\":[\"louis-clement.gouagna@ird.fr\"],\"phone\":[],\"homepage\":[],\"organization\":\"MIVEGEC,
-        IRD, CNRS, Univ. Montpellier, Montpellier, France\",\"address\":[],\"city\":\"Montpellier\",\"country\":\"FR\",\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-03-01T00:35:46.001+00:00\",\"modified\":\"2024-03-01T00:35:46.001+00:00\"},{\"key\":5171027,\"type\":\"PUBLISHER\",\"primary\":false,\"userId\":[],\"firstName\":\"Paul\",\"lastName\":\"Taconet\",\"position\":[\"Research
-        Engineer\"],\"email\":[\"paul.taconet@ird.fr\"],\"phone\":[],\"homepage\":[],\"organization\":\"MIVEGEC,
-        IRD, CNRS, Univ. Montpellier, Montpellier, France\",\"address\":[],\"city\":\"Montpellier\",\"country\":\"FR\",\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-03-01T00:35:46.002+00:00\",\"modified\":\"2024-03-01T00:35:46.002+00:00\"},{\"key\":5171028,\"type\":\"CONTENT_PROVIDER\",\"primary\":false,\"userId\":[],\"firstName\":\"Jean-S\xE9bastien\",\"lastName\":\"Dehecq\",\"position\":[\"Engineer\"],\"email\":[\"Jean-sebastien.DEHECQ@ars.sante.fr\"],\"phone\":[],\"homepage\":[],\"organization\":\"Service
-        de lutte anti vectorielle, Agence R\xE9gionale de Sant\xE9-Oc\xE9an Indien
-        (ARS-OI)\",\"address\":[],\"city\":\"Saint-Denis\",\"province\":\"Reunion
-        Island\",\"country\":\"FR\",\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-03-01T00:35:46.004+00:00\",\"modified\":\"2024-03-01T00:35:46.004+00:00\"},{\"key\":5171029,\"type\":\"ADMINISTRATIVE_POINT_OF_CONTACT\",\"primary\":true,\"userId\":[],\"firstName\":\"Gilbert\",\"lastName\":\"Le
-        Goff\",\"position\":[\"Research engineer\"],\"email\":[\"gilbert.legoff@ird.fr\"],\"phone\":[],\"homepage\":[],\"organization\":\"MIVEGEC,
-        IRD, CNRS, Univ. Montpellier, Montpellier, France\",\"address\":[],\"country\":\"FR\",\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-03-01T00:35:46.005+00:00\",\"modified\":\"2024-03-01T00:35:46.005+00:00\"},{\"key\":5171030,\"type\":\"ADMINISTRATIVE_POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Louis-Cl\xE9ment\",\"lastName\":\"Gouagna\",\"position\":[\"Researcher\"],\"email\":[\"louis-clement.gouagna@ird.fr\"],\"phone\":[],\"homepage\":[],\"organization\":\"MIVEGEC,
-        IRD, CNRS, Univ. Montpellier, Montpellier, France\",\"address\":[],\"country\":\"FR\",\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-03-01T00:35:46.006+00:00\",\"modified\":\"2024-03-01T00:35:46.006+00:00\"}],\"endpoints\":[{\"key\":971204,\"type\":\"DWC_ARCHIVE\",\"url\":\"https://ipt.gbif.fr/archive.do?r=aedes_albopictus_oviposition_reunion\",\"createdBy\":\"3b5161b7-9831-4444-9822-a60df4df107d\",\"modifiedBy\":\"3b5161b7-9831-4444-9822-a60df4df107d\",\"created\":\"2024-03-01T00:34:38.797+00:00\",\"modified\":\"2024-03-01T00:34:38.797+00:00\",\"machineTags\":[]},{\"key\":971203,\"type\":\"EML\",\"url\":\"https://ipt.gbif.fr/eml.do?r=aedes_albopictus_oviposition_reunion\",\"createdBy\":\"3b5161b7-9831-4444-9822-a60df4df107d\",\"modifiedBy\":\"3b5161b7-9831-4444-9822-a60df4df107d\",\"created\":\"2024-03-01T00:34:38.757+00:00\",\"modified\":\"2024-03-01T00:34:38.757+00:00\",\"machineTags\":[]}],\"machineTags\":[{\"key\":18752310,\"namespace\":\"crawler.gbif.org\",\"name\":\"crawl_attempt\",\"value\":\"3\",\"createdBy\":\"crawler.gbif.org\",\"created\":\"2024-03-01T00:46:42.275+00:00\"}],\"tags\":[],\"identifiers\":[{\"key\":361157,\"type\":\"URL\",\"identifier\":\"https://ipt.gbif.fr/resource?r=aedes_albopictus_oviposition_reunion\",\"createdBy\":\"crawler.gbif.org\",\"created\":\"2024-03-01T00:35:46.008+00:00\"}],\"comments\":[],\"bibliographicCitations\":[],\"curatorialUnits\":[],\"taxonomicCoverages\":[{\"coverages\":[{\"scientificName\":\"Aedes
-        (Stegomyia) albopictus (Skuse, 1895)\",\"commonName\":\"Aedes albopictus\",\"rank\":{\"verbatim\":\"species\",\"interpreted\":\"SPECIES\"}}]}],\"geographicCoverages\":[{\"description\":\"The
-        sampling took place in the municipality of Sainte Marie, R\xE9union Island.
-        \ Sainte Marie (Latitude: 20\xB0 52' 60'' South, Longitude: 55\xB0 33' East)
-        is a coastal municipality covering 87.2 km\xB2 with a population of 34,061
-        since the last census.\\n\\nThree study sites within the municipality were
-        selected to collect the entomological data : Duparc, Bois Rouge, and a buffer
-        area between these two study sites.\",\"boundingBox\":{\"minLatitude\":-20.923,\"maxLatitude\":-20.898,\"minLongitude\":55.517,\"maxLongitude\":55.537,\"globalCoverage\":false}}],\"temporalCoverages\":[{\"@type\":\"range\",\"start\":\"2013-05-13T00:00:00.000+00:00\",\"end\":\"2018-12-03T00:00:00.000+00:00\"}],\"keywordCollections\":[{\"thesaurus\":\"GBIF
-        Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type_2015-07-10.xml\",\"keywords\":[\"Samplingevent\"]},{\"thesaurus\":\"GBIF
-        Dataset Subtype Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_subtype.xml\",\"keywords\":[\"Observation\"]}],\"project\":{\"title\":\"Sterile
-        Insect Technique for Aedes Albopictus in Reunion Island\"},\"samplingDescription\":{\"studyExtent\":\"Sainte
-        Marie (Latitude: 20\xB0 52' 60'' South, Longitude: 55\xB0 33' East) is a coastal
-        municipality covering 87.2 km\xB2 with a population of 34,061 since the last
-        census. With a population density of 390.6 inhabitants per km\xB2, Sainte-Marie
-        is located at an altitude of 5 meters, 9 km southeast of Saint-Denis. Priority
-        was given to urbanized settlements where Ae. albopictus is the only Stegomiya
-        species present. Other considerations taken into account for selecting the
-        study sites were (a) areas with manageable sizes (range: 20-40 hectares) and
-        well-delimited residential areas geographically isolated by natural barriers,
-        (b) proximity to laboratory facilities and accessibility by car. Accordingly,
-        \ \u201CDuparc\u201D and \u201CBois Rouge\u201D, two urban areas are within
-        the municipality of Sainte Marie located in the the south-west of Saint-Denis,
-        the capital of Reunion island, were given preference over other cities because
-        they were representative of most urban agglomerations on the island of Reunion,
-        being relatively isolated, and accessible in around fifteen minutes by car
-        from the laboratories.  \\n\\nDuparc covers an area of \u200B\u200Bca. 42
-        ha at the altitude between 5 and 8 meters asl. With approximately 1,885 inhabitants,
-        its urban habitat is quite densely and homogeneous built with more than more
-        than 94% of the land area almost exclusively made up of individual properties
-        (about 300-500 households) with private gardens. The surrounding area features
-        a variety of amenities and infrastructures for transport, education, healthcare
-        services, and businesses and shopping centers. The site is isolated by expressway
-        linking Saint Denis to Saint Benoit to the north, by the rain-fed Ravine La
-        Mare and to the east, west and south by sugar cane fields. This rain-fed ravine
-        is semi-natural wooded area made up of difficult to access landscape with
-        rocks. The residential area is perfectly well demarcated with sugarcane fields
-        all around, with the exception of the grassland located to the north (towards
-        the sea). \\n\\nBois Rouge, an urban area of about \u200B\u200B24 ha extending
-        over an elevation of approximately 5-9 meters asl with an estimated population
-        of 3,877 inhabitants. The residential area made up of slightly more heterogeneous
-        individual housing spread over 21% of its total surface area (63% of the properties
-        are individual houses and 37% are apartments) and interspersed with uninhabited
-        land with few small poultry or goat farms. The neighborhood's most common
-        socio-professional category is working-class people and farmers. The western
-        and southern periphery of Bois-Rouge is mainly agricultural. A small, shallow
-        ravine runs through the residential area, which is entirely surrounded market
-        gardening fields, while the southwest part is bordered with sugarcane field
-        up to the Duparc.  \\n\\nThe sampling period using oviposition traps (Ovitrap)
-        covered 6 years, May 2013 and continued until 2018. Every weeks during the
-        survey from 2013 to 2018, the ovitraps were repeatedly placed in the same
-        position in each defined zone.\",\"sampling\":\"The survey consisted of placing
-        29, 27 and 20 ovitraps in previously selected location dispatched in Bois
-        Rouge, Duparc, and buffer zone separating the two urban areas, respectively.
-        Trapping sites represented the mix of dominant residential and wild habitat
-        types within each of the study sites. Indeed, the surveys took place mainly
-        from inhabited houses, although in some cases traps were also placed in a
-        numbers of in the public domains and natural areas within and outside (buffer
-        zone) of the residential neighborhoods. Each ovitrap consisted of a 1.2 liter
-        black plastic pots filled with 650 ml of water collected from a river. The
-        oviposition substrate (ovistrip) was made of a brown germination paper (400HPT
-        Sedburo Equipment, Des Plaines, USA) (measuring 15x10 cm) attached with a
-        paper clip on a 15x10 cm smooth and rigid PVC sheet, which was placed slightly
-        obliquely inside the ovitrap pot.  The papers were labelled on the back with
-        unique number number, followed by the number of the week of installation.
-        In each sampling zone, the ovitraps were usually placed placed at ground level
-        in a shaded location or in low vegetation and preferably sheltered from the
-        wind and the sun, most frequently in the garden within volunteered private
-        properties and more rarely in the public domain for the Duparc and Bois Rouge
-        sites. Each ovitrap was numerated and GPS coordinates was recorded for each
-        trap. \\n\\nEvery weeks during the survey from 2013 to 2018, the ovitraps
-        were repeatedly placed in the same position in each defined zone.  The egg
-        laying papers were collected weekly and annotated with the trap number and
-        collection date before being taken to the lab for egg counting. Any larvae
-        observed in the traps was counted and identified by stage of development.
-        The pots were completely emptied of their residual water and cleaned in order
-        to remove any eggs that may have been deposited. They were filled with water
-        before being set again with new substrate. \\n\\nAt the laboratory, each egg
-        paper was separated from its PVC sheet and checked to remove any debris or
-        dirt. The presence of eggs (positivity) was noted and the number of eggs counted
-        either immediately after cleaning, or deferred after drying and maturation
-        of the embryos, when field collected egg samples were used to evaluate the
-        hatching rate. In the first case, the number of eggs from each each weekly
-        sampling was recorded, based on three scores: i) the overall number of eggs
-        observed on each ovitrap substrate, ii) the number of opened eggs when the
-        opercula is clearly separated from the rest of the egg shell (corresponding
-        to viable eggs); (iii) and the number of eggs that have a completely flattened
-        appearance (corresponding either to non-embryonated eggs or to non-viable
-        embryos). Weekly, monthly and annual average number of eggs/trap were calculated,
-        and used as a proxy of Ae. albopictus abundance in each study site. In the
-        latter case, the assessment of the viability of field collected eggs took
-        place every 2-weeks for Duparc and every month for Bois rouge. In brief, a
-        minimum of six positive papers (with Ae. albopictus eggs) per study site were
-        randomly picked from the field-collected egg laying papers to assess the hatching
-        rate. These egg papers were placed in the dark inside plastic tray covered
-        by a Plexiglas for five days allowing gentle drying and egg maturation under
-        laboratory conditions. After this period, each dried egg paper was completely
-        immersed in plastic containers previously filled with 250 ml of \u201Crested\u201D
-        water (i.e. tap water stored overnight in a jerrycan) and a small amount of
-        rabbit pellet powder was added to each container. After 24 hrs hours of egg
-        immersion, all eggs present were examined under stereomicroscope and the hatching
-        rate was estimated by dividing the number of opened eggs (or newly eclosed
-        L1 larvae) by total egg counts.\",\"methodSteps\":[\"Several study sites were
-        selected, and data were collected in these sites, as detailed in the Sampling
-        Method section\",\"The data were collected as detailed in the Sampling Method
-        section\",\"The collected data were digitized\",\"A custom R script was created
-        to map the original data to Darwin Core as an event core with the relevant
-        extension (occurrence)\",\"The Darwin Core files were connected to the French
-        IPT and documented with metadata.\",\"The data was published and registered
-        with GBIF\",\"Several villages were selected as detailed in the Sampling Method
-        section.\"]},\"countryCoverage\":[],\"collections\":[],\"dataDescriptions\":[],\"dataLanguage\":\"eng\",\"pubDate\":\"2024-03-01T00:00:00.000+00:00\",\"maintenanceUpdateFrequency\":\"NOT_PLANNED\",\"maintenanceDescription\":\"\",\"license\":\"http://creativecommons.org/licenses/by/4.0/legalcode\"}]}"
+      string: '{"offset":0,"limit":1,"endOfRecords":false,"count":108945,"results":[{"key":"b17b67ee-85bc-4b87-bf77-b2d6af66395b","installationKey":"d5b61ace-f25c-43bd-9dd0-03486850f90b","publishingOrganizationKey":"750a8724-fa66-4c27-b645-bd58ac5ee010","doi":"10.3897/bdj.12.e129214","external":false,"numConstituents":0,"type":"CHECKLIST","title":"Taxonomic
+        relationship between Amolops minutus Orlov & Ho, 2007 and A. ottorum Pham,
+        Sung, Pham, Le, Zieger & Nguyen, 2019, with first record of A. minutus from
+        China (Anura, Ranidae)","description":"Based on the examination of specimens
+        of Amolops minutus Orlov & Ho, 2007 and A. ottorum Pham, Sung, Pham, Le, Zieger
+        & Nguyen, 2019, we found that there is no significant morphological difference
+        between them. Phylogenetic analysis also showed that A. minutus and A. ottorum
+        belong to the same taxon. In addition, we discovered the distribution of A.
+        minutus in China.In this study, we provide the first molecular data of Amolops
+        minutus and regard A. ottorum as a junior synonym of A. minutus. In addition,
+        we report the first record of A. minutus from China, based on nine specimens
+        collected from Guanyinshan Provincial Nature Reserve in southern Yunnan Province
+        and present an updated diagnosis of this species, based on literature data
+        and newly-collected specimens.","language":"eng","homepage":"https://doi.org/10.3897/BDJ.12.e129214","citation":{"text":"Li
+        S (2024). Taxonomic relationship between Amolops minutus Orlov & Ho, 2007
+        and A. ottorum Pham, Sung, Pham, Le, Zieger & Nguyen, 2019, with first record
+        of A. minutus from China (Anura, Ranidae). Biodiversity Data Journal. Checklist
+        dataset https://doi.org/10.3897/bdj.12.e129214 accessed via GBIF.org on 2024-10-04.","identifier":"Citation
+        Identifier","citationProvidedBySource":false},"contactsCitation":[{"key":5488327,"abbreviatedName":"Li
+        S","firstName":"Song","lastName":"Li","roles":["METADATA_AUTHOR","ORIGINATOR"],"userId":[]}],"lockedForAutoUpdate":false,"createdBy":"pensoft","modifiedBy":"crawler.gbif.org","created":"2024-10-04T06:30:04.910+00:00","modified":"2024-10-04T06:31:08.712+00:00","contacts":[{"key":5488327,"type":"ORIGINATOR","primary":true,"userId":[],"firstName":"Song","lastName":"Li","position":["Mr"],"email":["lis@mail.kiz.ac.cn"],"phone":[],"homepage":[],"organization":"Yunnan
+        Key Laboratory of Biodiversity Information, Kunming Institute of Zoology,
+        Chinese Academy of Sciences","address":[],"city":"Kunming","country":"CN","createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2024-10-04T06:31:08.685+00:00","modified":"2024-10-04T06:31:08.685+00:00"},{"key":5488328,"type":"METADATA_AUTHOR","primary":true,"userId":[],"firstName":"Song","lastName":"Li","position":["Mr"],"email":["lis@mail.kiz.ac.cn"],"phone":[],"homepage":[],"organization":"Yunnan
+        Key Laboratory of Biodiversity Information, Kunming Institute of Zoology,
+        Chinese Academy of Sciences","address":[],"city":"Kunming","country":"CN","createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2024-10-04T06:31:08.689+00:00","modified":"2024-10-04T06:31:08.689+00:00"},{"key":5488329,"type":"ADMINISTRATIVE_POINT_OF_CONTACT","primary":true,"userId":[],"firstName":"Song","lastName":"Li","position":["Mr"],"email":["lis@mail.kiz.ac.cn"],"phone":[],"homepage":[],"organization":"Yunnan
+        Key Laboratory of Biodiversity Information, Kunming Institute of Zoology,
+        Chinese Academy of Sciences","address":[],"city":"Kunming","country":"CN","createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2024-10-04T06:31:08.691+00:00","modified":"2024-10-04T06:31:08.691+00:00"}],"endpoints":[{"key":1048687,"type":"DWC_ARCHIVE","url":"https://bdj.pensoft.net/lib/ajax_srv/archive_download.php?archive_type=2&document_id=129214","createdBy":"pensoft","modifiedBy":"pensoft","created":"2024-10-04T06:30:06.135+00:00","modified":"2024-10-04T06:30:06.135+00:00","machineTags":[]}],"machineTags":[{"key":21969964,"namespace":"crawler.gbif.org","name":"crawl_attempt","value":"1","createdBy":"crawler.gbif.org","created":"2024-10-04T06:31:06.519+00:00"}],"tags":[],"identifiers":[{"key":374608,"type":"DOI","identifier":"10.3897/BDJ.12.e129214","createdBy":"crawler.gbif.org","created":"2024-10-04T06:31:08.693+00:00"}],"comments":[],"bibliographicCitations":[],"curatorialUnits":[],"taxonomicCoverages":[],"geographicCoverages":[],"temporalCoverages":[],"keywordCollections":[],"countryCoverage":[],"collections":[],"dataDescriptions":[],"dataLanguage":"eng","pubDate":"2024-09-26T00:00:00.000+00:00","maintenanceChangeHistory":[],"license":"http://creativecommons.org/licenses/by/4.0/legalcode"}]}'
     headers:
       Accept-Ranges:
       - bytes
@@ -194,7 +52,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 01 Mar 2024 08:32:27 GMT
+      - Fri, 04 Oct 2024 07:00:22 GMT
       Expires:
       - '0'
       Pragma:
@@ -210,7 +68,7 @@ interactions:
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '703991076'
+      - '651889329'
       X-XSS-Protection:
       - 1; mode=block
     status:
@@ -226,213 +84,73 @@ interactions:
       Connection:
       - keep-alive
       user-agent:
-      - python-requests/2.31.0,pygbif/0.6.3
+      - python-requests/2.31.0,pygbif/0.6.4
     method: GET
     uri: https://api.gbif.org/v1/dataset?limit=3
   response:
     body:
-      string: "{\"offset\":0,\"limit\":3,\"endOfRecords\":false,\"count\":92919,\"results\":[{\"key\":\"3c4d3e45-4a7a-4ce6-8ead-6474004952c6\",\"installationKey\":\"791e3715-7452-4dd0-a906-db21a3852427\",\"publishingOrganizationKey\":\"3b5161b7-9831-4444-9822-a60df4df107d\",\"doi\":\"10.15468/q4tq5q\",\"external\":false,\"numConstituents\":0,\"type\":\"SAMPLING_EVENT\",\"subtype\":\"OBSERVATION\",\"title\":\"Aedes
-        albopictus oviposition activity in Sainte Marie, R\xE9union Island, 2013-2018\",\"description\":\"This
-        dataset contains the results of a longitudinal survey of Aedes albopictus
-        mosquitoes (Diptera : Culicidae) oviposition performed in the municipality
-        of Sainte-Marie, Reunion Island, between 2013 and 2018. \\n\\nThese collections
-        were carried-out by two public agencies (Institut de Recherche pour le D\xE9veloppement
-        (IRD) and Agence R\xE9gionale de Sant\xE9-Oc\xE9an Indien (ARS-OI)) in the
-        frame of a project aiming at establishing the feasibility of deploying the
-        Sterile Insect Technique for mosquito control in Reunion Island.\\n\\nThe
-        data were collected using ovitraps, in three distinct sites of Sainte-Marie:
-        Duparc and Bois-Rouge (residential areas) and a buffer zone separating these
-        two urban areas. Every weeks during the survey from 2013 to 2018, the ovitraps
-        were repeatedly placed in the same position in each defined zone. The egg
-        laying papers were collected weekly and annotated with the trap number and
-        collection date before being taken to the lab for egg counting.\\n\\nDetailed
-        sampling methods area provided in the \\\"Sampling methods\\\" section of
-        the metadata.\",\"language\":\"eng\",\"citation\":{\"text\":\"Le Goff G, Damiens
-        D, Ruttee A, Jean F, Payet L, Lebon C, Taconet P, Dehecq J, Gouagna L (2024).
-        Aedes albopictus oviposition activity in Sainte Marie, R\xE9union Island,
-        2013-2018. IRD - Institute of Research for Development. Sampling event dataset
-        https://doi.org/10.15468/q4tq5q accessed via GBIF.org on 2024-03-01.\",\"citationProvidedBySource\":false},\"contactsCitation\":[{\"key\":5171014,\"abbreviatedName\":\"Le
-        Goff G\",\"firstName\":\"Gilbert\",\"lastName\":\"Le Goff\",\"roles\":[\"ORIGINATOR\"],\"userId\":[]},{\"key\":5171015,\"abbreviatedName\":\"Damiens
-        D\",\"firstName\":\"David\",\"lastName\":\"Damiens\",\"roles\":[\"ORIGINATOR\"],\"userId\":[]},{\"key\":5171016,\"abbreviatedName\":\"Ruttee
-        A\",\"firstName\":\"Abdoul-Hamid\",\"lastName\":\"Ruttee\",\"roles\":[\"ORIGINATOR\"],\"userId\":[]},{\"key\":5171017,\"abbreviatedName\":\"Jean
-        F\",\"firstName\":\"Fr\xE9d\xE9ric\",\"lastName\":\"Jean\",\"roles\":[\"ORIGINATOR\"],\"userId\":[]},{\"key\":5171018,\"abbreviatedName\":\"Payet
-        L\",\"firstName\":\"Laurent\",\"lastName\":\"Payet\",\"roles\":[\"ORIGINATOR\"],\"userId\":[]},{\"key\":5171019,\"abbreviatedName\":\"Lebon
-        C\",\"firstName\":\"Cyrille\",\"lastName\":\"Lebon\",\"roles\":[\"ORIGINATOR\"],\"userId\":[]},{\"key\":5171020,\"abbreviatedName\":\"Taconet
-        P\",\"firstName\":\"Paul\",\"lastName\":\"Taconet\",\"roles\":[\"ORIGINATOR\",\"METADATA_AUTHOR\"],\"userId\":[]},{\"key\":5171021,\"abbreviatedName\":\"Dehecq
-        J\",\"firstName\":\"Jean-S\xE9bastien\",\"lastName\":\"Dehecq\",\"roles\":[\"ORIGINATOR\"],\"userId\":[]},{\"key\":5171022,\"abbreviatedName\":\"Gouagna
-        L\",\"firstName\":\"Louis-Cl\xE9ment\",\"lastName\":\"Gouagna\",\"roles\":[\"ORIGINATOR\",\"METADATA_AUTHOR\"],\"userId\":[]}],\"lockedForAutoUpdate\":false,\"createdBy\":\"3b5161b7-9831-4444-9822-a60df4df107d\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-03-01T00:34:37.042+00:00\",\"modified\":\"2024-03-01T00:35:46.026+00:00\",\"contacts\":[{\"key\":5171014,\"type\":\"ORIGINATOR\",\"primary\":true,\"userId\":[],\"firstName\":\"Gilbert\",\"lastName\":\"Le
-        Goff\",\"position\":[\"Research engineer\"],\"email\":[\"gilbert.legoff@ird.fr\"],\"phone\":[],\"homepage\":[],\"organization\":\"MIVEGEC,
-        IRD, CNRS, Univ. Montpellier, Montpellier, France\",\"address\":[],\"country\":\"FR\",\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-03-01T00:35:45.982+00:00\",\"modified\":\"2024-03-01T00:35:45.982+00:00\"},{\"key\":5171015,\"type\":\"ORIGINATOR\",\"primary\":false,\"userId\":[],\"firstName\":\"David\",\"lastName\":\"Damiens\",\"position\":[\"Engineer\"],\"email\":[\"david.damiens@ird.fr\"],\"phone\":[],\"homepage\":[],\"organization\":\"IRD
-        R\xE9union / GIP CYROI (Recherche Sant\xE9 Bio-innovation), Sainte Clotilde,
-        Reunion Island- France\",\"address\":[],\"country\":\"FR\",\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-03-01T00:35:45.985+00:00\",\"modified\":\"2024-03-01T00:35:45.985+00:00\"},{\"key\":5171016,\"type\":\"ORIGINATOR\",\"primary\":false,\"userId\":[],\"firstName\":\"Abdoul-Hamid\",\"lastName\":\"Ruttee\",\"position\":[\"Engineer\"],\"email\":[\"RUTTEE@ars.sante.fr\"],\"phone\":[],\"homepage\":[],\"organization\":\"Service
-        de lutte anti vectorielle, Agence R\xE9gionale de Sant\xE9-Oc\xE9an Indien
-        (ARS-OI), Saint-Denis, Reunion Island, France\",\"address\":[],\"country\":\"FR\",\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-03-01T00:35:45.987+00:00\",\"modified\":\"2024-03-01T00:35:45.987+00:00\"},{\"key\":5171017,\"type\":\"ORIGINATOR\",\"primary\":false,\"userId\":[],\"firstName\":\"Fr\xE9d\xE9ric\",\"lastName\":\"Jean\",\"position\":[\"Engineer\"],\"email\":[\"frederic.jean2@gmail.com\"],\"phone\":[],\"homepage\":[],\"organization\":\"IRD
-        R\xE9union / GIP CYROI (Recherche Sant\xE9 Bio-innovation), Sainte Clotilde,
-        Reunion Island- France\",\"address\":[],\"country\":\"FR\",\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-03-01T00:35:45.989+00:00\",\"modified\":\"2024-03-01T00:35:45.989+00:00\"},{\"key\":5171018,\"type\":\"ORIGINATOR\",\"primary\":false,\"userId\":[],\"firstName\":\"Laurent\",\"lastName\":\"Payet\",\"position\":[\"Engineer\"],\"email\":[\"Laurent.payet@ars.sante.fr\"],\"phone\":[],\"homepage\":[],\"organization\":\"Service
-        de lutte anti vectorielle, Agence R\xE9gionale de Sant\xE9-Oc\xE9an Indien
-        (ARS-OI), Saint-Denis, Reunion Island, France\",\"address\":[],\"country\":\"FR\",\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-03-01T00:35:45.991+00:00\",\"modified\":\"2024-03-01T00:35:45.991+00:00\"},{\"key\":5171019,\"type\":\"ORIGINATOR\",\"primary\":false,\"userId\":[],\"firstName\":\"Cyrille\",\"lastName\":\"Lebon\",\"position\":[\"Engineer\"],\"email\":[\"cyrille.lebon@ird.fr\"],\"phone\":[],\"homepage\":[],\"organization\":\"MIVEGEC,
-        IRD, CNRS, Univ. Montpellier, Montpellier, France\",\"address\":[],\"country\":\"FR\",\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-03-01T00:35:45.993+00:00\",\"modified\":\"2024-03-01T00:35:45.993+00:00\"},{\"key\":5171020,\"type\":\"ORIGINATOR\",\"primary\":false,\"userId\":[],\"firstName\":\"Paul\",\"lastName\":\"Taconet\",\"position\":[\"Engineer\"],\"email\":[\"paul.taconet@ird.fr\"],\"phone\":[],\"homepage\":[],\"organization\":\"MIVEGEC,
-        IRD, CNRS, Univ. Montpellier, Montpellier, France\",\"address\":[],\"country\":\"FR\",\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-03-01T00:35:45.994+00:00\",\"modified\":\"2024-03-01T00:35:45.994+00:00\"},{\"key\":5171021,\"type\":\"ORIGINATOR\",\"primary\":false,\"userId\":[],\"firstName\":\"Jean-S\xE9bastien\",\"lastName\":\"Dehecq\",\"position\":[\"Engineer\"],\"email\":[\"Jean-sebastien.DEHECQ@ars.sante.fr\"],\"phone\":[],\"homepage\":[],\"organization\":\"Service
-        de lutte anti vectorielle, Agence R\xE9gionale de Sant\xE9-Oc\xE9an Indien
-        (ARS-OI), Saint-Denis, Reunion Island, France\",\"address\":[],\"country\":\"FR\",\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-03-01T00:35:45.996+00:00\",\"modified\":\"2024-03-01T00:35:45.996+00:00\"},{\"key\":5171022,\"type\":\"ORIGINATOR\",\"primary\":false,\"userId\":[],\"firstName\":\"Louis-Cl\xE9ment\",\"lastName\":\"Gouagna\",\"position\":[\"Researcher\"],\"email\":[\"louis-clement.gouagna@ird.fr\"],\"phone\":[],\"homepage\":[],\"organization\":\"MIVEGEC,
-        IRD, CNRS, Univ. Montpellier, Montpellier, France\",\"address\":[],\"country\":\"FR\",\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-03-01T00:35:45.997+00:00\",\"modified\":\"2024-03-01T00:35:45.997+00:00\"},{\"key\":5171023,\"type\":\"METADATA_AUTHOR\",\"primary\":true,\"userId\":[],\"firstName\":\"Louis-Cl\xE9ment\",\"lastName\":\"Gouagna\",\"position\":[\"Researcher\"],\"email\":[\"louis-clement.gouagna@ird.fr\"],\"phone\":[],\"homepage\":[],\"organization\":\"MIVEGEC,
-        IRD, CNRS, Univ. Montpellier, Montpellier, France\",\"address\":[],\"country\":\"FR\",\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-03-01T00:35:45.998+00:00\",\"modified\":\"2024-03-01T00:35:45.998+00:00\"},{\"key\":5171024,\"type\":\"METADATA_AUTHOR\",\"primary\":false,\"userId\":[],\"firstName\":\"Paul\",\"lastName\":\"Taconet\",\"position\":[\"Research
-        engineer\"],\"email\":[\"paul.taconet@ird.fr\"],\"phone\":[],\"homepage\":[],\"organization\":\"MIVEGEC,
-        IRD, CNRS, Univ. Montpellier, Montpellier, France\",\"address\":[],\"country\":\"FR\",\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-03-01T00:35:45.999+00:00\",\"modified\":\"2024-03-01T00:35:45.999+00:00\"},{\"key\":5171025,\"type\":\"AUTHOR\",\"primary\":false,\"userId\":[],\"firstName\":\"Gilbert\",\"lastName\":\"Le
-        Goff\",\"position\":[\"Research engineer\"],\"email\":[\"gilbert.legoff@ird.fr\"],\"phone\":[],\"homepage\":[],\"organization\":\"MIVEGEC,
-        IRD, CNRS, Univ. Montpellier, Montpellier, France\",\"address\":[],\"city\":\"Montpellier\",\"country\":\"FR\",\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-03-01T00:35:46.000+00:00\",\"modified\":\"2024-03-01T00:35:46.000+00:00\"},{\"key\":5171026,\"type\":\"PRINCIPAL_INVESTIGATOR\",\"primary\":false,\"userId\":[],\"firstName\":\"Louis-Cl\xE9ment\",\"lastName\":\"Gouagna\",\"position\":[\"Researcher\"],\"email\":[\"louis-clement.gouagna@ird.fr\"],\"phone\":[],\"homepage\":[],\"organization\":\"MIVEGEC,
-        IRD, CNRS, Univ. Montpellier, Montpellier, France\",\"address\":[],\"city\":\"Montpellier\",\"country\":\"FR\",\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-03-01T00:35:46.001+00:00\",\"modified\":\"2024-03-01T00:35:46.001+00:00\"},{\"key\":5171027,\"type\":\"PUBLISHER\",\"primary\":false,\"userId\":[],\"firstName\":\"Paul\",\"lastName\":\"Taconet\",\"position\":[\"Research
-        Engineer\"],\"email\":[\"paul.taconet@ird.fr\"],\"phone\":[],\"homepage\":[],\"organization\":\"MIVEGEC,
-        IRD, CNRS, Univ. Montpellier, Montpellier, France\",\"address\":[],\"city\":\"Montpellier\",\"country\":\"FR\",\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-03-01T00:35:46.002+00:00\",\"modified\":\"2024-03-01T00:35:46.002+00:00\"},{\"key\":5171028,\"type\":\"CONTENT_PROVIDER\",\"primary\":false,\"userId\":[],\"firstName\":\"Jean-S\xE9bastien\",\"lastName\":\"Dehecq\",\"position\":[\"Engineer\"],\"email\":[\"Jean-sebastien.DEHECQ@ars.sante.fr\"],\"phone\":[],\"homepage\":[],\"organization\":\"Service
-        de lutte anti vectorielle, Agence R\xE9gionale de Sant\xE9-Oc\xE9an Indien
-        (ARS-OI)\",\"address\":[],\"city\":\"Saint-Denis\",\"province\":\"Reunion
-        Island\",\"country\":\"FR\",\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-03-01T00:35:46.004+00:00\",\"modified\":\"2024-03-01T00:35:46.004+00:00\"},{\"key\":5171029,\"type\":\"ADMINISTRATIVE_POINT_OF_CONTACT\",\"primary\":true,\"userId\":[],\"firstName\":\"Gilbert\",\"lastName\":\"Le
-        Goff\",\"position\":[\"Research engineer\"],\"email\":[\"gilbert.legoff@ird.fr\"],\"phone\":[],\"homepage\":[],\"organization\":\"MIVEGEC,
-        IRD, CNRS, Univ. Montpellier, Montpellier, France\",\"address\":[],\"country\":\"FR\",\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-03-01T00:35:46.005+00:00\",\"modified\":\"2024-03-01T00:35:46.005+00:00\"},{\"key\":5171030,\"type\":\"ADMINISTRATIVE_POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Louis-Cl\xE9ment\",\"lastName\":\"Gouagna\",\"position\":[\"Researcher\"],\"email\":[\"louis-clement.gouagna@ird.fr\"],\"phone\":[],\"homepage\":[],\"organization\":\"MIVEGEC,
-        IRD, CNRS, Univ. Montpellier, Montpellier, France\",\"address\":[],\"country\":\"FR\",\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-03-01T00:35:46.006+00:00\",\"modified\":\"2024-03-01T00:35:46.006+00:00\"}],\"endpoints\":[{\"key\":971204,\"type\":\"DWC_ARCHIVE\",\"url\":\"https://ipt.gbif.fr/archive.do?r=aedes_albopictus_oviposition_reunion\",\"createdBy\":\"3b5161b7-9831-4444-9822-a60df4df107d\",\"modifiedBy\":\"3b5161b7-9831-4444-9822-a60df4df107d\",\"created\":\"2024-03-01T00:34:38.797+00:00\",\"modified\":\"2024-03-01T00:34:38.797+00:00\",\"machineTags\":[]},{\"key\":971203,\"type\":\"EML\",\"url\":\"https://ipt.gbif.fr/eml.do?r=aedes_albopictus_oviposition_reunion\",\"createdBy\":\"3b5161b7-9831-4444-9822-a60df4df107d\",\"modifiedBy\":\"3b5161b7-9831-4444-9822-a60df4df107d\",\"created\":\"2024-03-01T00:34:38.757+00:00\",\"modified\":\"2024-03-01T00:34:38.757+00:00\",\"machineTags\":[]}],\"machineTags\":[{\"key\":18752310,\"namespace\":\"crawler.gbif.org\",\"name\":\"crawl_attempt\",\"value\":\"3\",\"createdBy\":\"crawler.gbif.org\",\"created\":\"2024-03-01T00:46:42.275+00:00\"}],\"tags\":[],\"identifiers\":[{\"key\":361157,\"type\":\"URL\",\"identifier\":\"https://ipt.gbif.fr/resource?r=aedes_albopictus_oviposition_reunion\",\"createdBy\":\"crawler.gbif.org\",\"created\":\"2024-03-01T00:35:46.008+00:00\"}],\"comments\":[],\"bibliographicCitations\":[],\"curatorialUnits\":[],\"taxonomicCoverages\":[{\"coverages\":[{\"scientificName\":\"Aedes
-        (Stegomyia) albopictus (Skuse, 1895)\",\"commonName\":\"Aedes albopictus\",\"rank\":{\"verbatim\":\"species\",\"interpreted\":\"SPECIES\"}}]}],\"geographicCoverages\":[{\"description\":\"The
-        sampling took place in the municipality of Sainte Marie, R\xE9union Island.
-        \ Sainte Marie (Latitude: 20\xB0 52' 60'' South, Longitude: 55\xB0 33' East)
-        is a coastal municipality covering 87.2 km\xB2 with a population of 34,061
-        since the last census.\\n\\nThree study sites within the municipality were
-        selected to collect the entomological data : Duparc, Bois Rouge, and a buffer
-        area between these two study sites.\",\"boundingBox\":{\"minLatitude\":-20.923,\"maxLatitude\":-20.898,\"minLongitude\":55.517,\"maxLongitude\":55.537,\"globalCoverage\":false}}],\"temporalCoverages\":[{\"@type\":\"range\",\"start\":\"2013-05-13T00:00:00.000+00:00\",\"end\":\"2018-12-03T00:00:00.000+00:00\"}],\"keywordCollections\":[{\"thesaurus\":\"GBIF
-        Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type_2015-07-10.xml\",\"keywords\":[\"Samplingevent\"]},{\"thesaurus\":\"GBIF
-        Dataset Subtype Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_subtype.xml\",\"keywords\":[\"Observation\"]}],\"project\":{\"title\":\"Sterile
-        Insect Technique for Aedes Albopictus in Reunion Island\"},\"samplingDescription\":{\"studyExtent\":\"Sainte
-        Marie (Latitude: 20\xB0 52' 60'' South, Longitude: 55\xB0 33' East) is a coastal
-        municipality covering 87.2 km\xB2 with a population of 34,061 since the last
-        census. With a population density of 390.6 inhabitants per km\xB2, Sainte-Marie
-        is located at an altitude of 5 meters, 9 km southeast of Saint-Denis. Priority
-        was given to urbanized settlements where Ae. albopictus is the only Stegomiya
-        species present. Other considerations taken into account for selecting the
-        study sites were (a) areas with manageable sizes (range: 20-40 hectares) and
-        well-delimited residential areas geographically isolated by natural barriers,
-        (b) proximity to laboratory facilities and accessibility by car. Accordingly,
-        \ \u201CDuparc\u201D and \u201CBois Rouge\u201D, two urban areas are within
-        the municipality of Sainte Marie located in the the south-west of Saint-Denis,
-        the capital of Reunion island, were given preference over other cities because
-        they were representative of most urban agglomerations on the island of Reunion,
-        being relatively isolated, and accessible in around fifteen minutes by car
-        from the laboratories.  \\n\\nDuparc covers an area of \u200B\u200Bca. 42
-        ha at the altitude between 5 and 8 meters asl. With approximately 1,885 inhabitants,
-        its urban habitat is quite densely and homogeneous built with more than more
-        than 94% of the land area almost exclusively made up of individual properties
-        (about 300-500 households) with private gardens. The surrounding area features
-        a variety of amenities and infrastructures for transport, education, healthcare
-        services, and businesses and shopping centers. The site is isolated by expressway
-        linking Saint Denis to Saint Benoit to the north, by the rain-fed Ravine La
-        Mare and to the east, west and south by sugar cane fields. This rain-fed ravine
-        is semi-natural wooded area made up of difficult to access landscape with
-        rocks. The residential area is perfectly well demarcated with sugarcane fields
-        all around, with the exception of the grassland located to the north (towards
-        the sea). \\n\\nBois Rouge, an urban area of about \u200B\u200B24 ha extending
-        over an elevation of approximately 5-9 meters asl with an estimated population
-        of 3,877 inhabitants. The residential area made up of slightly more heterogeneous
-        individual housing spread over 21% of its total surface area (63% of the properties
-        are individual houses and 37% are apartments) and interspersed with uninhabited
-        land with few small poultry or goat farms. The neighborhood's most common
-        socio-professional category is working-class people and farmers. The western
-        and southern periphery of Bois-Rouge is mainly agricultural. A small, shallow
-        ravine runs through the residential area, which is entirely surrounded market
-        gardening fields, while the southwest part is bordered with sugarcane field
-        up to the Duparc.  \\n\\nThe sampling period using oviposition traps (Ovitrap)
-        covered 6 years, May 2013 and continued until 2018. Every weeks during the
-        survey from 2013 to 2018, the ovitraps were repeatedly placed in the same
-        position in each defined zone.\",\"sampling\":\"The survey consisted of placing
-        29, 27 and 20 ovitraps in previously selected location dispatched in Bois
-        Rouge, Duparc, and buffer zone separating the two urban areas, respectively.
-        Trapping sites represented the mix of dominant residential and wild habitat
-        types within each of the study sites. Indeed, the surveys took place mainly
-        from inhabited houses, although in some cases traps were also placed in a
-        numbers of in the public domains and natural areas within and outside (buffer
-        zone) of the residential neighborhoods. Each ovitrap consisted of a 1.2 liter
-        black plastic pots filled with 650 ml of water collected from a river. The
-        oviposition substrate (ovistrip) was made of a brown germination paper (400HPT
-        Sedburo Equipment, Des Plaines, USA) (measuring 15x10 cm) attached with a
-        paper clip on a 15x10 cm smooth and rigid PVC sheet, which was placed slightly
-        obliquely inside the ovitrap pot.  The papers were labelled on the back with
-        unique number number, followed by the number of the week of installation.
-        In each sampling zone, the ovitraps were usually placed placed at ground level
-        in a shaded location or in low vegetation and preferably sheltered from the
-        wind and the sun, most frequently in the garden within volunteered private
-        properties and more rarely in the public domain for the Duparc and Bois Rouge
-        sites. Each ovitrap was numerated and GPS coordinates was recorded for each
-        trap. \\n\\nEvery weeks during the survey from 2013 to 2018, the ovitraps
-        were repeatedly placed in the same position in each defined zone.  The egg
-        laying papers were collected weekly and annotated with the trap number and
-        collection date before being taken to the lab for egg counting. Any larvae
-        observed in the traps was counted and identified by stage of development.
-        The pots were completely emptied of their residual water and cleaned in order
-        to remove any eggs that may have been deposited. They were filled with water
-        before being set again with new substrate. \\n\\nAt the laboratory, each egg
-        paper was separated from its PVC sheet and checked to remove any debris or
-        dirt. The presence of eggs (positivity) was noted and the number of eggs counted
-        either immediately after cleaning, or deferred after drying and maturation
-        of the embryos, when field collected egg samples were used to evaluate the
-        hatching rate. In the first case, the number of eggs from each each weekly
-        sampling was recorded, based on three scores: i) the overall number of eggs
-        observed on each ovitrap substrate, ii) the number of opened eggs when the
-        opercula is clearly separated from the rest of the egg shell (corresponding
-        to viable eggs); (iii) and the number of eggs that have a completely flattened
-        appearance (corresponding either to non-embryonated eggs or to non-viable
-        embryos). Weekly, monthly and annual average number of eggs/trap were calculated,
-        and used as a proxy of Ae. albopictus abundance in each study site. In the
-        latter case, the assessment of the viability of field collected eggs took
-        place every 2-weeks for Duparc and every month for Bois rouge. In brief, a
-        minimum of six positive papers (with Ae. albopictus eggs) per study site were
-        randomly picked from the field-collected egg laying papers to assess the hatching
-        rate. These egg papers were placed in the dark inside plastic tray covered
-        by a Plexiglas for five days allowing gentle drying and egg maturation under
-        laboratory conditions. After this period, each dried egg paper was completely
-        immersed in plastic containers previously filled with 250 ml of \u201Crested\u201D
-        water (i.e. tap water stored overnight in a jerrycan) and a small amount of
-        rabbit pellet powder was added to each container. After 24 hrs hours of egg
-        immersion, all eggs present were examined under stereomicroscope and the hatching
-        rate was estimated by dividing the number of opened eggs (or newly eclosed
-        L1 larvae) by total egg counts.\",\"methodSteps\":[\"Several study sites were
-        selected, and data were collected in these sites, as detailed in the Sampling
-        Method section\",\"The data were collected as detailed in the Sampling Method
-        section\",\"The collected data were digitized\",\"A custom R script was created
-        to map the original data to Darwin Core as an event core with the relevant
-        extension (occurrence)\",\"The Darwin Core files were connected to the French
-        IPT and documented with metadata.\",\"The data was published and registered
-        with GBIF\",\"Several villages were selected as detailed in the Sampling Method
-        section.\"]},\"countryCoverage\":[],\"collections\":[],\"dataDescriptions\":[],\"dataLanguage\":\"eng\",\"pubDate\":\"2024-03-01T00:00:00.000+00:00\",\"maintenanceUpdateFrequency\":\"NOT_PLANNED\",\"maintenanceDescription\":\"\",\"license\":\"http://creativecommons.org/licenses/by/4.0/legalcode\"},{\"key\":\"8c88697a-027b-45a3-87f0-55f7deba0958\",\"installationKey\":\"7ce8aef1-9e92-11dc-8740-b8a03c50a999\",\"publishingOrganizationKey\":\"7ce8aef0-9e92-11dc-8738-b8a03c50a862\",\"doi\":\"10.15468/nanw2v\",\"external\":false,\"numConstituents\":0,\"type\":\"CHECKLIST\",\"title\":\"Redescription
-        of the Mayfly Torleya mikhaili Tiunova, 1995 (Ephemeroptera, Ephemerellidae)\",\"description\":\"This
+      string: '{"offset":0,"limit":3,"endOfRecords":false,"count":108945,"results":[{"key":"b17b67ee-85bc-4b87-bf77-b2d6af66395b","installationKey":"d5b61ace-f25c-43bd-9dd0-03486850f90b","publishingOrganizationKey":"750a8724-fa66-4c27-b645-bd58ac5ee010","doi":"10.3897/bdj.12.e129214","external":false,"numConstituents":0,"type":"CHECKLIST","title":"Taxonomic
+        relationship between Amolops minutus Orlov & Ho, 2007 and A. ottorum Pham,
+        Sung, Pham, Le, Zieger & Nguyen, 2019, with first record of A. minutus from
+        China (Anura, Ranidae)","description":"Based on the examination of specimens
+        of Amolops minutus Orlov & Ho, 2007 and A. ottorum Pham, Sung, Pham, Le, Zieger
+        & Nguyen, 2019, we found that there is no significant morphological difference
+        between them. Phylogenetic analysis also showed that A. minutus and A. ottorum
+        belong to the same taxon. In addition, we discovered the distribution of A.
+        minutus in China.In this study, we provide the first molecular data of Amolops
+        minutus and regard A. ottorum as a junior synonym of A. minutus. In addition,
+        we report the first record of A. minutus from China, based on nine specimens
+        collected from Guanyinshan Provincial Nature Reserve in southern Yunnan Province
+        and present an updated diagnosis of this species, based on literature data
+        and newly-collected specimens.","language":"eng","homepage":"https://doi.org/10.3897/BDJ.12.e129214","citation":{"text":"Li
+        S (2024). Taxonomic relationship between Amolops minutus Orlov & Ho, 2007
+        and A. ottorum Pham, Sung, Pham, Le, Zieger & Nguyen, 2019, with first record
+        of A. minutus from China (Anura, Ranidae). Biodiversity Data Journal. Checklist
+        dataset https://doi.org/10.3897/bdj.12.e129214 accessed via GBIF.org on 2024-10-04.","identifier":"Citation
+        Identifier","citationProvidedBySource":false},"contactsCitation":[{"key":5488327,"abbreviatedName":"Li
+        S","firstName":"Song","lastName":"Li","roles":["METADATA_AUTHOR","ORIGINATOR"],"userId":[]}],"lockedForAutoUpdate":false,"createdBy":"pensoft","modifiedBy":"crawler.gbif.org","created":"2024-10-04T06:30:04.910+00:00","modified":"2024-10-04T06:31:08.712+00:00","contacts":[{"key":5488327,"type":"ORIGINATOR","primary":true,"userId":[],"firstName":"Song","lastName":"Li","position":["Mr"],"email":["lis@mail.kiz.ac.cn"],"phone":[],"homepage":[],"organization":"Yunnan
+        Key Laboratory of Biodiversity Information, Kunming Institute of Zoology,
+        Chinese Academy of Sciences","address":[],"city":"Kunming","country":"CN","createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2024-10-04T06:31:08.685+00:00","modified":"2024-10-04T06:31:08.685+00:00"},{"key":5488328,"type":"METADATA_AUTHOR","primary":true,"userId":[],"firstName":"Song","lastName":"Li","position":["Mr"],"email":["lis@mail.kiz.ac.cn"],"phone":[],"homepage":[],"organization":"Yunnan
+        Key Laboratory of Biodiversity Information, Kunming Institute of Zoology,
+        Chinese Academy of Sciences","address":[],"city":"Kunming","country":"CN","createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2024-10-04T06:31:08.689+00:00","modified":"2024-10-04T06:31:08.689+00:00"},{"key":5488329,"type":"ADMINISTRATIVE_POINT_OF_CONTACT","primary":true,"userId":[],"firstName":"Song","lastName":"Li","position":["Mr"],"email":["lis@mail.kiz.ac.cn"],"phone":[],"homepage":[],"organization":"Yunnan
+        Key Laboratory of Biodiversity Information, Kunming Institute of Zoology,
+        Chinese Academy of Sciences","address":[],"city":"Kunming","country":"CN","createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2024-10-04T06:31:08.691+00:00","modified":"2024-10-04T06:31:08.691+00:00"}],"endpoints":[{"key":1048687,"type":"DWC_ARCHIVE","url":"https://bdj.pensoft.net/lib/ajax_srv/archive_download.php?archive_type=2&document_id=129214","createdBy":"pensoft","modifiedBy":"pensoft","created":"2024-10-04T06:30:06.135+00:00","modified":"2024-10-04T06:30:06.135+00:00","machineTags":[]}],"machineTags":[{"key":21969964,"namespace":"crawler.gbif.org","name":"crawl_attempt","value":"1","createdBy":"crawler.gbif.org","created":"2024-10-04T06:31:06.519+00:00"}],"tags":[],"identifiers":[{"key":374608,"type":"DOI","identifier":"10.3897/BDJ.12.e129214","createdBy":"crawler.gbif.org","created":"2024-10-04T06:31:08.693+00:00"}],"comments":[],"bibliographicCitations":[],"curatorialUnits":[],"taxonomicCoverages":[],"geographicCoverages":[],"temporalCoverages":[],"keywordCollections":[],"countryCoverage":[],"collections":[],"dataDescriptions":[],"dataLanguage":"eng","pubDate":"2024-09-26T00:00:00.000+00:00","maintenanceChangeHistory":[],"license":"http://creativecommons.org/licenses/by/4.0/legalcode"},{"key":"ae367f51-e458-44c1-81b1-b55ac45ffa23","installationKey":"7ce8aef1-9e92-11dc-8740-b8a03c50a999","publishingOrganizationKey":"7ce8aef0-9e92-11dc-8738-b8a03c50a862","doi":"10.15468/sg29hq","external":false,"numConstituents":0,"type":"CHECKLIST","title":"Two
+        new plioplatecarpine mosasaurs (Mosasauridae; Plioplatecarpinae) of the genus
+        Ectenosaurus from the Upper Cretaceous of North America","description":"This
         dataset contains the digitized treatments in Plazi based on the original journal
-        article Tiunova, Tatiana M. (2024): Redescription of the Mayfly Torleya mikhaili
-        Tiunova, 1995 (Ephemeroptera, Ephemerellidae). Zootaxa 5418 (1): 89-100, DOI:
-        10.11646/zootaxa.5418.1.6, URL: http://dx.doi.org/10.11646/zootaxa.5418.1.6\",\"language\":\"eng\",\"homepage\":\"https://tb.plazi.org/GgServer/summary/FFC6913DFFB81F5E5558FFCAD0641C0E\",\"citation\":{\"text\":\"Tiunova
-        T M, plazi (2024). Redescription of the Mayfly Torleya mikhaili Tiunova, 1995
-        (Ephemeroptera, Ephemerellidae). Plazi.org taxonomic treatments database.
-        Checklist dataset https://doi.org/10.15468/nanw2v accessed via GBIF.org on
-        2024-03-01.\",\"citationProvidedBySource\":false},\"contactsCitation\":[{\"key\":5170877,\"abbreviatedName\":\"Tiunova
-        T M\",\"firstName\":\"Tatiana M.\",\"lastName\":\"Tiunova\",\"roles\":[\"ORIGINATOR\"],\"userId\":[]},{\"key\":5170881,\"abbreviatedName\":\"plazi\",\"lastName\":\"plazi\",\"roles\":[\"METADATA_AUTHOR\"],\"userId\":[]}],\"lockedForAutoUpdate\":false,\"createdBy\":\"plazi\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-02-29T23:08:12.788+00:00\",\"modified\":\"2024-02-29T23:36:42.346+00:00\",\"contacts\":[{\"key\":5170877,\"type\":\"ORIGINATOR\",\"primary\":true,\"userId\":[],\"firstName\":\"Tatiana
-        M.\",\"lastName\":\"Tiunova\",\"position\":[],\"email\":[],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-02-29T23:36:42.267+00:00\",\"modified\":\"2024-02-29T23:36:42.267+00:00\"},{\"key\":5170878,\"type\":\"ADMINISTRATIVE_POINT_OF_CONTACT\",\"primary\":true,\"userId\":[],\"firstName\":\"Guido\",\"lastName\":\"Sautter\",\"position\":[],\"email\":[\"sautter@plazi.org\"],\"phone\":[],\"homepage\":[\"https://plazi.org\"],\"address\":[],\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-02-29T23:36:42.271+00:00\",\"modified\":\"2024-02-29T23:36:42.271+00:00\"},{\"key\":5170879,\"type\":\"PUBLISHER\",\"primary\":false,\"userId\":[],\"position\":[],\"email\":[\"magnolia@mapress.com\"],\"phone\":[],\"homepage\":[\"https://www.mapress.com/\"],\"organization\":\"Magnolia
-        Press\",\"address\":[\"St. Lukes 1346\"],\"city\":\"Auckland\",\"country\":\"NZ\",\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-02-29T23:36:42.326+00:00\",\"modified\":\"2024-02-29T23:36:42.326+00:00\"},{\"key\":5170880,\"type\":\"DISTRIBUTOR\",\"primary\":false,\"userId\":[],\"position\":[],\"email\":[\"info@plazi.org\"],\"phone\":[],\"homepage\":[\"https://plazi.org/\"],\"organization\":\"Plazi\",\"address\":[],\"city\":\"Bern\",\"country\":\"CH\",\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-02-29T23:36:42.329+00:00\",\"modified\":\"2024-02-29T23:36:42.329+00:00\"},{\"key\":5170881,\"type\":\"METADATA_AUTHOR\",\"primary\":true,\"userId\":[],\"lastName\":\"plazi\",\"position\":[],\"email\":[],\"phone\":[],\"homepage\":[],\"organization\":\"Plazi\",\"address\":[],\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-02-29T23:36:42.331+00:00\",\"modified\":\"2024-02-29T23:36:42.331+00:00\"}],\"endpoints\":[{\"key\":971158,\"type\":\"DWC_ARCHIVE\",\"url\":\"https://tb.plazi.org/GgServer/dwca/FFC6913DFFB81F5E5558FFCAD0641C0E.zip\",\"createdBy\":\"plazi\",\"modifiedBy\":\"plazi\",\"created\":\"2024-02-29T23:08:13.221+00:00\",\"modified\":\"2024-02-29T23:08:13.221+00:00\",\"machineTags\":[]}],\"machineTags\":[{\"key\":18750539,\"namespace\":\"crawler.gbif.org\",\"name\":\"crawl_attempt\",\"value\":\"2\",\"createdBy\":\"crawler.gbif.org\",\"created\":\"2024-02-29T23:36:41.534+00:00\"}],\"tags\":[],\"identifiers\":[{\"key\":361154,\"type\":\"UUID\",\"identifier\":\"FFC6913DFFB81F5E5558FFCAD0641C0E\",\"createdBy\":\"plazi\",\"created\":\"2024-02-29T23:08:13.100+00:00\"}],\"comments\":[],\"bibliographicCitations\":[{\"text\":\"Tiunova,
-        Tatiana M. (2024): Redescription of the Mayfly Torleya mikhaili Tiunova, 1995
-        (Ephemeroptera, Ephemerellidae). Zootaxa 5418 (1): 89-100, DOI: 10.11646/zootaxa.5418.1.6,
-        URL: http://dx.doi.org/10.11646/zootaxa.5418.1.6\",\"citationProvidedBySource\":false}],\"curatorialUnits\":[],\"taxonomicCoverages\":[],\"geographicCoverages\":[],\"temporalCoverages\":[],\"keywordCollections\":[],\"countryCoverage\":[],\"collections\":[],\"dataDescriptions\":[],\"dataLanguage\":\"eng\",\"pubDate\":\"2024-02-27T00:00:00.000+00:00\",\"license\":\"http://creativecommons.org/publicdomain/zero/1.0/legalcode\"},{\"key\":\"b2a9559d-3101-40ab-a60e-1204d4c65ee1\",\"installationKey\":\"7ce8aef1-9e92-11dc-8740-b8a03c50a999\",\"publishingOrganizationKey\":\"7ce8aef0-9e92-11dc-8738-b8a03c50a862\",\"doi\":\"10.15468/xbqza9\",\"external\":false,\"numConstituents\":0,\"type\":\"CHECKLIST\",\"title\":\"Notes
-        on the genus Homogryllacris Liu, 2007 (Orthoptera: Gryllacrididae) with description
-        of one new species from China\",\"description\":\"This dataset contains the
-        digitized treatments in Plazi based on the original journal article Duan,
-        Yanhao, Zhang, Tao, Shi, Fuming (2024): Notes on the genus Homogryllacris
-        Liu, 2007 (Orthoptera: Gryllacrididae) with description of one new species
-        from China. Zootaxa 5418 (1): 72-82, DOI: 10.11646/zootaxa.5418.1.4, URL:
-        http://dx.doi.org/10.11646/zootaxa.5418.1.4\",\"language\":\"eng\",\"homepage\":\"https://tb.plazi.org/GgServer/summary/FFBEFF80FFC4D40BC909FFBBFFCCFF8E\",\"citation\":{\"text\":\"Duan
-        Y, Zhang T, Shi F, plazi (2024). Notes on the genus Homogryllacris Liu, 2007
-        (Orthoptera: Gryllacrididae) with description of one new species from China.
-        Plazi.org taxonomic treatments database. Checklist dataset https://doi.org/10.15468/xbqza9
-        accessed via GBIF.org on 2024-03-01.\",\"citationProvidedBySource\":false},\"contactsCitation\":[{\"key\":5170861,\"abbreviatedName\":\"Duan
-        Y\",\"firstName\":\"Yanhao\",\"lastName\":\"Duan\",\"roles\":[\"ORIGINATOR\"],\"userId\":[]},{\"key\":5170862,\"abbreviatedName\":\"Zhang
-        T\",\"firstName\":\"Tao\",\"lastName\":\"Zhang\",\"roles\":[\"ORIGINATOR\"],\"userId\":[]},{\"key\":5170863,\"abbreviatedName\":\"Shi
-        F\",\"firstName\":\"Fuming\",\"lastName\":\"Shi\",\"roles\":[\"ORIGINATOR\"],\"userId\":[]},{\"key\":5170867,\"abbreviatedName\":\"plazi\",\"lastName\":\"plazi\",\"roles\":[\"METADATA_AUTHOR\"],\"userId\":[]}],\"lockedForAutoUpdate\":false,\"createdBy\":\"plazi\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-02-29T22:54:40.613+00:00\",\"modified\":\"2024-02-29T23:04:55.426+00:00\",\"contacts\":[{\"key\":5170861,\"type\":\"ORIGINATOR\",\"primary\":true,\"userId\":[],\"firstName\":\"Yanhao\",\"lastName\":\"Duan\",\"position\":[],\"email\":[],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-02-29T23:04:55.403+00:00\",\"modified\":\"2024-02-29T23:04:55.403+00:00\"},{\"key\":5170862,\"type\":\"ORIGINATOR\",\"primary\":false,\"userId\":[],\"firstName\":\"Tao\",\"lastName\":\"Zhang\",\"position\":[],\"email\":[],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-02-29T23:04:55.407+00:00\",\"modified\":\"2024-02-29T23:04:55.407+00:00\"},{\"key\":5170863,\"type\":\"ORIGINATOR\",\"primary\":false,\"userId\":[],\"firstName\":\"Fuming\",\"lastName\":\"Shi\",\"position\":[],\"email\":[],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-02-29T23:04:55.409+00:00\",\"modified\":\"2024-02-29T23:04:55.409+00:00\"},{\"key\":5170864,\"type\":\"ADMINISTRATIVE_POINT_OF_CONTACT\",\"primary\":true,\"userId\":[],\"firstName\":\"Guido\",\"lastName\":\"Sautter\",\"position\":[],\"email\":[\"sautter@plazi.org\"],\"phone\":[],\"homepage\":[\"https://plazi.org\"],\"address\":[],\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-02-29T23:04:55.410+00:00\",\"modified\":\"2024-02-29T23:04:55.410+00:00\"},{\"key\":5170865,\"type\":\"PUBLISHER\",\"primary\":false,\"userId\":[],\"position\":[],\"email\":[\"magnolia@mapress.com\"],\"phone\":[],\"homepage\":[\"https://www.mapress.com/\"],\"organization\":\"Magnolia
-        Press\",\"address\":[\"St. Lukes 1346\"],\"city\":\"Auckland\",\"country\":\"NZ\",\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-02-29T23:04:55.412+00:00\",\"modified\":\"2024-02-29T23:04:55.412+00:00\"},{\"key\":5170866,\"type\":\"DISTRIBUTOR\",\"primary\":false,\"userId\":[],\"position\":[],\"email\":[\"info@plazi.org\"],\"phone\":[],\"homepage\":[\"https://plazi.org/\"],\"organization\":\"Plazi\",\"address\":[],\"city\":\"Bern\",\"country\":\"CH\",\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-02-29T23:04:55.413+00:00\",\"modified\":\"2024-02-29T23:04:55.413+00:00\"},{\"key\":5170867,\"type\":\"METADATA_AUTHOR\",\"primary\":true,\"userId\":[],\"lastName\":\"plazi\",\"position\":[],\"email\":[],\"phone\":[],\"homepage\":[],\"organization\":\"Plazi\",\"address\":[],\"createdBy\":\"crawler.gbif.org\",\"modifiedBy\":\"crawler.gbif.org\",\"created\":\"2024-02-29T23:04:55.414+00:00\",\"modified\":\"2024-02-29T23:04:55.414+00:00\"}],\"endpoints\":[{\"key\":971151,\"type\":\"DWC_ARCHIVE\",\"url\":\"https://tb.plazi.org/GgServer/dwca/FFBEFF80FFC4D40BC909FFBBFFCCFF8E.zip\",\"createdBy\":\"plazi\",\"modifiedBy\":\"plazi\",\"created\":\"2024-02-29T22:54:40.950+00:00\",\"modified\":\"2024-02-29T22:54:40.950+00:00\",\"machineTags\":[]}],\"machineTags\":[{\"key\":18749788,\"namespace\":\"crawler.gbif.org\",\"name\":\"crawl_attempt\",\"value\":\"2\",\"createdBy\":\"crawler.gbif.org\",\"created\":\"2024-02-29T23:04:54.691+00:00\"}],\"tags\":[],\"identifiers\":[{\"key\":361153,\"type\":\"UUID\",\"identifier\":\"FFBEFF80FFC4D40BC909FFBBFFCCFF8E\",\"createdBy\":\"plazi\",\"created\":\"2024-02-29T22:54:40.816+00:00\"}],\"comments\":[],\"bibliographicCitations\":[{\"text\":\"Duan,
-        Yanhao, Zhang, Tao, Shi, Fuming (2024): Notes on the genus Homogryllacris
-        Liu, 2007 (Orthoptera: Gryllacrididae) with description of one new species
-        from China. Zootaxa 5418 (1): 72-82, DOI: 10.11646/zootaxa.5418.1.4, URL:
-        http://dx.doi.org/10.11646/zootaxa.5418.1.4\",\"citationProvidedBySource\":false}],\"curatorialUnits\":[],\"taxonomicCoverages\":[],\"geographicCoverages\":[],\"temporalCoverages\":[],\"keywordCollections\":[],\"countryCoverage\":[],\"collections\":[],\"dataDescriptions\":[],\"dataLanguage\":\"eng\",\"pubDate\":\"2024-02-27T00:00:00.000+00:00\",\"license\":\"http://creativecommons.org/publicdomain/zero/1.0/legalcode\"}]}"
+        article Kiernan, Caitlin R., Ebersole, Jun A. (2023): Two new plioplatecarpine
+        mosasaurs (Mosasauridae; Plioplatecarpinae) of the genus Ectenosaurus from
+        the Upper Cretaceous of North America. PaleoBios 40 (13): 1-28, DOI: 10.5070/P9401362375,
+        URL: http://dx.doi.org/10.5070/p9401362375","language":"eng","homepage":"https://tb.plazi.org/GgServer/summary/FFAF3417FF99672AFFAC1461872FFFB2","citation":{"text":"Kiernan
+        C R, Ebersole J A, felipe (2023). Two new plioplatecarpine mosasaurs (Mosasauridae;
+        Plioplatecarpinae) of the genus Ectenosaurus from the Upper Cretaceous of
+        North America. Plazi.org taxonomic treatments database. Checklist dataset
+        https://doi.org/10.15468/sg29hq accessed via GBIF.org on 2024-10-04.","citationProvidedBySource":false},"contactsCitation":[{"key":5488223,"abbreviatedName":"Kiernan
+        C R","firstName":"Caitlin R.","lastName":"Kiernan","roles":["ORIGINATOR"],"userId":[]},{"key":5488224,"abbreviatedName":"Ebersole
+        J A","firstName":"Jun A.","lastName":"Ebersole","roles":["ORIGINATOR"],"userId":[]},{"key":5488227,"abbreviatedName":"felipe","lastName":"felipe","roles":["METADATA_AUTHOR"],"userId":[]}],"lockedForAutoUpdate":false,"createdBy":"plazi","modifiedBy":"crawler.gbif.org","created":"2024-10-03T23:31:26.440+00:00","modified":"2024-10-03T23:41:42.737+00:00","contacts":[{"key":5488223,"type":"ORIGINATOR","primary":true,"userId":[],"firstName":"Caitlin
+        R.","lastName":"Kiernan","position":[],"email":[],"phone":[],"homepage":[],"address":[],"createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2024-10-03T23:41:42.717+00:00","modified":"2024-10-03T23:41:42.717+00:00"},{"key":5488224,"type":"ORIGINATOR","primary":false,"userId":[],"firstName":"Jun
+        A.","lastName":"Ebersole","position":[],"email":[],"phone":[],"homepage":[],"address":[],"createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2024-10-03T23:41:42.720+00:00","modified":"2024-10-03T23:41:42.720+00:00"},{"key":5488225,"type":"ADMINISTRATIVE_POINT_OF_CONTACT","primary":true,"userId":[],"firstName":"Guido","lastName":"Sautter","position":[],"email":["sautter@plazi.org"],"phone":[],"homepage":["https://plazi.org"],"address":[],"createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2024-10-03T23:41:42.721+00:00","modified":"2024-10-03T23:41:42.721+00:00"},{"key":5488226,"type":"PUBLISHER","primary":false,"userId":[],"position":[],"email":["info@plazi.org"],"phone":[],"homepage":["https://plazi.org/"],"organization":"Plazi","address":[],"city":"Bern","country":"CH","createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2024-10-03T23:41:42.723+00:00","modified":"2024-10-03T23:41:42.723+00:00"},{"key":5488227,"type":"METADATA_AUTHOR","primary":true,"userId":[],"lastName":"felipe","position":[],"email":[],"phone":[],"homepage":[],"organization":"Plazi","address":[],"createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2024-10-03T23:41:42.724+00:00","modified":"2024-10-03T23:41:42.724+00:00"}],"endpoints":[{"key":1048646,"type":"DWC_ARCHIVE","url":"https://tb.plazi.org/GgServer/dwca/FFAF3417FF99672AFFAC1461872FFFB2.zip","createdBy":"plazi","modifiedBy":"plazi","created":"2024-10-03T23:31:26.838+00:00","modified":"2024-10-03T23:31:26.838+00:00","machineTags":[]}],"machineTags":[{"key":21962368,"namespace":"crawler.gbif.org","name":"crawl_attempt","value":"2","createdBy":"crawler.gbif.org","created":"2024-10-03T23:41:42.059+00:00"}],"tags":[],"identifiers":[{"key":374607,"type":"UUID","identifier":"FFAF3417FF99672AFFAC1461872FFFB2","createdBy":"plazi","created":"2024-10-03T23:31:26.700+00:00"}],"comments":[],"bibliographicCitations":[{"text":"Kiernan,
+        Caitlin R., Ebersole, Jun A. (2023): Two new plioplatecarpine mosasaurs (Mosasauridae;
+        Plioplatecarpinae) of the genus Ectenosaurus from the Upper Cretaceous of
+        North America. PaleoBios 40 (13): 1-28, DOI: 10.5070/P9401362375, URL: http://dx.doi.org/10.5070/p9401362375","citationProvidedBySource":false}],"curatorialUnits":[],"taxonomicCoverages":[],"geographicCoverages":[],"temporalCoverages":[],"keywordCollections":[],"countryCoverage":[],"collections":[],"dataDescriptions":[],"dataLanguage":"eng","pubDate":"2023-10-23T00:00:00.000+00:00","maintenanceChangeHistory":[],"license":"http://creativecommons.org/publicdomain/zero/1.0/legalcode"},{"key":"73a76047-a563-4c62-8a6e-d6b7837c9f30","installationKey":"7ce8aef1-9e92-11dc-8740-b8a03c50a999","publishingOrganizationKey":"7ce8aef0-9e92-11dc-8738-b8a03c50a862","doi":"10.15468/hr73xc","external":false,"numConstituents":0,"type":"CHECKLIST","title":"Nucella
+        demouthae, A New Species of Late Miocene Muricid Gastropod From Northern California,
+        U. S. A.","description":"This dataset contains the digitized treatments in
+        Plazi based on the original journal article Powell, II, Charles L., Roth,
+        Barry, Garcia, Christine N. (2023): Nucella demouthae, A New Species of Late
+        Miocene Muricid Gastropod From Northern California, U. S. A. PaleoBios 40
+        (12): 1-11, DOI: 10.5070/P9411257951, URL: http://dx.doi.org/10.5070/p9411257951","language":"eng","homepage":"https://tb.plazi.org/GgServer/summary/A822476AFFC0775ACF2AFFBBFFE4FF83","citation":{"text":"Powell
+        I C L, Roth B, Garcia C N, felipe (2023). Nucella demouthae, A New Species
+        of Late Miocene Muricid Gastropod From Northern California, U. S. A.. Plazi.org
+        taxonomic treatments database. Checklist dataset https://doi.org/10.15468/hr73xc
+        accessed via GBIF.org on 2024-10-04.","citationProvidedBySource":false},"contactsCitation":[{"key":5488189,"abbreviatedName":"Powell
+        I C L","firstName":"II, Charles L.","lastName":"Powell","roles":["ORIGINATOR"],"userId":[]},{"key":5488190,"abbreviatedName":"Roth
+        B","firstName":"Barry","lastName":"Roth","roles":["ORIGINATOR"],"userId":[]},{"key":5488191,"abbreviatedName":"Garcia
+        C N","firstName":"Christine N.","lastName":"Garcia","roles":["ORIGINATOR"],"userId":[]},{"key":5488194,"abbreviatedName":"felipe","lastName":"felipe","roles":["METADATA_AUTHOR"],"userId":[]}],"lockedForAutoUpdate":false,"createdBy":"plazi","modifiedBy":"crawler.gbif.org","created":"2024-10-03T22:48:11.001+00:00","modified":"2024-10-03T22:58:22.549+00:00","contacts":[{"key":5488189,"type":"ORIGINATOR","primary":true,"userId":[],"firstName":"II,
+        Charles L.","lastName":"Powell","position":[],"email":[],"phone":[],"homepage":[],"address":[],"createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2024-10-03T22:58:22.529+00:00","modified":"2024-10-03T22:58:22.529+00:00"},{"key":5488190,"type":"ORIGINATOR","primary":false,"userId":[],"firstName":"Barry","lastName":"Roth","position":[],"email":[],"phone":[],"homepage":[],"address":[],"createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2024-10-03T22:58:22.531+00:00","modified":"2024-10-03T22:58:22.531+00:00"},{"key":5488191,"type":"ORIGINATOR","primary":false,"userId":[],"firstName":"Christine
+        N.","lastName":"Garcia","position":[],"email":[],"phone":[],"homepage":[],"address":[],"createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2024-10-03T22:58:22.532+00:00","modified":"2024-10-03T22:58:22.532+00:00"},{"key":5488192,"type":"ADMINISTRATIVE_POINT_OF_CONTACT","primary":true,"userId":[],"firstName":"Guido","lastName":"Sautter","position":[],"email":["sautter@plazi.org"],"phone":[],"homepage":["https://plazi.org"],"address":[],"createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2024-10-03T22:58:22.533+00:00","modified":"2024-10-03T22:58:22.533+00:00"},{"key":5488193,"type":"PUBLISHER","primary":false,"userId":[],"position":[],"email":["info@plazi.org"],"phone":[],"homepage":["https://plazi.org/"],"organization":"Plazi","address":[],"city":"Bern","country":"CH","createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2024-10-03T22:58:22.535+00:00","modified":"2024-10-03T22:58:22.535+00:00"},{"key":5488194,"type":"METADATA_AUTHOR","primary":true,"userId":[],"lastName":"felipe","position":[],"email":[],"phone":[],"homepage":[],"organization":"Plazi","address":[],"createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2024-10-03T22:58:22.536+00:00","modified":"2024-10-03T22:58:22.536+00:00"}],"endpoints":[{"key":1048637,"type":"DWC_ARCHIVE","url":"https://tb.plazi.org/GgServer/dwca/A822476AFFC0775ACF2AFFBBFFE4FF83.zip","createdBy":"plazi","modifiedBy":"plazi","created":"2024-10-03T22:48:13.740+00:00","modified":"2024-10-03T22:48:13.740+00:00","machineTags":[]}],"machineTags":[{"key":21961380,"namespace":"crawler.gbif.org","name":"crawl_attempt","value":"2","createdBy":"crawler.gbif.org","created":"2024-10-03T22:58:21.973+00:00"}],"tags":[],"identifiers":[{"key":374606,"type":"UUID","identifier":"A822476AFFC0775ACF2AFFBBFFE4FF83","createdBy":"plazi","created":"2024-10-03T22:48:13.611+00:00"}],"comments":[],"bibliographicCitations":[{"text":"Powell,
+        II, Charles L., Roth, Barry, Garcia, Christine N. (2023): Nucella demouthae,
+        A New Species of Late Miocene Muricid Gastropod From Northern California,
+        U. S. A. PaleoBios 40 (12): 1-11, DOI: 10.5070/P9411257951, URL: http://dx.doi.org/10.5070/p9411257951","citationProvidedBySource":false}],"curatorialUnits":[],"taxonomicCoverages":[],"geographicCoverages":[],"temporalCoverages":[],"keywordCollections":[],"countryCoverage":[],"collections":[],"dataDescriptions":[],"dataLanguage":"eng","pubDate":"2023-10-13T00:00:00.000+00:00","maintenanceChangeHistory":[],"license":"http://creativecommons.org/publicdomain/zero/1.0/legalcode"}]}'
     headers:
       Accept-Ranges:
       - bytes
@@ -442,16 +160,16 @@ interactions:
       - public, max-age=3601
       Connection:
       - keep-alive
+      Content-Length:
+      - '14619'
       Content-Type:
       - application/json
       Date:
-      - Fri, 01 Mar 2024 08:32:28 GMT
+      - Fri, 04 Oct 2024 07:00:23 GMT
       Expires:
       - '0'
       Pragma:
       - no-cache
-      Transfer-Encoding:
-      - chunked
       Vary:
       - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
       Via:
@@ -461,7 +179,7 @@ interactions:
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '703956589'
+      - '684622001'
       X-XSS-Protection:
       - 1; mode=block
     status:

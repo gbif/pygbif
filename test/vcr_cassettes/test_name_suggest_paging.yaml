@@ -9,15 +9,15 @@ interactions:
       Connection:
       - keep-alive
       user-agent:
-      - python-requests/2.31.0,pygbif/0.6.3
+      - python-requests/2.31.0,pygbif/0.6.4
     method: GET
     uri: https://api.gbif.org/v1/species/suggest?q=Aso&limit=3
   response:
     body:
-      string: '[{"key":4672011,"nameKey":1047036,"kingdom":"Animalia","phylum":"Arthropoda","order":"Hymenoptera","family":"Diapriidae","genus":"Asolenopsia","kingdomKey":1,"phylumKey":54,"classKey":216,"orderKey":1457,"familyKey":2790,"genusKey":4672011,"parent":"Diapriidae","parentKey":2790,"nubKey":4672011,"scientificName":"Asolenopsia
-        Kieffer, 1921","canonicalName":"Asolenopsia","rank":"GENUS","status":"ACCEPTED","higherClassificationMap":{"1":"Animalia","54":"Arthropoda","216":"Insecta","1457":"Hymenoptera","2790":"Diapriidae"},"synonym":false,"class":"Insecta"},{"key":4746664,"nameKey":1047043,"kingdom":"Animalia","phylum":"Arthropoda","order":"Coleoptera","family":"Histeridae","genus":"Asolenus","kingdomKey":1,"phylumKey":54,"classKey":216,"orderKey":1470,"familyKey":4733,"genusKey":4746664,"parent":"Histeridae","parentKey":4733,"nubKey":4746664,"scientificName":"Asolenus
-        Lewis, 1906","canonicalName":"Asolenus","rank":"GENUS","status":"ACCEPTED","higherClassificationMap":{"1":"Animalia","54":"Arthropoda","216":"Insecta","1470":"Coleoptera","4733":"Histeridae"},"synonym":false,"class":"Insecta"},{"key":4586911,"nameKey":1046867,"kingdom":"Animalia","phylum":"Mollusca","order":"Pectinida","family":"Hunanopectinidae","genus":"Asoella","kingdomKey":1,"phylumKey":52,"classKey":137,"orderKey":9250425,"familyKey":4586899,"genusKey":4586911,"parent":"Hunanopectinidae","parentKey":4586899,"nubKey":4586911,"scientificName":"Asoella
-        Tokuyama, 1959","canonicalName":"Asoella","rank":"GENUS","status":"ACCEPTED","higherClassificationMap":{"1":"Animalia","52":"Mollusca","137":"Bivalvia","9250425":"Pectinida","4586899":"Hunanopectinidae"},"synonym":false,"class":"Bivalvia"}]'
+      string: '[{"key":4887074,"nameKey":17291904,"kingdom":"Plantae","phylum":"Tracheophyta","family":"Sigillariaceae","genus":"Asolanus","kingdomKey":6,"phylumKey":7707728,"classKey":245,"familyKey":3229165,"genusKey":4887074,"parent":"Sigillariaceae","parentKey":3229165,"nubKey":4887074,"scientificName":"Asolanus
+        H.C.Wood, 1861","canonicalName":"Asolanus","rank":"GENUS","status":"ACCEPTED","higherClassificationMap":{"6":"Plantae","7707728":"Tracheophyta","245":"Lycopodiopsida","3229165":"Sigillariaceae"},"synonym":false,"class":"Lycopodiopsida"},{"key":1459644,"nameKey":1047180,"kingdom":"Animalia","phylum":"Arthropoda","order":"Diptera","family":"Acroceridae","genus":"Asopsebius","kingdomKey":1,"phylumKey":54,"classKey":216,"orderKey":811,"familyKey":3328,"genusKey":1459644,"parent":"Acroceridae","parentKey":3328,"nubKey":1459644,"scientificName":"Asopsebius
+        Nartshuk, 1982","canonicalName":"Asopsebius","rank":"GENUS","status":"ACCEPTED","higherClassificationMap":{"1":"Animalia","54":"Arthropoda","216":"Insecta","811":"Diptera","3328":"Acroceridae"},"synonym":false,"class":"Insecta"},{"key":1058266,"nameKey":1047077,"kingdom":"Animalia","phylum":"Arthropoda","order":"Coleoptera","family":"Scarabaeidae","genus":"Asophrops","kingdomKey":1,"phylumKey":54,"classKey":216,"orderKey":1470,"familyKey":5840,"genusKey":1058266,"parent":"Scarabaeidae","parentKey":5840,"nubKey":1058266,"scientificName":"Asophrops
+        Petrovitz, 1961","canonicalName":"Asophrops","rank":"GENUS","status":"ACCEPTED","higherClassificationMap":{"1":"Animalia","54":"Arthropoda","216":"Insecta","1470":"Coleoptera","5840":"Scarabaeidae"},"synonym":false,"class":"Insecta"}]'
     headers:
       Accept-Ranges:
       - bytes
@@ -27,16 +27,16 @@ interactions:
       - public, max-age=3601
       Connection:
       - keep-alive
+      Content-Length:
+      - '1647'
       Content-Type:
       - application/json
       Date:
-      - Fri, 01 Mar 2024 08:32:40 GMT
+      - Fri, 04 Oct 2024 07:00:39 GMT
       Expires:
       - '0'
       Pragma:
       - no-cache
-      Transfer-Encoding:
-      - chunked
       Vary:
       - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
       Via:
@@ -46,7 +46,7 @@ interactions:
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '699598104'
+      - '676856106'
       X-XSS-Protection:
       - 1; mode=block
     status:

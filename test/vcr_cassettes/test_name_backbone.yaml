@@ -9,7 +9,7 @@ interactions:
       Connection:
       - keep-alive
       user-agent:
-      - python-requests/2.31.0,pygbif/0.6.3
+      - python-requests/2.31.0,pygbif/0.6.4
     method: GET
     uri: https://api.gbif.org/v1/species/match?name=Helianthus+annuus&strict=false&verbose=false&limit=100
   response:
@@ -29,7 +29,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 01 Mar 2024 08:32:37 GMT
+      - Fri, 04 Oct 2024 07:00:36 GMT
       Expires:
       - '0'
       Pragma:
@@ -45,7 +45,7 @@ interactions:
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '725157868'
+      - '670303475'
       X-XSS-Protection:
       - 1; mode=block
     status:

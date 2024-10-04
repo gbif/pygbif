@@ -102,7 +102,7 @@ class TestGbifClass(unittest.TestCase):
         self.assertEqual(req.payload["predicate"]["type"], "or")
 
         # predicate addition
-        req.add_predicate("YEAR", "2000", ">=")
+        req.add_predicate_dict({"type":"greaterThanOrEquals","key":"YEAR", "value":"2000"})
         self.assertEqual(
             req.payload["predicate"]["predicates"][0]["type"], "greaterThanOrEquals"
         )

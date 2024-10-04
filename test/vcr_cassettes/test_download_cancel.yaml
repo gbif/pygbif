@@ -1,33 +1,39 @@
 interactions:
 - request:
-    body: 'false'
+    body: '{"creator": "jwaller", "notification_address": ["jwaller@gbif.org"], "sendNotification":
+      true, "predicate": {"type": "and", "predicates": [{"type": "equals", "key":
+      "TAXON_KEY", "value": "156780401"}]}, "format": "SIMPLE_CSV"}'
     headers:
-      Accept:
-      - '*/*'
       Accept-Encoding:
       - gzip, deflate
       Connection:
       - keep-alive
       Content-Length:
-      - '5'
-      Content-Type:
+      - '226'
+      accept:
+      - application/json
+      content-type:
       - application/json
       user-agent:
-      - python-requests/2.31.0,pygbif/0.6.3
-    method: DELETE
-    uri: http://api.gbif.org/v1/occurrence/download/request/0003970-140910143529206
+      - python-requests/2.31.0,pygbif/0.6.4
+    method: POST
+    uri: http://api.gbif.org/v1/occurrence/download/request
   response:
     body:
-      string: ''
+      string: 0040513-240906103802322
     headers:
       Age:
       - '0'
       Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
+      - public, max-age=3601
       Connection:
       - keep-alive
+      Content-Length:
+      - '23'
+      Content-Type:
+      - application/json
       Date:
-      - Fri, 01 Mar 2024 08:32:20 GMT
+      - Fri, 04 Oct 2024 07:08:24 GMT
       Expires:
       - '0'
       Pragma:
@@ -41,7 +47,55 @@ interactions:
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '724895319'
+      - '687112497'
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 201
+      message: Created
+- request:
+    body: 'false'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '5'
+      Content-Type:
+      - application/json
+      user-agent:
+      - python-requests/2.31.0,pygbif/0.6.4
+    method: DELETE
+    uri: http://api.gbif.org/v1/occurrence/download/request/0040513-240906103802322
+  response:
+    body:
+      string: ''
+    headers:
+      Age:
+      - '0'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Date:
+      - Fri, 04 Oct 2024 07:08:25 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Vary:
+      - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      Via:
+      - 1.1 varnish (Varnish/6.0)
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Varnish:
+      - '649268088'
       X-XSS-Protection:
       - 1; mode=block
     status:

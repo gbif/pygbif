@@ -9,85 +9,121 @@ interactions:
       Connection:
       - keep-alive
       user-agent:
-      - python-requests/2.31.0,pygbif/0.6.3
+      - python-requests/2.31.0,pygbif/0.6.4
     method: GET
     uri: https://api.gbif.org/v1/organization?limit=5
   response:
     body:
-      string: "{\"offset\":0,\"limit\":5,\"endOfRecords\":false,\"count\":2785,\"results\":[{\"key\":\"4c932cdb-5ac2-4898-a89c-94e69e7999d7\",\"endorsingNodeKey\":\"7f48e0c8-5c96-49ec-b972-30748e339115\",\"endorsementApproved\":true,\"endorsementStatus\":\"ENDORSED\",\"title\":\"OpenBioMaps\",\"description\":\"OpenBioMaps
-        is a data management platform for conservationists and biodiversity researchers.
-        The system consists of several independent databases. Each database can contain
-        data from a number of research projects, regular or occasional data collections.
-        OpenBioMaps service nodes are currently operational in Hungary, Romania and
-        Kyrgyzstan and contain a variety of monitoring data from around the world.\",\"language\":\"eng\",\"email\":[\"banm@vocs.unideb.hu\"],\"phone\":[],\"homepage\":[\"https://openbiomaps.org\"],\"logoUrl\":\"https://openbiomaps.org/img/OpenBioMaps.png\",\"address\":[\"Pet\u0151fi
-        S. u. 16.\"],\"city\":\"S\xE1r\xE1nd\",\"country\":\"HU\",\"postalCode\":\"4272\",\"latitude\":47.55635,\"longitude\":21.62127,\"numPublishedDatasets\":0,\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-02-28T10:09:34.839+00:00\",\"modified\":\"2024-02-28T10:09:34.839+00:00\",\"endorsed\":\"2024-02-28T11:14:59.772+00:00\",\"contacts\":[{\"key\":5168793,\"type\":\"ADMINISTRATIVE_POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"S\xE1ndor\",\"lastName\":\"B\xE9rcess\",\"position\":[],\"email\":[\"bercess@gmail.com\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-02-28T10:09:34.839+00:00\",\"modified\":\"2024-02-28T10:09:34.839+00:00\"},{\"key\":5168794,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"\xC1kos\",\"lastName\":\"G\xE1sp\xE1r\",\"position\":[],\"email\":[\"gaspar.akos@protonmail.com\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-02-28T10:09:34.839+00:00\",\"modified\":\"2024-02-28T10:09:34.839+00:00\"},{\"key\":5168795,\"type\":\"POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Mikl\xF3s\",\"lastName\":\"B\xE1n\",\"position\":[],\"email\":[\"banm@vocs.unideb.hu\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-02-28T10:09:34.839+00:00\",\"modified\":\"2024-02-28T10:09:34.839+00:00\"}],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[{\"key\":35594,\"content\":\"\\nIs
+      string: "{\"offset\":0,\"limit\":5,\"endOfRecords\":false,\"count\":2921,\"results\":[{\"key\":\"66739018-f8c3-4902-96d5-82c0aec31d6a\",\"endorsingNodeKey\":\"7e865cba-7c46-417b-ade5-97f2cf5b7be0\",\"endorsementApproved\":true,\"endorsementStatus\":\"ENDORSED\",\"title\":\"Corporaci\xF3n
+        Aut\xF3noma Regional de la Orinoquia - Corporinoquia\",\"description\":\"La
+        Corporaci\xF3n Aut\xF3noma Regional de la Orinoquia tiene como misi\xF3n la
+        administraci\xF3n de los recursos naturales y la gesti\xF3n del desarrollo
+        sostenible, garantizando la oferta de bienes y servicios ambientales, mediante
+        la implementaci\xF3n de acciones de prevenci\xF3n, protecci\xF3n y conservaci\xF3n
+        ambiental de su jurisdicci\xF3n de la Orinoquia colombiana, que trabaja articul\xE1damente
+        con otras autoridades ambientales en el marco de sus competencias, como lo
+        son el MADS, PNN y las autoridades de orden departamental y municipal y entre
+        otros actores estrat\xE9gicos; para lograr sus misi\xF3n y prop\xF3sitos,
+        la gesti\xF3n de las \xE1reas protegidas y la conservaci\xF3n de la  biodiversidad
+        y servicios ecosist\xE9micos.\",\"language\":\"eng\",\"email\":[\"atencionusuarios@corporinoquia.gov.co\"],\"phone\":[\"PBX:
+        +57 (608) 6358588\"],\"homepage\":[\"https://corporinoquia.gov.co/\"],\"logoUrl\":\"https://raw.githubusercontent.com/SIB-Colombia/logos/main/socio-SiB-corporinoquia.png\",\"address\":[\"Carrera
+        23 # 18-31\"],\"city\":\"Yopal\",\"province\":\"Casanare\",\"country\":\"CO\",\"latitude\":5.34184,\"longitude\":-72.39335,\"numPublishedDatasets\":0,\"createdBy\":\"gbif.express\",\"modifiedBy\":\"sibcolombia\",\"created\":\"2024-10-01T22:34:15.659+00:00\",\"modified\":\"2024-10-02T17:19:56.244+00:00\",\"endorsed\":\"2024-10-01T22:34:32.272+00:00\",\"contacts\":[{\"key\":5483358,\"type\":\"ADMINISTRATIVE_POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Jose
+        Armando\",\"lastName\":\"Suarez Sandoval\",\"position\":[],\"email\":[\"planeacion@corporinoquia.gov.co\"],\"phone\":[\"+57
+        (608) 6358588\"],\"homepage\":[],\"address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-10-01T22:34:15.659+00:00\",\"modified\":\"2024-10-01T22:34:15.659+00:00\"},{\"key\":5483359,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Nathalia\",\"lastName\":\"Meza
+        Fernandez\",\"position\":[],\"email\":[\"nathaliameza@corporinoquia.gov.co\"],\"phone\":[\"+57
+        (608) 6358588\"],\"homepage\":[],\"address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-10-01T22:34:15.659+00:00\",\"modified\":\"2024-10-01T22:34:15.659+00:00\"},{\"key\":5483360,\"type\":\"POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Corporaci\xF3n
+        Aut\xF3noma Regional de la Orinoquia\",\"lastName\":\"CORPORINOQUIA\",\"position\":[],\"email\":[\"atencionusuarios@corporinoquia.gov.co\"],\"phone\":[\"PBX:
+        +57 (608) 6358588\"],\"homepage\":[],\"address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-10-01T22:34:15.659+00:00\",\"modified\":\"2024-10-01T22:34:15.659+00:00\"}],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[{\"key\":35910,\"content\":\"The
+        organization's logo was added\",\"createdBy\":\"sibcolombia\",\"modifiedBy\":\"sibcolombia\",\"created\":\"2024-10-02T17:21:20.449+00:00\",\"modified\":\"2024-10-02T17:21:20.449+00:00\"},{\"key\":35908,\"content\":\"This
+        organization has been endorsed again after being removed for not publishing
+        any data. \\n\\nThe previous endorsement points to: https://www.gbif.org/publisher/0257b977-b510-4de2-9577-68a7b3bf6cf4\",\"createdBy\":\"sibcolombia\",\"modifiedBy\":\"sibcolombia\",\"created\":\"2024-10-02T17:15:40.881+00:00\",\"modified\":\"2024-10-02T17:15:40.881+00:00\"},{\"key\":35906,\"content\":\"\\nIs
         associated with a GBIF-funded project: no\\n\\n\\nExpects to publish:\\n\\n\\n
-        - OccurrenceData\\n - ChecklistData\\n - SamplingEventData\\n\\nExpected data
-        content:\\n\\n> Monitoring data from research projects managed in OpenBioMaps
-        databases (e.g. bird breeding data). Freely available occasional and monitoring
-        observation data from conservation organisations managed in OpenBioMaps databases
-        (e.g. butterfly observations).\\n\\n\\nWill run a server which exposes data:
-        yes\\n\\n\\nPlans to run publishing software (e.g. an IPT): no\\n\\n\\nNeeds
-        help for data publishing: no\\n\",\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-02-28T10:09:34.839+00:00\",\"modified\":\"2024-02-28T10:09:34.839+00:00\"}]},{\"key\":\"2754e9c0-0e43-4f65-968a-6f16b9c378ce\",\"endorsingNodeKey\":\"4f6826f2-4ff6-443d-b966-e6913bd24013\",\"endorsementApproved\":true,\"endorsementStatus\":\"ENDORSED\",\"title\":\"Stiftung
-        Naturschutz Berlin\",\"description\":\"The Stiftung Naturschutz Berlin is
-        a non-government organization that is committed to wildlife and nature conservation
-        in Berlin, Germany. The department Koordinierungsstelle Fauna collects biodiversity
-        data and operates the observation platform ArtenFinder Berlin.\",\"language\":\"eng\",\"email\":[\"artenfinderberlin@stiftung-naturschutz.de\"],\"phone\":[],\"homepage\":[\"https://www.stiftung-naturschutz.de/\"],\"logoUrl\":\"https://www.stiftung-naturschutz.de/typo3conf/ext/snb/Resources/Public/Images/SNB_Logo.svg\",\"address\":[\"Potsdamer
-        Stra\xDFe 68\"],\"city\":\"Berlin\",\"country\":\"DE\",\"postalCode\":\"10785\",\"numPublishedDatasets\":0,\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-02-27T14:08:37.089+00:00\",\"modified\":\"2024-02-27T14:08:37.089+00:00\",\"endorsed\":\"2024-02-27T14:14:52.622+00:00\",\"contacts\":[{\"key\":5168148,\"type\":\"ADMINISTRATIVE_POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Hendrik\",\"lastName\":\"Geyer\",\"position\":[],\"email\":[\"kontakt@snu.rlp.de\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-02-27T14:08:37.089+00:00\",\"modified\":\"2024-02-27T14:08:37.089+00:00\"},{\"key\":5168149,\"type\":\"POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Yannick\",\"lastName\":\"Brenz\",\"position\":[],\"email\":[\"artenfinderberlin@stiftung-naturschutz.de\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-02-27T14:08:37.089+00:00\",\"modified\":\"2024-02-27T14:08:37.089+00:00\"}],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[{\"key\":35593,\"content\":\"\\nIs
+        - ChecklistData\\n - OccurrenceData\\n - SamplingEventData\\n - ResourceMetaData\\n\\nExpected
+        data content:\\n\\n> Corporinoquia en su jurisdicci\xF3n cuenta con 21 POMCAS
+        reglamentados, de los cuales 15 se encuentran vigentes y han sido actualizados
+        mediante diferentes procesos contractuales.\\n\\n\\nWill run a server which
+        exposes data: no\\n\\n\\nPlans to run publishing software (e.g. an IPT): no\\n\\n\\nNeeds
+        help for data publishing: no\\n\",\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-10-01T22:34:15.659+00:00\",\"modified\":\"2024-10-01T22:34:15.659+00:00\"}]},{\"key\":\"e0b6628a-97c6-4f24-aac4-e20adb43160a\",\"endorsingNodeKey\":\"7e865cba-7c46-417b-ade5-97f2cf5b7be0\",\"endorsementApproved\":true,\"endorsementStatus\":\"ENDORSED\",\"title\":\"Fundaci\xF3n
+        Grupo Argos\",\"abbreviation\":\"FGA\",\"description\":\"En la Fundaci\xF3n
+        Grupo Argos trabajamos decididamente bajo el prop\xF3sito de armonizar la
+        relaci\xF3n de los seres humanos con la naturaleza para contribuir a la seguridad
+        h\xEDdrica y aportar al desarrollo de los territorios a trav\xE9s de la educaci\xF3n,
+        la cultura y las acciones de voluntariado. Nuestra estrategia protege el agua
+        desde su nacimiento en las monta\xF1as hasta su desembocadura en el mar, a
+        trav\xE9s de una metodolog\xEDa sist\xE9mica de an\xE1lisis, con enfoque social
+        y ecol\xF3gico, que considera como variables principales el agua, la biodiversidad
+        y el impacto social.\",\"language\":\"spa\",\"email\":[\"lpadilla@fungrupoargos.com\"],\"phone\":[],\"homepage\":[\"https://www.grupoargos.com/sostenibilidad/fundacion-grupo-argos/\"],\"logoUrl\":\"https://raw.githubusercontent.com/SIB-Colombia/logos/main/socio-SiB-fundacion-argos.png\",\"address\":[\"Carrera
+        43a No 1aSur - 143 Centro Santillana - Torre Sur Medell\xEDn\"],\"city\":\"Medell\xEDn\",\"province\":\"Antioquia\",\"country\":\"CO\",\"latitude\":6.20168,\"longitude\":-75.57261,\"numPublishedDatasets\":1,\"createdBy\":\"gbif.express\",\"modifiedBy\":\"sibcolombia\",\"created\":\"2024-10-01T20:46:40.648+00:00\",\"modified\":\"2024-10-01T20:49:32.592+00:00\",\"endorsed\":\"2024-10-01T22:27:00.262+00:00\",\"contacts\":[{\"key\":5482928,\"type\":\"ADMINISTRATIVE_POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Luis
+        David\",\"lastName\":\"Padilla Duque\",\"position\":[],\"email\":[\"lpadilla@fungrupoargos.com\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-10-01T20:46:40.648+00:00\",\"modified\":\"2024-10-01T20:46:40.648+00:00\"},{\"key\":5482929,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Luis
+        David\",\"lastName\":\"Padilla Duque\",\"position\":[],\"email\":[\"lpadilla@fungrupoargos.com\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-10-01T20:46:40.648+00:00\",\"modified\":\"2024-10-01T20:46:40.648+00:00\"}],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[{\"key\":35905,\"content\":\"\\nExpects
+        to publish:\\n\\n\\n - OccurrenceData\\n - SamplingEventData\\n - ChecklistData\\n\\nExpected
+        data content:\\n\\n> Registros biol\xF3gicos de monitoreos de proyectos de
+        conservaci\xF3n\\n\\n\\nWill run a server which exposes data: no\\n\\n\\nPlans
+        to run publishing software (e.g. an IPT): no\\n\\n\\nNeeds help for data publishing:
+        yes\\n\",\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-10-01T20:46:40.648+00:00\",\"modified\":\"2024-10-01T20:46:40.648+00:00\"}]},{\"key\":\"73f049f8-d833-4446-b4ce-5a46c39cb399\",\"endorsingNodeKey\":\"cfe0cad9-2bf4-4d16-ae33-c3dfb0da1ed9\",\"endorsementApproved\":true,\"endorsementStatus\":\"ENDORSED\",\"title\":\"Environment
+        and Communities Care Front (ECoCaF)\",\"description\":\"ECoCaF is working
+        to save vulnerable habitats and endangered species. EcoCaF has a tracked records
+        of field experience working toward conservation, community development, and
+        protected area management in Cameroon. Using scientific tools, ECoCaF is leading
+        efforts in Cameroon and in the region to conserve a broad number of species
+        with a sound interest on amphibians and reptiles.\",\"language\":\"eng\",\"email\":[\"geraudtasse@eco-caf.org\"],\"phone\":[\"(+237)
+        682-442-192\"],\"homepage\":[\"https://www.eco-caf.org/\"],\"address\":[\"Bafoussam
+        Cameroon\"],\"city\":\"Bafoussam\",\"province\":\"West\",\"country\":\"CM\",\"numPublishedDatasets\":0,\"createdBy\":\"gbif.express\",\"modifiedBy\":\"andrea\",\"created\":\"2024-09-27T18:42:14.368+00:00\",\"modified\":\"2024-09-30T07:14:26.754+00:00\",\"endorsed\":\"2024-09-30T09:07:49.557+00:00\",\"contacts\":[{\"key\":5479396,\"type\":\"POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Branly
+        Calicles\",\"lastName\":\"NTENE SOH\",\"position\":[],\"email\":[\"sohbranly@gmail.com\"],\"phone\":[\"(+237)
+        678181643\"],\"homepage\":[],\"address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-09-27T18:42:14.368+00:00\",\"modified\":\"2024-09-27T18:42:14.368+00:00\"}],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[{\"key\":35900,\"content\":\"[2024-09-30,
+        ah] registered with endorsement request to the PNMC - redirecting at the Cameroon
+        participant node\",\"createdBy\":\"andrea\",\"modifiedBy\":\"andrea\",\"created\":\"2024-09-30T07:13:47.524+00:00\",\"modified\":\"2024-09-30T07:13:47.524+00:00\"},{\"key\":35897,\"content\":\"\\nExpects
+        to publish:\\n\\n\\n - OccurrenceData\\n\\nExpected data content:\\n\\n> The
+        data that we would like to publish on the GBIF site concerns herpetology,
+        more specifically the amphibians found in the hot spots along the volcanic
+        line of Cameroon (Bamenda highlands). Our current work aims to record the
+        occurrence of frogs on Mount Tchabal Mbabo, a key area for biodiversity in
+        Cameroon.\\n\\n\\nWill run a server which exposes data: no\\n\\n\\nPlans to
+        run publishing software (e.g. an IPT): no\\n\\n\\nNeeds help for data publishing:
+        yes\\n\",\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-09-27T18:42:14.368+00:00\",\"modified\":\"2024-09-27T18:42:14.368+00:00\"}]},{\"key\":\"bb7b579c-791f-4e5a-9fd1-5b0fc63a5526\",\"endorsingNodeKey\":\"d897a5b9-35ee-4232-94bd-b0bcaac003c2\",\"endorsementApproved\":false,\"endorsementStatus\":\"WAITING_FOR_ENDORSEMENT\",\"title\":\"Sea
+        Watch Foundation\",\"description\":\"Sea Watch Foundation (SWF) is a UK-based
+        research charity established for over thirty years to improve the conservation
+        and protection of marine mammals in British and Irish waters. Besides dedicated
+        research projects much of its work involves monitoring numbers and locations
+        of cetaceans, and recently, seals and other marine megafauna including sea
+        turtles, sharks and sunfish. It holds a sightings database of 335,000 records
+        dating from 1960 to the present, regarded as the largest and longest running
+        database of its kind in Europe. About six thousand observers have contributed
+        to these datasets.\\nTo raise awareness of marine mammals, SWF actively involves
+        the public in scientific monitoring. With in-person courses and internet-based
+        training, sightings and survey effort are collected though their website,
+        forms and social media and, more recently, a mobile phone app (Seawatcher
+        App). Although the focus has been the seas around the British Isles, with
+        the development of the App, this has extended coverage across a much wider
+        part of Europe.\",\"language\":\"eng\",\"email\":[\"info@seawatchfoundation.org.uk\"],\"phone\":[\"+44
+        (0)1407 832892\"],\"homepage\":[\"https://www.seawatchfoundation.org.uk/\"],\"logoUrl\":\"https://www.seawatchfoundation.org.uk/wp-content/uploads/2015/06/Seawatchlogowithtypeblue-1024x205.jpg\",\"address\":[\"Ewyn
+        y Don, Bull bay\"],\"city\":\"Amlwch\",\"province\":\"Isle of Anglesey\",\"country\":\"GB\",\"postalCode\":\"LL68
+        9SD\",\"latitude\":53.42091,\"longitude\":-4.36823,\"numPublishedDatasets\":0,\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-09-26T16:00:26.541+00:00\",\"modified\":\"2024-09-26T16:00:26.541+00:00\",\"contacts\":[{\"key\":5476254,\"type\":\"ADMINISTRATIVE_POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Simone\",\"lastName\":\"Evans\",\"position\":[],\"email\":[\"simone.evans@seawatchfoundation.org.uk\"],\"phone\":[\"+44
+        (0)1545 578562\"],\"homepage\":[],\"address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-09-26T16:00:26.541+00:00\",\"modified\":\"2024-09-26T16:00:26.541+00:00\"},{\"key\":5476255,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Simone\",\"lastName\":\"Evans\",\"position\":[],\"email\":[\"simone.evans@seawatchfoundation.org.uk\"],\"phone\":[\"+44
+        (0)1545 578562\"],\"homepage\":[],\"address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-09-26T16:00:26.541+00:00\",\"modified\":\"2024-09-26T16:00:26.541+00:00\"},{\"key\":5476256,\"type\":\"POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Peter\",\"lastName\":\"Evans\",\"position\":[],\"email\":[\"peter.evans@seawatchfoundation.org.uk\"],\"phone\":[\"+44
+        (0)1407 832892\"],\"homepage\":[],\"address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-09-26T16:00:26.541+00:00\",\"modified\":\"2024-09-26T16:00:26.541+00:00\"}],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[{\"key\":35896,\"content\":\"\\nIs
         associated with a GBIF-funded project: no\\n\\n\\nExpects to publish:\\n\\n\\n
-        - OccurrenceData\\n\\nExpected data content:\\n\\n> ArtenFinder is an observation
-        platform that provides occurence data of wild animals, plants and fungi. Citizen
-        scientists upload their observations from nature, usually including images
-        or audio, which are checked and verified by experts for the respective species
-        groups. Hotspots of data collection are the German states Rheinland-Pfalz
-        and Berlin.\\n\\n\\nWill run a server which exposes data: yes\\n\\n\\nPlans
-        to run publishing software (e.g. an IPT): yes\\n\\n\\nNeeds help for data
-        publishing: no\\n\",\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-02-27T14:08:37.089+00:00\",\"modified\":\"2024-02-27T14:08:37.089+00:00\"}]},{\"key\":\"bf72d7d0-71c9-4138-a0f1-e6e1c623a29b\",\"endorsingNodeKey\":\"b324e8e9-9a4c-44fa-8f1a-7f39ea7ab576\",\"endorsementApproved\":false,\"endorsementStatus\":\"WAITING_FOR_ENDORSEMENT\",\"title\":\"Environmental
-        Resource Management (ERM)\",\"description\":\"We are the world\u2019s largest
-        advisory firm focused solely on sustainability, offering unparalleled expertise
-        across business and finance.\\nERM partners with clients to operationalize
-        sustainability at pace and scale, through our unique combination of strategic
-        transformation and technical delivery capabilities.\\nOur diverse global team
-        of experts works with the world\u2019s leading organizations to help them
-        set clear sustainability targets, measure progress and operationalize strategy
-        through deep implementation and business transformation.\\nWith more than
-        50 years of experience, our ability to integrate sustainability solutions
-        and our depth and breadth of technical knowledge are why organizations choose
-        to partner with us as their trusted advisor.\",\"language\":\"eng\",\"email\":[\"efren.aviles@erm.com\"],\"phone\":[\"+525534116395\"],\"homepage\":[\"https://www.erm.com/\"],\"address\":[\"Mexico
-        City\"],\"city\":\"Mexico City\",\"province\":\"Anzures\",\"country\":\"MX\",\"postalCode\":\"11590\",\"latitude\":19.43296,\"longitude\":-99.18152,\"numPublishedDatasets\":0,\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-02-21T21:10:35.422+00:00\",\"modified\":\"2024-02-21T21:10:35.422+00:00\",\"contacts\":[{\"key\":5161907,\"type\":\"POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"EFREN\",\"lastName\":\"AVILES\",\"position\":[],\"email\":[\"efren.aviles@erm.com\"],\"phone\":[\"+525534116395\"],\"homepage\":[],\"address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-02-21T21:10:35.422+00:00\",\"modified\":\"2024-02-21T21:10:35.422+00:00\"}],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[{\"key\":35591,\"content\":\"\\nIs
-        associated with a GBIF-funded project: no\\n\\n\\nExpects to publish:\\n\\n\\n
-        - SamplingEventData\\n - ChecklistData\\n\\nExpected data content:\\n\\n>
-        Data from clients workign in biodiversity projects\\n\\n\\nWill run a server
-        which exposes data: yes\\n\\n\\nPlans to run publishing software (e.g. an
-        IPT): no\\n\\n\\nNeeds help for data publishing: yes\\n\",\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-02-21T21:10:35.422+00:00\",\"modified\":\"2024-02-21T21:10:35.422+00:00\"}]},{\"key\":\"9376c2d9-afa0-4894-b447-f893a90c4eeb\",\"endorsingNodeKey\":\"7f48e0c8-5c96-49ec-b972-30748e339115\",\"endorsementApproved\":false,\"endorsementStatus\":\"WAITING_FOR_ENDORSEMENT\",\"title\":\"7WEAVES
-        Research\",\"description\":\"7WEAVES Research works with the indigenous communities
-        to conserve the last remaining intact forest, natural ecosystem and its biodiversity
-        outside the protected area in Eastern Himalayan and Indo-Burma region. It
-        fosters ecological conservation through long term systematic monitoring, application
-        of indigenous knowledge systems, research and sustainability.\",\"language\":\"eng\",\"email\":[\"research@7weaves.com\"],\"phone\":[\"9954775762\"],\"homepage\":[],\"address\":[\"C/O
-        Anu Dewan, B.K Kakati Road, Ulubari, Guwahati, Kamrup Assam 781007\"],\"city\":\"Guwahati\",\"country\":\"IN\",\"postalCode\":\"781015\",\"numPublishedDatasets\":0,\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-02-21T07:40:25.438+00:00\",\"modified\":\"2024-02-21T07:40:25.438+00:00\",\"contacts\":[{\"key\":5161050,\"type\":\"POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Taniya\",\"lastName\":\"Talwar\",\"position\":[],\"email\":[\"taniya@7weaves.com\"],\"phone\":[\"9954775762\"],\"homepage\":[],\"address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-02-21T07:40:25.438+00:00\",\"modified\":\"2024-02-21T07:40:25.438+00:00\"}],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[{\"key\":35583,\"content\":\"\\nIs
-        associated with a GBIF-funded project: no\\n\\n\\nExpects to publish:\\n\\n\\n
-        - ChecklistData\\n\\nExpected data content:\\n\\n> \\\"Annotated Checklist
-        of Loharghat Forest Range, Assam\\\" published in Journal of Threatened Taxa
-        on 26th January 2024. The checklist includes two years survey in the area
-        by 7WEAVES Team and authors.\\n\\n\\nWill run a server which exposes data:
-        no\\n\\n\\nPlans to run publishing software (e.g. an IPT): no\\n\\n\\nNeeds
-        help for data publishing: yes\\n\",\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-02-21T07:40:25.438+00:00\",\"modified\":\"2024-02-21T07:40:25.438+00:00\"}]},{\"key\":\"b47c7378-0aff-4956-8543-aced45330f4c\",\"endorsingNodeKey\":\"8618c64a-93e0-4300-b546-7249e5148ed2\",\"endorsementApproved\":false,\"endorsementStatus\":\"WAITING_FOR_ENDORSEMENT\",\"title\":\"EWHALE
-        Lab\",\"description\":\"The EWHALE Lab focuses on wildlife ecology, seabirds,
-        predictive GIS modeling (machine learning and artificial intelligence), web-based
-        wildlife databases and metadata, spatial aspects of population viability analysis,
-        future landscape scenarios of wildlife habitat, landscape ecology, Russian
-        far east, tropical ecology, conservation steady state economy.\",\"language\":\"eng\",\"email\":[\"msteiner2@alaska.edu\"],\"phone\":[\"9074833662\"],\"homepage\":[],\"address\":[\"2120
-        N Koyukuk Dr. Room 419\"],\"city\":\"Fairbanks\",\"province\":\"AK\",\"country\":\"US\",\"postalCode\":\"99775\",\"latitude\":64.85946,\"longitude\":-147.84638,\"numPublishedDatasets\":0,\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-02-16T21:46:26.461+00:00\",\"modified\":\"2024-02-16T21:46:26.461+00:00\",\"contacts\":[{\"key\":5158851,\"type\":\"ADMINISTRATIVE_POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Falk\",\"lastName\":\"Huettmann\",\"position\":[],\"email\":[\"fhuettmann@alaska.edu\"],\"phone\":[\"+1
-        907 474 7882\"],\"homepage\":[],\"address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-02-16T21:46:26.461+00:00\",\"modified\":\"2024-02-16T21:46:26.461+00:00\"},{\"key\":5158852,\"type\":\"POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Moriz\",\"lastName\":\"Steiner\",\"position\":[],\"email\":[\"msteiner2@alaska.edu\"],\"phone\":[\"+1
-        907 474 7882\"],\"homepage\":[],\"address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-02-16T21:46:26.461+00:00\",\"modified\":\"2024-02-16T21:46:26.461+00:00\"}],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[{\"key\":35582,\"content\":\"\\nIs
-        associated with a GBIF-funded project: no\\n\\n\\nExpects to publish:\\n\\n\\n
-        - ResourceMetaData\\n - ChecklistData\\n - OccurrenceData\\n - SamplingEventData\\n\\nExpected
-        data content:\\n\\n> We expect to publish biodiversity data for a number of
-        different species, worldwide, in the form of metadata, occurrence data, and
-        sampling data.\\n\\n\\nWill run a server which exposes data: no\\n\\n\\nPlans
-        to run publishing software (e.g. an IPT): yes\\n\\n\\nNeeds help for data
-        publishing: yes\\n\",\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-02-16T21:46:26.461+00:00\",\"modified\":\"2024-02-16T21:46:26.461+00:00\"}]}]}"
+        - OccurrenceData\\n - SamplingEventData\\n\\nExpected data content:\\n\\n>
+        The purpose of this project is to make available for re-use previously inaccessible
+        unique multidecadal data on marine megafauna in European seas. These biodiversity
+        data have been collected by scientists, citizen scientists and member of the
+        public for more than 60 years in observing programmes carried out by the UK
+        Sea Watch Foundation (SWF) and its partners. Only a small proportion of the
+        high-value effort related data, primarily for cetaceans, held by SWF have
+        been reported to ICES JCDP. The bulk of effort related data are distributed
+        across multiple databases and await manual processing before they are fit
+        for re-use. In addition, the foundation holds c.335,000 records of sightings
+        including several data-deficient species such as less common cetaceans and
+        seals, sea turtles, sharks, tuna and sunfish. Sightings data are distributed
+        across multiple databases, CSV files and spreadsheets, much of which is unreported.
+        Geographic coverage focuses upon the North Sea, English Channel, West Scotland,
+        Celtic and Irish Seas, but also extends more widely, for example Norwegian
+        Sea and Bay of Biscay. Data goes back to 1960, with the majority collected
+        from 1980 to the present.\\n\\n\\nWill run a server which exposes data: yes\\n\\n\\nPlans
+        to run publishing software (e.g. an IPT): no\\n\\n\\nNeeds help for data publishing:
+        no\\n\",\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-09-26T16:00:26.541+00:00\",\"modified\":\"2024-09-26T16:00:26.541+00:00\"}]},{\"key\":\"416d9a6d-25a3-4efc-ad8c-5431ed9dfd42\",\"endorsingNodeKey\":\"4a6f1b71-969e-4fc5-a693-282b05e1220c\",\"endorsementApproved\":true,\"endorsementStatus\":\"ENDORSED\",\"title\":\"Scion\",\"language\":\"eng\",\"email\":[],\"phone\":[\"+64
+        7 343 5899\"],\"homepage\":[\"http://www.scionresearch.com\"],\"address\":[\"49
+        Sala Street\"],\"city\":\"Rotorua\",\"country\":\"AU\",\"latitude\":-38.16116,\"longitude\":176.26498,\"numPublishedDatasets\":1,\"createdBy\":\"aladata\",\"modifiedBy\":\"aladata\",\"created\":\"2024-09-26T05:49:17.655+00:00\",\"modified\":\"2024-09-26T05:49:17.655+00:00\",\"endorsed\":\"2024-09-26T05:49:17.655+00:00\",\"contacts\":[],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[]}]}"
     headers:
       Accept-Ranges:
       - bytes
@@ -98,11 +134,11 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '12460'
+      - '14744'
       Content-Type:
       - application/json
       Date:
-      - Fri, 01 Mar 2024 08:32:36 GMT
+      - Fri, 04 Oct 2024 07:00:34 GMT
       Expires:
       - '0'
       Pragma:
@@ -116,7 +152,7 @@ interactions:
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '715622143'
+      - '665748441'
       X-XSS-Protection:
       - 1; mode=block
     status:
