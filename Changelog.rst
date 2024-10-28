@@ -1,5 +1,11 @@
 Changelog
 =========
+0.6.5 (2024-10-28)
+------------------
+- added support for `occurrences.download_citation` :issue:`158`
+- added support for `occurrences.download_sql` :issue:`157`
+- added support for `occurrences.download_describe` :issue:`142`
+
 0.6.4 (2024-03-12)
 ------------------
 - fixed a bug in building the documentation with readthedocs :issue:`138`, :issue:`129`

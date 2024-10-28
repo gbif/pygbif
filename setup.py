@@ -12,7 +12,7 @@ long_description = readme + "\n\n" + changes
 
 setup(
     name="pygbif",
-    version="0.6.4",
+    version="0.6.5",
     description="Python client for GBIF",
     long_description=long_description,
     long_description_content_type="text/x-rst",
