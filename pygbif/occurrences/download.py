@@ -17,7 +17,8 @@ from ..gbifutils import (
     gbif_GET,
     gbif_GET_write,
     gbif_DELETE,
-    gbif_baseurl
+    gbif_baseurl,
+    gbif_GET_raw
 )
 
 
@@ -722,6 +723,28 @@ def download_sql(sql,
         request_id = r.text
         logging.info("Your sql download key is " + request_id)
     return request_id
+
+def download_citation(key):
+    """
+    Get citation from a download key
+
+    :param key: [int] A GBIF download key
+
+    :return: A dictionary, of results
+
+    Usage::
+
+        from pygbif import occurrences
+        occurrences.download_citation("0235283-220831081235567")
+
+    """
+    url = gbif_baseurl + "occurrence/download/" + str(key) + "/citation"
+    if re.fullmatch(r'^\d+-\d+$', key):
+        out = gbif_GET_raw(url).decode('utf-8')
+        return(out)
+    else:
+        raise ValueError("key must be a GBIF download key")
+
 
 operators = [
     "equals",
