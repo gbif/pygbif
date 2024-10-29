@@ -19,7 +19,7 @@ setup(
     author="Scott Chamberlain",
     author_email="myrmecocystus@gmail.com",
     url="http://github.com/gbif/pygbif",
-    download_url="https://github.com/gbif/pygbif/archive/refs/tags/v0.6.4.tar.gz",
+    download_url="https://github.com/gbif/pygbif/archive/refs/tags/v0.6.5.tar.gz",
     license="MIT",
     packages=find_packages(exclude=["test-*"]),
     install_requires=[
