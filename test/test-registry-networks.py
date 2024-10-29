@@ -12,7 +12,7 @@ def test_networks():
     assert 14 == len(res["data"])
     assert ["data", "meta"] == sorted(res.keys())
 
-5@vcr.use_cassette("test/vcr_cassettes/test_networks_limit.yaml")
+@vcr.use_cassette("test/vcr_cassettes/test_networks_limit.yaml")
 def test_networks_limit():
     "registry.networks - limit param "
     res = registry.networks(limit=5)
