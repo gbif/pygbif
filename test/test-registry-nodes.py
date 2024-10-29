@@ -29,5 +29,5 @@ def test_nodes_return():
     assert dict == res.__class__
     assert 2 == len(res)
     assert 1 == len(res["data"])
-    assert 5 == len(res["data"][0])
+    assert 6 == len(res["data"][0])
     assert "identifier" in res["data"][0].keys()
