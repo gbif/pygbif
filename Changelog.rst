@@ -5,6 +5,7 @@ Changelog
 - added support for `occurrences.download_citation` :issue:`158`
 - added support for `occurrences.download_sql` :issue:`157`
 - added support for `occurrences.download_describe` :issue:`142`
+- added support for `literature.search` :issue:`149`
 
 0.6.4 (2024-03-12)
 ------------------
