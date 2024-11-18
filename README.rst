@@ -120,7 +120,7 @@ Example usage:
     occ.download_list(user = "sckott", limit = 5)
     occ.download_meta(key = "0000099-140929101555934")
     occ.download_get("0000066-140928181241064")
-    occ.download_citation("0000066-140928181241064")
+    occ.download_citation("0002526-241107131044228")
     occ.download_describe("simpleCsv")
     occ.download_sql("SELECT gbifid,countryCode FROM occurrence WHERE genusKey = 2435098")
 
