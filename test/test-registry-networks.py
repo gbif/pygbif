@@ -9,9 +9,8 @@ def test_networks():
     res = registry.networks()
     assert dict == res.__class__
     assert 2 == len(res)
-    assert 13 == len(res["data"])
+    assert 14 == len(res["data"])
     assert ["data", "meta"] == sorted(res.keys())
-
 
 @vcr.use_cassette("test/vcr_cassettes/test_networks_limit.yaml")
 def test_networks_limit():

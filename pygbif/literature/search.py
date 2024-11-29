@@ -82,17 +82,17 @@ def search(
 
     Usage::
 
-        from pygbif import literature
-        literature.search(limit=10) # basic search for 10 records
+        from pygbif import literature as lit
+        lit.search(limit=10) # basic search for 10 records
 
         # search for a specific download key
-        literature.search(gbifDownloadKey="0235283-220831081235567") 
+        lit.search(gbifDownloadKey="0235283-220831081235567") 
 
         # search for a year range
-        literature.search(year="2010,2024", limit=10)
+        lit.search(year="2010,2024", limit=10)
 
         # search for count only 
-        literature.search(year="2010,2024", limit=0)["count"]    
+        lit.search(year="2010,2024", limit=0)["count"]    
     """
     url = gbif_baseurl + "literature/search"
     args = {

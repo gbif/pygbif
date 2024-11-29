@@ -14,7 +14,7 @@ interactions:
     uri: https://api.gbif.org/v1/node/03e816b3-8f58-49ae-bc12-4e18b358d6d9/identifier?limit=100
   response:
     body:
-      string: '[{"key":13657,"type":"GBIF_PARTICIPANT","identifier":"308","createdBy":"registry-migration.gbif.org","created":"2013-10-24T09:06:08.312+00:00"}]'
+      string: '[{"key":13657,"type":"GBIF_PARTICIPANT","identifier":"308","createdBy":"registry-migration.gbif.org","created":"2013-10-24T09:06:08.312+00:00","primary":false}]'
     headers:
       Accept-Ranges:
       - bytes
@@ -24,16 +24,16 @@ interactions:
       - public, max-age=3601
       Connection:
       - keep-alive
+      Content-Length:
+      - '160'
       Content-Type:
       - application/json
       Date:
-      - Fri, 04 Oct 2024 07:00:33 GMT
+      - Tue, 29 Oct 2024 10:49:16 GMT
       Expires:
       - '0'
       Pragma:
       - no-cache
-      Transfer-Encoding:
-      - chunked
       Vary:
       - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
       Via:
@@ -43,7 +43,7 @@ interactions:
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '689635465'
+      - '808520932'
       X-XSS-Protection:
       - 1; mode=block
     status:
