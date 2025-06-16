@@ -40,6 +40,7 @@ Example usage:
     occ.download_describe("simpleCsv")
     occ.download_citation("0002526-241107131044228")
 
+
 occurrences API
 ===============
 
