@@ -84,6 +84,9 @@ Modules
 :doc:`modules/utils`
     The utils module: including wkt_rewind.
 
+:doc:`modules/literature`
+    The literature module: including search for literature.    
+
 All the rest
 ============
 
