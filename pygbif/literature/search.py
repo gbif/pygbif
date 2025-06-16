@@ -41,6 +41,7 @@ def search(
 ):
     """
     Search for literature indexed by GBIF
+    
     :param citationType: [str] The manner in which GBIF is cited in a paper.
     :param countriesOfCoverage: [str], Countries of coverage
     :param countriesOfResearcher: [str] Country or area of institution with which author is affiliated. 
