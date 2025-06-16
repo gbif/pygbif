@@ -21,6 +21,9 @@ occurrence module API:
 * `download_meta`
 * `download_list`
 * `download_get`
+* `download_sql`
+* `download_describe`
+* `download_citation`
 
 Example usage:
 
