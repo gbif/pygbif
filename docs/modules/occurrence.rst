@@ -37,7 +37,8 @@ Example usage:
     occ.download_meta(key = "0000099-140929101555934")
     occ.download_get("0000066-140928181241064")
     occ.download_sql("SELECT datasetKey, countryCode, COUNT(*) FROM occurrence WHERE continent = 'EUROPE' GROUP BY datasetKey, countryCode")
-
+    occ.download_describe("simpleCsv")
+    occ.download_citation("0002526-241107131044228")
 
 occurrences API
 ===============
@@ -61,3 +62,6 @@ occurrences API
 .. automethod:: occurrences.download_list
 .. automethod:: occurrences.download_get
 .. automethod:: occurrences.download_sql
+.. automethod:: occurrences.download_describe
+.. automethod:: occurrences.download_citation
+    
