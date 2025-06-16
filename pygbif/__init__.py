@@ -42,6 +42,7 @@ from .maps import map, GbifMap
 from .gbifissues import occ_issues_lookup
 from .utils import *
 from .caching import caching
+from .literature import search 
 
 # Set default logging handler to avoid "No handler found" warnings.
 import logging

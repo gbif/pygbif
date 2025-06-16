@@ -631,7 +631,7 @@ def download_describe(format, **kwargs):
     what fields are available in a given download format without having to run a download.
 
     :param format: [str] A format to describe. One of "simpleCsv", "simpleParquet", "dwca", "speciesList", "simpleAvro", "sql"
-    :param **kwargs: Further named arguments passed on to ``requests.get`` 
+    :param **kwargs**: Further named arguments passed on to ``requests.get`` 
 
     :return: A dictionary, of results
 
