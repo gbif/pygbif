@@ -65,6 +65,7 @@ Modules
    modules/species
    modules/maps
    modules/utils
+   modules/literature
 
 :doc:`modules/intro`
     Introduction to pygbif modules.
