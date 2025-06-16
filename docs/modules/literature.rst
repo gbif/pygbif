@@ -1,10 +1,10 @@
-.. _occurrence-modules:
+.. _literature-modules:
 
 =================
-occurrence module
+literature module
 =================
 
-occurrence module API:
+literature module API:
 
 * `search`
 
@@ -14,7 +14,7 @@ Example usage:
     from pygbif import literature as lit
     lit.search(q='climate change', limit=5)
 
-occurrences API
+literature API
 ===============
 
 .. py:module:: pygbif
