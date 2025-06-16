@@ -18,5 +18,6 @@ literature API
 ===============
 
 .. py:module:: pygbif
-    
+   :noindex:
+
 .. automethod:: literature.search
