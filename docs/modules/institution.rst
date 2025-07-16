@@ -9,8 +9,9 @@ institution module API:
 * `search`
 
 Example usage:
+
 .. code-block:: python
-    
+
     from pygbif import institution as inst
     inst.search(q="Kansas")
     inst.search(numberSpecimens = "1000,*")

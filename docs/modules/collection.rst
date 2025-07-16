@@ -9,6 +9,7 @@ collection module API:
 * `search`
 
 Example usage:
+
 .. code-block:: python
 
     from pygbif import collection as coll
@@ -25,4 +26,3 @@ collection API
    :noindex:
 
 .. automethod:: collection.search
-    
