@@ -43,6 +43,8 @@ from .gbifissues import occ_issues_lookup
 from .utils import *
 from .caching import caching
 from .literature import search 
+from .collection import search
+from .institution import search
 
 # Set default logging handler to avoid "No handler found" warnings.
 import logging

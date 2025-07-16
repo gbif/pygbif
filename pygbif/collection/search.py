@@ -123,6 +123,3 @@ def search(
     out = gbif_GET(url, args, **kwargs)
     return out
 
-
-
-
