@@ -1,0 +1,214 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - python-requests/2.31.0,pygbif/0.6.5
+    method: GET
+    uri: https://api.gbif.org/v1/grscicoll/collection?q=Kansas&limit=10
+  response:
+    body:
+      string: "{\"offset\":0,\"limit\":10,\"endOfRecords\":false,\"count\":41,\"results\":[{\"key\":\"0dbb77be-2ef0-4ecd-9d2d-9241727d40e5\",\"code\":\"KUPB\",\"name\":\"KUBI
+        Paleobotany Collection\",\"description\":\"The paleobotany collections, including
+        several \u201Corphaned\u201D collections, is comprised of compression, impression,
+        petrified, and permineralized specimens from Precambrian to Pleistocene stratigraphic
+        horizons and from various localities around the world. The focus of the collection
+        is currently on Permian, Triassic, and Jurassic fossils from Antarctica (Antarctic
+        Collection), the largest collection of Antarctic fossil plants in the world.
+        Additional material includes Pennsylvanian, Permian, and Cretaceous compression-impression
+        specimens from several localities in eastern and central Kansas and coal balls
+        from the Midcontinent, USA.\\n\\nThe Division of Paleobotany was instituted
+        in 1995 when Edith L. Taylor and Thomas N. Taylor moved to the University
+        of Kansas, bringing their extensive collection of fossil plants with them.
+        The Taylor Collection and the Baxter Collection of mostly Kansas coal balls
+        formed the core of the KU Paleobotany collection, but we have acquired other
+        so-called orphaned collections, including portions of the collections of Ted
+        Delevoryas (Triassic of North Carolina; Jurassic of Mexico), Lawrence C. Matten
+        (Devonian of Ireland), Gar W. Rothwell (early seed plants) and Gene Mapes
+        (Pennsylvanian of Kansas, Oklahoma and Texas).\",\"contentTypes\":[\"Biological\",\"Paleontological\",\"PlantFossils\"],\"active\":true,\"personalCollection\":false,\"email\":[],\"phone\":[],\"catalogUrls\":[\"http://collections.biodiversity.ku.edu/KUPaleoBot/\"],\"apiUrls\":[],\"preservationTypes\":[],\"accessionStatus\":\"Institutional\",\"institutionKey\":\"49fb6451-91b7-4af2-8cd3-354539a77589\",\"mailingAddress\":{\"key\":10966,\"address\":\"Natural
+        History Museum, 1345 Jayhawk Boulevard\",\"city\":\"Lawrence\",\"province\":\"Kansas\",\"postalCode\":\"66045\",\"country\":\"US\"},\"address\":{\"key\":11699,\"address\":\"Natural
+        History Museum, 1345 Jayhawk Boulevard\",\"city\":\"Lawrence, KS\",\"country\":\"US\"},\"createdBy\":\"GRBIO\",\"modifiedBy\":\"mgrosjean\",\"created\":\"2013-04-23T22:28:00.000+00:00\",\"modified\":\"2024-06-04T17:37:20.124+00:00\",\"tags\":[],\"identifiers\":[{\"key\":303324,\"type\":\"DOI\",\"identifier\":\"10.15468/6skwfo\",\"createdBy\":\"abentley\",\"created\":\"2022-05-31T18:24:34.019+00:00\",\"primary\":false},{\"key\":278294,\"type\":\"LSID\",\"identifier\":\"http://grbio.org/cool/15fc-2dg8\",\"createdBy\":\"catchapman\",\"created\":\"2021-11-22T19:30:38.103+00:00\",\"primary\":false},{\"key\":278296,\"type\":\"UUID\",\"identifier\":\"37e3eac4-83d8-4a4c-bb9f-4781e081f17e\",\"createdBy\":\"catchapman\",\"created\":\"2021-11-22T19:30:38.103+00:00\",\"primary\":false},{\"key\":278295,\"type\":\"UUID\",\"identifier\":\"urn:uuid:a693958b-ae00-405a-a321-6951978f64dc\",\"createdBy\":\"catchapman\",\"created\":\"2021-11-22T19:30:38.103+00:00\",\"primary\":false},{\"key\":245696,\"type\":\"UUID\",\"identifier\":\"urn:uuid:3a791e1f-68a9-41d1-954e-8b7f0ea99ce5\",\"createdBy\":\"iDigBio-import\",\"created\":\"2020-11-09T13:10:10.813+00:00\",\"primary\":false},{\"key\":245695,\"type\":\"LSID\",\"identifier\":\"http://grbio.org/cool/iakn-125z\",\"createdBy\":\"iDigBio-import\",\"created\":\"2020-11-09T13:10:10.735+00:00\",\"primary\":false},{\"key\":170867,\"type\":\"GRSCICOLL_URI\",\"identifier\":\"http://grscicoll.org/institutional-collection/paleobotany-collection\",\"createdBy\":\"registry-migration-grbio.gbif.org\",\"created\":\"2019-08-15T08:12:24.368+00:00\",\"primary\":false},{\"key\":162906,\"type\":\"GRSCICOLL_URI\",\"identifier\":\"http://grbio.org/institutional-collection/paleobotany-collection\",\"createdBy\":\"registry-migration-grbio.gbif.org\",\"created\":\"2019-08-15T08:12:17.277+00:00\",\"primary\":false},{\"key\":145892,\"type\":\"GRSCICOLL_ID\",\"identifier\":\"4494\",\"createdBy\":\"registry-migration-grbio.gbif.org\",\"created\":\"2018-11-15T10:23:01.527+00:00\",\"primary\":false}],\"contactPersons\":[{\"key\":35348,\"firstName\":\"Andrew\",\"lastName\":\"Bentley\",\"position\":[\"Bioinformatics
+        Manager\"],\"phone\":[\"+1 (785) 864-3863\"],\"fax\":[],\"email\":[\"abentley@ku.edu\"],\"address\":[\"Dyche
+        Hall, 1345 Jayhawk Boulevard\"],\"city\":\"Lawrence\",\"province\":\"KS\",\"country\":\"US\",\"postalCode\":\"66045\",\"primary\":true,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"gbif-collections\",\"modifiedBy\":\"gbif-collections\",\"created\":\"2023-02-14T09:16:46.764+00:00\",\"modified\":\"2023-02-14T09:16:46.764+00:00\"},{\"key\":35349,\"firstName\":\"Brian\",\"lastName\":\"Atkinson\",\"position\":[\"Curator\"],\"phone\":[\"+1
+        (785) 864-1256\"],\"fax\":[],\"email\":[\"brian.atkinson@ku.edu\"],\"address\":[\"1475
+        Jayhawk Boulevard\"],\"city\":\"Lawrence\",\"province\":\"KS\",\"country\":\"US\",\"postalCode\":\"66045\",\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"gbif-collections\",\"modifiedBy\":\"gbif-collections\",\"created\":\"2023-02-14T09:16:46.764+00:00\",\"modified\":\"2023-02-14T09:16:46.764+00:00\"},{\"key\":35350,\"firstName\":\"Kelly\",\"lastName\":\"Matsunaga\",\"position\":[\"Curator\"],\"phone\":[],\"fax\":[],\"email\":[\"matsunaga@ku.edu\"],\"address\":[\"1475
+        Jayhawk Boulevard\"],\"city\":\"Lawrence\",\"province\":\"KS\",\"country\":\"US\",\"postalCode\":\"66045\",\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"gbif-collections\",\"modifiedBy\":\"gbif-collections\",\"created\":\"2023-02-14T09:16:46.764+00:00\",\"modified\":\"2023-02-14T09:16:46.764+00:00\"},{\"key\":35351,\"firstName\":\"Rudolph\",\"lastName\":\"Serbet\",\"position\":[\"Collections
+        Manager\"],\"phone\":[\"+1 (785) 864-3410\"],\"fax\":[],\"email\":[\"serbet@ku.edu\"],\"address\":[\"Dyche
+        Hall, 1345 Jayhawk Boulevard\"],\"city\":\"Lawrence\",\"province\":\"KS\",\"country\":\"US\",\"postalCode\":\"66045\",\"primary\":true,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"gbif-collections\",\"modifiedBy\":\"gbif-collections\",\"created\":\"2023-02-14T09:16:46.764+00:00\",\"modified\":\"2023-02-14T09:16:46.764+00:00\"}],\"numberSpecimens\":400000,\"machineTags\":[{\"key\":7040584,\"namespace\":\"iDigBio.org\",\"name\":\"recordsets\",\"value\":\"b1f0612a-bc21-424f-b9c1-3bba69ad4f54\",\"createdBy\":\"iDigBio-import\",\"created\":\"2020-11-09T13:10:10.881+00:00\"},{\"key\":7040585,\"namespace\":\"iDigBio.org\",\"name\":\"recordsetQuery\",\"value\":\"{\\\"recordset\\\":\\\"b1f0612a-bc21-424f-b9c1-3bba69ad4f54\\\"}\",\"createdBy\":\"iDigBio-import\",\"created\":\"2020-11-09T13:10:10.963+00:00\"},{\"key\":7040586,\"namespace\":\"iDigBio.org\",\"name\":\"CollectionUUID\",\"value\":\"urn:uuid:3a791e1f-68a9-41d1-954e-8b7f0ea99ce5\",\"createdBy\":\"iDigBio-import\",\"created\":\"2020-11-09T13:10:11.029+00:00\"}],\"taxonomicCoverage\":\"\",\"geographicCoverage\":\"\",\"incorporatedCollections\":[],\"alternativeCodes\":[{\"code\":\"KU\",\"description\":\"Code
+        from replaced entity 37e3eac4-83d8-4a4c-bb9f-4781e081f17e\"}],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GBIF_REGISTRY\",\"masterSourceMetadata\":{\"key\":8674,\"source\":\"DATASET\",\"sourceId\":\"1953be92-e2b9-4b70-a1e5-893bc8d051f7\",\"createdBy\":\"abentley\",\"created\":\"2022-05-31T18:24:34.019+00:00\"},\"displayOnNHCPortal\":true,\"occurrenceCount\":126139,\"typeSpecimenCount\":6782,\"institutionName\":\"University
+        of Kansas, Biodiversity Institute and Natural History Museum\",\"institutionCode\":\"KU\"},{\"key\":\"ee06b1fa-bce4-4460-a0bf-4ad7efa0caea\",\"code\":\"KSC\",\"name\":\"Herbarium
+        - Kansas State University\",\"contentTypes\":[],\"active\":true,\"personalCollection\":false,\"email\":[],\"phone\":[\"[1]
+        785 532 6619\"],\"homepage\":\"http://www.k-state.edu/herbarium/\",\"catalogUrls\":[],\"apiUrls\":[],\"preservationTypes\":[],\"institutionKey\":\"eb9bf52f-d7ba-45ee-96be-28613759e6a4\",\"mailingAddress\":{\"key\":32626,\"address\":\"116
+        Ackert Hall 1717 Claflin Rd\",\"city\":\"Manhattan\",\"province\":\"Kansas\",\"country\":\"US\"},\"address\":{\"key\":32625,\"city\":\"Manhattan\",\"province\":\"Kansas\",\"country\":\"US\"},\"createdBy\":\"ih-sync\",\"modifiedBy\":\"ih-sync\",\"created\":\"2020-03-31T12:36:07.988+00:00\",\"modified\":\"2025-07-09T10:45:56.191+00:00\",\"tags\":[],\"identifiers\":[{\"key\":247402,\"type\":\"UUID\",\"identifier\":\"urn:uuid:dfa80f2d-a6db-4505-9c56-f059ce052013\",\"createdBy\":\"iDigBio-import\",\"created\":\"2020-11-09T13:20:56.044+00:00\",\"primary\":false},{\"key\":225389,\"type\":\"IH_IRN\",\"identifier\":\"gbif:ih:irn:125035\",\"createdBy\":\"ih-sync\",\"created\":\"2020-03-31T12:36:07.989+00:00\",\"primary\":false}],\"contactPersons\":[{\"key\":24455,\"firstName\":\"Carolyn
+        J.\",\"lastName\":\"Ferguson\",\"position\":[\"Curator\"],\"phone\":[\"[1]
+        785/ 532-3166\",\"532-6619\"],\"fax\":[],\"email\":[\"ferg@ksu.edu\"],\"address\":[],\"city\":\"Manhattan\",\"province\":\"Kansas\",\"country\":\"US\",\"primary\":false,\"taxonomicExpertise\":[],\"notes\":\"Research
+        pursuits: Systematics and evolution of ; Polemoniaceae.\",\"userIds\":[{\"type\":\"IH_IRN\",\"id\":\"128319\"}],\"createdBy\":\"gbif-collections\",\"modifiedBy\":\"ih-sync\",\"created\":\"2021-10-28T12:15:39.441+00:00\",\"modified\":\"2021-11-03T10:42:03.337+00:00\"}],\"numberSpecimens\":181000,\"machineTags\":[{\"key\":7039149,\"namespace\":\"iDigBio.org\",\"name\":\"CollectionUUID\",\"value\":\"urn:uuid:dfa80f2d-a6db-4505-9c56-f059ce052013\",\"createdBy\":\"iDigBio-import\",\"created\":\"2020-11-09T11:54:25.663+00:00\"},{\"key\":21279033,\"namespace\":\"ih.gbif.org\",\"name\":\"importantCollectorsDescriptorGroupKey\",\"value\":\"877\",\"createdBy\":\"ih-sync\",\"created\":\"2024-08-19T09:11:16.973+00:00\"}],\"taxonomicCoverage\":\"Vascular
+        plants and bryophytes; Asteraceae\",\"geographicCoverage\":\"Kansas and Great
+        Plains of central North America\",\"notes\":\"Updated Jun 2017 (Mailing address
+        updated). The Reed Bryophyte Herbarium is a separate collection documenting
+        the bryoflora of Kansas and the Great Plains. A seed herbarium is maintained,
+        centering upon weeds and agriculturally significant plants of the Great Plains.
+        Mycological herbarium (17 000 specimens) transferred to NY in 1997.\",\"incorporatedCollections\":[\"Part
+        of KANU (2900 bryophytes\",\"800 lichens)\",\"Marymount College, Salina, Kansas
+        in 1992\",\"Bethany College in Lindsborg, Kansas in 1990.\"],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"IH\",\"masterSourceMetadata\":{\"key\":5743,\"source\":\"IH_IRN\",\"sourceId\":\"125035\",\"createdBy\":\"gbif-collections\",\"created\":\"2022-01-12T12:35:44.807+00:00\"},\"division\":\"Division
+        of Biology\",\"displayOnNHCPortal\":true,\"occurrenceCount\":12,\"typeSpecimenCount\":0,\"institutionName\":\"Kansas
+        State University\",\"institutionCode\":\"KSC\"},{\"key\":\"c19d55f4-1d63-45e0-ab6d-6d8b3a66a332\",\"code\":\"SAL\",\"name\":\"Herbarium
+        - Kansas Wesleyan University\",\"contentTypes\":[],\"active\":true,\"personalCollection\":false,\"email\":[],\"phone\":[\"[1]
+        913 827 0927\"],\"catalogUrls\":[],\"apiUrls\":[],\"preservationTypes\":[],\"institutionKey\":\"dfede426-be0c-4ec2-8676-d9c65c40cae6\",\"mailingAddress\":{\"key\":28465,\"address\":\"100
+        East Claflin\",\"city\":\"Salina\",\"province\":\"Kansas\",\"country\":\"US\"},\"address\":{\"key\":28464,\"city\":\"Salina\",\"province\":\"Kansas\",\"country\":\"US\"},\"createdBy\":\"ih-sync\",\"modifiedBy\":\"ih-sync\",\"created\":\"2020-03-31T12:25:42.325+00:00\",\"modified\":\"2025-07-09T10:42:29.426+00:00\",\"tags\":[],\"identifiers\":[{\"key\":245195,\"type\":\"UUID\",\"identifier\":\"urn:uuid:0d436dca-8e1a-48af-b892-39f7428c4ef7\",\"createdBy\":\"iDigBio-import\",\"created\":\"2020-11-09T13:07:00.333+00:00\",\"primary\":false},{\"key\":245194,\"type\":\"LSID\",\"identifier\":\"urn:lsid:biocol.org:col:13416\",\"createdBy\":\"iDigBio-import\",\"created\":\"2020-11-09T13:07:00.259+00:00\",\"primary\":false},{\"key\":219479,\"type\":\"IH_IRN\",\"identifier\":\"gbif:ih:irn:125036\",\"createdBy\":\"ih-sync\",\"created\":\"2020-03-31T12:25:42.328+00:00\",\"primary\":false}],\"contactPersons\":[],\"numberSpecimens\":1100,\"machineTags\":[{\"key\":7039988,\"namespace\":\"iDigBio.org\",\"name\":\"CollectionUUID\",\"value\":\"urn:uuid:0d436dca-8e1a-48af-b892-39f7428c4ef7\",\"createdBy\":\"iDigBio-import\",\"created\":\"2020-11-09T13:07:00.400+00:00\"}],\"geographicCoverage\":\"Kansas;
+        Arkansas Ozarks.\",\"notes\":\"Up to date as of Nov 2017.\",\"incorporatedCollections\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"IH\",\"masterSourceMetadata\":{\"key\":7281,\"source\":\"IH_IRN\",\"sourceId\":\"125036\",\"createdBy\":\"gbif-collections\",\"created\":\"2022-01-12T12:38:05.197+00:00\"},\"department\":\"Biology
+        Department\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0,\"institutionName\":\"Kansas
+        Wesleyan University\",\"institutionCode\":\"SAL\"},{\"key\":\"162b841b-38f8-408a-94bf-aa475d2613f7\",\"code\":\"Birds\",\"name\":\"KUBI
+        Ornithology Collection\",\"description\":\"The Ornithology group in the Biodiversity
+        Institute at the University of Kansas conducts research and provides undergraduate
+        and graduate education on the birds of the world. Research topics include
+        the species limits and species diversity, evolution, geography, genetics and
+        genomics, morphology, conservation, ecology, and behavior. This work is greatly
+        enhanced by extensive research collections of world birds, numbering more
+        than 107,000 specimens, many of which are recently collected as part of the
+        group&#39;s global bird sampling program.<br /> <br />\\n\\n\\nOrnithology&#39;s
+        study skin collections total about 60,000 specimens. The historical collections
+        are strongest for the Great Plains of the United States and for Mexico, with
+        additional holdings from Central and South America, Borneo, and Kenya. Recent
+        large-scale collections have built significant recent holdings from Mexico,
+        Dominican Republic, El Salvador, Panama, Guyana, Peru, Paraguay, Argentina,
+        Sierra Leone, Ghana, Botswana, Democratic Republic of the Congo, Mongolia,
+        China, Vietnam, Philippines, Malaysia, Papua New Guinea, Solomon Islands,
+        Fiji, Palau, and others. Collections of special importance include series
+        of more than 14,000 House Sparrow (Passer domesticus), which formed the basis
+        for landmark scientific research by Richard Johnston and his students; extensive
+        series of several North American species (Red-winged Blackbird Agelaius phoeniceus,
+        meadowlarks Sturnella spp., Horned LarkEremophila alpestris); series documenting
+        many of the Great Plains hybrid zones; and the feathers of an extinct moa
+        (Dinornithidae). Recent additions include extensive series from Guyana, Mexico,
+        Panama, Peru, and Paraguay, including many species otherwise poorly represented
+        in scientific collections.<br /> <br />\\n\\nThe avian osteological collections
+        are extensive, totaling over 32,500 specimens, and ranked third largest in
+        the world (Wood and Schnell 1986). This component of the collection has important
+        strengths from the Great Plains of the United States, Mexico, and northern
+        South America. Important holdings include critical and unique Ecuadorian series,
+        extensive recent Australian material, and a large series of steamer-ducks
+        (Tachyeres sp.). Recent collecting activities have built South American skeletal
+        holdings into an important collection, with material from poorly represented
+        sectors such as the Atlantic Forest, the Yucatan Peninsula, Guyana, and montane
+        Central America.<br /> <br />\\n\_\\nAlthough fluid-preserved specimens were
+        not an early focus of Ornithology activities, the collections at KU were ranked
+        seventh in North America at the time of the last summary of anatomical holdings
+        (Wood et al. 1982). More recently, as part of Prum&#39;s research program,
+        these collections have grown significantly, with important holdings of suboscine
+        passeriform birds, among other groups. Now housed with ample space and ideal
+        storage conditions in an NSF- and State of Kansas-funded addition, this collection
+        is seeing increased research applications.\",\"contentTypes\":[\"Biological\"],\"active\":true,\"personalCollection\":false,\"email\":[],\"phone\":[],\"homepage\":\"http://biodiversity.ku.edu/ornithology/collections\",\"catalogUrls\":[\"http://ornithology.biodiversity.ku.edu/collections-search\"],\"apiUrls\":[],\"preservationTypes\":[],\"accessionStatus\":\"Institutional\",\"institutionKey\":\"49fb6451-91b7-4af2-8cd3-354539a77589\",\"mailingAddress\":{\"key\":10959,\"address\":\"Biodiversity
+        Institute, Dyche Hall, 1345 Jayhawk Boulevard\",\"city\":\"Lawrence\",\"province\":\"Kansas\",\"postalCode\":\"66045\",\"country\":\"US\"},\"address\":{\"key\":11691,\"address\":\"Biodiversity
+        Institute, Dyche Hall, 1345 Jayhawk Boulevard\",\"city\":\"Lawrence\",\"province\":\"KS\",\"country\":\"US\"},\"createdBy\":\"GRBIO\",\"modifiedBy\":\"mgrosjean\",\"created\":\"2013-04-23T22:28:00.000+00:00\",\"modified\":\"2024-06-28T07:13:54.868+00:00\",\"tags\":[],\"identifiers\":[{\"key\":303325,\"type\":\"DOI\",\"identifier\":\"10.15468/hlh5ud\",\"createdBy\":\"abentley\",\"created\":\"2022-05-31T18:25:12.524+00:00\",\"primary\":false},{\"key\":249431,\"type\":\"LSID\",\"identifier\":\"http://grbio.org/cool/v9yz-imvc\",\"createdBy\":\"iDigBio-import\",\"created\":\"2020-12-18T10:12:07.790+00:00\",\"primary\":false},{\"key\":249432,\"type\":\"UUID\",\"identifier\":\"urn:uuid:09997b24-dca7-4bf3-afb9-4f025fe20935\",\"createdBy\":\"iDigBio-import\",\"created\":\"2020-12-18T10:12:07.790+00:00\",\"primary\":false},{\"key\":249433,\"type\":\"UUID\",\"identifier\":\"54a0a72f-c7bf-493b-8094-3088d91095f2\",\"createdBy\":\"mgrosjean\",\"created\":\"2020-12-18T10:12:07.790+00:00\",\"primary\":false},{\"key\":170859,\"type\":\"GRSCICOLL_URI\",\"identifier\":\"http://grscicoll.org/institutional-collection/ornithology-collection-1\",\"createdBy\":\"registry-migration-grbio.gbif.org\",\"created\":\"2019-08-15T08:12:24.368+00:00\",\"primary\":false},{\"key\":162898,\"type\":\"GRSCICOLL_URI\",\"identifier\":\"http://grbio.org/institutional-collection/ornithology-collection-1\",\"createdBy\":\"registry-migration-grbio.gbif.org\",\"created\":\"2019-08-15T08:12:17.277+00:00\",\"primary\":false},{\"key\":145883,\"type\":\"GRSCICOLL_ID\",\"identifier\":\"4486\",\"createdBy\":\"registry-migration-grbio.gbif.org\",\"created\":\"2018-11-15T10:23:01.527+00:00\",\"primary\":false}],\"contactPersons\":[{\"key\":37049,\"firstName\":\"Andrew\",\"lastName\":\"Bentley\",\"position\":[\"Bioinformatics
+        Manager\"],\"phone\":[\"+1 (785) 864-3863\"],\"fax\":[],\"email\":[\"abentley@ku.edu\"],\"address\":[\"1345
+        Jayhawk Blvd\"],\"city\":\"Lawrence\",\"province\":\"KS\",\"country\":\"US\",\"postalCode\":\"66045\",\"primary\":true,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"trobertson\",\"modifiedBy\":\"trobertson\",\"created\":\"2023-10-31T09:56:59.912+00:00\",\"modified\":\"2023-10-31T09:56:59.912+00:00\"},{\"key\":37050,\"firstName\":\"A.
+        Townsend\",\"lastName\":\"Peterson\",\"position\":[\"Curator\"],\"phone\":[\"+1
+        (785) 864-3926\"],\"fax\":[],\"email\":[\"town@ku.edu\"],\"address\":[\"1345
+        Jayhawk Boulevard\"],\"city\":\"Lawrence\",\"province\":\"KS\",\"country\":\"US\",\"postalCode\":\"66045\",\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"trobertson\",\"modifiedBy\":\"trobertson\",\"created\":\"2023-10-31T09:56:59.912+00:00\",\"modified\":\"2023-10-31T09:56:59.912+00:00\"},{\"key\":37051,\"firstName\":\"Robert\",\"lastName\":\"Moyle\",\"position\":[\"Curator
+        in Charge\"],\"phone\":[\"+1 (785) 864-1870\"],\"fax\":[],\"email\":[\"moyle@ku.edu\"],\"address\":[\"1345
+        Jayhawk Boulevard\"],\"city\":\"Lawrence\",\"province\":\"KS\",\"country\":\"US\",\"postalCode\":\"66045\",\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"trobertson\",\"modifiedBy\":\"trobertson\",\"created\":\"2023-10-31T09:56:59.912+00:00\",\"modified\":\"2023-10-31T09:56:59.912+00:00\"},{\"key\":37052,\"firstName\":\"Mark\",\"lastName\":\"Robbins\",\"position\":[\"Collection
+        Manager\"],\"phone\":[\"+1 (785) 864-3657\"],\"fax\":[],\"email\":[\"mrobbins@ku.edu\"],\"address\":[\"1345
+        Jayhawk Blvd\"],\"city\":\"Lawrence\",\"province\":\"KS\",\"country\":\"US\",\"postalCode\":\"66045\",\"primary\":true,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"trobertson\",\"modifiedBy\":\"trobertson\",\"created\":\"2023-10-31T09:56:59.912+00:00\",\"modified\":\"2023-10-31T09:56:59.912+00:00\"}],\"numberSpecimens\":0,\"machineTags\":[{\"key\":7333059,\"namespace\":\"iDigBio.org\",\"name\":\"recordsets\",\"value\":\"3ad82604-c4b3-4fd0-b03e-d8f874062146\",\"createdBy\":\"iDigBio-import\",\"created\":\"2020-12-18T10:12:07.790+00:00\"},{\"key\":7333060,\"namespace\":\"iDigBio.org\",\"name\":\"recordsetQuery\",\"value\":\"{\\\"recordset\\\":\\\"3ad82604-c4b3-4fd0-b03e-d8f874062146\\\"}\",\"createdBy\":\"iDigBio-import\",\"created\":\"2020-12-18T10:12:07.790+00:00\"},{\"key\":7333061,\"namespace\":\"iDigBio.org\",\"name\":\"CollectionUUID\",\"value\":\"urn:uuid:09997b24-dca7-4bf3-afb9-4f025fe20935\",\"createdBy\":\"iDigBio-import\",\"created\":\"2020-12-18T10:12:07.790+00:00\"}],\"taxonomicCoverage\":\"All
+        birds: Aves, Birds\",\"geographicCoverage\":\"The Division has an active,
+        global collections program, which has created recent collections resources
+        from all continents except Antarctica.\",\"incorporatedCollections\":[],\"alternativeCodes\":[{\"code\":\"KUO\",\"description\":\"Code
+        used https://doi.org/10.15468/hlh5ud\"},{\"code\":\"KU\",\"description\":\"Code
+        from replaced entity 54a0a72f-c7bf-493b-8094-3088d91095f2\"}],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GBIF_REGISTRY\",\"masterSourceMetadata\":{\"key\":8675,\"source\":\"DATASET\",\"sourceId\":\"e635240a-3cb1-4d26-ab87-57d8c7afdfdb\",\"createdBy\":\"abentley\",\"created\":\"2022-05-31T18:25:12.524+00:00\"},\"displayOnNHCPortal\":true,\"occurrenceCount\":136755,\"typeSpecimenCount\":0,\"institutionName\":\"University
+        of Kansas, Biodiversity Institute and Natural History Museum\",\"institutionCode\":\"KU\"},{\"key\":\"e7a35d71-70ee-4a2e-9497-98f8cc8c350c\",\"code\":\"KSTC\",\"name\":\"Fishes\",\"description\":\"Minnows,
+        suckers, catfishes, sunfishes, darters. This is almost entirely a teaching
+        collection, without extensive corresponding data. Mostly Kansas. Some marine.\",\"contentTypes\":[],\"active\":true,\"personalCollection\":false,\"email\":[],\"phone\":[],\"homepage\":\"http://www.emporia.edu/smnh/vertebrate-collections.html\",\"catalogUrls\":[],\"apiUrls\":[],\"preservationTypes\":[],\"institutionKey\":\"e6dfaa24-f003-45a4-b788-14d11ffd8c1f\",\"mailingAddress\":{\"key\":41350,\"address\":\"Department
+        of Biological Sciences, 1 Kellogg Circle\",\"city\":\"Emporia\",\"province\":\"Kansas\",\"postalCode\":\"66801-5415\",\"country\":\"US\"},\"address\":{\"key\":41349,\"address\":\"Department
+        of Biological Sciences, 1 Kellogg Circle\",\"city\":\"Emporia\",\"province\":\"Kansas\",\"postalCode\":\"66801-5415\",\"country\":\"US\"},\"createdBy\":\"iDigBio-import\",\"modifiedBy\":\"iDigBio-import\",\"created\":\"2020-11-09T13:22:33.376+00:00\",\"modified\":\"2020-11-09T13:22:33.376+00:00\",\"tags\":[],\"identifiers\":[{\"key\":247657,\"type\":\"UUID\",\"identifier\":\"urn:uuid:fc513e10-5954-4da1-815f-3d9dc7548e9e\",\"createdBy\":\"iDigBio-import\",\"created\":\"2020-11-09T13:22:33.376+00:00\",\"primary\":false}],\"contactPersons\":[{\"key\":17661,\"firstName\":\"David
+        Edds\",\"position\":[\"Curator\"],\"phone\":[],\"fax\":[],\"email\":[\"dedds@emporia.edu\"],\"address\":[],\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"gbif-collections\",\"modifiedBy\":\"gbif-collections\",\"created\":\"2021-10-28T12:13:21.353+00:00\",\"modified\":\"2021-10-28T12:13:21.353+00:00\"}],\"numberSpecimens\":500,\"machineTags\":[{\"key\":7043018,\"namespace\":\"iDigBio.org\",\"name\":\"CollectionUUID\",\"value\":\"urn:uuid:fc513e10-5954-4da1-815f-3d9dc7548e9e\",\"createdBy\":\"iDigBio-import\",\"created\":\"2020-11-09T13:22:33.376+00:00\"}],\"taxonomicCoverage\":\"Minnows,
+        suckers, catfishes, sunfishes, darters. This is almost entirely a teaching
+        collection, without extensive corresponding data.\",\"geographicCoverage\":\"Mostly
+        Kansas. Some marine.\",\"incorporatedCollections\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0,\"institutionName\":\"Emporia
+        State University\",\"institutionCode\":\"KSTC\"},{\"key\":\"d379615f-2e89-4c68-a202-0d180cfaa4fc\",\"code\":\"FHSM\",\"name\":\"Paleontology\",\"description\":\"Late
+        Cretaceous Western Interior Seaway faunas (sharks, bony fish, marine reptiles,
+        seabirds, pterosaurs, sea turtles); Miocene terrestrial mammals (rhinos, horse,
+        camel, carnivores); Neogene rodents Mostly western Kansas, with some reference
+        specimens from across the western United States.\",\"contentTypes\":[\"Paleontological\"],\"active\":true,\"personalCollection\":false,\"email\":[],\"phone\":[],\"homepage\":\"http://sternberg.fhsu.edu/research-collections/collections/paleontology/\",\"catalogUrls\":[],\"apiUrls\":[],\"preservationTypes\":[],\"institutionKey\":\"50f58b6f-e80e-4536-a99b-6048fd218063\",\"mailingAddress\":{\"key\":39724,\"address\":\"3000
+        Sternberg Drive\",\"city\":\"Hays\",\"province\":\"Kansas\",\"postalCode\":\"67601\",\"country\":\"US\"},\"address\":{\"key\":39723,\"address\":\"3000
+        Sternberg Drive\",\"city\":\"Hays\",\"province\":\"Kansas\",\"postalCode\":\"67601\",\"country\":\"US\"},\"createdBy\":\"iDigBio-import\",\"modifiedBy\":\"mgrosjean\",\"created\":\"2020-11-09T13:08:04.073+00:00\",\"modified\":\"2025-07-09T13:29:21.752+00:00\",\"tags\":[],\"identifiers\":[{\"key\":245360,\"type\":\"UUID\",\"identifier\":\"urn:uuid:1be73175-688d-42c6-9093-45061f1eac2b\",\"createdBy\":\"iDigBio-import\",\"created\":\"2020-11-09T13:08:04.073+00:00\",\"primary\":false}],\"contactPersons\":[{\"key\":14588,\"firstName\":\"Laura
+        E. Wilson\",\"position\":[\"Curator\"],\"phone\":[],\"fax\":[],\"email\":[\"lewilson6@fhsu.edu\"],\"address\":[],\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"gbif-collections\",\"modifiedBy\":\"gbif-collections\",\"created\":\"2021-10-28T12:12:12.075+00:00\",\"modified\":\"2021-10-28T12:12:12.075+00:00\"}],\"machineTags\":[{\"key\":7040194,\"namespace\":\"iDigBio.org\",\"name\":\"recordsets\",\"value\":\"d6f12b28-bb9f-44f9-9000-08f644658bf8,
+        560ba8f5-0dab-46f6-985d-7b37397344cd\",\"createdBy\":\"iDigBio-import\",\"created\":\"2020-11-09T13:08:04.073+00:00\"},{\"key\":7040195,\"namespace\":\"iDigBio.org\",\"name\":\"recordsetQuery\",\"value\":\"{\\\"recordset\\\":[\\\"560ba8f5-0dab-46f6-985d-7b37397344cd\\\",\\\"d6f12b28-bb9f-44f9-9000-08f644658bf8\\\"]}\",\"createdBy\":\"iDigBio-import\",\"created\":\"2020-11-09T13:08:04.073+00:00\"},{\"key\":7040196,\"namespace\":\"iDigBio.org\",\"name\":\"CollectionUUID\",\"value\":\"urn:uuid:1be73175-688d-42c6-9093-45061f1eac2b\",\"createdBy\":\"iDigBio-import\",\"created\":\"2020-11-09T13:08:04.073+00:00\"}],\"taxonomicCoverage\":\"Late
+        Cretaceous Western Interior Seaway faunas (sharks, bony fish, marine reptiles,
+        seabirds, pterosaurs, sea turtles); Miocene terrestrial mammals (rhinos, horse,
+        camel, carnivores); Neogene rodents\",\"geographicCoverage\":\"Mostly western
+        Kansas, with some reference specimens from across the western United States.\",\"incorporatedCollections\":[],\"alternativeCodes\":[{\"code\":\"IP
+        (invertebrate paleontology)\",\"description\":\"Code migrated from iDigBio\"},{\"code\":\"VP
+        (vertebrate paleontology)\",\"description\":\"Code migrated from iDigBio\"}],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0,\"institutionName\":\"Fort
+        Hays State University, Sternberg Museum\",\"institutionCode\":\"FHSM\"},{\"key\":\"3985d23f-cada-46de-b33f-3abdb7d26eb5\",\"code\":\"FGSC\",\"name\":\"Fungal
+        Genetics Stock Center\",\"description\":\"Neurospora strains, Magnaporthe
+        grisea strains, Cryptococcus, Candida\",\"contentTypes\":[],\"active\":true,\"personalCollection\":false,\"email\":[],\"phone\":[],\"homepage\":\"http://www.fgsc.net/\",\"catalogUrls\":[\"http://www.fgsc.net/scripts/catalog.asp\"],\"apiUrls\":[],\"preservationTypes\":[],\"institutionKey\":\"9ed8b7bc-0ac6-41d6-b2b5-f9f9f9db7d00\",\"mailingAddress\":{\"key\":40828,\"address\":\"School
+        of Biological Sciences, SBS 404, University of Missouri, Kansas City, 5007
+        Rockhill Road\",\"city\":\"Kansas City\",\"province\":\"Missouri\",\"postalCode\":\"64110\",\"country\":\"US\"},\"address\":{\"key\":40827,\"address\":\"School
+        of Biological Sciences, SBS 404, University of Missouri, Kansas City, 5007
+        Rockhill Road\",\"city\":\"Kansas City\",\"province\":\"Missouri\",\"postalCode\":\"64110\",\"country\":\"US\"},\"createdBy\":\"iDigBio-import\",\"modifiedBy\":\"iDigBio-import\",\"created\":\"2020-11-09T13:17:55.743+00:00\",\"modified\":\"2020-11-09T13:17:55.743+00:00\",\"tags\":[],\"identifiers\":[{\"key\":246960,\"type\":\"UUID\",\"identifier\":\"urn:uuid:b50cd767-5bb5-42cd-914a-9e4ac8fb3087\",\"createdBy\":\"iDigBio-import\",\"created\":\"2020-11-09T13:17:55.743+00:00\",\"primary\":false}],\"contactPersons\":[],\"numberSpecimens\":700000,\"machineTags\":[{\"key\":7042160,\"namespace\":\"iDigBio.org\",\"name\":\"CollectionUUID\",\"value\":\"urn:uuid:b50cd767-5bb5-42cd-914a-9e4ac8fb3087\",\"createdBy\":\"iDigBio-import\",\"created\":\"2020-11-09T13:17:55.743+00:00\"}],\"taxonomicCoverage\":\"Neurospora
+        strains, Magnaporthe grisea strains, Cryptococcus, Candida\",\"incorporatedCollections\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0,\"institutionName\":\"Fungal
+        Genetics Stock Center\",\"institutionCode\":\"FGSC\"},{\"key\":\"d5b4d1a1-335e-488f-adbb-919708ce41c3\",\"code\":\"MEPAR\",\"name\":\"Entomology\",\"contentTypes\":[],\"active\":true,\"personalCollection\":false,\"email\":[],\"phone\":[],\"homepage\":\"http://entomology.k-state.edu/department-info/facilities/insect-museum/\",\"catalogUrls\":[\"http://biodis.k-state.edu/collections/entomology/\"],\"apiUrls\":[],\"preservationTypes\":[],\"institutionKey\":\"c7e08457-f54e-43ec-b185-09d0dc85f007\",\"mailingAddress\":{\"key\":40736,\"address\":\"Department
+        of Entomology, 123 W. Waters Hall, Kansas State University\",\"city\":\"Manhattan\",\"province\":\"Kansas\",\"postalCode\":\"66506-4004\",\"country\":\"US\"},\"address\":{\"key\":40735,\"address\":\"Department
+        of Entomology, 123 Waters Hall, Kansas State University\",\"city\":\"Manhattan\",\"province\":\"Kansas\",\"postalCode\":\"66506-4004\",\"country\":\"US\"},\"createdBy\":\"iDigBio-import\",\"modifiedBy\":\"iDigBio-import\",\"created\":\"2020-11-09T13:17:04.604+00:00\",\"modified\":\"2020-11-09T13:17:04.604+00:00\",\"tags\":[],\"identifiers\":[{\"key\":246819,\"type\":\"UUID\",\"identifier\":\"urn:uuid:a68e36b0-bdf9-45ed-b06a-bb3080b31a7b\",\"createdBy\":\"iDigBio-import\",\"created\":\"2020-11-09T13:17:04.604+00:00\",\"primary\":false}],\"contactPersons\":[{\"key\":15430,\"firstName\":\"Greg
+        Zolnerowich\",\"position\":[\"Curator\"],\"phone\":[\"785-532-3799\"],\"fax\":[],\"email\":[\"gregz@ksu.edu\"],\"address\":[],\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"gbif-collections\",\"modifiedBy\":\"gbif-collections\",\"created\":\"2021-10-28T12:12:33.880+00:00\",\"modified\":\"2021-10-28T12:12:33.880+00:00\"}],\"numberSpecimens\":0,\"machineTags\":[{\"key\":7041997,\"namespace\":\"iDigBio.org\",\"name\":\"recordsets\",\"value\":\"ad5c4ec7-ed56-4d3e-881a-963af217d334\",\"createdBy\":\"iDigBio-import\",\"created\":\"2020-11-09T13:17:04.604+00:00\"},{\"key\":7041998,\"namespace\":\"iDigBio.org\",\"name\":\"recordsetQuery\",\"value\":\"{\\\"recordset\\\":\\\"ad5c4ec7-ed56-4d3e-881a-963af217d334\\\"}\",\"createdBy\":\"iDigBio-import\",\"created\":\"2020-11-09T13:17:04.604+00:00\"},{\"key\":7041999,\"namespace\":\"iDigBio.org\",\"name\":\"CollectionUUID\",\"value\":\"urn:uuid:a68e36b0-bdf9-45ed-b06a-bb3080b31a7b\",\"createdBy\":\"iDigBio-import\",\"created\":\"2020-11-09T13:17:04.604+00:00\"}],\"incorporatedCollections\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0,\"institutionName\":\"Museum
+        of Entomological and Prairie Arthropod Research, Kansas State University\",\"institutionCode\":\"KSUC\"},{\"key\":\"a5be2cd1-e343-46d3-8815-5cb4ec429a33\",\"code\":\"KUIZ\",\"name\":\"Invertebrate
+        Zoology Collection\",\"description\":\"Invertebrate Zoology conducts research,
+        research training and graduate education on the world\u2019s invertebrates
+        \u2013 their global diversity, evolution, geography, genomics, morphology,
+        conservation, ecology and behavior. These studies are grounded in research
+        collections of hundreds of specimens and their associated data. As of November
+        2009, the Invertebrate Zoology Collection at the KU Biodiversity Institute
+        contains more than 2000 lots, including more than 150 lots of type specimens.
+        A strength (with more than 1500 lots) is \\\"sea anemones\\\" (Cnidaria: Anthozoa:
+        Actiniaria, Zoanthidea, and Corallimorpharia)Many of the specimens in liquid
+        preservative have had histological slides made from them.\",\"contentTypes\":[\"Biological\"],\"active\":true,\"personalCollection\":false,\"email\":[],\"phone\":[],\"homepage\":\"http://invertebratezoology.biodiversity.ku.edu/\",\"catalogUrls\":[],\"apiUrls\":[],\"preservationTypes\":[\"StorageIndoors\"],\"accessionStatus\":\"Institutional\",\"institutionKey\":\"49fb6451-91b7-4af2-8cd3-354539a77589\",\"mailingAddress\":{\"key\":10901,\"address\":\"1200
+        Sunnyside Drive, Haworth Hall, University of Kansas\",\"city\":\"Lawrence\",\"province\":\"Kansas\",\"postalCode\":\"66045\",\"country\":\"US\"},\"address\":{\"key\":11629,\"address\":\"Biodiversity
+        Institute, Dyche Hall, 1345 Jayhawk Boulevard\",\"city\":\"Lawrence\",\"province\":\"Kansas\",\"postalCode\":\"66045\",\"country\":\"US\"},\"createdBy\":\"GRBIO\",\"modifiedBy\":\"mgrosjean\",\"created\":\"2013-04-23T22:28:00.000+00:00\",\"modified\":\"2024-06-04T17:37:30.287+00:00\",\"tags\":[],\"identifiers\":[{\"key\":249435,\"type\":\"LSID\",\"identifier\":\"http://grbio.org/cool/geax-w4ri\",\"createdBy\":\"iDigBio-import\",\"created\":\"2020-12-18T10:19:30.152+00:00\",\"primary\":false},{\"key\":249436,\"type\":\"UUID\",\"identifier\":\"urn:uuid:22e47ed3-93f6-41fb-8ed9-42a7910e6789\",\"createdBy\":\"iDigBio-import\",\"created\":\"2020-12-18T10:19:30.152+00:00\",\"primary\":false},{\"key\":249437,\"type\":\"UUID\",\"identifier\":\"c72b7aaf-ac1a-4147-97cd-2c61b63422dc\",\"createdBy\":\"mgrosjean\",\"created\":\"2020-12-18T10:19:30.152+00:00\",\"primary\":false},{\"key\":170768,\"type\":\"GRSCICOLL_URI\",\"identifier\":\"http://grscicoll.org/institutional-collection/invertebrate-zoology-collection\",\"createdBy\":\"registry-migration-grbio.gbif.org\",\"created\":\"2019-08-15T08:12:24.368+00:00\",\"primary\":false},{\"key\":162807,\"type\":\"GRSCICOLL_URI\",\"identifier\":\"http://grbio.org/institutional-collection/invertebrate-zoology-collection\",\"createdBy\":\"registry-migration-grbio.gbif.org\",\"created\":\"2019-08-15T08:12:17.277+00:00\",\"primary\":false},{\"key\":145793,\"type\":\"GRSCICOLL_ID\",\"identifier\":\"4395\",\"createdBy\":\"registry-migration-grbio.gbif.org\",\"created\":\"2018-11-15T10:23:01.527+00:00\",\"primary\":false}],\"contactPersons\":[{\"key\":18744,\"firstName\":\"Daphne
+        Fautin\",\"position\":[\"Curator\"],\"phone\":[\"785-864-3062\"],\"fax\":[\"785-864-5335\"],\"email\":[\"fautin@ku.edu\"],\"address\":[\"Biodiversity
+        Institute, Dyche Hall, 1345 Jayhawk Boulevard\"],\"city\":\"Lawrence\",\"province\":\"KS\",\"country\":\"US\",\"postalCode\":\"66045\",\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"gbif-collections\",\"modifiedBy\":\"gbif-collections\",\"created\":\"2021-10-28T12:13:41.028+00:00\",\"modified\":\"2021-10-28T12:13:41.028+00:00\"},{\"key\":18752,\"firstName\":\"Kirsten
+        Jensen\",\"position\":[\"Curator\"],\"phone\":[],\"fax\":[],\"email\":[\"jensen@ku.edu\"],\"address\":[],\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"gbif-collections\",\"modifiedBy\":\"gbif-collections\",\"created\":\"2021-10-28T12:13:41.178+00:00\",\"modified\":\"2021-10-28T12:13:41.178+00:00\"}],\"numberSpecimens\":0,\"machineTags\":[{\"key\":7333249,\"namespace\":\"iDigBio.org\",\"name\":\"CollectionUUID\",\"value\":\"urn:uuid:22e47ed3-93f6-41fb-8ed9-42a7910e6789\",\"createdBy\":\"iDigBio-import\",\"created\":\"2020-12-18T10:19:30.152+00:00\"}],\"incorporatedCollections\":[],\"alternativeCodes\":[{\"code\":\"KU\",\"description\":\"Code
+        from replaced entity c72b7aaf-ac1a-4147-97cd-2c61b63422dc\"}],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":1574,\"typeSpecimenCount\":100,\"institutionName\":\"University
+        of Kansas, Biodiversity Institute and Natural History Museum\",\"institutionCode\":\"KU\"},{\"key\":\"dd2d16ce-7f19-453d-a852-f686999049f9\",\"code\":\"PSUMC\",\"name\":\"Pittsburg
+        State University, Mammal Collection\",\"contentTypes\":[],\"active\":true,\"personalCollection\":false,\"email\":[],\"phone\":[],\"catalogUrls\":[],\"apiUrls\":[],\"preservationTypes\":[],\"institutionKey\":\"334a0e21-cd63-4666-95e5-e1f4df196ea3\",\"mailingAddress\":{\"key\":46527,\"province\":\"Kansas\",\"country\":\"US\"},\"address\":{\"key\":46526,\"province\":\"Kansas\",\"country\":\"US\"},\"createdBy\":\"kdpearso\",\"modifiedBy\":\"mgrosjean\",\"created\":\"2023-08-22T13:40:36.079+00:00\",\"modified\":\"2024-06-04T17:35:03.688+00:00\",\"tags\":[],\"identifiers\":[{\"key\":354842,\"type\":\"GRSCICOLL_URI\",\"identifier\":\"http://grbio.org/cool/fiqz-ej17\",\"createdBy\":\"kdpearso\",\"created\":\"2023-08-22T13:40:36.150+00:00\",\"primary\":false},{\"key\":354841,\"type\":\"GRSCICOLL_ID\",\"identifier\":\"17478\",\"createdBy\":\"kdpearso\",\"created\":\"2023-08-22T13:40:36.143+00:00\",\"primary\":false},{\"key\":354840,\"type\":\"GRSCICOLL_URI\",\"identifier\":\"http://grbio.org/institution/pittsburg-state-university-0\",\"createdBy\":\"kdpearso\",\"created\":\"2023-08-22T13:40:36.133+00:00\",\"primary\":false},{\"key\":354839,\"type\":\"GRSCICOLL_URI\",\"identifier\":\"http://grscicoll.org/institution/pittsburg-state-university-0\",\"createdBy\":\"kdpearso\",\"created\":\"2023-08-22T13:40:36.125+00:00\",\"primary\":false},{\"key\":354837,\"type\":\"NCBI_BIOCOLLECTION\",\"identifier\":\"945043\",\"createdBy\":\"kdpearso\",\"created\":\"2023-08-22T13:40:36.108+00:00\",\"primary\":false}],\"contactPersons\":[],\"machineTags\":[],\"incorporatedCollections\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0,\"institutionName\":\"Pittsburg
+        State University\",\"institutionCode\":\"KSP\"}]}"
+    headers:
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Cache-Control:
+      - public, max-age=3601
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 15 Jul 2025 14:41:38 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      Via:
+      - 1.1 varnish (Varnish/6.6)
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Varnish:
+      - '246188040'
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+version: 1

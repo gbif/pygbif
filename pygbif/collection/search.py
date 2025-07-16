@@ -3,14 +3,13 @@ import re
 
 def search(
     q=None,
-    type=None,
-    institutionalGovernance=None,
-    disciplines=None,
     name=None,
     fuzzyName=None,
+    preservationType=None,
+    contentType=None,
     numberSpecimens=None,
-    occurrenceCount=None,
-    typeSpecimenCount=None,
+    accessionStatus=None,
+    personalCollection=None,
     sourceId=None,
     source=None,
     code=None,
@@ -34,23 +33,22 @@ def search(
     offset=None,
     limit=None,
     **kwargs
-    ): 
+    ):
     """
-    Search for institutions in GRSciColl.
+    Search for collections in GRSciColl.
 
     :param q: [str] Simple full text search parameter. The value for this parameter can be a simple word or a phrase. Wildcards are not supported
-    :param type: [str] Type of a GrSciColl institution. Available values: BIOMEDICAL_RESEARCH_INSTITUTE, BOTANICAL_GARDEN, HERBARIUM, LIVING_ORGANISM_COLLECTION, MEDICAL_RESEARCH_INSTITUTE, MUSEUM, MUSEUM_HERBARIUM_PRIVATE_NON_PROFIT, OTHER_INSTITUTIONAL_TYPE, OTHER_TYPE_RESEARCH_INSTITUTION_BIOREPOSITORY, UNIVERSITY_COLLEGE, ZOO_AQUARIUM
-    :param institutionalGovernance: [str] Institutional governance of a GrSciColl institution. Available values: ACADEMIC_FEDERAL, ACADEMIC_FOR_PROFIT, ACADEMIC_LOCAL, ACADEMIC_NON_PROFIT, ACADEMIC_STATE, FEDERAL, FOR_PROFIT, LOCAL, NON_PROFIT, OTHER, STATE
-    :param disciplines: [str] Discipline of a GrSciColl institution. Check available values: https://techdocs.gbif.org/en/openapi/v1/registry#/Institutions/listInstitutions
     :param name: [str] Name of a GrSciColl institution or collection
     :param fuzzyName: [str] It searches by name fuzzily so the parameter doesn't have to be the exact name
+    :param preservationType: [str] Preservation type of a GrSciColl collection. Accepts multiple values
+    :param contentType: [str] Content type of a GrSciColl collection. See here for accepted values: https://techdocs.gbif.org/en/openapi/v1/registry#/Collections/listCollections
     :param numberSpecimens: [str] Number of specimens. It supports ranges and a '*' can be used as a wildcard
-    :param occurrenceCount: [str] Count of occurrences linked. It supports ranges and a '*' can be used as a wildcard
-    :param typeSpecimenCount: [str] Count of type specimens linked. It supports ranges and a '*' can be used as a wildcard
+    :param accessionStatus: [str] Accession status of a GrSciColl collection. Available values: INSTITUTIONAL, PROJECT
+    :param personalCollection: [bool] Flag for personal GRSciColl collections
     :param sourceId: [str] sourceId of MasterSourceMetadata
     :param source: [str] Source attribute of MasterSourceMetadata. Available values: DATASET, ORGANIZATION, IH_IRN
     :param code: [str] Code of a GrSciColl institution or collection
-    :param alternativeCode: [str] Alternative code of a GrSciColl institution
+    :param alternativeCode: [str] Alternative code of a GrSciColl institution or collection
     :param contact: [str] Filters collections and institutions whose contacts contain the person key specified
     :param institutionKey: [str] Keys of institutions to filter by
     :param country: [str] Filters by country given as a ISO 639-1 (2 letter) country code
@@ -74,25 +72,23 @@ def search(
     :return: A dictionary
 
     Usage::
-        from pygbif import institution as inst
-
-        inst.search(q="Kansas",limit=1)
-        inst.search(numberSpecimens = "1000,*",limit=2)
-        inst.search(source = "IH_IRN") 
-        inst.search(country = ["US","GB"])
-        inst.search(typeSpecimenCount = "10,100")
+        from pygbif import collection as coll
+        coll.search(query="insect")
+        coll.search(name="Insects;Entomology", limit=2)
+        coll.search(numberSpecimens = "0,100", limit=1)
+        coll.search(institutionKey = "6a6ac6c5-1b8a-48db-91a2-f8661274ff80")
+        coll.search(query = "insect", country = ["US","GB"])
     """
-    url = gbif_baseurl + "grscicoll/institution"
+    url = gbif_baseurl + "grscicoll/collection"
     args = {
         "q": q,
-        "type": type,
-        "institutionalGovernance": institutionalGovernance,
-        "disciplines": disciplines,
         "name": name,
         "fuzzyName": fuzzyName,
+        "preservationType": preservationType,
+        "contentType": contentType,
         "numberSpecimens": numberSpecimens,
-        "occurrenceCount": occurrenceCount,
-        "typeSpecimenCount": typeSpecimenCount,
+        "accessionStatus": accessionStatus,
+        "personalCollection": personalCollection,
         "sourceId": sourceId,
         "source": source,
         "code": code,
@@ -114,9 +110,9 @@ def search(
         "sortBy": sortBy,
         "sortOrder": sortOrder,
         "offset": offset,
-        "limit": limit, 
-    }
-    
+        "limit": limit,
+        }
+
     gbif_kwargs = {key: kwargs[key] for key in kwargs if key not in requests_argset}
     if gbif_kwargs is not None:
         xx = dict(
@@ -126,3 +122,7 @@ def search(
     kwargs = {key: kwargs[key] for key in kwargs if key in requests_argset}
     out = gbif_GET(url, args, **kwargs)
     return out
+
+
+
+

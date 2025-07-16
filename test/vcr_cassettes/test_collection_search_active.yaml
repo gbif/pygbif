@@ -1,0 +1,138 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - python-requests/2.31.0,pygbif/0.6.5
+    method: GET
+    uri: https://api.gbif.org/v1/grscicoll/collection?active=True&limit=10
+  response:
+    body:
+      string: "{\"offset\":0,\"limit\":10,\"endOfRecords\":false,\"count\":9145,\"results\":[{\"key\":\"bd9557e8-af12-4b56-90a0-a7017dd6e46d\",\"code\":\"HR.167\",\"name\":\"Vascular
+        Plant Herbarium: Herbarium Fennoscandicum\",\"description\":\"<p>Vascular
+        plant collections of the Botanical Museum, University of Helsinki (H): East
+        Fennoscandian and Nordic herbarium</p>\",\"contentTypes\":[\"PreservedOrganisms\"],\"active\":true,\"personalCollection\":false,\"email\":[],\"phone\":[],\"catalogUrls\":[],\"apiUrls\":[],\"preservationTypes\":[],\"accessionStatus\":\"Institutional\",\"institutionKey\":\"11cb3e72-eac6-48c8-bcb3-4668c2ca7eaa\",\"mailingAddress\":{\"key\":56169,\"address\":\"P.O
+        7 (Unioninkatu 44) University of Helsinki\",\"city\":\"Helsinki\",\"province\":\"Uusimaa\",\"postalCode\":\"00014\",\"country\":\"FI\"},\"address\":{\"key\":56168,\"address\":\"Kaisaniemenranta
+        2\",\"city\":\"Helsinki\",\"province\":\"Uusimaa\",\"postalCode\":\"00170\",\"country\":\"FI\"},\"createdBy\":\"finbif\",\"modifiedBy\":\"finbif\",\"created\":\"2025-07-15T09:30:05.402+00:00\",\"modified\":\"2025-07-15T09:34:30.045+00:00\",\"tags\":[],\"identifiers\":[{\"key\":444456,\"type\":\"DOI\",\"identifier\":\"10.15468/ekpyfw\",\"createdBy\":\"finbif\",\"created\":\"2025-07-15T09:30:05.402+00:00\",\"primary\":false}],\"contactPersons\":[{\"key\":43087,\"firstName\":\"FinBIF\",\"position\":[],\"phone\":[],\"fax\":[],\"email\":[\"helpdesk@laji.fi\"],\"address\":[],\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"finbif\",\"modifiedBy\":\"finbif\",\"created\":\"2025-07-15T09:30:05.402+00:00\",\"modified\":\"2025-07-15T09:30:05.402+00:00\"},{\"key\":43086,\"firstName\":\"Henry\",\"lastName\":\"V\xE4re\",\"position\":[],\"phone\":[],\"fax\":[],\"email\":[\"henry.vare@helsinki.fi\"],\"address\":[],\"primary\":true,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"finbif\",\"modifiedBy\":\"finbif\",\"created\":\"2025-07-15T09:30:05.402+00:00\",\"modified\":\"2025-07-15T09:30:05.402+00:00\"}],\"numberSpecimens\":858000,\"machineTags\":[],\"taxonomicCoverage\":\"Plantae\",\"geographicCoverage\":\"Finland,
+        Russian Fennoscandia, Denmark (excl. Greenland), Iceland, Norway (incl. Svalbard),
+        Sweden\",\"incorporatedCollections\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GBIF_REGISTRY\",\"masterSourceMetadata\":{\"key\":9841,\"source\":\"DATASET\",\"sourceId\":\"a86641c2-9381-4c1e-9d25-32b90f2b5a4b\",\"createdBy\":\"finbif\",\"created\":\"2025-07-15T09:30:05.402+00:00\"},\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0,\"temporalCoverage\":\"1654-01-01
+        - 2024-12-31\",\"institutionName\":\"Helsinki Botanical Museum\",\"institutionCode\":\"H\"},{\"key\":\"287f6b62-bed0-4686-a6ab-f83fe0ab5370\",\"code\":\"HR.168\",\"name\":\"Vascular
+        Plant Herbarium: Herbarium Generale\",\"description\":\"<p>Vascular plant
+        collections of the Botanical Museum, University of Helsinki (H): General herbarium
+        (areas outside Finland, Russian Fennoscandia and Nordic Countries)</p>\",\"contentTypes\":[\"PreservedOrganisms\"],\"active\":true,\"personalCollection\":false,\"email\":[],\"phone\":[],\"catalogUrls\":[],\"apiUrls\":[],\"preservationTypes\":[],\"accessionStatus\":\"Institutional\",\"institutionKey\":\"11cb3e72-eac6-48c8-bcb3-4668c2ca7eaa\",\"mailingAddress\":{\"key\":56167,\"address\":\"P.O
+        7 (Unioninkatu 44) University of Helsinki\",\"city\":\"Helsinki\",\"province\":\"Uusimaa\",\"postalCode\":\"00014\",\"country\":\"FI\"},\"address\":{\"key\":56166,\"address\":\"Kaisaniemenranta
+        2\",\"city\":\"Helsinki\",\"province\":\"Uusimaa\",\"postalCode\":\"00170\",\"country\":\"FI\"},\"createdBy\":\"finbif\",\"modifiedBy\":\"finbif\",\"created\":\"2025-07-15T07:39:09.896+00:00\",\"modified\":\"2025-07-15T09:34:03.455+00:00\",\"tags\":[],\"identifiers\":[{\"key\":444452,\"type\":\"DOI\",\"identifier\":\"10.15468/83cb4a\",\"createdBy\":\"finbif\",\"created\":\"2025-07-15T07:39:09.896+00:00\",\"primary\":false}],\"contactPersons\":[{\"key\":43077,\"firstName\":\"FinBIF\",\"position\":[],\"phone\":[],\"fax\":[],\"email\":[\"helpdesk@laji.fi\"],\"address\":[],\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"finbif\",\"modifiedBy\":\"finbif\",\"created\":\"2025-07-15T07:39:09.896+00:00\",\"modified\":\"2025-07-15T07:39:09.896+00:00\"},{\"key\":43076,\"firstName\":\"Henry\",\"lastName\":\"V\xE4re\",\"position\":[],\"phone\":[],\"fax\":[],\"email\":[\"henry.vare@helsinki.fi\"],\"address\":[],\"primary\":true,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"finbif\",\"modifiedBy\":\"finbif\",\"created\":\"2025-07-15T07:39:09.896+00:00\",\"modified\":\"2025-07-15T07:39:09.896+00:00\"}],\"numberSpecimens\":710000,\"machineTags\":[],\"taxonomicCoverage\":\"Plantae;
+        Animalia\",\"geographicCoverage\":\"Worldwide except for Finland, Russian
+        Fennoscandia, Denmark, Iceland, Norway (incl. Svalbard), Sweden\",\"incorporatedCollections\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GBIF_REGISTRY\",\"masterSourceMetadata\":{\"key\":9840,\"source\":\"DATASET\",\"sourceId\":\"202cdfcf-0eac-4696-9e48-4797c562ff41\",\"createdBy\":\"finbif\",\"created\":\"2025-07-15T07:39:09.896+00:00\"},\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0,\"temporalCoverage\":\"1780-01-01
+        - 2024-09-15\",\"institutionName\":\"Helsinki Botanical Museum\",\"institutionCode\":\"H\"},{\"key\":\"801b3329-3104-400e-8914-b8f694bb14e3\",\"code\":\"DZUS\",\"name\":\"Entomological
+        collection - University of Silesia in Katowice\",\"description\":\"Entomological
+        collection of the Zoological Research Group from Institute of Biology, Biotechnology
+        and Environmental Protection, Faculty of Natural Sciences, University of Silesia
+        in Katowice, Poland. The collection is primarily a collection of insects from
+        the Hemiptera group, but also other groups of insects representing mainly
+        the area of \u200B\u200BPoland and Europe.\",\"contentTypes\":[],\"active\":true,\"personalCollection\":false,\"email\":[\"agnieszka.bugaj-nawrocka@us.edu.pl\"],\"phone\":[],\"catalogUrls\":[],\"apiUrls\":[],\"preservationTypes\":[\"SampleSlideMount\",\"SamplePinned\",\"SampleDried\",\"SampleSurfaceCoating\",\"SampleFluidPreserved\"],\"accessionStatus\":\"Institutional\",\"institutionKey\":\"376b8165-98e6-4d58-9b43-fcc1cca412df\",\"mailingAddress\":{\"key\":56163,\"address\":\"Bankowa12\",\"city\":\"Katowice\",\"province\":\"Silesia\",\"postalCode\":\"40-007\",\"country\":\"PL\"},\"address\":{\"key\":56162,\"address\":\"Bankowa12\",\"city\":\"Katowice\",\"province\":\"Silesia\",\"postalCode\":\"40-007\",\"country\":\"PL\"},\"createdBy\":\"kkuczkowska\",\"modifiedBy\":\"kkuczkowska\",\"created\":\"2025-07-14T10:33:37.900+00:00\",\"modified\":\"2025-07-14T10:33:37.900+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"numberSpecimens\":150000,\"machineTags\":[],\"taxonomicCoverage\":\"Hemiptera\",\"geographicCoverage\":\"Poland,
+        Europe, World\",\"incorporatedCollections\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0,\"temporalCoverage\":\"~1850-2025\",\"institutionName\":\"University
+        of Silesia in Katowice\",\"institutionCode\":\"KTU\"},{\"key\":\"cf7cfc29-4711-4fb5-84c6-f4af5ffc14da\",\"code\":\"MUSE-INV-c007\",\"name\":\"Collezione
+        Ferruccio Hellmann | Ferruccio Hellmann's Collection\",\"description\":\"Butterflies
+        of the Brenta Group and from other italian localities.\",\"contentTypes\":[\"PreservedOrganisms\"],\"active\":true,\"personalCollection\":false,\"email\":[\"collezioni@muse.it\",\"mariachiara.deflorian@muse.it\"],\"phone\":[],\"homepage\":\"https://www.muse.it/home/ricerca-e-collezioni/le-collezioni-scientifiche/le-collezioni-di-zoologia-degli-invertebrati-e-idrobiologia/\",\"catalogUrls\":[],\"apiUrls\":[],\"preservationTypes\":[\"SamplePinned\"],\"accessionStatus\":\"Institutional\",\"institutionKey\":\"f7a73987-a389-406f-84eb-bc5a0ca35835\",\"mailingAddress\":{\"key\":56161,\"address\":\"Corso
+        del Lavoro e della Scienza, 3\",\"city\":\"Trento\",\"province\":\"[TRENTINO-ALTO
+        ADIGE/SUDTIROL] Trento (TN)\",\"postalCode\":\"IT-38122\",\"country\":\"IT\"},\"address\":{\"key\":56160,\"address\":\"Corso
+        del Lavoro e della Scienza, 3\",\"city\":\"Trento\",\"province\":\"[TRENTINO-ALTO
+        ADIGE/SUDTIROL] Trento (TN)\",\"postalCode\":\"IT-38122\",\"country\":\"IT\"},\"createdBy\":\"tasmacetus\",\"modifiedBy\":\"tasmacetus\",\"created\":\"2025-07-13T07:33:08.435+00:00\",\"modified\":\"2025-07-13T07:33:08.435+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"numberSpecimens\":4996,\"machineTags\":[],\"taxonomicCoverage\":\"Lepidoptera\",\"geographicCoverage\":\"Trentino-Alto
+        Adige, Lombardia\",\"notes\":\"This is a subcollection of https://registry.gbif.org/collection/e06d3605-eed3-43fe-9a31-dd18c4e0f9fe.\",\"incorporatedCollections\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0,\"temporalCoverage\":\"1958-1982\",\"institutionName\":\"Museo
+        delle Scienze di Trento\",\"institutionCode\":\"MUSE\"},{\"key\":\"983b9e39-37ca-49e9-a834-d306f88984bd\",\"code\":\"Ent\",\"name\":\"Colecci\xF3n
+        de Entomolog\xEDa\",\"description\":\"The Entomology collection at the Museo
+        Nacional de Ciencias Naturales contains around 5 million insects belonging
+        to most of the known orders, from almost all over the world. The most extensively
+        represented regions are the Iberian Peninsula, the Canary Islands, North Africa
+        and Equatorial Guinea. The specimens are preserved as dry specimens, in fluid
+        or as slides; some of the specimens are kept with related plant samples. The
+        collection has grown since the mid XIX century and contains valuable information
+        about the temporal and spatial diversity and distribution of our fauna. Over
+        time, the material has been studied by eminent specialists in different taxonomic
+        groups, and the collection therefore contains many valuable reference specimens.
+        The collection is available for research study, digital reproduction and for
+        use in exhibitions.\",\"contentTypes\":[\"AnimalBuiltStructures\",\"PreservedOrganisms\",\"AnimalDerived\"],\"active\":true,\"personalCollection\":false,\"email\":[\"col-entomologia@mncn.csic.es\"],\"phone\":[],\"homepage\":\"https://www.mncn.csic.es/es/colecciones/cientificas/entomologia-col\",\"catalogUrls\":[],\"apiUrls\":[],\"preservationTypes\":[\"SamplePinned\",\"SampleFluidPreserved\",\"SampleSlideMount\"],\"accessionStatus\":\"Institutional\",\"institutionKey\":\"b268a90f-cb19-4b9e-8938-c0c8dd2f131c\",\"mailingAddress\":{\"key\":56156,\"address\":\"Calle
+        Jos\xE9 Guti\xE9rrez Abascal, 2\",\"city\":\"Madrid\",\"province\":\"Madrid\",\"postalCode\":\"28006\",\"country\":\"ES\"},\"address\":{\"key\":56155,\"address\":\"Calle
+        Jos\xE9 Guti\xE9rrez Abascal, 2\",\"city\":\"Madrid\",\"province\":\"Madrid\",\"postalCode\":\"28006\",\"country\":\"ES\"},\"createdBy\":\"cycloderes\",\"modifiedBy\":\"cycloderes\",\"created\":\"2025-07-07T10:57:57.819+00:00\",\"modified\":\"2025-07-09T07:47:17.102+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[{\"key\":42979,\"firstName\":\"Mercedes\",\"lastName\":\"Par\xEDs\",\"position\":[\"Curator\",\"Collection
+        manager\"],\"phone\":[],\"fax\":[],\"email\":[\"mercedes-paris@mncn.csic.es\"],\"address\":[],\"primary\":true,\"taxonomicExpertise\":[],\"userIds\":[{\"type\":\"ORCID\",\"id\":\"0000-0002-0161-7278\"}],\"createdBy\":\"cycloderes\",\"modifiedBy\":\"cycloderes\",\"created\":\"2025-07-07T11:03:55.341+00:00\",\"modified\":\"2025-07-07T11:05:19.754+00:00\"}],\"numberSpecimens\":5000000,\"machineTags\":[],\"taxonomicCoverage\":\"Arthropoda:
+        Insecta\",\"geographicCoverage\":\"Worldwide\",\"incorporatedCollections\":[],\"alternativeCodes\":[{\"code\":\"MNCN_ENT\",\"description\":\"Code
+        used in datasets previously published in GBIF\"}],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0,\"featuredImageLicense\":\"CC_BY_NC_4_0\",\"temporalCoverage\":\"Since
+        the mid-nineteenth century\",\"institutionName\":\"Museo Nacional de Ciencias
+        Naturales (CSIC)\",\"institutionCode\":\"MNCN\"},{\"key\":\"d4b318f1-b216-4e56-98d8-2115ab01b783\",\"code\":\"BNHS-Fish\",\"name\":\"BNHS
+        Fish Collection\",\"contentTypes\":[],\"active\":true,\"personalCollection\":false,\"email\":[],\"phone\":[],\"catalogUrls\":[],\"apiUrls\":[],\"preservationTypes\":[],\"institutionKey\":\"b560d8ff-4e88-4cb0-99c9-7a43e6a315f0\",\"mailingAddress\":{\"key\":56153,\"address\":\"Hornbill
+        House, Opp Lion Gate, SBS Road, Fort\",\"city\":\"Mumbai\",\"province\":\"Maharashtra\",\"postalCode\":\"400001\",\"country\":\"IN\"},\"address\":{\"key\":56152,\"address\":\"Hornbill
+        House, Opp Lion Gate, SBS Road, Fort\",\"city\":\"Mumbai\",\"province\":\"Maharashtra\",\"postalCode\":\"400001\",\"country\":\"IN\"},\"createdBy\":\"vijaybarve\",\"modifiedBy\":\"vijaybarve\",\"created\":\"2025-07-02T22:29:35.268+00:00\",\"modified\":\"2025-07-02T22:29:35.268+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"numberSpecimens\":600,\"machineTags\":[],\"incorporatedCollections\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0,\"institutionName\":\"Bombay
+        Natural History Society\",\"institutionCode\":\"BNHS\"},{\"key\":\"b9bc7e51-f4aa-45b9-bca8-54fbd3d56ac9\",\"code\":\"BNHS-Bird-Egg\",\"name\":\"BNHS
+        Bird Egg Collection\",\"contentTypes\":[],\"active\":true,\"personalCollection\":false,\"email\":[],\"phone\":[],\"catalogUrls\":[],\"apiUrls\":[],\"preservationTypes\":[],\"institutionKey\":\"b560d8ff-4e88-4cb0-99c9-7a43e6a315f0\",\"mailingAddress\":{\"key\":56151,\"address\":\"Hornbill
+        House, Opp Lion Gate, SBS Road, Fort\",\"city\":\"Mumbai\",\"province\":\"Maharashtra\",\"postalCode\":\"400001\",\"country\":\"IN\"},\"address\":{\"key\":56150,\"address\":\"Hornbill
+        House, Opp Lion Gate, SBS Road, Fort\",\"city\":\"Mumbai\",\"province\":\"Maharashtra\",\"postalCode\":\"400001\",\"country\":\"IN\"},\"createdBy\":\"vijaybarve\",\"modifiedBy\":\"vijaybarve\",\"created\":\"2025-07-02T22:28:12.010+00:00\",\"modified\":\"2025-07-02T22:28:12.010+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"numberSpecimens\":5500,\"machineTags\":[],\"incorporatedCollections\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0,\"institutionName\":\"Bombay
+        Natural History Society\",\"institutionCode\":\"BNHS\"},{\"key\":\"3e16c1e8-d8fa-41ec-b4df-b8a12f9e7775\",\"code\":\"BNHS-Invertebrate\",\"name\":\"BNHS
+        Invertebrate\",\"description\":\"Includes other invertebrates except Insects
+        and Arachnids\",\"contentTypes\":[],\"active\":true,\"personalCollection\":false,\"email\":[],\"phone\":[],\"catalogUrls\":[],\"apiUrls\":[],\"preservationTypes\":[],\"institutionKey\":\"b560d8ff-4e88-4cb0-99c9-7a43e6a315f0\",\"mailingAddress\":{\"key\":56149,\"address\":\"Hornbill
+        House, Opp Lion Gate, SBS Road, Fort\",\"city\":\"Mumbai\",\"province\":\"Maharashtra\",\"postalCode\":\"400001\",\"country\":\"IN\"},\"address\":{\"key\":56148,\"address\":\"Hornbill
+        House, Opp Lion Gate, SBS Road, Fort\",\"city\":\"Mumbai\",\"province\":\"Maharashtra\",\"postalCode\":\"400001\",\"country\":\"IN\"},\"createdBy\":\"vijaybarve\",\"modifiedBy\":\"vijaybarve\",\"created\":\"2025-07-02T22:16:22.132+00:00\",\"modified\":\"2025-07-02T22:16:22.132+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"numberSpecimens\":5000,\"machineTags\":[],\"incorporatedCollections\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0,\"institutionName\":\"Bombay
+        Natural History Society\",\"institutionCode\":\"BNHS\"},{\"key\":\"1aec6ba8-e9e3-481d-9443-1199577bc6e5\",\"code\":\"BNHS-Arachnid\",\"name\":\"BNHS
+        Arachnid Collection\",\"contentTypes\":[],\"active\":true,\"personalCollection\":false,\"email\":[],\"phone\":[],\"catalogUrls\":[],\"apiUrls\":[],\"preservationTypes\":[],\"institutionKey\":\"b560d8ff-4e88-4cb0-99c9-7a43e6a315f0\",\"mailingAddress\":{\"key\":56147,\"address\":\"Hornbill
+        House, Opp Lion Gate, SBS Road, Fort\",\"city\":\"Mumbai\",\"province\":\"Maharashtra\",\"postalCode\":\"400001\",\"country\":\"IN\"},\"address\":{\"key\":56146,\"address\":\"Hornbill
+        House, Opp Lion Gate, SBS Road, Fort\",\"city\":\"Mumbai\",\"province\":\"Maharashtra\",\"postalCode\":\"400001\",\"country\":\"IN\"},\"createdBy\":\"vijaybarve\",\"modifiedBy\":\"vijaybarve\",\"created\":\"2025-07-02T22:13:33.949+00:00\",\"modified\":\"2025-07-02T22:13:33.949+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"numberSpecimens\":200,\"machineTags\":[],\"incorporatedCollections\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0,\"institutionName\":\"Bombay
+        Natural History Society\",\"institutionCode\":\"BNHS\"},{\"key\":\"35de7962-b673-4f5e-b1f3-da3c5d2ac231\",\"code\":\"BNHS-Insect\",\"name\":\"BNHS
+        Insect Collection\",\"description\":\"This is one of the important insect
+        collections in India. There are about 50,000 insects in the collection. \\nThe
+        geographical areas covered are India, Pakistan and Myanmar. The major groups
+        represented in the \\ncollection are Lepidoptera (Butterflies & Moths). Out
+        of the 1500 species of butterflies found in India, \\naround 730 species are
+        present in the collection. Some of the butterflies were collected from Myanmar
+        \\nand are difficult to get in the present circumstances. There are also collection
+        of beetles (Coleoptera), \\nbugs (Hemiptera), Wasps, bees and ants (Hymenoptera),
+        Grasshoppers and crickets (Orthoptera), \\nMantodea (Prying mantids), Stick
+        and leaf-insects (Phasmatodea) and Cockroaches (Blattaria). The insects \\nare
+        preserved and stored in wooden boxes and cabinets. The butterflies from Sri
+        Lanka collected by \\nMr. Ormiston are also present in the collection. The
+        collection is referred by students/scientists from \\nForest Research Institute
+        and was basis for the book \u201CButterflies of Sikkim Himalayas\u201D.We
+        have 245type \\nspecimens of insects in the collection.\",\"contentTypes\":[],\"active\":true,\"personalCollection\":false,\"email\":[],\"phone\":[],\"catalogUrls\":[],\"apiUrls\":[],\"preservationTypes\":[],\"institutionKey\":\"b560d8ff-4e88-4cb0-99c9-7a43e6a315f0\",\"mailingAddress\":{\"key\":56145,\"address\":\"Hornbill
+        House, Opp Lion Gate, SBS Road, Fort\",\"city\":\"Mumbai\",\"province\":\"Maharashtra\",\"postalCode\":\"400001\",\"country\":\"IN\"},\"address\":{\"key\":56144,\"address\":\"Hornbill
+        House, Opp Lion Gate, SBS Road, Fort\",\"city\":\"Mumbai\",\"province\":\"Maharashtra\",\"postalCode\":\"400001\",\"country\":\"IN\"},\"createdBy\":\"vijaybarve\",\"modifiedBy\":\"vijaybarve\",\"created\":\"2025-07-02T22:06:30.055+00:00\",\"modified\":\"2025-07-02T22:06:30.055+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"numberSpecimens\":50000,\"machineTags\":[],\"incorporatedCollections\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0,\"institutionName\":\"Bombay
+        Natural History Society\",\"institutionCode\":\"BNHS\"}]}"
+    headers:
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Cache-Control:
+      - public, max-age=3601
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 15 Jul 2025 14:45:16 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      Via:
+      - 1.1 varnish (Varnish/6.6)
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Varnish:
+      - '205265438'
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+version: 1

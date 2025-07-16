@@ -9,30 +9,33 @@ interactions:
       Connection:
       - keep-alive
       user-agent:
-      - python-requests/2.31.0,pygbif/0.6.4
+      - python-requests/2.31.0,pygbif/0.6.5
     method: GET
     uri: https://api.gbif.org/v1/installation?limit=5
   response:
     body:
-      string: "{\"offset\":0,\"limit\":5,\"endOfRecords\":false,\"count\":667,\"results\":[{\"key\":\"49b268f4-e5db-49a3-87ad-ee23f397eadd\",\"organizationKey\":\"37e82b90-1e21-11de-ab90-f72009d2669b\",\"type\":\"HTTP_INSTALLATION\",\"title\":\"GBIF.be
-        Metabarcoding Datasets\",\"description\":\"Metabarcoding publication tool
-        for Belgian data holders.\",\"createdBy\":\"MattBlissett\",\"modifiedBy\":\"MattBlissett\",\"created\":\"2024-10-03T10:59:26.782+00:00\",\"modified\":\"2024-10-03T10:59:26.782+00:00\",\"disabled\":false,\"contacts\":[],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"18d23510-5b63-4ead-93d2-09061bf0b50e\",\"organizationKey\":\"04fd2e13-6881-4e5c-9dd1-8fdd9ab993c1\",\"type\":\"HTTP_INSTALLATION\",\"title\":\"FinBIF
-        Metabarcoding Datasets\",\"description\":\"This is the Finnish Biodiversity
-        Information Facility's installation of GBIF's Metabarcoding Data Toolkit.
-        It facilitates the conversion and mobilization of DNA metabarcoding datasets
-        for Finnish data providers.\",\"createdBy\":\"MattBlissett\",\"modifiedBy\":\"MattBlissett\",\"created\":\"2024-10-03T10:44:07.699+00:00\",\"modified\":\"2024-10-03T10:44:07.699+00:00\",\"disabled\":false,\"contacts\":[],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"a3d3cdb4-4bf9-4e13-b50b-94b6b000a1d6\",\"organizationKey\":\"fbca90e3-8aed-48b1-84e3-369afbd000ce\",\"type\":\"HTTP_INSTALLATION\",\"title\":\"ECA
-        Metabarcoding Data Toolkit\",\"description\":\"The Europe and Central Asia
-        (ECA) Metabarcoding Data Toolkit (MDT) is available for the eDNA barcoding
-        community to facilitate biodiversity data sharing with GBIF and to recognize
-        the contributions of the data publishers to GBIF.\",\"createdBy\":\"MattBlissett\",\"modifiedBy\":\"MattBlissett\",\"created\":\"2024-10-02T16:53:14.697+00:00\",\"modified\":\"2024-10-02T16:53:14.697+00:00\",\"disabled\":false,\"contacts\":[],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"1f8ecebe-7091-4e0c-8f2d-34b944d9297d\",\"organizationKey\":\"64795dcb-ad74-41b3-95e5-cc52ba754776\",\"type\":\"HTTP_INSTALLATION\",\"title\":\"GBIF
-        Norway Metabarcoding Datasets\",\"description\":\"GBIF Norway\u2019s installation
-        of the Metabarcoding Data Toolkit (MDT) helps standardize and publish DNA
-        metabarcoding datasets according to GBIF\u2019s guidelines. It\u2019s designed
-        to make it easier to share and integrate these datasets into the global biodiversity
-        data network.\",\"createdBy\":\"thomasgbif\",\"modifiedBy\":\"thomasgbif\",\"created\":\"2024-10-02T15:24:24.001+00:00\",\"modified\":\"2024-10-02T15:24:24.001+00:00\",\"disabled\":false,\"contacts\":[],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"fb91678b-fb9e-4bb8-96e3-99775a8f3386\",\"organizationKey\":\"06a11821-bcc9-4417-bd6a-0a9b796139f0\",\"type\":\"IPT_INSTALLATION\",\"title\":\"GBIF
-        Uruguay\",\"description\":\"This IPT is hosted by GBIF to publish datasets
-        from Uruguay.\",\"createdBy\":\"06a11821-bcc9-4417-bd6a-0a9b796139f0\",\"modifiedBy\":\"fb91678b-fb9e-4bb8-96e3-99775a8f3386\",\"created\":\"2024-09-24T14:15:01.715+00:00\",\"modified\":\"2024-09-24T14:16:25.761+00:00\",\"disabled\":false,\"contacts\":[{\"key\":5474096,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"userId\":[],\"firstName\":\"Ana
-        Laura Mello\",\"position\":[],\"email\":[\"ana.mello@ambiente.gub.uy\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"06a11821-bcc9-4417-bd6a-0a9b796139f0\",\"modifiedBy\":\"fb91678b-fb9e-4bb8-96e3-99775a8f3386\",\"created\":\"2024-09-24T14:15:01.729+00:00\",\"modified\":\"2024-09-24T14:16:25.778+00:00\"}],\"endpoints\":[{\"key\":1046479,\"type\":\"FEED\",\"url\":\"https://cloud.gbif.org/uy/rss.do\",\"createdBy\":\"fb91678b-fb9e-4bb8-96e3-99775a8f3386\",\"modifiedBy\":\"fb91678b-fb9e-4bb8-96e3-99775a8f3386\",\"created\":\"2024-09-24T14:16:25.808+00:00\",\"modified\":\"2024-09-24T14:16:25.808+00:00\",\"machineTags\":[]}],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[]}]}"
+      string: "{\"offset\":0,\"limit\":5,\"endOfRecords\":false,\"count\":698,\"results\":[{\"key\":\"e5485242-aa1f-4aab-96a3-d33b2c9f7880\",\"organizationKey\":\"948f0437-2242-4c2e-bb1e-d6e9e69d1d2a\",\"type\":\"HTTP_INSTALLATION\",\"title\":\"AGES
+        - Austrian Agency for Health and Food Safety - installation\",\"createdBy\":\"mgrosjean\",\"modifiedBy\":\"mgrosjean\",\"created\":\"2025-06-17T12:05:58.671+00:00\",\"modified\":\"2025-06-17T12:05:58.671+00:00\",\"disabled\":false,\"contacts\":[],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"237a77da-d109-4d9a-a691-4b87464d2800\",\"organizationKey\":\"25be1cbb-af76-44ea-8ff3-074799790dce\",\"type\":\"IPT_INSTALLATION\",\"title\":\"ICMBio
+        - IPT\",\"description\":\"The ICMBio IPT (Integrated Publishing Toolkit) is
+        a data publishing platform managed by the Chico Mendes Institute for Biodiversity
+        Conservation (ICMBio), a federal agency responsible for managing Brazil's
+        protected areas and biodiversity. Through the IPT, ICMBio provides open access
+        to species occurrence records, monitoring data, and biological collections
+        related to Brazilian protected areas.\",\"createdBy\":\"25be1cbb-af76-44ea-8ff3-074799790dce\",\"modifiedBy\":\"25be1cbb-af76-44ea-8ff3-074799790dce\",\"created\":\"2025-06-16T19:25:58.135+00:00\",\"modified\":\"2025-06-16T19:25:58.135+00:00\",\"disabled\":false,\"contacts\":[{\"key\":6142935,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"userId\":[],\"firstName\":\"Ivan
+        Salzo\",\"position\":[],\"email\":[\"ivan.salzo@icmbio.gov.br\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"25be1cbb-af76-44ea-8ff3-074799790dce\",\"modifiedBy\":\"25be1cbb-af76-44ea-8ff3-074799790dce\",\"created\":\"2025-06-16T19:25:58.148+00:00\",\"modified\":\"2025-06-16T19:25:58.148+00:00\"}],\"endpoints\":[{\"key\":1117163,\"type\":\"FEED\",\"url\":\"https://sisbio.sisicmbio.icmbio.gov.br/ipt/rss.do\",\"createdBy\":\"25be1cbb-af76-44ea-8ff3-074799790dce\",\"modifiedBy\":\"25be1cbb-af76-44ea-8ff3-074799790dce\",\"created\":\"2025-06-16T19:25:58.165+00:00\",\"modified\":\"2025-06-16T19:25:58.165+00:00\",\"machineTags\":[]}],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"896898e8-c0ac-47a0-8f38-0f792fbe3343\",\"organizationKey\":\"0870a77b-587c-4369-a8ed-bc3d347b8e1c\",\"type\":\"IPT_INSTALLATION\",\"title\":\"GBIF
+        Estonia\",\"description\":\"Integrated Publishing Toolkit for GBIF Estonia\",\"createdBy\":\"0870a77b-587c-4369-a8ed-bc3d347b8e1c\",\"modifiedBy\":\"0870a77b-587c-4369-a8ed-bc3d347b8e1c\",\"created\":\"2025-05-30T13:17:32.720+00:00\",\"modified\":\"2025-05-30T13:17:32.720+00:00\",\"disabled\":false,\"contacts\":[{\"key\":6120570,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"userId\":[],\"firstName\":\"Kristjan
+        Adojaan\",\"position\":[],\"email\":[\"kristjan.adojaan@ut.ee\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"0870a77b-587c-4369-a8ed-bc3d347b8e1c\",\"modifiedBy\":\"0870a77b-587c-4369-a8ed-bc3d347b8e1c\",\"created\":\"2025-05-30T13:17:32.737+00:00\",\"modified\":\"2025-05-30T13:17:32.737+00:00\"}],\"endpoints\":[{\"key\":1111486,\"type\":\"FEED\",\"url\":\"https://cloud.gbif.org/ee/rss.do\",\"createdBy\":\"0870a77b-587c-4369-a8ed-bc3d347b8e1c\",\"modifiedBy\":\"0870a77b-587c-4369-a8ed-bc3d347b8e1c\",\"created\":\"2025-05-30T13:17:32.755+00:00\",\"modified\":\"2025-05-30T13:17:32.755+00:00\",\"machineTags\":[]}],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"b9e0d06c-2fe2-49db-b25a-8eaa73667382\",\"organizationKey\":\"ae9d61b1-58a7-4ec8-b8ab-1aa9b36f5df8\",\"type\":\"IPT_INSTALLATION\",\"title\":\"IPT
+        DATA TERRA\",\"description\":\"IPT instance of Data Terra\",\"createdBy\":\"ae9d61b1-58a7-4ec8-b8ab-1aa9b36f5df8\",\"modifiedBy\":\"ae9d61b1-58a7-4ec8-b8ab-1aa9b36f5df8\",\"created\":\"2025-05-28T13:09:33.886+00:00\",\"modified\":\"2025-05-28T13:09:33.886+00:00\",\"disabled\":false,\"contacts\":[{\"key\":6118565,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"userId\":[],\"firstName\":\"Cl\xE9mence
+        Cotten\",\"position\":[],\"email\":[\"clemence.cotten@ifremer.fr\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"ae9d61b1-58a7-4ec8-b8ab-1aa9b36f5df8\",\"modifiedBy\":\"ae9d61b1-58a7-4ec8-b8ab-1aa9b36f5df8\",\"created\":\"2025-05-28T13:09:33.900+00:00\",\"modified\":\"2025-05-28T13:09:33.900+00:00\"}],\"endpoints\":[{\"key\":1111130,\"type\":\"FEED\",\"url\":\"https://ipt.data-terra.org/rss.do\",\"createdBy\":\"ae9d61b1-58a7-4ec8-b8ab-1aa9b36f5df8\",\"modifiedBy\":\"ae9d61b1-58a7-4ec8-b8ab-1aa9b36f5df8\",\"created\":\"2025-05-28T13:09:33.917+00:00\",\"modified\":\"2025-05-28T13:09:33.917+00:00\",\"machineTags\":[]}],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"7139fa37-d3c7-4b94-b826-3f50d1224be2\",\"organizationKey\":\"f5fd374b-89cb-4ab6-b3eb-794c65f232c3\",\"type\":\"IPT_INSTALLATION\",\"title\":\"Sistema
+        de Informa\xE7\xE3o sobre a Biodiversidade Brasileira - Monitoramento Bacia
+        do Rio Doce\",\"description\":\"Este IPT \xE9 mantido e operado pelo Sistema
+        de Informa\xE7\xE3o sobre a Biodiversidade Brasileira (SiBBr). Foi criado
+        com o objetivo de realizar o monitoramento ambiental da recupera\xE7\xE3o
+        da bacia do Rio Doce. Sua finalidade \xE9 facilitar a publica\xE7\xE3o e o
+        acesso aberto aos dados gerados em decorr\xEAncia do rompimento da barragem
+        de Fund\xE3o, ocorrido em 2015. Contribuem com este IPT todas as institui\xE7\xF5es
+        e fornecedores envolvidos no monitoramento ambiental.\",\"createdBy\":\"f5fd374b-89cb-4ab6-b3eb-794c65f232c3\",\"modifiedBy\":\"f5fd374b-89cb-4ab6-b3eb-794c65f232c3\",\"created\":\"2025-05-27T18:56:38.462+00:00\",\"modified\":\"2025-05-27T18:56:38.462+00:00\",\"disabled\":false,\"contacts\":[{\"key\":6117699,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"userId\":[],\"firstName\":\"Equipe
+        de dados SiBBr\",\"position\":[],\"email\":[\"atendimento_sibbr@rnp.br\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"f5fd374b-89cb-4ab6-b3eb-794c65f232c3\",\"modifiedBy\":\"f5fd374b-89cb-4ab6-b3eb-794c65f232c3\",\"created\":\"2025-05-27T18:56:38.472+00:00\",\"modified\":\"2025-05-27T18:56:38.472+00:00\"}],\"endpoints\":[{\"key\":1110882,\"type\":\"FEED\",\"url\":\"https://ipt.sibbr.gov.br/reparacaoriodoce/rss.do\",\"createdBy\":\"f5fd374b-89cb-4ab6-b3eb-794c65f232c3\",\"modifiedBy\":\"f5fd374b-89cb-4ab6-b3eb-794c65f232c3\",\"created\":\"2025-05-27T18:56:38.488+00:00\",\"modified\":\"2025-05-27T18:56:38.488+00:00\",\"machineTags\":[]}],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[]}]}"
     headers:
       Accept-Ranges:
       - bytes
@@ -43,11 +46,11 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '3751'
+      - '6043'
       Content-Type:
       - application/json
       Date:
-      - Fri, 04 Oct 2024 07:00:26 GMT
+      - Tue, 15 Jul 2025 14:49:15 GMT
       Expires:
       - '0'
       Pragma:
@@ -55,13 +58,13 @@ interactions:
       Vary:
       - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
       Via:
-      - 1.1 varnish (Varnish/6.0)
+      - 1.1 varnish (Varnish/6.6)
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '687571504'
+      - '273974797'
       X-XSS-Protection:
       - 1; mode=block
     status:
