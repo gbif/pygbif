@@ -66,6 +66,8 @@ Modules
    modules/maps
    modules/utils
    modules/literature
+   modules/collection
+   modules/institution
 
 :doc:`modules/intro`
     Introduction to pygbif modules.
@@ -88,6 +90,12 @@ Modules
 :doc:`modules/literature`
     The literature module: including search for literature.    
 
+:doc:`modules/collection`
+    The collection module: search GRSciColl collections.
+
+:doc:`modules/institution`
+    The institution module: search GRSciColl institutions.
+    
 All the rest
 ============
 

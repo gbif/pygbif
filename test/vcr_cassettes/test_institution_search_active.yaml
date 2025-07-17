@@ -1,0 +1,127 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - python-requests/2.31.0,pygbif/0.6.5
+    method: GET
+    uri: https://api.gbif.org/v1/grscicoll/institution?active=True&limit=10
+  response:
+    body:
+      string: "{\"offset\":0,\"limit\":10,\"endOfRecords\":false,\"count\":8190,\"results\":[{\"key\":\"d6f176f6-800a-4853-861f-e3c2ebae471b\",\"code\":\"GEN\",\"name\":\"Generasi
+        Biologi Indonesia\",\"description\":\"Herbarium Genbinesia is a public herbarium
+        located in East Java, Indonesia, concerned in Flora of Java and remote islands.\",\"types\":[\"Herbarium\"],\"active\":true,\"email\":[\"herbariumgenbinesia@gmail.com\"],\"phone\":[\"+6285182013186\"],\"homepage\":\"https://genbinesia.or.id/\",\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[\"NonProfit\"],\"disciplines\":[],\"latitude\":-7.202169,\"longitude\":112.562587,\"mailingAddress\":{\"key\":56171,\"address\":\"Jl.
+        Swadaya Barat No. 4 Semampir Cerme \",\"city\":\"Gresik\",\"province\":\"Jawa
+        Timur\",\"postalCode\":\"61171\",\"country\":\"ID\"},\"address\":{\"key\":56170,\"address\":\"Jl.
+        Swadaya Barat No. 4 Semampir Cerme \",\"city\":\"Gresik\",\"province\":\"Jawa
+        Timur\",\"postalCode\":\"61171\",\"country\":\"ID\"},\"additionalNames\":[],\"numberSpecimens\":1300,\"logoUrl\":\"https://drive.google.com/file/d/16wqAAX06Rh5ex1v_waio-jA2rXgx8fMV/view?usp=sharing\",\"createdBy\":\"vijaybarve\",\"modifiedBy\":\"vijaybarve\",\"created\":\"2025-07-15T19:45:55.218+00:00\",\"modified\":\"2025-07-15T19:45:55.218+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0},{\"key\":\"11cb3e72-eac6-48c8-bcb3-4668c2ca7eaa\",\"code\":\"H\",\"name\":\"Helsinki
+        Botanical Museum\",\"description\":\"The Helsinki Botanical Museum houses
+        specimens from around the globe, particularly from the Nordic countries, North
+        America and the cool and temperate zones of Asia. Prominent regional collections
+        are from China, Papua New Guinea and Patagonia, among others. The collections
+        contain tens of thousands of globally valuable type specimens. The collections
+        are organised into five groups of organisms: vascular plants, bryophytes,
+        fungi, lichens and algae. Most of these have been further divided into two
+        sections, of which East Fennoscandia (Herbarium Fennoscandiae orientalis)
+        encompasses Finland and its neighbouring areas (Russian Karelia, the Kola
+        Peninsula and the western parts of the Leningrad Oblast), and the general
+        collection (Herbarium Generale) covers the rest of the globe.\",\"types\":[\"Herbarium\"],\"active\":true,\"email\":[\"kasvimuseo@helsinki.fi\"],\"phone\":[],\"homepage\":\"https://www.helsinki.fi/en/luomus/national-collections/explore-collections/botanical-and-mycological-collections\",\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[\"Academic\"],\"disciplines\":[],\"latitude\":60.175210,\"longitude\":24.947820,\"mailingAddress\":{\"key\":56165,\"address\":\"P.O
+        7 (Unioninkatu 44) University of Helsinki\",\"city\":\"Helsinki\",\"province\":\"Uusimaa\",\"postalCode\":\"00014\",\"country\":\"FI\"},\"address\":{\"key\":56164,\"address\":\"Kaisaniemenranta
+        2\",\"city\":\"Helsinki\",\"province\":\"Uusimaa\",\"postalCode\":\"00170\",\"country\":\"FI\"},\"additionalNames\":[],\"foundingDate\":1751,\"numberSpecimens\":3500000,\"logoUrl\":\"https://www.helsinki.fi/assets/drupal/media-image/LUOMUS_musta.png\",\"createdBy\":\"finbif\",\"modifiedBy\":\"finbif\",\"created\":\"2025-07-15T07:24:12.345+00:00\",\"modified\":\"2025-07-15T09:26:48.079+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[{\"key\":43073,\"firstName\":\"Marko\",\"lastName\":\"Hyv\xE4rinen\",\"position\":[\"Director\"],\"phone\":[\"+358294124440\"],\"fax\":[],\"email\":[\"marko.hyvarinen@helsinki.fi\"],\"address\":[\"P.O
+        7 (Unioninkatu 44) University of Helsinki\"],\"city\":\"Helsinki\",\"province\":\"Uusimaa\",\"country\":\"FI\",\"postalCode\":\"00014\",\"primary\":true,\"taxonomicExpertise\":[],\"userIds\":[{\"type\":\"ORCID\",\"id\":\"https://orcid.org/0000-0001-8736-0946\"}],\"createdBy\":\"finbif\",\"modifiedBy\":\"finbif\",\"created\":\"2025-07-15T07:34:25.901+00:00\",\"modified\":\"2025-07-15T08:29:18.755+00:00\"},{\"key\":43078,\"firstName\":\"Henry\",\"lastName\":\"V\xE4re\",\"position\":[\"Senior
+        Curator\"],\"phone\":[\"+358294124433\"],\"fax\":[],\"email\":[\"henry.vare@helsinki.fi\"],\"address\":[\"P.O
+        7 (Unioninkatu 44) University of Helsinki\"],\"city\":\"Helsinki\",\"province\":\"Uusimaa\",\"country\":\"FI\",\"postalCode\":\"00014\",\"primary\":false,\"taxonomicExpertise\":[\"Vascular
+        plants and algae\"],\"userIds\":[{\"type\":\"ORCID\",\"id\":\"https://orcid.org/0000-0002-6170-885X\"}],\"createdBy\":\"finbif\",\"modifiedBy\":\"finbif\",\"created\":\"2025-07-15T07:57:04.208+00:00\",\"modified\":\"2025-07-15T08:29:18.779+00:00\"},{\"key\":43079,\"firstName\":\"Alexander\",\"lastName\":\"Sennikov\",\"position\":[\"Curator\"],\"phone\":[\"+358294124431\"],\"fax\":[],\"email\":[\"alexander.sennikov@helsinki.fi\"],\"address\":[\"P.O
+        7 (Unioninkatu 44) University of Helsinki\"],\"city\":\"Helsinki\",\"province\":\"Uusimaa\",\"country\":\"FI\",\"postalCode\":\"00014\",\"primary\":false,\"taxonomicExpertise\":[\"Vascular
+        plants and algae\"],\"userIds\":[{\"type\":\"ORCID\",\"id\":\"https://orcid.org/0000-0001-6664-7657\"}],\"createdBy\":\"finbif\",\"modifiedBy\":\"finbif\",\"created\":\"2025-07-15T08:29:18.794+00:00\",\"modified\":\"2025-07-15T08:29:18.794+00:00\"},{\"key\":43080,\"firstName\":\"Xiaolan\",\"lastName\":\"He\",\"position\":[\"Curator\"],\"phone\":[\"+358294124442\"],\"fax\":[],\"email\":[\"xiao-lan.he@helsinki.fi\"],\"address\":[\"P.O
+        7 (Unioninkatu 44) University of Helsinki\"],\"city\":\"Helsinki\",\"province\":\"Uusimaa\",\"country\":\"FI\",\"postalCode\":\"00014\",\"primary\":false,\"taxonomicExpertise\":[\"Bryophytes\"],\"userIds\":[],\"createdBy\":\"finbif\",\"modifiedBy\":\"finbif\",\"created\":\"2025-07-15T09:05:38.019+00:00\",\"modified\":\"2025-07-15T09:07:52.536+00:00\"},{\"key\":43081,\"firstName\":\"Sanna\",\"lastName\":\"Laaka-Lindberg\",\"position\":[\"Collections
+        coordinator\"],\"phone\":[\"+358294140217\"],\"fax\":[],\"email\":[\"sanna.laaka-lindberg@helsinki.fi\"],\"address\":[\"P.O
+        7 (Unioninkatu 44) University of Helsinki\"],\"city\":\"Helsinki\",\"province\":\"Uusimaa\",\"country\":\"FI\",\"postalCode\":\"00014\",\"primary\":false,\"taxonomicExpertise\":[\"Bryophytes\"],\"userIds\":[{\"type\":\"ORCID\",\"id\":\"https://orcid.org/0000-0002-1102-7423\"}],\"createdBy\":\"finbif\",\"modifiedBy\":\"finbif\",\"created\":\"2025-07-15T09:09:10.576+00:00\",\"modified\":\"2025-07-15T09:11:32.418+00:00\"},{\"key\":43082,\"firstName\":\"Otto\",\"lastName\":\"Miettinen\",\"position\":[\"Curator\"],\"phone\":[\"+358294124421\"],\"fax\":[],\"email\":[\"otto.miettinen@helsinki.fi\"],\"address\":[\"P.O
+        7 (Unioninkatu 44) University of Helsinki\"],\"city\":\"Helsinki\",\"province\":\"Uusimaa\",\"country\":\"FI\",\"postalCode\":\"00014\",\"primary\":false,\"taxonomicExpertise\":[\"Fungi\"],\"userIds\":[{\"type\":\"ORCID\",\"id\":\"https://orcid.org/0000-0001-7502-710X\"}],\"createdBy\":\"finbif\",\"modifiedBy\":\"finbif\",\"created\":\"2025-07-15T09:14:21.178+00:00\",\"modified\":\"2025-07-15T09:14:21.178+00:00\"},{\"key\":43083,\"firstName\":\"Leena\",\"lastName\":\"Myllys\",\"position\":[\"Curator\"],\"phone\":[\"+358294124458\"],\"fax\":[],\"email\":[\"leena.myllys@helsinki.fi\"],\"address\":[\"P.O
+        7 (Unioninkatu 44) University of Helsinki\"],\"city\":\"Helsinki\",\"province\":\"Uusimaa\",\"country\":\"FI\",\"postalCode\":\"00014\",\"primary\":false,\"taxonomicExpertise\":[\"Lichens\"],\"userIds\":[{\"type\":\"ORCID\",\"id\":\"https://orcid.org/0000-0002-9566-9473\"}],\"createdBy\":\"finbif\",\"modifiedBy\":\"finbif\",\"created\":\"2025-07-15T09:16:46.886+00:00\",\"modified\":\"2025-07-15T09:16:46.886+00:00\"}],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0,\"featuredImageUrl\":\"https://www.helsinki.fi/assets/drupal/styles/16_8_xl/s3/media-image/Luomus_SieniSammalTiimi_HaapalaJaana_0.jpg.webp\",\"featuredImageLicense\":\"UNSPECIFIED\"},{\"key\":\"fadeef75-a9b2-4ff0-accb-921c368887be\",\"code\":\"CEDESU-UACAM\",\"name\":\"Centro
+        de Estudios de Desarrollo Sustentable y Aprovechamiento de la Vida Silvestre,
+        Universidad Aut\xF3noma de Campeche\",\"types\":[\"UniversityCollege\"],\"active\":true,\"email\":[],\"phone\":[],\"homepage\":\"https://cedesu.uacam.mx/\",\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[\"Academic\",\"Governmental\"],\"disciplines\":[],\"latitude\":19.801571,\"longitude\":-90.504789,\"mailingAddress\":{\"key\":56000,\"address\":\"Avenida
+        H\xE9roe de Nacozari 480, colonia Multunchac\",\"city\":\"San Francisco de
+        Campeche\",\"province\":\"Campeche\",\"postalCode\":\"24062\",\"country\":\"MX\"},\"address\":{\"key\":55999,\"address\":\"Avenida
+        H\xE9roe de Nacozari 480, colonia Multunchac\",\"city\":\"San Francisco de
+        Campeche\",\"province\":\"Campeche\",\"postalCode\":\"24062\",\"country\":\"MX\"},\"additionalNames\":[],\"foundingDate\":1993,\"createdBy\":\"vaguirojas\",\"modifiedBy\":\"vaguirojas\",\"created\":\"2025-06-17T21:31:58.911+00:00\",\"modified\":\"2025-06-17T21:31:58.911+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"alternativeCodes\":[{\"code\":\"CEDESU-UAC\",\"description\":\"Centro
+        de Estudios de Desarrollo Sustentable y Aprovechamiento de la Vida Silvestre,
+        Universidad Aut\xF3noma de Campeche\"},{\"code\":\"UAC\",\"description\":\"Universidad
+        Aut\xF3noma de Campeche\"},{\"code\":\"UACAM\",\"description\":\"Universidad
+        Aut\xF3noma de Campeche\"}],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0},{\"key\":\"200dfb5f-58ed-478d-8058-8ac565b509cf\",\"code\":\"MEMZOO\",\"name\":\"Memphis
+        Zoo\",\"description\":\"The Memphis Zoo is a zoo in Midtown, Memphis, Tennessee,
+        United States. It is home to more than 3,500 animals representing over 500
+        different species. \",\"types\":[\"ZooAquarium\"],\"active\":true,\"email\":[],\"phone\":[],\"homepage\":\"https://www.memphiszoo.org/\",\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[\"NonProfit\"],\"disciplines\":[\"Zoology\",\"Biological\"],\"latitude\":35.150331,\"longitude\":-89.993305,\"mailingAddress\":{\"key\":55998,\"address\":\"2000
+        Prentiss Place\",\"city\":\"Memphis\",\"province\":\"Tennessee\",\"postalCode\":\"38112\",\"country\":\"US\"},\"address\":{\"key\":55997,\"address\":\"2000
+        Prentiss Place\",\"city\":\"Memphis\",\"province\":\"Tennessee\",\"postalCode\":\"38112\",\"country\":\"US\"},\"additionalNames\":[\"Memphis
+        Zoological Society\"],\"foundingDate\":1906,\"numberSpecimens\":3500,\"logoUrl\":\"https://prod.speakcdn.com/sitefiles/2879/images/white-logo.svg\",\"createdBy\":\"catchapman\",\"modifiedBy\":\"catchapman\",\"created\":\"2025-06-17T15:15:27.291+00:00\",\"modified\":\"2025-06-17T15:15:27.291+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[{\"key\":42822,\"firstName\":\"Sinlan\",\"lastName\":\"Poo\",\"position\":[\"Curator
+        of Research\"],\"phone\":[],\"fax\":[],\"email\":[\"spoo@memphiszoo.org\"],\"address\":[],\"city\":\"Memphis\",\"province\":\"Tennessee\",\"country\":\"US\",\"primary\":true,\"taxonomicExpertise\":[],\"userIds\":[{\"type\":\"ORCID\",\"id\":\"https://orcid.org/0000-0002-7767-8173\"}],\"createdBy\":\"dbloom\",\"modifiedBy\":\"dbloom\",\"created\":\"2025-06-18T22:37:57.149+00:00\",\"modified\":\"2025-06-18T22:37:57.149+00:00\"}],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0},{\"key\":\"c65b5840-57ad-48bd-b8ac-e9ba56c2dec7\",\"code\":\"FINARTE\",\"name\":\"Finarte\",\"types\":[\"OtherTypeResearchInstitutionBiorepository\"],\"active\":true,\"email\":[],\"phone\":[],\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[\"ForProfit\"],\"disciplines\":[],\"mailingAddress\":{\"key\":55994,\"address\":\"Via
+        dei Bossi, 2\",\"city\":\"Milano\",\"province\":\"[LOMBARDIA] Milano (MI)\",\"postalCode\":\"IT-20121\",\"country\":\"IT\"},\"address\":{\"key\":55993,\"address\":\"Via
+        dei Bossi, 2\",\"city\":\"Milano\",\"province\":\"[LOMBARDIA] Milano (MI)\",\"postalCode\":\"IT-20121\",\"country\":\"IT\"},\"additionalNames\":[],\"createdBy\":\"tasmacetus\",\"modifiedBy\":\"tasmacetus\",\"created\":\"2025-06-17T05:52:00.304+00:00\",\"modified\":\"2025-06-17T05:52:00.304+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0},{\"key\":\"c8934726-77e1-419d-acdc-dd2514d981e8\",\"code\":\"CECON\",\"name\":\"Centro
+        de Estudios Conservacionistas, Universidad de San Carlos de Guatemala\",\"description\":\"The
+        Centro de Estudios Conservacionistas,Universidad de San Carlos de Guatemala
+        (CECON-USAC) holds three sets of institutional biological collections that
+        represent a large proportion of Guatemala\u2019s biodiversity. (1.) Jard\xEDn
+        Bot\xE1nico CECON-USAC, which includes three botanical collections: a. Colecci\xF3n
+        Viva (living plant collection), b. Herbario USCG (herbarium collection), c.
+        Index Seminum (seed collection). (2). Centro de Datos para la Conservaci\xF3n
+        -CDC-CECON-, with observational and bibliographic data of Guatemalan flora,
+        fauna, ecosystems and conservation areas. (3). Colecci\xF3n de Abejas Nativas
+        de Guatemala, focused on the bee diversity of the country.\",\"types\":[\"UniversityCollege\",\"OtherTypeResearchInstitutionBiorepository\",\"Herbarium\",\"BotanicalGarden\"],\"active\":true,\"email\":[\"cecon@usac.edu.gt\"],\"phone\":[\"(502)23615450\"],\"homepage\":\"https://cecon-ccqqfar.usac.edu.gt/\",\"catalogUrls\":[\"https://www.gbif.org/publisher/1eb0746b-24c4-40b7-9ed7-3381428e9648\"],\"apiUrls\":[],\"institutionalGovernances\":[\"Academic\"],\"disciplines\":[\"Biological\"],\"latitude\":14.614495,\"longitude\":-90.513448,\"mailingAddress\":{\"key\":55992,\"address\":\"Avenida
+        La Reforma 0-63 Zona 10\",\"city\":\"Guatemala\",\"province\":\"Guatemala\",\"postalCode\":\"01010\",\"country\":\"GT\"},\"address\":{\"key\":55991,\"address\":\"Avenida
+        La Reforma 0-63 Zona 10\",\"city\":\"Guatemala\",\"province\":\"Guatemala\",\"postalCode\":\"01010\",\"country\":\"GT\"},\"additionalNames\":[],\"foundingDate\":1981,\"createdBy\":\"snibgt\",\"modifiedBy\":\"snibgt\",\"created\":\"2025-06-16T13:11:18.704+00:00\",\"modified\":\"2025-06-20T20:21:07.155+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0},{\"key\":\"473103ee-e47a-4656-8e08-d89be038999f\",\"code\":\"PSGCASH\",\"name\":\"PSG
+        College of Arts & Science\",\"types\":[],\"active\":true,\"email\":[\"aryasindu001@gmail.com\"],\"phone\":[],\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[],\"disciplines\":[],\"address\":{\"key\":55986,\"address\":\"PSG
+        College of Arts & Science, Civil Aerodrome Post\",\"city\":\"Coimbatore\",\"province\":\"Tamil
+        Nadu\",\"postalCode\":\"641014\",\"country\":\"IN\"},\"additionalNames\":[],\"createdBy\":\"mgrosjean\",\"modifiedBy\":\"mgrosjean\",\"created\":\"2025-06-13T07:36:09.626+00:00\",\"modified\":\"2025-06-13T07:36:09.626+00:00\",\"tags\":[],\"identifiers\":[{\"key\":442779,\"type\":\"IH_IRN\",\"identifier\":\"gbif:ih:irn:267351\",\"createdBy\":\"mgrosjean\",\"created\":\"2025-06-13T07:36:09.637+00:00\",\"primary\":false}],\"contactPersons\":[{\"key\":42806,\"firstName\":\"Arya\",\"lastName\":\"Sindhu\",\"position\":[\"Assistant
+        Professor\"],\"phone\":[\"8891017715\"],\"fax\":[],\"email\":[\"aryasindu001@gmail.com\"],\"address\":[\"Civil
+        aerodrome Post\"],\"city\":\"Coimbatore\",\"province\":\"Tamil Nadu\",\"country\":\"IN\",\"postalCode\":\"695011\",\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[{\"type\":\"IH_IRN\",\"id\":\"267377\"}],\"createdBy\":\"mgrosjean\",\"modifiedBy\":\"mgrosjean\",\"created\":\"2025-06-13T07:36:09.648+00:00\",\"modified\":\"2025-06-13T07:36:09.648+00:00\"}],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"IH\",\"masterSourceMetadata\":{\"key\":9834,\"source\":\"IH_IRN\",\"sourceId\":\"267351\",\"createdBy\":\"mgrosjean\",\"created\":\"2025-06-13T07:36:09.644+00:00\"},\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0},{\"key\":\"be1d3012-ca69-49c7-8bed-1c44a5decbec\",\"code\":\"WESTA\",\"name\":\"Agricultural
+        Research,Education and Extension Organization\",\"types\":[],\"active\":true,\"email\":[\"m.larti@areeo.ac.ir\"],\"phone\":[],\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[],\"disciplines\":[],\"address\":{\"key\":55983,\"city\":\"Urmia\",\"country\":\"IR\"},\"additionalNames\":[],\"createdBy\":\"mgrosjean\",\"modifiedBy\":\"mgrosjean\",\"created\":\"2025-06-13T07:35:14.310+00:00\",\"modified\":\"2025-06-13T07:35:14.310+00:00\",\"tags\":[],\"identifiers\":[{\"key\":442777,\"type\":\"IH_IRN\",\"identifier\":\"gbif:ih:irn:266693\",\"createdBy\":\"mgrosjean\",\"created\":\"2025-06-13T07:35:14.319+00:00\",\"primary\":false}],\"contactPersons\":[{\"key\":42804,\"firstName\":\"Mojgan\",\"lastName\":\"Larti\",\"position\":[\"Director
+        of Herbarium\"],\"phone\":[],\"fax\":[],\"email\":[\"m.larti49@gmail.com\"],\"address\":[],\"country\":\"IR\",\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[{\"type\":\"IH_IRN\",\"id\":\"266714\"}],\"createdBy\":\"mgrosjean\",\"modifiedBy\":\"mgrosjean\",\"created\":\"2025-06-13T07:35:14.329+00:00\",\"modified\":\"2025-06-13T07:35:14.329+00:00\"}],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"IH\",\"masterSourceMetadata\":{\"key\":9832,\"source\":\"IH_IRN\",\"sourceId\":\"266693\",\"createdBy\":\"mgrosjean\",\"created\":\"2025-06-13T07:35:14.325+00:00\"},\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0},{\"key\":\"f8b1c193-e357-45d6-809f-4cfb3e5072e7\",\"code\":\"KCH\",\"name\":\"University
+        of Ibn Tofa\xEFl\",\"types\":[],\"active\":true,\"email\":[\"douiraallal@hotmail.com\"],\"phone\":[\"(+212)
+        06 67 45 26 94\"],\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[],\"disciplines\":[],\"address\":{\"key\":55980,\"address\":\"Av.
+        de L'Universit\xE9\",\"city\":\"K\xE9nitra\",\"province\":\"K\xE9nitra\",\"postalCode\":\"14000\",\"country\":\"MA\"},\"additionalNames\":[],\"createdBy\":\"mgrosjean\",\"modifiedBy\":\"mgrosjean\",\"created\":\"2025-06-13T07:33:13.084+00:00\",\"modified\":\"2025-06-13T07:33:13.084+00:00\",\"tags\":[],\"identifiers\":[{\"key\":442775,\"type\":\"IH_IRN\",\"identifier\":\"gbif:ih:irn:267100\",\"createdBy\":\"mgrosjean\",\"created\":\"2025-06-13T07:33:13.097+00:00\",\"primary\":false}],\"contactPersons\":[{\"key\":42800,\"firstName\":\"Allal\",\"lastName\":\"Douira\",\"position\":[\"Professor\"],\"phone\":[],\"fax\":[],\"email\":[\"douiraallal@hotmail.com\"],\"address\":[],\"city\":\"k\xE9nitra\",\"province\":\"k\xE9nitra\",\"country\":\"MA\",\"postalCode\":\"14000\",\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[{\"type\":\"IH_IRN\",\"id\":\"267098\"}],\"createdBy\":\"mgrosjean\",\"modifiedBy\":\"mgrosjean\",\"created\":\"2025-06-13T07:33:13.114+00:00\",\"modified\":\"2025-06-13T07:33:13.114+00:00\"},{\"key\":42801,\"firstName\":\"Amina\",\"lastName\":\"Ouazzani
+        Touhami\",\"position\":[\"Professor\"],\"phone\":[],\"fax\":[],\"email\":[\"touhami01@hotmail.com\"],\"address\":[],\"province\":\"K\xE9nitra\",\"country\":\"MA\",\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[{\"type\":\"IH_IRN\",\"id\":\"267099\"}],\"createdBy\":\"mgrosjean\",\"modifiedBy\":\"mgrosjean\",\"created\":\"2025-06-13T07:33:13.114+00:00\",\"modified\":\"2025-06-13T07:33:13.114+00:00\"}],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"IH\",\"masterSourceMetadata\":{\"key\":9830,\"source\":\"IH_IRN\",\"sourceId\":\"267100\",\"createdBy\":\"mgrosjean\",\"created\":\"2025-06-13T07:33:13.108+00:00\"},\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0},{\"key\":\"d1de064a-3086-4af6-816d-70f3683fe50f\",\"code\":\"RIEM\",\"name\":\"Regional
+        Institute of Education, Mysuru\",\"types\":[],\"active\":true,\"email\":[\"principal@riemysore.ac.in\"],\"phone\":[],\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[],\"disciplines\":[],\"address\":{\"key\":55975,\"address\":\"Manasagangotri\",\"city\":\"Mysore\",\"province\":\"Karnataka\",\"postalCode\":\"570006\",\"country\":\"IN\"},\"additionalNames\":[],\"createdBy\":\"vijaybarve\",\"modifiedBy\":\"vijaybarve\",\"created\":\"2025-06-12T04:19:57.290+00:00\",\"modified\":\"2025-06-12T04:19:57.290+00:00\",\"tags\":[],\"identifiers\":[{\"key\":442700,\"type\":\"IH_IRN\",\"identifier\":\"gbif:ih:irn:268199\",\"createdBy\":\"vijaybarve\",\"created\":\"2025-06-12T04:19:57.302+00:00\",\"primary\":false}],\"contactPersons\":[{\"key\":42780,\"firstName\":\"Kanwaljeet\",\"lastName\":\"Singh\",\"position\":[\"Assistant
+        Professor in Botany\"],\"phone\":[],\"fax\":[],\"email\":[\"kanwaljeet@riemysore.ac.in\"],\"address\":[],\"country\":\"IN\",\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[{\"type\":\"IH_IRN\",\"id\":\"268215\"}],\"createdBy\":\"vijaybarve\",\"modifiedBy\":\"vijaybarve\",\"created\":\"2025-06-12T04:19:57.321+00:00\",\"modified\":\"2025-06-12T04:19:57.321+00:00\"},{\"key\":42781,\"firstName\":\"Vinod
+        Singh\",\"lastName\":\"Gour\",\"position\":[\"Associate Professor\"],\"phone\":[],\"fax\":[],\"email\":[\"vinodgour@riemysore.ac.in\"],\"address\":[],\"city\":\"Mysuru\",\"province\":\"Karnataka\",\"country\":\"IN\",\"postalCode\":\"570006\",\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[{\"type\":\"IH_IRN\",\"id\":\"268200\"}],\"createdBy\":\"vijaybarve\",\"modifiedBy\":\"vijaybarve\",\"created\":\"2025-06-12T04:19:57.321+00:00\",\"modified\":\"2025-06-12T04:19:57.321+00:00\"}],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"IH\",\"masterSourceMetadata\":{\"key\":9828,\"source\":\"IH_IRN\",\"sourceId\":\"268199\",\"createdBy\":\"vijaybarve\",\"created\":\"2025-06-12T04:19:57.309+00:00\"},\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0}]}"
+    headers:
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Cache-Control:
+      - public, max-age=3601
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 16 Jul 2025 09:10:34 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      Via:
+      - 1.1 varnish (Varnish/6.6)
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Varnish:
+      - '240615930'
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+version: 1

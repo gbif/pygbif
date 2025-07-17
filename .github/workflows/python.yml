@@ -7,21 +7,20 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ['3.7', '3.8', '3.9', '3.10', '3.11']
+        python-version: ['3.9', '3.10', '3.11']
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       GBIF_USER: ${{ secrets.GBIF_USER }}
       GBIF_PWD: ${{ secrets.GBIF_PWD }}
       GBIF_EMAIL: ${{ secrets.GBIF_EMAIL }}
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v3
+      uses: actions/setup-python@v4
       with:
         python-version: ${{ matrix.python-version }}
     - name: Install system dependencies
       run: |
-        sudo add-apt-repository ppa:ubuntugis/ppa
         sudo apt-get update
         sudo apt-get install -y libgeos-c1v5 libgeos-dev
     - name: Install dependencies
@@ -33,7 +32,7 @@ jobs:
     - name: Tests
       run: pytest
     - name: Test coverage
-      if: matrix.python-version == '3.9'
+      if: matrix.python-version == '3.10'
       run: |
         python3 -m "pytest" --cov-report=xml --cov=pygbif test/
         codecov

@@ -1,0 +1,299 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - python-requests/2.31.0,pygbif/0.6.5
+    method: GET
+    uri: https://api.gbif.org/v1/grscicoll/collection?institutionKey=6a6ac6c5-1b8a-48db-91a2-f8661274ff80&limit=10
+  response:
+    body:
+      string: "{\"offset\":0,\"limit\":10,\"endOfRecords\":false,\"count\":27,\"results\":[{\"key\":\"745ce2d0-a64b-4089-aae6-3712a39caa2a\",\"code\":\"RS\",\"name\":\"The
+        Scorpiones collection (RS) of the Mus\xE9um national d'Histoire naturelle
+        (MNHN - Paris)\",\"description\":\"This dataset is the databased part of the
+        Scorpiones from the terrestrial arthropods collections of the Mus\xE9um National
+        d&#39;Histoire Naturelle (Paris).\\n \\n\\t\\t\\t\\tThe MNHN scorpion collection
+        is one of the most important in the world, due to a long tradition of work
+        on this group at the museum. The collection began to be formed towards the
+        middle of the 19th century and still contains types of some species described
+        from this period by authors like Audouin, Savigny, Gervais and Gu\xE9rin-M\xE9n\xE9ville.
+        The collection was considerably augmented during the period 1880\u20121910
+        by E. Simon, who described numerous species either collected by himself or
+        received through his extensive network of correspondents. During the 20th
+        century scorpions were studied at the museum by Fage and by his successor,
+        M. Vachon. Since the 1970s, systematic activity on the collection has continued
+        intensively through the work of W. Louren\xE7o, who was a student of Vachon.
+        As a result, the collection is both large and rich, containing an unusually
+        high proportion of type material. In addition to material studied by authors
+        working at the museum, a significant part has come from outside sources, either
+        through gift or exchange. Thus it also contains material studied by authorities
+        such as R.I. Pocock, T. Thorell, K. Kraepelin, W.D. Sissom and V. Fet. The
+        scorpion collection is worldwide in scope, but the best represented regions
+        are tropical South America, North Africa, the Middle East, Western Africa,
+        Madagascar and Southeast Asia. It contains over 9000 lots, including about
+        700 types, preserved in 80 % alcohol and stored in the museum\u2019s Zooth\xE8que.
+        The collections are made available to external researchers, either through
+        loans or visits, at the discretion of the curator. In cases where neither
+        is feasible, photographic documentation of specimens may be provided on request.\",\"contentTypes\":[],\"active\":true,\"personalCollection\":false,\"email\":[],\"phone\":[],\"catalogUrls\":[],\"apiUrls\":[],\"preservationTypes\":[],\"institutionKey\":\"6a6ac6c5-1b8a-48db-91a2-f8661274ff80\",\"mailingAddress\":{\"key\":43397},\"address\":{\"key\":43396,\"address\":\"Mus\xE9um
+        national d'Histoire naturelle 57, rue Cuvier\",\"city\":\"Paris\",\"postalCode\":\"75005\",\"country\":\"FR\"},\"createdBy\":\"mgrosjean\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2022-03-25T12:36:16.984+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\",\"tags\":[],\"identifiers\":[{\"key\":297946,\"type\":\"DOI\",\"identifier\":\"10.15468/podyc0\",\"createdBy\":\"mgrosjean\",\"created\":\"2022-03-25T12:36:16.984+00:00\",\"primary\":false}],\"contactPersons\":[{\"key\":38097,\"lastName\":\"MNHN\",\"position\":[\"Provider\"],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[],\"primary\":true,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"},{\"key\":38098,\"firstName\":\"Mark\",\"lastName\":\"Judson\",\"position\":[],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[],\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"},{\"key\":38099,\"firstName\":\"\xC9lise-Anne\",\"lastName\":\"Leguin\",\"position\":[],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[],\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"},{\"key\":38100,\"firstName\":\"Laurent\",\"lastName\":\"Albenga\",\"position\":[\"Correspondant\"],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[],\"primary\":true,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"}],\"machineTags\":[],\"taxonomicCoverage\":\"\",\"geographicCoverage\":\"\",\"incorporatedCollections\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[{\"key\":50,\"datasetKey\":\"2f23ac81-674e-4e4e-982f-73f49ccdb9df\",\"createdBy\":\"mgrosjean\",\"created\":\"2022-03-25T12:36:17.410+00:00\"}],\"masterSource\":\"GBIF_REGISTRY\",\"masterSourceMetadata\":{\"key\":8586,\"source\":\"DATASET\",\"sourceId\":\"2f23ac81-674e-4e4e-982f-73f49ccdb9df\",\"createdBy\":\"mgrosjean\",\"created\":\"2022-03-25T12:36:16.984+00:00\"},\"displayOnNHCPortal\":true,\"occurrenceCount\":947,\"typeSpecimenCount\":691,\"institutionName\":\"MNHN
+        - Museum national d'Histoire naturelle\",\"institutionCode\":\"MNHN\"},{\"key\":\"6d32011c-a440-483d-8daa-b5ae2aadb08e\",\"code\":\"EA\",\"name\":\"The
+        Apterygota collection (EA) of the Mus\xE9um national d'Histoire naturelle
+        (MNHN - Paris)\",\"description\":\"This dataset is the databased part of the
+        Apterygota part of the entomological collections of the Mus\xE9um National
+        d&#39;Histoire Naturelle (Paris).\\n\\t\\t\\t\\t\\n\\t\\t\\t\\tThe Apterygota
+        (primarily wingless Hexapoda) collection includes the Collembola, Protura,
+        Diplura, Zygentoma and Archeognatha (&#61;Microcoryphia) collections. The
+        two later groups were formerly known as the Thysanura. Several hundred thousand
+        specimens are stored in the collections with over 50 000 microscopical slides
+        and specimens in alcohol jars. There are about a thousand type specimens.
+        The Apterygota collectionhas been built on merging several legacy and working
+        collections from Denis, Delamare-Deboutteville, Thibaud, Betsch, Massoud,
+        Najt, Deharveng, Cassagnau and D&#39;Haese among others. It includes specimens
+        from all over the planet, including Antarctica. The Collembola collection
+        is one of the biggest worldwide.\",\"contentTypes\":[],\"active\":true,\"personalCollection\":false,\"email\":[],\"phone\":[],\"catalogUrls\":[],\"apiUrls\":[],\"preservationTypes\":[],\"institutionKey\":\"6a6ac6c5-1b8a-48db-91a2-f8661274ff80\",\"mailingAddress\":{\"key\":43398},\"address\":{\"key\":43395,\"address\":\"Mus\xE9um
+        national d'Histoire naturelle 57, rue Cuvier\",\"city\":\"Paris\",\"postalCode\":\"75005\",\"country\":\"FR\"},\"createdBy\":\"mgrosjean\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2022-03-25T12:36:16.620+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\",\"tags\":[],\"identifiers\":[{\"key\":297945,\"type\":\"DOI\",\"identifier\":\"10.15468/qmarez\",\"createdBy\":\"mgrosjean\",\"created\":\"2022-03-25T12:36:16.620+00:00\",\"primary\":false}],\"contactPersons\":[{\"key\":38126,\"lastName\":\"MNHN\",\"position\":[\"Provider\"],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[],\"primary\":true,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"},{\"key\":38127,\"firstName\":\"Cyrille\",\"lastName\":\"D\u2019Haese\",\"position\":[],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[],\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"},{\"key\":38128,\"firstName\":\"Laurent\",\"lastName\":\"Albenga\",\"position\":[\"Correspondant\"],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[],\"primary\":true,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"}],\"machineTags\":[],\"taxonomicCoverage\":\"\",\"geographicCoverage\":\"\",\"incorporatedCollections\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[{\"key\":49,\"datasetKey\":\"90e739fc-3ac2-4f24-b019-f89b4e7b8d6f\",\"createdBy\":\"mgrosjean\",\"created\":\"2022-03-25T12:36:16.880+00:00\"}],\"masterSource\":\"GBIF_REGISTRY\",\"masterSourceMetadata\":{\"key\":8585,\"source\":\"DATASET\",\"sourceId\":\"90e739fc-3ac2-4f24-b019-f89b4e7b8d6f\",\"createdBy\":\"mgrosjean\",\"created\":\"2022-03-25T12:36:16.620+00:00\"},\"displayOnNHCPortal\":true,\"occurrenceCount\":1440,\"typeSpecimenCount\":0,\"institutionName\":\"MNHN
+        - Museum national d'Histoire naturelle\",\"institutionCode\":\"MNHN\"},{\"key\":\"d13fc182-11a9-4a6c-92fd-3da6eb43f5d9\",\"code\":\"ZA\",\"name\":\"The
+        reptiles, amphibians and fishes collection (ZA) in the Comparative Anatomy
+        Collection of the Mus\xE9um national d'Histoire naturelle (MNHN - Paris)\",\"description\":\"The
+        collection of mammals of the Mus\xE9um national d\u2019Histoire naturelle
+        (MNHN) started during the XVIIIth century. The collection consists of skeletons
+        (mounted or not), skins (mounted or not), casts, specimens or organs in fluid
+        (alcohol or formalin), and tissues, belonging to different classes and orders.\\nThe
+        database ZAC (acronym for \u201CZoology, Comparative anatomy\u201D) exists
+        since 2010. It is the result of the merger of MAMMALIA (former collection
+        of \u201CZoologie, Mammif\xE8res et Oiseaux\u201D) and ANATOMIC (former collection
+        of \u201CAnatomie compar\xE9e\u201D). For many groups, computerization is
+        at a preliminary stage, and most entries have not yet been proofed for errors
+        or verified against the collections. Acronym ZM is used for Mammals, ZO for
+        birds and ZA is used for the other classes present in the collection: Reptiles,
+        Amphibians and Fishes.\\nMore detailed information can be obtained by writing
+        to the curators and collection managers.\\nThe database will help you prepare
+        loan requests or visits to the collection. For any request contact: http://colhelper.mnhn.fr/\",\"contentTypes\":[],\"active\":true,\"personalCollection\":false,\"email\":[],\"phone\":[],\"catalogUrls\":[],\"apiUrls\":[],\"preservationTypes\":[],\"institutionKey\":\"6a6ac6c5-1b8a-48db-91a2-f8661274ff80\",\"mailingAddress\":{\"key\":43399},\"address\":{\"key\":43394,\"address\":\"Mus\xE9um
+        national d'Histoire naturelle 57, rue Cuvier\",\"city\":\"Paris\",\"postalCode\":\"75005\",\"country\":\"FR\"},\"createdBy\":\"mgrosjean\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2022-03-25T12:36:16.073+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\",\"tags\":[],\"identifiers\":[{\"key\":297944,\"type\":\"DOI\",\"identifier\":\"10.15468/07xias\",\"createdBy\":\"mgrosjean\",\"created\":\"2022-03-25T12:36:16.073+00:00\",\"primary\":false}],\"contactPersons\":[{\"key\":38029,\"lastName\":\"MNHN\",\"position\":[\"Provider\"],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[],\"primary\":true,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"},{\"key\":38030,\"firstName\":\"C\xE9cile\",\"lastName\":\"Callou\",\"position\":[],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[],\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"},{\"key\":38031,\"firstName\":\"Salvador\",\"lastName\":\"Bailon\",\"position\":[],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[],\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"},{\"key\":38032,\"firstName\":\"Philippe\",\"lastName\":\"B\xE9arez\",\"position\":[],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[],\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"},{\"key\":38033,\"firstName\":\"C\xE9cile\",\"lastName\":\"Callou\",\"position\":[\"Correspondant\"],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[],\"primary\":true,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"}],\"machineTags\":[],\"taxonomicCoverage\":\"\",\"geographicCoverage\":\"\",\"incorporatedCollections\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[{\"key\":48,\"datasetKey\":\"9ffdd244-3e59-40a8-b064-cfdd84d40231\",\"createdBy\":\"mgrosjean\",\"created\":\"2022-03-25T12:36:16.520+00:00\"}],\"masterSource\":\"GBIF_REGISTRY\",\"masterSourceMetadata\":{\"key\":8584,\"source\":\"DATASET\",\"sourceId\":\"9ffdd244-3e59-40a8-b064-cfdd84d40231\",\"createdBy\":\"mgrosjean\",\"created\":\"2022-03-25T12:36:16.073+00:00\"},\"displayOnNHCPortal\":true,\"occurrenceCount\":1842,\"typeSpecimenCount\":3,\"institutionName\":\"MNHN
+        - Museum national d'Histoire naturelle\",\"institutionCode\":\"MNHN\"},{\"key\":\"c03f64bb-aa46-44dc-990e-1716b6175be8\",\"code\":\"AR\",\"name\":\"The
+        Araneae collection (AR) of the Mus\xE9um national d'Histoire naturelle (MNHN
+        - Paris)\",\"description\":\"This dataset is the databased part of the Araneae
+        from the terrestrial arthopods collections of the Mus\xE9um national d&#39;Histoire
+        naturelle (Paris).\\n\\t\\t\\t\\t\\n\\t\\t\\t\\tThe spider collection of the
+        Museum is amongst the most important in the world (along with those of London
+        and New York). The specimens come from around the world. They are mainly preserved
+        in 75% alcohol in glass jars with some preparations on microscope slides.
+        All specimens whether or not the types are located in two places: a large
+        general reserve of the Museum, the zooth\xC3\xA8que, and a smaller reserve
+        in a research building. About 26,000 species of spiders, some 12,000 types
+        (mixed in the entire collection) are represented in the Museum. This represents
+        a number of individuals estimated to be approximately 2 million. Started in
+        the 1860s by Eug\xC3\xA8ne SIMON, the collection has grown significantly over
+        the years with substantial collections in number of specimens (including a
+        large part of the material remaining to be studied and identified) from other
+        arachnologists or naturalists, among them Bonnet, Denis, Dresco Legendre or
+        Strand ... This collection has a predominantly scientific vocation. It grows
+        with some specimens to several hundred per year with donations mainly from
+        current collections. The main domains of research activity related to this
+        collection are systematic, with two major axes, taxonomy and biosystematics,
+        but also applications in the management of biodiversity and the environment
+        as well as expertise. The loan service of the collection is of great importance
+        each year along with hosting of visitors and sending material. Databasing
+        began in the 2000s. Are currently integrated into the general database of
+        the Museum some 3,000 lots spiders. The sources of information related to
+        this collection are also based on manual files easily available to visitors
+        and on a library with historical reference books as well as most recent reprints.\",\"contentTypes\":[],\"active\":true,\"personalCollection\":false,\"email\":[],\"phone\":[],\"catalogUrls\":[],\"apiUrls\":[],\"preservationTypes\":[],\"institutionKey\":\"6a6ac6c5-1b8a-48db-91a2-f8661274ff80\",\"mailingAddress\":{\"key\":43400},\"address\":{\"key\":43393,\"address\":\"Mus\xE9um
+        national d'Histoire naturelle 57, rue Cuvier\",\"city\":\"Paris\",\"postalCode\":\"75005\",\"country\":\"FR\"},\"createdBy\":\"mgrosjean\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2022-03-25T12:36:15.634+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\",\"tags\":[],\"identifiers\":[{\"key\":297943,\"type\":\"DOI\",\"identifier\":\"10.15468/9g8h33\",\"createdBy\":\"mgrosjean\",\"created\":\"2022-03-25T12:36:15.634+00:00\",\"primary\":false}],\"contactPersons\":[{\"key\":38112,\"lastName\":\"MNHN\",\"position\":[\"Provider\"],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[],\"primary\":true,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"},{\"key\":38113,\"firstName\":\"Christine\",\"lastName\":\"Rollard\",\"position\":[],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[],\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"},{\"key\":38114,\"firstName\":\"\xC9lise-Anne\",\"lastName\":\"Leguin\",\"position\":[],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[],\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"},{\"key\":38115,\"firstName\":\"Laurent\",\"lastName\":\"Albenga\",\"position\":[\"Correspondant\"],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[],\"primary\":true,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"}],\"machineTags\":[],\"taxonomicCoverage\":\"\",\"geographicCoverage\":\"\",\"incorporatedCollections\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[{\"key\":47,\"datasetKey\":\"614122e1-7e55-4f0f-a616-a4c454664f10\",\"createdBy\":\"mgrosjean\",\"created\":\"2022-03-25T12:36:15.972+00:00\"}],\"masterSource\":\"GBIF_REGISTRY\",\"masterSourceMetadata\":{\"key\":8583,\"source\":\"DATASET\",\"sourceId\":\"614122e1-7e55-4f0f-a616-a4c454664f10\",\"createdBy\":\"mgrosjean\",\"created\":\"2022-03-25T12:36:15.634+00:00\"},\"displayOnNHCPortal\":true,\"occurrenceCount\":4247,\"typeSpecimenCount\":1347,\"institutionName\":\"MNHN
+        - Museum national d'Histoire naturelle\",\"institutionCode\":\"MNHN\"},{\"key\":\"e152b2c7-0188-4412-8b5d-af65b19ae9ed\",\"code\":\"IT\",\"name\":\"The
+        tunicates collection (IT) of the Mus\xE9um national d'Histoire naturelle (MNHN
+        - Paris)\",\"description\":\"The database lists all the specimens or lots
+        (9 000) of Tunicates housed in the Paris Museum. \\nIt is the largest or second
+        largest tunicate collection in the World, based on the number of specimens
+        and the number of types.\\nAll the specimens are identified to species. The
+        collection is principally the result of the active research of two people
+        \\n(Claude Monniot &amp; Francoise Monniot) over the course of forty years.\",\"contentTypes\":[],\"active\":true,\"personalCollection\":false,\"email\":[],\"phone\":[],\"catalogUrls\":[],\"apiUrls\":[],\"preservationTypes\":[],\"institutionKey\":\"6a6ac6c5-1b8a-48db-91a2-f8661274ff80\",\"mailingAddress\":{\"key\":43401},\"address\":{\"key\":43392,\"address\":\"Mus\xE9um
+        national d'Histoire naturelle 57, rue Cuvier\",\"city\":\"Paris\",\"postalCode\":\"75005\",\"country\":\"FR\"},\"createdBy\":\"mgrosjean\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2022-03-25T12:36:15.138+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\",\"tags\":[],\"identifiers\":[{\"key\":297942,\"type\":\"DOI\",\"identifier\":\"10.15468/n9vogi\",\"createdBy\":\"mgrosjean\",\"created\":\"2022-03-25T12:36:15.138+00:00\",\"primary\":false}],\"contactPersons\":[{\"key\":38129,\"lastName\":\"MNHN\",\"position\":[\"Provider\"],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[],\"primary\":true,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"},{\"key\":38130,\"firstName\":\"Fran\xE7oise\",\"lastName\":\"Monniot\",\"position\":[],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[],\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"},{\"key\":38131,\"firstName\":\"Claude\",\"lastName\":\"Monniot\",\"position\":[],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[],\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"},{\"key\":38132,\"firstName\":\"Nadia\",\"lastName\":\"Am\xE9ziane\",\"position\":[],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[],\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"},{\"key\":38133,\"firstName\":\"Pierre\",\"lastName\":\"Lozouet\",\"position\":[],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[],\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"},{\"key\":38134,\"firstName\":\"Pierre\",\"lastName\":\"Lozouet\",\"position\":[\"Correspondant\"],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[],\"primary\":true,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"}],\"machineTags\":[],\"taxonomicCoverage\":\"\",\"geographicCoverage\":\"\",\"incorporatedCollections\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[{\"key\":46,\"datasetKey\":\"4b6f0569-9925-4a42-84a0-7d4ff5d13593\",\"createdBy\":\"mgrosjean\",\"created\":\"2022-03-25T12:36:15.530+00:00\"}],\"masterSource\":\"GBIF_REGISTRY\",\"masterSourceMetadata\":{\"key\":8582,\"source\":\"DATASET\",\"sourceId\":\"4b6f0569-9925-4a42-84a0-7d4ff5d13593\",\"createdBy\":\"mgrosjean\",\"created\":\"2022-03-25T12:36:15.138+00:00\"},\"displayOnNHCPortal\":true,\"occurrenceCount\":9155,\"typeSpecimenCount\":951,\"institutionName\":\"MNHN
+        - Museum national d'Histoire naturelle\",\"institutionCode\":\"MNHN\"},{\"key\":\"2e6c6f00-d50d-4bc8-8455-2aff335bb3ef\",\"code\":\"MY\",\"name\":\"The
+        Myriapoda & Onychophora collection (MY) of the Mus\xE9um national d'Histoire
+        naturelle (MNHN - Paris)\",\"description\":\"Established in the second half
+        of the 19th century, the MNHN\u2019s collections of myriapods and onychophorans
+        are still stored as one collection, mostly for historical and practical reasons.\\n\\nThe
+        myriapods section is a major collection for myriapodology worldwide, all the
+        groups it includes, and its history. The material comes from all around the
+        world and belongs to the classes Pauropoda (2 extant orders), Symphyla, Chilopoda
+        (5 extant orders) and Diplopoda (16 extant orders), collected from most of
+        the terrestrial ecosystems. About 5000 species of myriapods are represented
+        in the collections, including a high number of historical samples. The myriapods
+        collection comprises 300 000 to 400 000 specimens. Nearly half of it constitutes
+        the reference collection, the other half, which includes a potentially important
+        amount of taxa yet unknown to science, is awaiting further studies. The reference
+        collection gathers about 25 000 to 30 000 batches, each containing from 1
+        to more than 300 specimens, stored into 4639 jars. The reference collection
+        includes about 3 000 to 3 500 batches containing altogether 15 000 to 20 000
+        type specimens.\\nTo date, the MNHN-MY dataset has gathered 9 795 batches
+        of myriapods, consisting of 63 617 specimens, which represents 33% to 40%
+        of the reference collection.\\n\\nThe Onychophorans collection, contains invaluable
+        historical material, such as type specimens of species described by Bouvier
+        in the 1900s. The MNHN\u2019s collection of Onychophorans (commonly known
+        as velvet worms) is one of the world\u2019s most important for this group.
+        Although only a small phylum, it is of key importance in several aspects within
+        the Metazoa, particularly regarding phylogenetic relationships between arthropods
+        and other invertebrates (Oliveira &amp; al. 2012). The collection boasts almost
+        a hundred species, represented by 202 batches containing 279 specimens and
+        43 dissections. This collection is stored into 67 jars. It includes 56 batches
+        containing altogether 73 nomenclatural types (plus 2 dissections of types).\\nThis
+        part of the collection is fully databased and included in the MNHN-MY dataset,
+        and has been since used for studies on the group (Oliveira &amp; al. 2012).\",\"contentTypes\":[],\"active\":true,\"personalCollection\":false,\"email\":[],\"phone\":[],\"catalogUrls\":[],\"apiUrls\":[],\"preservationTypes\":[\"SampleFluidPreserved\"],\"institutionKey\":\"6a6ac6c5-1b8a-48db-91a2-f8661274ff80\",\"mailingAddress\":{\"key\":43402},\"address\":{\"key\":43391,\"address\":\"Mus\xE9um
+        national d'Histoire naturelle 57, rue Cuvier\",\"city\":\"Paris\",\"postalCode\":\"75005\",\"country\":\"FR\"},\"createdBy\":\"mgrosjean\",\"modifiedBy\":\"gbif-collections\",\"created\":\"2022-03-25T12:36:14.621+00:00\",\"modified\":\"2024-05-23T13:15:31.533+00:00\",\"tags\":[],\"identifiers\":[{\"key\":297941,\"type\":\"DOI\",\"identifier\":\"10.15468/eq1kml\",\"createdBy\":\"mgrosjean\",\"created\":\"2022-03-25T12:36:14.621+00:00\",\"primary\":false}],\"contactPersons\":[{\"key\":38140,\"firstName\":\"Jean-Paul\",\"lastName\":\"Mauri\xE8s\",\"position\":[\"Provider\"],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[\"CP
+        53, 61 rue Buffon\"],\"city\":\"Paris\",\"country\":\"FR\",\"postalCode\":\"75231\",\"primary\":true,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"},{\"key\":38141,\"firstName\":\"Laurent\",\"lastName\":\"Albenga\",\"position\":[\"data
+        manager\"],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[\"CP 49/50, 45
+        rue Buffon\"],\"city\":\"Paris\",\"country\":\"FR\",\"postalCode\":\"75231\",\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"},{\"key\":38142,\"firstName\":\"Gwena\xEBl\",\"lastName\":\"Le
+        Bras\",\"position\":[\"data manager\"],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[\"CP
+        49/50, 45 rue Buffon\"],\"city\":\"Paris\",\"country\":\"FR\",\"postalCode\":\"75231\",\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"},{\"key\":38143,\"firstName\":\"Jean-Paul\",\"lastName\":\"Mauri\xE8s\",\"position\":[\"former
+        curator\"],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[\"CP 53, 61 rue
+        Buffon\"],\"city\":\"Paris\",\"country\":\"FR\",\"postalCode\":\"75231\",\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"},{\"key\":38144,\"firstName\":\"Jean-Jacques\",\"lastName\":\"Geoffroy\",\"position\":[\"Curator\"],\"phone\":[],\"fax\":[],\"email\":[\"geoffroy@mnhn.fr\"],\"address\":[\"4
+        avenue du Petit-Ch\xE2teau\"],\"city\":\"Brunoy\",\"postalCode\":\"F-91800\",\"primary\":true,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"}],\"machineTags\":[],\"taxonomicCoverage\":\"As
+        depicted in Figure 1 and Figure 2, the dataset reflects the scientific activities
+        of the researchers doing the digitization. Consequently, even though the collection
+        taxonomically covers the whole myriapods and onychophorans, the dataset actually
+        contains a majority of millipedes, and the totality of the onychophorans.
+        As a result of this work in the last decades, these two collections are also
+        more scattered than the others, with less specimens per batch, as depicted
+        in Figure 3. The taxonomy used in this dataset reflects the one used in the
+        collection. Similarly to most of the big historical collections it is in many
+        ways outdated, and would be nearly impossible to update (Sober\xF3n & al.
+        2002, Gaston & al. 1992, Alroy 2002). Cross-checking it with taxonomical datasets
+        such as the dataset NCBI taxonomy is then an important step while using it
+        (ECAT development publisher).\\nThe Onychophorans collection contains 48 species
+        plus 7 subspecies within 15 genera of the two actual families: Animalia, animalArthropoda,
+        arthropodOnychophora, velvet wormChilopoda, centipedeDiplopoda, millipedePauropodaSymphylaUdeonychophoraEuonychophoraGeophilomorphaLithobiomorphaScolopendromorphaScutigeromorphaCallipodidaChordeumatidaGlomeridaGlomeridesmidaJulidaPlatydesmidaPolydesmidaPolyxenidaPolyzoniidaSiphonophoridaSphaerotheriidaSpirobolidaSpirostreptidaStemmiulidaTetramerocerata\",\"geographicCoverage\":\"To
+        date, no batches from this dataset have been georeferenced. Contemporary administrative
+        countries, corresponding to where the specimens have been sampled, have however
+        been included when possible. Although imperfect for biodiversity studies,
+        an image of the collection events repartition using the ISO 3166 (ISO 2014),
+        can be given. The two main parts of the collection have a different spatial
+        repartition, due in part to the distribution of the taxa represented, but
+        also to a different history.\\nThe myriapod dataset is a collection for \u201Cmetropolitan
+        France and the world\u201D. Indeed, ca. 56.80% of the batches were collected
+        in metropolitan France, but these batches represent ca. 72.64% of the total
+        number of specimens in the collection. This can be explained by the fact that
+        the number of specimens per batch collected in metropolitan France is significantly
+        higher than the average number of specimens per batch for the rest of the
+        world, including the French overseas territories. Even though the metropolitan
+        French collection has been extensively studied (and consequently its batches
+        have been split numerous times), they are still, on average, larger than the
+        batches coming from the rest of the world. The distribution worldwide, as
+        depicted in Figure 4 is not homogeneous. Both characteristics of the dataset,
+        as well as the taxonomic coverage (see above) are the main focus of J.-M.
+        Demange and J.-P. Mauri\xE8s\u2019 research work. The studies of H.W. Brolemann
+        over the fauna from Algeria, Brazil and the USA are clearly visible on Figure
+        5 (Brolemann 1896b, 1897, 1909, 1931, MyriaLit).\\nAlthough it is highly probable
+        that the amount of specimens from metropolitan France is over-represented
+        in the dataset, compared to the whole physical collection, it is still the
+        first geographical area of origin for the specimens of MNHN-MY. The same phenomenon
+        is observed when interpreting the average number of specimen per batch, as
+        depicted on Figure 6. With the exception of a few countries, the average number
+        of specimen per batch is relatively low (average of 4.049 specimens per batch
+        for the non-French specimens). Also, in the distribution of the type batches,
+        France tends to be still over-represented in the dataset, though less drastically
+        (see Figure 7). We suspect this is due to the fact that even though France
+        is not a \u201Chot spot\u201D for myriapod biodiversity, it has been and still
+        is an intensively studied area.\\nIn contrast with the myriapods, the onychophorans
+        specimens come from different locations outside France, reflecting the ecology
+        and distribution of the group. One could be surprised to notice in Figure
+        8 the importance of South Africa as geographical origin of the specimens in
+        the collection. These specimens mainly come from institutional exchanges,
+        driven by L.E. Bouvier between the MNHN and other institutes, such as the
+        British Museum. The Figure 9 reflects the extensive and general work of description
+        L.E. Bouvier made over these few specimens.\",\"incorporatedCollections\":[\"Myriapoda
+        & Onychophora collection (MY) of the Mus\xE9um national d'Histoire naturelle
+        (MNHN - Paris)\"],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[{\"key\":45,\"datasetKey\":\"3287044c-8c48-4ad6-81d4-4908071bc8db\",\"createdBy\":\"mgrosjean\",\"created\":\"2022-03-25T12:36:15.035+00:00\"}],\"masterSource\":\"GBIF_REGISTRY\",\"masterSourceMetadata\":{\"key\":8581,\"source\":\"DATASET\",\"sourceId\":\"3287044c-8c48-4ad6-81d4-4908071bc8db\",\"createdBy\":\"mgrosjean\",\"created\":\"2022-03-25T12:36:14.621+00:00\"},\"displayOnNHCPortal\":true,\"occurrenceCount\":10006,\"typeSpecimenCount\":1093,\"institutionName\":\"MNHN
+        - Museum national d'Histoire naturelle\",\"institutionCode\":\"MNHN\"},{\"key\":\"d5c039b5-202c-4ce3-abff-c95b8bbd9205\",\"code\":\"ED\",\"name\":\"The
+        Diptera collection (ED) of the Mus\xE9um national d'Histoire naturelle (MNHN
+        - Paris)\",\"description\":\"This dataset is the databased part of the Diptera
+        from the entomological collections of the Mus\xE9um National d&#39;Histoire
+        Naturelle (Paris).\\n\\t\\t\\t\\t\\n\\t\\t\\t\\tThe Diptera collection of
+        MNHN is divided into a general collection, classified into families, and separate
+        nominal collections. The heart of the collection is composed of two historical
+        nominal collections: Meigen and Macquart, both dating from the nineteenth
+        century;  they contain about 5,000 holotypes. In total the collection contains
+        2.5 million specimens, 8000 holotypes and about 30,000 species or 20% of the
+        described Diptera. All biogeographic regions are represented.\",\"contentTypes\":[],\"active\":true,\"personalCollection\":false,\"email\":[],\"phone\":[],\"catalogUrls\":[],\"apiUrls\":[],\"preservationTypes\":[],\"institutionKey\":\"6a6ac6c5-1b8a-48db-91a2-f8661274ff80\",\"mailingAddress\":{\"key\":43403},\"address\":{\"key\":43390,\"address\":\"Mus\xE9um
+        national d'Histoire naturelle 57, rue Cuvier\",\"city\":\"Paris\",\"postalCode\":\"75005\",\"country\":\"FR\"},\"createdBy\":\"mgrosjean\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2022-03-25T12:36:14.036+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\",\"tags\":[],\"identifiers\":[{\"key\":297940,\"type\":\"DOI\",\"identifier\":\"10.15468/becor5\",\"createdBy\":\"mgrosjean\",\"created\":\"2022-03-25T12:36:14.036+00:00\",\"primary\":false}],\"contactPersons\":[{\"key\":38068,\"lastName\":\"MNHN\",\"position\":[\"Provider\"],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[],\"primary\":true,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"},{\"key\":38069,\"firstName\":\"Christophe\",\"lastName\":\"Daugeron\",\"position\":[],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[],\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"},{\"key\":38070,\"firstName\":\"Vincent\",\"lastName\":\"Debat\",\"position\":[],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[],\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"},{\"key\":38071,\"firstName\":\"Emmanuel\",\"lastName\":\"Delfosse\",\"position\":[],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[],\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"},{\"key\":38072,\"firstName\":\"S\xE9bastien\",\"lastName\":\"Verbecq\",\"position\":[],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[],\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"},{\"key\":38073,\"firstName\":\"Laurent\",\"lastName\":\"Albenga\",\"position\":[\"Correspondant\"],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[],\"primary\":true,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"}],\"machineTags\":[],\"taxonomicCoverage\":\"\",\"geographicCoverage\":\"\",\"incorporatedCollections\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[{\"key\":44,\"datasetKey\":\"5d6d5aa7-2df9-4a3d-9a96-5fc7a988ab5f\",\"createdBy\":\"mgrosjean\",\"created\":\"2022-03-25T12:36:14.521+00:00\"}],\"masterSource\":\"GBIF_REGISTRY\",\"masterSourceMetadata\":{\"key\":8580,\"source\":\"DATASET\",\"sourceId\":\"5d6d5aa7-2df9-4a3d-9a96-5fc7a988ab5f\",\"createdBy\":\"mgrosjean\",\"created\":\"2022-03-25T12:36:14.036+00:00\"},\"displayOnNHCPortal\":true,\"occurrenceCount\":10697,\"typeSpecimenCount\":3373,\"institutionName\":\"MNHN
+        - Museum national d'Histoire naturelle\",\"institutionCode\":\"MNHN\"},{\"key\":\"492ed1b4-4583-41e6-b791-5caf3bed85b9\",\"code\":\"EY\",\"name\":\"The
+        Hymenoptera collection (EY) of the Mus\xE9um national d'Histoire naturelle
+        (MNHN - Paris)\",\"description\":\"This dataset is the databased part of the
+        Hymenoptera from the entomological collections of the Mus\xE9um National d&#39;Histoire
+        Naturelle (Paris).\\n\\t\\t\\t\\t\\n\\t\\t\\t\\tThe Hymenoptera collection
+        holds about 1 million specimens, out of which 6000 are types (the oldest being
+        from Fabricius and Latreille) ; 95 % are stored pinned, the other being either
+        in alcool (mostly Formicidae), or in microscopical preparations. The collection
+        consists of 9 sections: Apoidea apiformes (21 % of the specimens), Apoidea
+        spheciformes (8 %), Vespoidea (22 %), Formicidae (10 %), Chrysidoidea (2 %),
+        Ichneumonoidea (20 %), Chalcidoidea (6 %), others Parasitica (4 %) and Symphytes
+        (7 %). The collection also includes 30 authors\u2019 collections (notably
+        those of Benoist, Berthoumieu, Bosc, Brull\xE9, Dufour, Boyer de Fonscolombe,
+        Ferton, de Gaulle, Giraud, Girault, Granger, Lepeletier, Lucas, P\xE9rez,
+        Pic, Saussure, Seyrig, Sichel, Vachal\u2026). The main represented geographical
+        area are the Palearctic and Afrotropic zones (especially Madagascar with Seyrig\u2019s
+        collection), and for some groups the Nearctic.\",\"contentTypes\":[],\"active\":true,\"personalCollection\":false,\"email\":[],\"phone\":[],\"catalogUrls\":[],\"apiUrls\":[],\"preservationTypes\":[],\"institutionKey\":\"6a6ac6c5-1b8a-48db-91a2-f8661274ff80\",\"mailingAddress\":{\"key\":43404},\"address\":{\"key\":43389,\"address\":\"Mus\xE9um
+        national d'Histoire naturelle 57, rue Cuvier\",\"city\":\"Paris\",\"postalCode\":\"75005\",\"country\":\"FR\"},\"createdBy\":\"mgrosjean\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2022-03-25T12:36:13.554+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\",\"tags\":[],\"identifiers\":[{\"key\":297939,\"type\":\"DOI\",\"identifier\":\"10.15468/r3eez6\",\"createdBy\":\"mgrosjean\",\"created\":\"2022-03-25T12:36:13.554+00:00\",\"primary\":false}],\"contactPersons\":[{\"key\":38051,\"lastName\":\"MNHN\",\"position\":[\"Provider\"],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[],\"primary\":true,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"},{\"key\":38052,\"firstName\":\"Claire\",\"lastName\":\"Villemant\",\"position\":[],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[],\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"},{\"key\":38053,\"firstName\":\"Agni\xE8le\",\"lastName\":\"Touret-Alby\",\"position\":[],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[],\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"},{\"key\":38054,\"firstName\":\"Quentin\",\"lastName\":\"Rome\",\"position\":[],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[],\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"},{\"key\":38055,\"firstName\":\"Franck\",\"lastName\":\"Muller\",\"position\":[],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[],\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"},{\"key\":38056,\"firstName\":\"Laurent\",\"lastName\":\"Albenga\",\"position\":[\"Correspondant\"],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[],\"primary\":true,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"}],\"machineTags\":[],\"taxonomicCoverage\":\"\",\"geographicCoverage\":\"\",\"incorporatedCollections\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[{\"key\":43,\"datasetKey\":\"2cc23bac-e94b-414f-95ab-cc838c03f765\",\"createdBy\":\"mgrosjean\",\"created\":\"2022-03-25T12:36:13.928+00:00\"}],\"masterSource\":\"GBIF_REGISTRY\",\"masterSourceMetadata\":{\"key\":8579,\"source\":\"DATASET\",\"sourceId\":\"2cc23bac-e94b-414f-95ab-cc838c03f765\",\"createdBy\":\"mgrosjean\",\"created\":\"2022-03-25T12:36:13.554+00:00\"},\"displayOnNHCPortal\":true,\"occurrenceCount\":13907,\"typeSpecimenCount\":2154,\"institutionName\":\"MNHN
+        - Museum national d'Histoire naturelle\",\"institutionCode\":\"MNHN\"},{\"key\":\"1f542e62-4800-4d7a-b393-399487b72929\",\"code\":\"EC\",\"name\":\"The
+        Coleoptera collection (EC) of the Mus\xE9um national d'Histoire naturelle
+        (MNHN - Paris)\",\"description\":\"Catalog of Coleoptera specimens of the
+        Mus\xE9um national d&#39;Histoire naturelle (Paris).\",\"contentTypes\":[],\"active\":true,\"personalCollection\":false,\"email\":[],\"phone\":[],\"catalogUrls\":[],\"apiUrls\":[],\"preservationTypes\":[],\"institutionKey\":\"6a6ac6c5-1b8a-48db-91a2-f8661274ff80\",\"mailingAddress\":{\"key\":43407},\"address\":{\"key\":43388,\"address\":\"Mus\xE9um
+        national d'Histoire naturelle 57, rue Cuvier\",\"city\":\"Paris\",\"postalCode\":\"75005\",\"country\":\"FR\"},\"createdBy\":\"mgrosjean\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2022-03-25T12:36:13.101+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\",\"tags\":[],\"identifiers\":[{\"key\":297938,\"type\":\"DOI\",\"identifier\":\"10.15468/j3leej\",\"createdBy\":\"mgrosjean\",\"created\":\"2022-03-25T12:36:13.101+00:00\",\"primary\":false}],\"contactPersons\":[{\"key\":38074,\"lastName\":\"MNHN\",\"position\":[\"Provider\"],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[],\"primary\":true,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"},{\"key\":38075,\"firstName\":\"Antoine\",\"lastName\":\"Mantilleri\",\"position\":[],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[],\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"},{\"key\":38076,\"firstName\":\"Laurent\",\"lastName\":\"Albenga\",\"position\":[\"Correspondant\"],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[],\"primary\":true,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"}],\"machineTags\":[],\"taxonomicCoverage\":\"\",\"geographicCoverage\":\"\",\"incorporatedCollections\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[{\"key\":42,\"datasetKey\":\"eff7d030-3013-43da-b686-6bafdd228131\",\"createdBy\":\"mgrosjean\",\"created\":\"2022-03-25T12:36:13.411+00:00\"}],\"masterSource\":\"GBIF_REGISTRY\",\"masterSourceMetadata\":{\"key\":8578,\"source\":\"DATASET\",\"sourceId\":\"eff7d030-3013-43da-b686-6bafdd228131\",\"createdBy\":\"mgrosjean\",\"created\":\"2022-03-25T12:36:13.101+00:00\"},\"displayOnNHCPortal\":true,\"occurrenceCount\":51827,\"typeSpecimenCount\":12806,\"institutionName\":\"MNHN
+        - Museum national d'Histoire naturelle\",\"institutionCode\":\"MNHN\"},{\"key\":\"3c5b0472-7e93-44f9-b2e4-793adccf6072\",\"code\":\"EH\",\"name\":\"The
+        Hemiptera collection (EH) of the Mus\xE9um national d'Histoire naturelle (MNHN
+        - Paris)\",\"description\":\"This dataset is the databased part of the Hemiptera
+        from the entomological collections of the Mus\xE9um National d&#39;Histoire
+        Naturelle (Paris).\\n\\t\\t\\t\\t\\n\\t\\t\\t\\tAlongside to the Thysanoptera,
+        the Hemiptera collection is organized in 4 large units: Sternorrhyncha, Fulgoromorpha,
+        Cicadomorpha and Heteroptera. The general collection is completed by nominal
+        collections (Bagnall, Bergevin, Cohic, Dlabola, Mamet, Goux, Noualhier, Puton,
+        Ribaut, Sorin\u2026). This set, gathering over 7 million specimens and including
+        7.000 holotypes, is one of the asset of the Mus\xE9um entomological collection.
+        From 30 to 70% of the 100.000 species described can be found in the collection,
+        constituting therefore a major primary taxonomic information resource without
+        equivalent in any other collection. The Palearctic and Afro-tropical regions
+        are especially well represented, as well as Madagascar, the R\xE9union Island,
+        New Caledonia, French Antilles, and French Guiana. The specimens are stored
+        in dry, alcohol or microscopical preparations.\",\"contentTypes\":[],\"active\":true,\"personalCollection\":false,\"email\":[],\"phone\":[],\"catalogUrls\":[],\"apiUrls\":[],\"preservationTypes\":[],\"institutionKey\":\"6a6ac6c5-1b8a-48db-91a2-f8661274ff80\",\"mailingAddress\":{\"key\":43411},\"address\":{\"key\":43387,\"address\":\"Mus\xE9um
+        national d'Histoire naturelle 57, rue Cuvier\",\"city\":\"Paris\",\"postalCode\":\"75005\",\"country\":\"FR\"},\"createdBy\":\"mgrosjean\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2022-03-25T12:36:12.597+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\",\"tags\":[],\"identifiers\":[{\"key\":297937,\"type\":\"DOI\",\"identifier\":\"10.15468/k9szav\",\"createdBy\":\"mgrosjean\",\"created\":\"2022-03-25T12:36:12.597+00:00\",\"primary\":false}],\"contactPersons\":[{\"key\":38101,\"lastName\":\"MNHN\",\"position\":[\"Provider\"],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[],\"primary\":true,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"},{\"key\":38102,\"firstName\":\"Thierry\",\"lastName\":\"Bourgoin\",\"position\":[],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[],\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"},{\"key\":38103,\"firstName\":\"\xC9ric\",\"lastName\":\"Guilbert\",\"position\":[],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[],\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"},{\"key\":38104,\"firstName\":\"Adeline\",\"lastName\":\"Soulier-Perkins\",\"position\":[],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[],\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"},{\"key\":38105,\"firstName\":\"J\xE9r\xF4me\",\"lastName\":\"Sueur\",\"position\":[],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[],\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"},{\"key\":38106,\"firstName\":\"Laurent\",\"lastName\":\"Albenga\",\"position\":[\"Correspondant\"],\"phone\":[],\"fax\":[],\"email\":[],\"address\":[],\"primary\":true,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"s.pamerlon\",\"modifiedBy\":\"s.pamerlon\",\"created\":\"2024-04-30T14:12:49.736+00:00\",\"modified\":\"2024-04-30T14:12:49.736+00:00\"}],\"machineTags\":[],\"taxonomicCoverage\":\"\",\"geographicCoverage\":\"\",\"incorporatedCollections\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[{\"key\":41,\"datasetKey\":\"d9474ec2-061c-4858-bfdd-e10ba6aca397\",\"createdBy\":\"mgrosjean\",\"created\":\"2022-03-25T12:36:12.995+00:00\"}],\"masterSource\":\"GBIF_REGISTRY\",\"masterSourceMetadata\":{\"key\":8577,\"source\":\"DATASET\",\"sourceId\":\"d9474ec2-061c-4858-bfdd-e10ba6aca397\",\"createdBy\":\"mgrosjean\",\"created\":\"2022-03-25T12:36:12.597+00:00\"},\"displayOnNHCPortal\":true,\"occurrenceCount\":17965,\"typeSpecimenCount\":4769,\"institutionName\":\"MNHN
+        - Museum national d'Histoire naturelle\",\"institutionCode\":\"MNHN\"}]}"
+    headers:
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Cache-Control:
+      - public, max-age=3601
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 15 Jul 2025 14:49:09 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      Via:
+      - 1.1 varnish (Varnish/6.6)
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Varnish:
+      - '266305574'
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+version: 1
