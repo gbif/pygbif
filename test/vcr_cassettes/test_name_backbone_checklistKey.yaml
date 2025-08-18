@@ -1,0 +1,45 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - python-requests/2.31.0,pygbif/0.6.5
+    method: GET
+    uri: https://api.gbif.org/v2/species/match?scientificName=Calopteryx+splendens&checklistKey=7ddf754f-d193-4cc9-b351-99906754a03b
+  response:
+    body:
+      string: '{"usage":{"key":"Q2M4","name":"Calopteryx splendens (Harris, 1780)","canonicalName":"Calopteryx
+        splendens","authorship":"(Harris, 1780)","rank":"SPECIES","code":"ZOOLOGICAL","status":"ACCEPTED","genericName":"Calopteryx","specificEpithet":"splendens","type":"SCIENTIFIC","formattedName":"<i>Calopteryx</i>
+        <i>splendens</i> (Harris, 1780)"},"classification":[{"key":"CS5HF","name":"Eukaryota","rank":"DOMAIN"},{"key":"N","name":"Animalia","rank":"KINGDOM"},{"key":"RT","name":"Arthropoda","rank":"PHYLUM"},{"key":"CW2TP","name":"Hexapoda","rank":"SUBPHYLUM"},{"key":"H6","name":"Insecta","rank":"CLASS"},{"key":"B6LCL","name":"Odonata","rank":"ORDER"},{"key":"B6NHX","name":"Zygoptera","rank":"SUBORDER"},{"key":"9WKK3","name":"Calopterygidae","rank":"FAMILY"},{"key":"9WLSS","name":"Calopteryx","rank":"GENUS"},{"key":"Q2M4","name":"Calopteryx
+        splendens","rank":"SPECIES"}],"diagnostics":{"matchType":"EXACT","confidence":99,"timeTaken":28,"timings":{"nameNRank":0,"sciNameMatch":29,"nameParse":4,"luceneMatch":25}},"additionalStatus":[{"clbDatasetKey":"53131","datasetAlias":"IUCN","datasetKey":"19491596-35ae-4a91-9a98-85cf505f1bd3","status":"LEAST_CONCERN","statusCode":"LC","sourceId":"158701"}],"synonym":false,"left":862383,"right":862385}'
+    headers:
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '256'
+      Cache-Control:
+      - public, max-age=3601
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1245'
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 15 Aug 2025 09:29:51 GMT
+      Vary:
+      - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      Via:
+      - 1.1 varnish (Varnish/6.6)
+      X-Varnish:
+      - 1002766661 884020212
+    status:
+      code: 200
+      message: OK
+version: 1

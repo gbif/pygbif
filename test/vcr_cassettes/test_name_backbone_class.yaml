@@ -1,0 +1,42 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - python-requests/2.31.0,pygbif/0.6.5
+    method: GET
+    uri: https://api.gbif.org/v2/species/match?class=Insecta
+  response:
+    body:
+      string: '{"usage":{"key":"216","name":"Insecta","canonicalName":"Insecta","rank":"CLASS","status":"ACCEPTED","type":"SCIENTIFIC","formattedName":"<i>Insecta</i>"},"classification":[{"key":"1","name":"Animalia","rank":"KINGDOM"},{"key":"54","name":"Arthropoda","rank":"PHYLUM"},{"key":"216","name":"Insecta","rank":"CLASS"}],"diagnostics":{"matchType":"EXACT","confidence":100,"timeTaken":87,"timings":{"nameNRank":0,"sciNameMatch":88,"nameParse":0,"luceneMatch":87}},"synonym":false,"left":236603,"right":1157645}'
+    headers:
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '362'
+      Cache-Control:
+      - public, max-age=3601
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '504'
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 15 Aug 2025 09:17:03 GMT
+      Vary:
+      - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      Via:
+      - 1.1 varnish (Varnish/6.6)
+      X-Varnish:
+      - 950370674 892603093
+    status:
+      code: 200
+      message: OK
+version: 1
