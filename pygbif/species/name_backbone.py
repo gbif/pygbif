@@ -106,8 +106,8 @@ def name_backbone(
   ``res["diagnostics"]["note"] = "Multiple equal matches for name"``.
 
   This note usually happens when a binomial name is provided without authorship. Proving authorship will almost always fix the 
-  "multiple equal matches" issue. If ``verbose=True``, the function will return other 
-  will include alternative matches. These are accessible via ``res['diagnostics']['alternatives']``.     
+  "multiple equal matches" issue. If ``verbose=True``, the function will return other alternative matches. These are accessible 
+  via ``res['diagnostics']['alternatives']``.     
 
   If your name does not get a match, the GBIF API will return ``[matchType] ='NONE'``. If the species-level
   name is not found, the API will sometimes return ``[matchType] = 'HIGHERRANK'``. With higher rank matches,
