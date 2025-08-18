@@ -127,32 +127,31 @@ def name_backbone(
 
    Usage::
 
-   from pygbif import species
-   species.name_backbone(scientificName="Helianthus annuus", kingdom="Plantae")
-   species.name_backbone(scientificName="Poa", taxonRank="GENUS", family="Poaceae")
+       from pygbif import species
+       species.name_backbone(scientificName="Helianthus annuus", kingdom="Plantae")
+       species.name_backbone(scientificName="Poa", taxonRank="GENUS", family="Poaceae")
 
-   # Verbose - gives back alternatives
-   species.name_backbone(scientificName="Helianthus annuus", kingdom="Plantae", verbose=True)
+       # Verbose - gives back alternatives
+       species.name_backbone(scientificName="Helianthus annuus", kingdom="Plantae", verbose=True)
 
-   # Strictness
-   # If strict=True, then higher taxon ranks will not be returned  when there is a "fuzzy match".
-   # Higher rank matches will still be returned if the match is exact.
-   species.name_backbone(scientificName="Poa", kingdom="Plantae", verbose=True, strict=False)
-   species.name_backbone(scientificName="Helianthus annuus", kingdom="Plantae", verbose=True, strict=True)
+       # Strictness
+       # If strict=True, then higher taxon ranks will not be returned  when there is a "fuzzy match".
+       # Higher rank matches will still be returned if the match is exact.
+       species.name_backbone(scientificName="Poa", kingdom="Plantae", verbose=True, strict=False)
+       species.name_backbone(scientificName="Helianthus annuus", kingdom="Plantae", verbose=True, strict=True)
 
-   # Multiple equal matches
-   species.name_backbone(scientificName="Oenante")
-   species.name_backbone(scientificName="Oenante", verbose=True)
-   species.name_backbone(scientificName="Calopteryx")
-   species.name_backbone(scientificName="Calopteryx", verbose=True)
+       # Multiple equal matches
+       species.name_backbone(scientificName="Oenante")
+       species.name_backbone(scientificName="Oenante", verbose=True)
+       species.name_backbone(scientificName="Calopteryx")
+       species.name_backbone(scientificName="Calopteryx", verbose=True)
 
-   # Including authorship in scientificName fixes "Multiple equal matches" note
-   species.name_backbone(scientificName="Calopteryx splendens (Harris, 1780)")
-   species.name_backbone(scientificName="Oenanthe L.")
+       # Including authorship in scientificName fixes "Multiple equal matches" note
+       species.name_backbone(scientificName="Calopteryx splendens (Harris, 1780)")
+       species.name_backbone(scientificName="Oenanthe L.")
 
-   # Match using an alternative checklist 
-   species.name_backbone(scientificName="Calopteryx splendens", checklistKey="7ddf754f-d193-4cc9-b351-99906754a03b")
-
+       # Match using an alternative checklist 
+       species.name_backbone(scientificName="Calopteryx splendens", checklistKey="7ddf754f-d193-4cc9-b351-99906754a03b")
    """
    url = "https://api.gbif.org/v2/" + "species/match"
    args = {
