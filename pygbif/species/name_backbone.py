@@ -33,65 +33,65 @@ def name_backbone(
    """
    Match names to the GBIF backbone taxonomy.
 
-   :param scientificName : [str]
+   :param scientificName: [str]
       Full scientific name potentially with authorship. (Required)
-   :param taxonRank : [str], optional
+   :param taxonRank: [str], optional
       Filter by taxonomic rank. See API reference for available values.
-   :param usageKey : [str], optional
+   :param usageKey: [str], optional
       The usage key to look up. When provided, all other fields are ignored.
-   :param kingdom : [str], optional
+   :param kingdom: [str], optional
       Kingdom to match.
-   :param phylum : [str], optional
+   :param phylum: [str], optional
       Phylum to match.
-   :param class_ : [str], optional
+   :param class_: [str], optional
       Class to match.
-   :param order : [str], optional
+   :param order: [str], optional
       Order to match.
-   :param superfamily : [str], optional
+   :param superfamily: [str], optional
       Superfamily to match.
-   :param family : [str], optional
+   :param family: [str], optional
       Family to match.
-   :param subfamily : [str], optional
+   :param subfamily: [str], optional
       Subfamily to match.
-   :param tribe : [str], optional
+   :param tribe: [str], optional
       Tribe to match.
-   :param subtribe : [str], optional
+   :param subtribe: [str], optional
       Subtribe to match.
-   :param genus : [str], optional
+   :param genus: [str], optional
       Genus to match.
-   :param subgenus : [str], optional
+   :param subgenus: [str], optional
       Subgenus to match.
-   :param species : [str], optional
+   :param species: [str], optional
       Species to match.
-   :param taxonID : [str], optional
+   :param taxonID: [str], optional
       The taxon ID to look up. Matches to a taxonID will take precedence over
       scientificName values supplied. A comparison of the matched scientific and
       taxonID is performed to check for inconsistencies.
-   :param taxonConceptID : [str], optional
+   :param taxonConceptID: [str], optional
       The taxonConceptID to match. Matches to a taxonConceptID will take precedence
       over scientificName values supplied. A comparison of the matched scientific and
       taxonConceptID is performed to check for inconsistencies.
-   :param scientificNameID : [str], optional
+   :param scientificNameID: [str], optional
       Matches to a scientificNameID will take precedence over scientificName values
       supplied. A comparison of the matched scientific and scientificNameID is performed
       to check for inconsistencies.
-   :param scientificNameAuthorship : [str], optional
+   :param scientificNameAuthorship: [str], optional
       The scientific name authorship to match against.
-   :param genericName : [str], optional
+   :param genericName: [str], optional
       Generic part of the name to match when given as atomised parts instead of the full name.
-   :param specificEpithet : [str], optional
+   :param specificEpithet: [str], optional
       Specific epithet to match.
-   :param infraspecificEpithet : [str], optional
+   :param infraspecificEpithet: [str], optional
       Infraspecific epithet to match.
-   :param verbatimTaxonRank : [str], optional
+   :param verbatimTaxonRank: [str], optional
       Filters by free text taxon rank.
-   :param exclude : [str], optional
+   :param exclude: [str], optional
       An array of usage keys to exclude from the match.
-   :param strict : [bool], optional
+   :param strict: [bool], optional
       If set to True, fuzzy matches only the given name, but never a taxon in the upper classification.
-   :param verbose : [bool], optional
+   :param verbose: [bool], optional
       If set to True, shows alternative matches which were considered but then rejected.
-   :param checklistKey : [str], optional
+   :param checklistKey: [str], optional
       The key of a checklist to use. Default is the GBIF Backbone taxonomy.
 
    ``name_backbone()`` return a dictionary with the following keys: 
