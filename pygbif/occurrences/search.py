@@ -147,7 +147,6 @@ def search(
     :return: A dictionary
 
     Usage::
-
         from pygbif import occurrences
         occurrences.search(taxonKey = 3329049)
 
