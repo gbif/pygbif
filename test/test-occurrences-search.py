@@ -49,3 +49,13 @@ def test_search_identified_by_id():
     assert "dict" == res.__class__.__name__
     assert 6 == len(res)
     assert x == res["results"][0]["identifiedByIDs"][0]["value"]
+
+@vcr.use_cassette("test/vcr_cassettes/test_search_checklistKey.yaml")
+def test_search_checklistKey():
+    "occurrences.search - checklistKey"
+    res = occurrences.search(checklistKey="7ddf754f-d193-4cc9-b351-99906754a03b", limit=3)
+    assert "dict" == res.__class__.__name__
+    assert 6 == len(res)
+    res["results"][0]["classifications"]["7ddf754f-d193-4cc9-b351-99906754a03b"]["usage"]["key"]
+    assert isinstance(res["results"][0]["classifications"]["7ddf754f-d193-4cc9-b351-99906754a03b"]["usage"]["key"], str)
+
