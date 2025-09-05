@@ -75,20 +75,21 @@ def search(
     :param collectionCode: [str] An identifier of any form assigned by the source to identify the physical collection or digital dataset uniquely within the text of an institution.
     :param institutionCode: [str] An identifier of any form assigned by the source to identify the institution the record belongs to. Not guaranteed to be que.
     :param country: [str] The 2-letter country code (as per ISO-3166-1) of the country in which the occurrence was recorded. See here http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
-    :param basisOfRecord: [str] Basis of record, as defined in our BasisOfRecord enum here http://gbif.github.io/gbif-api/apidocs/org/gbif/api/vocabulary/BasisOfRecord.html Acceptable values are:
-
-     - ``FOSSIL_SPECIMEN`` An occurrence record describing a fossilized specimen.
-     - ``HUMAN_OBSERVATION`` An occurrence record describing an observation made by one or more people.
-     - ``LIVING_SPECIMEN`` An occurrence record describing a living specimen.
-     - ``MACHINE_OBSERVATION`` An occurrence record describing an observation made by a machine.
-     - ``MATERIAL_CITATION`` An occurrence record based on a reference to a scholarly publication.
-     - ``OBSERVATION`` An occurrence record describing an observation.
-     - ``OCCURRENCE`` An existence of an organism at a particular place and time. No more specific basis.
-     - ``PRESERVED_SPECIMEN`` An occurrence record describing a preserved specimen.
+    :param basisOfRecord: [str] Basis of record, as defined in our BasisOfRecord enum here
+        http://gbif.github.io/gbif-api/apidocs/org/gbif/api/vocabulary/BasisOfRecord.html
+        Acceptable values are:
+        - ``FOSSIL_SPECIMEN`` An occurrence record describing a fossilized specimen.
+        - ``HUMAN_OBSERVATION`` An occurrence record describing an observation made by one or more people.
+        - ``LIVING_SPECIMEN`` An occurrence record describing a living specimen.
+        - ``MACHINE_OBSERVATION`` An occurrence record describing an observation made by a machine.
+        - ``MATERIAL_CITATION`` An occurrence record based on a reference to a scholarly publication.
+        - ``OBSERVATION`` An occurrence record describing an observation.
+        - ``OCCURRENCE`` An existence of an organism at a particular place and time. No more specific basis.
+        - ``PRESERVED_SPECIMEN`` An occurrence record describing a preserved specimen.
 
     :param eventDate: [date] Occurrence date in ISO 8601 format: yyyy, yyyy-MM, yyyy-MM-dd, or
-       MM-dd. Supports range queries, smaller,larger (e.g., ``1990,1991``, whereas ``1991,1990``
-       wouldn't work)
+        MM-dd. Supports range queries, smaller,larger (e.g., ``1990,1991``, whereas ``1991,1990``
+        wouldn't work)
     :param year: [int] The 4 digit year. A year of 98 will be interpreted as AD 98. Supports range queries,
        smaller,larger (e.g., ``1990,1991``, whereas ``1991,1990`` wouldn't work)
     :param month: [int] The month of the year, starting with 1 for January. Supports range queries,
