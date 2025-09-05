@@ -306,8 +306,8 @@ def search(
         178.2421875 59.95776046458139,-179.6484375 61.16708631440347,-178.59375 64.83258989321493))'
         occurrences.search(geometry = wkt)
 
-        # Faceting
-        ## return no occurrence records with limit=0
+        ## Faceting
+        # return no occurrence records with limit=0
         x = occurrences.search(facet = "country", limit = 0)
         x['facets']
 
