@@ -119,7 +119,7 @@ def search(
        or ``south_america``
     :param checklistKey: [str] This determines which taxonomy will be used for the search in conjunction with other 
        taxon keys or scientificName. If this is not specified, the GBIF backbone 
-    taxonomy will be used. Example : 2d59e5db-57ad-41ff-97d6-11f5fb264527   
+       taxonomy will be used. Example : 2d59e5db-57ad-41ff-97d6-11f5fb264527   
     :param fields: [str] Default (``all``) returns all fields. ``minimal`` returns just taxon name,
        key, latitude, and longitude. Or specify each field you want returned by name, e.g.
        ``fields = ['name','latitude','elevation']``.
