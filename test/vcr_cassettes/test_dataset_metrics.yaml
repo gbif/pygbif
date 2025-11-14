@@ -9,7 +9,7 @@ interactions:
       Connection:
       - keep-alive
       user-agent:
-      - python-requests/2.31.0,pygbif/0.6.4
+      - python-requests/2.31.0,pygbif/0.6.6
     method: GET
     uri: https://api.gbif.org/v1/dataset/3f8a1297-3259-4700-91fc-acc4170b27ce/metrics
   response:
@@ -29,7 +29,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 04 Oct 2024 07:00:18 GMT
+      - Fri, 14 Nov 2025 10:13:30 GMT
       Expires:
       - '0'
       Pragma:
@@ -37,13 +37,13 @@ interactions:
       Vary:
       - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
       Via:
-      - 1.1 varnish (Varnish/6.0)
+      - 1.1 varnish (Varnish/6.6)
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '676004044'
+      - '805307033'
       X-XSS-Protection:
       - 1; mode=block
     status:

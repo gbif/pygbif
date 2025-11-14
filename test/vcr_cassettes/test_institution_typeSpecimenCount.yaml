@@ -1,0 +1,113 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - python-requests/2.31.0,pygbif/0.6.6
+    method: GET
+    uri: https://api.gbif.org/v1/grscicoll/institution?typeSpecimenCount=10%2C100&limit=10
+  response:
+    body:
+      string: "{\"offset\":0,\"limit\":10,\"endOfRecords\":false,\"count\":668,\"results\":[{\"key\":\"acc160f3-8fb5-4e54-8a92-f428fb051a76\",\"code\":\"SFC\",\"name\":\"Santa
+        Fe College Museum of Earth Science\",\"description\":\"Santa Fe College's
+        Museum of Earth Science is home to over 1,700 mineral, fossil and rock samples
+        around the world. The museum also has martian and lunar meteorites and other
+        \\\"rocks from space.\\\"\",\"types\":[],\"active\":true,\"email\":[],\"phone\":[],\"homepage\":\"https://www.sfcollege.edu/academics/las/natsci/science-resource-areas/museum.html\",\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[],\"disciplines\":[\"Geological\",\"Paleontology\"],\"mailingAddress\":{\"key\":56581},\"address\":{\"key\":56580,\"address\":\"3000
+        N.W. 83rd Street, X-201\",\"city\":\"Gainesville\",\"province\":\"Florida\",\"postalCode\":\"32606\",\"country\":\"US\"},\"additionalNames\":[],\"createdBy\":\"mgrosjean\",\"modifiedBy\":\"mgrosjean\",\"created\":\"2025-09-05T13:15:57.233+00:00\",\"modified\":\"2025-09-05T13:15:57.233+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":91,\"typeSpecimenCount\":91},{\"key\":\"967647c6-b1af-4f0a-9bb0-94d0dbb1ca9f\",\"code\":\"UAT\",\"name\":\"Universidad
+        Aut\xF3noma de Tamaulipas\",\"types\":[],\"active\":true,\"email\":[],\"phone\":[\"[52]
+        834 318 1800\"],\"homepage\":\"https://www.uat.edu.mx/\",\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[\"Academic\",\"Governmental\"],\"disciplines\":[],\"latitude\":23.732532,\"longitude\":-99.144592,\"mailingAddress\":{\"key\":56451,\"address\":\"Mariano
+        Matamoros s/n, zona Centro\",\"city\":\"Ciudad Victoria\",\"province\":\"Tamaulipas\",\"postalCode\":\"87000\",\"country\":\"MX\"},\"address\":{\"key\":56450,\"address\":\"Mariano
+        Matamoros s/n, zona Centro\",\"city\":\"Ciudad Victoria\",\"province\":\"Tamaulipas\",\"postalCode\":\"87000\",\"country\":\"MX\"},\"additionalNames\":[],\"createdBy\":\"vaguirojas\",\"modifiedBy\":\"vaguirojas\",\"created\":\"2025-08-25T22:28:20.656+00:00\",\"modified\":\"2025-08-25T22:28:20.656+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":208,\"typeSpecimenCount\":16},{\"key\":\"29658e18-1cef-4773-b81a-92111c9d288f\",\"code\":\"CBC\",\"name\":\"Universidade
+        do Estado de Minas Gerais\",\"types\":[],\"active\":true,\"email\":[\"mcbp.passos@uemg.br\"],\"phone\":[\"[55]
+        35 3526 8087\",\"[55] 71 9 9207 9666\"],\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[],\"disciplines\":[],\"latitude\":-20.722195,\"longitude\":-46.605107,\"mailingAddress\":{\"key\":55656,\"address\":\"Avenida
+        Expedicion\xE1rios 333\",\"city\":\"Passos\",\"province\":\"Minas Gerais\",\"postalCode\":\"37900-130\",\"country\":\"BR\"},\"address\":{\"key\":55651,\"address\":\"Avenida
+        Expedicion\xE1rios 333\",\"city\":\"Passos\",\"province\":\"Minas Gerais\",\"postalCode\":\"37900-130\",\"country\":\"BR\"},\"additionalNames\":[],\"foundingDate\":2023,\"createdBy\":\"clara_baringo\",\"modifiedBy\":\"ih-sync\",\"created\":\"2025-04-07T21:59:39.815+00:00\",\"modified\":\"2025-04-09T11:05:38.271+00:00\",\"tags\":[],\"identifiers\":[{\"key\":439017,\"type\":\"IH_IRN\",\"identifier\":\"gbif:ih:irn:267802\",\"createdBy\":\"clara_baringo\",\"created\":\"2025-04-07T21:59:39.834+00:00\",\"primary\":false}],\"contactPersons\":[{\"key\":42415,\"firstName\":\"Vanessa
+        Leite\",\"lastName\":\"Rezende\",\"position\":[\"Professor\"],\"phone\":[\"[55]35991042537\"],\"fax\":[],\"email\":[\"vanessa.leite.rezende@gmail.com\"],\"address\":[\"Pastor
+        Pedro Ferreira Lima\"],\"city\":\"Passos\",\"province\":\"Minas Gerais\",\"country\":\"BR\",\"postalCode\":\"37904146\",\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[{\"type\":\"IH_IRN\",\"id\":\"267809\"}],\"createdBy\":\"clara_baringo\",\"modifiedBy\":\"clara_baringo\",\"created\":\"2025-04-07T21:59:39.862+00:00\",\"modified\":\"2025-04-07T21:59:39.862+00:00\"},{\"key\":42416,\"firstName\":\"Fernanda
+        Hurbath\",\"lastName\":\"Brand\xE3o\",\"position\":[\"Professor\"],\"phone\":[\"[55]
+        71 99207 9666\"],\"fax\":[],\"email\":[\"fernanda.hurbath@uemg.br\"],\"address\":[\"Rua
+        Aboli\xE7\xE3o 180\"],\"city\":\"Passos\",\"province\":\"Minas Gerais\",\"country\":\"BR\",\"postalCode\":\"37904016\",\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[{\"type\":\"IH_IRN\",\"id\":\"267808\"}],\"createdBy\":\"clara_baringo\",\"modifiedBy\":\"clara_baringo\",\"created\":\"2025-04-07T21:59:39.862+00:00\",\"modified\":\"2025-04-07T21:59:39.862+00:00\"}],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"IH\",\"masterSourceMetadata\":{\"key\":9793,\"source\":\"IH_IRN\",\"sourceId\":\"267802\",\"createdBy\":\"clara_baringo\",\"created\":\"2025-04-07T21:59:39.843+00:00\"},\"displayOnNHCPortal\":true,\"occurrenceCount\":76,\"typeSpecimenCount\":14},{\"key\":\"a2941afe-435f-4f47-bb94-de58f32b52d0\",\"code\":\"SBA\",\"name\":\"Soci\xE9t\xE9
+        Botanique d'Alsace\",\"types\":[\"OtherInstitutionalType\"],\"active\":true,\"email\":[\"sbalsace6768@gmail.com\"],\"phone\":[],\"homepage\":\"https://www.societe-botanique-alsace.org/\",\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[\"NonProfit\"],\"disciplines\":[],\"mailingAddress\":{\"key\":53311,\"address\":\"7,
+        place du March\xE9 aux Choux\",\"city\":\"S\xE9lestat\",\"postalCode\":\"F-67600\",\"country\":\"FR\"},\"address\":{\"key\":53310,\"address\":\"7,
+        place du March\xE9 aux Choux\",\"city\":\"S\xE9lestat\",\"postalCode\":\"F-67600\",\"country\":\"FR\"},\"additionalNames\":[],\"foundingDate\":1997,\"createdBy\":\"eliemarios\",\"modifiedBy\":\"eliemarios\",\"created\":\"2025-02-11T12:44:01.810+00:00\",\"modified\":\"2025-02-11T12:44:01.810+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":218,\"typeSpecimenCount\":83},{\"key\":\"847b9013-5cbb-4630-b4d4-0c92c8686f72\",\"code\":\"UB\",\"name\":\"Universit\xE9
+        de Bordeaux\",\"types\":[\"UniversityCollege\"],\"active\":true,\"email\":[],\"phone\":[\"+33
+        (0)5 40 00 60 00\"],\"homepage\":\"https://www.u-bordeaux.fr/\",\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[\"Academic\"],\"disciplines\":[],\"mailingAddress\":{\"key\":53303,\"address\":\"351
+        cours de la Lib\xE9ration\",\"city\":\"Talence\",\"postalCode\":\"33405\",\"country\":\"FR\"},\"address\":{\"key\":53302,\"address\":\"351
+        cours de la Lib\xE9ration\",\"city\":\"Talence\",\"postalCode\":\"33405\",\"country\":\"FR\"},\"additionalNames\":[],\"foundingDate\":1441,\"createdBy\":\"eliemarios\",\"modifiedBy\":\"eliemarios\",\"created\":\"2025-02-11T10:39:00.687+00:00\",\"modified\":\"2025-02-11T10:39:00.687+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":126,\"typeSpecimenCount\":33},{\"key\":\"ed1bef68-e07e-4db2-84e2-541787bf9fd5\",\"code\":\"CINVESTAV-IPN\",\"name\":\"Centro
+        de Investigaci\xF3n y de Estudios Avanzados, Unidad Zacatenco, Instituto Polit\xE9cnico
+        Nacional\",\"types\":[\"UniversityCollege\"],\"active\":true,\"email\":[],\"phone\":[],\"homepage\":\"https://www.cinvestav.mx/zacatenco\",\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[\"Academic\",\"Governmental\"],\"disciplines\":[],\"latitude\":19.509949,\"longitude\":-99.129634,\"mailingAddress\":{\"key\":53273,\"address\":\"Apartado
+        Postal 14-740\",\"city\":\"Ciudad de M\xE9xico\",\"province\":\"Ciudad de
+        M\xE9xico\",\"postalCode\":\"07360\",\"country\":\"MX\"},\"address\":{\"key\":53272,\"address\":\"Avenida
+        Instituto Polit\xE9cnico Nacional 2508, Colonia San Pedro Zacatenco, Alcald\xEDa
+        Gustavo A. Madero\",\"city\":\"Ciudad de M\xE9xico\",\"province\":\"Ciudad
+        de M\xE9xico\",\"postalCode\":\"07360\",\"country\":\"MX\"},\"additionalNames\":[],\"foundingDate\":1961,\"createdBy\":\"vaguirojas\",\"modifiedBy\":\"vaguirojas\",\"created\":\"2025-02-05T23:23:14.966+00:00\",\"modified\":\"2025-02-05T23:34:56.260+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":41473,\"typeSpecimenCount\":18},{\"key\":\"5980e049-d16c-46c1-a9b6-933112ecd3e0\",\"code\":\"ASPC\",\"name\":\"Archivio
+        di Stato di Piacenza\",\"types\":[],\"active\":true,\"email\":[],\"phone\":[],\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[],\"disciplines\":[],\"mailingAddress\":{\"key\":52636},\"address\":{\"key\":52635,\"address\":\"Piazza
+        della Cittadella, 29\",\"city\":\"Piacenza\",\"province\":\"[EMILIA-ROMAGNA]
+        Piacenza (PC)\",\"postalCode\":\"IT-29121\",\"country\":\"IT\"},\"additionalNames\":[],\"createdBy\":\"tasmacetus\",\"modifiedBy\":\"tasmacetus\",\"created\":\"2025-01-12T17:06:28.283+00:00\",\"modified\":\"2025-01-12T17:06:28.283+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":17,\"typeSpecimenCount\":12},{\"key\":\"7c8527d8-3a25-4ed0-b6dd-5c207db492c2\",\"code\":\"UAZ\",\"name\":\"Universidad
+        Aut\xF3noma de Zacatecas\",\"types\":[\"UniversityCollege\"],\"active\":true,\"email\":[],\"phone\":[],\"homepage\":\"https://www.uaz.edu.mx/\",\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[\"Academic\",\"Governmental\"],\"disciplines\":[],\"latitude\":22.774011,\"longitude\":-102.576932,\"mailingAddress\":{\"key\":52516,\"address\":\"Jard\xEDn
+        Ju\xE1rez 147 Centro Hist\xF3rico\",\"city\":\"Zacatecas\",\"province\":\"Zacatecas\",\"postalCode\":\"98000\",\"country\":\"MX\"},\"address\":{\"key\":52515,\"address\":\"Jard\xEDn
+        Ju\xE1rez 147 Centro Hist\xF3rico\",\"city\":\"Zacatecas\",\"province\":\"Zacatecas\",\"postalCode\":\"98000\",\"country\":\"MX\"},\"additionalNames\":[],\"createdBy\":\"vaguirojas\",\"modifiedBy\":\"vaguirojas\",\"created\":\"2025-01-03T18:25:21.360+00:00\",\"modified\":\"2025-01-03T18:32:59.178+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":17068,\"typeSpecimenCount\":34},{\"key\":\"07ce0eac-7e43-491e-b693-ef1d4d70ab69\",\"code\":\"MCC\",\"name\":\"Museo
+        della Civilt\xE0 condadina\",\"types\":[],\"active\":true,\"email\":[],\"phone\":[],\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[],\"disciplines\":[],\"mailingAddress\":{\"key\":52514},\"address\":{\"key\":52513,\"address\":\"Localit\xE0
+        Gaville (Pieve di San Romolo a Gaville)\",\"city\":\"Figline e Incisa Valdarno\",\"province\":\"[TOSCANA]
+        Firenze (FI)\",\"postalCode\":\"IT-50063\",\"country\":\"IT\"},\"additionalNames\":[],\"createdBy\":\"tasmacetus\",\"modifiedBy\":\"tasmacetus\",\"created\":\"2025-01-03T18:18:07.206+00:00\",\"modified\":\"2025-01-03T18:18:07.206+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":27,\"typeSpecimenCount\":27},{\"key\":\"997274f3-0566-4dff-a2b0-a07273ff8959\",\"code\":\"PMC\",\"name\":\"Paleozoological
+        Museum of China (Baoding Natural History Museum)\",\"description\":\"The museum,
+        covering approximately 120 mu (80,000 square meters) with a total construction
+        area of around 73,000 square meters, stands as a national-level theme museum
+        in the field of natural sciences. It is a key project in the comprehensive
+        implementation of the national strategy for coordinated development in the
+        Beijing-Tianjin-Hebei region, which also aims to decentralize the non-capital
+        functions of Beijing, according to China Central Television on Wednesday.\\n\\nThe
+        museum, themed around nature, life and humanity, with evolution as its main
+        storyline, provides a systematic presentation on paleontology and evolutionary
+        biology. It narrates the stories of natural history, and is set to convey
+        the natural concept that \\\"humans and nature are a community of life.\\\"\\n\\nThe
+        exhibits, numbering around 6,000 items, primarily come from the Chinese Academy
+        of Sciences' Institute of Vertebrate Paleontology and Paleoanthropology. Precious
+        fossil specimens from Beijing have been relocated to the new museum. Among
+        the displayed artifacts are rare treasures, including the world's only complete
+        skeleton of the Chinese velociraptor, the earliest known jawed fish species,
+        one of the world's few well-preserved pterosaur eggs, as well as the world's
+        longest and largest individual horse skull.\",\"types\":[\"MuseumHerbariumPrivateNonProfit\"],\"active\":true,\"email\":[],\"phone\":[],\"homepage\":\"https://www.paleozoo.cn\",\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[\"Academic\"],\"disciplines\":[\"EvolutionaryBiology\",\"Biological\",\"Paleontology\"],\"latitude\":39.938200,\"longitude\":116.334240,\"mailingAddress\":{\"key\":51740,\"address\":\"142
+        Xiwai Ave, Xicheng District\",\"city\":\"Beijing\",\"postalCode\":\"100044\",\"country\":\"CN\"},\"address\":{\"key\":51739,\"address\":\"142
+        Xiwai Ave, Xicheng District\",\"city\":\"Beijing\",\"postalCode\":\"100044\",\"country\":\"CN\"},\"additionalNames\":[],\"foundingDate\":1929,\"logoUrl\":\"https://pmtcc3fd5-pic19.websiteonline.cn/upload/logo_lbiw.jpg\",\"createdBy\":\"cjk\",\"modifiedBy\":\"cjk\",\"created\":\"2024-10-09T13:18:06.847+00:00\",\"modified\":\"2024-10-09T13:18:06.847+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":50,\"typeSpecimenCount\":23}]}"
+    headers:
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Cache-Control:
+      - public, max-age=3601
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '12886'
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 14 Nov 2025 10:13:11 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Vary:
+      - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      Via:
+      - 1.1 varnish (Varnish/6.6)
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Varnish:
+      - '686263881'
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+version: 1

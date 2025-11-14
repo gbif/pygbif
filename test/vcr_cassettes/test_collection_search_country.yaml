@@ -1,0 +1,111 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - python-requests/2.31.0,pygbif/0.6.6
+    method: GET
+    uri: https://api.gbif.org/v1/grscicoll/collection?country=US&country=GB&limit=10
+  response:
+    body:
+      string: "{\"offset\":0,\"limit\":10,\"endOfRecords\":false,\"count\":3055,\"results\":[{\"key\":\"7a8d2d3a-49ae-4162-a03e-a20509691d95\",\"code\":\"DPC\",\"name\":\"North
+        Carolina\",\"description\":\"Fossils collected in North Carolina, United States\",\"contentTypes\":[\"VertebrateFossils\",\"InvertebrateFossils\"],\"active\":true,\"personalCollection\":false,\"email\":[],\"phone\":[],\"catalogUrls\":[],\"apiUrls\":[],\"preservationTypes\":[],\"institutionKey\":\"c29e0c07-f7e3-4f57-b2a5-79212756ce98\",\"mailingAddress\":{\"key\":57059,\"address\":\"1013
+        Broad St\",\"city\":\"Durham\",\"province\":\"North Carolina\",\"postalCode\":\"27705\",\"country\":\"US\"},\"address\":{\"key\":57058,\"address\":\"1013
+        Broad St\",\"city\":\"Durham\",\"province\":\"North Carolina\",\"postalCode\":\"27705\",\"country\":\"US\"},\"createdBy\":\"kateneely\",\"modifiedBy\":\"kateneely\",\"created\":\"2025-11-11T18:53:59.303+00:00\",\"modified\":\"2025-11-11T18:53:59.303+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"geographicCoverage\":\"North
+        Carolina, USA\",\"incorporatedCollections\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0,\"institutionName\":\"Duke
+        Lemur Center Museum of Natural History\",\"institutionCode\":\"DPC\"},{\"key\":\"12e141d0-e30c-4130-a096-320905204907\",\"code\":\"DPC\",\"name\":\"La
+        Venta\",\"description\":\"Fossils collected in the La Venta locality in Tolima
+        and Huila, Colombia\",\"contentTypes\":[\"VertebrateFossils\"],\"active\":true,\"personalCollection\":false,\"email\":[],\"phone\":[],\"catalogUrls\":[],\"apiUrls\":[],\"preservationTypes\":[],\"accessionStatus\":\"Institutional\",\"institutionKey\":\"c29e0c07-f7e3-4f57-b2a5-79212756ce98\",\"mailingAddress\":{\"key\":57057,\"address\":\"1013
+        Broad St\",\"city\":\"Durham\",\"province\":\"North Carolina\",\"postalCode\":\"27705\",\"country\":\"US\"},\"address\":{\"key\":57056,\"address\":\"1013
+        Broad St\",\"city\":\"Durham\",\"province\":\"North Carolina\",\"postalCode\":\"27705\",\"country\":\"US\"},\"createdBy\":\"kateneely\",\"modifiedBy\":\"kateneely\",\"created\":\"2025-11-11T18:52:20.303+00:00\",\"modified\":\"2025-11-11T18:52:20.303+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"geographicCoverage\":\"La
+        Venta, Colombia\",\"incorporatedCollections\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0,\"institutionName\":\"Duke
+        Lemur Center Museum of Natural History\",\"institutionCode\":\"DPC\"},{\"key\":\"e995e231-4e3a-4d03-80fe-42b10ddbceb6\",\"code\":\"DPC\",\"name\":\"Madagascar\",\"description\":\"Subfossil
+        specimens collected in Madagascar\",\"contentTypes\":[\"VertebrateFossils\",\"PlantFossils\",\"PlantDerived\",\"AnimalDerived\"],\"active\":true,\"personalCollection\":false,\"email\":[],\"phone\":[],\"catalogUrls\":[],\"apiUrls\":[],\"preservationTypes\":[],\"institutionKey\":\"c29e0c07-f7e3-4f57-b2a5-79212756ce98\",\"mailingAddress\":{\"key\":57055,\"address\":\"1013
+        Broad St\",\"city\":\"Durham\",\"province\":\"North Carolina\",\"postalCode\":\"27705\",\"country\":\"US\"},\"address\":{\"key\":57054,\"address\":\"1013
+        Broad St\",\"city\":\"Durham\",\"province\":\"North Carolina\",\"postalCode\":\"27705\",\"country\":\"US\"},\"createdBy\":\"kateneely\",\"modifiedBy\":\"kateneely\",\"created\":\"2025-11-11T17:35:55.285+00:00\",\"modified\":\"2025-11-11T17:35:55.285+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"geographicCoverage\":\"Madagascar\",\"incorporatedCollections\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0,\"institutionName\":\"Duke
+        Lemur Center Museum of Natural History\",\"institutionCode\":\"DPC\"},{\"key\":\"29363f57-2727-45d4-931c-24ae7415cafb\",\"code\":\"DPC\",\"name\":\"Big
+        Horn\",\"description\":\"Fossils collected from the Big Horn Basin in north-central
+        Wyoming in the United States\",\"contentTypes\":[\"VertebrateFossils\"],\"active\":true,\"personalCollection\":false,\"email\":[],\"phone\":[],\"catalogUrls\":[],\"apiUrls\":[],\"preservationTypes\":[],\"institutionKey\":\"c29e0c07-f7e3-4f57-b2a5-79212756ce98\",\"mailingAddress\":{\"key\":57053,\"address\":\"1013
+        Broad St\",\"city\":\"Durham\",\"province\":\"North Carolina\",\"postalCode\":\"27705\",\"country\":\"US\"},\"address\":{\"key\":57052,\"address\":\"1013
+        Broad St\",\"city\":\"Durham\",\"province\":\"North Carolina\",\"postalCode\":\"27705\",\"country\":\"US\"},\"createdBy\":\"kateneely\",\"modifiedBy\":\"kateneely\",\"created\":\"2025-11-11T17:30:02.526+00:00\",\"modified\":\"2025-11-11T17:30:02.526+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"geographicCoverage\":\"Big
+        Horn Basin, WY, USA\",\"incorporatedCollections\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0,\"institutionName\":\"Duke
+        Lemur Center Museum of Natural History\",\"institutionCode\":\"DPC\"},{\"key\":\"9a8cad73-df4c-405f-84af-0ba1cb964277\",\"code\":\"DPC\",\"name\":\"Bridger\",\"description\":\"Fossils
+        collected from the Bridger Formation in southwestern Wyoming, USA\",\"contentTypes\":[\"VertebrateFossils\"],\"active\":true,\"personalCollection\":false,\"email\":[],\"phone\":[],\"catalogUrls\":[],\"apiUrls\":[],\"preservationTypes\":[],\"institutionKey\":\"c29e0c07-f7e3-4f57-b2a5-79212756ce98\",\"mailingAddress\":{\"key\":57051,\"address\":\"1013
+        Broad St\",\"city\":\"Durham\",\"province\":\"North Carolina\",\"postalCode\":\"27705\",\"country\":\"US\"},\"address\":{\"key\":57050,\"address\":\"1013
+        Broad St\",\"city\":\"Durham\",\"province\":\"North Carolina\",\"postalCode\":\"27705\",\"country\":\"US\"},\"createdBy\":\"kateneely\",\"modifiedBy\":\"kateneely\",\"created\":\"2025-11-11T17:23:36.444+00:00\",\"modified\":\"2025-11-11T17:24:40.654+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"geographicCoverage\":\"Bridger
+        Formation, WY, USA\",\"incorporatedCollections\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0,\"institutionName\":\"Duke
+        Lemur Center Museum of Natural History\",\"institutionCode\":\"DPC\"},{\"key\":\"63fd108b-78d0-4d77-a68a-0f663aeaf121\",\"code\":\"YPM/PU\",\"name\":\"Princeton
+        University Collection in Yale Peabody Museum\",\"contentTypes\":[],\"active\":true,\"personalCollection\":false,\"email\":[],\"phone\":[],\"catalogUrls\":[],\"apiUrls\":[],\"preservationTypes\":[],\"institutionKey\":\"75f50140-830d-4630-a290-3d6e951a7c29\",\"mailingAddress\":{\"key\":57039,\"address\":\"P.O.
+        Box 208118\",\"city\":\"New Haven\",\"province\":\"Connecticut\",\"postalCode\":\"06520-8118\",\"country\":\"US\"},\"address\":{\"key\":57038,\"country\":\"US\"},\"createdBy\":\"mgrosjean\",\"modifiedBy\":\"gary.motz\",\"created\":\"2025-10-28T15:38:59.351+00:00\",\"modified\":\"2025-10-28T16:48:18.974+00:00\",\"tags\":[],\"identifiers\":[{\"key\":458389,\"type\":\"GRSCICOLL_URI\",\"identifier\":\"http://grbio.org/cool/km0k-f3tc\",\"createdBy\":\"mgrosjean\",\"created\":\"2025-10-28T15:39:01.451+00:00\",\"primary\":false},{\"key\":458388,\"type\":\"GRSCICOLL_ID\",\"identifier\":\"16084\",\"createdBy\":\"mgrosjean\",\"created\":\"2025-10-28T15:39:01.443+00:00\",\"primary\":false},{\"key\":458387,\"type\":\"GRSCICOLL_URI\",\"identifier\":\"http://grbio.org/institution/princeton-university-collection-yale-peabody-museum\",\"createdBy\":\"mgrosjean\",\"created\":\"2025-10-28T15:39:01.137+00:00\",\"primary\":false},{\"key\":458386,\"type\":\"GRSCICOLL_URI\",\"identifier\":\"http://grscicoll.org/institution/princeton-university-collection-yale-peabody-museum\",\"createdBy\":\"mgrosjean\",\"created\":\"2025-10-28T15:39:00.865+00:00\",\"primary\":false},{\"key\":458385,\"type\":\"NCBI_BIOCOLLECTION\",\"identifier\":\"943746\",\"createdBy\":\"mgrosjean\",\"created\":\"2025-10-28T15:39:00.854+00:00\",\"primary\":false}],\"contactPersons\":[],\"machineTags\":[],\"incorporatedCollections\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0,\"institutionName\":\"Yale
+        Peabody Museum\",\"institutionCode\":\"YPM\"},{\"key\":\"f9d74671-4d47-4644-b350-43c29e88cbb7\",\"code\":\"SDSS
+        Specimen Collection\",\"name\":\"Stanford Doerr School of Sustainability Specimen
+        Collections\",\"contentTypes\":[\"Rocks\",\"VertebrateFossils\",\"TraceFossils\",\"PlantFossils\",\"InvertebrateMicrofossils\",\"InvertebrateFossils\",\"Minerals\",\"Biological\",\"Water\",\"Soils\"],\"active\":true,\"personalCollection\":false,\"email\":[\"cngarcia@stanford.edu\"],\"phone\":[],\"catalogUrls\":[],\"apiUrls\":[],\"preservationTypes\":[],\"institutionKey\":\"f37de22d-3ee9-4e08-a3bd-b492f595a71f\",\"mailingAddress\":{\"key\":57007,\"address\":\"450
+        Jane Stanford Way\",\"city\":\"Stanford\",\"province\":\"California\",\"postalCode\":\"94305\",\"country\":\"US\"},\"address\":{\"key\":57006,\"address\":\"450
+        Jane Stanford Way\",\"city\":\"Stanford\",\"province\":\"California\",\"postalCode\":\"94305\",\"country\":\"US\"},\"createdBy\":\"kdpearso\",\"modifiedBy\":\"kdpearso\",\"created\":\"2025-10-13T18:53:13.706+00:00\",\"modified\":\"2025-10-13T18:53:13.706+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"numberSpecimens\":500000,\"machineTags\":[],\"geographicCoverage\":\"Global\",\"incorporatedCollections\":[],\"alternativeCodes\":[{\"code\":\"GSC\",\"description\":\"Geoscience
+        Specimen Collection\"}],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0,\"temporalCoverage\":\"Archaen
+        to Recent\",\"institutionName\":\"Leland Stanford Junior University\",\"institutionCode\":\"LSJU\"},{\"key\":\"761cd9fa-0d09-462c-af56-27d0b27b53e5\",\"code\":\"UNCG:Para\",\"name\":\"University
+        of North Carolina at Greensboro Parasite Collection (Arctos)\",\"description\":\"The
+        UNCG Parasite Collection is a collection of mammal-associated parasites of
+        regional (North Carolina and the Southeastern U.S.) to national scope. Holdings
+        are strong for ectoparasites of small mammals from montane ecosystems including
+        the Southern Appalachian Mountains, Southern Rocky Mountains, and sky island
+        ranges of the Great Basin. Most specimens are recent (2020 and after), maintained
+        as fluid- or cryo-preserved lots, and linked to small mammal vouchers in the
+        UNCG Mammal Collection.\",\"contentTypes\":[],\"active\":true,\"personalCollection\":false,\"email\":[],\"phone\":[],\"catalogUrls\":[],\"apiUrls\":[],\"preservationTypes\":[\"SampleFluidPreserved\",\"SampleCryopreserved\"],\"institutionKey\":\"6a9b6e74-f687-4b0d-8695-89beec0fac5b\",\"mailingAddress\":{\"key\":56399,\"country\":\"US\"},\"address\":{\"key\":56398,\"address\":\"321
+        McIver Street\",\"city\":\"Greensboro\",\"province\":\"North Carolina\",\"postalCode\":\"27412\",\"country\":\"US\"},\"createdBy\":\"dbloom\",\"modifiedBy\":\"dbloom\",\"created\":\"2025-08-20T16:01:39.596+00:00\",\"modified\":\"2025-08-20T16:01:39.596+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"taxonomicCoverage\":\"Arthropoda,
+        Ixodida, Siphonaptera, Phthiraptera\",\"geographicCoverage\":\"The UNCG Parasite
+        Collection is of regional to national geographic scope. Holdings are strong
+        from U.S. states of North Carolina, Virginia, and surrounding southeastern
+        U.S., as well as Nevada and Utah.\",\"incorporatedCollections\":[\"University
+        of North Carolina at Greensboro Parasite Collection\"],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0,\"institutionName\":\"University
+        of North  Carolina at Greensboro\",\"institutionCode\":\"UNCG\"},{\"key\":\"b127fda9-92c0-42c0-9e0b-53b61b9cec7b\",\"code\":\"SOVT-AFM\",\"name\":\"State
+        of Vermont Agriculture, Food and Markets \",\"contentTypes\":[],\"active\":true,\"personalCollection\":false,\"email\":[\"judy.rosovsky@vermont.gov\"],\"phone\":[\"8022792212\"],\"catalogUrls\":[],\"apiUrls\":[],\"preservationTypes\":[],\"institutionKey\":\"c3f0df79-26b5-4901-bea7-2aee036dcd4c\",\"mailingAddress\":{\"key\":56343,\"address\":\"163
+        Admin Drive\",\"city\":\"Randolph\",\"province\":\"Vermont\",\"postalCode\":\"05061\",\"country\":\"US\"},\"address\":{\"key\":56342,\"address\":\"163
+        Admin Drive\",\"city\":\"Randolph\",\"province\":\"Vermont\",\"postalCode\":\"05061\",\"country\":\"US\"},\"createdBy\":\"kdpearso\",\"modifiedBy\":\"kdpearso\",\"created\":\"2025-08-13T13:29:39.139+00:00\",\"modified\":\"2025-08-13T13:29:39.139+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"incorporatedCollections\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0,\"institutionName\":\"State
+        of Vermont\",\"institutionCode\":\"VAEL\"},{\"key\":\"e84edda1-db90-488d-b62f-a56966012d49\",\"code\":\"DPC\",\"name\":\"Egypt\",\"description\":\"Fossil
+        specimens from Al Fayy\u016Bm and Wadi Moghra in Egypt\",\"contentTypes\":[],\"active\":true,\"personalCollection\":false,\"email\":[],\"phone\":[],\"catalogUrls\":[],\"apiUrls\":[],\"preservationTypes\":[],\"institutionKey\":\"c29e0c07-f7e3-4f57-b2a5-79212756ce98\",\"mailingAddress\":{\"key\":56117,\"address\":\"1013
+        Broad St\",\"city\":\"Durham\",\"province\":\"North Carolina\",\"postalCode\":\"27705\",\"country\":\"US\"},\"address\":{\"key\":56116,\"address\":\"1013
+        Broad St\",\"city\":\"Durham\",\"province\":\"North Carolina\",\"postalCode\":\"27705\",\"country\":\"US\"},\"createdBy\":\"kateneely\",\"modifiedBy\":\"kateneely\",\"created\":\"2025-06-30T19:01:14.155+00:00\",\"modified\":\"2025-11-11T17:25:48.194+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"geographicCoverage\":\"Egypt\",\"incorporatedCollections\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":449,\"typeSpecimenCount\":0,\"temporalCoverage\":\"Late
+        Eocene \u2013 Priabonian, early Oligocene \u2013 Rupelian\",\"institutionName\":\"Duke
+        Lemur Center Museum of Natural History\",\"institutionCode\":\"DPC\"}]}"
+    headers:
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Cache-Control:
+      - public, max-age=3601
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '13306'
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 14 Nov 2025 10:13:06 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Vary:
+      - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      Via:
+      - 1.1 varnish (Varnish/6.6)
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Varnish:
+      - '744128769'
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+version: 1

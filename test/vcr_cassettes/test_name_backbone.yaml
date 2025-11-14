@@ -9,45 +9,36 @@ interactions:
       Connection:
       - keep-alive
       user-agent:
-      - python-requests/2.31.0,pygbif/0.6.4
+      - python-requests/2.31.0,pygbif/0.6.6
     method: GET
-    uri: https://api.gbif.org/v1/species/match?name=Helianthus+annuus&strict=false&verbose=false&limit=100
+    uri: https://api.gbif.org/v2/species/match?scientificName=Calopteryx+splendens
   response:
     body:
-      string: '{"usageKey":9206251,"scientificName":"Helianthus annuus L.","canonicalName":"Helianthus
-        annuus","rank":"SPECIES","status":"ACCEPTED","confidence":99,"matchType":"EXACT","kingdom":"Plantae","phylum":"Tracheophyta","order":"Asterales","family":"Asteraceae","genus":"Helianthus","species":"Helianthus
-        annuus","kingdomKey":6,"phylumKey":7707728,"classKey":220,"orderKey":414,"familyKey":3065,"genusKey":3119134,"speciesKey":9206251,"synonym":false,"class":"Magnoliopsida"}'
+      string: '{"usage":{"key":"1427067","name":"Calopteryx splendens (Harris, 1780)","canonicalName":"Calopteryx
+        splendens","authorship":"(Harris, 1780)","rank":"SPECIES","code":"ZOOLOGICAL","status":"ACCEPTED","genericName":"Calopteryx","specificEpithet":"splendens","type":"SCIENTIFIC","formattedName":"<i>Calopteryx</i>
+        <i>splendens</i> (Harris, 1780)"},"classification":[{"key":"1","name":"Animalia","rank":"KINGDOM"},{"key":"54","name":"Arthropoda","rank":"PHYLUM"},{"key":"216","name":"Insecta","rank":"CLASS"},{"key":"789","name":"Odonata","rank":"ORDER"},{"key":"4211","name":"Calopterygidae","rank":"FAMILY"},{"key":"1427007","name":"Calopteryx","rank":"GENUS"},{"key":"1427067","name":"Calopteryx
+        splendens","rank":"SPECIES"}],"diagnostics":{"matchType":"EXACT","confidence":99,"timeTaken":8,"timings":{"nameNRank":0,"sciNameMatch":8,"nameParse":1,"luceneMatch":7}},"additionalStatus":[{"clbDatasetKey":"53131","datasetAlias":"IUCN","datasetKey":"19491596-35ae-4a91-9a98-85cf505f1bd3","status":"LEAST_CONCERN","statusCode":"LC","sourceId":"158701"}],"synonym":false}'
     headers:
       Accept-Ranges:
       - bytes
       Age:
-      - '0'
+      - '84'
       Cache-Control:
       - public, max-age=3601
       Connection:
       - keep-alive
+      Content-Length:
+      - '1062'
       Content-Type:
       - application/json
       Date:
-      - Fri, 04 Oct 2024 07:00:36 GMT
-      Expires:
-      - '0'
-      Pragma:
-      - no-cache
-      Transfer-Encoding:
-      - chunked
+      - Fri, 14 Nov 2025 12:20:43 GMT
       Vary:
       - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
       Via:
-      - 1.1 varnish (Varnish/6.0)
-      X-Content-Type-Options:
-      - nosniff
-      X-Frame-Options:
-      - DENY
+      - 1.1 varnish (Varnish/6.6)
       X-Varnish:
-      - '670303475'
-      X-XSS-Protection:
-      - 1; mode=block
+      - 941424663 898861727
     status:
       code: 200
       message: OK

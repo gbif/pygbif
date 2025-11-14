@@ -1,5 +1,11 @@
 Changelog
 =========
+0.6.6 (2025-11-14)
+------------------
+- updated matching in `occurrences.name_backbone` to api v2 :issue:`176` 
+- added checklistKey support to `occurrences.search` :issue:`178`
+- added support for `collection.search` and `institution.search` 
+
 0.6.5 (2024-10-28)
 ------------------
 - added support for `occurrences.download_citation` :issue:`158`

@@ -9,6 +9,7 @@ literature module API:
 * `search`
 
 Example usage:
+
 .. code-block:: python
 
     from pygbif import literature as lit

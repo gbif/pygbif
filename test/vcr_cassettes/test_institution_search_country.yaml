@@ -1,0 +1,125 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - python-requests/2.31.0,pygbif/0.6.6
+    method: GET
+    uri: https://api.gbif.org/v1/grscicoll/institution?country=US&country=GB&limit=10
+  response:
+    body:
+      string: "{\"offset\":0,\"limit\":10,\"endOfRecords\":false,\"count\":2570,\"results\":[{\"key\":\"00f93b00-a375-4c3b-b6a4-119f89b1b78d\",\"code\":\"NSMUK\",\"name\":\"Natural
+        Sciences Museum\",\"description\":\"The Natural Sciences Museum is a relatively
+        new independent natural history museum located in at 149\u202FHolme\u202FLane,
+        Sheffield S6\u202F4JR, and opened to the public on 13 August 2022.  The museum
+        is focused chiefly on palaeontological specimens. It has 12,000 specimens,
+        a CT-scanner, a public preparation lab, and a private conservation lab. \",\"types\":[\"Museum\"],\"active\":true,\"email\":[\"info@ynhm.org\"],\"phone\":[\"01142216662\u202C\"],\"homepage\":\"https://ynhm.org\",\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[\"NonProfit\"],\"disciplines\":[\"Paleontology\"],\"latitude\":53.401184,\"longitude\":-1.505363,\"mailingAddress\":{\"key\":57013,\"address\":\"149
+        Holme Lane\",\"city\":\"Sheffield\",\"province\":\"South Yorkshire\",\"postalCode\":\"S6
+        4JR\",\"country\":\"GB\"},\"address\":{\"key\":57012,\"address\":\"149 Holme
+        Lane\",\"city\":\"Sheffield\",\"province\":\"South Yorkshire\",\"postalCode\":\"S6
+        4JR\",\"country\":\"GB\"},\"additionalNames\":[\"Yorkshire Natural History
+        Museum\"],\"numberSpecimens\":12000,\"logoUrl\":\"https://img1.wsimg.com/isteam/ip/ecbcc640-26c4-4e77-8b4c-6215b27303ce/blob-0003.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25\",\"createdBy\":\"taraw\",\"modifiedBy\":\"taraw\",\"created\":\"2025-10-21T09:59:25.632+00:00\",\"modified\":\"2025-10-21T09:59:25.632+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"alternativeCodes\":[{\"code\":\"YNHM\",\"description\":\"Yorkshire
+        Natural History Museum\"}],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0,\"featuredImageUrl\":\"https://ynhm.org\"},{\"key\":\"917c3b95-ec96-40bd-a18d-d4f88e41f94f\",\"code\":\"chicagobr\",\"name\":\"Brookfield
+        Zoo Chicago\",\"description\":\"zoo\",\"types\":[],\"active\":true,\"email\":[],\"phone\":[\"708-688-8000\"],\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[],\"disciplines\":[],\"mailingAddress\":{\"key\":56925,\"address\":\"3300
+        Golf Road\",\"city\":\"Brookfield\",\"postalCode\":\"60513\",\"country\":\"US\"},\"address\":{\"key\":56924,\"address\":\"3300
+        Golf Road\",\"city\":\"Brookfield\",\"postalCode\":\"60513\",\"country\":\"US\"},\"additionalNames\":[],\"createdBy\":\"dbloom\",\"modifiedBy\":\"dbloom\",\"created\":\"2025-09-12T15:39:59.201+00:00\",\"modified\":\"2025-09-12T15:39:59.201+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0},{\"key\":\"acc160f3-8fb5-4e54-8a92-f428fb051a76\",\"code\":\"SFC\",\"name\":\"Santa
+        Fe College Museum of Earth Science\",\"description\":\"Santa Fe College's
+        Museum of Earth Science is home to over 1,700 mineral, fossil and rock samples
+        around the world. The museum also has martian and lunar meteorites and other
+        \\\"rocks from space.\\\"\",\"types\":[],\"active\":true,\"email\":[],\"phone\":[],\"homepage\":\"https://www.sfcollege.edu/academics/las/natsci/science-resource-areas/museum.html\",\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[],\"disciplines\":[\"Geological\",\"Paleontology\"],\"mailingAddress\":{\"key\":56581},\"address\":{\"key\":56580,\"address\":\"3000
+        N.W. 83rd Street, X-201\",\"city\":\"Gainesville\",\"province\":\"Florida\",\"postalCode\":\"32606\",\"country\":\"US\"},\"additionalNames\":[],\"createdBy\":\"mgrosjean\",\"modifiedBy\":\"mgrosjean\",\"created\":\"2025-09-05T13:15:57.233+00:00\",\"modified\":\"2025-09-05T13:15:57.233+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":91,\"typeSpecimenCount\":91},{\"key\":\"200dfb5f-58ed-478d-8058-8ac565b509cf\",\"code\":\"MEMZOO\",\"name\":\"Memphis
+        Zoo\",\"description\":\"The Memphis Zoo is a zoo in Midtown, Memphis, Tennessee,
+        United States. It is home to more than 3,500 animals representing over 500
+        different species. \",\"types\":[\"ZooAquarium\"],\"active\":true,\"email\":[],\"phone\":[],\"homepage\":\"https://www.memphiszoo.org/\",\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[\"NonProfit\"],\"disciplines\":[\"Zoology\",\"Biological\"],\"latitude\":35.150331,\"longitude\":-89.993305,\"mailingAddress\":{\"key\":55998,\"address\":\"2000
+        Prentiss Place\",\"city\":\"Memphis\",\"province\":\"Tennessee\",\"postalCode\":\"38112\",\"country\":\"US\"},\"address\":{\"key\":55997,\"address\":\"2000
+        Prentiss Place\",\"city\":\"Memphis\",\"province\":\"Tennessee\",\"postalCode\":\"38112\",\"country\":\"US\"},\"additionalNames\":[\"Memphis
+        Zoological Society\"],\"foundingDate\":1906,\"numberSpecimens\":3500,\"logoUrl\":\"https://prod.speakcdn.com/sitefiles/2879/images/white-logo.svg\",\"createdBy\":\"catchapman\",\"modifiedBy\":\"catchapman\",\"created\":\"2025-06-17T15:15:27.291+00:00\",\"modified\":\"2025-06-17T15:15:27.291+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[{\"key\":42822,\"firstName\":\"Sinlan\",\"lastName\":\"Poo\",\"position\":[\"Curator
+        of Research\"],\"phone\":[],\"fax\":[],\"email\":[\"spoo@memphiszoo.org\"],\"address\":[],\"city\":\"Memphis\",\"province\":\"Tennessee\",\"country\":\"US\",\"primary\":true,\"taxonomicExpertise\":[],\"userIds\":[{\"type\":\"ORCID\",\"id\":\"https://orcid.org/0000-0002-7767-8173\"}],\"createdBy\":\"dbloom\",\"modifiedBy\":\"dbloom\",\"created\":\"2025-06-18T22:37:57.149+00:00\",\"modified\":\"2025-06-18T22:37:57.149+00:00\"}],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0},{\"key\":\"00ff39df-6482-4801-b30c-164bba5c4714\",\"code\":\"GMD\",\"name\":\"Grout
+        Museum District\",\"description\":\"Established in 1932, the Grout Museum
+        District is widely acknowledged as one of the cornerstones of culture in Northeast
+        Iowa. Accredited by the American Alliance of Museums, the Grout Museum District
+        includes five distinct properties: the Grout Museum of History and Science,
+        Sullivan Brothers Iowa Veterans Museum, Bluedorn Science Imaginarium, Rensselaer
+        Russell House Museum, and Snowden House. The Grout Museum District houses
+        multiple types of local natural science and history collections.\",\"types\":[],\"active\":true,\"email\":[\"info@gmdistrict.org\"],\"phone\":[\"+1
+        319-234-6357\"],\"homepage\":\"https://www.groutmuseumdistrict.org/\",\"catalogUrls\":[\"https://gmdistrict.catalogaccess.com/\"],\"apiUrls\":[],\"institutionalGovernances\":[\"NonProfit\"],\"disciplines\":[\"Biological\",\"Geological\",\"Archaeology\"],\"latitude\":42.492810,\"longitude\":-92.343799,\"mailingAddress\":{\"key\":55863,\"address\":\"503
+        South St.\",\"city\":\"Waterloo\",\"province\":\"Iowa\",\"postalCode\":\"50701\",\"country\":\"US\"},\"address\":{\"key\":55862,\"address\":\"503
+        South St.\",\"city\":\"Waterloo\",\"province\":\"Iowa\",\"postalCode\":\"50701\",\"country\":\"US\"},\"additionalNames\":[\"the
+        Grout Museum of History and Science\",\"Sullivan Brothers Iowa Veterans Museum\",\"Bluedorn
+        Science Imaginarium\",\"Rensselaer Russell House Museum\",\"Snowden House\"],\"foundingDate\":1932,\"logoUrl\":\"https://photos.fife.usercontent.google.com/pw/AP1GczOpU_1pATpZmYzrIjhTkEX-wUFNod43_zDK8BBOrP73WT5rX5jwdpNH=w666-h1011-s-no?authuser=0\",\"createdBy\":\"mgrosjean\",\"modifiedBy\":\"dbloom\",\"created\":\"2025-06-02T11:56:00.040+00:00\",\"modified\":\"2025-09-04T23:26:27.682+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[{\"key\":42697,\"firstName\":\"Nick\",\"lastName\":\"Erickson\",\"position\":[\"Registrar\"],\"phone\":[\"+1
+        319-234-6357\"],\"fax\":[],\"email\":[\"nicholas.erickson@gmdistrict.org\"],\"address\":[\"503
+        South St.\"],\"city\":\"Waterloo\",\"province\":\"Iowa\",\"country\":\"US\",\"postalCode\":\"50701\",\"primary\":true,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"kentisaacson\",\"modifiedBy\":\"kentisaacson\",\"created\":\"2025-06-03T02:16:59.819+00:00\",\"modified\":\"2025-06-03T02:16:59.819+00:00\"},{\"key\":42698,\"firstName\":\"Kent\",\"lastName\":\"Isaacson\",\"position\":[\"Collections
+        Assistant\"],\"phone\":[\"+1 319-234-6357\"],\"fax\":[],\"email\":[\"kent.isaacson@gmdistrict.org\"],\"address\":[\"503
+        South St.\"],\"city\":\"Waterloo\",\"province\":\"Iowa\",\"country\":\"US\",\"postalCode\":\"50701\",\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"kentisaacson\",\"modifiedBy\":\"kentisaacson\",\"created\":\"2025-06-03T02:19:57.815+00:00\",\"modified\":\"2025-06-03T02:19:57.815+00:00\"}],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":7,\"typeSpecimenCount\":0,\"featuredImageUrl\":\"https://photos.fife.usercontent.google.com/pw/AP1GczOpU_1pATpZmYzrIjhTkEX-wUFNod43_zDK8BBOrP73WT5rX5jwdpNH=w666-h1011-s-no?authuser=0\",\"featuredImageLicense\":\"CC_BY_NC_4_0\"},{\"key\":\"e2ecdfc7-5de4-44e5-b0a7-7b6bb1e9557c\",\"code\":\"UKCEH\",\"name\":\"UK
+        Centre for Ecology & Hydrology - Predatory Bird Monitoring Scheme\",\"description\":\"he
+        UK Centre for Ecology & Hydrology is a world-leading independent research
+        institute, carrying out excellent environmental science with impact. The Predatory
+        Bird Monitoring Scheme holds a tissue archive  of samples collected from UK
+        native raptors and owls.\",\"types\":[\"OtherTypeResearchInstitutionBiorepository\"],\"active\":true,\"email\":[\"pbms@ceh.ac.uk\"],\"phone\":[\"441524595830\"],\"homepage\":\"https://pbms.ceh.ac.uk/\",\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[\"NonProfit\"],\"disciplines\":[\"EnvironmentalToxicology\"],\"latitude\":54.009305,\"longitude\":-2.786171,\"mailingAddress\":{\"key\":55764,\"address\":\"Predatory
+        Bird Monitoring Scheme, UK Centre for Ecology & Hydrology, Lancaster Environment
+        Centre, Library Avenue \",\"city\":\"Lancaster\",\"province\":\"Lancashire\",\"postalCode\":\"LA1
+        4AP\",\"country\":\"GB\"},\"address\":{\"key\":55763,\"address\":\"Predatory
+        Bird Monitoring Scheme, UK Centre for Ecology & Hydrology, Lancaster Environment
+        Centre, Library Avenue \",\"city\":\"Lancaster\",\"province\":\"Lancashire\",\"postalCode\":\"LA1
+        4AP\",\"country\":\"GB\"},\"additionalNames\":[],\"foundingDate\":1967,\"numberSpecimens\":70000,\"createdBy\":\"mgrosjean\",\"modifiedBy\":\"mgrosjean\",\"created\":\"2025-05-19T06:42:08.156+00:00\",\"modified\":\"2025-05-19T06:42:08.156+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0},{\"key\":\"b18469fc-7bea-484e-8d05-a97d05812410\",\"code\":\"MBU\",\"name\":\"Mary
+        Baldwin University\",\"types\":[],\"active\":true,\"email\":[],\"phone\":[\"540
+        887 7368\"],\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[],\"disciplines\":[],\"latitude\":38.155277,\"longitude\":-79.067963,\"mailingAddress\":{\"key\":55807,\"address\":\"318
+        Prospect St.\",\"city\":\"Staunton\",\"province\":\"VA\",\"postalCode\":\"24401-3615\",\"country\":\"US\"},\"address\":{\"key\":55742,\"address\":\"101
+        E Frederick St\",\"city\":\"Staunton\",\"province\":\"Virginia\",\"postalCode\":\"24401-3615\",\"country\":\"US\"},\"additionalNames\":[],\"foundingDate\":1950,\"createdBy\":\"kdpearso\",\"modifiedBy\":\"ih-sync\",\"created\":\"2025-05-14T11:25:10.922+00:00\",\"modified\":\"2025-05-21T11:07:43.248+00:00\",\"tags\":[],\"identifiers\":[{\"key\":440987,\"type\":\"IH_IRN\",\"identifier\":\"gbif:ih:irn:268077\",\"createdBy\":\"kdpearso\",\"created\":\"2025-05-14T11:25:10.942+00:00\",\"primary\":false}],\"contactPersons\":[{\"key\":42600,\"firstName\":\"Kadrin
+        Elizabeth\",\"lastName\":\"Anderson\",\"position\":[\"Assistant Professor\"],\"phone\":[\"540
+        887 7368\",\"757 773 3508\"],\"fax\":[],\"email\":[\"kanderson@marybaldwin.edu\"],\"address\":[\"101
+        E Frederick St\"],\"city\":\"Staunton\",\"province\":\"Virginia\",\"country\":\"US\",\"postalCode\":\"24401-3615\",\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[{\"type\":\"IH_IRN\",\"id\":\"268087\"}],\"createdBy\":\"kdpearso\",\"modifiedBy\":\"kdpearso\",\"created\":\"2025-05-14T11:25:10.962+00:00\",\"modified\":\"2025-05-14T11:25:10.962+00:00\"}],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"IH\",\"masterSourceMetadata\":{\"key\":9818,\"source\":\"IH_IRN\",\"sourceId\":\"268077\",\"createdBy\":\"kdpearso\",\"created\":\"2025-05-14T11:25:10.951+00:00\"},\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0},{\"key\":\"4d2aef8b-1e49-4379-9744-01b79ddbe204\",\"code\":\"COCMSP\",\"name\":\"Cheyenne
+        Mountain State Park, Colorado Parks and Wildlife\",\"types\":[],\"active\":true,\"email\":[\"cheyenne.park@state.co.us\"],\"phone\":[\"719-576-2016\"],\"homepage\":\"https://cpw.state.co.us/state-parks/cheyenne-mountain-state-park\",\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[],\"disciplines\":[],\"longitude\":38.735810,\"mailingAddress\":{\"key\":55741,\"address\":\"410
+        JL Ranch Heights\",\"city\":\"Colorado Springs\",\"province\":\"Colorado\",\"postalCode\":\"80926\",\"country\":\"US\"},\"address\":{\"key\":55738,\"address\":\"410
+        JL Ranch Heights\",\"city\":\"Colorado Springs\",\"province\":\"Colorado\",\"postalCode\":\"80926\",\"country\":\"US\"},\"additionalNames\":[],\"foundingDate\":2006,\"createdBy\":\"kdpearso\",\"modifiedBy\":\"ih-sync\",\"created\":\"2025-05-07T12:59:22.000+00:00\",\"modified\":\"2025-05-14T11:06:41.435+00:00\",\"tags\":[],\"identifiers\":[{\"key\":440588,\"type\":\"IH_IRN\",\"identifier\":\"gbif:ih:irn:268106\",\"createdBy\":\"kdpearso\",\"created\":\"2025-05-07T12:59:22.014+00:00\",\"primary\":false}],\"contactPersons\":[],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"IH\",\"masterSourceMetadata\":{\"key\":9816,\"source\":\"IH_IRN\",\"sourceId\":\"268106\",\"createdBy\":\"kdpearso\",\"created\":\"2025-05-07T12:59:22.024+00:00\"},\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0},{\"key\":\"47ca3afa-d669-460a-901b-9d90cb8f7fc0\",\"code\":\"BRF\",\"name\":\"Black
+        Rock Forest\",\"types\":[],\"active\":true,\"email\":[\"science@blackrockforest.org\"],\"phone\":[\"(845)
+        534-4517\"],\"homepage\":\"http://blackrockforest.org\",\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[],\"disciplines\":[],\"latitude\":41.413904,\"longitude\":-74.011650,\"mailingAddress\":{\"key\":55671,\"address\":\"65
+        Reservoir Rd\",\"city\":\"Cornwall\",\"province\":\"New York\",\"postalCode\":\"12518-2135\",\"country\":\"US\"},\"address\":{\"key\":55664,\"address\":\"65
+        Reservoir Rd\",\"city\":\"Cornwall\",\"province\":\"New York\",\"postalCode\":\"12518-2135\",\"country\":\"US\"},\"additionalNames\":[],\"foundingDate\":1990,\"createdBy\":\"dbloom\",\"modifiedBy\":\"ih-sync\",\"created\":\"2025-04-09T11:39:48.934+00:00\",\"modified\":\"2025-04-16T11:05:52.029+00:00\",\"tags\":[],\"identifiers\":[{\"key\":439137,\"type\":\"IH_IRN\",\"identifier\":\"gbif:ih:irn:267866\",\"createdBy\":\"dbloom\",\"created\":\"2025-04-09T11:39:48.947+00:00\",\"primary\":false}],\"contactPersons\":[{\"key\":42434,\"firstName\":\"Katherine\",\"lastName\":\"Terlizzi\",\"position\":[\"Research
+        Manager\"],\"phone\":[\"8455344517\"],\"fax\":[],\"email\":[\"kterlizzi@blackrockforest.org\"],\"address\":[\"65
+        Reservoir Rd\"],\"city\":\"Cornwall\",\"province\":\"New York\",\"country\":\"US\",\"postalCode\":\"12518-2135\",\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[{\"type\":\"IH_IRN\",\"id\":\"267873\"}],\"createdBy\":\"dbloom\",\"modifiedBy\":\"dbloom\",\"created\":\"2025-04-09T11:39:48.960+00:00\",\"modified\":\"2025-04-09T11:39:48.960+00:00\"}],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"IH\",\"masterSourceMetadata\":{\"key\":9797,\"source\":\"IH_IRN\",\"sourceId\":\"267866\",\"createdBy\":\"dbloom\",\"created\":\"2025-04-09T11:39:48.954+00:00\"},\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0},{\"key\":\"e87f4ba6-c0df-4a5f-8528-dc252d049093\",\"code\":\"UAO\",\"name\":\"University
+        of Akron\",\"types\":[],\"active\":true,\"email\":[\"rjm2@uakron.edu\"],\"phone\":[],\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[],\"disciplines\":[],\"latitude\":41.075000,\"longitude\":-81.514000,\"mailingAddress\":{\"key\":55621,\"address\":\"Department
+        of Biology\",\"city\":\"Akron\",\"province\":\"OH\",\"postalCode\":\"44325-3908\",\"country\":\"US\"},\"address\":{\"key\":55592,\"address\":\"Department
+        of Biology\",\"city\":\"Akron\",\"province\":\"OH\",\"postalCode\":\"44325-3908\",\"country\":\"US\"},\"additionalNames\":[],\"createdBy\":\"kdpearso\",\"modifiedBy\":\"ih-sync\",\"created\":\"2025-03-26T12:25:46.160+00:00\",\"modified\":\"2025-04-02T11:04:27.272+00:00\",\"tags\":[],\"identifiers\":[{\"key\":438334,\"type\":\"IH_IRN\",\"identifier\":\"gbif:ih:irn:267811\",\"createdBy\":\"kdpearso\",\"created\":\"2025-03-26T12:25:46.173+00:00\",\"primary\":false}],\"contactPersons\":[{\"key\":42363,\"firstName\":\"Randall\",\"lastName\":\"Mitchell\",\"position\":[\"Professor\"],\"phone\":[\"3309725122\"],\"fax\":[],\"email\":[\"rjm2@uakron.edu\"],\"address\":[\"Department
+        of Biology\"],\"city\":\"Akron\",\"province\":\"OH\",\"country\":\"US\",\"postalCode\":\"44325-3908\",\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[{\"type\":\"IH_IRN\",\"id\":\"267818\"}],\"createdBy\":\"kdpearso\",\"modifiedBy\":\"kdpearso\",\"created\":\"2025-03-26T12:25:46.187+00:00\",\"modified\":\"2025-03-26T12:25:46.187+00:00\"}],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"IH\",\"masterSourceMetadata\":{\"key\":9781,\"source\":\"IH_IRN\",\"sourceId\":\"267811\",\"createdBy\":\"kdpearso\",\"created\":\"2025-03-26T12:25:46.180+00:00\"},\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0}]}"
+    headers:
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Cache-Control:
+      - public, max-age=3601
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 14 Nov 2025 10:13:10 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      Via:
+      - 1.1 varnish (Varnish/6.6)
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Varnish:
+      - '723160786'
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+version: 1

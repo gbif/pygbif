@@ -9,30 +9,39 @@ interactions:
       Connection:
       - keep-alive
       user-agent:
-      - python-requests/2.31.0,pygbif/0.6.4
+      - python-requests/2.31.0,pygbif/0.6.6
     method: GET
     uri: https://api.gbif.org/v1/installation?limit=5
   response:
     body:
-      string: "{\"offset\":0,\"limit\":5,\"endOfRecords\":false,\"count\":667,\"results\":[{\"key\":\"49b268f4-e5db-49a3-87ad-ee23f397eadd\",\"organizationKey\":\"37e82b90-1e21-11de-ab90-f72009d2669b\",\"type\":\"HTTP_INSTALLATION\",\"title\":\"GBIF.be
-        Metabarcoding Datasets\",\"description\":\"Metabarcoding publication tool
-        for Belgian data holders.\",\"createdBy\":\"MattBlissett\",\"modifiedBy\":\"MattBlissett\",\"created\":\"2024-10-03T10:59:26.782+00:00\",\"modified\":\"2024-10-03T10:59:26.782+00:00\",\"disabled\":false,\"contacts\":[],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"18d23510-5b63-4ead-93d2-09061bf0b50e\",\"organizationKey\":\"04fd2e13-6881-4e5c-9dd1-8fdd9ab993c1\",\"type\":\"HTTP_INSTALLATION\",\"title\":\"FinBIF
-        Metabarcoding Datasets\",\"description\":\"This is the Finnish Biodiversity
-        Information Facility's installation of GBIF's Metabarcoding Data Toolkit.
-        It facilitates the conversion and mobilization of DNA metabarcoding datasets
-        for Finnish data providers.\",\"createdBy\":\"MattBlissett\",\"modifiedBy\":\"MattBlissett\",\"created\":\"2024-10-03T10:44:07.699+00:00\",\"modified\":\"2024-10-03T10:44:07.699+00:00\",\"disabled\":false,\"contacts\":[],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"a3d3cdb4-4bf9-4e13-b50b-94b6b000a1d6\",\"organizationKey\":\"fbca90e3-8aed-48b1-84e3-369afbd000ce\",\"type\":\"HTTP_INSTALLATION\",\"title\":\"ECA
-        Metabarcoding Data Toolkit\",\"description\":\"The Europe and Central Asia
-        (ECA) Metabarcoding Data Toolkit (MDT) is available for the eDNA barcoding
-        community to facilitate biodiversity data sharing with GBIF and to recognize
-        the contributions of the data publishers to GBIF.\",\"createdBy\":\"MattBlissett\",\"modifiedBy\":\"MattBlissett\",\"created\":\"2024-10-02T16:53:14.697+00:00\",\"modified\":\"2024-10-02T16:53:14.697+00:00\",\"disabled\":false,\"contacts\":[],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"1f8ecebe-7091-4e0c-8f2d-34b944d9297d\",\"organizationKey\":\"64795dcb-ad74-41b3-95e5-cc52ba754776\",\"type\":\"HTTP_INSTALLATION\",\"title\":\"GBIF
-        Norway Metabarcoding Datasets\",\"description\":\"GBIF Norway\u2019s installation
-        of the Metabarcoding Data Toolkit (MDT) helps standardize and publish DNA
-        metabarcoding datasets according to GBIF\u2019s guidelines. It\u2019s designed
-        to make it easier to share and integrate these datasets into the global biodiversity
-        data network.\",\"createdBy\":\"thomasgbif\",\"modifiedBy\":\"thomasgbif\",\"created\":\"2024-10-02T15:24:24.001+00:00\",\"modified\":\"2024-10-02T15:24:24.001+00:00\",\"disabled\":false,\"contacts\":[],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"fb91678b-fb9e-4bb8-96e3-99775a8f3386\",\"organizationKey\":\"06a11821-bcc9-4417-bd6a-0a9b796139f0\",\"type\":\"IPT_INSTALLATION\",\"title\":\"GBIF
-        Uruguay\",\"description\":\"This IPT is hosted by GBIF to publish datasets
-        from Uruguay.\",\"createdBy\":\"06a11821-bcc9-4417-bd6a-0a9b796139f0\",\"modifiedBy\":\"fb91678b-fb9e-4bb8-96e3-99775a8f3386\",\"created\":\"2024-09-24T14:15:01.715+00:00\",\"modified\":\"2024-09-24T14:16:25.761+00:00\",\"disabled\":false,\"contacts\":[{\"key\":5474096,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"userId\":[],\"firstName\":\"Ana
-        Laura Mello\",\"position\":[],\"email\":[\"ana.mello@ambiente.gub.uy\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"06a11821-bcc9-4417-bd6a-0a9b796139f0\",\"modifiedBy\":\"fb91678b-fb9e-4bb8-96e3-99775a8f3386\",\"created\":\"2024-09-24T14:15:01.729+00:00\",\"modified\":\"2024-09-24T14:16:25.778+00:00\"}],\"endpoints\":[{\"key\":1046479,\"type\":\"FEED\",\"url\":\"https://cloud.gbif.org/uy/rss.do\",\"createdBy\":\"fb91678b-fb9e-4bb8-96e3-99775a8f3386\",\"modifiedBy\":\"fb91678b-fb9e-4bb8-96e3-99775a8f3386\",\"created\":\"2024-09-24T14:16:25.808+00:00\",\"modified\":\"2024-09-24T14:16:25.808+00:00\",\"machineTags\":[]}],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[]}]}"
+      string: "{\"offset\":0,\"limit\":5,\"endOfRecords\":false,\"count\":709,\"results\":[{\"key\":\"286b6854-6383-4cc3-b696-f4295274d0a2\",\"organizationKey\":\"06fcbbf0-0562-11d8-b851-b8a03c50a862\",\"type\":\"HTTP_INSTALLATION\",\"title\":\"University
+        of Washington Burke Museum (UWBM)\",\"createdBy\":\"hvalli\",\"modifiedBy\":\"hvalli\",\"created\":\"2025-11-14T08:35:31.034+00:00\",\"modified\":\"2025-11-14T08:35:31.034+00:00\",\"disabled\":false,\"contacts\":[],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"6e2e8392-924d-43b7-854a-67f6005092b2\",\"organizationKey\":\"f5fd374b-89cb-4ab6-b3eb-794c65f232c3\",\"type\":\"IPT_INSTALLATION\",\"title\":\"Sistema
+        de Informa\xE7\xE3o sobre a Biodiversidade Brasileira - OBIS Brasil\",\"description\":\"O
+        IPT (Integrated Publishing Toolkit) do OBIS \u2013 Brasil \xE9 a principal
+        ferramenta de publica\xE7\xE3o e gest\xE3o de dados sobre biodiversidade marinha
+        e costeira do pa\xEDs. O sistema integra o Brasil \xE0 rede global do Ocean
+        Biodiversity Information System (OBIS), iniciativa coordenada pela Comiss\xE3o
+        Oceanogr\xE1fica Intergovernamental (COI/UNESCO). O OBIS \u2013 Brasil \xE9
+        administrado pelo SiBBr (Sistema de Informa\xE7\xE3o sobre a Biodiversidade
+        Brasileira), que atua como o n\xF3 nacional respons\xE1vel por promover a
+        integra\xE7\xE3o, padroniza\xE7\xE3o e dissemina\xE7\xE3o dos dados marinhos
+        produzidos por institui\xE7\xF5es de pesquisa, universidades e \xF3rg\xE3os
+        governamentais. Por meio do IPT, o OBIS \u2013 Brasil, sob coordena\xE7\xE3o
+        do SiBBr, assegura que os dados marinhos nacionais sejam acess\xEDveis, reutiliz\xE1veis
+        e integrados \xE0 rede global, fortalecendo a ci\xEAncia aberta e subsidiando
+        pol\xEDticas p\xFAblicas voltadas \xE0 conserva\xE7\xE3o da biodiversidade
+        oce\xE2nica, \xE0 gest\xE3o de recursos pesqueiros e ao monitoramento ambiental.\",\"createdBy\":\"f5fd374b-89cb-4ab6-b3eb-794c65f232c3\",\"modifiedBy\":\"f5fd374b-89cb-4ab6-b3eb-794c65f232c3\",\"created\":\"2025-11-02T18:50:34.920+00:00\",\"modified\":\"2025-11-02T18:50:34.920+00:00\",\"disabled\":false,\"contacts\":[{\"key\":6312340,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"userId\":[],\"firstName\":\"Equipe
+        de dados SiBBr\",\"position\":[],\"email\":[\"atendimento_sibbr@rnp.br\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"f5fd374b-89cb-4ab6-b3eb-794c65f232c3\",\"modifiedBy\":\"f5fd374b-89cb-4ab6-b3eb-794c65f232c3\",\"created\":\"2025-11-02T18:50:34.942+00:00\",\"modified\":\"2025-11-02T18:50:34.942+00:00\"}],\"endpoints\":[{\"key\":1158958,\"type\":\"FEED\",\"url\":\"https://ipt.sibbr.gov.br/obis-brasil/rss.do\",\"createdBy\":\"f5fd374b-89cb-4ab6-b3eb-794c65f232c3\",\"modifiedBy\":\"f5fd374b-89cb-4ab6-b3eb-794c65f232c3\",\"created\":\"2025-11-02T18:50:34.961+00:00\",\"modified\":\"2025-11-02T18:50:34.961+00:00\",\"machineTags\":[]}],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"c11d18e9-858b-4013-9ebc-cd2bbe8df727\",\"organizationKey\":\"47a779a6-a230-4edd-b787-19c3d2c80ab5\",\"type\":\"HTTP_INSTALLATION\",\"title\":\"Species
+        File Group installation\",\"createdBy\":\"mgrosjean\",\"modifiedBy\":\"mgrosjean\",\"created\":\"2025-10-24T15:40:18.751+00:00\",\"modified\":\"2025-10-24T15:40:18.751+00:00\",\"disabled\":false,\"contacts\":[],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"895142ac-f3bd-4691-9aa7-6d0194ee0d05\",\"organizationKey\":\"0e1238eb-2c53-4ebe-a33f-0679b2e8c385\",\"type\":\"HTTP_INSTALLATION\",\"title\":\"The
+        International Council for the Exploration of the Sea (ICES)\",\"createdBy\":\"hvalli\",\"modifiedBy\":\"hvalli\",\"created\":\"2025-10-24T10:13:20.583+00:00\",\"modified\":\"2025-10-24T10:13:20.583+00:00\",\"disabled\":false,\"contacts\":[],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"09490f73-d156-445c-971e-f02b574f0320\",\"organizationKey\":\"67b2263f-6990-4d9d-b32b-20aa72ef4fbc\",\"type\":\"IPT_INSTALLATION\",\"title\":\"OBIS-SEAMAP\",\"description\":\"Ocean
+        Biodiversity Information System Spatial Ecological Analysis of Megavertebrate
+        Populations (OBIS-SEAMAP), a thematic node of the Ocean Biodiversity Information
+        System (OBIS), is aimed at augmenting our understanding of the distribution
+        and the ecology of marine mammals, seabirds, sea turtles and rays & sharks
+        by quantifying the global patterns of marine species distribution and biodiversity
+        and designing and implementing standard databases and innovative sampling
+        techniques.\",\"createdBy\":\"67b2263f-6990-4d9d-b32b-20aa72ef4fbc\",\"modifiedBy\":\"67b2263f-6990-4d9d-b32b-20aa72ef4fbc\",\"created\":\"2025-10-06T13:42:43.973+00:00\",\"modified\":\"2025-10-06T13:42:43.973+00:00\",\"disabled\":false,\"contacts\":[{\"key\":6276230,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":true,\"userId\":[],\"firstName\":\"Ei
+        Fujioka\",\"position\":[],\"email\":[\"efujioka@duke.edu\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"67b2263f-6990-4d9d-b32b-20aa72ef4fbc\",\"modifiedBy\":\"67b2263f-6990-4d9d-b32b-20aa72ef4fbc\",\"created\":\"2025-10-06T13:42:43.988+00:00\",\"modified\":\"2025-10-06T13:42:43.988+00:00\"}],\"endpoints\":[{\"key\":1150725,\"type\":\"FEED\",\"url\":\"https://ipt.env.duke.edu/rss.do\",\"createdBy\":\"67b2263f-6990-4d9d-b32b-20aa72ef4fbc\",\"modifiedBy\":\"67b2263f-6990-4d9d-b32b-20aa72ef4fbc\",\"created\":\"2025-10-06T13:42:44.006+00:00\",\"modified\":\"2025-10-06T13:42:44.006+00:00\",\"machineTags\":[]}],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[]}]}"
     headers:
       Accept-Ranges:
       - bytes
@@ -43,11 +52,11 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '3751'
+      - '5131'
       Content-Type:
       - application/json
       Date:
-      - Fri, 04 Oct 2024 07:00:26 GMT
+      - Fri, 14 Nov 2025 10:13:37 GMT
       Expires:
       - '0'
       Pragma:
@@ -55,13 +64,13 @@ interactions:
       Vary:
       - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
       Via:
-      - 1.1 varnish (Varnish/6.0)
+      - 1.1 varnish (Varnish/6.6)
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '687571504'
+      - '683840597'
       X-XSS-Protection:
       - 1; mode=block
     status:

@@ -11,7 +11,7 @@ print(IN_GITHUB_ACTIONS)
 @vcr.use_cassette("test/vcr_cassettes/test_download_cancel.yaml", filter_headers=["authorization"])
 def test_download_cancel():
     "occurrences.download_cancel - basic test"
-    name_key = "156780401"  # for "Bear picornavirus 1"
+    name_key = "789"  # Odonata
     res = occ.download("taxonKey = " + name_key)
     download_key = res[0]
     out = occ.download_cancel(download_key)

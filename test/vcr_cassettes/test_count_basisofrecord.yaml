@@ -9,27 +9,27 @@ interactions:
       Connection:
       - keep-alive
       user-agent:
-      - python-requests/2.31.0,pygbif/0.6.4
+      - python-requests/2.31.0,pygbif/0.6.6
     method: GET
     uri: https://api.gbif.org/v1/occurrence/counts/basisOfRecord
   response:
     body:
-      string: '{"HUMAN_OBSERVATION":2646518467,"PRESERVED_SPECIMEN":251695785,"MATERIAL_SAMPLE":64609236,"MACHINE_OBSERVATION":23363833,"OCCURRENCE":21038441,"OBSERVATION":17281076,"FOSSIL_SPECIMEN":9145348,"MATERIAL_CITATION":8383909,"LIVING_SPECIMEN":2025864}'
+      string: '{"HUMAN_OBSERVATION":3129337649,"PRESERVED_SPECIMEN":270543758,"MATERIAL_SAMPLE":147286014,"OCCURRENCE":50282110,"MACHINE_OBSERVATION":38711382,"OBSERVATION":16762802,"FOSSIL_SPECIMEN":9829806,"MATERIAL_CITATION":8659611,"LIVING_SPECIMEN":3466300}'
     headers:
       Accept-Ranges:
       - bytes
       Age:
-      - '0'
+      - '661'
       Cache-Control:
       - public, max-age=600
       Connection:
       - keep-alive
       Content-Length:
-      - '246'
+      - '247'
       Content-Type:
       - application/json
       Date:
-      - Fri, 04 Oct 2024 07:00:01 GMT
+      - Fri, 14 Nov 2025 10:02:17 GMT
       Expires:
       - '0'
       Pragma:
@@ -37,13 +37,13 @@ interactions:
       Vary:
       - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
       Via:
-      - 1.1 varnish (Varnish/6.0)
+      - 1.1 varnish (Varnish/6.6)
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '689340585'
+      - 814612517 673323170
       X-XSS-Protection:
       - 1; mode=block
     status:

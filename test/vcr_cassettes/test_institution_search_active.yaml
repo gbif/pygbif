@@ -1,0 +1,168 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - python-requests/2.31.0,pygbif/0.6.6
+    method: GET
+    uri: https://api.gbif.org/v1/grscicoll/institution?active=True&limit=10
+  response:
+    body:
+      string: "{\"offset\":0,\"limit\":10,\"endOfRecords\":false,\"count\":8289,\"results\":[{\"key\":\"18e48f64-55cb-4149-a2d3-1c5ebd38cd10\",\"code\":\"SAEPS\",\"name\":\"Museo
+        della Scuola agraria Ettore Pomaranci Santomasi\",\"types\":[],\"active\":true,\"email\":[],\"phone\":[],\"homepage\":\"https://www.icsantomasiscacchi.edu.it/pagine/il-museo-della-scuola-agraria-ettore-pomarici-santomasi\",\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[],\"disciplines\":[],\"mailingAddress\":{\"key\":57045,\"address\":\"Corso
+        Aldo Moro, 51\",\"city\":\"Gravina di Puglia\",\"province\":\"[PUGLIA] Bari
+        (BA)\",\"postalCode\":\"IT-70024\",\"country\":\"IT\"},\"address\":{\"key\":57044,\"address\":\"Corso
+        Aldo Moro, 51\",\"city\":\"Gravina di Puglia\",\"province\":\"[PUGLIA] Bari
+        (BA)\",\"postalCode\":\"IT-70024\",\"country\":\"IT\"},\"additionalNames\":[],\"createdBy\":\"tasmacetus\",\"modifiedBy\":\"tasmacetus\",\"created\":\"2025-11-03T07:51:14.752+00:00\",\"modified\":\"2025-11-03T07:51:14.752+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0},{\"key\":\"bf6c3d40-22fb-4ee5-82cd-a0a8057a6491\",\"code\":\"CENIPALMA\",\"name\":\"Corporaci\xF3n
+        Centro de Investigaci\xF3n en Palma de Aceite\",\"description\":\"La Corporaci\xF3n
+        Centro de Investigaci\xF3n en Palma de Aceite \u2013 Cenipalma, es una corporaci\xF3n
+        de car\xE1cter cient\xEDfico y t\xE9cnico, sin fines de lucro, creada a ra\xEDz
+        de las decisiones de XVIII Congreso Nacional de Cultivadores de Palma de Aceite
+        el 21 de septiembre 1990. El accionar de Cenipalma est\xE1 relacionado con
+        el sector palmero de Colombia y con la Federaci\xF3n Nacional de Cultivadores
+        de Palma de Aceite, Fedepalma. Cenipalma cuenta con 6 sedes: oficinas principales
+        en Bogot\xE1, Servicios T\xE9cnicos Especializados en Bogot\xE1 (que presta
+        los servicios como an\xE1lisis foliar y de suelos, bioproductos, asesor\xEDas
+        y auditor\xEDas a plantaciones y plantas de beneficio) y 4 campos experimentales
+        en las cuatro zonas palmeras (Palmar de la Vizca\xEDna, en Barrancabermeja,
+        Santander, Palmar de la Sierra, en Zona Bananera, Magdalena, Palmar de las
+        Corocoras, en Paratebueno, Cundinamarca y Estaci\xF3n Experimental La Providencia,
+        en Tumaco, Nari\xF1o). Cenipalma ofrece a los palmicultores colombianos la
+        generaci\xF3n, adaptaci\xF3n, validaci\xF3n, transferencia y acompa\xF1amiento
+        en la implementaci\xF3n de tecnolog\xEDas especializadas, viables e innovadoras,
+        para atender oportunidades y retos de una palmicultura colombiana sostenible.\",\"types\":[\"OtherTypeResearchInstitutionBiorepository\"],\"active\":true,\"email\":[\"direcciongeneral@cenipalma.org\",\"cmontoya@cenipalma.org\",\"ebochno@cenipalma.org\"],\"phone\":[\"(57+1)
+        3138600, ext: 4005\"],\"homepage\":\"https://www.cenipalma.org/que-es-cenipalma/\",\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[],\"disciplines\":[\"Biological\",\"CellularBiologyAndHistology\",\"PathologyAnimalPlant\",\"Agricultural\"],\"latitude\":4.611958,\"longitude\":-74.078798,\"mailingAddress\":{\"key\":57035,\"address\":\"Calle
+        98 No. 70-91, piso 14\",\"city\":\"Bogot\xE1, D.C.\",\"province\":\"Bogot\xE1,
+        D.C.\",\"country\":\"CO\"},\"address\":{\"key\":57034,\"address\":\"Calle
+        98 No. 70-91, piso 14\",\"city\":\"Bogot\xE1, D.C.\",\"province\":\"Bogot\xE1,
+        D.C.\",\"country\":\"CO\"},\"additionalNames\":[],\"foundingDate\":1991,\"logoUrl\":\"https://gitlab.com/sib-colombia/logos/-/raw/main/socio-SiB-cenipalma.png\",\"createdBy\":\"sibcolombia\",\"modifiedBy\":\"sibcolombia\",\"created\":\"2025-10-27T16:25:22.568+00:00\",\"modified\":\"2025-10-27T16:27:22.159+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"alternativeCodes\":[{\"code\":\"Corporaci\xF3n
+        Centro de Investigaci\xF3n en Palma de Aceite - CENIPALMA\",\"description\":\"alternative\"}],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":193,\"typeSpecimenCount\":0},{\"key\":\"00f93b00-a375-4c3b-b6a4-119f89b1b78d\",\"code\":\"NSMUK\",\"name\":\"Natural
+        Sciences Museum\",\"description\":\"The Natural Sciences Museum is a relatively
+        new independent natural history museum located in at 149\u202FHolme\u202FLane,
+        Sheffield S6\u202F4JR, and opened to the public on 13 August 2022.  The museum
+        is focused chiefly on palaeontological specimens. It has 12,000 specimens,
+        a CT-scanner, a public preparation lab, and a private conservation lab. \",\"types\":[\"Museum\"],\"active\":true,\"email\":[\"info@ynhm.org\"],\"phone\":[\"01142216662\u202C\"],\"homepage\":\"https://ynhm.org\",\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[\"NonProfit\"],\"disciplines\":[\"Paleontology\"],\"latitude\":53.401184,\"longitude\":-1.505363,\"mailingAddress\":{\"key\":57013,\"address\":\"149
+        Holme Lane\",\"city\":\"Sheffield\",\"province\":\"South Yorkshire\",\"postalCode\":\"S6
+        4JR\",\"country\":\"GB\"},\"address\":{\"key\":57012,\"address\":\"149 Holme
+        Lane\",\"city\":\"Sheffield\",\"province\":\"South Yorkshire\",\"postalCode\":\"S6
+        4JR\",\"country\":\"GB\"},\"additionalNames\":[\"Yorkshire Natural History
+        Museum\"],\"numberSpecimens\":12000,\"logoUrl\":\"https://img1.wsimg.com/isteam/ip/ecbcc640-26c4-4e77-8b4c-6215b27303ce/blob-0003.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25\",\"createdBy\":\"taraw\",\"modifiedBy\":\"taraw\",\"created\":\"2025-10-21T09:59:25.632+00:00\",\"modified\":\"2025-10-21T09:59:25.632+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"alternativeCodes\":[{\"code\":\"YNHM\",\"description\":\"Yorkshire
+        Natural History Museum\"}],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0,\"featuredImageUrl\":\"https://ynhm.org\"},{\"key\":\"a07f25a9-1ec9-437d-a425-ea0354a4bac9\",\"code\":\"TMMU\",\"name\":\"Mollusk
+        Museum, Faculty of Tropical Medicine, Mahidol University\",\"description\":\"Fresh-
+        and brackish-water mollusks of Thailand \",\"types\":[\"Museum\"],\"active\":true,\"email\":[],\"phone\":[],\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[\"Academic\"],\"disciplines\":[],\"mailingAddress\":{\"key\":57005},\"address\":{\"key\":57004,\"address\":\"420/6
+        Ratchawithi Road\",\"city\":\"Bangkok\",\"postalCode\":\"10400\",\"country\":\"TH\"},\"additionalNames\":[],\"createdBy\":\"mgrosjean\",\"modifiedBy\":\"mgrosjean\",\"created\":\"2025-10-10T10:04:10.990+00:00\",\"modified\":\"2025-10-10T10:04:10.990+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0,\"featuredImageUrl\":\"https://www.tm.mahidol.ac.th/social-environment/wp-content/uploads/sites/11/elementor/thumbs/Mollusk-Museum-02-r4s3wkdck6nkvwxolx5apelwb25vlw0nw1lxw2mfxk.jpg\"},{\"key\":\"c58479a9-aae7-45be-9812-a865a9243727\",\"code\":\"NUF\",\"name\":\"Niigata
+        University Forest\",\"description\":\"Niigata University Forest is located
+        in Koda, Sado City, Niigata Prefecture. It encompasses approximately 500 hectares
+        of forest on the western slope of the Ohsado Mountains in northern Sado Island.
+        Established in 1955 through the transfer of prefectural forest land, it relocated
+        its lodging and offices to the current site in 1992. In 2019, it was integrated
+        with the Coastal Laboratory and other facilities to form the current Center.
+        The forest, spreading across mountainous terrain at elevations of 270 to 947
+        meters, is primarily composed of natural cedar stands. It maintains a high
+        degree of natural integrity, including diverse broadleaf trees characteristic
+        of the beech zone and wetland vegetation. Groups of cedar trees exhibiting
+        distinctive growth forms under snowy and windy conditions can also be observed.
+        Today, it is positioned primarily as an educational and research site emphasizing
+        coexistence with nature and biodiversity conservation rather than timber production.
+        It is utilized for fieldwork and collaborative research by universities and
+        research institutions nationwide. Diverse research themes are pursued, including
+        forest dynamics, climate change responses, and island ecosystem studies. The
+        center also participates in long-term observation projects such as the \u201CBiodiversity
+        Monitoring 1000\u201D initiative. As a hub for learning about the coexistence
+        of nature and people on Sado Island, it actively engages in regional collaboration.\",\"types\":[\"UniversityCollege\"],\"active\":true,\"email\":[\"sadoken2011@gmail.com\"],\"phone\":[\"+81-259-78-2613\"],\"homepage\":\"https://www.forest.sices.niigata-u.ac.jp/\",\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[\"Academic\"],\"disciplines\":[\"Ecology\",\"GeneticsGenomics\",\"WoodScienceAndPulpTechnology\"],\"latitude\":38.230972,\"longitude\":138.387024,\"mailingAddress\":{\"key\":57003},\"address\":{\"key\":57002,\"city\":\"Sado\",\"province\":\"Niigata\",\"country\":\"JP\"},\"additionalNames\":[],\"createdBy\":\"mgrosjean\",\"modifiedBy\":\"mgrosjean\",\"created\":\"2025-10-10T09:55:04.712+00:00\",\"modified\":\"2025-10-10T09:55:04.712+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0},{\"key\":\"65c860d6-866b-4b79-94b6-1fe20cfde100\",\"code\":\"NBSBC\",\"name\":\"Native
+        Bee Society of BC\",\"description\":\"The Native Bee Society of BC is an incorporated
+        not-for-profit society, established in July 2019 in the province of British
+        Columbia under the Societies Act. As of May 2023, NBSBC is an affiliate club
+        of BC Nature.\\nWe are a collective of native bee researchers, artists, land
+        managers, conservation practitioners, and enthusiasts working to promote the
+        conservation of native bees in British Columbia. \",\"types\":[\"OtherInstitutionalType\"],\"active\":true,\"email\":[\"bcnativebees@gmail.com\"],\"phone\":[],\"homepage\":\"https://www.bcnativebees.org/\",\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[\"NonProfit\"],\"disciplines\":[],\"latitude\":49.479000,\"longitude\":-124.803000,\"mailingAddress\":{\"key\":56963,\"address\":\"1481
+        Park Ave\",\"city\":\"Roberts Creek\",\"postalCode\":\"V0N2W2\",\"country\":\"CA\"},\"address\":{\"key\":56962,\"address\":\"1481
+        Park Ave\",\"city\":\"Roberts Creek\",\"postalCode\":\"V0N2W2\",\"country\":\"CA\"},\"additionalNames\":[],\"foundingDate\":2019,\"numberSpecimens\":5000,\"createdBy\":\"canadensys\",\"modifiedBy\":\"canadensys\",\"created\":\"2025-09-29T13:04:46.472+00:00\",\"modified\":\"2025-09-29T13:04:46.472+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0},{\"key\":\"146f6496-7204-49f1-a9cd-ede713d10b47\",\"code\":\"MUVHN\",\"name\":\"Museu
+        de la Universitat de Val\xE8ncia d\u2019Hist\xF2ria Natural (MUVHN)\",\"description\":\"The
+        MUVHN is the natural history museum of the University of Valencia (Spain).
+        It houses and manages scientific collections of high historical and research
+        value, including zoological, paleontological and mineralogical material. The
+        entomological collection is one of its largest and most significant holdings,
+        partly exhibited in the museum but mainly preserved in storage facilities
+        under appropriate conditions. These collections are available for consultation
+        by national and international researchers upon request.\\n\\nThe MUVHN\u2019s
+        mission is to conserve, document, digitize and disseminate the natural heritage
+        of the Universitat de Val\xE8ncia and associated institutions, supporting
+        both scientific research and public engagement. The museum is also actively
+        involved in collaborative projects on biodiversity, taxonomy and conservation,
+        contributing data and expertise to the scientific community.\",\"types\":[\"Museum\",\"UniversityCollege\"],\"active\":true,\"email\":[\"museuhn@uv.es\"],\"phone\":[\"+34
+        963983999 \"],\"homepage\":\"https://www.uv.es/museuhn\",\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[],\"disciplines\":[\"AnimalScience\",\"Zoology\",\"Taxonomy\",\"GeneticsGenomics\",\"Ecology\",\"WildlifeRangeManagement\",\"EnvironmentalScience\",\"Geology\"],\"latitude\":39.507099,\"longitude\":-0.420919,\"mailingAddress\":{\"key\":56939,\"address\":\"Museu
+        de la Universitat de Val\xE8ncia d\u2019Hist\xF2ria Natural  C/ Dr. Moliner,
+        50  46100 Burjassot, Valencia  Spain\",\"city\":\"Burjassot\",\"province\":\"VALENCIA\",\"postalCode\":\"46100\",\"country\":\"ES\"},\"address\":{\"key\":56938,\"address\":\"Museu
+        de la Universitat de Val\xE8ncia d\u2019Hist\xF2ria Natural  C/ Dr. Moliner,
+        50  46100 Burjassot, Valencia  Spain\",\"city\":\"Burjassot\",\"province\":\"VALENCIA\",\"postalCode\":\"46100\",\"country\":\"ES\"},\"additionalNames\":[],\"createdBy\":\"katia\",\"modifiedBy\":\"katia\",\"created\":\"2025-09-25T11:48:03.452+00:00\",\"modified\":\"2025-09-30T06:48:12.427+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[{\"key\":43597,\"firstName\":\"Natalia\",\"lastName\":\"Conejero\",\"position\":[],\"phone\":[\"
+        +34 963983999\"],\"fax\":[],\"email\":[\"natalia.conejero@uv.es\"],\"address\":[\"Museu
+        de la Universitat de Val\xE8ncia d\u2019Hist\xF2ria Natural C/ Dr. Moliner,
+        50 46100 Burjassot, Valencia Spain\"],\"city\":\"Burjassot\",\"province\":\"VALENCIA\",\"country\":\"ES\",\"postalCode\":\"46100\",\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"katia\",\"modifiedBy\":\"katia\",\"created\":\"2025-09-30T06:21:07.092+00:00\",\"modified\":\"2025-09-30T06:21:07.092+00:00\"},{\"key\":43598,\"firstName\":\"Sergio\",\"lastName\":\"Montagud\",\"position\":[],\"phone\":[\"
+        +34 963983999\"],\"fax\":[],\"email\":[\"sergio.montagud@uv.es\"],\"address\":[\"Museu
+        de la Universitat de Val\xE8ncia d\u2019Hist\xF2ria Natural C/ Dr. Moliner,
+        50 46100 Burjassot, Valencia Spain\"],\"city\":\"Burjassot\",\"province\":\"VALENCIA\",\"country\":\"ES\",\"postalCode\":\"46100\",\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"katia\",\"modifiedBy\":\"katia\",\"created\":\"2025-09-30T06:23:09.567+00:00\",\"modified\":\"2025-09-30T06:23:09.567+00:00\"},{\"key\":43599,\"firstName\":\"Anna\",\"lastName\":\"Garc\xEDa\",\"position\":[],\"phone\":[\"+34
+        963983999\"],\"fax\":[],\"email\":[\"anna.garcia@uv.es\"],\"address\":[\"Museu
+        de la Universitat de Val\xE8ncia d\u2019Hist\xF2ria Natural C/ Dr. Moliner,
+        50 46100 Burjassot, Valencia Spain\"],\"city\":\"Burjassot\",\"province\":\"VALENCIA\",\"country\":\"ES\",\"postalCode\":\"Burjassot\",\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"katia\",\"modifiedBy\":\"katia\",\"created\":\"2025-09-30T06:47:44.559+00:00\",\"modified\":\"2025-09-30T06:47:44.559+00:00\"}],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0},{\"key\":\"22cd3e7f-1a24-41ae-b6f6-0ab49e5d196a\",\"code\":\"COLEN-IASA\",\"name\":\"Colecciones
+        Entomol\xF3gicas IASA - ESPE\",\"types\":[],\"active\":true,\"email\":[],\"phone\":[],\"homepage\":\"https://iasa.espe.edu.ec/\",\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[],\"disciplines\":[],\"latitude\":-0.385788,\"longitude\":-78.415303,\"mailingAddress\":{\"key\":56937,\"address\":\"IASA
+        Pailones  s/n V\xEDa Encador \u2013 Barrio San Fernando\",\"city\":\"SANGOLQUI\",\"province\":\"PICHINCHA\",\"postalCode\":\"171105\",\"country\":\"EC\"},\"address\":{\"key\":56936,\"address\":\"IASA
+        Pailones s/n V\xEDa Encador \u2013 Barrio San Fernando\",\"city\":\"SANGOLQUI\",\"province\":\"PICHINCHA\",\"postalCode\":\"171105\",\"country\":\"EC\"},\"additionalNames\":[],\"foundingDate\":34,\"numberSpecimens\":1600,\"createdBy\":\"victor.chocho\",\"modifiedBy\":\"victor.chocho\",\"created\":\"2025-09-24T18:43:06.257+00:00\",\"modified\":\"2025-09-24T18:43:06.257+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0},{\"key\":\"6e7d1ef1-e06f-4437-85d3-f9c62e65d14a\",\"code\":\"HNBG\",\"name\":\"M.M.
+        Hryshko National Botanical Garden of the National Academy of Sciences of Ukraine\",\"description\":\"The
+        M. M. Hryshko National Botanical Garden of the National Academy of Sciences
+        of Ukraine in Kyiv is one of Eastern Europe\u2019s largest botanical gardens,
+        founded in 1936 and named after the renowned botanist Mykola Mykolayovych
+        Hryshko. Covering over 130 hectares, it features extensive plant collections
+        from around the world, including unique thematic areas such as the \u201CFlora
+        of Ukraine,\u201D exotic and tropical greenhouses, aromatic and medicinal
+        plants, and rare endangered species. The garden serves as a leading center
+        for botanical research, conservation, environmental education, and recreation,
+        attracting scientists, students, and visitors from across the globe.\",\"types\":[],\"active\":true,\"email\":[],\"phone\":[],\"homepage\":\"http://www.nbg.kiev.ua/\",\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[\"Academic\"],\"disciplines\":[\"PlantSciences\",\"NaturalResources\",\"HorticulturalScience\",\"ForestSciencesAndForestry\",\"AgronomyCropScience\",\"AgriculturalHorticulturalPlantBreeding\"],\"latitude\":50.415476,\"longitude\":30.557969,\"mailingAddress\":{\"key\":56933,\"address\":\"Sadovo-Botanichna
+        St., 1\",\"city\":\"Kyiv\",\"postalCode\":\"01014\",\"country\":\"UA\"},\"address\":{\"key\":56932,\"address\":\"Sadovo-Botanichna
+        St., 1\",\"city\":\"Kyiv\",\"postalCode\":\"01014\",\"country\":\"UA\"},\"additionalNames\":[],\"createdBy\":\"eca_st\",\"modifiedBy\":\"eca_st\",\"created\":\"2025-09-22T12:30:54.667+00:00\",\"modified\":\"2025-10-01T12:37:58.897+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[{\"key\":43610,\"firstName\":\"Andriy\",\"lastName\":\"Mosiakin\",\"position\":[\"Senior
+        research fellow, Cultivated Flora Department\",\"GBIF Point of contact, M.M.
+        Gryshko NBG NASU\"],\"phone\":[],\"fax\":[],\"email\":[\"Andriy.mosiakin@outlook.com\"],\"address\":[],\"city\":\"Kyiv\",\"country\":\"UA\",\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"eca_st\",\"modifiedBy\":\"eca_st\",\"created\":\"2025-10-01T12:37:58.650+00:00\",\"modified\":\"2025-10-01T12:37:58.650+00:00\"}],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0},{\"key\":\"917c3b95-ec96-40bd-a18d-d4f88e41f94f\",\"code\":\"chicagobr\",\"name\":\"Brookfield
+        Zoo Chicago\",\"description\":\"zoo\",\"types\":[],\"active\":true,\"email\":[],\"phone\":[\"708-688-8000\"],\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[],\"disciplines\":[],\"mailingAddress\":{\"key\":56925,\"address\":\"3300
+        Golf Road\",\"city\":\"Brookfield\",\"postalCode\":\"60513\",\"country\":\"US\"},\"address\":{\"key\":56924,\"address\":\"3300
+        Golf Road\",\"city\":\"Brookfield\",\"postalCode\":\"60513\",\"country\":\"US\"},\"additionalNames\":[],\"createdBy\":\"dbloom\",\"modifiedBy\":\"dbloom\",\"created\":\"2025-09-12T15:39:59.201+00:00\",\"modified\":\"2025-09-12T15:39:59.201+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0}]}"
+    headers:
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Cache-Control:
+      - public, max-age=3601
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '18376'
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 14 Nov 2025 10:13:11 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Vary:
+      - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      Via:
+      - 1.1 varnish (Varnish/6.6)
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Varnish:
+      - '794198470'
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+version: 1

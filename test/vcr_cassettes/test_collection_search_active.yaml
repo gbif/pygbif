@@ -1,0 +1,139 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - python-requests/2.31.0,pygbif/0.6.6
+    method: GET
+    uri: https://api.gbif.org/v1/grscicoll/collection?active=True&limit=10
+  response:
+    body:
+      string: "{\"offset\":0,\"limit\":10,\"endOfRecords\":false,\"count\":9397,\"results\":[{\"key\":\"7a8d2d3a-49ae-4162-a03e-a20509691d95\",\"code\":\"DPC\",\"name\":\"North
+        Carolina\",\"description\":\"Fossils collected in North Carolina, United States\",\"contentTypes\":[\"VertebrateFossils\",\"InvertebrateFossils\"],\"active\":true,\"personalCollection\":false,\"email\":[],\"phone\":[],\"catalogUrls\":[],\"apiUrls\":[],\"preservationTypes\":[],\"institutionKey\":\"c29e0c07-f7e3-4f57-b2a5-79212756ce98\",\"mailingAddress\":{\"key\":57059,\"address\":\"1013
+        Broad St\",\"city\":\"Durham\",\"province\":\"North Carolina\",\"postalCode\":\"27705\",\"country\":\"US\"},\"address\":{\"key\":57058,\"address\":\"1013
+        Broad St\",\"city\":\"Durham\",\"province\":\"North Carolina\",\"postalCode\":\"27705\",\"country\":\"US\"},\"createdBy\":\"kateneely\",\"modifiedBy\":\"kateneely\",\"created\":\"2025-11-11T18:53:59.303+00:00\",\"modified\":\"2025-11-11T18:53:59.303+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"geographicCoverage\":\"North
+        Carolina, USA\",\"incorporatedCollections\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0,\"institutionName\":\"Duke
+        Lemur Center Museum of Natural History\",\"institutionCode\":\"DPC\"},{\"key\":\"12e141d0-e30c-4130-a096-320905204907\",\"code\":\"DPC\",\"name\":\"La
+        Venta\",\"description\":\"Fossils collected in the La Venta locality in Tolima
+        and Huila, Colombia\",\"contentTypes\":[\"VertebrateFossils\"],\"active\":true,\"personalCollection\":false,\"email\":[],\"phone\":[],\"catalogUrls\":[],\"apiUrls\":[],\"preservationTypes\":[],\"accessionStatus\":\"Institutional\",\"institutionKey\":\"c29e0c07-f7e3-4f57-b2a5-79212756ce98\",\"mailingAddress\":{\"key\":57057,\"address\":\"1013
+        Broad St\",\"city\":\"Durham\",\"province\":\"North Carolina\",\"postalCode\":\"27705\",\"country\":\"US\"},\"address\":{\"key\":57056,\"address\":\"1013
+        Broad St\",\"city\":\"Durham\",\"province\":\"North Carolina\",\"postalCode\":\"27705\",\"country\":\"US\"},\"createdBy\":\"kateneely\",\"modifiedBy\":\"kateneely\",\"created\":\"2025-11-11T18:52:20.303+00:00\",\"modified\":\"2025-11-11T18:52:20.303+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"geographicCoverage\":\"La
+        Venta, Colombia\",\"incorporatedCollections\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0,\"institutionName\":\"Duke
+        Lemur Center Museum of Natural History\",\"institutionCode\":\"DPC\"},{\"key\":\"e995e231-4e3a-4d03-80fe-42b10ddbceb6\",\"code\":\"DPC\",\"name\":\"Madagascar\",\"description\":\"Subfossil
+        specimens collected in Madagascar\",\"contentTypes\":[\"VertebrateFossils\",\"PlantFossils\",\"PlantDerived\",\"AnimalDerived\"],\"active\":true,\"personalCollection\":false,\"email\":[],\"phone\":[],\"catalogUrls\":[],\"apiUrls\":[],\"preservationTypes\":[],\"institutionKey\":\"c29e0c07-f7e3-4f57-b2a5-79212756ce98\",\"mailingAddress\":{\"key\":57055,\"address\":\"1013
+        Broad St\",\"city\":\"Durham\",\"province\":\"North Carolina\",\"postalCode\":\"27705\",\"country\":\"US\"},\"address\":{\"key\":57054,\"address\":\"1013
+        Broad St\",\"city\":\"Durham\",\"province\":\"North Carolina\",\"postalCode\":\"27705\",\"country\":\"US\"},\"createdBy\":\"kateneely\",\"modifiedBy\":\"kateneely\",\"created\":\"2025-11-11T17:35:55.285+00:00\",\"modified\":\"2025-11-11T17:35:55.285+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"geographicCoverage\":\"Madagascar\",\"incorporatedCollections\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0,\"institutionName\":\"Duke
+        Lemur Center Museum of Natural History\",\"institutionCode\":\"DPC\"},{\"key\":\"29363f57-2727-45d4-931c-24ae7415cafb\",\"code\":\"DPC\",\"name\":\"Big
+        Horn\",\"description\":\"Fossils collected from the Big Horn Basin in north-central
+        Wyoming in the United States\",\"contentTypes\":[\"VertebrateFossils\"],\"active\":true,\"personalCollection\":false,\"email\":[],\"phone\":[],\"catalogUrls\":[],\"apiUrls\":[],\"preservationTypes\":[],\"institutionKey\":\"c29e0c07-f7e3-4f57-b2a5-79212756ce98\",\"mailingAddress\":{\"key\":57053,\"address\":\"1013
+        Broad St\",\"city\":\"Durham\",\"province\":\"North Carolina\",\"postalCode\":\"27705\",\"country\":\"US\"},\"address\":{\"key\":57052,\"address\":\"1013
+        Broad St\",\"city\":\"Durham\",\"province\":\"North Carolina\",\"postalCode\":\"27705\",\"country\":\"US\"},\"createdBy\":\"kateneely\",\"modifiedBy\":\"kateneely\",\"created\":\"2025-11-11T17:30:02.526+00:00\",\"modified\":\"2025-11-11T17:30:02.526+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"geographicCoverage\":\"Big
+        Horn Basin, WY, USA\",\"incorporatedCollections\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0,\"institutionName\":\"Duke
+        Lemur Center Museum of Natural History\",\"institutionCode\":\"DPC\"},{\"key\":\"9a8cad73-df4c-405f-84af-0ba1cb964277\",\"code\":\"DPC\",\"name\":\"Bridger\",\"description\":\"Fossils
+        collected from the Bridger Formation in southwestern Wyoming, USA\",\"contentTypes\":[\"VertebrateFossils\"],\"active\":true,\"personalCollection\":false,\"email\":[],\"phone\":[],\"catalogUrls\":[],\"apiUrls\":[],\"preservationTypes\":[],\"institutionKey\":\"c29e0c07-f7e3-4f57-b2a5-79212756ce98\",\"mailingAddress\":{\"key\":57051,\"address\":\"1013
+        Broad St\",\"city\":\"Durham\",\"province\":\"North Carolina\",\"postalCode\":\"27705\",\"country\":\"US\"},\"address\":{\"key\":57050,\"address\":\"1013
+        Broad St\",\"city\":\"Durham\",\"province\":\"North Carolina\",\"postalCode\":\"27705\",\"country\":\"US\"},\"createdBy\":\"kateneely\",\"modifiedBy\":\"kateneely\",\"created\":\"2025-11-11T17:23:36.444+00:00\",\"modified\":\"2025-11-11T17:24:40.654+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"geographicCoverage\":\"Bridger
+        Formation, WY, USA\",\"incorporatedCollections\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0,\"institutionName\":\"Duke
+        Lemur Center Museum of Natural History\",\"institutionCode\":\"DPC\"},{\"key\":\"04994217-349a-4eeb-9ac7-98f93aacf20d\",\"code\":\"UPSZMC\",\"name\":\"Zoology
+        (Museum of Evolution - Uppsala)\",\"description\":\"Funded by Carl von Linnaeus
+        in1743 as \u2018Museum Naturalium Academiae Upsaliensis\u2019. The collections
+        still holds 6541 Linnaean specimens. Major entomology collections are those
+        of C. P. Thunberg and L. Gyllenhaal. About 1 million insect specimens, otherwise
+        all phyla, worldwide.\",\"contentTypes\":[\"PreservedOrganisms\",\"AnimalBuiltStructures\",\"Feces\",\"AssociatedData\",\"Documentation\",\"AnimalDerived\"],\"active\":true,\"personalCollection\":false,\"email\":[],\"phone\":[],\"homepage\":\"https://www.uu.se/evolutionsmuseet/vara-samlingar/zoologiska-samlingar\",\"catalogUrls\":[\"https://databas.evolutionsmuseet.uu.se/zoologi/home.php\"],\"apiUrls\":[],\"preservationTypes\":[\"SampleSlideMount\",\"SampleSkeletonized\",\"SamplePinned\",\"SampleFluidPreserved\",\"SampleEmbedded\",\"SampleDried\",\"StorageControlledAtmosphere\",\"StorageIndoors\"],\"institutionKey\":\"2e92418b-5e26-485c-912c-c41263d9c581\",\"mailingAddress\":{\"key\":57047,\"address\":\"Norbyv\xE4gen
+        16\",\"city\":\"Uppsala\",\"postalCode\":\"75236\",\"country\":\"SE\"},\"address\":{\"key\":57046,\"address\":\"Norbyv\xE4gen
+        16\",\"city\":\"Uppsala\",\"postalCode\":\"75236\",\"country\":\"SE\"},\"createdBy\":\"veronika\",\"modifiedBy\":\"veronika\",\"created\":\"2025-11-03T14:08:47.138+00:00\",\"modified\":\"2025-11-06T08:03:57.360+00:00\",\"tags\":[],\"identifiers\":[{\"key\":458536,\"type\":\"DOI\",\"identifier\":\"https://doi.org/10.15468/1rofux\",\"createdBy\":\"veronika\",\"created\":\"2025-11-03T15:17:30.564+00:00\",\"primary\":false},{\"key\":458529,\"type\":\"UUID\",\"identifier\":\"https://www.gbif.org/dataset/15b04450-0c60-11dd-84cd-b8a03c50a862\",\"createdBy\":\"veronika\",\"created\":\"2025-11-03T14:10:00.017+00:00\",\"primary\":true}],\"contactPersons\":[{\"key\":43742,\"firstName\":\"Mats\",\"lastName\":\"Eriksson\",\"position\":[\"Museum
+        Director\"],\"phone\":[],\"fax\":[],\"email\":[\"Mats.Eriksson@em.uu.se\"],\"address\":[],\"city\":\"Uppsala\",\"country\":\"SE\",\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"veronika\",\"modifiedBy\":\"veronika\",\"created\":\"2025-11-03T14:12:55.945+00:00\",\"modified\":\"2025-11-03T14:12:55.945+00:00\"},{\"key\":43743,\"firstName\":\"Paco\",\"lastName\":\"Cardenas\",\"position\":[\"Curator,
+        Head of the Zoology Collections\"],\"phone\":[],\"fax\":[],\"email\":[\"paco.cardenas@em.uu.se\"],\"address\":[],\"city\":\"Uppsala\",\"country\":\"SE\",\"primary\":true,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"veronika\",\"modifiedBy\":\"veronika\",\"created\":\"2025-11-03T14:14:23.469+00:00\",\"modified\":\"2025-11-03T14:14:23.469+00:00\"}],\"numberSpecimens\":1500000,\"machineTags\":[],\"taxonomicCoverage\":\"Eukaryota,
+        Metazoa\",\"geographicCoverage\":\"Worldwide\",\"incorporatedCollections\":[],\"alternativeCodes\":[{\"code\":\"ZMC\",\"description\":\"GBIF
+        collection code\"},{\"code\":\"UPSZEN\",\"description\":\"entomology\"},{\"code\":\"ZEN\",\"description\":\"GBIF
+        collection code\"},{\"code\":\"UPSZTY\",\"description\":\"types\"},{\"code\":\"ZTY\",\"description\":\"GBIF
+        collection code\"}],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":199278,\"typeSpecimenCount\":5984,\"featuredImageUrl\":\"https://www.alvin-portal.org/alvin/attachment/download/alvin-record:180391/ATTACHMENT-0001.tiff\",\"featuredImageLicense\":\"CC_BY_NC_4_0\",\"temporalCoverage\":\"1690-now\",\"institutionName\":\"Museum
+        of Evolution, Uppsala University\",\"institutionCode\":\"UPS\"},{\"key\":\"cf8305b0-48a9-4813-814f-70ce73a499f9\",\"code\":\"DM\",\"name\":\"Mollusca
+        Collection\",\"description\":\"Collection of marine molluscs collected during
+        biodiversity studies for the CO.RI.LA. project in the Venice lagoon.\",\"contentTypes\":[\"PreservedOrganisms\"],\"active\":true,\"personalCollection\":false,\"email\":[\"edoardo.dirusso@cnr.it\",\"francesca.maggiore@ismar.cnr.it\"],\"phone\":[],\"homepage\":\"https://www.ismar.cnr.it/web-content/\",\"catalogUrls\":[],\"apiUrls\":[],\"preservationTypes\":[\"SampleFluidPreserved\"],\"accessionStatus\":\"Institutional\",\"institutionKey\":\"27bcef1d-2467-41c5-8cb6-8acd1fcc513e\",\"mailingAddress\":{\"key\":57043,\"address\":\"Castello,
+        2737f (Arsenale Tesa, 104)\",\"city\":\"Venezia\",\"province\":\"[VENETO]
+        Venezia (VE)\",\"postalCode\":\"IT-30122\",\"country\":\"IT\"},\"address\":{\"key\":57042,\"address\":\"Castello,
+        2737f (Arsenale Tesa, 104)\",\"city\":\"Venezia\",\"province\":\"[VENETO]
+        Venezia (VE)\",\"postalCode\":\"IT-30122\",\"country\":\"IT\"},\"createdBy\":\"tasmacetus\",\"modifiedBy\":\"tasmacetus\",\"created\":\"2025-10-29T15:53:57.157+00:00\",\"modified\":\"2025-10-29T15:53:57.157+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"numberSpecimens\":521,\"machineTags\":[],\"taxonomicCoverage\":\"Bivalvia;
+        Gastropoda\",\"geographicCoverage\":\"Adriatic Sea; Venice Lagoon\",\"incorporatedCollections\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0,\"temporalCoverage\":\"2002-2003\",\"institutionName\":\"Istituto
+        di Scienze Marine di Venezia\",\"institutionCode\":\"CNR-ISMAR-VE\"},{\"key\":\"a47ff076-1ea9-4790-8867-f0014e015a1a\",\"code\":\"M.\",\"name\":\"Mollusc
+        Collection at Museum of New Zealand Te Papa Tongarewa\",\"description\":\"When
+        citing specimens from this collection, please cite the Museum of New Zealand
+        Te Papa Tongarewa (acronym: NMNZ). Mollusc collection lots are prefixed by
+        a capital \u201CM\u201D followed by period and then a unique six-digit number,
+        with no spaces.\",\"contentTypes\":[\"PreservedOrganisms\",\"InvertebrateFossils\"],\"active\":true,\"personalCollection\":false,\"email\":[\"Kerry.Walton@tepapa.govt.nz\"],\"phone\":[],\"catalogUrls\":[\"https://collections.tepapa.govt.nz/\"],\"apiUrls\":[\"https://data.tepapa.govt.nz/docs/\"],\"preservationTypes\":[],\"accessionStatus\":\"Institutional\",\"institutionKey\":\"2749cf1e-60d9-4b03-9c71-3763632b8f78\",\"mailingAddress\":{\"key\":57041,\"address\":\"PO
+        Box 467\",\"city\":\"Wellington\",\"postalCode\":\"6011\",\"country\":\"NZ\"},\"address\":{\"key\":57040,\"address\":\"55
+        Cable Street\",\"city\":\"Wellington\",\"postalCode\":\"6011\",\"country\":\"NZ\"},\"createdBy\":\"lucyschrader\",\"modifiedBy\":\"lucyschrader\",\"created\":\"2025-10-29T02:13:13.256+00:00\",\"modified\":\"2025-10-29T02:13:13.256+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"taxonomicCoverage\":\"All
+        molluscan classes, both recent and fossil (mostly Cenozoic)\",\"geographicCoverage\":\"Emphasis
+        on New Zealand, Antarctica, and the southwestern Pacific\",\"incorporatedCollections\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0,\"temporalCoverage\":\"1841-\",\"institutionName\":\"Museum
+        of New Zealand Te Papa Tongarewa\",\"institutionCode\":\"NMNZ\"},{\"key\":\"63fd108b-78d0-4d77-a68a-0f663aeaf121\",\"code\":\"YPM/PU\",\"name\":\"Princeton
+        University Collection in Yale Peabody Museum\",\"contentTypes\":[],\"active\":true,\"personalCollection\":false,\"email\":[],\"phone\":[],\"catalogUrls\":[],\"apiUrls\":[],\"preservationTypes\":[],\"institutionKey\":\"75f50140-830d-4630-a290-3d6e951a7c29\",\"mailingAddress\":{\"key\":57039,\"address\":\"P.O.
+        Box 208118\",\"city\":\"New Haven\",\"province\":\"Connecticut\",\"postalCode\":\"06520-8118\",\"country\":\"US\"},\"address\":{\"key\":57038,\"country\":\"US\"},\"createdBy\":\"mgrosjean\",\"modifiedBy\":\"gary.motz\",\"created\":\"2025-10-28T15:38:59.351+00:00\",\"modified\":\"2025-10-28T16:48:18.974+00:00\",\"tags\":[],\"identifiers\":[{\"key\":458389,\"type\":\"GRSCICOLL_URI\",\"identifier\":\"http://grbio.org/cool/km0k-f3tc\",\"createdBy\":\"mgrosjean\",\"created\":\"2025-10-28T15:39:01.451+00:00\",\"primary\":false},{\"key\":458388,\"type\":\"GRSCICOLL_ID\",\"identifier\":\"16084\",\"createdBy\":\"mgrosjean\",\"created\":\"2025-10-28T15:39:01.443+00:00\",\"primary\":false},{\"key\":458387,\"type\":\"GRSCICOLL_URI\",\"identifier\":\"http://grbio.org/institution/princeton-university-collection-yale-peabody-museum\",\"createdBy\":\"mgrosjean\",\"created\":\"2025-10-28T15:39:01.137+00:00\",\"primary\":false},{\"key\":458386,\"type\":\"GRSCICOLL_URI\",\"identifier\":\"http://grscicoll.org/institution/princeton-university-collection-yale-peabody-museum\",\"createdBy\":\"mgrosjean\",\"created\":\"2025-10-28T15:39:00.865+00:00\",\"primary\":false},{\"key\":458385,\"type\":\"NCBI_BIOCOLLECTION\",\"identifier\":\"943746\",\"createdBy\":\"mgrosjean\",\"created\":\"2025-10-28T15:39:00.854+00:00\",\"primary\":false}],\"contactPersons\":[],\"machineTags\":[],\"incorporatedCollections\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":0,\"typeSpecimenCount\":0,\"institutionName\":\"Yale
+        Peabody Museum\",\"institutionCode\":\"YPM\"},{\"key\":\"985da905-6721-494d-bfc8-feb5f482b4fb\",\"code\":\"MEAPA\",\"name\":\"Colecci\xF3n
+        de Microorganismos Entomopat\xF3genos Asociados a la Palma de Aceite\",\"description\":\"La
+        MEAPA es una Colecci\xF3n que nace alrededor de 2005 como resultado de las
+        actividades de investigaci\xF3n de Cenipalma. La Colecci\xF3n tiene por objetivo
+        conservar y caracterizar las cepas de entomopat\xF3genos asociados al cultivo
+        de palma de aceite. La misi\xF3n de MEAPA corresponde a servir a la industria
+        productora de palma de aceite mediante la colecta, conservaci\xF3n y caracterizaci\xF3n
+        de las cepas de microorganismos entomopat\xF3genos asociados al cultivo de
+        palma de aceite con el fin de promover una palmicultura sostenible. De otro
+        lado, respecto a la visi\xF3n de la colecci\xF3n, MEAPA ser\xE1 la fuente
+        de soluciones basadas biol\xF3gicamente para el manejo de los principales
+        insectos plaga asociados al cultivo de palma de aceite en Colombia. Igualmente,
+        la colecci\xF3n ser\xE1 un referente de la diversidad biol\xF3gica del ecosistema
+        palmero colombiano. En la actualidad la Colecci\xF3n cuenta con aislamientos
+        de las cuatro zonas palmeras de Colombia.\",\"contentTypes\":[\"Biological\"],\"active\":true,\"personalCollection\":false,\"email\":[\"amorales@cenipalma.org\"],\"phone\":[\"3152440844\"],\"catalogUrls\":[],\"apiUrls\":[],\"preservationTypes\":[\"StorageRefrigerated\"],\"institutionKey\":\"bf6c3d40-22fb-4ee5-82cd-a0a8057a6491\",\"mailingAddress\":{\"key\":57037,\"address\":\"Calle
+        98 No. 70-91, piso 14\",\"city\":\"Bogot\xE1, D.C.\",\"province\":\"Bogot\xE1,
+        D.C.\",\"country\":\"CO\"},\"address\":{\"key\":57036,\"address\":\"Calle
+        98 No. 70-91, piso 14\",\"city\":\"Bogot\xE1, D.C.\",\"province\":\"Bogot\xE1,
+        D.C.\",\"country\":\"CO\"},\"createdBy\":\"sibcolombia\",\"modifiedBy\":\"sibcolombia\",\"created\":\"2025-10-27T16:39:13.390+00:00\",\"modified\":\"2025-10-27T16:39:13.390+00:00\",\"tags\":[],\"identifiers\":[{\"key\":458337,\"type\":\"RNC_COLOMBIA\",\"identifier\":\"http://rnc.humboldt.org.co/admin/index.php/registros/detail/2334\",\"createdBy\":\"sibcolombia\",\"created\":\"2025-10-27T16:40:12.715+00:00\",\"primary\":true}],\"contactPersons\":[],\"numberSpecimens\":348,\"machineTags\":[],\"taxonomicCoverage\":\"Beauveria
+        bassiana, Purpureocillium lilacinum, Cordyceps fumosorosea, Cordyceps cateniannulata,
+        Lecanicillium lecanii, Metarhizium anisopliae, Metarhizium flavoviride, Steinernema
+        sp., Heterorhabditis sp., Metarhizium rileyi, Torrubiella sp., Metarhizium
+        sp y Cordyceps sp.\",\"geographicCoverage\":\"Los aislamientos proceden de
+        los departamentos Casanare, Cesar, Santander, Cundinamarca, Meta, Magdalena,
+        Bol\xEDvar, Norte de Santander, Nari\xF1o y Vichada.\",\"incorporatedCollections\":[],\"alternativeCodes\":[{\"code\":\"RNC:273\",\"description\":\"C\xF3digo
+        Registro Nacional Colecciones Biol\xF3gicas Colombia\"}],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":193,\"typeSpecimenCount\":0,\"temporalCoverage\":\"2005-2025\",\"institutionName\":\"Corporaci\xF3n
+        Centro de Investigaci\xF3n en Palma de Aceite\",\"institutionCode\":\"CENIPALMA\"}]}"
+    headers:
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Cache-Control:
+      - public, max-age=3601
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 14 Nov 2025 10:13:07 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      Via:
+      - 1.1 varnish (Varnish/6.6)
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Varnish:
+      - '807600495'
+      X-XSS-Protection:
+      - 1; mode=block
+    status:
+      code: 200
+      message: OK
+version: 1

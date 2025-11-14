@@ -9,41 +9,41 @@ interactions:
       Connection:
       - keep-alive
       user-agent:
-      - python-requests/2.31.0,pygbif/0.6.4
+      - python-requests/2.31.0,pygbif/0.6.6
     method: GET
     uri: https://api.gbif.org/v1/occurrence/counts/publishingCountries?country=DE
   response:
     body:
-      string: '{"GERMANY":48727786,"NETHERLANDS":4307810,"UNITED_STATES":2579423,"FRANCE":1853730,"UNITED_KINGDOM":1043610,"BELGIUM":508346,"UNKNOWN":308338,"SWITZERLAND":209995,"AUSTRIA":120300,"ESTONIA":118484,"POLAND":72100,"SWEDEN":72035,"COLOMBIA":66557,"LUXEMBOURG":43624,"FINLAND":42173,"DENMARK":42035,"NORWAY":24715,"AUSTRALIA":20442,"SPAIN":20217,"CANADA":12723,"BRAZIL":11556,"JAPAN":9110,"NEW_ZEALAND":8030,"RUSSIAN_FEDERATION":7741,"CZECH_REPUBLIC":7543,"CHINA":5419,"SOUTH_AFRICA":4659,"MEXICO":2535,"PORTUGAL":2251,"ARGENTINA":2105,"ITALY":2073,"ECUADOR":1911,"BULGARIA":1572,"PANAMA":1156,"UKRAINE":726,"TAIWAN":494,"ISRAEL":450,"COSTA_RICA":415,"CHILE":278,"NICARAGUA":232,"GREECE":132,"HUNGARY":125,"GHANA":73,"VENEZUELA":63,"LITHUANIA":52,"PERU":31,"KOREA_SOUTH":24,"URUGUAY":13,"ARMENIA":8,"TAJIKISTAN":7,"MOROCCO":7,"NIGERIA":4,"GUATEMALA":4,"TRINIDAD_TOBAGO":2,"SLOVENIA":2,"ZIMBABWE":1}'
+      string: '{"GERMANY":58308282,"NETHERLANDS":6749714,"UNITED_STATES":3609813,"BELGIUM":2456170,"UNITED_KINGDOM":2181272,"FRANCE":1921434,"DENMARK":1515099,"UNKNOWN":338012,"SWITZERLAND":262404,"SWEDEN":147806,"AUSTRIA":129858,"ESTONIA":119247,"POLAND":72316,"FINLAND":66361,"COLOMBIA":58178,"LUXEMBOURG":49177,"AUSTRALIA":27162,"NORWAY":25234,"SPAIN":20222,"CANADA":19365,"BRAZIL":11944,"JAPAN":9435,"NEW_ZEALAND":9067,"CZECH_REPUBLIC":7862,"RUSSIAN_FEDERATION":7798,"CHINA":5419,"PORTUGAL":4876,"SOUTH_AFRICA":4659,"ITALY":3918,"BULGARIA":3721,"MEXICO":3127,"ECUADOR":2388,"ARGENTINA":2197,"ISRAEL":1849,"PANAMA":1227,"UKRAINE":1122,"TAIWAN":858,"COSTA_RICA":836,"CHILE":453,"GREECE":281,"NICARAGUA":232,"HUNGARY":145,"URUGUAY":129,"LITHUANIA":128,"GHANA":73,"LATVIA":65,"VENEZUELA":63,"PERU":31,"KOREA_SOUTH":24,"ARMENIA":14,"TAJIKISTAN":7,"MOROCCO":7,"GUATEMALA":7,"NIGERIA":4,"ANTARCTICA":3,"TRINIDAD_TOBAGO":2,"SLOVENIA":2,"ZIMBABWE":1}'
     headers:
       Accept-Ranges:
       - bytes
       Age:
-      - '0'
+      - '661'
       Cache-Control:
       - public, max-age=600
       Connection:
       - keep-alive
+      Content-Length:
+      - '930'
       Content-Type:
       - application/json
       Date:
-      - Fri, 04 Oct 2024 07:00:06 GMT
+      - Fri, 14 Nov 2025 10:02:20 GMT
       Expires:
       - '0'
       Pragma:
       - no-cache
-      Transfer-Encoding:
-      - chunked
       Vary:
       - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
       Via:
-      - 1.1 varnish (Varnish/6.0)
+      - 1.1 varnish (Varnish/6.6)
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '665780740'
+      - 766279736 719652357
       X-XSS-Protection:
       - 1; mode=block
     status:

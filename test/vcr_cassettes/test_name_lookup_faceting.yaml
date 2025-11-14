@@ -9,12 +9,12 @@ interactions:
       Connection:
       - keep-alive
       user-agent:
-      - python-requests/2.31.0,pygbif/0.6.4
+      - python-requests/2.31.0,pygbif/0.6.6
     method: GET
     uri: https://api.gbif.org/v1/species/search?limit=0&facet=status&hl=false&verbose=false
   response:
     body:
-      string: '{"offset":0,"limit":0,"endOfRecords":false,"count":41779927,"results":[],"facets":[{"field":"STATUS","counts":[{"name":"ACCEPTED","count":26710022},{"name":"SYNONYM","count":13256060},{"name":"DOUBTFUL","count":922181},{"name":"HOMOTYPIC_SYNONYM","count":461822},{"name":"HETEROTYPIC_SYNONYM","count":363370},{"name":"MISAPPLIED","count":39746},{"name":"PROPARTE_SYNONYM","count":19715}]}]}'
+      string: '{"offset":0,"limit":0,"endOfRecords":false,"count":52777960,"results":[],"facets":[{"field":"STATUS","counts":[{"name":"ACCEPTED","count":33105798},{"name":"SYNONYM","count":17673611},{"name":"DOUBTFUL","count":959382},{"name":"HETEROTYPIC_SYNONYM","count":512848},{"name":"HOMOTYPIC_SYNONYM","count":460907},{"name":"MISAPPLIED","count":38459},{"name":"PROPARTE_SYNONYM","count":19944}]}]}'
     headers:
       Accept-Ranges:
       - bytes
@@ -24,26 +24,26 @@ interactions:
       - public, max-age=600
       Connection:
       - keep-alive
+      Content-Length:
+      - '390'
       Content-Type:
       - application/json
       Date:
-      - Fri, 04 Oct 2024 07:00:38 GMT
+      - Fri, 14 Nov 2025 10:26:12 GMT
       Expires:
       - '0'
       Pragma:
       - no-cache
-      Transfer-Encoding:
-      - chunked
       Vary:
       - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
       Via:
-      - 1.1 varnish (Varnish/6.0)
+      - 1.1 varnish (Varnish/6.6)
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '669712879'
+      - '793969568'
       X-XSS-Protection:
       - 1; mode=block
     status:

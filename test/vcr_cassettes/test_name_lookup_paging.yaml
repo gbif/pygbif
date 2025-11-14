@@ -9,42 +9,61 @@ interactions:
       Connection:
       - keep-alive
       user-agent:
-      - python-requests/2.31.0,pygbif/0.6.4
+      - python-requests/2.31.0,pygbif/0.6.6
     method: GET
     uri: https://api.gbif.org/v1/species/search?q=mammalia&limit=1&hl=false&verbose=false
   response:
     body:
-      string: "{\"offset\":0,\"limit\":1,\"endOfRecords\":false,\"count\":3752,\"results\":[{\"key\":100559472,\"datasetKey\":\"16c3f9cb-4b19-4553-ac8e-ebb90003aa02\",\"scientificName\":\"Mammaliaformes\",\"canonicalName\":\"Mammaliaformes\",\"nameType\":\"SCIENTIFIC\",\"taxonomicStatus\":\"ACCEPTED\",\"origin\":\"SOURCE\",\"numDescendants\":0,\"numOccurrences\":0,\"extinct\":true,\"habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\":[{\"description\":\"Sinoconodon
-        ist einer der fr\xFChesten bekannten s\xE4ugetierartigen Tiere (Mammaliaformes).
-        Fossilien dieses Tieres, darunter ein vollst\xE4ndig erhaltener Sch\xE4del,
-        wurden im s\xFCdlichen China gefunden und auf ein Alter von rund 200 Millionen
-        Jahren datiert.\"},{\"description\":\"Sinoconodon zeigt in seinem Sch\xE4delbau
-        \xDCbergangsmerkmale zwischen den synapsiden Vorfahren der S\xE4ugetiere und
-        den eigentlichen S\xE4ugern. Der Unterkiefer und der Bau des Ohres und des
-        Kiefergelenkes ist bereits s\xE4ugetierartig entwickelt, im Gegensatz zu diesen
-        kam es aber noch zu einem mehrmaligen Zahnwechsel und zu einem lebenslangen
-        Wachstum des Sch\xE4dels, was reptilienhafte Merkmale sind. Auch hatte Sinoconodon
-        nur eine Art von Backenz\xE4hnen und die Okklusion (das Ineinandergreifen
-        der Z\xE4hne des Ober- und Unterkiefers) war noch nicht vollst\xE4ndig ausgepr\xE4gt.
-        Diese Tiere waren gr\xF6\xDFer als vergleichbare fr\xFChe S\xE4ugetiere aus
-        der gleichen Epoche, die maximale Sch\xE4dell\xE4nge betrug 6 Zentimeter und
-        das Gewicht dieser Tiere wird auf bis zu 500 Gramm gesch\xE4tzt. Aufgrund
-        des lebenslangen Wachstums variieren die L\xE4ngen der gefundenen Sch\xE4del
-        von 2 bis 6 Zentimetern. Vom restlichen K\xF6rper dieser Tiere ist bislang
-        nichts bekannt.\"},{\"description\":\"Abgesehen von den sp\xE4rlichen Funden
-        von Adelobasileus cromptoni und den fr\xFChen Haramiyida ist Sinoconodon einer
-        der fr\xFChesten bekannten Vertreter der S\xE4ugetiere. Wegen der Unterschiede
-        zu den heutigen Vertretern dieser Gruppe werden Sinoconodon und andere fr\xFChe
-        Formen manchmal als Mammaliaformes (\u201ES\xE4ugetierartige\u201C) bezeichnet
-        oder als Mammalia sensu lato (im weiteren Sinn) zusammengefasst. Weitgehend
-        unbestritten ist, dass Sinoconodon und die heutigen S\xE4uger eine monophyletische
-        Gruppe bilden, wobei diese Gattung als Schwestertaxon der \xFCbrigen Vertreter
-        dieser Gruppe bildet. Ob man sie bereits als S\xE4ugetier oder noch als S\xE4ugetiervorfahren
-        bezeichnet, ist weitgehend Definitionsfrage. Es wurden mehrere Arten von Sinoconodon
-        beschrieben, darunter S. rigneyi, S. changchiawaensis, S. parringtoni und
-        S. youngi, die m\xF6glicherweise nur verschiedene Wachstumsstadien derselben
-        Art darstellen. Auch die Gattung Lufengoconodon d\xFCrfte nur ein Synonym
-        von Sinoconodon sein.\"}],\"vernacularNames\":[],\"higherClassificationMap\":{},\"synonym\":false}],\"facets\":[]}"
+      string: "{\"offset\":0,\"limit\":1,\"endOfRecords\":false,\"count\":3699,\"results\":[{\"key\":100559474,\"datasetKey\":\"16c3f9cb-4b19-4553-ac8e-ebb90003aa02\",\"scientificName\":\"Mammaliaformes\",\"canonicalName\":\"Mammaliaformes\",\"nameType\":\"SCIENTIFIC\",\"taxonomicStatus\":\"ACCEPTED\",\"origin\":\"SOURCE\",\"numDescendants\":0,\"numOccurrences\":0,\"taxonID\":\"2547897\",\"extinct\":true,\"habitats\":[],\"nomenclaturalStatus\":[],\"threatStatuses\":[],\"descriptions\":[{\"description\":\"Die
+        Morganucodonta sind eine Gruppe ausgestorbener S\xE4ugetiervorfahren (Mammaliaformes),
+        die in der Obertrias und im unteren Jura lebte.\"},{\"description\":\"Morganucodonta
+        waren kleine (rund 10 bis 12 Zentimeter lange), \xE4u\xDFerlich vermutlich
+        spitzmaus\xE4hnliche Tiere. Im Bau ihres Kiefergelenks zeigen sie \xDCbergangsmerkmale
+        zwischen den synapsiden Vorfahren der S\xE4ugetiere und den eigentlichen S\xE4ugern,
+        so ist noch das prim\xE4re Kiefergelenk zwischen Os articulare und Os quadratum
+        erkennbar. Wie heutige S\xE4ugetiere hatten sie aber schon vier unterschiedliche
+        Zahntypen: Schneidez\xE4hne, Eckz\xE4hne, Pr\xE4molaren und Molaren. Die meist
+        drei Molaren jeder Kieferh\xE4lfte wiesen jeweils drei scharfe H\xF6cker auf,
+        die Okklusion (der Kontakt der Z\xE4hne des Ober- und Unterkiefers) war gut
+        ausgepr\xE4gt. Der Bau der Z\xE4hne l\xE4sst auf Insekten oder andere Kleintiere
+        als Nahrung schlie\xDFen. Wie bei den heutigen S\xE4ugetieren und im Gegensatz
+        zu \xE4lteren Formen wie Sinoconodon kam es zu einem einmaligen Zahnwechsel,
+        wobei die Molaren erst beim bleibenden Gebiss erscheinen. Da dieser Zahnwechsel
+        entwicklungsgeschichtlich mit dem S\xE4ugen in Verbindung gebracht wird, ist
+        es denkbar, dass diese Tiere ihre Jungen s\xE4ugten. Da jedoch von einer schrittweisen
+        Evolution der Zitzen und des damit einhergehenden Saugverhaltens der Jungtiere
+        \xFCber einen Zustand, wie wir ihn bei den Kloakentieren (Monotremata) finden,
+        ausgegangen wird, bei dem zun\xE4chst nur Dr\xFCsenfelder ausgebildet sind,
+        die von den aus dem Ei geschl\xFCpften Jungtieren beleckt werden, ist im Falle
+        des geschilderten Zahnwechsels der Morganucodonta auch die M\xF6glichkeit
+        zu ber\xFCcksichtigen, dass der einmalige Zahnwechsel mit Molaren im bleibenden
+        Gebiss evolutionsgeschichtlich auch in v\xF6llig anderem Zusammenhang stehen
+        k\xF6nnte. Auch der \xFCbrige K\xF6rperbau stimmt weitgehend mit dem der S\xE4ugetiere
+        \xFCberein, wenngleich sie im Bau der Halswirbel, des Schulterg\xFCrtels und
+        des Beckens noch einige \xDCbergangsmerkmale aufweisen. Es d\xFCrfte sich
+        bei ihnen um flinke, bodenbewohnende Tiere gehandelt haben.\"},{\"description\":\"Funde
+        der Morganucodonta sind von der Obertrias bis in den unteren Jura (rund 210
+        bis 175 Millionen Jahre) bekannt. Fossilien wurden in Europa, Asien, dem s\xFCdlichen
+        Afrika und Nordamerika gefunden, was auf eine nahezu weltweite Verbreitung
+        dieser Tiergruppe schlie\xDFen l\xE4sst. Sie werden zu einer Reihe von Tieren
+        gez\xE4hlt, die fortgeschrittene s\xE4ugetier\xE4hnliche Merkmale aufweisen,
+        sich aber in Details noch von den heutigen S\xE4ugern unterscheiden und darum
+        als Mammaliaformes (S\xE4ugetierartige) oder als Mammalia sensu lato (im weiteren
+        Sinn) zusammengefasst werden. Ob man sie bereits als S\xE4ugetier oder noch
+        als S\xE4ugetiervorfahren bezeichnet, ist weitgehend Definitionsfrage. Verworfen
+        ist hingegen eine Zugeh\xF6rigkeit zu den Triconodonta, eine S\xE4ugetiergruppe,
+        die durch dreih\xF6ckrige Molaren charakterisiert wurde, die sich aber als
+        keine nat\xFCrliche Gruppe herausgestellt hat.\"},{\"description\":\"Die Morganucodonta
+        werden in zwei Familien unterteilt, die Morganucodontidae und die Megazostrodontidae.
+        Allerdings halten manche Forscher die Megazostrodontidae f\xFCr n\xE4her mit
+        den Docodonta als mit den Morganucodontidae verwandt. Die bekannteste Gattung
+        der Morganucodontidae ist Morganucodon (Synonym Eozostrodon), andere Gattungen
+        sind Erythrotherium aus S\xFCdafrika, Hallautherium (benannt nach dem Fundort
+        Hallau) und Helvetiodon aus Europa (Schweiz), Indotherium aus Indien sowie
+        Brachyzostrodon und Wareolestes aus Westeuropa. (Die beiden letztgenannten
+        Gattungen werden manchmal auch den Megazostrodontidae zugerechnet.) Die Megazostrodontidae
+        umfassen neben dem namensgebenden Megazostrodon noch Dinnetherium aus Arizona
+        (USA) und Indozostrodon aus Indien.\"}],\"vernacularNames\":[],\"synonym\":false,\"higherClassificationMap\":{}}],\"facets\":[]}"
     headers:
       Accept-Ranges:
       - bytes
@@ -54,26 +73,26 @@ interactions:
       - public, max-age=600
       Connection:
       - keep-alive
-      Content-Length:
-      - '2729'
       Content-Type:
       - application/json
       Date:
-      - Fri, 04 Oct 2024 07:00:37 GMT
+      - Fri, 14 Nov 2025 10:26:10 GMT
       Expires:
       - '0'
       Pragma:
       - no-cache
+      Transfer-Encoding:
+      - chunked
       Vary:
       - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
       Via:
-      - 1.1 varnish (Varnish/6.0)
+      - 1.1 varnish (Varnish/6.6)
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '693077137'
+      - '799932727'
       X-XSS-Protection:
       - 1; mode=block
     status:
