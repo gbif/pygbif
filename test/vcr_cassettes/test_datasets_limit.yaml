@@ -9,37 +9,35 @@ interactions:
       Connection:
       - keep-alive
       user-agent:
-      - python-requests/2.31.0,pygbif/0.6.4
+      - python-requests/2.31.0,pygbif/0.6.6
     method: GET
     uri: https://api.gbif.org/v1/dataset?limit=1
   response:
     body:
-      string: '{"offset":0,"limit":1,"endOfRecords":false,"count":108945,"results":[{"key":"b17b67ee-85bc-4b87-bf77-b2d6af66395b","installationKey":"d5b61ace-f25c-43bd-9dd0-03486850f90b","publishingOrganizationKey":"750a8724-fa66-4c27-b645-bd58ac5ee010","doi":"10.3897/bdj.12.e129214","external":false,"numConstituents":0,"type":"CHECKLIST","title":"Taxonomic
-        relationship between Amolops minutus Orlov & Ho, 2007 and A. ottorum Pham,
-        Sung, Pham, Le, Zieger & Nguyen, 2019, with first record of A. minutus from
-        China (Anura, Ranidae)","description":"Based on the examination of specimens
-        of Amolops minutus Orlov & Ho, 2007 and A. ottorum Pham, Sung, Pham, Le, Zieger
-        & Nguyen, 2019, we found that there is no significant morphological difference
-        between them. Phylogenetic analysis also showed that A. minutus and A. ottorum
-        belong to the same taxon. In addition, we discovered the distribution of A.
-        minutus in China.In this study, we provide the first molecular data of Amolops
-        minutus and regard A. ottorum as a junior synonym of A. minutus. In addition,
-        we report the first record of A. minutus from China, based on nine specimens
-        collected from Guanyinshan Provincial Nature Reserve in southern Yunnan Province
-        and present an updated diagnosis of this species, based on literature data
-        and newly-collected specimens.","language":"eng","homepage":"https://doi.org/10.3897/BDJ.12.e129214","citation":{"text":"Li
-        S (2024). Taxonomic relationship between Amolops minutus Orlov & Ho, 2007
-        and A. ottorum Pham, Sung, Pham, Le, Zieger & Nguyen, 2019, with first record
-        of A. minutus from China (Anura, Ranidae). Biodiversity Data Journal. Checklist
-        dataset https://doi.org/10.3897/bdj.12.e129214 accessed via GBIF.org on 2024-10-04.","identifier":"Citation
-        Identifier","citationProvidedBySource":false},"contactsCitation":[{"key":5488327,"abbreviatedName":"Li
-        S","firstName":"Song","lastName":"Li","roles":["METADATA_AUTHOR","ORIGINATOR"],"userId":[]}],"lockedForAutoUpdate":false,"createdBy":"pensoft","modifiedBy":"crawler.gbif.org","created":"2024-10-04T06:30:04.910+00:00","modified":"2024-10-04T06:31:08.712+00:00","contacts":[{"key":5488327,"type":"ORIGINATOR","primary":true,"userId":[],"firstName":"Song","lastName":"Li","position":["Mr"],"email":["lis@mail.kiz.ac.cn"],"phone":[],"homepage":[],"organization":"Yunnan
-        Key Laboratory of Biodiversity Information, Kunming Institute of Zoology,
-        Chinese Academy of Sciences","address":[],"city":"Kunming","country":"CN","createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2024-10-04T06:31:08.685+00:00","modified":"2024-10-04T06:31:08.685+00:00"},{"key":5488328,"type":"METADATA_AUTHOR","primary":true,"userId":[],"firstName":"Song","lastName":"Li","position":["Mr"],"email":["lis@mail.kiz.ac.cn"],"phone":[],"homepage":[],"organization":"Yunnan
-        Key Laboratory of Biodiversity Information, Kunming Institute of Zoology,
-        Chinese Academy of Sciences","address":[],"city":"Kunming","country":"CN","createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2024-10-04T06:31:08.689+00:00","modified":"2024-10-04T06:31:08.689+00:00"},{"key":5488329,"type":"ADMINISTRATIVE_POINT_OF_CONTACT","primary":true,"userId":[],"firstName":"Song","lastName":"Li","position":["Mr"],"email":["lis@mail.kiz.ac.cn"],"phone":[],"homepage":[],"organization":"Yunnan
-        Key Laboratory of Biodiversity Information, Kunming Institute of Zoology,
-        Chinese Academy of Sciences","address":[],"city":"Kunming","country":"CN","createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2024-10-04T06:31:08.691+00:00","modified":"2024-10-04T06:31:08.691+00:00"}],"endpoints":[{"key":1048687,"type":"DWC_ARCHIVE","url":"https://bdj.pensoft.net/lib/ajax_srv/archive_download.php?archive_type=2&document_id=129214","createdBy":"pensoft","modifiedBy":"pensoft","created":"2024-10-04T06:30:06.135+00:00","modified":"2024-10-04T06:30:06.135+00:00","machineTags":[]}],"machineTags":[{"key":21969964,"namespace":"crawler.gbif.org","name":"crawl_attempt","value":"1","createdBy":"crawler.gbif.org","created":"2024-10-04T06:31:06.519+00:00"}],"tags":[],"identifiers":[{"key":374608,"type":"DOI","identifier":"10.3897/BDJ.12.e129214","createdBy":"crawler.gbif.org","created":"2024-10-04T06:31:08.693+00:00"}],"comments":[],"bibliographicCitations":[],"curatorialUnits":[],"taxonomicCoverages":[],"geographicCoverages":[],"temporalCoverages":[],"keywordCollections":[],"countryCoverage":[],"collections":[],"dataDescriptions":[],"dataLanguage":"eng","pubDate":"2024-09-26T00:00:00.000+00:00","maintenanceChangeHistory":[],"license":"http://creativecommons.org/licenses/by/4.0/legalcode"}]}'
+      string: '{"offset":0,"limit":1,"endOfRecords":false,"count":118790,"results":[{"key":"f3e441df-2d69-474c-9edd-12c7fe7b0fde","installationKey":"286b6854-6383-4cc3-b696-f4295274d0a2","publishingOrganizationKey":"06fcbbf0-0562-11d8-b851-b8a03c50a862","doi":"10.15468/hbb2ng","external":false,"numConstituents":0,"type":"OCCURRENCE","title":"UWBM
+        Malacology Collection","description":"<p>The malacology collection at the
+        Burke Museum houses more than 35,000 specimen lots (&gt;150,000 individual
+        specimens) of molluscs, representing bivalves (clams, mussels, and oysters),
+        gastropods (snails and slugs), cephalopods (octopods, squids, and nautiluses),
+        polyplacophorans (chitons), and scaphopods (tusk shells). The collection dates
+        to the late 1800s, however, the majority of acquisitions stem from the past
+        50 years, donated by researchers and shell collectors. The collection is broad
+        in geographical and ecological  scope, but with an emphasis on the Pacific
+        region and marine taxa. Currently, the collection is composed primarily of
+        dry shells, with only a small, but increasing, number of fluid-preserved specimens.
+        Specimens are available by loan for research purposes. Collection Stats: Holdings
+        (35,433 lots); Types (105 lots); Families (371); Species (6,836); Continents/Oceans
+        (11); Countries/Territories (185); Marine (88%), Freshwater (5%), Terrestrial
+        (7%)</p>","language":"eng","citation":{"text":"Frey M (2025). UWBM Malacology
+        Collection. University of Washington Burke Museum. Occurrence dataset https://doi.org/10.15468/hbb2ng
+        accessed via GBIF.org on 2025-11-14.","citationProvidedBySource":false},"contactsCitation":[{"key":6326093,"abbreviatedName":"Frey
+        M","firstName":"Melissa","lastName":"Frey","roles":["ORIGINATOR","METADATA_AUTHOR"],"userId":[]}],"lockedForAutoUpdate":false,"createdBy":"hvalli","modifiedBy":"crawler.gbif.org","created":"2025-11-14T08:39:43.462+00:00","modified":"2025-11-14T08:41:28.190+00:00","contacts":[{"key":6326093,"type":"ORIGINATOR","primary":true,"userId":[],"firstName":"Melissa","lastName":"Frey","position":["Collections
+        Manager, Invertebrate Zoology"],"email":["freyma@uw.edu"],"phone":[],"homepage":["https://www.burkemuseum.org/collections-and-research/biology/malacology"],"organization":"Burke
+        Museum of Natural History and Culture","address":["4303 Memorial Way NE"],"city":"Seattle","province":"WA","country":"US","postalCode":"98195","createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2025-11-14T08:41:28.163+00:00","modified":"2025-11-14T08:41:28.163+00:00"},{"key":6326094,"type":"METADATA_AUTHOR","primary":true,"userId":[],"firstName":"Melissa","lastName":"Frey","position":["Collections
+        Manager, Invertebrate Zoology"],"email":["freyma@uw.edu"],"phone":[],"homepage":["https://www.burkemuseum.org/collections-and-research/biology/malacology"],"organization":"Burke
+        Museum of Natural History and Culture","address":["4303 Memorial Way NE"],"city":"Seattle","province":"WA","country":"US","postalCode":"98195","createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2025-11-14T08:41:28.166+00:00","modified":"2025-11-14T08:41:28.166+00:00"},{"key":6326095,"type":"ADMINISTRATIVE_POINT_OF_CONTACT","primary":true,"userId":[],"firstName":"Melissa","lastName":"Frey","position":["Collections
+        Manager, Invertebrate Zoology"],"email":["freyma@uw.edu"],"phone":[],"homepage":["https://www.burkemuseum.org/collections-and-research/biology/malacology"],"organization":"Burke
+        Museum of Natural History and Culture","address":["4303 Memorial Way NE"],"city":"Seattle","province":"WA","country":"US","postalCode":"98195","createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2025-11-14T08:41:28.168+00:00","modified":"2025-11-14T08:41:28.168+00:00"}],"endpoints":[{"key":1161783,"type":"DWC_ARCHIVE","url":"https://www.burkemuseum.org/malacology/specify/static/depository/export_feed/uwbm-malacology-dwc.zip","createdBy":"hvalli","modifiedBy":"hvalli","created":"2025-11-14T08:40:14.967+00:00","modified":"2025-11-14T08:40:14.967+00:00","machineTags":[]}],"machineTags":[{"key":27938317,"namespace":"crawler.gbif.org","name":"crawl_attempt","value":"1","createdBy":"crawler.gbif.org","created":"2025-11-14T08:41:18.135+00:00"}],"tags":[],"identifiers":[],"comments":[],"bibliographicCitations":[],"curatorialUnits":[],"taxonomicCoverages":[{"description":"Mollusca","coverages":[{"scientificName":"Mollusca","commonName":"Molluscs","rank":{"verbatim":"phylum","interpreted":"PHYLUM"}}]}],"geographicCoverages":[{"description":"Global","boundingBox":{"minLatitude":-90.0,"maxLatitude":90.0,"minLongitude":-180.0,"maxLongitude":180.0,"globalCoverage":true}}],"temporalCoverages":[],"keywordCollections":[],"countryCoverage":[],"collections":[],"dataDescriptions":[],"dataLanguage":"eng","pubDate":"2025-11-13T00:00:00.000+00:00","license":"http://creativecommons.org/licenses/by/4.0/legalcode","dwca":{"coreType":"http://rs.tdwg.org/dwc/terms/Occurrence","extensions":[],"modified":"2025-11-14T08:41:28.121+00:00"}}]}'
     headers:
       Accept-Ranges:
       - bytes
@@ -49,26 +47,26 @@ interactions:
       - public, max-age=3601
       Connection:
       - keep-alive
+      Content-Length:
+      - '5020'
       Content-Type:
       - application/json
       Date:
-      - Fri, 04 Oct 2024 07:00:22 GMT
+      - Fri, 14 Nov 2025 10:13:34 GMT
       Expires:
       - '0'
       Pragma:
       - no-cache
-      Transfer-Encoding:
-      - chunked
       Vary:
       - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
       Via:
-      - 1.1 varnish (Varnish/6.0)
+      - 1.1 varnish (Varnish/6.6)
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '651889329'
+      - '744522217'
       X-XSS-Protection:
       - 1; mode=block
     status:
@@ -84,73 +82,103 @@ interactions:
       Connection:
       - keep-alive
       user-agent:
-      - python-requests/2.31.0,pygbif/0.6.4
+      - python-requests/2.31.0,pygbif/0.6.6
     method: GET
     uri: https://api.gbif.org/v1/dataset?limit=3
   response:
     body:
-      string: '{"offset":0,"limit":3,"endOfRecords":false,"count":108945,"results":[{"key":"b17b67ee-85bc-4b87-bf77-b2d6af66395b","installationKey":"d5b61ace-f25c-43bd-9dd0-03486850f90b","publishingOrganizationKey":"750a8724-fa66-4c27-b645-bd58ac5ee010","doi":"10.3897/bdj.12.e129214","external":false,"numConstituents":0,"type":"CHECKLIST","title":"Taxonomic
-        relationship between Amolops minutus Orlov & Ho, 2007 and A. ottorum Pham,
-        Sung, Pham, Le, Zieger & Nguyen, 2019, with first record of A. minutus from
-        China (Anura, Ranidae)","description":"Based on the examination of specimens
-        of Amolops minutus Orlov & Ho, 2007 and A. ottorum Pham, Sung, Pham, Le, Zieger
-        & Nguyen, 2019, we found that there is no significant morphological difference
-        between them. Phylogenetic analysis also showed that A. minutus and A. ottorum
-        belong to the same taxon. In addition, we discovered the distribution of A.
-        minutus in China.In this study, we provide the first molecular data of Amolops
-        minutus and regard A. ottorum as a junior synonym of A. minutus. In addition,
-        we report the first record of A. minutus from China, based on nine specimens
-        collected from Guanyinshan Provincial Nature Reserve in southern Yunnan Province
-        and present an updated diagnosis of this species, based on literature data
-        and newly-collected specimens.","language":"eng","homepage":"https://doi.org/10.3897/BDJ.12.e129214","citation":{"text":"Li
-        S (2024). Taxonomic relationship between Amolops minutus Orlov & Ho, 2007
-        and A. ottorum Pham, Sung, Pham, Le, Zieger & Nguyen, 2019, with first record
-        of A. minutus from China (Anura, Ranidae). Biodiversity Data Journal. Checklist
-        dataset https://doi.org/10.3897/bdj.12.e129214 accessed via GBIF.org on 2024-10-04.","identifier":"Citation
-        Identifier","citationProvidedBySource":false},"contactsCitation":[{"key":5488327,"abbreviatedName":"Li
-        S","firstName":"Song","lastName":"Li","roles":["METADATA_AUTHOR","ORIGINATOR"],"userId":[]}],"lockedForAutoUpdate":false,"createdBy":"pensoft","modifiedBy":"crawler.gbif.org","created":"2024-10-04T06:30:04.910+00:00","modified":"2024-10-04T06:31:08.712+00:00","contacts":[{"key":5488327,"type":"ORIGINATOR","primary":true,"userId":[],"firstName":"Song","lastName":"Li","position":["Mr"],"email":["lis@mail.kiz.ac.cn"],"phone":[],"homepage":[],"organization":"Yunnan
-        Key Laboratory of Biodiversity Information, Kunming Institute of Zoology,
-        Chinese Academy of Sciences","address":[],"city":"Kunming","country":"CN","createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2024-10-04T06:31:08.685+00:00","modified":"2024-10-04T06:31:08.685+00:00"},{"key":5488328,"type":"METADATA_AUTHOR","primary":true,"userId":[],"firstName":"Song","lastName":"Li","position":["Mr"],"email":["lis@mail.kiz.ac.cn"],"phone":[],"homepage":[],"organization":"Yunnan
-        Key Laboratory of Biodiversity Information, Kunming Institute of Zoology,
-        Chinese Academy of Sciences","address":[],"city":"Kunming","country":"CN","createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2024-10-04T06:31:08.689+00:00","modified":"2024-10-04T06:31:08.689+00:00"},{"key":5488329,"type":"ADMINISTRATIVE_POINT_OF_CONTACT","primary":true,"userId":[],"firstName":"Song","lastName":"Li","position":["Mr"],"email":["lis@mail.kiz.ac.cn"],"phone":[],"homepage":[],"organization":"Yunnan
-        Key Laboratory of Biodiversity Information, Kunming Institute of Zoology,
-        Chinese Academy of Sciences","address":[],"city":"Kunming","country":"CN","createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2024-10-04T06:31:08.691+00:00","modified":"2024-10-04T06:31:08.691+00:00"}],"endpoints":[{"key":1048687,"type":"DWC_ARCHIVE","url":"https://bdj.pensoft.net/lib/ajax_srv/archive_download.php?archive_type=2&document_id=129214","createdBy":"pensoft","modifiedBy":"pensoft","created":"2024-10-04T06:30:06.135+00:00","modified":"2024-10-04T06:30:06.135+00:00","machineTags":[]}],"machineTags":[{"key":21969964,"namespace":"crawler.gbif.org","name":"crawl_attempt","value":"1","createdBy":"crawler.gbif.org","created":"2024-10-04T06:31:06.519+00:00"}],"tags":[],"identifiers":[{"key":374608,"type":"DOI","identifier":"10.3897/BDJ.12.e129214","createdBy":"crawler.gbif.org","created":"2024-10-04T06:31:08.693+00:00"}],"comments":[],"bibliographicCitations":[],"curatorialUnits":[],"taxonomicCoverages":[],"geographicCoverages":[],"temporalCoverages":[],"keywordCollections":[],"countryCoverage":[],"collections":[],"dataDescriptions":[],"dataLanguage":"eng","pubDate":"2024-09-26T00:00:00.000+00:00","maintenanceChangeHistory":[],"license":"http://creativecommons.org/licenses/by/4.0/legalcode"},{"key":"ae367f51-e458-44c1-81b1-b55ac45ffa23","installationKey":"7ce8aef1-9e92-11dc-8740-b8a03c50a999","publishingOrganizationKey":"7ce8aef0-9e92-11dc-8738-b8a03c50a862","doi":"10.15468/sg29hq","external":false,"numConstituents":0,"type":"CHECKLIST","title":"Two
-        new plioplatecarpine mosasaurs (Mosasauridae; Plioplatecarpinae) of the genus
-        Ectenosaurus from the Upper Cretaceous of North America","description":"This
-        dataset contains the digitized treatments in Plazi based on the original journal
-        article Kiernan, Caitlin R., Ebersole, Jun A. (2023): Two new plioplatecarpine
-        mosasaurs (Mosasauridae; Plioplatecarpinae) of the genus Ectenosaurus from
-        the Upper Cretaceous of North America. PaleoBios 40 (13): 1-28, DOI: 10.5070/P9401362375,
-        URL: http://dx.doi.org/10.5070/p9401362375","language":"eng","homepage":"https://tb.plazi.org/GgServer/summary/FFAF3417FF99672AFFAC1461872FFFB2","citation":{"text":"Kiernan
-        C R, Ebersole J A, felipe (2023). Two new plioplatecarpine mosasaurs (Mosasauridae;
-        Plioplatecarpinae) of the genus Ectenosaurus from the Upper Cretaceous of
-        North America. Plazi.org taxonomic treatments database. Checklist dataset
-        https://doi.org/10.15468/sg29hq accessed via GBIF.org on 2024-10-04.","citationProvidedBySource":false},"contactsCitation":[{"key":5488223,"abbreviatedName":"Kiernan
-        C R","firstName":"Caitlin R.","lastName":"Kiernan","roles":["ORIGINATOR"],"userId":[]},{"key":5488224,"abbreviatedName":"Ebersole
-        J A","firstName":"Jun A.","lastName":"Ebersole","roles":["ORIGINATOR"],"userId":[]},{"key":5488227,"abbreviatedName":"felipe","lastName":"felipe","roles":["METADATA_AUTHOR"],"userId":[]}],"lockedForAutoUpdate":false,"createdBy":"plazi","modifiedBy":"crawler.gbif.org","created":"2024-10-03T23:31:26.440+00:00","modified":"2024-10-03T23:41:42.737+00:00","contacts":[{"key":5488223,"type":"ORIGINATOR","primary":true,"userId":[],"firstName":"Caitlin
-        R.","lastName":"Kiernan","position":[],"email":[],"phone":[],"homepage":[],"address":[],"createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2024-10-03T23:41:42.717+00:00","modified":"2024-10-03T23:41:42.717+00:00"},{"key":5488224,"type":"ORIGINATOR","primary":false,"userId":[],"firstName":"Jun
-        A.","lastName":"Ebersole","position":[],"email":[],"phone":[],"homepage":[],"address":[],"createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2024-10-03T23:41:42.720+00:00","modified":"2024-10-03T23:41:42.720+00:00"},{"key":5488225,"type":"ADMINISTRATIVE_POINT_OF_CONTACT","primary":true,"userId":[],"firstName":"Guido","lastName":"Sautter","position":[],"email":["sautter@plazi.org"],"phone":[],"homepage":["https://plazi.org"],"address":[],"createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2024-10-03T23:41:42.721+00:00","modified":"2024-10-03T23:41:42.721+00:00"},{"key":5488226,"type":"PUBLISHER","primary":false,"userId":[],"position":[],"email":["info@plazi.org"],"phone":[],"homepage":["https://plazi.org/"],"organization":"Plazi","address":[],"city":"Bern","country":"CH","createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2024-10-03T23:41:42.723+00:00","modified":"2024-10-03T23:41:42.723+00:00"},{"key":5488227,"type":"METADATA_AUTHOR","primary":true,"userId":[],"lastName":"felipe","position":[],"email":[],"phone":[],"homepage":[],"organization":"Plazi","address":[],"createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2024-10-03T23:41:42.724+00:00","modified":"2024-10-03T23:41:42.724+00:00"}],"endpoints":[{"key":1048646,"type":"DWC_ARCHIVE","url":"https://tb.plazi.org/GgServer/dwca/FFAF3417FF99672AFFAC1461872FFFB2.zip","createdBy":"plazi","modifiedBy":"plazi","created":"2024-10-03T23:31:26.838+00:00","modified":"2024-10-03T23:31:26.838+00:00","machineTags":[]}],"machineTags":[{"key":21962368,"namespace":"crawler.gbif.org","name":"crawl_attempt","value":"2","createdBy":"crawler.gbif.org","created":"2024-10-03T23:41:42.059+00:00"}],"tags":[],"identifiers":[{"key":374607,"type":"UUID","identifier":"FFAF3417FF99672AFFAC1461872FFFB2","createdBy":"plazi","created":"2024-10-03T23:31:26.700+00:00"}],"comments":[],"bibliographicCitations":[{"text":"Kiernan,
-        Caitlin R., Ebersole, Jun A. (2023): Two new plioplatecarpine mosasaurs (Mosasauridae;
-        Plioplatecarpinae) of the genus Ectenosaurus from the Upper Cretaceous of
-        North America. PaleoBios 40 (13): 1-28, DOI: 10.5070/P9401362375, URL: http://dx.doi.org/10.5070/p9401362375","citationProvidedBySource":false}],"curatorialUnits":[],"taxonomicCoverages":[],"geographicCoverages":[],"temporalCoverages":[],"keywordCollections":[],"countryCoverage":[],"collections":[],"dataDescriptions":[],"dataLanguage":"eng","pubDate":"2023-10-23T00:00:00.000+00:00","maintenanceChangeHistory":[],"license":"http://creativecommons.org/publicdomain/zero/1.0/legalcode"},{"key":"73a76047-a563-4c62-8a6e-d6b7837c9f30","installationKey":"7ce8aef1-9e92-11dc-8740-b8a03c50a999","publishingOrganizationKey":"7ce8aef0-9e92-11dc-8738-b8a03c50a862","doi":"10.15468/hr73xc","external":false,"numConstituents":0,"type":"CHECKLIST","title":"Nucella
-        demouthae, A New Species of Late Miocene Muricid Gastropod From Northern California,
-        U. S. A.","description":"This dataset contains the digitized treatments in
-        Plazi based on the original journal article Powell, II, Charles L., Roth,
-        Barry, Garcia, Christine N. (2023): Nucella demouthae, A New Species of Late
-        Miocene Muricid Gastropod From Northern California, U. S. A. PaleoBios 40
-        (12): 1-11, DOI: 10.5070/P9411257951, URL: http://dx.doi.org/10.5070/p9411257951","language":"eng","homepage":"https://tb.plazi.org/GgServer/summary/A822476AFFC0775ACF2AFFBBFFE4FF83","citation":{"text":"Powell
-        I C L, Roth B, Garcia C N, felipe (2023). Nucella demouthae, A New Species
-        of Late Miocene Muricid Gastropod From Northern California, U. S. A.. Plazi.org
-        taxonomic treatments database. Checklist dataset https://doi.org/10.15468/hr73xc
-        accessed via GBIF.org on 2024-10-04.","citationProvidedBySource":false},"contactsCitation":[{"key":5488189,"abbreviatedName":"Powell
-        I C L","firstName":"II, Charles L.","lastName":"Powell","roles":["ORIGINATOR"],"userId":[]},{"key":5488190,"abbreviatedName":"Roth
-        B","firstName":"Barry","lastName":"Roth","roles":["ORIGINATOR"],"userId":[]},{"key":5488191,"abbreviatedName":"Garcia
-        C N","firstName":"Christine N.","lastName":"Garcia","roles":["ORIGINATOR"],"userId":[]},{"key":5488194,"abbreviatedName":"felipe","lastName":"felipe","roles":["METADATA_AUTHOR"],"userId":[]}],"lockedForAutoUpdate":false,"createdBy":"plazi","modifiedBy":"crawler.gbif.org","created":"2024-10-03T22:48:11.001+00:00","modified":"2024-10-03T22:58:22.549+00:00","contacts":[{"key":5488189,"type":"ORIGINATOR","primary":true,"userId":[],"firstName":"II,
-        Charles L.","lastName":"Powell","position":[],"email":[],"phone":[],"homepage":[],"address":[],"createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2024-10-03T22:58:22.529+00:00","modified":"2024-10-03T22:58:22.529+00:00"},{"key":5488190,"type":"ORIGINATOR","primary":false,"userId":[],"firstName":"Barry","lastName":"Roth","position":[],"email":[],"phone":[],"homepage":[],"address":[],"createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2024-10-03T22:58:22.531+00:00","modified":"2024-10-03T22:58:22.531+00:00"},{"key":5488191,"type":"ORIGINATOR","primary":false,"userId":[],"firstName":"Christine
-        N.","lastName":"Garcia","position":[],"email":[],"phone":[],"homepage":[],"address":[],"createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2024-10-03T22:58:22.532+00:00","modified":"2024-10-03T22:58:22.532+00:00"},{"key":5488192,"type":"ADMINISTRATIVE_POINT_OF_CONTACT","primary":true,"userId":[],"firstName":"Guido","lastName":"Sautter","position":[],"email":["sautter@plazi.org"],"phone":[],"homepage":["https://plazi.org"],"address":[],"createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2024-10-03T22:58:22.533+00:00","modified":"2024-10-03T22:58:22.533+00:00"},{"key":5488193,"type":"PUBLISHER","primary":false,"userId":[],"position":[],"email":["info@plazi.org"],"phone":[],"homepage":["https://plazi.org/"],"organization":"Plazi","address":[],"city":"Bern","country":"CH","createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2024-10-03T22:58:22.535+00:00","modified":"2024-10-03T22:58:22.535+00:00"},{"key":5488194,"type":"METADATA_AUTHOR","primary":true,"userId":[],"lastName":"felipe","position":[],"email":[],"phone":[],"homepage":[],"organization":"Plazi","address":[],"createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2024-10-03T22:58:22.536+00:00","modified":"2024-10-03T22:58:22.536+00:00"}],"endpoints":[{"key":1048637,"type":"DWC_ARCHIVE","url":"https://tb.plazi.org/GgServer/dwca/A822476AFFC0775ACF2AFFBBFFE4FF83.zip","createdBy":"plazi","modifiedBy":"plazi","created":"2024-10-03T22:48:13.740+00:00","modified":"2024-10-03T22:48:13.740+00:00","machineTags":[]}],"machineTags":[{"key":21961380,"namespace":"crawler.gbif.org","name":"crawl_attempt","value":"2","createdBy":"crawler.gbif.org","created":"2024-10-03T22:58:21.973+00:00"}],"tags":[],"identifiers":[{"key":374606,"type":"UUID","identifier":"A822476AFFC0775ACF2AFFBBFFE4FF83","createdBy":"plazi","created":"2024-10-03T22:48:13.611+00:00"}],"comments":[],"bibliographicCitations":[{"text":"Powell,
-        II, Charles L., Roth, Barry, Garcia, Christine N. (2023): Nucella demouthae,
-        A New Species of Late Miocene Muricid Gastropod From Northern California,
-        U. S. A. PaleoBios 40 (12): 1-11, DOI: 10.5070/P9411257951, URL: http://dx.doi.org/10.5070/p9411257951","citationProvidedBySource":false}],"curatorialUnits":[],"taxonomicCoverages":[],"geographicCoverages":[],"temporalCoverages":[],"keywordCollections":[],"countryCoverage":[],"collections":[],"dataDescriptions":[],"dataLanguage":"eng","pubDate":"2023-10-13T00:00:00.000+00:00","maintenanceChangeHistory":[],"license":"http://creativecommons.org/publicdomain/zero/1.0/legalcode"}]}'
+      string: '{"offset":0,"limit":3,"endOfRecords":false,"count":118790,"results":[{"key":"f3e441df-2d69-474c-9edd-12c7fe7b0fde","installationKey":"286b6854-6383-4cc3-b696-f4295274d0a2","publishingOrganizationKey":"06fcbbf0-0562-11d8-b851-b8a03c50a862","doi":"10.15468/hbb2ng","external":false,"numConstituents":0,"type":"OCCURRENCE","title":"UWBM
+        Malacology Collection","description":"<p>The malacology collection at the
+        Burke Museum houses more than 35,000 specimen lots (&gt;150,000 individual
+        specimens) of molluscs, representing bivalves (clams, mussels, and oysters),
+        gastropods (snails and slugs), cephalopods (octopods, squids, and nautiluses),
+        polyplacophorans (chitons), and scaphopods (tusk shells). The collection dates
+        to the late 1800s, however, the majority of acquisitions stem from the past
+        50 years, donated by researchers and shell collectors. The collection is broad
+        in geographical and ecological  scope, but with an emphasis on the Pacific
+        region and marine taxa. Currently, the collection is composed primarily of
+        dry shells, with only a small, but increasing, number of fluid-preserved specimens.
+        Specimens are available by loan for research purposes. Collection Stats: Holdings
+        (35,433 lots); Types (105 lots); Families (371); Species (6,836); Continents/Oceans
+        (11); Countries/Territories (185); Marine (88%), Freshwater (5%), Terrestrial
+        (7%)</p>","language":"eng","citation":{"text":"Frey M (2025). UWBM Malacology
+        Collection. University of Washington Burke Museum. Occurrence dataset https://doi.org/10.15468/hbb2ng
+        accessed via GBIF.org on 2025-11-14.","citationProvidedBySource":false},"contactsCitation":[{"key":6326093,"abbreviatedName":"Frey
+        M","firstName":"Melissa","lastName":"Frey","roles":["ORIGINATOR","METADATA_AUTHOR"],"userId":[]}],"lockedForAutoUpdate":false,"createdBy":"hvalli","modifiedBy":"crawler.gbif.org","created":"2025-11-14T08:39:43.462+00:00","modified":"2025-11-14T08:41:28.190+00:00","contacts":[{"key":6326093,"type":"ORIGINATOR","primary":true,"userId":[],"firstName":"Melissa","lastName":"Frey","position":["Collections
+        Manager, Invertebrate Zoology"],"email":["freyma@uw.edu"],"phone":[],"homepage":["https://www.burkemuseum.org/collections-and-research/biology/malacology"],"organization":"Burke
+        Museum of Natural History and Culture","address":["4303 Memorial Way NE"],"city":"Seattle","province":"WA","country":"US","postalCode":"98195","createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2025-11-14T08:41:28.163+00:00","modified":"2025-11-14T08:41:28.163+00:00"},{"key":6326094,"type":"METADATA_AUTHOR","primary":true,"userId":[],"firstName":"Melissa","lastName":"Frey","position":["Collections
+        Manager, Invertebrate Zoology"],"email":["freyma@uw.edu"],"phone":[],"homepage":["https://www.burkemuseum.org/collections-and-research/biology/malacology"],"organization":"Burke
+        Museum of Natural History and Culture","address":["4303 Memorial Way NE"],"city":"Seattle","province":"WA","country":"US","postalCode":"98195","createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2025-11-14T08:41:28.166+00:00","modified":"2025-11-14T08:41:28.166+00:00"},{"key":6326095,"type":"ADMINISTRATIVE_POINT_OF_CONTACT","primary":true,"userId":[],"firstName":"Melissa","lastName":"Frey","position":["Collections
+        Manager, Invertebrate Zoology"],"email":["freyma@uw.edu"],"phone":[],"homepage":["https://www.burkemuseum.org/collections-and-research/biology/malacology"],"organization":"Burke
+        Museum of Natural History and Culture","address":["4303 Memorial Way NE"],"city":"Seattle","province":"WA","country":"US","postalCode":"98195","createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2025-11-14T08:41:28.168+00:00","modified":"2025-11-14T08:41:28.168+00:00"}],"endpoints":[{"key":1161783,"type":"DWC_ARCHIVE","url":"https://www.burkemuseum.org/malacology/specify/static/depository/export_feed/uwbm-malacology-dwc.zip","createdBy":"hvalli","modifiedBy":"hvalli","created":"2025-11-14T08:40:14.967+00:00","modified":"2025-11-14T08:40:14.967+00:00","machineTags":[]}],"machineTags":[{"key":27938317,"namespace":"crawler.gbif.org","name":"crawl_attempt","value":"1","createdBy":"crawler.gbif.org","created":"2025-11-14T08:41:18.135+00:00"}],"tags":[],"identifiers":[],"comments":[],"bibliographicCitations":[],"curatorialUnits":[],"taxonomicCoverages":[{"description":"Mollusca","coverages":[{"scientificName":"Mollusca","commonName":"Molluscs","rank":{"verbatim":"phylum","interpreted":"PHYLUM"}}]}],"geographicCoverages":[{"description":"Global","boundingBox":{"minLatitude":-90.0,"maxLatitude":90.0,"minLongitude":-180.0,"maxLongitude":180.0,"globalCoverage":true}}],"temporalCoverages":[],"keywordCollections":[],"countryCoverage":[],"collections":[],"dataDescriptions":[],"dataLanguage":"eng","pubDate":"2025-11-13T00:00:00.000+00:00","license":"http://creativecommons.org/licenses/by/4.0/legalcode","dwca":{"coreType":"http://rs.tdwg.org/dwc/terms/Occurrence","extensions":[],"modified":"2025-11-14T08:41:28.121+00:00"}},{"key":"3cc50b40-d22e-425e-bdb9-5bf343a5dd1e","installationKey":"d371dfc3-ef14-48b5-97f8-1de9d3f9f874","publishingOrganizationKey":"03433ccd-5166-4730-94a9-e06ec25d1a72","doi":"10.15468/e5b7wp","external":false,"numConstituents":0,"type":"OCCURRENCE","title":"Atrichops_crassipes_baltic_ecoregion","description":"\n            &lt;p&gt;The
+        occurrence data of &lt;i&gt;Atrichops crassipes&lt;/i&gt; were obtained from
+        the Nature Research Centre in Vilnius, Lithuania, and the Latvian Environment,
+        Geology and Meteorology Centre in Riga, Latvia. The new records are based
+        on larval collections and were published in the journal &lt;i&gt;CheckList&lt;/i&gt;.&lt;/p&gt;\n        ","language":"eng","homepage":"https://checklist.pensoft.net/","citation":{"text":"Ozolins
+        D, Jekabsone J, Piterans U, Visinskiene G, Arbaciauskas K (2025). Atrichops_crassipes_baltic_ecoregion.
+        Check List. Occurrence dataset https://doi.org/10.15468/e5b7wp accessed via
+        GBIF.org on 2025-11-14.","citationProvidedBySource":false},"contactsCitation":[{"key":6326047,"abbreviatedName":"Ozolins
+        D","firstName":"Davis","lastName":"Ozolins","roles":["ORIGINATOR"],"userId":["https://orcid.org/0000-0003-3752-2040"]},{"key":6326048,"abbreviatedName":"Jekabsone
+        J","firstName":"Jolanta","lastName":"Jekabsone","roles":["METADATA_AUTHOR"],"userId":[]},{"key":6326049,"abbreviatedName":"Piterans
+        U","firstName":"Ugis","lastName":"Piterans","roles":["METADATA_AUTHOR"],"userId":[]},{"key":6326050,"abbreviatedName":"Visinskiene
+        G","firstName":"Giedre","lastName":"Visinskiene","roles":["METADATA_AUTHOR"],"userId":[]},{"key":6326051,"abbreviatedName":"Arbaciauskas
+        K","firstName":"Kestutis","lastName":"Arbaciauskas","roles":["METADATA_AUTHOR"],"userId":["https://orcid.org/0000-0001-8688-2291"]}],"lockedForAutoUpdate":false,"createdBy":"03433ccd-5166-4730-94a9-e06ec25d1a72","modifiedBy":"crawler.gbif.org","created":"2025-11-14T08:01:34.903+00:00","modified":"2025-11-14T08:02:35.712+00:00","contacts":[{"key":6326047,"type":"ORIGINATOR","primary":true,"userId":["https://orcid.org/0000-0003-3752-2040"],"firstName":"Davis","lastName":"Ozolins","position":[],"email":["davis.ozolins@lu.lv"],"phone":[],"homepage":[],"organization":"Institute
+        of Biology, Faculty of Medicine and Life Sciences, University of Latvia","address":[],"city":"Riga","country":"LV","createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2025-11-14T08:02:35.665+00:00","modified":"2025-11-14T08:02:35.665+00:00"},{"key":6326048,"type":"METADATA_AUTHOR","primary":true,"userId":[],"firstName":"Jolanta","lastName":"Jekabsone","position":[],"email":["jolanta.jekabsone@lvgmc.lv"],"phone":[],"homepage":[],"organization":"Latvian
+        Environment, Geology and Meteorology Centre","address":[],"city":"Riga","country":"LV","createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2025-11-14T08:02:35.668+00:00","modified":"2025-11-14T08:02:35.668+00:00"},{"key":6326049,"type":"METADATA_AUTHOR","primary":false,"userId":[],"firstName":"Ugis","lastName":"Piterans","position":[],"email":["ugis.piterans@ldm.gov.lv"],"phone":[],"homepage":[],"organization":"Zoology
+        Department, Latvian National Museum of Natural History","address":[],"city":"Riga","country":"LV","createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2025-11-14T08:02:35.670+00:00","modified":"2025-11-14T08:02:35.670+00:00"},{"key":6326050,"type":"METADATA_AUTHOR","primary":false,"userId":[],"firstName":"Giedre","lastName":"Visinskiene","position":[],"email":["giedre.visinskiene@gamtc.lt"],"phone":[],"homepage":[],"organization":"State
+        Scientific Research Institute Nature Research Centre","address":[],"city":"Vilnius","country":"LT","createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2025-11-14T08:02:35.671+00:00","modified":"2025-11-14T08:02:35.671+00:00"},{"key":6326051,"type":"METADATA_AUTHOR","primary":false,"userId":["https://orcid.org/0000-0001-8688-2291"],"firstName":"Kestutis","lastName":"Arbaciauskas","position":[],"email":["kestutis.arbaciauskas@gamtc.lt"],"phone":[],"homepage":[],"organization":"State
+        Scientific Research Institute Nature Research Centre","address":[],"city":"Vilnius","country":"LT","createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2025-11-14T08:02:35.673+00:00","modified":"2025-11-14T08:02:35.673+00:00"},{"key":6326052,"type":"AUTHOR","primary":false,"userId":["https://orcid.org/0000-0003-3752-2040"],"firstName":"Davis","lastName":"Ozolins","position":["researcher"],"email":["davis.ozolins@lu.lv"],"phone":[],"homepage":[],"organization":"Institute
+        of Biology, Faculty of Medicine and Life Sciences, University of Latvia","address":["Jelgavas
+        Street 1, Riga, Latvia"],"city":"Riga","country":"LV","createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2025-11-14T08:02:35.675+00:00","modified":"2025-11-14T08:02:35.675+00:00"},{"key":6326053,"type":"ADMINISTRATIVE_POINT_OF_CONTACT","primary":true,"userId":["https://orcid.org/0000-0001-8688-2291"],"firstName":"Kestutis","lastName":"Arbaciauskas","position":[],"email":["kestutis.arbaciauskas@gamtc.lt"],"phone":[],"homepage":[],"organization":"Nature
+        Research Centre","address":[],"city":"Vilnius","province":"Lithuania","country":"LT","createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2025-11-14T08:02:35.676+00:00","modified":"2025-11-14T08:02:35.676+00:00"}],"endpoints":[{"key":1161780,"type":"DWC_ARCHIVE","url":"https://ipt.pensoft.net/archive.do?r=atrichops_crassipes_baltic_ecoregion","createdBy":"03433ccd-5166-4730-94a9-e06ec25d1a72","modifiedBy":"03433ccd-5166-4730-94a9-e06ec25d1a72","created":"2025-11-14T08:01:35.018+00:00","modified":"2025-11-14T08:01:35.018+00:00","machineTags":[]},{"key":1161779,"type":"EML","url":"https://ipt.pensoft.net/eml.do?r=atrichops_crassipes_baltic_ecoregion","createdBy":"03433ccd-5166-4730-94a9-e06ec25d1a72","modifiedBy":"03433ccd-5166-4730-94a9-e06ec25d1a72","created":"2025-11-14T08:01:34.987+00:00","modified":"2025-11-14T08:01:34.987+00:00","machineTags":[]}],"machineTags":[{"key":27938315,"namespace":"crawler.gbif.org","name":"crawl_attempt","value":"1","createdBy":"crawler.gbif.org","created":"2025-11-14T08:02:35.174+00:00"}],"tags":[],"identifiers":[{"key":458987,"type":"URL","identifier":"https://ipt.pensoft.net/resource?r=atrichops_crassipes_baltic_ecoregion","createdBy":"crawler.gbif.org","created":"2025-11-14T08:02:35.678+00:00","primary":false}],"comments":[],"bibliographicCitations":[],"curatorialUnits":[],"taxonomicCoverages":[{"description":"Specimens
+        are identified to the species level.","coverages":[{"scientificName":"Animalia","rank":{"verbatim":"kingdom","interpreted":"KINGDOM"}}]}],"geographicCoverages":[{"description":"Larval
+        occurrences of Atrichops crassipes in Latvia and Lithuania were obtained from
+        benthic macroinvertebrate samples.","boundingBox":{"minLatitude":53.985555,"maxLatitude":56.078889,"minLongitude":23.658055,"maxLongitude":26.816944,"globalCoverage":false}}],"temporalCoverages":[{"@type":"range","start":"2015-09-24T00:00:00.000+00:00","end":"2023-04-25T00:00:00.000+00:00"}],"keywordCollections":[{"thesaurus":"GBIF
+        Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type_2015-07-10.xml","keywords":["Occurrence"]}],"project":{"title":"Latvian
+        Freshwater Macroinvertebrate Monitoring Programme and Lithuanian macroinvertebrates
+        research by Nature Research Centre","contacts":[{"type":"CONTENT_PROVIDER","primary":false,"userId":["https://orcid.org/0000-0003-3752-2040"],"firstName":"Davis","lastName":"Ozolins","position":[],"email":[],"phone":[],"homepage":[],"address":[]},{"type":"CONTENT_PROVIDER","primary":false,"userId":["https://orcid.org/0000-0001-8688-2291"],"firstName":"Kestutis","lastName":"Arbaciauskas","position":[],"email":[],"phone":[],"homepage":[],"address":[]}],"funding":"No
+        external funding.","awards":[],"relatedProjects":[]},"samplingDescription":{"studyExtent":"Macroinvertebrate
+        monitoring and research in Latvia and Lithuania","sampling":"Benthic invertebrates
+        multi-habitat sampling","methodSteps":["Multi-habitat sampling approach by
+        hand net"]},"countryCoverage":[],"collections":[{"name":"Collection of the
+        Latvian National Museum of Natural History (LNMNH)","identifier":"En Dip/5651-En
+        Dip/5653","parentIdentifier":"Not applicable","specimenPreservationMethod":"ALCOHOL","curatorialUnits":[]},{"name":"Voucher
+        specimen collection of Latvian Environment, Geology and Meteorology Centre","identifier":"23ZB0031/AC","parentIdentifier":"Not
+        applicable","curatorialUnits":[]},{"name":"Macroinvertebrate collection of
+        Laboratory of Evolutionary Ecology of Hydrobionts at the Nature Research Centre
+        (NRC)","identifier":"NRCE000249-NRCE000255","parentIdentifier":"Not applicable","curatorialUnits":[]}],"dataDescriptions":[],"dataLanguage":"eng","acknowledgements":"We
+        thank all the participants of Latvian freshwater macroinvertebrate monitoring
+        programme and the Lithuanian State Scientific Research Institute Nature Research
+        Centre for fieldworks.","pubDate":"2025-11-11T00:00:00.000+00:00","maintenanceUpdateFrequency":"NOT_PLANNED","maintenanceDescription":"The
+        dataset will not be regularly updated.","license":"http://creativecommons.org/publicdomain/zero/1.0/legalcode","dwca":{"coreType":"http://rs.tdwg.org/dwc/terms/Occurrence","extensions":[],"modified":"2025-11-14T08:02:35.598+00:00"}},{"key":"20b2ac4f-9421-442a-b1fe-e7855dd01fad","installationKey":"7ce8aef1-9e92-11dc-8740-b8a03c50a999","publishingOrganizationKey":"b0e7edd4-d8b5-4b1c-bb5f-f6484e16c21c","doi":"10.15468/akwsn7","external":false,"numConstituents":0,"type":"CHECKLIST","title":"Phylogeny
+        and comparative analysis of mitochondrial genomes of Gomphus spp. Pers. (Basidiomycota,
+        Agaricomycetes), with descriptions of G. matijun J. W. Liu & F. Q. Yu and
+        G. bijiensis sp. nov.","description":"<p>This dataset contains the digitized
+        treatments in Plazi based on the original journal article Wang, Xianyi, Guo,
+        Zhongyao, Tao, Jiawei, Guo, Yunhan, Wang, Guoyu, Xu, Guangyin, Li, Qirui,
+        Liu, Hongmei (2025): Phylogeny and comparative analysis of mitochondrial genomes
+        of Gomphus spp. Pers. (Basidiomycota, Agaricomycetes), with descriptions of
+        G. matijun J. W. Liu &amp; F. Q. Yu and G. bijiensis sp. nov. MycoKeys 124:
+        357-381, DOI: 10.3897/mycokeys.124.158670</p>","language":"eng","homepage":"https://tb.plazi.org/GgServer/summary/A205E31020DE5F2EBD2FED3C181D15D0","citation":{"text":"Wang
+        X, Guo Z, Tao J, Guo Y, Wang G, Xu G, Li Q, Liu H, pensoft (2025). Phylogeny
+        and comparative analysis of mitochondrial genomes of Gomphus spp. Pers. (Basidiomycota,
+        Agaricomycetes), with descriptions of G. matijun J. W. Liu & F. Q. Yu and
+        G. bijiensis sp. nov.. MycoKeys. Checklist dataset https://doi.org/10.15468/akwsn7
+        accessed via GBIF.org on 2025-11-14.","citationProvidedBySource":false},"contactsCitation":[{"key":6325777,"abbreviatedName":"Wang
+        X","firstName":"Xianyi","lastName":"Wang","roles":["ORIGINATOR"],"userId":[]},{"key":6325778,"abbreviatedName":"Guo
+        Z","firstName":"Zhongyao","lastName":"Guo","roles":["ORIGINATOR"],"userId":[]},{"key":6325779,"abbreviatedName":"Tao
+        J","firstName":"Jiawei","lastName":"Tao","roles":["ORIGINATOR"],"userId":[]},{"key":6325780,"abbreviatedName":"Guo
+        Y","firstName":"Yunhan","lastName":"Guo","roles":["ORIGINATOR"],"userId":[]},{"key":6325781,"abbreviatedName":"Wang
+        G","firstName":"Guoyu","lastName":"Wang","roles":["ORIGINATOR"],"userId":[]},{"key":6325782,"abbreviatedName":"Xu
+        G","firstName":"Guangyin","lastName":"Xu","roles":["ORIGINATOR"],"userId":[]},{"key":6325783,"abbreviatedName":"Li
+        Q","firstName":"Qirui","lastName":"Li","roles":["ORIGINATOR"],"userId":[]},{"key":6325784,"abbreviatedName":"Liu
+        H","firstName":"Hongmei","lastName":"Liu","roles":["ORIGINATOR"],"userId":[]},{"key":6325788,"abbreviatedName":"pensoft","lastName":"pensoft","roles":["METADATA_AUTHOR"],"userId":[]}],"lockedForAutoUpdate":false,"createdBy":"plazi","modifiedBy":"crawler.gbif.org","created":"2025-11-14T00:47:56.278+00:00","modified":"2025-11-14T02:33:16.985+00:00","contacts":[{"key":6325777,"type":"ORIGINATOR","primary":true,"userId":[],"firstName":"Xianyi","lastName":"Wang","position":[],"email":[],"phone":[],"homepage":[],"address":[],"createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2025-11-14T02:33:16.949+00:00","modified":"2025-11-14T02:33:16.949+00:00"},{"key":6325778,"type":"ORIGINATOR","primary":false,"userId":[],"firstName":"Zhongyao","lastName":"Guo","position":[],"email":[],"phone":[],"homepage":[],"address":[],"createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2025-11-14T02:33:16.952+00:00","modified":"2025-11-14T02:33:16.952+00:00"},{"key":6325779,"type":"ORIGINATOR","primary":false,"userId":[],"firstName":"Jiawei","lastName":"Tao","position":[],"email":[],"phone":[],"homepage":[],"address":[],"createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2025-11-14T02:33:16.953+00:00","modified":"2025-11-14T02:33:16.953+00:00"},{"key":6325780,"type":"ORIGINATOR","primary":false,"userId":[],"firstName":"Yunhan","lastName":"Guo","position":[],"email":[],"phone":[],"homepage":[],"address":[],"createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2025-11-14T02:33:16.954+00:00","modified":"2025-11-14T02:33:16.954+00:00"},{"key":6325781,"type":"ORIGINATOR","primary":false,"userId":[],"firstName":"Guoyu","lastName":"Wang","position":[],"email":[],"phone":[],"homepage":[],"address":[],"createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2025-11-14T02:33:16.955+00:00","modified":"2025-11-14T02:33:16.955+00:00"},{"key":6325782,"type":"ORIGINATOR","primary":false,"userId":[],"firstName":"Guangyin","lastName":"Xu","position":[],"email":[],"phone":[],"homepage":[],"address":[],"createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2025-11-14T02:33:16.956+00:00","modified":"2025-11-14T02:33:16.956+00:00"},{"key":6325783,"type":"ORIGINATOR","primary":false,"userId":[],"firstName":"Qirui","lastName":"Li","position":[],"email":[],"phone":[],"homepage":[],"address":[],"createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2025-11-14T02:33:16.957+00:00","modified":"2025-11-14T02:33:16.957+00:00"},{"key":6325784,"type":"ORIGINATOR","primary":false,"userId":[],"firstName":"Hongmei","lastName":"Liu","position":[],"email":[],"phone":[],"homepage":[],"address":[],"createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2025-11-14T02:33:16.957+00:00","modified":"2025-11-14T02:33:16.957+00:00"},{"key":6325785,"type":"ADMINISTRATIVE_POINT_OF_CONTACT","primary":true,"userId":[],"firstName":"Guido","lastName":"Sautter","position":[],"email":["sautter@plazi.org"],"phone":[],"homepage":["https://plazi.org"],"address":[],"createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2025-11-14T02:33:16.958+00:00","modified":"2025-11-14T02:33:16.958+00:00"},{"key":6325786,"type":"PUBLISHER","primary":false,"userId":[],"position":[],"email":["info@pensoft.net"],"phone":[],"homepage":["https://www.pensoft.net"],"organization":"Pensoft
+        Publishers","address":["Prof. Georgi Zlatarski Street 12"],"city":"Sofia","country":"BG","postalCode":"1700","createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2025-11-14T02:33:16.959+00:00","modified":"2025-11-14T02:33:16.959+00:00"},{"key":6325787,"type":"DISTRIBUTOR","primary":false,"userId":[],"position":[],"email":["info@plazi.org"],"phone":[],"homepage":["https://plazi.org/"],"organization":"Plazi","address":[],"city":"Bern","country":"CH","createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2025-11-14T02:33:16.960+00:00","modified":"2025-11-14T02:33:16.960+00:00"},{"key":6325788,"type":"METADATA_AUTHOR","primary":true,"userId":[],"lastName":"pensoft","position":[],"email":[],"phone":[],"homepage":[],"organization":"Plazi","address":[],"createdBy":"crawler.gbif.org","modifiedBy":"crawler.gbif.org","created":"2025-11-14T02:33:16.961+00:00","modified":"2025-11-14T02:33:16.961+00:00"}],"endpoints":[{"key":1161752,"type":"COLDP","url":"https://tb.plazi.org/GgServer/colDp/A205E31020DE5F2EBD2FED3C181D15D0.zip","createdBy":"plazi","modifiedBy":"plazi","created":"2025-11-14T02:23:10.007+00:00","modified":"2025-11-14T02:23:10.007+00:00","machineTags":[]},{"key":1161745,"type":"DWC_ARCHIVE","url":"https://tb.plazi.org/GgServer/dwca/A205E31020DE5F2EBD2FED3C181D15D0.zip","createdBy":"plazi","modifiedBy":"plazi","created":"2025-11-14T00:47:56.507+00:00","modified":"2025-11-14T00:47:56.507+00:00","machineTags":[]}],"machineTags":[{"key":27938295,"namespace":"crawler.gbif.org","name":"crawl_attempt","value":"4","createdBy":"crawler.gbif.org","created":"2025-11-14T02:33:16.047+00:00"}],"tags":[],"identifiers":[{"key":458986,"type":"CLB_DATASET_KEY","identifier":"313084","createdBy":"clb-bot","created":"2025-11-14T01:05:32.409+00:00","primary":false},{"key":458984,"type":"UUID","identifier":"A205E31020DE5F2EBD2FED3C181D15D0","createdBy":"plazi","created":"2025-11-14T00:47:56.440+00:00","primary":false}],"comments":[],"bibliographicCitations":[{"text":"Wang,
+        Xianyi, Guo, Zhongyao, Tao, Jiawei, Guo, Yunhan, Wang, Guoyu, Xu, Guangyin,
+        Li, Qirui, Liu, Hongmei (2025): Phylogeny and comparative analysis of mitochondrial
+        genomes of Gomphus spp. Pers. (Basidiomycota, Agaricomycetes), with descriptions
+        of G. matijun J. W. Liu & F. Q. Yu and G. bijiensis sp. nov. MycoKeys 124:
+        357-381, DOI: 10.3897/mycokeys.124.158670","citationProvidedBySource":false}],"curatorialUnits":[],"taxonomicCoverages":[],"geographicCoverages":[],"temporalCoverages":[],"keywordCollections":[],"countryCoverage":[],"collections":[],"dataDescriptions":[],"dataLanguage":"eng","pubDate":"2025-11-13T00:00:00.000+00:00","license":"http://creativecommons.org/publicdomain/zero/1.0/legalcode","dwca":{"coreType":"http://rs.tdwg.org/dwc/terms/Taxon","extensions":["http://rs.gbif.org/terms/1.0/Description","http://rs.tdwg.org/dwc/terms/Occurrence","http://eol.org/schema/reference/Reference","http://eol.org/schema/media/Document","http://rs.gbif.org/terms/1.0/Multimedia"],"modified":"2025-11-14T02:33:16.882+00:00"}}]}'
     headers:
       Accept-Ranges:
       - bytes
@@ -161,11 +189,11 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '14619'
+      - '23213'
       Content-Type:
       - application/json
       Date:
-      - Fri, 04 Oct 2024 07:00:23 GMT
+      - Fri, 14 Nov 2025 10:13:34 GMT
       Expires:
       - '0'
       Pragma:
@@ -173,13 +201,13 @@ interactions:
       Vary:
       - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
       Via:
-      - 1.1 varnish (Varnish/6.0)
+      - 1.1 varnish (Varnish/6.6)
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '684622001'
+      - '806126607'
       X-XSS-Protection:
       - 1; mode=block
     status:

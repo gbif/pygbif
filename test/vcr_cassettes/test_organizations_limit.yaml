@@ -9,121 +9,87 @@ interactions:
       Connection:
       - keep-alive
       user-agent:
-      - python-requests/2.31.0,pygbif/0.6.4
+      - python-requests/2.31.0,pygbif/0.6.6
     method: GET
     uri: https://api.gbif.org/v1/organization?limit=5
   response:
     body:
-      string: "{\"offset\":0,\"limit\":5,\"endOfRecords\":false,\"count\":2921,\"results\":[{\"key\":\"66739018-f8c3-4902-96d5-82c0aec31d6a\",\"endorsingNodeKey\":\"7e865cba-7c46-417b-ade5-97f2cf5b7be0\",\"endorsementApproved\":true,\"endorsementStatus\":\"ENDORSED\",\"title\":\"Corporaci\xF3n
-        Aut\xF3noma Regional de la Orinoquia - Corporinoquia\",\"description\":\"La
-        Corporaci\xF3n Aut\xF3noma Regional de la Orinoquia tiene como misi\xF3n la
-        administraci\xF3n de los recursos naturales y la gesti\xF3n del desarrollo
-        sostenible, garantizando la oferta de bienes y servicios ambientales, mediante
-        la implementaci\xF3n de acciones de prevenci\xF3n, protecci\xF3n y conservaci\xF3n
-        ambiental de su jurisdicci\xF3n de la Orinoquia colombiana, que trabaja articul\xE1damente
-        con otras autoridades ambientales en el marco de sus competencias, como lo
-        son el MADS, PNN y las autoridades de orden departamental y municipal y entre
-        otros actores estrat\xE9gicos; para lograr sus misi\xF3n y prop\xF3sitos,
-        la gesti\xF3n de las \xE1reas protegidas y la conservaci\xF3n de la  biodiversidad
-        y servicios ecosist\xE9micos.\",\"language\":\"eng\",\"email\":[\"atencionusuarios@corporinoquia.gov.co\"],\"phone\":[\"PBX:
-        +57 (608) 6358588\"],\"homepage\":[\"https://corporinoquia.gov.co/\"],\"logoUrl\":\"https://raw.githubusercontent.com/SIB-Colombia/logos/main/socio-SiB-corporinoquia.png\",\"address\":[\"Carrera
-        23 # 18-31\"],\"city\":\"Yopal\",\"province\":\"Casanare\",\"country\":\"CO\",\"latitude\":5.34184,\"longitude\":-72.39335,\"numPublishedDatasets\":0,\"createdBy\":\"gbif.express\",\"modifiedBy\":\"sibcolombia\",\"created\":\"2024-10-01T22:34:15.659+00:00\",\"modified\":\"2024-10-02T17:19:56.244+00:00\",\"endorsed\":\"2024-10-01T22:34:32.272+00:00\",\"contacts\":[{\"key\":5483358,\"type\":\"ADMINISTRATIVE_POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Jose
-        Armando\",\"lastName\":\"Suarez Sandoval\",\"position\":[],\"email\":[\"planeacion@corporinoquia.gov.co\"],\"phone\":[\"+57
-        (608) 6358588\"],\"homepage\":[],\"address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-10-01T22:34:15.659+00:00\",\"modified\":\"2024-10-01T22:34:15.659+00:00\"},{\"key\":5483359,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Nathalia\",\"lastName\":\"Meza
-        Fernandez\",\"position\":[],\"email\":[\"nathaliameza@corporinoquia.gov.co\"],\"phone\":[\"+57
-        (608) 6358588\"],\"homepage\":[],\"address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-10-01T22:34:15.659+00:00\",\"modified\":\"2024-10-01T22:34:15.659+00:00\"},{\"key\":5483360,\"type\":\"POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Corporaci\xF3n
-        Aut\xF3noma Regional de la Orinoquia\",\"lastName\":\"CORPORINOQUIA\",\"position\":[],\"email\":[\"atencionusuarios@corporinoquia.gov.co\"],\"phone\":[\"PBX:
-        +57 (608) 6358588\"],\"homepage\":[],\"address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-10-01T22:34:15.659+00:00\",\"modified\":\"2024-10-01T22:34:15.659+00:00\"}],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[{\"key\":35910,\"content\":\"The
-        organization's logo was added\",\"createdBy\":\"sibcolombia\",\"modifiedBy\":\"sibcolombia\",\"created\":\"2024-10-02T17:21:20.449+00:00\",\"modified\":\"2024-10-02T17:21:20.449+00:00\"},{\"key\":35908,\"content\":\"This
-        organization has been endorsed again after being removed for not publishing
-        any data. \\n\\nThe previous endorsement points to: https://www.gbif.org/publisher/0257b977-b510-4de2-9577-68a7b3bf6cf4\",\"createdBy\":\"sibcolombia\",\"modifiedBy\":\"sibcolombia\",\"created\":\"2024-10-02T17:15:40.881+00:00\",\"modified\":\"2024-10-02T17:15:40.881+00:00\"},{\"key\":35906,\"content\":\"\\nIs
+      string: "{\"offset\":0,\"limit\":5,\"endOfRecords\":false,\"count\":3289,\"results\":[{\"key\":\"f115f4b7-2e34-497b-b91c-3ac08b7184df\",\"endorsingNodeKey\":\"cdc9736d-5ff7-4ece-9959-3c744360cdb3\",\"endorsementApproved\":false,\"endorsementStatus\":\"WAITING_FOR_ENDORSEMENT\",\"title\":\"Universidade
+        Estadual do Norte Fluminense\",\"abbreviation\":\"UENF\",\"description\":\"The
+        State University of Northern Rio de Janeiro \u201CDarcy Ribeiro\u201D (UENF)
+        is a public research university located in Campos dos Goytacazes, Rio de Janeiro,
+        Brazil. Founded in 1991 by educator Darcy Ribeiro and designed by architect
+        Oscar Niemeyer, UENF was created to integrate teaching, research, and extension
+        in pursuit of scientific and technological development for regional and national
+        progress. Recognized for excellence in agricultural sciences, environmental
+        studies, biotechnology, and engineering, UENF develops research focused on
+        biodiversity, ecosystem conservation, and the sustainable use of natural resources.
+        Its projects include studies on the flora and fauna of the Atlantic Forest
+        and ecological monitoring of regional environments. Situated in one of Brazil\u2019s
+        most biodiverse areas, UENF contributes valuable data and expertise to national
+        and international networks such as the Global Biodiversity Information Facility
+        (GBIF), promoting open access to biodiversity knowledge for research and conservation.\",\"language\":\"por\",\"email\":[\"lrmont@uenf.br\"],\"phone\":[],\"homepage\":[\"https://uenf.br/portal/\"],\"logoUrl\":\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRq9N7HOC1GVvEgFsMH602cDwBfRPp1bqEZvw&s\",\"address\":[\"Av.
+        Alberto Lamego, 2000 - Parque California\"],\"city\":\"Campos dos Goytacazes\",\"province\":\"Rio
+        de Janeiro\",\"country\":\"BR\",\"postalCode\":\"28013-602\",\"numPublishedDatasets\":1,\"createdBy\":\"clara_baringo\",\"modifiedBy\":\"clara_baringo\",\"created\":\"2025-11-11T19:03:02.316+00:00\",\"modified\":\"2025-11-11T19:03:02.316+00:00\",\"contacts\":[],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"4b7d66c0-587d-416a-b799-6e1d71ec8957\",\"endorsingNodeKey\":\"cdc9736d-5ff7-4ece-9959-3c744360cdb3\",\"endorsementApproved\":false,\"endorsementStatus\":\"WAITING_FOR_ENDORSEMENT\",\"title\":\"Embrapa
+        Pecu\xE1ria Sul\",\"description\":\"Embrapa Pecu\xE1ria Sul is one of the
+        research centres of the Embrapa (Brazilian Agricultural Research Corporation).
+        For over three decades, it has worked to support Brazilian livestock farming\u2014cattle
+        (beef and dairy) and sheep\u2014providing technological solutions aimed at
+        socio-economic wellbeing in agribusiness. \\nEmbrapa. Its contributions are
+        sufficiently significant to consider this Research, Development and Technological
+        Innovation Unit as an institutional landmark in southern Brazil and, given
+        its strategic location, for neighbouring MERCOSUR countries. Embrapa Pecu\xE1ria
+        Sul has extensive experience in multidisciplinary research, development and
+        innovation across the Brazilian southern fields (\u201CCampos Sul-Brasileiros\u201D),
+        and is committed to finding technological solutions for the sustainable development
+        of this rural area, especially focused on the bovine and ovine agribusiness,
+        for the benefit of society.\",\"language\":\"por\",\"email\":[\"ana.mazzocato@embrapa.br\"],\"phone\":[],\"homepage\":[\"https://www.embrapa.br/pecuaria-sul\"],\"logoUrl\":\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWo6WoYzsNG42oXYI0s0gNQuVw55mOuqOpmg&s\",\"address\":[\"Rodovia
+        BR 153 Km 632,9 Vila Industrial C.P 242\"],\"city\":\"Bag\xE9\",\"province\":\"Rio
+        Grande do Sul\",\"country\":\"BR\",\"postalCode\":\"96401-970\",\"numPublishedDatasets\":1,\"createdBy\":\"clara_baringo\",\"modifiedBy\":\"clara_baringo\",\"created\":\"2025-11-11T18:45:58.452+00:00\",\"modified\":\"2025-11-11T18:45:58.452+00:00\",\"contacts\":[],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"8a73847a-4055-449c-b382-bca52789e0a6\",\"endorsingNodeKey\":\"cdc9736d-5ff7-4ece-9959-3c744360cdb3\",\"endorsementApproved\":false,\"endorsementStatus\":\"WAITING_FOR_ENDORSEMENT\",\"title\":\"Pontif\xEDcia
+        Universidade Cat\xF3lica do Paran\xE1\",\"abbreviation\":\"PUCPR\",\"description\":\"The
+        Pontifical Catholic University of Paran\xE1 (PUCPR) is one of Brazil\u2019s
+        leading higher education and research institutions, recognized for its strong
+        commitment to sustainability, innovation, and biodiversity conservation. Founded
+        in 1959 and located in Curitiba, Paran\xE1 State, PUCPR integrates teaching,
+        research, and community engagement through interdisciplinary approaches across
+        its campuses. The university hosts a variety of research groups dedicated
+        to environmental sciences, ecology, and biodiversity management. PUCPR\u2019s
+        collections and biodiversity data are valuable contributions to understanding
+        the rich ecosystems of southern Brazil, including the Atlantic Forest and
+        subtropical biomes. Researchers at PUCPR collaborate nationally and internationally
+        to document species diversity, monitor environmental changes, and promote
+        conservation through open-access data sharing. By publishing data through
+        GBIF, PUCPR reinforces its mission to generate and disseminate scientific
+        knowledge that supports evidence-based decision-making for biodiversity conservation
+        and sustainable development.\",\"language\":\"por\",\"email\":[\"r.kersten@pucpr.br\"],\"phone\":[],\"homepage\":[\"https://www.pucpr.br/\"],\"logoUrl\":\"https://cdn.cookielaw.org/logos/c3f9b2c6-6e02-4c7e-a5ce-b8fdf03280c1/93559f54-c046-4574-896f-0f613cac1ee3/11f4243e-c2f9-4625-aac5-66589cc9e04d/logo_pucpr_horizontal_rgb.png\",\"address\":[\"Rua
+        Imaculada Concei\xE7\xE3o, 1155 Prado Velho\"],\"city\":\"Curitiba\",\"province\":\"Paran\xE1\",\"country\":\"BR\",\"postalCode\":\"80215-901\",\"numPublishedDatasets\":1,\"createdBy\":\"clara_baringo\",\"modifiedBy\":\"clara_baringo\",\"created\":\"2025-11-11T14:13:29.423+00:00\",\"modified\":\"2025-11-11T14:13:29.423+00:00\",\"contacts\":[],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[]},{\"key\":\"b424a969-927a-469d-9e05-3027b864111d\",\"endorsingNodeKey\":\"8618c64a-93e0-4300-b546-7249e5148ed2\",\"endorsementApproved\":true,\"endorsementStatus\":\"ENDORSED\",\"title\":\"Creative
+        Bioarray\",\"description\":\"Creative Bioarray is an innovative biotechnology
+        company whose mission focuses on developing unique technologies that provide
+        global scientists with high quality products and satisfactory services to
+        facilitate the investigation of life science researches.\",\"language\":\"eng\",\"email\":[\"contact@creative-bioarray.com\"],\"phone\":[\"6313868241\"],\"homepage\":[\"https://www.creative-bioarray.com/\"],\"address\":[\"Shirley,
+        NY 11967, USA\"],\"city\":\"Shirley\",\"province\":\"New York\",\"country\":\"US\",\"postalCode\":\"11967\",\"numPublishedDatasets\":0,\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2025-11-10T08:41:32.268+00:00\",\"modified\":\"2025-11-10T08:41:32.268+00:00\",\"endorsed\":\"2025-11-10T21:03:40.030+00:00\",\"contacts\":[{\"key\":6319205,\"type\":\"POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Hannah\",\"lastName\":\"Cole\",\"position\":[],\"email\":[\"contact@creative-bioarray.com\"],\"phone\":[\"16313868241\"],\"homepage\":[],\"address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2025-11-10T08:41:32.268+00:00\",\"modified\":\"2025-11-10T08:41:32.268+00:00\"}],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[{\"key\":44272,\"content\":\"\\nExpected
+        data content:\\n\\n> Through more than ten years of hard working and the building
+        of our professional team, we are proud of satisfying the needs of our clients
+        across numerous countries and districts. Our cutting-edge products and high
+        quality services are currently used and accepted around the world. Among the
+        industries represented in our customer base are the pharmaceutical, biotechnology,
+        agricultural, and diagnostics industries; reference and testing laboratories;
+        academic institutions; government agencies; private foundations.\\n\\n\\nWill
+        run a server which exposes data: no\\n\\n\\nPlans to run publishing software
+        (e.g. an IPT): no\\n\\n\\nNeeds help for data publishing: no\\n\",\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2025-11-10T08:41:32.268+00:00\",\"modified\":\"2025-11-10T08:41:32.268+00:00\"}]},{\"key\":\"83d8c270-5131-49fd-a9e3-474805533080\",\"endorsingNodeKey\":\"8618c64a-93e0-4300-b546-7249e5148ed2\",\"endorsementApproved\":true,\"endorsementStatus\":\"ENDORSED\",\"title\":\"L.
+        H. Bailey Hortorium Herbarium (BH) at Cornell University\",\"description\":\"The
+        L. H. Bailey Hortorium Herbarium (BH) at Cornell University is one of the
+        largest university-affiliated collections of preserved plant material in North
+        America. It includes Cornell's Wiegand Herbarium (CU), which was merged with
+        BH in 1977. The combined herbaria now number ca. 860,000 specimens of algae,
+        bryophytes, and vascular plants.\",\"language\":\"eng\",\"email\":[\"herbarium@cornell.edu\"],\"phone\":[\"(607)
+        255-1052\"],\"homepage\":[\"http://bhort.bh.cornell.edu\"],\"address\":[\"412
+        Mann Library Bldg. Cornell University\"],\"city\":\"Ithaca\",\"province\":\"NY\",\"country\":\"US\",\"postalCode\":\"14853\",\"latitude\":42.43976,\"longitude\":-76.49700,\"numPublishedDatasets\":0,\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2025-11-10T01:12:09.335+00:00\",\"modified\":\"2025-11-10T01:12:09.335+00:00\",\"endorsed\":\"2025-11-10T21:03:48.698+00:00\",\"contacts\":[{\"key\":6318848,\"type\":\"ADMINISTRATIVE_POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Hannah\",\"lastName\":\"Marx\",\"position\":[],\"email\":[\"hem73@cornell.edu\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2025-11-10T01:12:09.335+00:00\",\"modified\":\"2025-11-10T01:12:09.335+00:00\"},{\"key\":6318849,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Kevin\",\"lastName\":\"Nixon\",\"position\":[],\"email\":[\"kcn2@cornell.edu\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2025-11-10T01:12:09.335+00:00\",\"modified\":\"2025-11-10T01:12:09.335+00:00\"},{\"key\":6318850,\"type\":\"POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Harpo\",\"lastName\":\"Faust\",\"position\":[],\"email\":[\"gf293@cornell.edu\"],\"phone\":[\"415-233-0248\"],\"homepage\":[],\"address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2025-11-10T01:12:09.335+00:00\",\"modified\":\"2025-11-10T01:12:09.335+00:00\"}],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[{\"key\":44271,\"content\":\"\\nIs
         associated with a GBIF-funded project: no\\n\\n\\nExpects to publish:\\n\\n\\n
-        - ChecklistData\\n - OccurrenceData\\n - SamplingEventData\\n - ResourceMetaData\\n\\nExpected
-        data content:\\n\\n> Corporinoquia en su jurisdicci\xF3n cuenta con 21 POMCAS
-        reglamentados, de los cuales 15 se encuentran vigentes y han sido actualizados
-        mediante diferentes procesos contractuales.\\n\\n\\nWill run a server which
-        exposes data: no\\n\\n\\nPlans to run publishing software (e.g. an IPT): no\\n\\n\\nNeeds
-        help for data publishing: no\\n\",\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-10-01T22:34:15.659+00:00\",\"modified\":\"2024-10-01T22:34:15.659+00:00\"}]},{\"key\":\"e0b6628a-97c6-4f24-aac4-e20adb43160a\",\"endorsingNodeKey\":\"7e865cba-7c46-417b-ade5-97f2cf5b7be0\",\"endorsementApproved\":true,\"endorsementStatus\":\"ENDORSED\",\"title\":\"Fundaci\xF3n
-        Grupo Argos\",\"abbreviation\":\"FGA\",\"description\":\"En la Fundaci\xF3n
-        Grupo Argos trabajamos decididamente bajo el prop\xF3sito de armonizar la
-        relaci\xF3n de los seres humanos con la naturaleza para contribuir a la seguridad
-        h\xEDdrica y aportar al desarrollo de los territorios a trav\xE9s de la educaci\xF3n,
-        la cultura y las acciones de voluntariado. Nuestra estrategia protege el agua
-        desde su nacimiento en las monta\xF1as hasta su desembocadura en el mar, a
-        trav\xE9s de una metodolog\xEDa sist\xE9mica de an\xE1lisis, con enfoque social
-        y ecol\xF3gico, que considera como variables principales el agua, la biodiversidad
-        y el impacto social.\",\"language\":\"spa\",\"email\":[\"lpadilla@fungrupoargos.com\"],\"phone\":[],\"homepage\":[\"https://www.grupoargos.com/sostenibilidad/fundacion-grupo-argos/\"],\"logoUrl\":\"https://raw.githubusercontent.com/SIB-Colombia/logos/main/socio-SiB-fundacion-argos.png\",\"address\":[\"Carrera
-        43a No 1aSur - 143 Centro Santillana - Torre Sur Medell\xEDn\"],\"city\":\"Medell\xEDn\",\"province\":\"Antioquia\",\"country\":\"CO\",\"latitude\":6.20168,\"longitude\":-75.57261,\"numPublishedDatasets\":1,\"createdBy\":\"gbif.express\",\"modifiedBy\":\"sibcolombia\",\"created\":\"2024-10-01T20:46:40.648+00:00\",\"modified\":\"2024-10-01T20:49:32.592+00:00\",\"endorsed\":\"2024-10-01T22:27:00.262+00:00\",\"contacts\":[{\"key\":5482928,\"type\":\"ADMINISTRATIVE_POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Luis
-        David\",\"lastName\":\"Padilla Duque\",\"position\":[],\"email\":[\"lpadilla@fungrupoargos.com\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-10-01T20:46:40.648+00:00\",\"modified\":\"2024-10-01T20:46:40.648+00:00\"},{\"key\":5482929,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Luis
-        David\",\"lastName\":\"Padilla Duque\",\"position\":[],\"email\":[\"lpadilla@fungrupoargos.com\"],\"phone\":[],\"homepage\":[],\"address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-10-01T20:46:40.648+00:00\",\"modified\":\"2024-10-01T20:46:40.648+00:00\"}],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[{\"key\":35905,\"content\":\"\\nExpects
-        to publish:\\n\\n\\n - OccurrenceData\\n - SamplingEventData\\n - ChecklistData\\n\\nExpected
-        data content:\\n\\n> Registros biol\xF3gicos de monitoreos de proyectos de
-        conservaci\xF3n\\n\\n\\nWill run a server which exposes data: no\\n\\n\\nPlans
-        to run publishing software (e.g. an IPT): no\\n\\n\\nNeeds help for data publishing:
-        yes\\n\",\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-10-01T20:46:40.648+00:00\",\"modified\":\"2024-10-01T20:46:40.648+00:00\"}]},{\"key\":\"73f049f8-d833-4446-b4ce-5a46c39cb399\",\"endorsingNodeKey\":\"cfe0cad9-2bf4-4d16-ae33-c3dfb0da1ed9\",\"endorsementApproved\":true,\"endorsementStatus\":\"ENDORSED\",\"title\":\"Environment
-        and Communities Care Front (ECoCaF)\",\"description\":\"ECoCaF is working
-        to save vulnerable habitats and endangered species. EcoCaF has a tracked records
-        of field experience working toward conservation, community development, and
-        protected area management in Cameroon. Using scientific tools, ECoCaF is leading
-        efforts in Cameroon and in the region to conserve a broad number of species
-        with a sound interest on amphibians and reptiles.\",\"language\":\"eng\",\"email\":[\"geraudtasse@eco-caf.org\"],\"phone\":[\"(+237)
-        682-442-192\"],\"homepage\":[\"https://www.eco-caf.org/\"],\"address\":[\"Bafoussam
-        Cameroon\"],\"city\":\"Bafoussam\",\"province\":\"West\",\"country\":\"CM\",\"numPublishedDatasets\":0,\"createdBy\":\"gbif.express\",\"modifiedBy\":\"andrea\",\"created\":\"2024-09-27T18:42:14.368+00:00\",\"modified\":\"2024-09-30T07:14:26.754+00:00\",\"endorsed\":\"2024-09-30T09:07:49.557+00:00\",\"contacts\":[{\"key\":5479396,\"type\":\"POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Branly
-        Calicles\",\"lastName\":\"NTENE SOH\",\"position\":[],\"email\":[\"sohbranly@gmail.com\"],\"phone\":[\"(+237)
-        678181643\"],\"homepage\":[],\"address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-09-27T18:42:14.368+00:00\",\"modified\":\"2024-09-27T18:42:14.368+00:00\"}],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[{\"key\":35900,\"content\":\"[2024-09-30,
-        ah] registered with endorsement request to the PNMC - redirecting at the Cameroon
-        participant node\",\"createdBy\":\"andrea\",\"modifiedBy\":\"andrea\",\"created\":\"2024-09-30T07:13:47.524+00:00\",\"modified\":\"2024-09-30T07:13:47.524+00:00\"},{\"key\":35897,\"content\":\"\\nExpects
-        to publish:\\n\\n\\n - OccurrenceData\\n\\nExpected data content:\\n\\n> The
-        data that we would like to publish on the GBIF site concerns herpetology,
-        more specifically the amphibians found in the hot spots along the volcanic
-        line of Cameroon (Bamenda highlands). Our current work aims to record the
-        occurrence of frogs on Mount Tchabal Mbabo, a key area for biodiversity in
-        Cameroon.\\n\\n\\nWill run a server which exposes data: no\\n\\n\\nPlans to
-        run publishing software (e.g. an IPT): no\\n\\n\\nNeeds help for data publishing:
-        yes\\n\",\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-09-27T18:42:14.368+00:00\",\"modified\":\"2024-09-27T18:42:14.368+00:00\"}]},{\"key\":\"bb7b579c-791f-4e5a-9fd1-5b0fc63a5526\",\"endorsingNodeKey\":\"d897a5b9-35ee-4232-94bd-b0bcaac003c2\",\"endorsementApproved\":false,\"endorsementStatus\":\"WAITING_FOR_ENDORSEMENT\",\"title\":\"Sea
-        Watch Foundation\",\"description\":\"Sea Watch Foundation (SWF) is a UK-based
-        research charity established for over thirty years to improve the conservation
-        and protection of marine mammals in British and Irish waters. Besides dedicated
-        research projects much of its work involves monitoring numbers and locations
-        of cetaceans, and recently, seals and other marine megafauna including sea
-        turtles, sharks and sunfish. It holds a sightings database of 335,000 records
-        dating from 1960 to the present, regarded as the largest and longest running
-        database of its kind in Europe. About six thousand observers have contributed
-        to these datasets.\\nTo raise awareness of marine mammals, SWF actively involves
-        the public in scientific monitoring. With in-person courses and internet-based
-        training, sightings and survey effort are collected though their website,
-        forms and social media and, more recently, a mobile phone app (Seawatcher
-        App). Although the focus has been the seas around the British Isles, with
-        the development of the App, this has extended coverage across a much wider
-        part of Europe.\",\"language\":\"eng\",\"email\":[\"info@seawatchfoundation.org.uk\"],\"phone\":[\"+44
-        (0)1407 832892\"],\"homepage\":[\"https://www.seawatchfoundation.org.uk/\"],\"logoUrl\":\"https://www.seawatchfoundation.org.uk/wp-content/uploads/2015/06/Seawatchlogowithtypeblue-1024x205.jpg\",\"address\":[\"Ewyn
-        y Don, Bull bay\"],\"city\":\"Amlwch\",\"province\":\"Isle of Anglesey\",\"country\":\"GB\",\"postalCode\":\"LL68
-        9SD\",\"latitude\":53.42091,\"longitude\":-4.36823,\"numPublishedDatasets\":0,\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-09-26T16:00:26.541+00:00\",\"modified\":\"2024-09-26T16:00:26.541+00:00\",\"contacts\":[{\"key\":5476254,\"type\":\"ADMINISTRATIVE_POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Simone\",\"lastName\":\"Evans\",\"position\":[],\"email\":[\"simone.evans@seawatchfoundation.org.uk\"],\"phone\":[\"+44
-        (0)1545 578562\"],\"homepage\":[],\"address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-09-26T16:00:26.541+00:00\",\"modified\":\"2024-09-26T16:00:26.541+00:00\"},{\"key\":5476255,\"type\":\"TECHNICAL_POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Simone\",\"lastName\":\"Evans\",\"position\":[],\"email\":[\"simone.evans@seawatchfoundation.org.uk\"],\"phone\":[\"+44
-        (0)1545 578562\"],\"homepage\":[],\"address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-09-26T16:00:26.541+00:00\",\"modified\":\"2024-09-26T16:00:26.541+00:00\"},{\"key\":5476256,\"type\":\"POINT_OF_CONTACT\",\"primary\":false,\"userId\":[],\"firstName\":\"Peter\",\"lastName\":\"Evans\",\"position\":[],\"email\":[\"peter.evans@seawatchfoundation.org.uk\"],\"phone\":[\"+44
-        (0)1407 832892\"],\"homepage\":[],\"address\":[],\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-09-26T16:00:26.541+00:00\",\"modified\":\"2024-09-26T16:00:26.541+00:00\"}],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[{\"key\":35896,\"content\":\"\\nIs
-        associated with a GBIF-funded project: no\\n\\n\\nExpects to publish:\\n\\n\\n
-        - OccurrenceData\\n - SamplingEventData\\n\\nExpected data content:\\n\\n>
-        The purpose of this project is to make available for re-use previously inaccessible
-        unique multidecadal data on marine megafauna in European seas. These biodiversity
-        data have been collected by scientists, citizen scientists and member of the
-        public for more than 60 years in observing programmes carried out by the UK
-        Sea Watch Foundation (SWF) and its partners. Only a small proportion of the
-        high-value effort related data, primarily for cetaceans, held by SWF have
-        been reported to ICES JCDP. The bulk of effort related data are distributed
-        across multiple databases and await manual processing before they are fit
-        for re-use. In addition, the foundation holds c.335,000 records of sightings
-        including several data-deficient species such as less common cetaceans and
-        seals, sea turtles, sharks, tuna and sunfish. Sightings data are distributed
-        across multiple databases, CSV files and spreadsheets, much of which is unreported.
-        Geographic coverage focuses upon the North Sea, English Channel, West Scotland,
-        Celtic and Irish Seas, but also extends more widely, for example Norwegian
-        Sea and Bay of Biscay. Data goes back to 1960, with the majority collected
-        from 1980 to the present.\\n\\n\\nWill run a server which exposes data: yes\\n\\n\\nPlans
-        to run publishing software (e.g. an IPT): no\\n\\n\\nNeeds help for data publishing:
-        no\\n\",\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2024-09-26T16:00:26.541+00:00\",\"modified\":\"2024-09-26T16:00:26.541+00:00\"}]},{\"key\":\"416d9a6d-25a3-4efc-ad8c-5431ed9dfd42\",\"endorsingNodeKey\":\"4a6f1b71-969e-4fc5-a693-282b05e1220c\",\"endorsementApproved\":true,\"endorsementStatus\":\"ENDORSED\",\"title\":\"Scion\",\"language\":\"eng\",\"email\":[],\"phone\":[\"+64
-        7 343 5899\"],\"homepage\":[\"http://www.scionresearch.com\"],\"address\":[\"49
-        Sala Street\"],\"city\":\"Rotorua\",\"country\":\"AU\",\"latitude\":-38.16116,\"longitude\":176.26498,\"numPublishedDatasets\":1,\"createdBy\":\"aladata\",\"modifiedBy\":\"aladata\",\"created\":\"2024-09-26T05:49:17.655+00:00\",\"modified\":\"2024-09-26T05:49:17.655+00:00\",\"endorsed\":\"2024-09-26T05:49:17.655+00:00\",\"contacts\":[],\"endpoints\":[],\"machineTags\":[],\"tags\":[],\"identifiers\":[],\"comments\":[]}]}"
+        - ResourceMetaData\\n\\nExpected data content:\\n\\n> Preserved specimen data
+        for herbarium specimens.\\n\\n\\nWill run a server which exposes data: yes\\n\\n\\nPlans
+        to run publishing software (e.g. an IPT): yes\\n\\n\\nNeeds help for data
+        publishing: yes\\n\",\"createdBy\":\"gbif.express\",\"modifiedBy\":\"gbif.express\",\"created\":\"2025-11-10T01:12:09.335+00:00\",\"modified\":\"2025-11-10T01:12:09.335+00:00\"}]}]}"
     headers:
       Accept-Ranges:
       - bytes
@@ -134,11 +100,11 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '14744'
+      - '10724'
       Content-Type:
       - application/json
       Date:
-      - Fri, 04 Oct 2024 07:00:34 GMT
+      - Fri, 14 Nov 2025 10:13:47 GMT
       Expires:
       - '0'
       Pragma:
@@ -146,13 +112,13 @@ interactions:
       Vary:
       - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
       Via:
-      - 1.1 varnish (Varnish/6.0)
+      - 1.1 varnish (Varnish/6.6)
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '665748441'
+      - '762577655'
       X-XSS-Protection:
       - 1; mode=block
     status:

@@ -9,12 +9,21 @@ interactions:
       Connection:
       - keep-alive
       user-agent:
-      - python-requests/2.31.0,pygbif/0.6.5
+      - python-requests/2.31.0,pygbif/0.6.6
     method: GET
     uri: https://api.gbif.org/v1/grscicoll/institution?typeSpecimenCount=10%2C100&limit=10
   response:
     body:
-      string: "{\"offset\":0,\"limit\":10,\"endOfRecords\":false,\"count\":608,\"results\":[{\"key\":\"29658e18-1cef-4773-b81a-92111c9d288f\",\"code\":\"CBC\",\"name\":\"Universidade
+      string: "{\"offset\":0,\"limit\":10,\"endOfRecords\":false,\"count\":668,\"results\":[{\"key\":\"acc160f3-8fb5-4e54-8a92-f428fb051a76\",\"code\":\"SFC\",\"name\":\"Santa
+        Fe College Museum of Earth Science\",\"description\":\"Santa Fe College's
+        Museum of Earth Science is home to over 1,700 mineral, fossil and rock samples
+        around the world. The museum also has martian and lunar meteorites and other
+        \\\"rocks from space.\\\"\",\"types\":[],\"active\":true,\"email\":[],\"phone\":[],\"homepage\":\"https://www.sfcollege.edu/academics/las/natsci/science-resource-areas/museum.html\",\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[],\"disciplines\":[\"Geological\",\"Paleontology\"],\"mailingAddress\":{\"key\":56581},\"address\":{\"key\":56580,\"address\":\"3000
+        N.W. 83rd Street, X-201\",\"city\":\"Gainesville\",\"province\":\"Florida\",\"postalCode\":\"32606\",\"country\":\"US\"},\"additionalNames\":[],\"createdBy\":\"mgrosjean\",\"modifiedBy\":\"mgrosjean\",\"created\":\"2025-09-05T13:15:57.233+00:00\",\"modified\":\"2025-09-05T13:15:57.233+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":91,\"typeSpecimenCount\":91},{\"key\":\"967647c6-b1af-4f0a-9bb0-94d0dbb1ca9f\",\"code\":\"UAT\",\"name\":\"Universidad
+        Aut\xF3noma de Tamaulipas\",\"types\":[],\"active\":true,\"email\":[],\"phone\":[\"[52]
+        834 318 1800\"],\"homepage\":\"https://www.uat.edu.mx/\",\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[\"Academic\",\"Governmental\"],\"disciplines\":[],\"latitude\":23.732532,\"longitude\":-99.144592,\"mailingAddress\":{\"key\":56451,\"address\":\"Mariano
+        Matamoros s/n, zona Centro\",\"city\":\"Ciudad Victoria\",\"province\":\"Tamaulipas\",\"postalCode\":\"87000\",\"country\":\"MX\"},\"address\":{\"key\":56450,\"address\":\"Mariano
+        Matamoros s/n, zona Centro\",\"city\":\"Ciudad Victoria\",\"province\":\"Tamaulipas\",\"postalCode\":\"87000\",\"country\":\"MX\"},\"additionalNames\":[],\"createdBy\":\"vaguirojas\",\"modifiedBy\":\"vaguirojas\",\"created\":\"2025-08-25T22:28:20.656+00:00\",\"modified\":\"2025-08-25T22:28:20.656+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":208,\"typeSpecimenCount\":16},{\"key\":\"29658e18-1cef-4773-b81a-92111c9d288f\",\"code\":\"CBC\",\"name\":\"Universidade
         do Estado de Minas Gerais\",\"types\":[],\"active\":true,\"email\":[\"mcbp.passos@uemg.br\"],\"phone\":[\"[55]
         35 3526 8087\",\"[55] 71 9 9207 9666\"],\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[],\"disciplines\":[],\"latitude\":-20.722195,\"longitude\":-46.605107,\"mailingAddress\":{\"key\":55656,\"address\":\"Avenida
         Expedicion\xE1rios 333\",\"city\":\"Passos\",\"province\":\"Minas Gerais\",\"postalCode\":\"37900-130\",\"country\":\"BR\"},\"address\":{\"key\":55651,\"address\":\"Avenida
@@ -23,11 +32,14 @@ interactions:
         Pedro Ferreira Lima\"],\"city\":\"Passos\",\"province\":\"Minas Gerais\",\"country\":\"BR\",\"postalCode\":\"37904146\",\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[{\"type\":\"IH_IRN\",\"id\":\"267809\"}],\"createdBy\":\"clara_baringo\",\"modifiedBy\":\"clara_baringo\",\"created\":\"2025-04-07T21:59:39.862+00:00\",\"modified\":\"2025-04-07T21:59:39.862+00:00\"},{\"key\":42416,\"firstName\":\"Fernanda
         Hurbath\",\"lastName\":\"Brand\xE3o\",\"position\":[\"Professor\"],\"phone\":[\"[55]
         71 99207 9666\"],\"fax\":[],\"email\":[\"fernanda.hurbath@uemg.br\"],\"address\":[\"Rua
-        Aboli\xE7\xE3o 180\"],\"city\":\"Passos\",\"province\":\"Minas Gerais\",\"country\":\"BR\",\"postalCode\":\"37904016\",\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[{\"type\":\"IH_IRN\",\"id\":\"267808\"}],\"createdBy\":\"clara_baringo\",\"modifiedBy\":\"clara_baringo\",\"created\":\"2025-04-07T21:59:39.862+00:00\",\"modified\":\"2025-04-07T21:59:39.862+00:00\"}],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"IH\",\"masterSourceMetadata\":{\"key\":9793,\"source\":\"IH_IRN\",\"sourceId\":\"267802\",\"createdBy\":\"clara_baringo\",\"created\":\"2025-04-07T21:59:39.843+00:00\"},\"displayOnNHCPortal\":true,\"occurrenceCount\":76,\"typeSpecimenCount\":14},{\"key\":\"847b9013-5cbb-4630-b4d4-0c92c8686f72\",\"code\":\"UB\",\"name\":\"Universit\xE9
+        Aboli\xE7\xE3o 180\"],\"city\":\"Passos\",\"province\":\"Minas Gerais\",\"country\":\"BR\",\"postalCode\":\"37904016\",\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[{\"type\":\"IH_IRN\",\"id\":\"267808\"}],\"createdBy\":\"clara_baringo\",\"modifiedBy\":\"clara_baringo\",\"created\":\"2025-04-07T21:59:39.862+00:00\",\"modified\":\"2025-04-07T21:59:39.862+00:00\"}],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"IH\",\"masterSourceMetadata\":{\"key\":9793,\"source\":\"IH_IRN\",\"sourceId\":\"267802\",\"createdBy\":\"clara_baringo\",\"created\":\"2025-04-07T21:59:39.843+00:00\"},\"displayOnNHCPortal\":true,\"occurrenceCount\":76,\"typeSpecimenCount\":14},{\"key\":\"a2941afe-435f-4f47-bb94-de58f32b52d0\",\"code\":\"SBA\",\"name\":\"Soci\xE9t\xE9
+        Botanique d'Alsace\",\"types\":[\"OtherInstitutionalType\"],\"active\":true,\"email\":[\"sbalsace6768@gmail.com\"],\"phone\":[],\"homepage\":\"https://www.societe-botanique-alsace.org/\",\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[\"NonProfit\"],\"disciplines\":[],\"mailingAddress\":{\"key\":53311,\"address\":\"7,
+        place du March\xE9 aux Choux\",\"city\":\"S\xE9lestat\",\"postalCode\":\"F-67600\",\"country\":\"FR\"},\"address\":{\"key\":53310,\"address\":\"7,
+        place du March\xE9 aux Choux\",\"city\":\"S\xE9lestat\",\"postalCode\":\"F-67600\",\"country\":\"FR\"},\"additionalNames\":[],\"foundingDate\":1997,\"createdBy\":\"eliemarios\",\"modifiedBy\":\"eliemarios\",\"created\":\"2025-02-11T12:44:01.810+00:00\",\"modified\":\"2025-02-11T12:44:01.810+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":218,\"typeSpecimenCount\":83},{\"key\":\"847b9013-5cbb-4630-b4d4-0c92c8686f72\",\"code\":\"UB\",\"name\":\"Universit\xE9
         de Bordeaux\",\"types\":[\"UniversityCollege\"],\"active\":true,\"email\":[],\"phone\":[\"+33
         (0)5 40 00 60 00\"],\"homepage\":\"https://www.u-bordeaux.fr/\",\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[\"Academic\"],\"disciplines\":[],\"mailingAddress\":{\"key\":53303,\"address\":\"351
         cours de la Lib\xE9ration\",\"city\":\"Talence\",\"postalCode\":\"33405\",\"country\":\"FR\"},\"address\":{\"key\":53302,\"address\":\"351
-        cours de la Lib\xE9ration\",\"city\":\"Talence\",\"postalCode\":\"33405\",\"country\":\"FR\"},\"additionalNames\":[],\"foundingDate\":1441,\"createdBy\":\"eliemarios\",\"modifiedBy\":\"eliemarios\",\"created\":\"2025-02-11T10:39:00.687+00:00\",\"modified\":\"2025-02-11T10:39:00.687+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":125,\"typeSpecimenCount\":32},{\"key\":\"ed1bef68-e07e-4db2-84e2-541787bf9fd5\",\"code\":\"CINVESTAV-IPN\",\"name\":\"Centro
+        cours de la Lib\xE9ration\",\"city\":\"Talence\",\"postalCode\":\"33405\",\"country\":\"FR\"},\"additionalNames\":[],\"foundingDate\":1441,\"createdBy\":\"eliemarios\",\"modifiedBy\":\"eliemarios\",\"created\":\"2025-02-11T10:39:00.687+00:00\",\"modified\":\"2025-02-11T10:39:00.687+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":126,\"typeSpecimenCount\":33},{\"key\":\"ed1bef68-e07e-4db2-84e2-541787bf9fd5\",\"code\":\"CINVESTAV-IPN\",\"name\":\"Centro
         de Investigaci\xF3n y de Estudios Avanzados, Unidad Zacatenco, Instituto Polit\xE9cnico
         Nacional\",\"types\":[\"UniversityCollege\"],\"active\":true,\"email\":[],\"phone\":[],\"homepage\":\"https://www.cinvestav.mx/zacatenco\",\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[\"Academic\",\"Governmental\"],\"disciplines\":[],\"latitude\":19.509949,\"longitude\":-99.129634,\"mailingAddress\":{\"key\":53273,\"address\":\"Apartado
         Postal 14-740\",\"city\":\"Ciudad de M\xE9xico\",\"province\":\"Ciudad de
@@ -43,60 +55,27 @@ interactions:
         Ju\xE1rez 147 Centro Hist\xF3rico\",\"city\":\"Zacatecas\",\"province\":\"Zacatecas\",\"postalCode\":\"98000\",\"country\":\"MX\"},\"additionalNames\":[],\"createdBy\":\"vaguirojas\",\"modifiedBy\":\"vaguirojas\",\"created\":\"2025-01-03T18:25:21.360+00:00\",\"modified\":\"2025-01-03T18:32:59.178+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":17068,\"typeSpecimenCount\":34},{\"key\":\"07ce0eac-7e43-491e-b693-ef1d4d70ab69\",\"code\":\"MCC\",\"name\":\"Museo
         della Civilt\xE0 condadina\",\"types\":[],\"active\":true,\"email\":[],\"phone\":[],\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[],\"disciplines\":[],\"mailingAddress\":{\"key\":52514},\"address\":{\"key\":52513,\"address\":\"Localit\xE0
         Gaville (Pieve di San Romolo a Gaville)\",\"city\":\"Figline e Incisa Valdarno\",\"province\":\"[TOSCANA]
-        Firenze (FI)\",\"postalCode\":\"IT-50063\",\"country\":\"IT\"},\"additionalNames\":[],\"createdBy\":\"tasmacetus\",\"modifiedBy\":\"tasmacetus\",\"created\":\"2025-01-03T18:18:07.206+00:00\",\"modified\":\"2025-01-03T18:18:07.206+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":24,\"typeSpecimenCount\":24},{\"key\":\"168714c9-ad7b-4c51-9beb-703de208150d\",\"code\":\"MZUT\",\"name\":\"Museo
-        di Scienze naturali dell'Universit\xE0 degli Studi di Torino\",\"types\":[],\"active\":true,\"email\":[],\"phone\":[],\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[],\"disciplines\":[],\"address\":{\"key\":51249,\"address\":\"Via
-        Accademia Albertina, 17\",\"city\":\"Torino\",\"province\":\"[PIEMONTE] Torino
-        (TO)\",\"postalCode\":\"IT-10123\",\"country\":\"IT\"},\"additionalNames\":[],\"createdBy\":\"mgrosjean\",\"modifiedBy\":\"mgrosjean\",\"created\":\"2024-08-08T12:06:10.253+00:00\",\"modified\":\"2024-08-08T12:06:10.253+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":74,\"typeSpecimenCount\":14},{\"key\":\"147eb5bf-dbc5-4a56-b49e-73fe4e4b8f29\",\"code\":\"USMB\",\"name\":\"Moldova
-        State University, Faculty of Biology and Geoscience\",\"description\":\"The
-        faculty was founded in 1946, simultaneously with the State University of Moldova.
-        Its formation is linked to the names of famous scientists - academician N.
-        Dimo \u200B\u200Band professors V. Andreev, I. Vul. Over the years, the faculty
-        has trained over 6,000 young specialists, including from many countries abroad.
-        One of the priorities of the Faculty of Biology and Pedology is the involvement
-        of students in the research activity. Within the study programs, mandatory
-        and optional theoretical courses are offered that allow students to be trained
-        in the scientific research carried out in the \\\"Life Sciences\\\" Research
-        Center.\\n\\nA real treasure of the faculty is the Museum of Natural Sciences,
-        which includes the sections of Geology, Soil Sciences, Botany and Zoology,
-        with an impressive number of exhibits from around the world. Graduates have
-        the opportunity to work in different fields of the national economy, in the
-        subdivisions of the Ministry of Agriculture, Regional Development and the
-        Environment, in the research institutions of A\u015EM, in production units
-        in the field of natural sciences, etc., but also as biology teachers or geography
-        in pre-university and university education institutions.\",\"types\":[\"UniversityCollege\"],\"active\":true,\"email\":[\"fbg@usm.md\"],\"phone\":[\"+373
-        22 244 324\"],\"homepage\":\"https://biologie.usm.md/\",\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[\"Governmental\"],\"disciplines\":[\"Biological\",\"Geological\"],\"latitude\":47.019614,\"longitude\":28.824913,\"mailingAddress\":{\"key\":50949,\"address\":\"M.
-        Kog\u0103lniceanu str. 65\",\"city\":\"Chisinau\",\"postalCode\":\"MD-2009\",\"country\":\"MD\"},\"address\":{\"key\":50948,\"address\":\"M.
-        Kog\u0103lniceanu str. 65\",\"city\":\"Chisinau\",\"postalCode\":\"MD-2009\",\"country\":\"MD\"},\"additionalNames\":[\"Facultatea
-        de Biologie \u0219i Geo\u0219tiin\u021Be\"],\"foundingDate\":1946,\"createdBy\":\"oleg.borodin\",\"modifiedBy\":\"oleg.borodin\",\"created\":\"2024-07-02T20:35:17.860+00:00\",\"modified\":\"2024-07-02T20:40:19.409+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":1847,\"typeSpecimenCount\":11},{\"key\":\"2ecdef02-566f-43f9-bc94-98ae8a44c498\",\"code\":\"MSNF-SPE\",\"name\":\"Sede
-        della Specola del Museo di Storia naturale di Firenze | La Specola headquarter
-        of the Natural History Museum in Florence\",\"types\":[],\"active\":true,\"email\":[],\"phone\":[],\"homepage\":\"https://www.sma.unifi.it/\",\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[],\"disciplines\":[],\"address\":{\"key\":50086,\"address\":\"Via
-        Romana, 17 (Palazzo Torrigiani)\",\"city\":\"Firenze\",\"province\":\"[TOSCANA]
-        Firenze (FI)\",\"postalCode\":\"IT-50125\",\"country\":\"IT\"},\"additionalNames\":[\"Museo
-        Zoologico La Specola, Universita di Firenze\"],\"createdBy\":\"mgrosjean\",\"modifiedBy\":\"tasmacetus\",\"created\":\"2024-04-30T06:26:20.155+00:00\",\"modified\":\"2025-06-30T16:01:01.573+00:00\",\"tags\":[],\"identifiers\":[{\"key\":367639,\"type\":\"NCBI_BIOCOLLECTION\",\"identifier\":\"948602\",\"createdBy\":\"tasmaceto\",\"created\":\"2024-07-02T13:24:41.308+00:00\",\"primary\":false},{\"key\":367640,\"type\":\"GRSCICOLL_URI\",\"identifier\":\"http://grscicoll.org/institution/museo-zoologico-la-specola-universita-di-firenze\",\"createdBy\":\"tasmaceto\",\"created\":\"2024-07-02T13:24:41.308+00:00\",\"primary\":false},{\"key\":367641,\"type\":\"GRSCICOLL_URI\",\"identifier\":\"http://grbio.org/institution/museo-zoologico-la-specola-universita-di-firenze\",\"createdBy\":\"tasmaceto\",\"created\":\"2024-07-02T13:24:41.308+00:00\",\"primary\":false},{\"key\":367642,\"type\":\"GRSCICOLL_ID\",\"identifier\":\"15891\",\"createdBy\":\"tasmaceto\",\"created\":\"2024-07-02T13:24:41.308+00:00\",\"primary\":false},{\"key\":367643,\"type\":\"GRSCICOLL_URI\",\"identifier\":\"http://grbio.org/cool/mvk4-k796\",\"createdBy\":\"tasmaceto\",\"created\":\"2024-07-02T13:24:41.308+00:00\",\"primary\":false},{\"key\":367644,\"type\":\"UUID\",\"identifier\":\"6df7cd8a-3b8f-4cb3-a6ae-fe3d7398f0e7\",\"createdBy\":\"tasmaceto\",\"created\":\"2024-07-02T13:24:41.308+00:00\",\"primary\":false}],\"contactPersons\":[],\"machineTags\":[],\"alternativeCodes\":[{\"code\":\"IRMFSN\",\"description\":\"Imperiale
-        e reale Museo di Fisica e Storia naturale\"},{\"code\":\"MLSP\",\"description\":\"Museo
-        de La Specola\"},{\"code\":\"MZUF\",\"description\":\"Code from replaced entity
-        6df7cd8a-3b8f-4cb3-a6ae-fe3d7398f0e7\"},{\"code\":\"MZSP\",\"description\":\"Museo
-        zoologico La Specola\"}],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":467,\"typeSpecimenCount\":71},{\"key\":\"1b322f71-8e7e-432c-8915-112cfe2e3b48\",\"code\":\"MUNI\",\"name\":\"Masaryk
-        University, Department of Botany and Zoology\",\"description\":\"The Department
-        of Botany and Zoology, Faculty of Science, Masaryk University, is a modern
-        centre of research and teaching in the fields of evolutionary biology, biosystematics
-        and ecology. Its individual research groups study phylogenetic relationships
-        and the classification of organisms, their diversity from the local to the
-        continental level, and the ecological relationships of individual species,
-        populations and communities in relation to both natural and human-induced
-        changes in entire ecosystems. It holds small to medium-sized collections of
-        vertebrates and invertebrates, as well as a herbarium established in 1921
-        as part of the Institute of Botany. The Department also hosts and coordinates
-        the Czech National Phytosociological Database, a database of vegetation plots.
-        In 2014\u20132018, the Department coordinated the Pladias project (Plant Diversity
-        Analysis and Synthesis Centre) aimed at integrating all available data on
-        flora and vegetation for the Czech Republic in the Database of the Czech Flora
-        and Vegetation.\",\"types\":[\"UniversityCollege\"],\"active\":true,\"email\":[\"chytry@sci.muni.cz\"],\"phone\":[\"+420549494595\"],\"homepage\":\"http://botzool.sci.muni.cz/en\",\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[\"Academic\"],\"disciplines\":[\"Parasitology\",\"Taxonomy\",\"Zoology\",\"Ecology\",\"AnatomyAndPhysiology\",\"MicrobiologyBacteriologyVirology\",\"EvolutionaryBiology\",\"PlantSciences\"],\"latitude\":49.178360,\"longitude\":16.569640,\"mailingAddress\":{\"key\":49514,\"address\":\"Kotl\xE1\u0159sk\xE1
-        2\",\"city\":\"Brno\",\"postalCode\":\"611 37\",\"country\":\"CZ\"},\"address\":{\"key\":49513,\"address\":\"Kotl\xE1\u0159sk\xE1
-        2\",\"city\":\"Brno\",\"postalCode\":\"61137\",\"country\":\"CZ\"},\"additionalNames\":[\"\xDAstav
-        botaniky a zoologie P\u0159\xEDrodov\u011Bdeck\xE9 fakulty Masarykovy university\"],\"foundingDate\":1920,\"numberSpecimens\":597000,\"logoUrl\":\"https://www.sci.muni.cz/botany/systemgr/download/loga/ubz_logo_en_2barvy.jpg\",\"createdBy\":\"spalpurina\",\"modifiedBy\":\"spalpurina\",\"created\":\"2024-04-12T11:27:37.338+00:00\",\"modified\":\"2025-03-18T13:56:46.721+00:00\",\"tags\":[],\"identifiers\":[{\"key\":378631,\"type\":\"UUID\",\"identifier\":\"f991fab6-edc9-4211-a55d-12458284b4e7\",\"createdBy\":\"spalpurina\",\"created\":\"2025-01-27T08:35:12.886+00:00\",\"primary\":false},{\"key\":378623,\"type\":\"NCBI_BIOCOLLECTION\",\"identifier\":\"943154\",\"createdBy\":\"spalpurina\",\"created\":\"2025-01-27T08:35:12.886+00:00\",\"primary\":false},{\"key\":378624,\"type\":\"WIKIDATA\",\"identifier\":\"http://www.wikidata.org/entity/Q763586\",\"createdBy\":\"spalpurina\",\"created\":\"2025-01-27T08:35:12.886+00:00\",\"primary\":false},{\"key\":378625,\"type\":\"IH_IRN\",\"identifier\":\"gbif:ih:irn:125227\",\"createdBy\":\"spalpurina\",\"created\":\"2025-01-27T08:35:12.886+00:00\",\"primary\":false},{\"key\":378626,\"type\":\"GRSCICOLL_URI\",\"identifier\":\"http://grscicoll.org/institution/masaryk-university\",\"createdBy\":\"spalpurina\",\"created\":\"2025-01-27T08:35:12.886+00:00\",\"primary\":false},{\"key\":378627,\"type\":\"GRSCICOLL_URI\",\"identifier\":\"http://grbio.org/institution/masaryk-university\",\"createdBy\":\"spalpurina\",\"created\":\"2025-01-27T08:35:12.886+00:00\",\"primary\":false},{\"key\":378628,\"type\":\"GRSCICOLL_ID\",\"identifier\":\"7868\",\"createdBy\":\"spalpurina\",\"created\":\"2025-01-27T08:35:12.886+00:00\",\"primary\":false},{\"key\":378629,\"type\":\"LSID\",\"identifier\":\"urn:lsid:biocol.org:col:15024\",\"createdBy\":\"spalpurina\",\"created\":\"2025-01-27T08:35:12.886+00:00\",\"primary\":false},{\"key\":378630,\"type\":\"GRSCICOLL_URI\",\"identifier\":\"http://biocol.org/urn:lsid:biocol.org:col:15024\",\"createdBy\":\"spalpurina\",\"created\":\"2025-01-27T08:35:12.886+00:00\",\"primary\":false},{\"key\":363773,\"type\":\"CITES\",\"identifier\":\"CZ
-        004\",\"createdBy\":\"spalpurina\",\"created\":\"2024-04-12T11:27:56.532+00:00\",\"primary\":false}],\"contactPersons\":[{\"key\":42281,\"firstName\":\"Ji\u0159\xED\",\"lastName\":\"Danihelka\",\"position\":[],\"phone\":[\"+420549493473\"],\"fax\":[],\"email\":[\"danihel@sci.muni.cz\"],\"address\":[],\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"spalpurina\",\"modifiedBy\":\"spalpurina\",\"created\":\"2025-03-18T13:56:46.721+00:00\",\"modified\":\"2025-03-18T13:56:46.721+00:00\"},{\"key\":42282,\"firstName\":\"Ji\u0159\xED\",\"lastName\":\"Danihelka\",\"position\":[],\"phone\":[\"+420549493473\"],\"fax\":[],\"email\":[\"danihel@sci.muni.cz\"],\"address\":[],\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"spalpurina\",\"modifiedBy\":\"spalpurina\",\"created\":\"2025-03-18T13:56:46.721+00:00\",\"modified\":\"2025-03-18T13:56:46.721+00:00\"},{\"key\":42283,\"firstName\":\"Milan\",\"lastName\":\"Chytr\xFD\",\"position\":[],\"phone\":[\"+420549494595\"],\"fax\":[],\"email\":[\"chytry@sci.muni.cz\"],\"address\":[],\"primary\":false,\"taxonomicExpertise\":[],\"userIds\":[],\"createdBy\":\"spalpurina\",\"modifiedBy\":\"spalpurina\",\"created\":\"2025-03-18T13:56:46.721+00:00\",\"modified\":\"2025-03-18T13:56:46.721+00:00\"}],\"machineTags\":[],\"alternativeCodes\":[{\"code\":\"BRNU\",\"description\":\"Code
-        from replaced entity f991fab6-edc9-4211-a55d-12458284b4e7\"}],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GBIF_REGISTRY\",\"masterSourceMetadata\":{\"key\":9775,\"source\":\"ORGANIZATION\",\"sourceId\":\"9a4467a2-eccd-4aa7-bb6d-aea3a31f2a2c\",\"createdBy\":\"spalpurina\",\"created\":\"2025-03-18T13:56:46.721+00:00\"},\"displayOnNHCPortal\":true,\"occurrenceCount\":208481,\"typeSpecimenCount\":26,\"featuredImageUrl\":\"https://botzool.sci.muni.cz/images/o-nas.jpg\",\"featuredImageLicense\":\"UNSPECIFIED\"}]}"
+        Firenze (FI)\",\"postalCode\":\"IT-50063\",\"country\":\"IT\"},\"additionalNames\":[],\"createdBy\":\"tasmacetus\",\"modifiedBy\":\"tasmacetus\",\"created\":\"2025-01-03T18:18:07.206+00:00\",\"modified\":\"2025-01-03T18:18:07.206+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":27,\"typeSpecimenCount\":27},{\"key\":\"997274f3-0566-4dff-a2b0-a07273ff8959\",\"code\":\"PMC\",\"name\":\"Paleozoological
+        Museum of China (Baoding Natural History Museum)\",\"description\":\"The museum,
+        covering approximately 120 mu (80,000 square meters) with a total construction
+        area of around 73,000 square meters, stands as a national-level theme museum
+        in the field of natural sciences. It is a key project in the comprehensive
+        implementation of the national strategy for coordinated development in the
+        Beijing-Tianjin-Hebei region, which also aims to decentralize the non-capital
+        functions of Beijing, according to China Central Television on Wednesday.\\n\\nThe
+        museum, themed around nature, life and humanity, with evolution as its main
+        storyline, provides a systematic presentation on paleontology and evolutionary
+        biology. It narrates the stories of natural history, and is set to convey
+        the natural concept that \\\"humans and nature are a community of life.\\\"\\n\\nThe
+        exhibits, numbering around 6,000 items, primarily come from the Chinese Academy
+        of Sciences' Institute of Vertebrate Paleontology and Paleoanthropology. Precious
+        fossil specimens from Beijing have been relocated to the new museum. Among
+        the displayed artifacts are rare treasures, including the world's only complete
+        skeleton of the Chinese velociraptor, the earliest known jawed fish species,
+        one of the world's few well-preserved pterosaur eggs, as well as the world's
+        longest and largest individual horse skull.\",\"types\":[\"MuseumHerbariumPrivateNonProfit\"],\"active\":true,\"email\":[],\"phone\":[],\"homepage\":\"https://www.paleozoo.cn\",\"catalogUrls\":[],\"apiUrls\":[],\"institutionalGovernances\":[\"Academic\"],\"disciplines\":[\"EvolutionaryBiology\",\"Biological\",\"Paleontology\"],\"latitude\":39.938200,\"longitude\":116.334240,\"mailingAddress\":{\"key\":51740,\"address\":\"142
+        Xiwai Ave, Xicheng District\",\"city\":\"Beijing\",\"postalCode\":\"100044\",\"country\":\"CN\"},\"address\":{\"key\":51739,\"address\":\"142
+        Xiwai Ave, Xicheng District\",\"city\":\"Beijing\",\"postalCode\":\"100044\",\"country\":\"CN\"},\"additionalNames\":[],\"foundingDate\":1929,\"logoUrl\":\"https://pmtcc3fd5-pic19.websiteonline.cn/upload/logo_lbiw.jpg\",\"createdBy\":\"cjk\",\"modifiedBy\":\"cjk\",\"created\":\"2024-10-09T13:18:06.847+00:00\",\"modified\":\"2024-10-09T13:18:06.847+00:00\",\"tags\":[],\"identifiers\":[],\"contactPersons\":[],\"machineTags\":[],\"alternativeCodes\":[],\"comments\":[],\"occurrenceMappings\":[],\"masterSource\":\"GRSCICOLL\",\"displayOnNHCPortal\":true,\"occurrenceCount\":50,\"typeSpecimenCount\":23}]}"
     headers:
       Accept-Ranges:
       - bytes
@@ -106,16 +85,16 @@ interactions:
       - public, max-age=3601
       Connection:
       - keep-alive
+      Content-Length:
+      - '12886'
       Content-Type:
       - application/json
       Date:
-      - Wed, 16 Jul 2025 09:16:29 GMT
+      - Fri, 14 Nov 2025 10:13:11 GMT
       Expires:
       - '0'
       Pragma:
       - no-cache
-      Transfer-Encoding:
-      - chunked
       Vary:
       - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
       Via:
@@ -125,7 +104,7 @@ interactions:
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '237177174'
+      - '686263881'
       X-XSS-Protection:
       - 1; mode=block
     status:

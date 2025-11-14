@@ -9,7 +9,7 @@ interactions:
       Connection:
       - keep-alive
       user-agent:
-      - python-requests/2.31.0,pygbif/0.6.4
+      - python-requests/2.31.0,pygbif/0.6.6
     method: GET
     uri: https://api.gbif.org/v1/dataset/3f8a1297-3259-4700-91fc-acc4170b27ce/metrics
   response:
@@ -29,7 +29,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 04 Oct 2024 07:00:18 GMT
+      - Fri, 14 Nov 2025 10:13:30 GMT
       Expires:
       - '0'
       Pragma:
@@ -37,13 +37,13 @@ interactions:
       Vary:
       - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
       Via:
-      - 1.1 varnish (Varnish/6.0)
+      - 1.1 varnish (Varnish/6.6)
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - 664305879 676004045
+      - 782959276 805307034
       X-XSS-Protection:
       - 1; mode=block
     status:
@@ -59,12 +59,12 @@ interactions:
       Connection:
       - keep-alive
       user-agent:
-      - python-requests/2.31.0,pygbif/0.6.4
+      - python-requests/2.31.0,pygbif/0.6.6
     method: GET
     uri: https://api.gbif.org/v1/dataset/66dd0960-2d7d-46ee-a491-87b9adcfe7b1/metrics
   response:
     body:
-      string: '{"key":3375073,"datasetKey":"66dd0960-2d7d-46ee-a491-87b9adcfe7b1","usagesCount":138248,"synonymsCount":59906,"distinctNamesCount":138122,"nubMatchingCount":131911,"colMatchingCount":119399,"nubCoveragePct":95,"colCoveragePct":86,"countByConstituent":{},"countByKingdom":{"PLANTAE":72391,"INCERTAE_SEDIS":1},"countByRank":{"SPECIES":52563,"GENUS":12880,"VARIETY":4810,"SUBSPECIES":4462,"SERIES":1077,"TRIBE":844,"FAMILY":509,"SUBTRIBE":327,"SUBFAMILY":303,"SUBGENUS":240,"FORM":238,"SECTION":82,"SUBVARIETY":5,"KINGDOM":1},"countNamesByLanguage":{"ENGLISH":32165,"SWEDISH":7284,"GERMAN":4882,"SPANISH":4157,"FRENCH":3783,"PORTUGUESE":1141,"ITALIAN":663,"AFRIKAANS":450,"ARABIC":182,"INDONESIAN":153,"MALAY":139,"SWAHILI":72,"DUTCH":50,"MALAGASY":41,"DANISH":21,"FIJIAN":17,"HINDI":15,"SOMALI":11,"TURKISH":8,"NEPALI":7,"POLISH":7,"CZECH":4,"KOREAN":4,"TAJIK":4,"CATALAN":3,"FINNISH":3,"JAVANESE":3,"ROMANIAN":3,"VIETNAMESE":3,"YORUBA":3,"AYMARA":2,"CHINESE":2,"SAMOAN":2,"ALBANIAN":1,"BISLAMA":1,"HUNGARIAN":1,"LAO":1,"MONGOLIAN":1,"NORWEGIAN":1,"QUECHUA":1,"RUSSIAN":1,"SANSKRIT":1,"TAMIL":1,"THAI":1,"TONGA":1,"TURKMEN":1},"countExtRecordsByExtension":{"VERNACULAR_NAME":64900,"DESCRIPTION":0,"DISTRIBUTION":0,"IDENTIFIER":0,"MULTIMEDIA":0,"REFERENCE":0,"SPECIES_PROFILE":0,"TYPES_AND_SPECIMEN":0},"countByOrigin":{"SOURCE":138246,"DENORMED_CLASSIFICATION":1,"MISSING_ACCEPTED":1},"countByIssue":{"SCIENTIFIC_NAME_ASSEMBLED":128661,"BACKBONE_MATCH_NONE":6337,"VERNACULAR_NAME_INVALID":5501,"CHAINED_SYNOYM":522,"PARENT_NAME_USAGE_ID_INVALID":48,"PARTIALLY_PARSABLE":7,"PARENT_CYCLE":1},"otherCount":{},"downloaded":"2024-09-26T16:20:18.896+00:00"}'
+      string: '{"key":6224722,"datasetKey":"66dd0960-2d7d-46ee-a491-87b9adcfe7b1","usagesCount":138248,"synonymsCount":59906,"distinctNamesCount":138122,"nubMatchingCount":131902,"colMatchingCount":127695,"nubCoveragePct":95,"colCoveragePct":92,"countByConstituent":{},"countByKingdom":{"PLANTAE":72383,"INCERTAE_SEDIS":1},"countByRank":{"SPECIES":52563,"GENUS":12880,"VARIETY":4810,"SUBSPECIES":4462,"SERIES":1077,"TRIBE":844,"FAMILY":509,"SUBTRIBE":327,"SUBFAMILY":303,"SUBGENUS":240,"FORM":238,"SECTION":82,"SUBVARIETY":5,"KINGDOM":1},"countNamesByLanguage":{"ENGLISH":32165,"SWEDISH":7284,"GERMAN":4882,"SPANISH":4157,"FRENCH":3783,"PORTUGUESE":1141,"ITALIAN":663,"AFRIKAANS":450,"ARABIC":182,"INDONESIAN":153,"MALAY":139,"SWAHILI":72,"DUTCH":50,"MALAGASY":41,"DANISH":21,"FIJIAN":17,"HINDI":15,"SOMALI":11,"TURKISH":8,"NEPALI":7,"POLISH":7,"CZECH":4,"KOREAN":4,"TAJIK":4,"CATALAN":3,"FINNISH":3,"JAVANESE":3,"ROMANIAN":3,"VIETNAMESE":3,"YORUBA":3,"AYMARA":2,"CHINESE":2,"SAMOAN":2,"ALBANIAN":1,"BISLAMA":1,"HUNGARIAN":1,"LAO":1,"MONGOLIAN":1,"NORWEGIAN":1,"QUECHUA":1,"RUSSIAN":1,"SANSKRIT":1,"TAMIL":1,"THAI":1,"TONGA":1,"TURKMEN":1},"countExtRecordsByExtension":{"VERNACULAR_NAME":64900,"DESCRIPTION":0,"DISTRIBUTION":0,"IDENTIFIER":0,"MULTIMEDIA":0,"REFERENCE":0,"SPECIES_PROFILE":0,"TYPES_AND_SPECIMEN":0},"countByOrigin":{"SOURCE":138246,"DENORMED_CLASSIFICATION":1,"MISSING_ACCEPTED":1},"countByIssue":{"SCIENTIFIC_NAME_ASSEMBLED":128661,"BACKBONE_MATCH_NONE":6346,"VERNACULAR_NAME_INVALID":5501,"CHAINED_SYNOYM":522,"PARENT_NAME_USAGE_ID_INVALID":48,"PARTIALLY_PARSABLE":7,"PARENT_CYCLE":1},"otherCount":{},"downloaded":"2025-11-04T10:08:29.160+00:00"}'
     headers:
       Accept-Ranges:
       - bytes
@@ -79,7 +79,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Fri, 04 Oct 2024 07:00:19 GMT
+      - Fri, 14 Nov 2025 10:13:31 GMT
       Expires:
       - '0'
       Pragma:
@@ -87,13 +87,13 @@ interactions:
       Vary:
       - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
       Via:
-      - 1.1 varnish (Varnish/6.0)
+      - 1.1 varnish (Varnish/6.6)
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '618403319'
+      - '797508356'
       X-XSS-Protection:
       - 1; mode=block
     status:

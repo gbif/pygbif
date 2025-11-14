@@ -9,30 +9,30 @@ interactions:
       Connection:
       - keep-alive
       user-agent:
-      - python-requests/2.31.0,pygbif/0.6.4
+      - python-requests/2.31.0,pygbif/0.6.6
     method: GET
     uri: https://api.gbif.org/v1/species/suggest?q=Aso&limit=3
   response:
     body:
-      string: '[{"key":4887074,"nameKey":17291904,"kingdom":"Plantae","phylum":"Tracheophyta","family":"Sigillariaceae","genus":"Asolanus","kingdomKey":6,"phylumKey":7707728,"classKey":245,"familyKey":3229165,"genusKey":4887074,"parent":"Sigillariaceae","parentKey":3229165,"nubKey":4887074,"scientificName":"Asolanus
-        H.C.Wood, 1861","canonicalName":"Asolanus","rank":"GENUS","status":"ACCEPTED","higherClassificationMap":{"6":"Plantae","7707728":"Tracheophyta","245":"Lycopodiopsida","3229165":"Sigillariaceae"},"synonym":false,"class":"Lycopodiopsida"},{"key":1459644,"nameKey":1047180,"kingdom":"Animalia","phylum":"Arthropoda","order":"Diptera","family":"Acroceridae","genus":"Asopsebius","kingdomKey":1,"phylumKey":54,"classKey":216,"orderKey":811,"familyKey":3328,"genusKey":1459644,"parent":"Acroceridae","parentKey":3328,"nubKey":1459644,"scientificName":"Asopsebius
-        Nartshuk, 1982","canonicalName":"Asopsebius","rank":"GENUS","status":"ACCEPTED","higherClassificationMap":{"1":"Animalia","54":"Arthropoda","216":"Insecta","811":"Diptera","3328":"Acroceridae"},"synonym":false,"class":"Insecta"},{"key":1058266,"nameKey":1047077,"kingdom":"Animalia","phylum":"Arthropoda","order":"Coleoptera","family":"Scarabaeidae","genus":"Asophrops","kingdomKey":1,"phylumKey":54,"classKey":216,"orderKey":1470,"familyKey":5840,"genusKey":1058266,"parent":"Scarabaeidae","parentKey":5840,"nubKey":1058266,"scientificName":"Asophrops
-        Petrovitz, 1961","canonicalName":"Asophrops","rank":"GENUS","status":"ACCEPTED","higherClassificationMap":{"1":"Animalia","54":"Arthropoda","216":"Insecta","1470":"Coleoptera","5840":"Scarabaeidae"},"synonym":false,"class":"Insecta"}]'
+      string: '[{"key":5429462,"nameKey":1046999,"kingdom":"Animalia","phylum":"Mollusca","order":"Architaenioglossa","family":"Ampullariidae","genus":"Asolene","kingdomKey":1,"phylumKey":52,"classKey":225,"orderKey":455,"familyKey":6801,"genusKey":5429462,"parent":"Ampullariidae","parentKey":6801,"nubKey":5429462,"scientificName":"Asolene
+        d''Orbigny, 1838","canonicalName":"Asolene","rank":"GENUS","status":"ACCEPTED","synonym":false,"higherClassificationMap":{"1":"Animalia","52":"Mollusca","225":"Gastropoda","455":"Architaenioglossa","6801":"Ampullariidae"},"class":"Gastropoda"},{"key":1459644,"nameKey":1047180,"kingdom":"Animalia","phylum":"Arthropoda","order":"Diptera","family":"Acroceridae","genus":"Asopsebius","kingdomKey":1,"phylumKey":54,"classKey":216,"orderKey":811,"familyKey":3328,"genusKey":1459644,"parent":"Acroceridae","parentKey":3328,"nubKey":1459644,"scientificName":"Asopsebius
+        Nartshuk, 1982","canonicalName":"Asopsebius","rank":"GENUS","status":"ACCEPTED","synonym":false,"higherClassificationMap":{"1":"Animalia","54":"Arthropoda","216":"Insecta","811":"Diptera","3328":"Acroceridae"},"class":"Insecta"},{"key":4859837,"nameKey":1047028,"kingdom":"Animalia","phylum":"Platyhelminthes","family":"Callioplanidae","genus":"Asolenia","kingdomKey":1,"phylumKey":108,"classKey":341,"familyKey":6376,"genusKey":4859837,"parent":"Callioplanidae","parentKey":6376,"nubKey":4859837,"scientificName":"Asolenia
+        Hyman, 1959","canonicalName":"Asolenia","rank":"GENUS","status":"ACCEPTED","synonym":false,"higherClassificationMap":{"1":"Animalia","108":"Platyhelminthes","341":"Turbellaria","6376":"Callioplanidae"},"class":"Turbellaria"}]'
     headers:
       Accept-Ranges:
       - bytes
       Age:
-      - '0'
+      - '1392'
       Cache-Control:
       - public, max-age=3601
       Connection:
       - keep-alive
       Content-Length:
-      - '1647'
+      - '1639'
       Content-Type:
       - application/json
       Date:
-      - Fri, 04 Oct 2024 07:00:39 GMT
+      - Fri, 14 Nov 2025 10:03:00 GMT
       Expires:
       - '0'
       Pragma:
@@ -40,13 +40,13 @@ interactions:
       Vary:
       - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
       Via:
-      - 1.1 varnish (Varnish/6.0)
+      - 1.1 varnish (Varnish/6.6)
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '676856106'
+      - 732432314 732397781
       X-XSS-Protection:
       - 1; mode=block
     status:

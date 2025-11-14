@@ -9,7 +9,7 @@ interactions:
       Connection:
       - keep-alive
       user-agent:
-      - python-requests/2.31.0,pygbif/0.6.5
+      - python-requests/2.31.0,pygbif/0.6.6
     method: GET
     uri: https://api.gbif.org/v1/grscicoll/collection?institutionKey=6a6ac6c5-1b8a-48db-91a2-f8661274ff80&limit=10
   response:
@@ -274,7 +274,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Tue, 15 Jul 2025 14:49:09 GMT
+      - Fri, 14 Nov 2025 10:13:08 GMT
       Expires:
       - '0'
       Pragma:
@@ -290,7 +290,7 @@ interactions:
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '266305574'
+      - '747340887'
       X-XSS-Protection:
       - 1; mode=block
     status:
