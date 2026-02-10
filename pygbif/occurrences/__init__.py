@@ -39,5 +39,6 @@ from .download import (
     download_cancel,
     download_describe,
     download_sql,
-    download_citation
+    download_citation,
+    GbifDownloadError,
 )
