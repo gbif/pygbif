@@ -18,7 +18,8 @@ from ..gbifutils import (
     gbif_GET_write,
     gbif_DELETE,
     gbif_baseurl,
-    gbif_GET_raw
+    gbif_GET_raw,
+    get_session,
 )
 
 
@@ -474,7 +475,7 @@ class GbifDownload(object):
         pwd = _check_environ("GBIF_PWD", pwd)
 
         # pprint.pprint(self.payload)
-        r = requests.post(
+        r = get_session().post(
             self.url,
             auth=requests.auth.HTTPBasicAuth(user, pwd),
             data=json.dumps(self.payload),
@@ -705,7 +706,7 @@ def download_sql(sql,
         "sql": sql
     }
 
-    r = requests.post(
+    r = get_session().post(
         url,
         auth=requests.auth.HTTPBasicAuth(user, pwd),
         data=json.dumps(payload),

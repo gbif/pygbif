@@ -14,6 +14,23 @@ import pygbif
 # remove_expired_responses()
 
 
+# Module-level persistent session for HTTP connection reuse.
+# Using a Session enables HTTP keep-alive and connection pooling,
+# which avoids repeated TCP/SSL handshake overhead on consecutive
+# requests to the same host (see https://github.com/gbif/pygbif/issues/98).
+_session = requests.Session()
+
+
+def get_session():
+    """Return the module-level :class:`requests.Session` used for all HTTP requests.
+
+    This is exposed so that callers can customise session-level settings
+    (e.g. mount custom adapters, set default headers, configure retries)
+    without monkey-patching internals.
+    """
+    return _session
+
+
 class NoResultException(Exception):
     pass
 
@@ -23,31 +40,31 @@ def gbif_search_GET(url, args, **kwargs):
     #   if args['geometry'].__class__ == list:
     #     b = args['geometry']
     #     args['geometry'] = geometry.box(b[0], b[1], b[2], b[3]).wkt
-    out = requests.get(url, params=args, **kwargs)
+    out = _session.get(url, params=args, **kwargs)
     out.raise_for_status()
     stopifnot(out.headers["content-type"])
     return out.json()
 
 
 def gbif_GET(url, args, **kwargs):
-    out = requests.get(url, params=args, headers=make_ua(), **kwargs)
+    out = _session.get(url, params=args, headers=make_ua(), **kwargs)
     out.raise_for_status()
     stopifnot(out.headers["content-type"])
     return out.json()
 
 def gbif_GET_raw(url):
-    out = requests.get(url)
+    out = _session.get(url)
     return out.content
 
 def gbif_GET_map(url, args, ctype, **kwargs):
-    out = requests.get(url, params=args, headers=make_ua(), **kwargs)
+    out = _session.get(url, params=args, headers=make_ua(), **kwargs)
     out.raise_for_status()
     stopifnot(out.headers["content-type"], ctype)
     return out
 
 
 def gbif_GET_write(url, path, **kwargs):
-    out = requests.get(url, headers=make_ua(), stream=True, **kwargs)
+    out = _session.get(url, headers=make_ua(), stream=True, **kwargs)
     out.raise_for_status()
     if out.status_code == 200:
         with open(path, "wb") as f:
@@ -63,7 +80,7 @@ def gbif_GET_write(url, path, **kwargs):
 
 def gbif_POST(url, body, **kwargs):
     head = make_ua()
-    out = requests.post(url, json=body, headers=head, **kwargs)
+    out = _session.post(url, json=body, headers=head, **kwargs)
     out.raise_for_status()
     stopifnot(out.headers["content-type"])
     return out.json()
@@ -71,7 +88,7 @@ def gbif_POST(url, body, **kwargs):
 
 def gbif_DELETE(url, body, **kwargs):
     head = make_ua()
-    out = requests.delete(url, json=False, headers=head, **kwargs)
+    out = _session.delete(url, json=False, headers=head, **kwargs)
     out.raise_for_status()
     return out.status_code == 204
 
