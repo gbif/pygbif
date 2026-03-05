@@ -43,6 +43,17 @@ Example usage:
     occ.download_describe("simpleCsv")
     occ.download_citation("0002526-241107131044228")
 
+.. note::
+    Download endpoints require GBIF credentials.
+    Set them as environment variables:
+
+    .. code-block:: bash
+
+        export GBIF_USER="your_gbif_username"
+        export GBIF_PWD="your_gbif_password"
+
+    You can also pass credentials directly via ``user=`` and ``pwd=`` arguments.
+
 
 occurrences API
 ===============
