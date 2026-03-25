@@ -1,0 +1,158 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - python-requests/2.31.0,pygbif/0.6.5
+    method: GET
+    uri: https://api.gbif.org/v1/occurrence/search?checklistKey=7ddf754f-d193-4cc9-b351-99906754a03b&limit=3&offset=0
+  response:
+    body:
+      string: '{"offset":0,"limit":3,"endOfRecords":false,"count":3509790628,"results":[{"key":1632777577,"datasetKey":"fa375330-6c8a-11de-8226-b8a03c50a862","publishingOrgKey":"4d0539cd-a2e0-4a2c-8b7d-ec6718eef764","networkKeys":["99d66b6c-9087-452f-a9d4-f15f2c2d0e7e"],"installationKey":"19893c10-381e-4534-9bb8-6c37d03ad29e","hostingOrganizationKey":"3c5e4331-7f2f-4a8d-aa56-81ece7014fc8","publishingCountry":"AU","protocol":"DWC_ARCHIVE","lastCrawled":"2025-07-11T00:50:28.888+00:00","lastParsed":"2025-07-11T01:15:31.408+00:00","crawlId":485,"extensions":{},"basisOfRecord":"PRESERVED_SPECIMEN","individualCount":1,"occurrenceStatus":"PRESENT","sex":"Male","classifications":{"7ddf754f-d193-4cc9-b351-99906754a03b":{"usage":{"key":"WZXC","name":"Colepia
+        rufiventris (Macquart, 1838)","rank":"SPECIES","code":"ZOOLOGICAL","authorship":"(Macquart,
+        1838)","genericName":"Colepia","specificEpithet":"rufiventris","formattedName":"<i>Colepia</i>
+        <i>rufiventris</i> (Macquart, 1838)"},"acceptedUsage":{"key":"WZXC","name":"Colepia
+        rufiventris (Macquart, 1838)","rank":"SPECIES","code":"ZOOLOGICAL","authorship":"(Macquart,
+        1838)","genericName":"Colepia","specificEpithet":"rufiventris","formattedName":"<i>Colepia</i>
+        <i>rufiventris</i> (Macquart, 1838)"},"taxonomicStatus":"ACCEPTED","classification":[{"key":"CS5HF","name":"Eukaryota","rank":"DOMAIN"},{"key":"N","name":"Animalia","rank":"KINGDOM"},{"key":"RT","name":"Arthropoda","rank":"PHYLUM"},{"key":"CW2TP","name":"Hexapoda","rank":"SUBPHYLUM"},{"key":"H6","name":"Insecta","rank":"CLASS"},{"key":"D2P","name":"Diptera","rank":"ORDER"},{"key":"6SY","name":"Asilidae","rank":"FAMILY"},{"key":"87CDJ","name":"Asilinae","rank":"SUBFAMILY"},{"key":"BXZDB","name":"Colepia","rank":"GENUS"},{"key":"WZXC","name":"Colepia
+        rufiventris","rank":"SPECIES"}],"issues":["TAXON_CONCEPT_ID_NOT_FOUND"]},"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c":{"usage":{"key":"1663174","name":"Colepia
+        rufiventris (Macquart, 1838)","rank":"SPECIES","code":"ZOOLOGICAL","authorship":"(Macquart,
+        1838)","genericName":"Colepia","specificEpithet":"rufiventris","formattedName":"<i>Colepia</i>
+        <i>rufiventris</i> (Macquart, 1838)"},"acceptedUsage":{"key":"1663174","name":"Colepia
+        rufiventris (Macquart, 1838)","rank":"SPECIES","code":"ZOOLOGICAL","authorship":"(Macquart,
+        1838)","genericName":"Colepia","specificEpithet":"rufiventris","formattedName":"<i>Colepia</i>
+        <i>rufiventris</i> (Macquart, 1838)"},"taxonomicStatus":"ACCEPTED","classification":[{"key":"1","name":"Animalia","rank":"KINGDOM"},{"key":"54","name":"Arthropoda","rank":"PHYLUM"},{"key":"216","name":"Insecta","rank":"CLASS"},{"key":"811","name":"Diptera","rank":"ORDER"},{"key":"7275","name":"Asilidae","rank":"FAMILY"},{"key":"1663171","name":"Colepia","rank":"GENUS"},{"key":"1663174","name":"Colepia
+        rufiventris","rank":"SPECIES"}],"issues":["TAXON_CONCEPT_ID_NOT_FOUND"]}},"taxonKey":1663174,"kingdomKey":1,"phylumKey":54,"classKey":216,"orderKey":811,"familyKey":7275,"genusKey":1663171,"speciesKey":1663174,"acceptedTaxonKey":1663174,"scientificName":"Colepia
+        rufiventris (Macquart, 1838)","scientificNameAuthorship":"(Macquart, 1838)","acceptedScientificName":"Colepia
+        rufiventris (Macquart, 1838)","kingdom":"Animalia","phylum":"Arthropoda","order":"Diptera","family":"Asilidae","genus":"Colepia","species":"Colepia
+        rufiventris","genericName":"Colepia","specificEpithet":"rufiventris","taxonRank":"SPECIES","taxonomicStatus":"ACCEPTED","decimalLatitude":-33.88,"decimalLongitude":151.22,"coordinatePrecision":0.01,"coordinateUncertaintyInMeters":10000.0,"continent":"OCEANIA","stateProvince":"New
+        South Wales","gadm":{"level0":{"gid":"AUS","name":"Australia"},"level1":{"gid":"AUS.5_1","name":"New
+        South Wales"},"level2":{"gid":"AUS.5.122_1","name":"Sydney"}},"year":2025,"month":1,"day":24,"eventDate":"2025-01-24","startDayOfYear":24,"endDayOfYear":24,"issues":["CONTINENT_DERIVED_FROM_COORDINATES","TAXON_CONCEPT_ID_NOT_FOUND","INSTITUTION_MATCH_FUZZY","INSTITUTION_COLLECTION_MISMATCH"],"modified":"2021-10-19T00:00:00.000+00:00","lastInterpreted":"2025-07-11T01:15:31.408+00:00","license":"http://creativecommons.org/licenses/by/4.0/legalcode","isSequenced":false,"identifiers":[{"identifier":"cfab2d03-759b-43d2-9cef-35c7f30361f5"}],"media":[],"facts":[],"relations":[],"institutionKey":"5d0174cc-48aa-497e-8751-df708df5ccc5","isInCluster":false,"otherCatalogNumbers":"ecatalogue.irn:331143","recordedBy":"Gibbons,
+        Charles","dnaSequenceID":[],"geodeticDatum":"WGS84","class":"Insecta","countryCode":"AU","recordedByIDs":[],"identifiedByIDs":[],"gbifRegion":"OCEANIA","country":"Australia","publishedByGbifRegion":"OCEANIA","identifier":"cfab2d03-759b-43d2-9cef-35c7f30361f5","eventID":"urn:emu.sam.sa.gov.au:Event:147613","http://unknown.org/taxonRankID":"7000","locality":"Sydney
+        | Sydney","gbifID":"1632777577","collectionCode":"Entomology","language":"en","occurrenceID":"cfab2d03-759b-43d2-9cef-35c7f30361f5","type":"PhysicalObject","catalogNumber":"29-000230","vernacularName":"Robber
+        Fly","institutionCode":"SAMA","taxonConceptID":"https://biodiversity.org.au/afd/taxa/f53d3e94-64bb-49c7-a9fc-226f86c5cc80","http://unknown.org/species":"Colepia
+        rufiventris"},{"key":1825830405,"datasetKey":"7e380070-f762-11e1-a439-00145eb45e9a","publishingOrgKey":"19456090-b49a-11d8-abeb-b8a03c50a862","networkKeys":["17abcf75-2f1e-46dd-bf75-a5b21dd02655","99d66b6c-9087-452f-a9d4-f15f2c2d0e7e"],"installationKey":"60277b56-f762-11e1-a439-00145eb45e9a","hostingOrganizationKey":"19456090-b49a-11d8-abeb-b8a03c50a862","publishingCountry":"GB","protocol":"DWC_ARCHIVE","lastCrawled":"2025-08-11T13:32:38.044+00:00","lastParsed":"2025-08-12T15:11:56.230+00:00","crawlId":453,"extensions":{"http://rs.gbif.org/terms/1.0/Multimedia":[{"http://purl.org/dc/terms/rightsHolder":"The
+        Trustees of the Natural History Museum, London","http://purl.org/dc/terms/type":"StillImage","http://purl.org/dc/terms/identifier":"https://data.nhm.ac.uk/media/a5af4b7e-9d31-407b-b0ca-8a270da9ffe1","http://purl.org/dc/terms/format":"image/jpeg","http://purl.org/dc/terms/title":"BMNHE_1924774_495748","http://purl.org/dc/terms/license":"http://creativecommons.org/licenses/by/4.0/","http://purl.org/dc/terms/created":"2016-07-14T14:34:25+00:00"},{"http://purl.org/dc/terms/rightsHolder":"The
+        Trustees of the Natural History Museum, London","http://purl.org/dc/terms/type":"StillImage","http://purl.org/dc/terms/identifier":"https://data.nhm.ac.uk/media/800eb996-8e04-4686-b131-ac6259ebd548","http://purl.org/dc/terms/format":"image/jpeg","http://purl.org/dc/terms/title":"BMNHE_1924774_label_495748","http://purl.org/dc/terms/license":"http://creativecommons.org/licenses/by/4.0/","http://purl.org/dc/terms/created":"2016-07-14T16:28:49+00:00"}]},"basisOfRecord":"PRESERVED_SPECIMEN","individualCount":1,"occurrenceStatus":"PRESENT","classifications":{"7ddf754f-d193-4cc9-b351-99906754a03b":{"usage":{"key":"56DC7","name":"Theria
+        primaria (Haworth, 1809)","rank":"SPECIES","code":"ZOOLOGICAL","authorship":"(Haworth,
+        1809)","genericName":"Theria","specificEpithet":"primaria","formattedName":"<i>Theria</i>
+        <i>primaria</i> (Haworth, 1809)"},"acceptedUsage":{"key":"56DC7","name":"Theria
+        primaria (Haworth, 1809)","rank":"SPECIES","code":"ZOOLOGICAL","authorship":"(Haworth,
+        1809)","genericName":"Theria","specificEpithet":"primaria","formattedName":"<i>Theria</i>
+        <i>primaria</i> (Haworth, 1809)"},"taxonomicStatus":"ACCEPTED","classification":[{"key":"CS5HF","name":"Eukaryota","rank":"DOMAIN"},{"key":"N","name":"Animalia","rank":"KINGDOM"},{"key":"RT","name":"Arthropoda","rank":"PHYLUM"},{"key":"CW2TP","name":"Hexapoda","rank":"SUBPHYLUM"},{"key":"H6","name":"Insecta","rank":"CLASS"},{"key":"CLZ7L","name":"Lepidoptera","rank":"ORDER"},{"key":"626YP","name":"Geometroidea","rank":"SUPERFAMILY"},{"key":"C76TY","name":"Geometridae","rank":"FAMILY"},{"key":"C6ZT3","name":"Ennominae","rank":"SUBFAMILY"},{"key":"924GS","name":"Theria","rank":"GENUS"},{"key":"56DC7","name":"Theria
+        primaria","rank":"SPECIES"}],"issues":[]},"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c":{"usage":{"key":"5148248","name":"Theria
+        primaria (Haworth, 1809)","rank":"SPECIES","code":"ZOOLOGICAL","authorship":"(Haworth,
+        1809)","genericName":"Theria","specificEpithet":"primaria","formattedName":"<i>Theria</i>
+        <i>primaria</i> (Haworth, 1809)"},"acceptedUsage":{"key":"5148248","name":"Theria
+        primaria (Haworth, 1809)","rank":"SPECIES","code":"ZOOLOGICAL","authorship":"(Haworth,
+        1809)","genericName":"Theria","specificEpithet":"primaria","formattedName":"<i>Theria</i>
+        <i>primaria</i> (Haworth, 1809)"},"taxonomicStatus":"ACCEPTED","classification":[{"key":"1","name":"Animalia","rank":"KINGDOM"},{"key":"54","name":"Arthropoda","rank":"PHYLUM"},{"key":"216","name":"Insecta","rank":"CLASS"},{"key":"797","name":"Lepidoptera","rank":"ORDER"},{"key":"6950","name":"Geometridae","rank":"FAMILY"},{"key":"1977775","name":"Theria","rank":"GENUS"},{"key":"5148248","name":"Theria
+        primaria","rank":"SPECIES"}],"issues":[]}},"taxonKey":5148248,"kingdomKey":1,"phylumKey":54,"classKey":216,"orderKey":797,"familyKey":6950,"genusKey":1977775,"speciesKey":5148248,"acceptedTaxonKey":5148248,"scientificName":"Theria
+        primaria (Haworth, 1809)","scientificNameAuthorship":"(Haworth, 1809)","acceptedScientificName":"Theria
+        primaria (Haworth, 1809)","kingdom":"Animalia","phylum":"Arthropoda","order":"Lepidoptera","family":"Geometridae","genus":"Theria","species":"Theria
+        primaria","genericName":"Theria","specificEpithet":"primaria","taxonRank":"SPECIES","taxonomicStatus":"ACCEPTED","gadm":{},"year":2025,"month":1,"eventDate":"2025-01","issues":["COLLECTION_MATCH_NONE","INSTITUTION_MATCH_FUZZY"],"modified":"2021-01-30T22:56:59.000+00:00","lastInterpreted":"2025-08-12T15:11:56.230+00:00","license":"http://creativecommons.org/publicdomain/zero/1.0/legalcode","isSequenced":false,"identifiers":[{"identifier":"6796222"}],"media":[{"type":"StillImage","format":"image/jpeg","title":"BMNHE_1924774_label_495748","created":"2016-07-14T16:28:49.000+00:00","license":"http://creativecommons.org/licenses/by/4.0/","rightsHolder":"The
+        Trustees of the Natural History Museum, London","identifier":"https://data.nhm.ac.uk/media/800eb996-8e04-4686-b131-ac6259ebd548"},{"type":"StillImage","format":"image/jpeg","title":"BMNHE_1924774_495748","created":"2016-07-14T14:34:25.000+00:00","license":"http://creativecommons.org/licenses/by/4.0/","rightsHolder":"The
+        Trustees of the Natural History Museum, London","identifier":"https://data.nhm.ac.uk/media/a5af4b7e-9d31-407b-b0ca-8a270da9ffe1"}],"facts":[],"relations":[],"institutionKey":"1d808a7c-1f9e-4379-9616-edb749ecf10e","isInCluster":false,"otherCatalogNumbers":"NHMUK:ecatalogue:6796222","recordedBy":"[''A
+        W. Hughes'']","dnaSequenceID":[],"class":"Insecta","recordedByIDs":[],"identifiedByIDs":[],"publishedByGbifRegion":"EUROPE","identifier":"6796222","catalogNumber":"BMNH(E)1924774","institutionCode":"NHMUK","dynamicProperties":"{\"subDepartment\":
+        \"Lepidoptera\", \"created\": \"2016-12-13T10:50:40+00:00\", \"gbifID\": \"1825830405\",
+        \"gbifIssue\": [\"RECORDED_DATE_UNLIKELY\", \"MODIFIED_DATE_INVALID\", \"INSTITUTION_MATCH_FUZZY\",
+        \"COLLECTION_MATCH_NONE\", \"MULTIMEDIA_DATE_INVALID\"], \"determinationNames\":
+        [\"Theria primaria (Haworth, 1809)\"], \"associatedMediaCount\": 2, \"barcode\":
+        null, \"preservative\": \"Dry - mounted\", \"determinationFiledAs\": [\"Yes\"],
+        \"project\": \"iCollections\", \"donorName\": null, \"collectionKind\": null,
+        \"registrationCode\": null, \"chronostratigraphy\": null, \"kindOfCollection\":
+        null, \"kindOfObject\": null, \"lithostratigraphy\": null, \"catalogueDescription\":
+        null, \"expedition\": null, \"collectionName\": null, \"plantDescription\":
+        null, \"vessel\": null, \"clutchSize\": null, \"exsiccata\": null, \"setMark\":
+        null, \"currentScientificName\": null, \"exsiccataNumber\": null, \"suborder\":
+        null, \"superfamily\": null, \"subfamily\": null, \"partType\": null, \"populationCode\":
+        null, \"observedWeight\": null, \"preparationType\": null, \"resuspendedIn\":
+        null, \"extractionMethod\": null, \"totalVolume\": null, \"mine\": null, \"mineralComplex\":
+        null}","gbifID":"1825830405","collectionCode":"BMNH(E)","occurrenceID":"cebd9c9f-9cba-4e9a-ad11-ce3575156973","higherClassification":"Insecta;
+        Lepidoptera; Geometroidea; Geometridae; Ennominae"},{"key":1825835833,"datasetKey":"7e380070-f762-11e1-a439-00145eb45e9a","publishingOrgKey":"19456090-b49a-11d8-abeb-b8a03c50a862","networkKeys":["17abcf75-2f1e-46dd-bf75-a5b21dd02655","99d66b6c-9087-452f-a9d4-f15f2c2d0e7e"],"installationKey":"60277b56-f762-11e1-a439-00145eb45e9a","hostingOrganizationKey":"19456090-b49a-11d8-abeb-b8a03c50a862","publishingCountry":"GB","protocol":"DWC_ARCHIVE","lastCrawled":"2025-08-11T13:32:38.044+00:00","lastParsed":"2025-08-12T15:13:34.186+00:00","crawlId":453,"extensions":{"http://rs.gbif.org/terms/1.0/Multimedia":[{"http://purl.org/dc/terms/rightsHolder":"The
+        Trustees of the Natural History Museum, London","http://purl.org/dc/terms/type":"StillImage","http://purl.org/dc/terms/identifier":"https://data.nhm.ac.uk/media/89d244f5-3469-4dac-b40c-5c87754dea18","http://purl.org/dc/terms/format":"image/jpeg","http://purl.org/dc/terms/title":"BMNHE_1909741_467947","http://purl.org/dc/terms/license":"http://creativecommons.org/licenses/by/4.0/","http://purl.org/dc/terms/created":"2016-03-01T07:11:46+00:00"},{"http://purl.org/dc/terms/rightsHolder":"The
+        Trustees of the Natural History Museum, London","http://purl.org/dc/terms/type":"StillImage","http://purl.org/dc/terms/identifier":"https://data.nhm.ac.uk/media/b1887821-da5e-44af-bba4-9375bee65916","http://purl.org/dc/terms/format":"image/jpeg","http://purl.org/dc/terms/title":"BMNHE_1909741_label_467947","http://purl.org/dc/terms/license":"http://creativecommons.org/licenses/by/4.0/","http://purl.org/dc/terms/created":"2016-03-01T11:46:03+00:00"}]},"basisOfRecord":"PRESERVED_SPECIMEN","individualCount":1,"occurrenceStatus":"PRESENT","classifications":{"7ddf754f-d193-4cc9-b351-99906754a03b":{"usage":{"key":"932CB","name":"Erannis
+        defoliaria (Clerck, 1759)","rank":"SPECIES","code":"ZOOLOGICAL","authorship":"(Clerck,
+        1759)","genericName":"Erannis","specificEpithet":"defoliaria","formattedName":"<i>Erannis</i>
+        <i>defoliaria</i> (Clerck, 1759)"},"acceptedUsage":{"key":"932CB","name":"Erannis
+        defoliaria (Clerck, 1759)","rank":"SPECIES","code":"ZOOLOGICAL","authorship":"(Clerck,
+        1759)","genericName":"Erannis","specificEpithet":"defoliaria","formattedName":"<i>Erannis</i>
+        <i>defoliaria</i> (Clerck, 1759)"},"taxonomicStatus":"ACCEPTED","classification":[{"key":"CS5HF","name":"Eukaryota","rank":"DOMAIN"},{"key":"N","name":"Animalia","rank":"KINGDOM"},{"key":"RT","name":"Arthropoda","rank":"PHYLUM"},{"key":"CW2TP","name":"Hexapoda","rank":"SUBPHYLUM"},{"key":"H6","name":"Insecta","rank":"CLASS"},{"key":"CLZ7L","name":"Lepidoptera","rank":"ORDER"},{"key":"626YP","name":"Geometroidea","rank":"SUPERFAMILY"},{"key":"C76TY","name":"Geometridae","rank":"FAMILY"},{"key":"C6ZT3","name":"Ennominae","rank":"SUBFAMILY"},{"key":"928CV","name":"Erannis","rank":"GENUS"},{"key":"932CB","name":"Erannis
+        defoliaria","rank":"SPECIES"}],"issues":[]},"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c":{"usage":{"key":"1956599","name":"Erannis
+        defoliaria (Clerck, 1759)","rank":"SPECIES","code":"ZOOLOGICAL","authorship":"(Clerck,
+        1759)","genericName":"Erannis","specificEpithet":"defoliaria","formattedName":"<i>Erannis</i>
+        <i>defoliaria</i> (Clerck, 1759)"},"acceptedUsage":{"key":"1956599","name":"Erannis
+        defoliaria (Clerck, 1759)","rank":"SPECIES","code":"ZOOLOGICAL","authorship":"(Clerck,
+        1759)","genericName":"Erannis","specificEpithet":"defoliaria","formattedName":"<i>Erannis</i>
+        <i>defoliaria</i> (Clerck, 1759)"},"taxonomicStatus":"ACCEPTED","classification":[{"key":"1","name":"Animalia","rank":"KINGDOM"},{"key":"54","name":"Arthropoda","rank":"PHYLUM"},{"key":"216","name":"Insecta","rank":"CLASS"},{"key":"797","name":"Lepidoptera","rank":"ORDER"},{"key":"6950","name":"Geometridae","rank":"FAMILY"},{"key":"1956545","name":"Erannis","rank":"GENUS"},{"key":"1956599","name":"Erannis
+        defoliaria","rank":"SPECIES"}],"issues":[]}},"taxonKey":1956599,"kingdomKey":1,"phylumKey":54,"classKey":216,"orderKey":797,"familyKey":6950,"genusKey":1956545,"speciesKey":1956599,"acceptedTaxonKey":1956599,"scientificName":"Erannis
+        defoliaria (Clerck, 1759)","scientificNameAuthorship":"(Clerck, 1759)","acceptedScientificName":"Erannis
+        defoliaria (Clerck, 1759)","kingdom":"Animalia","phylum":"Arthropoda","order":"Lepidoptera","family":"Geometridae","genus":"Erannis","species":"Erannis
+        defoliaria","genericName":"Erannis","specificEpithet":"defoliaria","taxonRank":"SPECIES","taxonomicStatus":"ACCEPTED","decimalLatitude":50.9097,"decimalLongitude":-1.4044,"continent":"EUROPE","stateProvince":"England","gadm":{"level0":{"gid":"GBR","name":"United
+        Kingdom"},"level1":{"gid":"GBR.1_1","name":"England"},"level2":{"gid":"GBR.1.90_1","name":"Southampton"},"level3":{"gid":"GBR.1.90.1_1","name":"Southampton"}},"higherGeography":"Europe;
+        United Kingdom; England; Southampton","year":2025,"month":1,"eventDate":"2025-01","issues":["GEODETIC_DATUM_ASSUMED_WGS84","COLLECTION_MATCH_NONE","INSTITUTION_MATCH_FUZZY"],"modified":"2021-01-30T20:43:26.000+00:00","lastInterpreted":"2025-08-12T15:13:34.186+00:00","license":"http://creativecommons.org/publicdomain/zero/1.0/legalcode","isSequenced":false,"identifiers":[{"identifier":"6802002"}],"media":[{"type":"StillImage","format":"image/jpeg","title":"BMNHE_1909741_label_467947","created":"2016-03-01T11:46:03.000+00:00","license":"http://creativecommons.org/licenses/by/4.0/","rightsHolder":"The
+        Trustees of the Natural History Museum, London","identifier":"https://data.nhm.ac.uk/media/b1887821-da5e-44af-bba4-9375bee65916"},{"type":"StillImage","format":"image/jpeg","title":"BMNHE_1909741_467947","created":"2016-03-01T07:11:46.000+00:00","license":"http://creativecommons.org/licenses/by/4.0/","rightsHolder":"The
+        Trustees of the Natural History Museum, London","identifier":"https://data.nhm.ac.uk/media/89d244f5-3469-4dac-b40c-5c87754dea18"}],"facts":[],"relations":[],"institutionKey":"1d808a7c-1f9e-4379-9616-edb749ecf10e","isInCluster":false,"otherCatalogNumbers":"NHMUK:ecatalogue:6802002","recordedBy":"[''Wm
+        Fassnidge'']","dnaSequenceID":[],"geodeticDatum":"WGS84","class":"Insecta","countryCode":"GB","recordedByIDs":[],"identifiedByIDs":[],"gbifRegion":"EUROPE","country":"United
+        Kingdom of Great Britain and Northern Ireland","publishedByGbifRegion":"EUROPE","identifier":"6802002","catalogNumber":"BMNH(E)1909741","institutionCode":"NHMUK","dynamicProperties":"{\"subDepartment\":
+        \"Lepidoptera\", \"created\": \"2016-12-13T12:50:33+00:00\", \"gbifID\": \"1825835833\",
+        \"gbifIssue\": [\"RECORDED_DATE_UNLIKELY\", \"MODIFIED_DATE_INVALID\", \"GEODETIC_DATUM_ASSUMED_WGS84\",
+        \"INSTITUTION_MATCH_FUZZY\", \"COLLECTION_MATCH_NONE\", \"MULTIMEDIA_DATE_INVALID\"],
+        \"determinationNames\": [\"Erannis defoliaria (Clerck, 1759)\"], \"associatedMediaCount\":
+        2, \"barcode\": null, \"preservative\": \"Dry - mounted\", \"determinationFiledAs\":
+        [\"Yes\"], \"project\": \"iCollections\", \"donorName\": null, \"collectionKind\":
+        null, \"registrationCode\": null, \"chronostratigraphy\": null, \"kindOfCollection\":
+        null, \"kindOfObject\": null, \"lithostratigraphy\": null, \"catalogueDescription\":
+        null, \"expedition\": null, \"collectionName\": null, \"plantDescription\":
+        null, \"vessel\": null, \"clutchSize\": null, \"exsiccata\": null, \"setMark\":
+        null, \"currentScientificName\": null, \"exsiccataNumber\": null, \"suborder\":
+        null, \"superfamily\": null, \"subfamily\": null, \"partType\": null, \"populationCode\":
+        null, \"observedWeight\": null, \"preparationType\": null, \"resuspendedIn\":
+        null, \"extractionMethod\": null, \"totalVolume\": null, \"mine\": null, \"mineralComplex\":
+        null}","locality":"Hampshire; Township: Southampton","gbifID":"1825835833","collectionCode":"BMNH(E)","occurrenceID":"1295c9d7-6708-4c1d-ae03-13aba6730301","higherClassification":"Insecta;
+        Lepidoptera; Geometroidea; Geometridae; Ennominae"}],"facets":[]}'
+    headers:
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Cache-Control:
+      - public, max-age=600
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 05 Sep 2025 09:13:28 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      Via:
+      - 1.1 varnish (Varnish/6.6)
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-GRLR:
+      - '30'
+      X-RLR:
+      - '25'
+      X-Varnish:
+      - '296780546'
+      X-XSS-Protection:
+      - '0'
+    status:
+      code: 200
+      message: OK
+version: 1

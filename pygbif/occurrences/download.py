@@ -41,7 +41,7 @@ def _parse_args(x):
     if re.search(r"\s+in", x):
         value_list = re.search(r"\[.*\]", x)
         if not value_list:
-            raise Exception(
+            raise ValueError(
                 "error: in predicate has to be associated with a list in square brackets (for example [1, 2, 3])"
             )
         else:
@@ -274,6 +274,10 @@ def download(
     return out, req.payload
 
 
+class GbifDownloadError(Exception):
+    pass
+
+
 class GbifDownload(object):
     def __init__(self, creator, email, polygon=None):
         """class to setup a JSON doc with the query and POST a request
@@ -337,7 +341,7 @@ class GbifDownload(object):
             self._main_pred_type = value
             self.payload["predicate"]["type"] = self._main_pred_type
         else:
-            raise Exception("main predicate combiner not a valid operator")
+            raise ValueError("main predicate combiner not a valid operator")
 
     @property
     def predicate(self):
@@ -354,7 +358,7 @@ class GbifDownload(object):
             self._predicate = value
             self.payload["predicate"] = self._predicate
         else:
-            raise Exception("predicate must be a dictionary")
+            raise ValueError("predicate must be a dictionary")
 
     @property
     def format(self):
@@ -371,7 +375,7 @@ class GbifDownload(object):
             self._format = value
             self.payload["format"] = self._format
         else:
-            raise Exception(
+            raise ValueError(
                 "format must be one of the accepted download formats of GBIF "
                 + ", ".join(formats)
             )
@@ -396,7 +400,7 @@ class GbifDownload(object):
         if predicate_type:
             self.predicates.append({"type": predicate_type, "key": key, "value": value})
         else:
-            raise Exception("predicate type not a valid operator")
+            raise ValueError("predicate type not a valid operator")
 
     def add_predicate_dict(self, predicate_dictionary):
         """
@@ -409,7 +413,7 @@ class GbifDownload(object):
         if isinstance(predicate_dictionary, dict):
             self.predicates.append(predicate_dictionary)
         else:
-            raise Exception("argument must be a dictionary")
+            raise TypeError("argument must be a dictionary")
 
     @staticmethod
     def _extract_values(values_list):
@@ -427,7 +431,7 @@ class GbifDownload(object):
         elif isinstance(values_list, list):
             values = values_list
         else:
-            raise Exception("input datatype not supported.")
+            raise TypeError("input datatype not supported.")
         return values
 
     def add_iterative_predicate(self, key, values_list):
@@ -481,7 +485,7 @@ class GbifDownload(object):
             headers=self.header,
         )
         if r.status_code > 203:
-            raise Exception(
+            raise GbifDownloadError(
                 "error: "
                 + r.text
                 + ", with error status code "
@@ -616,7 +620,7 @@ def download_get(key, path=".", **kwargs):
     """
     meta = occurrences.download_meta(key)
     if meta["status"] != "SUCCEEDED":
-        raise Exception('download "%s" not of status SUCCEEDED' % key)
+        raise GbifDownloadError('download "%s" not of status SUCCEEDED' % key)
     else:
         logging.info("Download file size: %s bytes" % meta["size"])
         url = "http://api.gbif.org/v1/occurrence/download/request/" + key
@@ -712,7 +716,7 @@ def download_sql(sql,
         headers=header,
     )
     if r.status_code > 203:
-        raise Exception(
+        raise GbifDownloadError(
             "error: "
             + r.text
             + ", with error status code "

@@ -1,0 +1,52 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - python-requests/2.31.0,pygbif/0.6.5
+    method: GET
+    uri: https://api.gbif.org/v1/occurrence/download/statistics?fromDate=2023-01-01&toDate=2023-12-31&publishingCountry=US&limit=10&offset=0
+  response:
+    body:
+      string: '{"offset":0,"limit":10,"endOfRecords":false,"count":28725,"results":[{"datasetKey":"000f8d2a-ab70-453d-95f2-59791930975c","totalRecords":747,"numberDownloads":99,"year":2023,"month":12},{"datasetKey":"001db2b9-e713-43e4-ac5d-2c52ef009ef1","totalRecords":14923,"numberDownloads":137,"year":2023,"month":12},{"datasetKey":"001e060d-ac3b-46d9-955f-50fba13102d2","totalRecords":189084,"numberDownloads":284,"year":2023,"month":12},{"datasetKey":"00241b34-cdd0-48ac-b9ba-5fa67862b83d","totalRecords":9698,"numberDownloads":65,"year":2023,"month":12},{"datasetKey":"0039bbb4-f753-40fd-8629-a4ed74fc5c6b","totalRecords":3803136,"numberDownloads":1297,"year":2023,"month":12},{"datasetKey":"005eb8d8-ed94-41be-89cf-e3115a9058e4","totalRecords":16611923,"numberDownloads":1054,"year":2023,"month":12},{"datasetKey":"00766494-f1d1-4ab9-8b89-220287d5fdb9","totalRecords":21457,"numberDownloads":128,"year":2023,"month":12},{"datasetKey":"0096dfc0-9925-47ef-9700-9b77814295f1","totalRecords":409859,"numberDownloads":1160,"year":2023,"month":12},{"datasetKey":"00c2daff-a286-451b-b50e-38c69d8d1c63","totalRecords":4100,"numberDownloads":103,"year":2023,"month":12},{"datasetKey":"00d636a3-e132-44b6-ae77-0b1cadb3e59e","totalRecords":71944,"numberDownloads":123,"year":2023,"month":12}]}'
+    headers:
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Cache-Control:
+      - public, max-age=3601
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1274'
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 24 Mar 2026 10:48:40 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Vary:
+      - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      Via:
+      - 1.1 varnish (Varnish/6.6)
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Varnish:
+      - '613915757'
+      X-XSS-Protection:
+      - '0'
+    status:
+      code: 200
+      message: OK
+version: 1
