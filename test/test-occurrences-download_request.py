@@ -139,7 +139,7 @@ class TestDownload(unittest.TestCase):
         )
         self.assertDictEqual(
             payload["predicate"]["predicates"][0],
-            {"key": "DECIMAL_LATITUDE", "type": "greaterThan", "value": 50.0},
+            {"key": "DECIMAL_LATITUDE", "type": "greaterThan", "value": "50"},
         )
 
         dl_key, payload = download(
@@ -157,7 +157,7 @@ class TestDownload(unittest.TestCase):
 
         self.assertDictEqual(
             payload["predicate"]["predicates"][0],
-            {"key": "DECIMAL_LATITUDE", "type": "greaterThan", "value": 50.0},
+            {"key": "DECIMAL_LATITUDE", "type": "greaterThan", "value": "50"},
         )
 
     def test_multiple_predicates(self):
@@ -243,7 +243,7 @@ class TestDownload(unittest.TestCase):
         self.assertIsInstance(payload["predicate"]["predicates"][0]["value"], int)
 
     def test_depth_numeric_conversion(self):
-        """Test that depth values are converted to float"""
+        """Test that depth values are kept as strings (not converted)"""
         dl_key, payload = download(
             "depth = 80.5",
             user="dummy",
@@ -252,9 +252,9 @@ class TestDownload(unittest.TestCase):
         )
         self.assertDictEqual(
             payload["predicate"]["predicates"][0],
-            {"key": "DEPTH", "type": "equals", "value": 80.5},
+            {"key": "DEPTH", "type": "equals", "value": "80.5"},
         )
-        self.assertIsInstance(payload["predicate"]["predicates"][0]["value"], float)
+        self.assertIsInstance(payload["predicate"]["predicates"][0]["value"], str)
 
     def test_multiple_predicates_with_integer_keys(self):
         """Test multiple predicates with integer key conversion"""
@@ -270,3 +270,54 @@ class TestDownload(unittest.TestCase):
         self.assertEqual(temp_pred[1]["value"], 2020)
         self.assertIsInstance(temp_pred[0]["value"], int)
         self.assertIsInstance(temp_pred[1]["value"], int)
+
+    def test_datasetkey_remains_string(self):
+        """Test that datasetKey values remain as strings (UUIDs, not converted)"""
+        dl_key, payload = download(
+            "datasetKey = 50c9509d-22c7-4a22-a47d-8c48425ef4a7",
+            user="dummy",
+            email="dummy",
+            pwd="dummy",
+        )
+        # datasetKey should remain as a string (UUID format)
+        self.assertDictEqual(
+            payload["predicate"]["predicates"][0],
+            {"key": "DATASET_KEY", "type": "equals", "value": "50c9509d-22c7-4a22-a47d-8c48425ef4a7"},
+        )
+        self.assertIsInstance(payload["predicate"]["predicates"][0]["value"], str)
+
+    def test_datasetkey_in_predicate_remains_string(self):
+        """Test that datasetKey values in 'in' predicate remain as strings"""
+        dl_key, payload = download(
+            'datasetKey in ["50c9509d-22c7-4a22-a47d-8c48425ef4a7", "7b5d6a48-f762-11e1-a439-00145eb45e9a"]',
+            user="dummy",
+            email="dummy",
+            pwd="dummy",
+        )
+        # datasetKey values should remain as strings (UUIDs)
+        self.assertDictEqual(
+            payload["predicate"]["predicates"][0],
+            {
+                "key": "DATASET_KEY", 
+                "type": "in", 
+                "values": ["50c9509d-22c7-4a22-a47d-8c48425ef4a7", "7b5d6a48-f762-11e1-a439-00145eb45e9a"]
+            },
+        )
+        for val in payload["predicate"]["predicates"][0]["values"]:
+            self.assertIsInstance(val, str)
+
+    def test_mixed_taxonomic_and_uuid_keys(self):
+        """Test that taxonomic keys are converted to int but UUID keys remain strings"""
+        dl_key, payload = download(
+            ["taxonKey = 3119195", "datasetKey = 50c9509d-22c7-4a22-a47d-8c48425ef4a7"],
+            user="dummy",
+            email="dummy",
+            pwd="dummy",
+        )
+        temp_pred = payload["predicate"]["predicates"]
+        # taxonKey should be integer
+        self.assertEqual(temp_pred[0]["value"], 3119195)
+        self.assertIsInstance(temp_pred[0]["value"], int)
+        # datasetKey should be string (UUID)
+        self.assertEqual(temp_pred[1]["value"], "50c9509d-22c7-4a22-a47d-8c48425ef4a7")
+        self.assertIsInstance(temp_pred[1]["value"], str)
