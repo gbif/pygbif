@@ -321,3 +321,45 @@ class TestDownload(unittest.TestCase):
         # datasetKey should be string (UUID)
         self.assertEqual(temp_pred[1]["value"], "50c9509d-22c7-4a22-a47d-8c48425ef4a7")
         self.assertIsInstance(temp_pred[1]["value"], str)
+
+    def test_taxonkey_float_string_conversion(self):
+        """Test that float-like strings (e.g., '5785887.0') are converted to integers"""
+        dl_key, payload = download(
+            "taxonKey = 5785887.0",
+            user="dummy",
+            email="dummy",
+            pwd="dummy",
+        )
+        # Should convert "5785887.0" to integer 5785887
+        self.assertDictEqual(
+            payload["predicate"]["predicates"][0],
+            {"key": "TAXON_KEY", "type": "equals", "value": 5785887},
+        )
+        self.assertIsInstance(payload["predicate"]["predicates"][0]["value"], int)
+
+    def test_taxonkey_in_predicate_float_string_conversion(self):
+        """Test that float-like strings in 'in' predicates are converted to integers"""
+        dl_key, payload = download(
+            'taxonKey in ["2387246.0", "2399391.0", "2364604"]',
+            user="dummy",
+            email="dummy",
+            pwd="dummy",
+        )
+        # All values should be converted to integers
+        self.assertDictEqual(
+            payload["predicate"]["predicates"][0],
+            {"key": "TAXON_KEY", "type": "in", "values": [2387246, 2399391, 2364604]},
+        )
+        for val in payload["predicate"]["predicates"][0]["values"]:
+            self.assertIsInstance(val, int)
+
+    def test_taxonkey_invalid_value_raises_error(self):
+        """Test that non-numeric values for taxonomic keys raise an error"""
+        with self.assertRaises(ValueError) as context:
+            download(
+                "taxonKey = notanumber",
+                user="dummy",
+                email="dummy",
+                pwd="dummy",
+            )
+        self.assertIn("Cannot convert", str(context.exception))

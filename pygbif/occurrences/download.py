@@ -31,6 +31,38 @@ taxonomic_integer_keys = {
     "SUBGENUS_KEY", "YEAR", "MONTH"
 }
 
+def _convert_to_int(value, key_name):
+    """
+    Convert a value to integer, handling float-like strings (e.g., "5785887.0").
+    
+    :param value: The value to convert
+    :param key_name: The name of the key (for logging purposes)
+    :return: Integer value if conversion successful, otherwise raises ValueError
+    """
+    if not isinstance(value, str):
+        return int(value)
+    
+    try:
+        # First try direct integer conversion
+        return int(value)
+    except ValueError:
+        # If that fails, try converting via float (handles "5785887.0")
+        try:
+            float_val = float(value)
+            int_val = int(float_val)
+            # Check if it's actually an integer value
+            if float_val != int_val:
+                logging.warning(
+                    f"Converting non-integer value {value} to {int_val} for {key_name}. "
+                    f"Fractional part {float_val - int_val} will be lost."
+                )
+            return int_val
+        except ValueError:
+            raise ValueError(
+                f"Cannot convert value '{value}' to integer for {key_name}. "
+                f"Expected a numeric value."
+            )
+
 # how to parse arguments/predicates
 def _parse_args(x):
     x = x.replace("'", '"')
@@ -57,16 +89,19 @@ def _parse_args(x):
             values = json.loads(value_list.group(0))
             # Convert taxonomic key values to integers
             if key in taxonomic_integer_keys:
-                values = [int(v) if isinstance(v, str) and v.isdigit() else int(v) for v in values]
+                converted_values = []
+                for v in values:
+                    try:
+                        converted_values.append(_convert_to_int(v, key))
+                    except ValueError as e:
+                        raise ValueError(f"Error in 'in' predicate for {key}: {str(e)}")
+                values = converted_values
             return {"type": "in", "key": key, "values": values}
     pred_type = operator_lkup.get(tmp[1])
     value = tmp[2]
     # Convert taxonomic key values to integers
     if key in taxonomic_integer_keys:
-        try:
-            value = int(value)
-        except (ValueError, TypeError):
-            pass  # Keep as string if conversion fails
+        value = _convert_to_int(value, key)
     return {
         "type": pred_type,
         "key": key,
