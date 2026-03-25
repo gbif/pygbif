@@ -22,6 +22,21 @@ from ..gbifutils import (
 )
 
 
+# Keys that should have integer values in the GBIF API
+integer_keys = {
+    "TAXON_KEY", "DATASET_KEY", "SPECIES_KEY", "CLASS_KEY", "FAMILY_KEY", 
+    "GENUS_KEY", "KINGDOM_KEY", "ORDER_KEY", "PHYLUM_KEY", "SUBGENUS_KEY",
+    "YEAR", "MONTH", "CRAWL_ID", "NETWORK_KEY", "PUBLISHING_ORG_KEY", 
+    "TAXON_ID"
+}
+
+# Keys that should have numeric (float) values in the GBIF API
+numeric_keys = {
+    "DEPTH", "ELEVATION", "COORDINATE_UNCERTAINTY_IN_METERS", 
+    "DISTANCE_FROM_CENTROID_IN_METERS", "DECIMAL_LATITUDE", "DECIMAL_LONGITUDE",
+    "ORGANISM_QUANTITY", "RELATIVE_ORGANISM_QUANTITY", "SAMPLE_SIZE_VALUE"
+}
+
 # how to parse arguments/predicates
 def _parse_args(x):
     x = x.replace("'", '"')
@@ -45,13 +60,31 @@ def _parse_args(x):
                 "error: in predicate has to be associated with a list in square brackets (for example [1, 2, 3])"
             )
         else:
-            return {"type": "in", "key": key, "values": json.loads(value_list.group(0))}
+            values = json.loads(value_list.group(0))
+            # Convert values to appropriate types for integer keys
+            if key in integer_keys:
+                values = [int(v) if isinstance(v, str) and v.isdigit() else int(v) for v in values]
+            elif key in numeric_keys:
+                values = [float(v) for v in values]
+            return {"type": "in", "key": key, "values": values}
     pred_type = operator_lkup.get(tmp[1])
+    value = tmp[2]
+    # Convert value to appropriate type
+    if key in integer_keys:
+        try:
+            value = int(value)
+        except (ValueError, TypeError):
+            pass  # Keep as string if conversion fails
+    elif key in numeric_keys:
+        try:
+            value = float(value)
+        except (ValueError, TypeError):
+            pass  # Keep as string if conversion fails
     return {
         "type": pred_type,
         "key": key,
-        "value": tmp[2],
-    }  # does not work for in, within, geodistance, not, like, isnull and isnotnull predicate values
+        "value": value,
+    }
 
 
 def _check_environ(variable, value):

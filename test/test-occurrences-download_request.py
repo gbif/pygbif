@@ -139,7 +139,7 @@ class TestDownload(unittest.TestCase):
         )
         self.assertDictEqual(
             payload["predicate"]["predicates"][0],
-            {"key": "DECIMAL_LATITUDE", "type": "greaterThan", "value": "50"},
+            {"key": "DECIMAL_LATITUDE", "type": "greaterThan", "value": 50.0},
         )
 
         dl_key, payload = download(
@@ -157,7 +157,7 @@ class TestDownload(unittest.TestCase):
 
         self.assertDictEqual(
             payload["predicate"]["predicates"][0],
-            {"key": "DECIMAL_LATITUDE", "type": "greaterThan", "value": "50"},
+            {"key": "DECIMAL_LATITUDE", "type": "greaterThan", "value": 50.0},
         )
 
     def test_multiple_predicates(self):
@@ -196,3 +196,77 @@ class TestDownload(unittest.TestCase):
             payload["predicate"]["predicates"][0],
             {"type": "within", "geometry": "POLYGON((-82.7 36.9, -85.0 35.6, -81.0 33.5, -79.4 36.3, -79.4 36.3, -82.7 36.9))"},
         )
+
+    def test_taxonkey_integer_conversion(self):
+        """Test that taxonKey values are converted to integers (issue #179)"""
+        dl_key, payload = download(
+            "taxonKey = 3119195",
+            user="dummy",
+            email="dummy",
+            pwd="dummy",
+        )
+        # taxonKey value should be an integer, not a string
+        self.assertDictEqual(
+            payload["predicate"]["predicates"][0],
+            {"key": "TAXON_KEY", "type": "equals", "value": 3119195},
+        )
+        self.assertIsInstance(payload["predicate"]["predicates"][0]["value"], int)
+
+    def test_taxonkey_in_predicate_integer_conversion(self):
+        """Test that taxonKey values in 'in' predicate are converted to integers"""
+        dl_key, payload = download(
+            'taxonKey in ["2387246", "2399391", "2364604"]',
+            user="dummy",
+            email="dummy",
+            pwd="dummy",
+        )
+        # taxonKey values should be integers in the list
+        self.assertDictEqual(
+            payload["predicate"]["predicates"][0],
+            {"key": "TAXON_KEY", "type": "in", "values": [2387246, 2399391, 2364604]},
+        )
+        for val in payload["predicate"]["predicates"][0]["values"]:
+            self.assertIsInstance(val, int)
+
+    def test_year_integer_conversion(self):
+        """Test that year values are converted to integers"""
+        dl_key, payload = download(
+            "year = 2023",
+            user="dummy",
+            email="dummy",
+            pwd="dummy",
+        )
+        self.assertDictEqual(
+            payload["predicate"]["predicates"][0],
+            {"key": "YEAR", "type": "equals", "value": 2023},
+        )
+        self.assertIsInstance(payload["predicate"]["predicates"][0]["value"], int)
+
+    def test_depth_numeric_conversion(self):
+        """Test that depth values are converted to float"""
+        dl_key, payload = download(
+            "depth = 80.5",
+            user="dummy",
+            email="dummy",
+            pwd="dummy",
+        )
+        self.assertDictEqual(
+            payload["predicate"]["predicates"][0],
+            {"key": "DEPTH", "type": "equals", "value": 80.5},
+        )
+        self.assertIsInstance(payload["predicate"]["predicates"][0]["value"], float)
+
+    def test_multiple_predicates_with_integer_keys(self):
+        """Test multiple predicates with integer key conversion"""
+        dl_key, payload = download(
+            ["taxonKey = 7264332", "year = 2020"],
+            user="dummy",
+            email="dummy",
+            pwd="dummy",
+        )
+        temp_pred = payload["predicate"]["predicates"]
+        # Both values should be integers
+        self.assertEqual(temp_pred[0]["value"], 7264332)
+        self.assertEqual(temp_pred[1]["value"], 2020)
+        self.assertIsInstance(temp_pred[0]["value"], int)
+        self.assertIsInstance(temp_pred[1]["value"], int)
