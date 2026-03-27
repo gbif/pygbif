@@ -196,3 +196,86 @@ class TestDownload(unittest.TestCase):
             payload["predicate"]["predicates"][0],
             {"type": "within", "geometry": "POLYGON((-82.7 36.9, -85.0 35.6, -81.0 33.5, -79.4 36.3, -79.4 36.3, -82.7 36.9))"},
         )
+
+    def test_checklistkey_in_payload(self):
+        """Test that checklistKey parameter is included in payload when provided"""
+        checklist_uuid = "7ddf754f-d193-4cc9-b351-99906754a03b"
+        
+        dl_key, payload = download(
+            "taxonKey = 5WZLF",
+            checklistKey=checklist_uuid,
+            user="dummy",
+            email="dummy",
+            pwd="dummy",
+        )
+        
+        self.assertIn("checklistKey", payload)
+        self.assertEqual(payload["checklistKey"], checklist_uuid)
+
+    def test_checklistkey_omitted_when_none(self):
+        """Test that checklistKey is not in payload when checklistKey is not provided (backward compatibility)"""
+        
+        dl_key, payload = download(
+            "taxonKey = 5WZLF",
+            user="dummy",
+            email="dummy",
+            pwd="dummy",
+        )
+        
+        self.assertNotIn("checklistKey", payload)
+
+    def test_checklistkey_with_multiple_predicates(self):
+        """Test that checklistKey works with multiple predicates"""
+        checklist_uuid = "7ddf754f-d193-4cc9-b351-99906754a03b"
+        
+        dl_key, payload = download(
+            ["country = US", "basisOfRecord = PRESERVED_SPECIMEN"],
+            checklistKey=checklist_uuid,
+            user="dummy",
+            email="dummy",
+            pwd="dummy",
+        )
+        
+        self.assertIn("checklistKey", payload)
+        self.assertEqual(payload["checklistKey"], checklist_uuid)
+        self.assertEqual(len(payload["predicate"]["predicates"]), 2)
+
+    def test_checklistkey_with_dict_query(self):
+        """Test that checklistKey works with dictionary queries"""
+        checklist_uuid = "7ddf754f-d193-4cc9-b351-99906754a03b"
+        
+        query = {
+            "type": "and",
+            "predicates": [
+                {"type": "equals", "key": "TAXON_KEY", "value": "5WZLF"},
+                {"type": "equals", "key": "COUNTRY", "value": "US"}
+            ]
+        }
+        
+        dl_key, payload = download(
+            query,
+            checklistKey=checklist_uuid,
+            user="dummy",
+            email="dummy",
+            pwd="dummy",
+        )
+        
+        self.assertIn("checklistKey", payload)
+        self.assertEqual(payload["checklistKey"], checklist_uuid)
+
+    def test_gbif_download_class_with_checklistkey(self):
+        """Test that GbifDownload class properly handles checklistKey parameter"""
+        checklist_uuid = "7ddf754f-d193-4cc9-b351-99906754a03b"
+        
+        req = GbifDownload("name", "email", checklistKey=checklist_uuid)
+        
+        self.assertIn("checklistKey", req.payload)
+        self.assertEqual(req.payload["checklistKey"], checklist_uuid)
+
+    def test_gbif_download_class_without_checklistkey(self):
+        """Test that GbifDownload class doesn't include checklistKey when not provided"""
+        
+        req = GbifDownload("name", "email")
+        
+        self.assertNotIn("checklistKey", req.payload)
+

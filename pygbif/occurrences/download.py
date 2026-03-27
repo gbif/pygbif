@@ -76,7 +76,7 @@ def _check_environ(variable, value):
 
 # download function
 def download(
-    queries, format="SIMPLE_CSV", user=None, pwd=None, email=None, pred_type="and"
+    queries, format="SIMPLE_CSV", user=None, pwd=None, email=None, pred_type="and", checklistKey=None
 ):
     """
     Spin up a download request for GBIF occurrence data.
@@ -95,6 +95,9 @@ def download(
         Set in your env vars with the option ``GBIF_PWD``
     :param email: (character) Email address to receive download notice done
         email. Required. Set in your env vars with the option ``GBIF_EMAIL``
+    :param checklistKey: (character) UUID of a checklist from ChecklistBank to use
+        for taxonomy. If not provided, defaults to the GBIF Backbone Taxonomy.
+        See https://www.gbif.org/developer/occurrence#download for more information.
 
     Argument passed have to be passed as characters (e.g., ``country = US``),
     with a space between key (``country``), operator (``=``), and value (``US``).
@@ -246,6 +249,14 @@ def download(
         # The same query can also be applied in the occ.download function (including download format specified):
         occ.download(['taxonKey in ["2387246", "2399391","2364604"]', 'year !Null', "issue !in ['RECORDED_DATE_INVALID', 'TAXON_MATCH_FUZZY', 'TAXON_MATCH_HIGHERRANK']"], "DWCA")
 
+        # Using a custom checklist for taxonomy
+        # Specify a checklist UUID to use a different taxonomy instead of GBIF Backbone
+        occ.download('taxonKey = 5WZLF', checklistKey='7ddf754f-d193-4cc9-b351-99906754a03b')
+        
+        # The checklistKey parameter can be combined with any query
+        occ.download(['country = US', 'basisOfRecord = PRESERVED_SPECIMEN'], 
+                     checklistKey='7ddf754f-d193-4cc9-b351-99906754a03b')
+
     """
 
     user = _check_environ("GBIF_USER", user)
@@ -253,7 +264,7 @@ def download(
     email = _check_environ("GBIF_EMAIL", email)
 
     # if it is a dictionary then use directly as a query, otherwise if it is a string turn it into a list
-    req = GbifDownload(user, email)
+    req = GbifDownload(user, email, checklistKey=checklistKey)
     req.format = format
 
     if isinstance(queries, dict):
@@ -279,7 +290,7 @@ class GbifDownloadError(Exception):
 
 
 class GbifDownload(object):
-    def __init__(self, creator, email, polygon=None):
+    def __init__(self, creator, email, polygon=None, checklistKey=None):
         """class to setup a JSON doc with the query and POST a request
 
         All predicates (default key-value or iterative based on a list of
@@ -289,6 +300,7 @@ class GbifDownload(object):
         :param creator: user name
         :param email: user email
         :param polygon: Polygon of points to extract data from
+        :param checklistKey: UUID of a checklist to use for taxonomy
         """
         self._format = "SIMPLE_CSV"
         self.predicates = []
@@ -316,6 +328,10 @@ class GbifDownload(object):
             "predicate": self._predicate,
             "format": self._format,
         }
+        
+        if checklistKey:
+            self.payload["checklistKey"] = checklistKey
+            
         self.request_id = None
 
         # prepare the geometry polygon constructions
