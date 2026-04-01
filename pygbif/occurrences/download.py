@@ -108,8 +108,6 @@ def download(
         2. **Predicate-level (Search Filtering)**: The checklistKey parameter can
            also be included within individual predicates to specify the taxonomy 
            to be used for filtering occurrence records for that specific predicate.
-           This allows different predicates to use different taxonomies or override
-           the global setting.
         
         See https://www.gbif.org/developer/occurrence#download for more information.
 
@@ -286,26 +284,6 @@ def download(
             "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b"  # Used for filtering
         }
         occ.download(query_with_predicate_checklist)
-        
-        # Example 3: Combined usage - global and per-predicate
-        # Different predicates can use different taxonomies
-        query_mixed = {
-            "type": "and",
-            "predicates": [
-                {
-                    "type": "equals",
-                    "key": "TAXON_KEY",
-                    "value": "5WZLF",
-                    "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b"  # COL for this predicate
-                },
-                {
-                    "type": "equals",
-                    "key": "COUNTRY",
-                    "value": "US"
-                }
-            ]
-        }
-        occ.download(query_mixed, checklistKey='another-checklist-uuid')  # Global default
 
     """
 

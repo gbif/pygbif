@@ -75,7 +75,7 @@ Example usage:
        
     2. **Predicate-level (Search Filtering)**: Included within individual predicates 
        to specify the taxonomy to be used for filtering occurrence records for that 
-       specific predicate. This allows different predicates to use different taxonomies.
+       specific predicate.
     
     Examples:
     
