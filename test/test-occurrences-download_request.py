@@ -295,7 +295,6 @@ class TestDownload(unittest.TestCase):
         
         The checklistKey parameter can be included within individual predicates
         to specify the taxonomy to be used for filtering occurrence records.
-        This is separate from the root-level checklistKey which applies globally.
         """
         checklist_uuid = "7ddf754f-d193-4cc9-b351-99906754a03b"
         another_checklist = "12345678-1234-1234-1234-123456789abc"
