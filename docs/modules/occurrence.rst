@@ -36,6 +36,12 @@ Example usage:
     occ.download('basisOfRecord = PRESERVED_SPECIMEN')
     occ.download('taxonKey = 3119195')
     occ.download('decimalLatitude > 50')
+    
+    # Using custom taxonomy checklist
+    # By default, GBIF Backbone Taxonomy is used
+    # Specify checklistKey to use a different checklist (e.g., Catalogue of Life)
+    occ.download('taxonKey = 5WZLF', checklistKey='7ddf754f-d193-4cc9-b351-99906754a03b')
+    
     occ.download_list(user = "sckott", limit = 5)
     occ.download_meta(key = "0000099-140929101555934")
     occ.download_get("0000066-140928181241064")
@@ -53,6 +59,40 @@ Example usage:
         export GBIF_PWD="your_gbif_password"
 
     You can also pass credentials directly via ``user=`` and ``pwd=`` arguments.
+
+.. note::
+    **Custom Taxonomy Checklists (checklistKey)**
+    
+    Users can specify the taxonomy to be included in occurrence downloads by 
+    adding the ``checklistKey`` parameter. By default, the GBIF Backbone Taxonomy 
+    will be used if no ``checklistKey`` is supplied.
+    
+    The ``checklistKey`` parameter accepts a UUID of a checklist from ChecklistBank
+    and can be used in two ways:
+    
+    1. **Root-level (Global)**: Added as a parameter to the download function, it 
+       applies globally to all predicates in the download request.
+       
+    2. **Predicate-level (Search Filtering)**: Included within individual predicates 
+       to specify the taxonomy to be used for filtering occurrence records for that 
+       specific predicate. This allows different predicates to use different taxonomies.
+    
+    Examples:
+    
+    .. code-block:: python
+    
+        # Root-level: applies to entire download
+        occ.download('taxonKey = 5WZLF', 
+                     checklistKey='7ddf754f-d193-4cc9-b351-99906754a03b')
+        
+        # Predicate-level: for filtering specific predicates
+        query = {
+            "type": "equals",
+            "key": "TAXON_KEY",
+            "value": "5WZLF",
+            "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b"
+        }
+        occ.download(query)
 
 
 occurrences API

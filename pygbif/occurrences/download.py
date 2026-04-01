@@ -96,7 +96,21 @@ def download(
     :param email: (character) Email address to receive download notice done
         email. Required. Set in your env vars with the option ``GBIF_EMAIL``
     :param checklistKey: (character) UUID of a checklist from ChecklistBank to use
-        for taxonomy. If not provided, defaults to the GBIF Backbone Taxonomy.
+        for specifying the taxonomy to be included in occurrence downloads.
+        If not provided, the GBIF Backbone Taxonomy will be used by default.
+        
+        **Two ways to use checklistKey:**
+        
+        1. **Root-level (Global)**: When provided as a parameter to the download()
+           function, it is added at the root level of the download request and 
+           applies to all predicates globally.
+           
+        2. **Predicate-level (Search Filtering)**: The checklistKey parameter can
+           also be included within individual predicates to specify the taxonomy 
+           to be used for filtering occurrence records for that specific predicate.
+           This allows different predicates to use different taxonomies or override
+           the global setting.
+        
         See https://www.gbif.org/developer/occurrence#download for more information.
 
     Argument passed have to be passed as characters (e.g., ``country = US``),
@@ -250,12 +264,48 @@ def download(
         occ.download(['taxonKey in ["2387246", "2399391","2364604"]', 'year !Null', "issue !in ['RECORDED_DATE_INVALID', 'TAXON_MATCH_FUZZY', 'TAXON_MATCH_HIGHERRANK']"], "DWCA")
 
         # Using a custom checklist for taxonomy
-        # Specify a checklist UUID to use a different taxonomy instead of GBIF Backbone
+        # Users can specify the taxonomy to be included in occurrence downloads
+        # by adding the checklistKey parameter to the download request.
+        # By default, the GBIF Backbone will be used if no checklistKey is supplied.
+        
+        # Example 1: Root-level checklistKey (applies globally)
+        # Download using Catalogue of Life checklist with COL-style taxon key
         occ.download('taxonKey = 5WZLF', checklistKey='7ddf754f-d193-4cc9-b351-99906754a03b')
         
         # The checklistKey parameter can be combined with any query
         occ.download(['country = US', 'basisOfRecord = PRESERVED_SPECIMEN'], 
                      checklistKey='7ddf754f-d193-4cc9-b351-99906754a03b')
+        
+        # Example 2: Predicate-level checklistKey (for search filtering)
+        # The checklistKey can be included within predicates to specify the taxonomy
+        # to be used for filtering occurrence records for that specific predicate
+        query_with_predicate_checklist = {
+            "type": "equals",
+            "key": "TAXON_KEY",
+            "value": "5WZLF",
+            "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b"  # Used for filtering
+        }
+        occ.download(query_with_predicate_checklist)
+        
+        # Example 3: Combined usage - global and per-predicate
+        # Different predicates can use different taxonomies
+        query_mixed = {
+            "type": "and",
+            "predicates": [
+                {
+                    "type": "equals",
+                    "key": "TAXON_KEY",
+                    "value": "5WZLF",
+                    "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b"  # COL for this predicate
+                },
+                {
+                    "type": "equals",
+                    "key": "COUNTRY",
+                    "value": "US"
+                }
+            ]
+        }
+        occ.download(query_mixed, checklistKey='another-checklist-uuid')  # Global default
 
     """
 
@@ -300,7 +350,12 @@ class GbifDownload(object):
         :param creator: user name
         :param email: user email
         :param polygon: Polygon of points to extract data from
-        :param checklistKey: UUID of a checklist to use for taxonomy
+        :param checklistKey: UUID of a checklist from ChecklistBank to specify
+            the taxonomy to be included in the occurrence download. If not provided,
+            the GBIF Backbone Taxonomy will be used by default. The checklistKey is
+            added at the root level and applies globally to all predicates. Users can
+            also include checklistKey within individual predicates to specify the
+            taxonomy for filtering occurrence records for specific predicates.
         """
         self._format = "SIMPLE_CSV"
         self.predicates = []
