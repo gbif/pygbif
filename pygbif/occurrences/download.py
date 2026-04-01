@@ -330,10 +330,7 @@ class GbifDownload(object):
         :param polygon: Polygon of points to extract data from
         :param checklistKey: UUID of a checklist from ChecklistBank to specify
             the taxonomy to be included in the occurrence download. If not provided,
-            the GBIF Backbone Taxonomy will be used by default. The checklistKey is
-            added at the root level and applies globally to all predicates. Users can
-            also include checklistKey within individual predicates to specify the
-            taxonomy for filtering occurrence records for specific predicates.
+            the GBIF Backbone Taxonomy will be used by default. 
         """
         self._format = "SIMPLE_CSV"
         self.predicates = []
