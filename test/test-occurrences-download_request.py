@@ -196,3 +196,137 @@ class TestDownload(unittest.TestCase):
             payload["predicate"]["predicates"][0],
             {"type": "within", "geometry": "POLYGON((-82.7 36.9, -85.0 35.6, -81.0 33.5, -79.4 36.3, -79.4 36.3, -82.7 36.9))"},
         )
+
+    def test_checklistkey_in_payload(self):
+        """Test that checklistKey parameter is included at root level"""
+        checklist_uuid = "7ddf754f-d193-4cc9-b351-99906754a03b"
+        
+        dl_key, payload = download(
+            "taxonKey = 5WZLF",
+            checklistKey=checklist_uuid,
+            user="dummy",
+            email="dummy",
+            pwd="dummy",
+        )
+        
+        # checklistKey should be at root level
+        self.assertIn("checklistKey", payload)
+        self.assertEqual(payload["checklistKey"], checklist_uuid)
+        
+        # checklistKey should NOT be automatically injected into predicates
+        # (GBIF servers will use the global one)
+        self.assertNotIn("checklistKey", payload["predicate"]["predicates"][0])
+
+    def test_checklistkey_omitted_when_none(self):
+        """Test that checklistKey is not in payload when checklistKey is not provided (backward compatibility)"""
+        
+        dl_key, payload = download(
+            "taxonKey = 5WZLF",
+            user="dummy",
+            email="dummy",
+            pwd="dummy",
+        )
+        
+        self.assertNotIn("checklistKey", payload)
+
+    def test_checklistkey_with_multiple_predicates(self):
+        """Test that global checklistKey is at root level only"""
+        checklist_uuid = "7ddf754f-d193-4cc9-b351-99906754a03b"
+        
+        dl_key, payload = download(
+            ["taxonKey = 5WZLF", "country = US"],
+            checklistKey=checklist_uuid,
+            user="dummy",
+            email="dummy",
+            pwd="dummy",
+        )
+        
+        # checklistKey should be at root level
+        self.assertIn("checklistKey", payload)
+        self.assertEqual(payload["checklistKey"], checklist_uuid)
+        
+        # Should have 2 predicates
+        self.assertEqual(len(payload["predicate"]["predicates"]), 2)
+        
+        # checklistKey should NOT be in individual predicates (only at root level)
+        for pred in payload["predicate"]["predicates"]:
+            self.assertNotIn("checklistKey", pred)
+
+    def test_checklistkey_with_dict_query(self):
+        """Test that global checklistKey works with dictionary queries"""
+        checklist_uuid = "7ddf754f-d193-4cc9-b351-99906754a03b"
+        
+        query = {
+            "type": "and",
+            "predicates": [
+                {"type": "equals", "key": "TAXON_KEY", "value": "5WZLF"},
+                {"type": "equals", "key": "COUNTRY", "value": "US"}
+            ]
+        }
+        
+        dl_key, payload = download(
+            query,
+            checklistKey=checklist_uuid,
+            user="dummy",
+            email="dummy",
+            pwd="dummy",
+        )
+        
+        # checklistKey should be at root level
+        self.assertIn("checklistKey", payload)
+        self.assertEqual(payload["checklistKey"], checklist_uuid)
+        
+        # checklistKey should NOT be in individual predicates
+        for pred in payload["predicate"]["predicates"]:
+            self.assertNotIn("checklistKey", pred)
+
+    def test_gbif_download_class_with_checklistkey(self):
+        """Test that GbifDownload class stores checklistKey at root level only"""
+        checklist_uuid = "7ddf754f-d193-4cc9-b351-99906754a03b"
+        
+        req = GbifDownload("name", "email", checklistKey=checklist_uuid)
+        
+        # checklistKey should be at root level
+        self.assertIn("checklistKey", req.payload)
+        self.assertEqual(req.payload["checklistKey"], checklist_uuid)
+        
+    def test_manual_checklistkey_in_predicate(self):
+        """Test that checklistKey can be used in predicates for search filtering
+        
+        The checklistKey parameter can be included within individual predicates
+        to specify the taxonomy to be used for filtering occurrence records.
+        """
+        checklist_uuid = "7ddf754f-d193-4cc9-b351-99906754a03b"
+        another_checklist = "12345678-1234-1234-1234-123456789abc"
+        
+        # User manually specifies checklistKey in a predicate for search filtering
+        query = {
+            "type": "equals",
+            "key": "TAXON_KEY",
+            "value": "5WZLF",
+            "checklistKey": another_checklist  # Predicate-level for filtering
+        }
+        
+        dl_key, payload = download(
+            query,
+            checklistKey=checklist_uuid,  # Global checklistKey (root level)
+            user="dummy",
+            email="dummy",
+            pwd="dummy",
+        )
+        
+        # Global checklistKey should be at root level
+        self.assertIn("checklistKey", payload)
+        self.assertEqual(payload["checklistKey"], checklist_uuid)
+        
+        # Predicate-level checklistKey should be preserved for filtering
+        self.assertIn("checklistKey", payload["predicate"])
+        self.assertEqual(payload["predicate"]["checklistKey"], another_checklist)
+
+    def test_gbif_download_class_without_checklistkey(self):
+        """Test that GbifDownload class doesn't include checklistKey when not provided"""
+        
+        req = GbifDownload("name", "email")
+        
+        self.assertNotIn("checklistKey", req.payload)
+
