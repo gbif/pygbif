@@ -1,5 +1,10 @@
 Changelog
 =========
+
+Unreleased
+----------
+- added support for ``checklistKey`` parameter in ``occurrences.download`` to specify taxonomy for download content. When provided, uses a specific checklist from ChecklistBank instead of the GBIF Backbone Taxonomy. See https://www.gbif.org/developer/occurrence#download for more information.
+
 0.6.5 (2024-10-28)
 ------------------
 - added support for `occurrences.download_citation` :issue:`158`
