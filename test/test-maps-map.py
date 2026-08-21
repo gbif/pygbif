@@ -61,6 +61,7 @@ class TestMapsClass(unittest.TestCase):
             pygbif.maps.map(bin="foobar")
             pygbif.maps.map(style="foobar")
 
+    @vcr.use_cassette("test/vcr_cassettes/test_map_numeric_key_warning.yaml")
     def test_map_numeric_key_deprecation_warning(self):
         "maps.map - numeric taxonKey triggers deprecation warning"
         with warnings.catch_warnings(record=True) as w:
@@ -73,6 +74,7 @@ class TestMapsClass(unittest.TestCase):
             # Should switch to GBIF Backbone (checklistKey=None)
             assert "checklistKey" not in res.response.request.path_url
 
+    @vcr.use_cassette("test/vcr_cassettes/test_map_numeric_key_explicit_checklistkey.yaml")
     def test_map_numeric_key_explicit_checklistkey_no_warning(self):
         "maps.map - numeric taxonKey with explicit checklistKey doesn't warn"
         with warnings.catch_warnings(record=True) as w:

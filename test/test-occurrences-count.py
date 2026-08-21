@@ -97,6 +97,7 @@ def test_count_publishingcountries():
     assert int == list(res.values())[0].__class__
 
 
+@vcr.use_cassette("test/vcr_cassettes/test_count_numeric_key_warning.yaml")
 def test_count_numeric_key_deprecation_warning():
     "occurrences.count - numeric taxonKey triggers deprecation warning"
     with warnings.catch_warnings(record=True) as w:
@@ -109,6 +110,7 @@ def test_count_numeric_key_deprecation_warning():
         assert int == res.__class__
 
 
+@vcr.use_cassette("test/vcr_cassettes/test_count_numeric_key_explicit_checklistkey.yaml")
 def test_count_numeric_key_explicit_checklistkey_no_warning():
     "occurrences.count - numeric taxonKey with explicit checklistKey doesn't warn"
     with warnings.catch_warnings(record=True) as w:
@@ -120,6 +122,7 @@ def test_count_numeric_key_explicit_checklistkey_no_warning():
         assert int == res.__class__
 
 
+@vcr.use_cassette("test/vcr_cassettes/test_count_datasets_numeric_key_warning.yaml")
 def test_count_datasets_numeric_key_deprecation_warning():
     "occurrences.count_datasets - numeric taxonKey triggers deprecation warning"
     with warnings.catch_warnings(record=True) as w:
