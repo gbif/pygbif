@@ -1,6 +1,7 @@
 import time
 import requests
 import unittest
+import warnings
 
 from pygbif.occurrences.download import GbifDownload, download
 
@@ -163,6 +164,7 @@ class TestDownload(unittest.TestCase):
     def test_multiple_predicates(self):
         dl_key, payload = download(
             ["taxonKey = 7264332", "hasCoordinate = TRUE"],
+            checklistKey=None,  # Use GBIF Backbone for numeric keys
             user="dummy",
             email="dummy",
             pwd="dummy",
@@ -179,6 +181,7 @@ class TestDownload(unittest.TestCase):
         dl_key, payload = download(
             ["depth = 80", "taxonKey = 2343454"],
             pred_type="or",
+            checklistKey=None,  # Use GBIF Backbone for numeric keys
             user="dummy",
             email="dummy",
             pwd="dummy",
@@ -217,8 +220,8 @@ class TestDownload(unittest.TestCase):
         # (GBIF servers will use the global one)
         self.assertNotIn("checklistKey", payload["predicate"]["predicates"][0])
 
-    def test_checklistkey_omitted_when_none(self):
-        """Test that checklistKey is not in payload when checklistKey is not provided (backward compatibility)"""
+    def test_checklistkey_col_default_for_alphanumeric_keys(self):
+        """Test that COL Extended Release is used by default for alphanumeric taxon keys"""
         
         dl_key, payload = download(
             "taxonKey = 5WZLF",
@@ -227,7 +230,9 @@ class TestDownload(unittest.TestCase):
             pwd="dummy",
         )
         
-        self.assertNotIn("checklistKey", payload)
+        # Should use COL Extended Release by default for alphanumeric keys
+        self.assertIn("checklistKey", payload)
+        self.assertEqual(payload["checklistKey"], "7ddf754f-d193-4cc9-b351-99906754a03b")
 
     def test_checklistkey_with_multiple_predicates(self):
         """Test that global checklistKey is at root level only"""
@@ -329,4 +334,107 @@ class TestDownload(unittest.TestCase):
         req = GbifDownload("name", "email")
         
         self.assertNotIn("checklistKey", req.payload)
+
+    def test_numeric_key_deprecation_warning(self):
+        """Test that numeric taxon keys trigger deprecation warning and use GBIF Backbone"""
+        with warnings.catch_warnings(record=True) as w:
+            warnings.simplefilter("always")
+            
+            dl_key, payload = download(
+                "taxonKey = 3119195",
+                user="dummy",
+                email="dummy",
+                pwd="dummy",
+            )
+            
+            # Should have a deprecation warning
+            self.assertEqual(len(w), 1)
+            self.assertTrue(issubclass(w[0].category, DeprecationWarning))
+            self.assertIn("Numeric taxon keys", str(w[0].message))
+            
+            # Should NOT include checklistKey in payload (uses GBIF Backbone)
+            self.assertNotIn("checklistKey", payload)
+
+    def test_numeric_key_explicit_checklistkey_no_warning(self):
+        """Test that explicit checklistKey=None with numeric keys doesn't warn"""
+        with warnings.catch_warnings(record=True) as w:
+            warnings.simplefilter("always")
+            
+            dl_key, payload = download(
+                "taxonKey = 3119195",
+                checklistKey=None,
+                user="dummy",
+                email="dummy",
+                pwd="dummy",
+            )
+            
+            # Should NOT have a deprecation warning (user explicitly set checklistKey)
+            self.assertEqual(len(w), 0)
+            
+            # Should NOT include checklistKey in payload
+            self.assertNotIn("checklistKey", payload)
+
+    def test_numeric_specieskey_deprecation_warning(self):
+        """Test that numeric speciesKey also triggers the warning"""
+        with warnings.catch_warnings(record=True) as w:
+            warnings.simplefilter("always")
+            
+            dl_key, payload = download(
+                "speciesKey = 2435098",
+                user="dummy",
+                email="dummy",
+                pwd="dummy",
+            )
+            
+            # Should have a deprecation warning
+            self.assertEqual(len(w), 1)
+            self.assertTrue(issubclass(w[0].category, DeprecationWarning))
+            
+            # Should NOT include checklistKey in payload
+            self.assertNotIn("checklistKey", payload)
+
+    def test_numeric_key_in_dict_query_deprecation(self):
+        """Test that numeric keys in dict queries also trigger warning"""
+        with warnings.catch_warnings(record=True) as w:
+            warnings.simplefilter("always")
+            
+            query = {
+                "type": "equals",
+                "key": "TAXON_KEY",
+                "value": "7264332"
+            }
+            
+            dl_key, payload = download(
+                query,
+                user="dummy",
+                email="dummy",
+                pwd="dummy",
+            )
+            
+            # Should have a deprecation warning
+            self.assertEqual(len(w), 1)
+            self.assertTrue(issubclass(w[0].category, DeprecationWarning))
+            
+            # Should NOT include checklistKey in payload
+            self.assertNotIn("checklistKey", payload)
+
+    def test_multiple_predicates_with_numeric_key(self):
+        """Test that numeric keys in one of multiple predicates triggers warning"""
+        with warnings.catch_warnings(record=True) as w:
+            warnings.simplefilter("always")
+            
+            dl_key, payload = download(
+                ["taxonKey = 7264332", "country = US"],
+                user="dummy",
+                email="dummy",
+                pwd="dummy",
+            )
+            
+            # Should have a deprecation warning
+            self.assertEqual(len(w), 1)
+            self.assertTrue(issubclass(w[0].category, DeprecationWarning))
+            
+            # Should NOT include checklistKey in payload
+            self.assertNotIn("checklistKey", payload)
+
 
