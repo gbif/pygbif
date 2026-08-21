@@ -1,6 +1,7 @@
 """Tests for maps module - maps"""
 import pytest
 import unittest
+import warnings
 import vcr
 import requests
 import matplotlib
@@ -59,3 +60,27 @@ class TestMapsClass(unittest.TestCase):
             pygbif.maps.map(srs="foobar")
             pygbif.maps.map(bin="foobar")
             pygbif.maps.map(style="foobar")
+
+    def test_map_numeric_key_deprecation_warning(self):
+        "maps.map - numeric taxonKey triggers deprecation warning"
+        with warnings.catch_warnings(record=True) as w:
+            warnings.simplefilter("always")
+            res = pygbif.maps.map(taxonKey=2435098)
+            assert len(w) == 1
+            assert issubclass(w[-1].category, DeprecationWarning)
+            assert "Numeric taxonKey detected" in str(w[-1].message)
+            assert "gbif_to_col" in str(w[-1].message)
+            # Should switch to GBIF Backbone (checklistKey=None)
+            assert "checklistKey" not in res.response.request.path_url
+
+    def test_map_numeric_key_explicit_checklistkey_no_warning(self):
+        "maps.map - numeric taxonKey with explicit checklistKey doesn't warn"
+        with warnings.catch_warnings(record=True) as w:
+            warnings.simplefilter("always")
+            # Use numeric key with explicit checklistKey=None (GBIF Backbone)
+            res = pygbif.maps.map(taxonKey=2435098, checklistKey=None)
+            # Filter out non-DeprecationWarning warnings
+            deprecation_warnings = [x for x in w if issubclass(x.category, DeprecationWarning)]
+            assert len(deprecation_warnings) == 0
+            # Should NOT have checklistKey in URL (None means GBIF Backbone)
+            assert "checklistKey" not in res.response.request.path_url
