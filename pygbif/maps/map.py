@@ -26,6 +26,7 @@ def map(
     datasetKey=None,
     year=None,
     basisOfRecord=None,
+    checklistKey="7ddf754f-d193-4cc9-b351-99906754a03b",
     **kwargs
 ):
     """
@@ -84,6 +85,10 @@ def map(
         whereas ``1991,1990`` wouldn't work)
     :param publishingCountry: [str] The 2-letter country code (as per 
         ISO-3166-1) of the country in which the occurrence was recorded.
+    :param checklistKey: [str] The UUID of the checklist (taxonomy) to use. 
+        Defaults to the Catalogue of Life (COL) Extended Release 
+        (7ddf754f-d193-4cc9-b351-99906754a03b). Set to ``None`` to use the 
+        GBIF backbone taxonomy.
 
     :return: An object of class GbifMap
 
@@ -160,6 +165,7 @@ def map(
         "datasetKey": datasetKey,
         "year": year,
         "basisOfRecord": basisOfRecord,
+        "checklistKey": checklistKey,
     }
     kw = {key: kwargs[key] for key in kwargs if key not in requests_argset}
     if kw is not None:
