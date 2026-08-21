@@ -9,12 +9,12 @@ interactions:
       Connection:
       - keep-alive
       user-agent:
-      - python-requests/2.31.0,pygbif/0.6.4
+      - python-requests/2.31.0,pygbif/0.6.5
     method: GET
-    uri: https://api.gbif.org/v1/occurrence/count?taxonKey=3329049
+    uri: https://api.gbif.org/v1/occurrence/count?taxonKey=5TYZ9&checklistKey=7ddf754f-d193-4cc9-b351-99906754a03b
   response:
     body:
-      string: '765'
+      string: '319220'
     headers:
       Accept-Ranges:
       - bytes
@@ -24,28 +24,28 @@ interactions:
       - public, max-age=600
       Connection:
       - keep-alive
+      Content-Length:
+      - '6'
       Content-Type:
       - application/json
       Date:
-      - Fri, 04 Oct 2024 07:00:00 GMT
+      - Fri, 21 Aug 2026 09:57:46 GMT
       Expires:
       - '0'
       Pragma:
       - no-cache
-      Transfer-Encoding:
-      - chunked
       Vary:
       - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
       Via:
-      - 1.1 varnish (Varnish/6.0)
+      - 1.1 prodapicache2-vh.gbif.org (Varnish/9.0)
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '690717278'
+      - '112974997351'
       X-XSS-Protection:
-      - 1; mode=block
+      - '0'
     status:
       code: 200
       message: OK
