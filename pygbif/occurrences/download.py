@@ -104,6 +104,18 @@ def _has_numeric_taxon_keys(queries):
         """Recursively check a predicate dictionary for numeric taxon keys"""
         if not isinstance(pred, dict):
             return False
+        
+        # Skip this predicate if it already has its own checklistKey specified
+        # (user has made an explicit choice about taxonomy for this predicate)
+        if "checklistKey" in pred:
+            # Still need to check nested predicates
+            if "predicate" in pred:
+                if check_predicate_dict(pred["predicate"]):
+                    return True
+            if "predicates" in pred and isinstance(pred["predicates"], list):
+                if any(check_predicate_dict(p) for p in pred["predicates"]):
+                    return True
+            return False
             
         # Check if this predicate has a numeric taxon key
         if "key" in pred and pred["key"] in TAXON_KEYS:

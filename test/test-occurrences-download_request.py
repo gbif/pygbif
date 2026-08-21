@@ -437,4 +437,31 @@ class TestDownload(unittest.TestCase):
             # Should NOT include checklistKey in payload
             self.assertNotIn("checklistKey", payload)
 
+    def test_predicate_level_checklistkey_no_warning(self):
+        """Test that numeric keys with predicate-level checklistKey don't trigger warning"""
+        with warnings.catch_warnings(record=True) as w:
+            warnings.simplefilter("always")
+            
+            # Predicate with numeric key but explicit checklistKey at predicate level
+            query = {
+                "type": "equals",
+                "key": "TAXON_KEY",
+                "value": "3119195",  # Numeric key
+                "checklistKey": "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c"  # Explicit GBIF Backbone
+            }
+            
+            dl_key, payload = download(
+                query,
+                user="dummy",
+                email="dummy",
+                pwd="dummy",
+            )
+            
+            # Should NOT have a deprecation warning (predicate has explicit checklistKey)
+            deprecation_warnings = [warning for warning in w if issubclass(warning.category, DeprecationWarning)]
+            self.assertEqual(len(deprecation_warnings), 0)
+            
+            # Should have COL as default checklistKey at root level
+            self.assertEqual(payload["checklistKey"], "7ddf754f-d193-4cc9-b351-99906754a03b")
+
 
