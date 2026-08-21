@@ -69,7 +69,7 @@ class TestGbifClass(unittest.TestCase):
     def test_add_iterative_predicate(self):
         """the the predicate addition of an iterative sequence"""
         req = GbifDownload("name", "email")
-        req.add_iterative_predicate("TAXONKEY", [3189866, 2498252])
+        req.add_iterative_predicate("TAXONKEY", ["5WZLF", "75F9"])
         self.assertIsInstance(req.payload["predicate"]["predicates"], list)
         self.assertEqual(len(req.payload["predicate"]["predicates"]), 1)
         self.assertIsInstance(req.payload["predicate"]["predicates"][0], dict)
@@ -163,8 +163,7 @@ class TestDownload(unittest.TestCase):
 
     def test_multiple_predicates(self):
         dl_key, payload = download(
-            ["taxonKey = 7264332", "hasCoordinate = TRUE"],
-            checklistKey=None,  # Use GBIF Backbone for numeric keys
+            ["taxonKey = 5WZLF", "hasCoordinate = TRUE"],
             user="dummy",
             email="dummy",
             pwd="dummy",
@@ -179,9 +178,8 @@ class TestDownload(unittest.TestCase):
 
     def test_alternative_main_type(self):
         dl_key, payload = download(
-            ["depth = 80", "taxonKey = 2343454"],
+            ["depth = 80", "taxonKey = 7B3XY"],
             pred_type="or",
-            checklistKey=None,  # Use GBIF Backbone for numeric keys
             user="dummy",
             email="dummy",
             pwd="dummy",
