@@ -1,4 +1,5 @@
 import re
+import warnings
 
 from pygbif.gbifutils import bool2str, bn, requests_argset, gbif_GET, gbif_baseurl
 
@@ -25,6 +26,10 @@ def name_lookup(
 ):
     """
 	Lookup names in all taxonomies in GBIF.
+
+	.. deprecated::
+	   This function primarily searches the outdated GBIF Backbone Taxonomy.
+	   Use the datasetKey parameter to search other checklists.
 
 	This service uses fuzzy lookup so that you can put in partial names and
 	you should get back those things that match. See examples below.
@@ -146,6 +151,13 @@ def name_lookup(
 			# Lookup by datasetKey
 			species.name_lookup(datasetKey='3f8a1297-3259-4700-91fc-acc4170b27ce')
 	"""
+    warnings.warn(
+        "name_lookup() primarily searches the outdated GBIF Backbone Taxonomy. "
+        "Use the datasetKey parameter to search other checklists.",
+        DeprecationWarning,
+        stacklevel=2
+    )
+    
     args = {
         "q": q,
         "rank": rank,
