@@ -6,6 +6,7 @@ GBIF taxonomic names APIs methods
 * `name_usage`: Lookup details for specific names in all taxonomies in GBIF
 * `name_lookup`: Lookup names in all taxonomies in GBIF
 * `name_parser`: Parse taxon names using the GBIF name parser
+* `gbif_to_col`: Convert GBIF Backbone taxon keys to COL Extended Release keys
 
 If you are looking for behavior similar to the GBIF website when you search
 for a name, `name_backbone` may be what you want. For example, a search for
@@ -18,4 +19,5 @@ from .name_suggest import name_suggest
 from .name_backbone import name_backbone
 from .name_lookup import name_lookup
 from .name_usage import name_usage
+from .gbif_to_col import gbif_to_col
 from .name_parser import name_parser
