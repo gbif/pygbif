@@ -2,13 +2,18 @@
 These tests make actual requests to the GBIF API and require valid credentials.
 They verify the COL Extended Release migration and backward compatibility.
 
-NOTE: These tests are slow (~2-3 seconds per test) due to API rate limits and 
+NOTE: These tests use VCR cassettes to record API responses. Once cassettes are
+recorded, tests can run without credentials. To re-record cassettes, delete the
+cassette files and run with valid GBIF credentials.
+
+These tests are slow (~2-3 seconds per test) due to API rate limits and 
 download cancellation delays. GBIF limits users to 3 simultaneous downloads.
 """
 import pytest
 import os
 import warnings
 import time
+import vcr
 from pygbif import occurrences as occ
 
 # Skip these tests in CI environments - they require real credentials and make real API calls
@@ -44,6 +49,7 @@ class TestDownloadLive:
         if self.download_keys:
             time.sleep(1)
     
+    @vcr.use_cassette("test/vcr_cassettes/test_download_live_col_default.yaml", filter_headers=["authorization"])
     def test_col_default_with_alphanumeric_key(self):
         """Test that COL Extended Release is used by default with alphanumeric taxon keys"""
         # Use a COL alphanumeric key
@@ -62,6 +68,7 @@ class TestDownloadLive:
         
         print(f"✓ COL default test passed. Download key: {download_key}")
     
+    @vcr.use_cassette("test/vcr_cassettes/test_download_live_numeric_key.yaml", filter_headers=["authorization"])
     def test_numeric_key_automatic_gbif_backbone(self):
         """Test that numeric keys automatically use GBIF Backbone with deprecation warning"""
         with warnings.catch_warnings(record=True) as w:
@@ -88,6 +95,7 @@ class TestDownloadLive:
             print(f"✓ Numeric key test passed. Download key: {download_key}")
             print(f"  Warning message: {w[0].message}")
     
+    @vcr.use_cassette("test/vcr_cassettes/test_download_live_explicit_col.yaml", filter_headers=["authorization"])
     def test_explicit_col_checklist(self):
         """Test explicitly specifying COL Extended Release checklistKey"""
         download_key, payload = occ.download(
@@ -106,6 +114,7 @@ class TestDownloadLive:
         
         print(f"✓ Explicit COL test passed. Download key: {download_key}")
     
+    @vcr.use_cassette("test/vcr_cassettes/test_download_live_explicit_backbone.yaml", filter_headers=["authorization"])
     def test_explicit_gbif_backbone_no_warning(self):
         """Test that explicitly setting checklistKey=None with numeric keys doesn't warn"""
         with warnings.catch_warnings(record=True) as w:
@@ -131,6 +140,7 @@ class TestDownloadLive:
             
             print(f"✓ Explicit GBIF Backbone test passed. Download key: {download_key}")
     
+    @vcr.use_cassette("test/vcr_cassettes/test_download_live_mixed_predicates.yaml", filter_headers=["authorization"])
     def test_mixed_predicates_with_col(self):
         """Test multiple predicates with COL keys work correctly"""
         download_key, payload = occ.download(
@@ -153,6 +163,7 @@ class TestDownloadLive:
         
         print(f"✓ Mixed predicates test passed. Download key: {download_key}")
     
+    @vcr.use_cassette("test/vcr_cassettes/test_download_live_dict_predicate.yaml", filter_headers=["authorization"])
     def test_dict_predicate_with_col(self):
         """Test dict-style predicates with COL keys work correctly"""
         query = {
@@ -184,6 +195,7 @@ class TestDownloadLive:
         
         print(f"✓ Dict predicate test passed. Download key: {download_key}")
     
+    @vcr.use_cassette("test/vcr_cassettes/test_download_live_predicate_checklist.yaml", filter_headers=["authorization"])
     def test_predicate_level_checklistkey(self):
         """Test predicate-level checklistKey works with real API"""
         query = {
@@ -213,6 +225,7 @@ class TestDownloadLive:
             
             print(f"✓ Predicate-level checklistKey test passed. Download key: {download_key}")
     
+    @vcr.use_cassette("test/vcr_cassettes/test_download_live_status_check.yaml", filter_headers=["authorization"])
     def test_download_status_check(self):
         """Test that we can check status of a download with COL"""
         # Create a download
