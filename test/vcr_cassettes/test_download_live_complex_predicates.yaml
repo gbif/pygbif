@@ -1,8 +1,16 @@
 interactions:
 - request:
     body: '{"creator": "jwaller", "notification_address": ["jwaller@gbif.org"], "sendNotification":
-      true, "predicate": {"type": "and", "predicates": [{"type": "equals", "key":
-      "TAXON_KEY", "value": "2435098", "checklistKey": "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c"}]},
+      true, "predicate": {"type": "and", "predicates": [{"type": "or", "predicates":
+      [{"type": "equals", "key": "TAXON_KEY", "value": "5WZLF", "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b"},
+      {"type": "equals", "key": "SPECIES_KEY", "value": "2435098", "checklistKey":
+      "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c"}, {"type": "equals", "key": "FAMILY_KEY",
+      "value": "623LY", "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b"}, {"type":
+      "equals", "key": "TAXON_KEY", "value": "3119195", "checklistKey": "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c"}]},
+      {"type": "equals", "key": "COUNTRY", "value": "VA"}, {"type": "or", "predicates":
+      [{"type": "equals", "key": "HAS_COORDINATE", "value": "TRUE"}, {"type": "equals",
+      "key": "GENUS_KEY", "value": "5WZ4Y", "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b"}]},
+      {"type": "equals", "key": "BASIS_OF_RECORD", "value": "PRESERVED_SPECIMEN"}]},
       "format": "SIMPLE_CSV", "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b"}'
     headers:
       Accept-Encoding:
@@ -10,7 +18,7 @@ interactions:
       Connection:
       - keep-alive
       Content-Length:
-      - '336'
+      - '1053'
       accept:
       - application/json
       content-type:
@@ -22,7 +30,7 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAAzMwMDYzNDbXNTIzsDAwMzA3sTQwNTI3BwBsfSktFwAAAA==
+        H4sIAAAAAAAAAzMwMDYzNLbQNTIzsDAwMzA3sTQwNTI3BwC5TqvrFwAAAA==
     headers:
       Age:
       - '0'
@@ -37,7 +45,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Tue, 25 Aug 2026 10:26:35 GMT
+      - Tue, 25 Aug 2026 10:26:54 GMT
       Expires:
       - '0'
       Pragma:
@@ -51,7 +59,7 @@ interactions:
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '117374851129'
+      - '117246797148'
       X-XSS-Protection:
       - '0'
     status:

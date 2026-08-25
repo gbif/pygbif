@@ -2,16 +2,17 @@ interactions:
 - request:
     body: '{"creator": "jwaller", "notification_address": ["jwaller@gbif.org"], "sendNotification":
       true, "predicate": {"type": "and", "predicates": [{"type": "equals", "key":
-      "TAXON_KEY", "value": "5WZLF"}, {"type": "equals", "key": "COUNTRY", "value":
-      "US"}, {"type": "equals", "key": "HAS_COORDINATE", "value": "TRUE"}]}, "format":
-      "SIMPLE_CSV", "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b"}'
+      "TAXON_KEY", "value": "5WZLF", "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b"},
+      {"type": "equals", "key": "COUNTRY", "value": "US"}, {"type": "equals", "key":
+      "HAS_COORDINATE", "value": "TRUE"}]}, "format": "SIMPLE_CSV", "checklistKey":
+      "7ddf754f-d193-4cc9-b351-99906754a03b"}'
     headers:
       Accept-Encoding:
       - gzip, deflate
       Connection:
       - keep-alive
       Content-Length:
-      - '393'
+      - '449'
       accept:
       - application/json
       content-type:
@@ -23,7 +24,7 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAAzMwMDYxNDXTNTIzsDAwMzA3sTQwNTI3BwAmfD1uFwAAAA==
+        H4sIAAAAAAAAAzMwMDYzNDXSNTIzsDAwMzA3sTQwNTI3BwBlLfvXFwAAAA==
     headers:
       Age:
       - '0'
@@ -38,7 +39,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 24 Aug 2026 12:20:52 GMT
+      - Tue, 25 Aug 2026 10:55:48 GMT
       Expires:
       - '0'
       Pragma:
@@ -52,7 +53,7 @@ interactions:
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '116274891847'
+      - '117439300114'
       X-XSS-Protection:
       - '0'
     status:

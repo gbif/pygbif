@@ -21,7 +21,7 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAAzMwMDYxNDHSNTIzsDAwMzA3sTQwNTI3BwAI7WfyFwAAAA==
+        H4sIAAAAAAAAAzMwMDYzMDbSNTIzsDAwMzA3sTQwNTI3BwC4EWUOFwAAAA==
     headers:
       Age:
       - '0'
@@ -34,7 +34,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 24 Aug 2026 12:15:36 GMT
+      - Tue, 25 Aug 2026 08:53:38 GMT
       Expires:
       - '0'
       Pragma:
@@ -50,7 +50,7 @@ interactions:
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '116325485487'
+      - '117176408213'
       X-XSS-Protection:
       - '0'
     status:

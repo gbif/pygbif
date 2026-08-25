@@ -2,14 +2,15 @@ interactions:
 - request:
     body: '{"creator": "jwaller", "notification_address": ["jwaller@gbif.org"], "sendNotification":
       true, "predicate": {"type": "and", "predicates": [{"type": "equals", "key":
-      "TAXON_KEY", "value": "5WZLF"}]}, "format": "SIMPLE_CSV", "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b"}'
+      "TAXON_KEY", "value": "5WZLF", "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b"}]},
+      "format": "SIMPLE_CSV", "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b"}'
     headers:
       Accept-Encoding:
       - gzip, deflate
       Connection:
       - keep-alive
       Content-Length:
-      - '278'
+      - '334'
       accept:
       - application/json
       content-type:
@@ -21,7 +22,7 @@ interactions:
   response:
     body:
       string: !!binary |
-        H4sIAAAAAAAAAzMwMDYxNDDSNTIzsDAwMzA3sTQwNTI3BwAOOs/5FwAAAA==
+        H4sIAAAAAAAAAzMwMDYzNLXUNTIzsDAwMzA3sTQwNTI3BwB/OXFiFwAAAA==
     headers:
       Age:
       - '0'
@@ -31,16 +32,16 @@ interactions:
       - keep-alive
       Content-Encoding:
       - gzip
+      Content-Length:
+      - '43'
       Content-Type:
       - application/json
       Date:
-      - Mon, 24 Aug 2026 11:58:10 GMT
+      - Tue, 25 Aug 2026 10:59:43 GMT
       Expires:
       - '0'
       Pragma:
       - no-cache
-      Transfer-Encoding:
-      - chunked
       Vary:
       - Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding
       Via:
@@ -50,7 +51,7 @@ interactions:
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '116260284525'
+      - '117422098549'
       X-XSS-Protection:
       - '0'
     status:
@@ -68,10 +69,10 @@ interactions:
       user-agent:
       - python-requests/2.31.0,pygbif/0.6.5
     method: GET
-    uri: http://api.gbif.org/v1/occurrence/download/0034102-260806074905277
+    uri: http://api.gbif.org/v1/occurrence/download/0036159-260806074905277
   response:
     body:
-      string: '{"key":"0034102-260806074905277","license":"unspecified","request":{"predicate":{"type":"and","predicates":[{"type":"equals","key":"TAXON_KEY","value":"5WZLF","matchCase":false}]},"sendNotification":true,"format":"SIMPLE_CSV","type":"OCCURRENCE","verbatimExtensions":[],"interpretedExtensions":[],"checklistKey":"7ddf754f-d193-4cc9-b351-99906754a03b"},"created":"2026-08-24T11:58:10.737+00:00","modified":"2026-08-24T11:58:10.737+00:00","eraseAfter":"2027-02-24T11:58:10.649+00:00","status":"PREPARING","downloadLink":"https://api.gbif.org/v1/occurrence/download/request/0034102-260806074905277.zip","size":0,"totalRecords":0,"numberDatasets":0}'
+      string: '{"key":"0036159-260806074905277","license":"unspecified","request":{"predicate":{"type":"and","predicates":[{"type":"equals","key":"TAXON_KEY","value":"5WZLF","matchCase":false,"checklistKey":"7ddf754f-d193-4cc9-b351-99906754a03b"}]},"sendNotification":true,"format":"SIMPLE_CSV","type":"OCCURRENCE","verbatimExtensions":[],"interpretedExtensions":[],"checklistKey":"7ddf754f-d193-4cc9-b351-99906754a03b"},"created":"2026-08-25T10:59:43.958+00:00","modified":"2026-08-25T10:59:43.958+00:00","eraseAfter":"2027-02-25T10:59:43.822+00:00","status":"PREPARING","downloadLink":"https://api.gbif.org/v1/occurrence/download/request/0036159-260806074905277.zip","size":0,"totalRecords":19342,"numberDatasets":0}'
     headers:
       Accept-Ranges:
       - bytes
@@ -84,7 +85,7 @@ interactions:
       Content-Type:
       - application/json
       Date:
-      - Mon, 24 Aug 2026 11:58:10 GMT
+      - Tue, 25 Aug 2026 10:59:44 GMT
       Expires:
       - '0'
       Pragma:
@@ -100,7 +101,7 @@ interactions:
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '116237119923'
+      - '117415905019'
       X-XSS-Protection:
       - '0'
     status:
