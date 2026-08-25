@@ -193,14 +193,27 @@ def _inject_checklist_into_predicates(predicate, root_checklistKey):
     if "key" in predicate and predicate["key"] in TAXON_KEYS:
         # Only inject if not already present
         if "checklistKey" not in predicate:
-            # Determine appropriate checklistKey based on the value
-            value = str(predicate.get("value", ""))
-            if value.isdigit():
-                # Numeric value -> use GBIF Backbone
-                predicate["checklistKey"] = "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c"
-            else:
-                # Alphanumeric value -> use COL Extended Release
-                predicate["checklistKey"] = "7ddf754f-d193-4cc9-b351-99906754a03b"
+            # Determine appropriate checklistKey based on the value(s)
+            
+            # Handle "in" predicates with multiple values
+            if "values" in predicate and isinstance(predicate["values"], list):
+                # Check if any value is numeric
+                has_numeric = any(str(v).isdigit() for v in predicate["values"])
+                if has_numeric:
+                    # If any numeric values present -> use GBIF Backbone
+                    predicate["checklistKey"] = "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c"
+                else:
+                    # All alphanumeric -> use COL Extended Release
+                    predicate["checklistKey"] = "7ddf754f-d193-4cc9-b351-99906754a03b"
+            # Handle single value predicates (equals, etc.)
+            elif "value" in predicate:
+                value = str(predicate.get("value", ""))
+                if value.isdigit():
+                    # Numeric value -> use GBIF Backbone
+                    predicate["checklistKey"] = "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c"
+                else:
+                    # Alphanumeric value -> use COL Extended Release
+                    predicate["checklistKey"] = "7ddf754f-d193-4cc9-b351-99906754a03b"
     
     # Recursively process nested predicates
     if "predicate" in predicate:

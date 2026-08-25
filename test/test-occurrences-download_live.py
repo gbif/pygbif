@@ -544,6 +544,334 @@ class TestDownloadLive:
             print(f"✓ Complex mixed predicates test passed (OR logic, auto-detected numeric keys, mixed taxonomies, nested structures). Download key: {download_key}")
             print(f"  Warning message: {deprecation_warnings[0].message}")
 
+    @vcr.use_cassette("test/vcr_cassettes/test_download_live_in_predicates.yaml", filter_headers=["authorization"])
+    def test_in_predicates_with_multiple_taxon_keys(self):
+        """Test 'in' predicates with multiple taxon keys - alphanumeric, numeric, and explicit checklistKey"""
+        # Build a complex query with three "in" predicates:
+        # 1. Alphanumeric keys -> should inject COL XR
+        # 2. Numeric keys -> should inject GBIF Backbone
+        # 3. Explicit checklistKey -> should be preserved
+        query = {
+            "type": "and",
+            "predicates": [
+                # 1. IN predicate with alphanumeric COL keys (should get COL XR injected)
+                {
+                    "type": "in",
+                    "key": "TAXON_KEY",
+                    "values": ["5WZLF", "623LY", "5WZ4Y"]  # All alphanumeric
+                },
+                # 2. IN predicate with numeric GBIF Backbone keys (should get GBIF Backbone injected)
+                {
+                    "type": "in",
+                    "key": "SPECIES_KEY",
+                    "values": ["2435098", "3119195"]  # All numeric
+                },
+                # 3. IN predicate with explicit checklistKey (should be preserved)
+                {
+                    "type": "in",
+                    "key": "GENUS_KEY",
+                    "values": ["5WZMD", "5WZ8T"],
+                    "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b"  # Explicit
+                },
+                # 4. Non-taxon predicate (should have no checklistKey)
+                {
+                    "type": "equals",
+                    "key": "COUNTRY",
+                    "value": "US"
+                }
+            ]
+        }
+        
+        with warnings.catch_warnings(record=True) as w:
+            warnings.simplefilter("always")
+            
+            download_key, payload = occ.download(query)
+            
+            # Cancel the download immediately to avoid hitting limits
+            time.sleep(1)
+            occ.download_cancel(download_key)
+            
+            # Should warn about numeric keys
+            deprecation_warnings = [warning for warning in w if issubclass(warning.category, DeprecationWarning)]
+            assert len(deprecation_warnings) == 1
+            assert "Numeric taxon keys detected" in str(deprecation_warnings[0].message)
+            
+            # Verify the download was created
+            assert download_key is not None
+            assert len(download_key) > 0
+            
+            # Verify payload includes COL XR at ROOT level (always default)
+            assert "checklistKey" in payload
+            assert payload["checklistKey"] == "7ddf754f-d193-4cc9-b351-99906754a03b"
+            
+            # Verify the predicates structure
+            assert "predicate" in payload
+            assert "predicates" in payload["predicate"]
+            predicates = payload["predicate"]["predicates"]
+            assert len(predicates) == 4
+            
+            # 1. Check first IN predicate with alphanumeric values -> COL XR injected
+            taxon_in_pred = predicates[0]
+            assert taxon_in_pred["type"] == "in"
+            assert taxon_in_pred["key"] == "TAXON_KEY"
+            assert taxon_in_pred["values"] == ["5WZLF", "623LY", "5WZ4Y"]
+            assert "checklistKey" in taxon_in_pred
+            assert taxon_in_pred["checklistKey"] == "7ddf754f-d193-4cc9-b351-99906754a03b"  # COL XR
+            
+            # 2. Check second IN predicate with numeric values -> GBIF Backbone injected
+            species_in_pred = predicates[1]
+            assert species_in_pred["type"] == "in"
+            assert species_in_pred["key"] == "SPECIES_KEY"
+            assert species_in_pred["values"] == ["2435098", "3119195"]
+            assert "checklistKey" in species_in_pred
+            assert species_in_pred["checklistKey"] == "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c"  # GBIF Backbone
+            
+            # 3. Check third IN predicate with explicit checklistKey -> preserved
+            genus_in_pred = predicates[2]
+            assert genus_in_pred["type"] == "in"
+            assert genus_in_pred["key"] == "GENUS_KEY"
+            assert genus_in_pred["values"] == ["5WZMD", "5WZ8T"]
+            assert "checklistKey" in genus_in_pred
+            assert genus_in_pred["checklistKey"] == "7ddf754f-d193-4cc9-b351-99906754a03b"  # Explicit preserved
+            
+            # 4. Check non-taxon predicate has NO checklistKey
+            country_pred = predicates[3]
+            assert country_pred["type"] == "equals"
+            assert country_pred["key"] == "COUNTRY"
+            assert country_pred["value"] == "US"
+            assert "checklistKey" not in country_pred
+            
+            print(f"✓ IN predicates test passed (alphanumeric → COL XR, numeric → GBIF Backbone, explicit preserved). Download key: {download_key}")
+            print(f"  Warning message: {deprecation_warnings[0].message}")
+
+    @vcr.use_cassette("test/vcr_cassettes/test_download_live_simple_in_pred.yaml", filter_headers=["authorization"])
+    def test_simple_in_predicate_alphanumeric(self):
+        """Test simple 'in' predicate with alphanumeric keys using string syntax"""
+        # Simple single IN predicate - alphanumeric keys should get COL XR
+        # Note: String values in the array must be quoted for JSON parsing
+        query = "taxonKey in ['5WZLF', '623LY', '5WZ4Y']"
+        
+        with warnings.catch_warnings(record=True) as w:
+            warnings.simplefilter("always")
+            
+            download_key, payload = occ.download(query)
+            
+            # Cancel the download immediately
+            time.sleep(1)
+            occ.download_cancel(download_key)
+            
+            # Should NOT warn (no numeric keys)
+            deprecation_warnings = [warning for warning in w if issubclass(warning.category, DeprecationWarning)]
+            assert len(deprecation_warnings) == 0
+            
+            # Verify the download was created
+            assert download_key is not None
+            
+            # Verify payload includes COL XR at ROOT level
+            assert "checklistKey" in payload
+            assert payload["checklistKey"] == "7ddf754f-d193-4cc9-b351-99906754a03b"
+            
+            # Verify the predicate structure (wrapped in AND by default)
+            assert "predicate" in payload
+            assert payload["predicate"]["type"] == "and"
+            assert "predicates" in payload["predicate"]
+            assert len(payload["predicate"]["predicates"]) == 1
+            
+            # Check the IN predicate
+            pred = payload["predicate"]["predicates"][0]
+            assert pred["type"] == "in"
+            assert pred["key"] == "TAXON_KEY"
+            assert pred["values"] == ["5WZLF", "623LY", "5WZ4Y"]
+            assert "checklistKey" in pred
+            assert pred["checklistKey"] == "7ddf754f-d193-4cc9-b351-99906754a03b"  # COL XR
+            
+            print(f"✓ Simple IN predicate test passed (alphanumeric → COL XR). Download key: {download_key}")
+
+    @vcr.use_cassette("test/vcr_cassettes/test_download_live_simple_in_numeric.yaml", filter_headers=["authorization"])
+    def test_simple_in_predicate_numeric(self):
+        """Test simple 'in' predicate with numeric keys using dict syntax"""
+        # Simple single IN predicate using dict - numeric keys should get GBIF Backbone
+        query = {
+            "type": "in",
+            "key": "SPECIES_KEY",
+            "values": ["2435098", "3119195", "212"]
+        }
+        
+        with warnings.catch_warnings(record=True) as w:
+            warnings.simplefilter("always")
+            
+            download_key, payload = occ.download(query)
+            
+            # Cancel the download immediately
+            time.sleep(1)
+            occ.download_cancel(download_key)
+            
+            # Should warn about numeric keys
+            deprecation_warnings = [warning for warning in w if issubclass(warning.category, DeprecationWarning)]
+            assert len(deprecation_warnings) == 1
+            assert "Numeric taxon keys detected" in str(deprecation_warnings[0].message)
+            
+            # Verify the download was created
+            assert download_key is not None
+            
+            # Verify payload includes COL XR at ROOT level (always default)
+            assert "checklistKey" in payload
+            assert payload["checklistKey"] == "7ddf754f-d193-4cc9-b351-99906754a03b"
+            
+            # Verify the predicate structure (NOT wrapped, dict query stays as-is)
+            assert "predicate" in payload
+            pred = payload["predicate"]
+            assert pred["type"] == "in"
+            assert pred["key"] == "SPECIES_KEY"
+            assert pred["values"] == ["2435098", "3119195", "212"]
+            assert "checklistKey" in pred
+            assert pred["checklistKey"] == "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c"  # GBIF Backbone
+            
+            print(f"✓ Simple IN predicate test passed (numeric → GBIF Backbone). Download key: {download_key}")
+            print(f"  Warning message: {deprecation_warnings[0].message}")
+
+    @vcr.use_cassette("test/vcr_cassettes/test_download_live_non_taxon_in.yaml", filter_headers=["authorization"])
+    def test_non_taxon_in_predicate(self):
+        """Test that non-taxon 'in' predicates do NOT get checklistKey injected"""
+        # Non-taxon IN predicates should NOT get checklistKey
+        query = {
+            "type": "and",
+            "predicates": [
+                # Non-taxon IN predicates
+                {
+                    "type": "in",
+                    "key": "COUNTRY",
+                    "values": ["US", "CA", "MX"]
+                },
+                {
+                    "type": "in",
+                    "key": "BASIS_OF_RECORD",
+                    "values": ["PRESERVED_SPECIMEN", "OBSERVATION", "HUMAN_OBSERVATION"]
+                },
+                # Include one taxon predicate for contrast
+                {
+                    "type": "equals",
+                    "key": "TAXON_KEY",
+                    "value": "5WZLF"
+                }
+            ]
+        }
+        
+        with warnings.catch_warnings(record=True) as w:
+            warnings.simplefilter("always")
+            
+            download_key, payload = occ.download(query)
+            
+            # Cancel the download immediately
+            time.sleep(1)
+            occ.download_cancel(download_key)
+            
+            # Should NOT warn (only alphanumeric taxon key)
+            deprecation_warnings = [warning for warning in w if issubclass(warning.category, DeprecationWarning)]
+            assert len(deprecation_warnings) == 0
+            
+            # Verify the download was created
+            assert download_key is not None
+            
+            # Verify payload includes COL XR at ROOT level
+            assert "checklistKey" in payload
+            assert payload["checklistKey"] == "7ddf754f-d193-4cc9-b351-99906754a03b"
+            
+            # Verify the predicates structure
+            assert "predicate" in payload
+            assert "predicates" in payload["predicate"]
+            predicates = payload["predicate"]["predicates"]
+            assert len(predicates) == 3
+            
+            # Check COUNTRY IN predicate - should NOT have checklistKey
+            country_pred = predicates[0]
+            assert country_pred["type"] == "in"
+            assert country_pred["key"] == "COUNTRY"
+            assert country_pred["values"] == ["US", "CA", "MX"]
+            assert "checklistKey" not in country_pred  # Critical assertion
+            
+            # Check BASIS_OF_RECORD IN predicate - should NOT have checklistKey
+            basis_pred = predicates[1]
+            assert basis_pred["type"] == "in"
+            assert basis_pred["key"] == "BASIS_OF_RECORD"
+            assert basis_pred["values"] == ["PRESERVED_SPECIMEN", "OBSERVATION", "HUMAN_OBSERVATION"]
+            assert "checklistKey" not in basis_pred  # Critical assertion
+            
+            # Check TAXON_KEY predicate - SHOULD have checklistKey
+            taxon_pred = predicates[2]
+            assert taxon_pred["type"] == "equals"
+            assert taxon_pred["key"] == "TAXON_KEY"
+            assert taxon_pred["value"] == "5WZLF"
+            assert "checklistKey" in taxon_pred
+            assert taxon_pred["checklistKey"] == "7ddf754f-d193-4cc9-b351-99906754a03b"
+            
+            print(f"✓ Non-taxon IN predicate test passed (no checklistKey on COUNTRY/BASIS_OF_RECORD). Download key: {download_key}")
+
+    @vcr.use_cassette("test/vcr_cassettes/test_download_live_in_string_syntax.yaml", filter_headers=["authorization"])
+    def test_in_string_syntax_with_multiple_keys(self):
+        """Test 'in' predicates using string syntax with multiple taxon keys"""
+        # Test string syntax parsing for "in" predicates
+        # Should detect numeric keys and warn appropriately
+        queries = [
+            "taxonKey in ['5WZLF', '623LY', '5WZ4Y']",  # Alphanumeric keys -> COL XR
+            "speciesKey in [2435098, 3119195]",          # Numeric keys -> GBIF Backbone  
+            "country = US"
+        ]
+        
+        with warnings.catch_warnings(record=True) as w:
+            warnings.simplefilter("always")
+            
+            download_key, payload = occ.download(queries, pred_type="and")
+            
+            # Cancel the download immediately
+            time.sleep(1)
+            occ.download_cancel(download_key)
+            
+            # Should warn about numeric keys
+            deprecation_warnings = [warning for warning in w if issubclass(warning.category, DeprecationWarning)]
+            assert len(deprecation_warnings) == 1
+            assert "Numeric taxon keys detected" in str(deprecation_warnings[0].message)
+            
+            # Verify the download was created
+            assert download_key is not None
+            assert len(download_key) > 0
+            
+            # Verify payload includes COL XR at ROOT level (always default)
+            assert "checklistKey" in payload
+            assert payload["checklistKey"] == "7ddf754f-d193-4cc9-b351-99906754a03b"
+            
+            # Verify the predicates structure
+            assert "predicate" in payload
+            assert "predicates" in payload["predicate"]
+            predicates = payload["predicate"]["predicates"]
+            assert len(predicates) == 3
+            
+            # Check first IN predicate with alphanumeric values -> COL XR injected
+            taxon_in_pred = predicates[0]
+            assert taxon_in_pred["type"] == "in"
+            assert taxon_in_pred["key"] == "TAXON_KEY"
+            assert taxon_in_pred["values"] == ["5WZLF", "623LY", "5WZ4Y"]
+            assert "checklistKey" in taxon_in_pred
+            assert taxon_in_pred["checklistKey"] == "7ddf754f-d193-4cc9-b351-99906754a03b"  # COL XR
+            
+            # Check second IN predicate with numeric values -> GBIF Backbone injected
+            species_in_pred = predicates[1]
+            assert species_in_pred["type"] == "in"
+            assert species_in_pred["key"] == "SPECIES_KEY"
+            assert species_in_pred["values"] == [2435098, 3119195]  # Numeric values (no quotes)
+            assert "checklistKey" in species_in_pred
+            assert species_in_pred["checklistKey"] == "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c"  # GBIF Backbone
+            
+            # Check non-taxon predicate has NO checklistKey
+            country_pred = predicates[2]
+            assert country_pred["type"] == "equals"
+            assert country_pred["key"] == "COUNTRY"
+            assert country_pred["value"] == "US"
+            assert "checklistKey" not in country_pred
+            
+            print(f"✓ IN string syntax test passed (parsed correctly, proper injection). Download key: {download_key}")
+            print(f"  Warning message: {deprecation_warnings[0].message}")
+
 
 if __name__ == "__main__":
     """Run live tests manually with: python test/test-occurrences-download_live.py"""
