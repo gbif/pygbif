@@ -1,0 +1,70 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - python-requests/2.31.0,pygbif/0.6.5
+    method: GET
+    uri: https://api.gbif.org/v1/occurrence/142316497
+  response:
+    body:
+      string: "{\"key\":142316497,\"datasetKey\":\"8575f23e-f762-11e1-a439-00145eb45e9a\",\"publishingOrgKey\":\"57254bd0-8256-11d8-b7ed-b8a03c50a862\",\"networkKeys\":[\"17abcf75-2f1e-46dd-bf75-a5b21dd02655\"],\"installationKey\":\"60454014-f762-11e1-a439-00145eb45e9a\",\"hostingOrganizationKey\":\"57254bd0-8256-11d8-b7ed-b8a03c50a862\",\"publishingCountry\":\"DE\",\"protocol\":\"BIOCASE\",\"lastCrawled\":\"2026-07-17T01:45:23.099+00:00\",\"lastParsed\":\"2026-07-18T16:24:55.193+00:00\",\"crawlId\":368,\"extensions\":{},\"basisOfRecord\":\"PRESERVED_SPECIMEN\",\"occurrenceStatus\":\"PRESENT\",\"classifications\":{\"7ddf754f-d193-4cc9-b351-99906754a03b\":{\"usage\":{\"key\":\"KHLT\",\"name\":\"Ballota
+        acetabulosa (L.) Benth.\",\"rank\":\"SPECIES\",\"code\":\"BOTANICAL\",\"authorship\":\"(L.)
+        Benth.\",\"genericName\":\"Ballota\",\"specificEpithet\":\"acetabulosa\",\"formattedName\":\"<i>Ballota</i>
+        <i>acetabulosa</i> (L.) Benth.\"},\"acceptedUsage\":{\"key\":\"8X425\",\"name\":\"Pseudodictamnus
+        acetabulosus (L.) Salmaki & Siadati\",\"rank\":\"SPECIES\",\"code\":\"BOTANICAL\",\"authorship\":\"(L.)
+        Salmaki & Siadati\",\"genericName\":\"Pseudodictamnus\",\"specificEpithet\":\"acetabulosus\",\"formattedName\":\"<i>Pseudodictamnus</i>
+        <i>acetabulosus</i> (L.) Salmaki & Siadati\"},\"taxonomicStatus\":\"SYNONYM\",\"classification\":[{\"key\":\"CS5HF\",\"name\":\"Eukaryota\",\"rank\":\"DOMAIN\"},{\"key\":\"P\",\"name\":\"Plantae\",\"rank\":\"KINGDOM\"},{\"key\":\"CMQ8S\",\"name\":\"Pteridobiotina\",\"rank\":\"SUBKINGDOM\"},{\"key\":\"TP\",\"name\":\"Tracheophyta\",\"rank\":\"PHYLUM\"},{\"key\":\"MG\",\"name\":\"Magnoliopsida\",\"rank\":\"CLASS\"},{\"key\":\"3F4\",\"name\":\"Lamiales\",\"rank\":\"ORDER\"},{\"key\":\"PR82T\",\"name\":\"Lamiaceae\",\"rank\":\"FAMILY\"},{\"key\":\"V5N48\",\"name\":\"Lamioideae\",\"rank\":\"SUBFAMILY\"},{\"key\":\"V594S\",\"name\":\"Marrubieae\",\"rank\":\"TRIBE\"},{\"key\":\"8WK6F\",\"name\":\"Pseudodictamnus\",\"rank\":\"GENUS\"},{\"key\":\"8X425\",\"name\":\"Pseudodictamnus
+        acetabulosus\",\"rank\":\"SPECIES\"}],\"issues\":[]},\"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c\":{\"usage\":{\"key\":\"3883382\",\"name\":\"Ballota
+        acetabulosa (L.) Benth.\",\"rank\":\"SPECIES\",\"code\":\"BOTANICAL\",\"authorship\":\"(L.)
+        Benth.\",\"genericName\":\"Ballota\",\"specificEpithet\":\"acetabulosa\",\"formattedName\":\"<i>Ballota</i>
+        <i>acetabulosa</i> (L.) Benth.\"},\"acceptedUsage\":{\"key\":\"10846508\",\"name\":\"Pseudodictamnus
+        acetabulosus (L.) Salmaki & Siadati\",\"rank\":\"SPECIES\",\"code\":\"BOTANICAL\",\"authorship\":\"(L.)
+        Salmaki & Siadati\",\"genericName\":\"Pseudodictamnus\",\"specificEpithet\":\"acetabulosus\",\"formattedName\":\"<i>Pseudodictamnus</i>
+        <i>acetabulosus</i> (L.) Salmaki & Siadati\"},\"taxonomicStatus\":\"SYNONYM\",\"classification\":[{\"key\":\"6\",\"name\":\"Plantae\",\"rank\":\"KINGDOM\"},{\"key\":\"7707728\",\"name\":\"Tracheophyta\",\"rank\":\"PHYLUM\"},{\"key\":\"220\",\"name\":\"Magnoliopsida\",\"rank\":\"CLASS\"},{\"key\":\"408\",\"name\":\"Lamiales\",\"rank\":\"ORDER\"},{\"key\":\"2497\",\"name\":\"Lamiaceae\",\"rank\":\"FAMILY\"},{\"key\":\"5428512\",\"name\":\"Pseudodictamnus\",\"rank\":\"GENUS\"},{\"key\":\"10846508\",\"name\":\"Pseudodictamnus
+        acetabulosus\",\"rank\":\"SPECIES\"}],\"issues\":[]}},\"taxonKey\":3883382,\"kingdomKey\":6,\"phylumKey\":7707728,\"classKey\":220,\"orderKey\":408,\"familyKey\":2497,\"genusKey\":5428512,\"speciesKey\":10846508,\"acceptedTaxonKey\":10846508,\"scientificName\":\"Ballota
+        acetabulosa (L.) Benth.\",\"scientificNameAuthorship\":\"(L.) Benth.\",\"acceptedScientificName\":\"Pseudodictamnus
+        acetabulosus (L.) Salmaki & Siadati\",\"kingdom\":\"Plantae\",\"phylum\":\"Tracheophyta\",\"order\":\"Lamiales\",\"family\":\"Lamiaceae\",\"genus\":\"Pseudodictamnus\",\"species\":\"Pseudodictamnus
+        acetabulosus\",\"genericName\":\"Ballota\",\"specificEpithet\":\"acetabulosa\",\"taxonRank\":\"SPECIES\",\"taxonomicStatus\":\"SYNONYM\",\"decimalLatitude\":38.10695,\"decimalLongitude\":26.85083,\"elevation\":0.0,\"continent\":\"ASIA\",\"gadm\":{\"level0\":{\"gid\":\"TUR\",\"name\":\"Turkey\"},\"level1\":{\"gid\":\"TUR.41_1\",\"name\":\"Izmir\"},\"level2\":{\"gid\":\"TUR.41.24_1\",\"name\":\"Seferihisar\"}},\"year\":1999,\"month\":6,\"day\":18,\"eventDate\":\"1999-06-18T00:00\",\"startDayOfYear\":169,\"endDayOfYear\":169,\"issues\":[\"GEODETIC_DATUM_ASSUMED_WGS84\",\"CONTINENT_DERIVED_FROM_COORDINATES\",\"COLLECTION_MATCH_NONE\",\"INSTITUTION_MATCH_FUZZY\"],\"modified\":\"2001-03-01T00:00:00.000+00:00\",\"lastInterpreted\":\"2026-07-18T16:24:55.193+00:00\",\"license\":\"http://creativecommons.org/licenses/by/4.0/legalcode\",\"isSequenced\":false,\"identifiers\":[{\"identifier\":\"urn:catalog:BGBM:Pontaurus:1\"}],\"media\":[],\"facts\":[],\"relations\":[],\"institutionKey\":\"4cf93dd2-06c8-4f49-89bc-a5d0805c6747\",\"isInCluster\":false,\"recordedBy\":\"Markus
+        D\xF6ring\",\"identifiedBy\":\"Markus D\xF6ring\",\"dnaSequenceID\":[],\"nucleotideSequence\":[],\"geodeticDatum\":\"WGS84\",\"class\":\"Magnoliopsida\",\"countryCode\":\"TR\",\"recordedByIDs\":[],\"identifiedByIDs\":[],\"gbifRegion\":\"EUROPE\",\"country\":\"T\xFCrkiye\",\"publishedByGbifRegion\":\"EUROPE\",\"catalogNumber\":\"1\",\"http://unknown.org/crawl_attempt\":\"384\",\"institutionCode\":\"BGBM\",\"http://unknown.org/declaredCount\":\"1534\",\"gbifID\":\"142316497\",\"occurrenceRemarks\":\"1<br/>2<br/><strong>3</strong>\",\"collectionCode\":\"Pontaurus\"}"
+    headers:
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '702'
+      Cache-Control:
+      - public, max-age=3601
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '4795'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 26 Aug 2026 06:30:40 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Vary:
+      - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      Via:
+      - 1.1 prodapicache2-vh.gbif.org (Varnish/9.0)
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Varnish:
+      - 118323940974 118289012485
+      X-XSS-Protection:
+      - '0'
+    status:
+      code: 200
+      message: OK
+version: 1

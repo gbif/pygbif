@@ -1,0 +1,52 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - python-requests/2.31.0,pygbif/0.6.5
+    method: GET
+    uri: https://api.gbif.org/v1/occurrence/counts/publishingCountries?country=DE
+  response:
+    body:
+      string: '{"GERMANY":60847039,"NETHERLANDS":8850554,"UNITED_STATES":4462438,"UNITED_KINGDOM":2268984,"BELGIUM":2094312,"FRANCE":1927327,"SWITZERLAND":410899,"UNKNOWN":362479,"SWEDEN":169684,"AUSTRIA":136546,"ESTONIA":133322,"POLAND":72887,"FINLAND":68292,"LUXEMBOURG":58597,"COLOMBIA":58417,"DENMARK":43430,"AUSTRALIA":30015,"NORWAY":26741,"SPAIN":22975,"CANADA":22135,"BULGARIA":17886,"BRAZIL":12281,"NEW_ZEALAND":9729,"JAPAN":9515,"CZECH_REPUBLIC":8202,"RUSSIAN_FEDERATION":7980,"ITALY":6121,"CHINA":5419,"PORTUGAL":5163,"SOUTH_AFRICA":4790,"MEXICO":3570,"ECUADOR":2704,"ARGENTINA":2243,"ISRAEL":1953,"COSTA_RICA":1295,"PANAMA":1244,"UKRAINE":1122,"TAIWAN":1101,"CHILE":558,"LITHUANIA":374,"GREECE":370,"NICARAGUA":232,"URUGUAY":197,"HUNGARY":171,"GHANA":73,"LATVIA":65,"VENEZUELA":63,"PERU":31,"KOREA_SOUTH":24,"ARMENIA":14,"GUATEMALA":9,"TAJIKISTAN":7,"MOROCCO":7,"NIGERIA":4,"ANTARCTICA":3,"TRINIDAD_TOBAGO":2,"SLOVENIA":2,"ZIMBABWE":1,"NEPAL":1}'
+    headers:
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '730'
+      Cache-Control:
+      - public, max-age=600
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '941'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 26 Aug 2026 06:30:23 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Vary:
+      - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      Via:
+      - 1.1 prodapicache2-vh.gbif.org (Varnish/9.0)
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Varnish:
+      - 118331542471 118356083095
+      X-XSS-Protection:
+      - '0'
+    status:
+      code: 200
+      message: OK
+version: 1

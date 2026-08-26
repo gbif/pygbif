@@ -1,0 +1,52 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - python-requests/2.31.0,pygbif/0.6.5
+    method: GET
+    uri: https://api.gbif.org/v1/occurrence/counts/basisOfRecord
+  response:
+    body:
+      string: '{"HUMAN_OBSERVATION":3311312728,"PRESERVED_SPECIMEN":284858663,"MATERIAL_SAMPLE":218351379,"MACHINE_OBSERVATION":42169028,"OCCURRENCE":29423252,"OBSERVATION":19531693,"FOSSIL_SPECIMEN":10265201,"MATERIAL_CITATION":9622452,"LIVING_SPECIMEN":4142297}'
+    headers:
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '736'
+      Cache-Control:
+      - public, max-age=600
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '248'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 26 Aug 2026 06:30:15 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Vary:
+      - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      Via:
+      - 1.1 prodapicache2-vh.gbif.org (Varnish/9.0)
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Varnish:
+      - 118355985061 118339634348
+      X-XSS-Protection:
+      - '0'
+    status:
+      code: 200
+      message: OK
+version: 1

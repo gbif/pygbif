@@ -1,0 +1,50 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - python-requests/2.31.0,pygbif/0.6.5
+    method: GET
+    uri: https://api.gbif.org/v1/occurrence/download/statistics/downloadsBySource
+  response:
+    body:
+      string: '{"2022":{"12":27136},"2023":{"1":27207,"2":43830,"3":111062,"4":61038,"5":58829,"6":53041,"7":70189,"8":61881,"9":26999,"10":33635,"11":46149,"12":25105},"2024":{"1":47148,"2":47362,"3":216351,"4":141959,"5":60145,"6":46590,"7":37222,"8":67049,"9":43286,"10":59162,"11":57808,"12":42710},"2025":{"1":41680,"2":42442,"3":51849,"4":49349,"5":52078,"6":68781,"7":143619,"8":110728,"9":101905,"10":95346,"11":53836,"12":49982},"2026":{"1":29,"2":66286,"3":68893,"4":95581,"5":66640,"6":53784,"7":58689}}'
+    headers:
+      Age:
+      - '0'
+      Cache-Control:
+      - public, max-age=3601
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 26 Aug 2026 06:42:21 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      Via:
+      - 1.1 prodapicache2-vh.gbif.org (Varnish/9.0)
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Varnish:
+      - '118286882915'
+      X-XSS-Protection:
+      - '0'
+    status:
+      code: 200
+      message: OK
+version: 1

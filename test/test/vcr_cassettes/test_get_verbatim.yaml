@@ -1,0 +1,55 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - python-requests/2.31.0,pygbif/0.6.5
+    method: GET
+    uri: https://api.gbif.org/v1/occurrence/142316497/verbatim
+  response:
+    body:
+      string: "{\"key\":142316497,\"datasetKey\":\"8575f23e-f762-11e1-a439-00145eb45e9a\",\"publishingOrgKey\":\"57254bd0-8256-11d8-b7ed-b8a03c50a862\",\"networkKeys\":[\"17abcf75-2f1e-46dd-bf75-a5b21dd02655\"],\"installationKey\":\"60454014-f762-11e1-a439-00145eb45e9a\",\"publishingCountry\":\"DE\",\"protocol\":\"BIOCASE\",\"lastCrawled\":\"2026-07-17T01:45:23.099+00:00\",\"lastParsed\":\"2026-07-18T16:24:55.193+00:00\",\"crawlId\":368,\"extensions\":{},\"publishedByGbifRegion\":\"EUROPE\",\"http://rs.gbif.org/terms/1.0/gbifID\":\"142316497\",\"http://rs.tdwg.org/dwc/terms/kingdom\":\"Plantae\",\"http://unknown.org/crawl_attempt\":\"384\",\"http://purl.org/dc/terms/identifier\":\"urn:catalog:BGBM:Pontaurus:1\",\"http://rs.tdwg.org/dwc/terms/class\":\"Magnoliopsida\",\"http://rs.tdwg.org/dwc/terms/country\":\"Turkey\",\"http://unknown.org/declaredCount\":\"1534\",\"http://rs.tdwg.org/dwc/terms/collectionCode\":\"Pontaurus\",\"http://rs.tdwg.org/dwc/terms/order\":\"Lamiales\",\"http://rs.tdwg.org/dwc/terms/minimumElevationInMeters\":\"0\",\"http://rs.tdwg.org/dwc/terms/identifiedBy\":\"Markus
+        D\xF6ring\",\"http://rs.tdwg.org/dwc/terms/basisOfRecord\":\"specimen\",\"http://rs.tdwg.org/dwc/terms/eventDate\":\"1999-06-18T00:00:00\",\"http://rs.tdwg.org/dwc/terms/catalogNumber\":\"1\",\"http://rs.tdwg.org/dwc/terms/occurrenceRemarks\":\"1<br/>2<br/><strong>3</strong>\",\"http://rs.tdwg.org/dwc/terms/family\":\"Lamiaceae\",\"http://purl.org/dc/terms/modified\":\"2001-03-01\",\"http://rs.tdwg.org/dwc/terms/decimalLatitude\":\"38.10695\",\"http://rs.tdwg.org/dwc/terms/decimalLongitude\":\"26.85083\",\"http://rs.tdwg.org/dwc/terms/institutionCode\":\"BGBM\",\"http://rs.tdwg.org/dwc/terms/recordedBy\":\"Markus
+        D\xF6ring\",\"http://rs.tdwg.org/dwc/terms/scientificName\":\"Ballota acetabulosa
+        (L.) Benth.\",\"http://rs.tdwg.org/dwc/terms/phylum\":\"Magnoliophyta\"}"
+    headers:
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '702'
+      Cache-Control:
+      - public, max-age=3601
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1731'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 26 Aug 2026 06:30:40 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Vary:
+      - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      Via:
+      - 1.1 prodapicache2-vh.gbif.org (Varnish/9.0)
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Varnish:
+      - 118337472578 118326299264
+      X-XSS-Protection:
+      - '0'
+    status:
+      code: 200
+      message: OK
+version: 1
