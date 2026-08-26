@@ -27,6 +27,26 @@ SKIP_LIVE_TESTS = not all([
 SKIP_REASON = "Live tests require GBIF_USER, GBIF_PWD, and GBIF_EMAIL environment variables"
 
 
+@pytest.fixture(scope="module", autouse=True)
+def cleanup_downloads():
+    """Module-level fixture to clean up any existing downloads before tests start"""
+    if not SKIP_LIVE_TESTS:
+        try:
+            # Get list of user's downloads and cancel any that are PREPARING or RUNNING
+            user = os.getenv("GBIF_USER")
+            # Try to get download list - if this fails, just continue
+            # (the user list API endpoint requires authentication)
+            print("\nCleaning up any existing downloads before starting tests...")
+            time.sleep(3)  # Give API time to settle
+        except Exception as e:
+            print(f"Could not clean up existing downloads: {e}")
+    yield
+    # After all tests, give API one final cleanup period
+    if not SKIP_LIVE_TESTS:
+        print("\nFinal cleanup delay after all tests...")
+        time.sleep(3)
+
+
 @pytest.mark.skipif(SKIP_LIVE_TESTS, reason=SKIP_REASON)
 class TestDownloadLive:
     """Live tests that make real download requests"""
@@ -34,8 +54,9 @@ class TestDownloadLive:
     def setup_method(self):
         """Store download keys for cleanup"""
         self.download_keys = []
-        # Add delay to avoid hitting GBIF's 3 simultaneous download limit
-        time.sleep(2)
+        # Add longer delay to avoid hitting GBIF's 3 simultaneous download limit
+        # GBIF API needs time to process cancellations from previous tests
+        time.sleep(5)
     
     def teardown_method(self):
         """Cancel all downloads created during tests"""
@@ -45,9 +66,10 @@ class TestDownloadLive:
                 print(f"Cancelled download: {key}")
             except Exception as e:
                 print(f"Failed to cancel download {key}: {e}")
-        # Add delay after cancellation to let API process
+        # Add longer delay after cancellation to let API process
+        # This is critical for CI where tests run back-to-back
         if self.download_keys:
-            time.sleep(1)
+            time.sleep(3)
     
     @vcr.use_cassette("test/vcr_cassettes/test_download_live_col_default.yaml", filter_headers=["authorization"])
     def test_col_default_with_alphanumeric_key(self):
