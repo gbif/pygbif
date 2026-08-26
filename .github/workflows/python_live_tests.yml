@@ -28,10 +28,14 @@ jobs:
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     
-    # NOTE: Download tests use VCR cassettes to avoid GBIF API rate limits (3 downloads max)
-    # All tests in test-occurrences-download_live.py create downloads, so we use cassettes
-    # To regenerate: delete cassettes locally and run with GBIF credentials
+    - name: Delete vcr cassettes to force live API tests
+      run: |
+        rm -rf test/vcr_cassettes/*
+        if [ "$(ls -A test/vcr_cassettes)" ]; then
+          echo "Directory is not empty"
+          exit 1
+        fi
 
-    - name: Tests (using VCR cassettes to avoid rate limits)
-      run: pytest test/test-occurrences-download_live.py -v  
+    - name: Tests (all tests EXCEPT download_live, which hits rate limits)
+      run: pytest test/ --ignore=test/test-occurrences-download_live.py -v  
 
