@@ -16,9 +16,9 @@ import time
 import vcr
 from pygbif import occurrences as occ
 
-# Skip these tests in CI environments - they require real credentials and make real API calls
-IN_GITHUB_ACTIONS = os.getenv("GITHUB_ACTIONS") == "true"
-SKIP_LIVE_TESTS = IN_GITHUB_ACTIONS or not all([
+# Skip these tests if credentials are not available
+# Note: In CI, credentials are provided via secrets, so tests will run
+SKIP_LIVE_TESTS = not all([
     os.getenv("GBIF_USER"),
     os.getenv("GBIF_PWD"), 
     os.getenv("GBIF_EMAIL")

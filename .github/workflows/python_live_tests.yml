@@ -37,7 +37,7 @@ jobs:
         fi
 
     - name: Tests
-      run: pytest
+      run: pytest test/test-occurrences-download_live.py -v
 
     - name: Check if vcr cassettes were created today
       run: |
