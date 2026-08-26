@@ -3,7 +3,7 @@ Changelog
 
 Unreleased
 ----------
-- **BREAKING CHANGE**: ``occurrences.search`` now defaults to using Catalogue of Life (COL) taxonomy instead of GBIF Backbone Taxonomy. Set ``checklistKey=None`` to use GBIF backbone.
+- **BREAKING CHANGE**: ``occurrences.search``, ``occurrences.count``, ``occurrences.count_datasets``, and ``maps.map`` now default to using Catalogue of Life (COL) taxonomy instead of GBIF Backbone Taxonomy. Set ``checklistKey=None`` to use GBIF backbone.
 - added support for alphanumeric taxonomy keys (e.g., ``kingdomKey``, ``phylumKey``, etc.) in ``occurrences.search`` to support COL's alphanumeric identifiers
 - added automatic detection of numeric taxonomy keys in ``occurrences.search``: when numeric (integer) keys are provided without an explicit ``checklistKey``, the function now automatically switches to GBIF Backbone taxonomy and issues a deprecation warning, encouraging migration to COL alphanumeric keys
 - added ``species.gbif_to_col()`` function to convert GBIF Backbone numeric taxonomy keys to COL Extended Release alphanumeric keys, facilitating migration from GBIF Backbone to COL
