@@ -37,5 +37,5 @@ jobs:
         fi
 
     - name: Tests (all tests EXCEPT downloads, which hit rate limits)
-      run: pytest test/ --ignore=test/test-occurrences-download_live.py --ignore=test/test-occurrences-download_sql.py -v  
+      run: pytest test/ --ignore=test/test-occurrences-download_live.py --ignore=test/test-occurrences-download_sql.py --ignore=test/test-occurrences-download_cancel.py -v  
 
