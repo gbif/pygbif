@@ -2,6 +2,7 @@ import time
 import requests
 import unittest
 import warnings
+from unittest.mock import patch
 
 from pygbif.occurrences.download import GbifDownload, download
 
@@ -108,10 +109,8 @@ class TestGbifClass(unittest.TestCase):
             req.payload["predicate"]["predicates"][0]["type"], "greaterThanOrEquals"
         )
 
-    # mocking the request service
-    requests.post = dummypost
-
-    def test_post_download(self):
+    @patch('requests.post', side_effect=dummypost)
+    def test_post_download(self, mock_post):
         req = GbifDownload("name", "email")
         req.add_iterative_predicate(
             "BASIS_OF_RECORD", ["FOSSIL_SPECIMEN", "LITERATURE"]
@@ -131,10 +130,8 @@ class TestGbifClass(unittest.TestCase):
 
 class TestDownload(unittest.TestCase):
 
-    # mocking the request service
-    requests.post = dummypost
-
-    def test_single_predicate(self):
+    @patch('requests.post', side_effect=dummypost)
+    def test_single_predicate(self, mock_post):
         dl_key, payload = download(
             "decimalLatitude > 50", user="dummy", email="dummy", pwd="dummy"
         )
@@ -151,7 +148,8 @@ class TestDownload(unittest.TestCase):
             {"key": "BASIS_OF_RECORD", "type": "equals", "value": "LITERATURE"},
         )
 
-    def test_single_predicate_list(self):
+    @patch('requests.post', side_effect=dummypost)
+    def test_single_predicate_list(self, mock_post):
         dl_key, payload = download(
             ["decimalLatitude > 50"], user="dummy", email="dummy", pwd="dummy"
         )
@@ -161,7 +159,8 @@ class TestDownload(unittest.TestCase):
             {"key": "DECIMAL_LATITUDE", "type": "greaterThan", "value": "50"},
         )
 
-    def test_multiple_predicates(self):
+    @patch('requests.post', side_effect=dummypost)
+    def test_multiple_predicates(self, mock_post):
         dl_key, payload = download(
             ["taxonKey = 5WZLF", "hasCoordinate = TRUE"],
             user="dummy",
@@ -178,7 +177,8 @@ class TestDownload(unittest.TestCase):
         # Second predicate is hasCoordinate, should NOT have checklistKey
         self.assertEqual(set(list(temp_pred[1].keys())), set(["key", "type", "value"]))
 
-    def test_alternative_main_type(self):
+    @patch('requests.post', side_effect=dummypost)
+    def test_alternative_main_type(self, mock_post):
         dl_key, payload = download(
             ["depth = 80", "taxonKey = 7B3XY"],
             pred_type="or",
@@ -189,7 +189,8 @@ class TestDownload(unittest.TestCase):
 
         self.assertEqual(payload["predicate"]["type"], "or")
 
-    def test_geometry_predicate(self):
+    @patch('requests.post', side_effect=dummypost)
+    def test_geometry_predicate(self, mock_post):
         dl_key, payload = download(
             ["geometry within POLYGON((-82.7 36.9, -85.0 35.6, -81.0 33.5, -79.4 36.3, -79.4 36.3, -82.7 36.9))"], 
             user="dummy", email="dummy", pwd="dummy"
@@ -200,7 +201,8 @@ class TestDownload(unittest.TestCase):
             {"type": "within", "geometry": "POLYGON((-82.7 36.9, -85.0 35.6, -81.0 33.5, -79.4 36.3, -79.4 36.3, -82.7 36.9))"},
         )
 
-    def test_checklistkey_in_payload(self):
+    @patch('requests.post', side_effect=dummypost)
+    def test_checklistkey_in_payload(self, mock_post):
         """Test that checklistKey parameter is included at both root and predicate levels"""
         checklist_uuid = "7ddf754f-d193-4cc9-b351-99906754a03b"
         
@@ -220,7 +222,8 @@ class TestDownload(unittest.TestCase):
         self.assertIn("checklistKey", payload["predicate"]["predicates"][0])
         self.assertEqual(payload["predicate"]["predicates"][0]["checklistKey"], checklist_uuid)
 
-    def test_checklistkey_col_default_for_alphanumeric_keys(self):
+    @patch('requests.post', side_effect=dummypost)
+    def test_checklistkey_col_default_for_alphanumeric_keys(self, mock_post):
         """Test that COL Extended Release is used by default for alphanumeric taxon keys"""
         
         dl_key, payload = download(
@@ -234,7 +237,8 @@ class TestDownload(unittest.TestCase):
         self.assertIn("checklistKey", payload)
         self.assertEqual(payload["checklistKey"], "7ddf754f-d193-4cc9-b351-99906754a03b")
 
-    def test_checklistkey_with_multiple_predicates(self):
+    @patch('requests.post', side_effect=dummypost)
+    def test_checklistkey_with_multiple_predicates(self, mock_post):
         """Test that global checklistKey is at root level and injected into taxon predicates"""
         checklist_uuid = "7ddf754f-d193-4cc9-b351-99906754a03b"
         
@@ -260,7 +264,8 @@ class TestDownload(unittest.TestCase):
         self.assertEqual(taxon_pred["checklistKey"], checklist_uuid)
         self.assertNotIn("checklistKey", country_pred)
 
-    def test_checklistkey_with_dict_query(self):
+    @patch('requests.post', side_effect=dummypost)
+    def test_checklistkey_with_dict_query(self, mock_post):
         """Test that global checklistKey works with dictionary queries"""
         checklist_uuid = "7ddf754f-d193-4cc9-b351-99906754a03b"
         
@@ -301,7 +306,8 @@ class TestDownload(unittest.TestCase):
         self.assertIn("checklistKey", req.payload)
         self.assertEqual(req.payload["checklistKey"], checklist_uuid)
         
-    def test_manual_checklistkey_in_predicate(self):
+    @patch('requests.post', side_effect=dummypost)
+    def test_manual_checklistkey_in_predicate(self, mock_post):
         """Test that checklistKey can be used in predicates for search filtering
         
         The checklistKey parameter can be included within individual predicates
@@ -341,7 +347,8 @@ class TestDownload(unittest.TestCase):
         
         self.assertNotIn("checklistKey", req.payload)
 
-    def test_numeric_key_deprecation_warning(self):
+    @patch('requests.post', side_effect=dummypost)
+    def test_numeric_key_deprecation_warning(self, mock_post):
         """Test that numeric taxon keys trigger deprecation warning and use GBIF Backbone"""
         with warnings.catch_warnings(record=True) as w:
             warnings.simplefilter("always")
@@ -365,7 +372,8 @@ class TestDownload(unittest.TestCase):
             self.assertIn("checklistKey", payload["predicate"]["predicates"][0])
             self.assertEqual(payload["predicate"]["predicates"][0]["checklistKey"], "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c")
 
-    def test_numeric_key_explicit_checklistkey_no_warning(self):
+    @patch('requests.post', side_effect=dummypost)
+    def test_numeric_key_explicit_checklistkey_no_warning(self, mock_post):
         """Test that explicit checklistKey=None with numeric keys doesn't warn"""
         with warnings.catch_warnings(record=True) as w:
             warnings.simplefilter("always")
@@ -384,7 +392,8 @@ class TestDownload(unittest.TestCase):
             # Should NOT include checklistKey in payload
             self.assertNotIn("checklistKey", payload)
 
-    def test_numeric_specieskey_deprecation_warning(self):
+    @patch('requests.post', side_effect=dummypost)
+    def test_numeric_specieskey_deprecation_warning(self, mock_post):
         """Test that numeric speciesKey also triggers the warning"""
         with warnings.catch_warnings(record=True) as w:
             warnings.simplefilter("always")
@@ -406,7 +415,8 @@ class TestDownload(unittest.TestCase):
             self.assertIn("checklistKey", payload["predicate"]["predicates"][0])
             self.assertEqual(payload["predicate"]["predicates"][0]["checklistKey"], "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c")
 
-    def test_numeric_key_in_dict_query_deprecation(self):
+    @patch('requests.post', side_effect=dummypost)
+    def test_numeric_key_in_dict_query_deprecation(self, mock_post):
         """Test that numeric keys in dict queries also trigger warning"""
         with warnings.catch_warnings(record=True) as w:
             warnings.simplefilter("always")
@@ -434,7 +444,8 @@ class TestDownload(unittest.TestCase):
             self.assertIn("checklistKey", payload["predicate"])
             self.assertEqual(payload["predicate"]["checklistKey"], "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c")
 
-    def test_multiple_predicates_with_numeric_key(self):
+    @patch('requests.post', side_effect=dummypost)
+    def test_multiple_predicates_with_numeric_key(self, mock_post):
         """Test that numeric keys in one of multiple predicates triggers warning"""
         with warnings.catch_warnings(record=True) as w:
             warnings.simplefilter("always")
@@ -457,7 +468,8 @@ class TestDownload(unittest.TestCase):
             self.assertIn("checklistKey", payload["predicate"]["predicates"][0])
             self.assertEqual(payload["predicate"]["predicates"][0]["checklistKey"], "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c")
 
-    def test_predicate_level_checklistkey_no_warning(self):
+    @patch('requests.post', side_effect=dummypost)
+    def test_predicate_level_checklistkey_no_warning(self, mock_post):
         """Test that numeric keys with predicate-level checklistKey don't trigger warning"""
         with warnings.catch_warnings(record=True) as w:
             warnings.simplefilter("always")
