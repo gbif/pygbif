@@ -158,6 +158,7 @@ def name_backbone(
 
        # Match using a different checklist
        species.name_backbone(scientificName="Calopteryx splendens", checklistKey="other-checklist-uuid")
+       # Note: Only COL Extended Release and legacy GBIF Backbone Taxonomy are currently supported
    """
    url = "https://api.gbif.org/v2/" + "species/match"
    args = {
