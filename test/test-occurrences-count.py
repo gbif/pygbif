@@ -1,5 +1,6 @@
 """Tests for occurrences module - count methods"""
 import pytest
+import warnings
 import vcr
 from pygbif import occurrences
 
@@ -33,7 +34,7 @@ year_res = [
 @vcr.use_cassette("test/vcr_cassettes/test_count.yaml")
 def test_count():
     "occurrences.count - basic test"
-    res = occurrences.count(taxonKey=3329049)
+    res = occurrences.count(taxonKey="5TYZ9")
     assert int == res.__class__
 
 
@@ -94,3 +95,40 @@ def test_count_publishingcountries():
     assert dict == res.__class__
     assert str == str(list(res.keys())[0]).__class__
     assert int == list(res.values())[0].__class__
+
+
+@vcr.use_cassette("test/vcr_cassettes/test_count_numeric_key_warning.yaml")
+def test_count_numeric_key_deprecation_warning():
+    "occurrences.count - numeric taxonKey triggers deprecation warning"
+    with warnings.catch_warnings(record=True) as w:
+        warnings.simplefilter("always")
+        res = occurrences.count(taxonKey=3329049)
+        assert len(w) == 1
+        assert issubclass(w[-1].category, DeprecationWarning)
+        assert "Numeric taxonKey detected" in str(w[-1].message)
+        assert "gbif_to_col" in str(w[-1].message)
+        assert int == res.__class__
+
+
+@vcr.use_cassette("test/vcr_cassettes/test_count_numeric_key_explicit_checklistkey.yaml")
+def test_count_numeric_key_explicit_checklistkey_no_warning():
+    "occurrences.count - numeric taxonKey with explicit checklistKey doesn't warn"
+    with warnings.catch_warnings(record=True) as w:
+        warnings.simplefilter("always")
+        res = occurrences.count(taxonKey=3329049, checklistKey=None)
+        # Filter out non-DeprecationWarning warnings
+        deprecation_warnings = [x for x in w if issubclass(x.category, DeprecationWarning)]
+        assert len(deprecation_warnings) == 0
+        assert int == res.__class__
+
+
+@vcr.use_cassette("test/vcr_cassettes/test_count_datasets_numeric_key_warning.yaml")
+def test_count_datasets_numeric_key_deprecation_warning():
+    "occurrences.count_datasets - numeric taxonKey triggers deprecation warning"
+    with warnings.catch_warnings(record=True) as w:
+        warnings.simplefilter("always")
+        res = occurrences.count_datasets(taxonKey=3329049)
+        assert len(w) == 1
+        assert issubclass(w[-1].category, DeprecationWarning)
+        assert "Numeric taxonKey detected" in str(w[-1].message)
+        assert dict == res.__class__

@@ -1,3 +1,5 @@
+import warnings
+
 from pygbif.gbifutils import gbif_baseurl, gbif_GET
 
 
@@ -5,6 +7,10 @@ def name_suggest(q=None, datasetKey=None, rank=None, limit=100, offset=None, **k
     """
   A quick and simple autocomplete service that returns up to 20 name usages by
   doing prefix matching against the scientific name. Results are ordered by relevance.
+
+  .. deprecated::
+     This function primarily uses the outdated GBIF Backbone Taxonomy.
+     Use the datasetKey parameter to search other checklists.
 
   :param q: [str] Simple search parameter. The value for this parameter can be a
      simple word or a phrase. Wildcards can be added to the simple word parameters only,
@@ -35,6 +41,13 @@ def name_suggest(q=None, datasetKey=None, rank=None, limit=100, offset=None, **k
       species.name_suggest(q='Puma', rank="infraspecific_name")
       species.name_suggest(q='Puma', limit=2)
   """
+    warnings.warn(
+        "name_suggest() primarily uses the outdated GBIF Backbone Taxonomy. "
+        "Use the datasetKey parameter to search other checklists.",
+        DeprecationWarning,
+        stacklevel=2
+    )
+    
     url = gbif_baseurl + "species/suggest"
     args = {"q": q, "rank": rank, "offset": offset, "limit": limit}
     return gbif_GET(url, args, **kwargs)
