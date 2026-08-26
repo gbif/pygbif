@@ -173,7 +173,9 @@ class TestDownload(unittest.TestCase):
         self.assertEqual(len(temp_pred), 2)
         self.assertIsInstance(temp_pred[0], dict)
         self.assertIsInstance(temp_pred[1], dict)
-        self.assertEqual(set(list(temp_pred[0].keys())), set(["key", "type", "value"]))
+        # First predicate is taxonKey, should have checklistKey injected
+        self.assertEqual(set(list(temp_pred[0].keys())), set(["key", "type", "value", "checklistKey"]))
+        # Second predicate is hasCoordinate, should NOT have checklistKey
         self.assertEqual(set(list(temp_pred[1].keys())), set(["key", "type", "value"]))
 
     def test_alternative_main_type(self):
@@ -199,7 +201,7 @@ class TestDownload(unittest.TestCase):
         )
 
     def test_checklistkey_in_payload(self):
-        """Test that checklistKey parameter is included at root level"""
+        """Test that checklistKey parameter is included at both root and predicate levels"""
         checklist_uuid = "7ddf754f-d193-4cc9-b351-99906754a03b"
         
         dl_key, payload = download(
@@ -214,9 +216,9 @@ class TestDownload(unittest.TestCase):
         self.assertIn("checklistKey", payload)
         self.assertEqual(payload["checklistKey"], checklist_uuid)
         
-        # checklistKey should NOT be automatically injected into predicates
-        # (GBIF servers will use the global one)
-        self.assertNotIn("checklistKey", payload["predicate"]["predicates"][0])
+        # checklistKey should also be in predicates (for proper taxonomy resolution)
+        self.assertIn("checklistKey", payload["predicate"]["predicates"][0])
+        self.assertEqual(payload["predicate"]["predicates"][0]["checklistKey"], checklist_uuid)
 
     def test_checklistkey_col_default_for_alphanumeric_keys(self):
         """Test that COL Extended Release is used by default for alphanumeric taxon keys"""
@@ -233,7 +235,7 @@ class TestDownload(unittest.TestCase):
         self.assertEqual(payload["checklistKey"], "7ddf754f-d193-4cc9-b351-99906754a03b")
 
     def test_checklistkey_with_multiple_predicates(self):
-        """Test that global checklistKey is at root level only"""
+        """Test that global checklistKey is at root level and injected into taxon predicates"""
         checklist_uuid = "7ddf754f-d193-4cc9-b351-99906754a03b"
         
         dl_key, payload = download(
@@ -251,9 +253,12 @@ class TestDownload(unittest.TestCase):
         # Should have 2 predicates
         self.assertEqual(len(payload["predicate"]["predicates"]), 2)
         
-        # checklistKey should NOT be in individual predicates (only at root level)
-        for pred in payload["predicate"]["predicates"]:
-            self.assertNotIn("checklistKey", pred)
+        # checklistKey should be in taxon predicate but NOT in country predicate
+        taxon_pred = payload["predicate"]["predicates"][0]
+        country_pred = payload["predicate"]["predicates"][1]
+        self.assertIn("checklistKey", taxon_pred)
+        self.assertEqual(taxon_pred["checklistKey"], checklist_uuid)
+        self.assertNotIn("checklistKey", country_pred)
 
     def test_checklistkey_with_dict_query(self):
         """Test that global checklistKey works with dictionary queries"""
@@ -279,9 +284,12 @@ class TestDownload(unittest.TestCase):
         self.assertIn("checklistKey", payload)
         self.assertEqual(payload["checklistKey"], checklist_uuid)
         
-        # checklistKey should NOT be in individual predicates
-        for pred in payload["predicate"]["predicates"]:
-            self.assertNotIn("checklistKey", pred)
+        # checklistKey should be in taxon predicate but not country predicate
+        taxon_pred = payload["predicate"]["predicates"][0]
+        country_pred = payload["predicate"]["predicates"][1]
+        self.assertIn("checklistKey", taxon_pred)
+        self.assertEqual(taxon_pred["checklistKey"], checklist_uuid)
+        self.assertNotIn("checklistKey", country_pred)
 
     def test_gbif_download_class_with_checklistkey(self):
         """Test that GbifDownload class stores checklistKey at root level only"""
@@ -350,8 +358,12 @@ class TestDownload(unittest.TestCase):
             self.assertTrue(issubclass(w[0].category, DeprecationWarning))
             self.assertIn("Numeric taxon keys", str(w[0].message))
             
-            # Should NOT include checklistKey in payload (uses GBIF Backbone)
-            self.assertNotIn("checklistKey", payload)
+            # Should include checklistKey at root (COL default) and predicate (GBIF Backbone)
+            self.assertIn("checklistKey", payload)
+            self.assertEqual(payload["checklistKey"], "7ddf754f-d193-4cc9-b351-99906754a03b")  # COL at root
+            # Predicate should have GBIF Backbone
+            self.assertIn("checklistKey", payload["predicate"]["predicates"][0])
+            self.assertEqual(payload["predicate"]["predicates"][0]["checklistKey"], "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c")
 
     def test_numeric_key_explicit_checklistkey_no_warning(self):
         """Test that explicit checklistKey=None with numeric keys doesn't warn"""
@@ -388,8 +400,11 @@ class TestDownload(unittest.TestCase):
             self.assertEqual(len(w), 1)
             self.assertTrue(issubclass(w[0].category, DeprecationWarning))
             
-            # Should NOT include checklistKey in payload
-            self.assertNotIn("checklistKey", payload)
+            # Should include checklistKey at root (COL default) and predicate (GBIF Backbone)
+            self.assertIn("checklistKey", payload)
+            self.assertEqual(payload["checklistKey"], "7ddf754f-d193-4cc9-b351-99906754a03b")  # COL at root
+            self.assertIn("checklistKey", payload["predicate"]["predicates"][0])
+            self.assertEqual(payload["predicate"]["predicates"][0]["checklistKey"], "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c")
 
     def test_numeric_key_in_dict_query_deprecation(self):
         """Test that numeric keys in dict queries also trigger warning"""
@@ -413,8 +428,11 @@ class TestDownload(unittest.TestCase):
             self.assertEqual(len(w), 1)
             self.assertTrue(issubclass(w[0].category, DeprecationWarning))
             
-            # Should NOT include checklistKey in payload
-            self.assertNotIn("checklistKey", payload)
+            # Should include checklistKey at root (COL default) and predicate (GBIF Backbone)
+            self.assertIn("checklistKey", payload)
+            self.assertEqual(payload["checklistKey"], "7ddf754f-d193-4cc9-b351-99906754a03b")  # COL at root
+            self.assertIn("checklistKey", payload["predicate"])
+            self.assertEqual(payload["predicate"]["checklistKey"], "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c")
 
     def test_multiple_predicates_with_numeric_key(self):
         """Test that numeric keys in one of multiple predicates triggers warning"""
@@ -432,8 +450,12 @@ class TestDownload(unittest.TestCase):
             self.assertEqual(len(w), 1)
             self.assertTrue(issubclass(w[0].category, DeprecationWarning))
             
-            # Should NOT include checklistKey in payload
-            self.assertNotIn("checklistKey", payload)
+            # Should include checklistKey at root (COL default)
+            self.assertIn("checklistKey", payload)
+            self.assertEqual(payload["checklistKey"], "7ddf754f-d193-4cc9-b351-99906754a03b")  # COL at root
+            # Taxon predicate should have GBIF Backbone
+            self.assertIn("checklistKey", payload["predicate"]["predicates"][0])
+            self.assertEqual(payload["predicate"]["predicates"][0]["checklistKey"], "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c")
 
     def test_predicate_level_checklistkey_no_warning(self):
         """Test that numeric keys with predicate-level checklistKey don't trigger warning"""
