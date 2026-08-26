@@ -872,6 +872,176 @@ class TestDownloadLive:
             print(f"✓ IN string syntax test passed (parsed correctly, proper injection). Download key: {download_key}")
             print(f"  Warning message: {deprecation_warnings[0].message}")
 
+    @vcr.use_cassette("test/vcr_cassettes/test_download_live_mixed_in_values.yaml", filter_headers=["authorization"])
+    def test_mixed_in_values_default_to_col(self):
+        """Test IN predicate with mixed alphanumeric and numeric values defaults to COL XR"""
+        # When we have a mix of alphanumeric and numeric values in the same IN predicate,
+        # it's ambiguous which checklist to use, so we default to COL XR
+        query = {
+            "type": "in",
+            "key": "TAXON_KEY",
+            "values": ["5WZLF", "2435098", "623LY", "3119195"]  # Mixed: 2 alphanumeric, 2 numeric
+        }
+        
+        with warnings.catch_warnings(record=True) as w:
+            warnings.simplefilter("always")
+            
+            download_key, payload = occ.download(query)
+            
+            # Cancel immediately
+            time.sleep(1)
+            occ.download_cancel(download_key)
+            
+            # Should NOT warn - we're defaulting to COL XR for mixed values
+            deprecation_warnings = [warning for warning in w if issubclass(warning.category, DeprecationWarning)]
+            assert len(deprecation_warnings) == 0
+            
+            # Verify download created
+            assert download_key is not None
+            
+            # Verify payload includes COL XR at ROOT level
+            assert "checklistKey" in payload
+            assert payload["checklistKey"] == "7ddf754f-d193-4cc9-b351-99906754a03b"
+            
+            # Verify predicate got COL XR (not GBIF Backbone) because values are mixed
+            pred = payload["predicate"]
+            assert pred["type"] == "in"
+            assert pred["key"] == "TAXON_KEY"
+            assert pred["values"] == ["5WZLF", "2435098", "623LY", "3119195"]
+            assert "checklistKey" in pred
+            assert pred["checklistKey"] == "7ddf754f-d193-4cc9-b351-99906754a03b"  # COL XR (not GBIF Backbone)
+            
+            print(f"✓ Mixed IN values test passed (defaults to COL XR). Download key: {download_key}")
+
+    @vcr.use_cassette("test/vcr_cassettes/test_download_live_not_predicate.yaml", filter_headers=["authorization"])
+    def test_not_predicate_with_taxon_key(self):
+        """Test that NOT predicates wrapping taxon keys get checklistKey injected correctly"""
+        # NOT predicates should recursively process the inner predicate
+        query = {
+            "type": "and",
+            "predicates": [
+                # NOT wrapping an alphanumeric taxon key
+                {
+                    "type": "not",
+                    "predicate": {
+                        "type": "equals",
+                        "key": "TAXON_KEY",
+                        "value": "5WZLF"
+                    }
+                },
+                # Regular predicate for contrast
+                {
+                    "type": "equals",
+                    "key": "COUNTRY",
+                    "value": "US"
+                }
+            ]
+        }
+        
+        with warnings.catch_warnings(record=True) as w:
+            warnings.simplefilter("always")
+            
+            download_key, payload = occ.download(query)
+            
+            # Cancel immediately
+            time.sleep(1)
+            occ.download_cancel(download_key)
+            
+            # Should NOT warn (alphanumeric key)
+            deprecation_warnings = [warning for warning in w if issubclass(warning.category, DeprecationWarning)]
+            assert len(deprecation_warnings) == 0
+            
+            # Verify download created
+            assert download_key is not None
+            
+            # Verify payload includes COL XR at ROOT level
+            assert "checklistKey" in payload
+            assert payload["checklistKey"] == "7ddf754f-d193-4cc9-b351-99906754a03b"
+            
+            # Verify the NOT predicate structure
+            assert "predicate" in payload
+            assert "predicates" in payload["predicate"]
+            predicates = payload["predicate"]["predicates"]
+            assert len(predicates) == 2
+            
+            # Check NOT predicate
+            not_pred = predicates[0]
+            assert not_pred["type"] == "not"
+            assert "predicate" in not_pred
+            
+            # Check the inner taxon predicate got checklistKey injected
+            inner_pred = not_pred["predicate"]
+            assert inner_pred["type"] == "equals"
+            assert inner_pred["key"] == "TAXON_KEY"
+            assert inner_pred["value"] == "5WZLF"
+            assert "checklistKey" in inner_pred
+            assert inner_pred["checklistKey"] == "7ddf754f-d193-4cc9-b351-99906754a03b"  # COL XR
+            
+            # Check COUNTRY predicate has NO checklistKey
+            country_pred = predicates[1]
+            assert country_pred["type"] == "equals"
+            assert country_pred["key"] == "COUNTRY"
+            assert country_pred["value"] == "US"
+            assert "checklistKey" not in country_pred
+            
+            print(f"✓ NOT predicate test passed (recursion through NOT works correctly). Download key: {download_key}")
+
+    @vcr.use_cassette("test/vcr_cassettes/test_download_live_all_rank_keys.yaml", filter_headers=["authorization"])
+    def test_all_taxonomic_rank_keys(self):
+        """Test that all taxonomic rank keys (KINGDOM, PHYLUM, CLASS, ORDER, etc.) get checklistKey injected"""
+        # Test various taxonomic rank keys to ensure they all work
+        query = {
+            "type": "or",
+            "predicates": [
+                {"type": "equals", "key": "KINGDOM_KEY", "value": "5WZLD"},
+                {"type": "equals", "key": "PHYLUM_KEY", "value": "5WZLH"},
+                {"type": "equals", "key": "CLASS_KEY", "value": "623M9"},
+                {"type": "equals", "key": "ORDER_KEY", "value": "623MD"},
+                {"type": "equals", "key": "FAMILY_KEY", "value": "623LY"},
+                {"type": "equals", "key": "GENUS_KEY", "value": "5WZ4Y"},
+                {"type": "equals", "key": "SPECIES_KEY", "value": "5WZLF"},
+                {"type": "equals", "key": "TAXON_KEY", "value": "623M5"},
+            ]
+        }
+        
+        with warnings.catch_warnings(record=True) as w:
+            warnings.simplefilter("always")
+            
+            download_key, payload = occ.download(query)
+            
+            # Cancel immediately
+            time.sleep(1)
+            occ.download_cancel(download_key)
+            
+            # Should NOT warn (all alphanumeric)
+            deprecation_warnings = [warning for warning in w if issubclass(warning.category, DeprecationWarning)]
+            assert len(deprecation_warnings) == 0
+            
+            # Verify download created
+            assert download_key is not None
+            
+            # Verify payload includes COL XR at ROOT level
+            assert "checklistKey" in payload
+            assert payload["checklistKey"] == "7ddf754f-d193-4cc9-b351-99906754a03b"
+            
+            # Verify all predicates got checklistKey injected
+            assert "predicate" in payload
+            assert "predicates" in payload["predicate"]
+            predicates = payload["predicate"]["predicates"]
+            assert len(predicates) == 8
+            
+            # Check that ALL taxonomic predicates have COL XR checklistKey
+            for pred in predicates:
+                assert pred["type"] == "equals"
+                assert pred["key"] in [
+                    "KINGDOM_KEY", "PHYLUM_KEY", "CLASS_KEY", "ORDER_KEY",
+                    "FAMILY_KEY", "GENUS_KEY", "SPECIES_KEY", "TAXON_KEY"
+                ]
+                assert "checklistKey" in pred
+                assert pred["checklistKey"] == "7ddf754f-d193-4cc9-b351-99906754a03b"  # All get COL XR
+            
+            print(f"✓ All rank keys test passed (all taxonomic ranks get checklistKey). Download key: {download_key}")
+
 
 if __name__ == "__main__":
     """Run live tests manually with: python test/test-occurrences-download_live.py"""

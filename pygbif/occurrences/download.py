@@ -114,7 +114,8 @@ def _has_numeric_taxon_keys(queries):
                 if "value" in pred and is_numeric(pred["value"]):
                     return True
                 if "values" in pred and isinstance(pred["values"], list):
-                    if any(is_numeric(v) for v in pred["values"]):
+                    # Only warn if ALL values are numeric (not mixed)
+                    if pred["values"] and all(is_numeric(v) for v in pred["values"]):
                         return True
         
         # Recursively check nested predicates
@@ -155,9 +156,12 @@ def _has_numeric_taxon_keys(queries):
                         list_pattern = rf"{key_name}\s+in\s*\[([^\]]*)\]"
                         list_match = re.search(list_pattern, query_item)
                         if list_match:
-                            # Check if the list contains any numeric values
+                            # Only warn if ALL values are numeric (not mixed)
                             list_content = list_match.group(1)
-                            if re.search(r'\b\d+\b', list_content):
+                            # Extract individual values (split by comma, strip quotes/spaces)
+                            values = [v.strip().strip('"').strip("'") for v in list_content.split(',')]
+                            # Check if all non-empty values are numeric
+                            if values and all(v.isdigit() for v in values if v):
                                 return True
     
     return False
@@ -197,13 +201,16 @@ def _inject_checklist_into_predicates(predicate, root_checklistKey):
             
             # Handle "in" predicates with multiple values
             if "values" in predicate and isinstance(predicate["values"], list):
-                # Check if any value is numeric
-                has_numeric = any(str(v).isdigit() for v in predicate["values"])
-                if has_numeric:
-                    # If any numeric values present -> use GBIF Backbone
+                # Check if ALL values are numeric (not just some)
+                # Mixed values are ambiguous, so we default to COL XR
+                values_list = predicate["values"]
+                all_numeric = all(str(v).isdigit() for v in values_list) if values_list else False
+                
+                if all_numeric and values_list:
+                    # ALL values are numeric -> use GBIF Backbone
                     predicate["checklistKey"] = "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c"
                 else:
-                    # All alphanumeric -> use COL Extended Release
+                    # All alphanumeric OR mixed -> use COL Extended Release (default)
                     predicate["checklistKey"] = "7ddf754f-d193-4cc9-b351-99906754a03b"
             # Handle single value predicates (equals, etc.)
             elif "value" in predicate:
