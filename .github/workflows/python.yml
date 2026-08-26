@@ -30,9 +30,9 @@ jobs:
     - name: Install pygbif
       run: make
     - name: Tests
-      run: pytest
+      run: pytest --ignore=test/test-occurrences-download_live.py
     - name: Test coverage
       if: matrix.python-version == '3.10'
       run: |
-        python3 -m "pytest" --cov-report=xml --cov=pygbif test/
+        python3 -m "pytest" --cov-report=xml --cov=pygbif test/ --ignore=test/test-occurrences-download_live.py
         codecov
