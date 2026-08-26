@@ -28,26 +28,10 @@ jobs:
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     
-    - name: Delete vcr cassettes so that it runs live tests
-      run: |
-        rm -rf test/vcr_cassettes/*
-        if [ "$(ls -A test/vcr_cassettes)" ]; then
-          echo "Directory is not empty"
-          exit 1
-        fi
+    # NOTE: Download tests use VCR cassettes to avoid GBIF API rate limits (3 downloads max)
+    # All tests in test-occurrences-download_live.py create downloads, so we use cassettes
+    # To regenerate: delete cassettes locally and run with GBIF credentials
 
-    - name: Tests
-      run: pytest test/test-occurrences-download_live.py -v
-
-    - name: Check if vcr cassettes were created today
-      run: |
-        for file in test/vcr_cassettes/*; do
-          file_date=$(stat -c %y "$file" | cut -d ' ' -f 1)
-          echo "File $file was created on $file_date"
-          current_date=$(date +%Y-%m-%d)
-          if [[ "$file_date" != "$current_date" ]]; then
-            echo "File $file was not created today"
-            exit 1
-          fi
-        done  
+    - name: Tests (using VCR cassettes to avoid rate limits)
+      run: pytest test/test-occurrences-download_live.py -v  
 
