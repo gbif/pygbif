@@ -36,6 +36,6 @@ jobs:
           exit 1
         fi
 
-    - name: Tests (all tests EXCEPT download_live, which hits rate limits)
-      run: pytest test/ --ignore=test/test-occurrences-download_live.py -v  
+    - name: Tests (all tests EXCEPT downloads, which hit rate limits)
+      run: pytest test/ --ignore=test/test-occurrences-download_live.py --ignore=test/test-occurrences-download_sql.py -v  
 
