@@ -1,3 +1,5 @@
+import warnings
+
 from pygbif.gbifutils import check_data, len2, gbif_baseurl, gbif_GET
 
 
@@ -18,6 +20,10 @@ def name_usage(
     """
     Lookup details for specific names in all taxonomies in GBIF.
 
+    .. deprecated::
+       This function primarily uses the outdated GBIF Backbone Taxonomy.
+       Use the datasetKey parameter to query other checklists.
+
     :param key: [fixnum] A GBIF key for a taxon
     :param name: [str] Filters by a case insensitive, canonical namestring,
          e.g. 'Puma concolor'
@@ -32,7 +38,8 @@ def name_usage(
         ``/species/{int}/parents``, ``/species/{int}/children``, ``/species/{int}/related``,
         ``/species/{int}/synonyms`` routes (here routes are determined by the ``data``
         parameter).
-    :param datasetKey: [str] Filters by the dataset's key (a uuid)
+    :param datasetKey: [str] Filters by the dataset's key (a uuid). Note: When used with
+        the ``key`` parameter, datasetKey is ignored and the GBIF Backbone Taxonomy is used.
     :param uuid: [str] A uuid for a dataset. Should give exact same results as datasetKey.
     :param sourceId: [fixnum] Filters by the source identifier.
     :param rank: [str] Taxonomic rank. Filters by taxonomic rank as one of:
@@ -77,6 +84,21 @@ def name_usage(
             # Search for names by dataset with datasetKey parameter
             species.name_usage(datasetKey="d7dddbf4-2cf0-4f39-9b2a-bb099caae36c")
     """
+    warnings.warn(
+        "name_usage() primarily uses the outdated GBIF Backbone Taxonomy. "
+        "Use the datasetKey parameter to query other checklists.",
+        DeprecationWarning,
+        stacklevel=2
+    )
+    
+    if key is not None and datasetKey is not None:
+        warnings.warn(
+            "When both 'key' and 'datasetKey' parameters are provided, "
+            "the datasetKey is ignored and the GBIF Backbone Taxonomy is used.",
+            UserWarning,
+            stacklevel=2
+        )
+    
     args = {
         "language": language,
         "name": name,

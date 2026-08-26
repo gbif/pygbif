@@ -11,34 +11,34 @@ interactions:
       user-agent:
       - python-requests/2.31.0,pygbif/0.6.5
     method: GET
-    uri: https://api.gbif.org/v2/species/match?scientificName=Calopteryx+splendens
+    uri: https://api.gbif.org/v2/species/match?scientificName=Calopteryx+splendens&checklistKey=7ddf754f-d193-4cc9-b351-99906754a03b
   response:
     body:
-      string: '{"usage":{"key":"1427067","name":"Calopteryx splendens (Harris, 1780)","canonicalName":"Calopteryx
+      string: '{"usage":{"key":"Q2M4","name":"Calopteryx splendens (Harris, 1780)","canonicalName":"Calopteryx
         splendens","authorship":"(Harris, 1780)","rank":"SPECIES","code":"ZOOLOGICAL","status":"ACCEPTED","genericName":"Calopteryx","specificEpithet":"splendens","type":"SCIENTIFIC","formattedName":"<i>Calopteryx</i>
-        <i>splendens</i> (Harris, 1780)"},"classification":[{"key":"1","name":"Animalia","rank":"KINGDOM"},{"key":"54","name":"Arthropoda","rank":"PHYLUM"},{"key":"216","name":"Insecta","rank":"CLASS"},{"key":"789","name":"Odonata","rank":"ORDER"},{"key":"4211","name":"Calopterygidae","rank":"FAMILY"},{"key":"1427007","name":"Calopteryx","rank":"GENUS"},{"key":"1427067","name":"Calopteryx
-        splendens","rank":"SPECIES"}],"diagnostics":{"matchType":"EXACT","confidence":99,"timeTaken":23,"timings":{"nameNRank":0,"sciNameMatch":23,"nameParse":0,"luceneMatch":23}},"additionalStatus":[{"clbDatasetKey":"53131","datasetAlias":"IUCN","datasetKey":"19491596-35ae-4a91-9a98-85cf505f1bd3","status":"LEAST_CONCERN","statusCode":"LC","sourceId":"158701"}],"synonym":false,"left":1041350,"right":1041352}'
+        <i>splendens</i> (Harris, 1780)"},"classification":[{"key":"CS5HF","name":"Eukaryota","rank":"DOMAIN"},{"key":"N","name":"Animalia","rank":"KINGDOM"},{"key":"RT","name":"Arthropoda","rank":"PHYLUM"},{"key":"L2655","name":"Hexapoda","rank":"SUBPHYLUM"},{"key":"H6","name":"Insecta","rank":"CLASS"},{"key":"B6LCL","name":"Odonata","rank":"ORDER"},{"key":"B6NHX","name":"Zygoptera","rank":"SUBORDER"},{"key":"V5BP3","name":"Calopterygoidea","rank":"SUPERFAMILY"},{"key":"9WKK3","name":"Calopterygidae","rank":"FAMILY"},{"key":"9WLSS","name":"Calopteryx","rank":"GENUS"},{"key":"Q2M4","name":"Calopteryx
+        splendens","rank":"SPECIES"}],"diagnostics":{"matchType":"EXACT","confidence":99,"timeTaken":12,"timings":{"nameNRank":0,"sciNameMatch":13,"nameParse":1,"luceneMatch":12}},"additionalStatus":[{"clbDatasetKey":"53131","datasetAlias":"IUCN","datasetKey":"19491596-35ae-4a91-9a98-85cf505f1bd3","status":"ENDANGERED","statusCode":"EN","sourceId":"3628"}],"synonym":false}'
     headers:
       Accept-Ranges:
       - bytes
       Age:
-      - '1464'
+      - '919'
       Cache-Control:
       - public, max-age=3601
       Connection:
       - keep-alive
       Content-Length:
-      - '1096'
+      - '1273'
       Content-Type:
       - application/json
       Date:
-      - Fri, 15 Aug 2025 07:57:36 GMT
+      - Fri, 21 Aug 2026 10:54:40 GMT
       Vary:
       - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
       Via:
-      - 1.1 varnish (Varnish/6.6)
+      - 1.1 prodapicache2-vh.gbif.org (Varnish/9.0)
       X-Varnish:
-      - 890243840 867008750
+      - 113103276136 112972769464
     status:
       code: 200
       message: OK

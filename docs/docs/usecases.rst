@@ -13,13 +13,14 @@ Load library
     from pygbif import species as species
     from pygbif import occurrences as occ
 
-First, get GBIF backbone taxonomic keys
+First, get COL Extended Release alphanumeric keys (recommended)
 
 .. code-block:: python
 
     splist = ['Cyanocitta stelleri', 'Junco hyemalis', 'Aix sponsa',
       'Ursus americanus', 'Pinus conorta', 'Poa annuus']
-    keys = [ species.name_backbone(x)['usageKey'] for x in splist ]
+    # Using COL Extended Release (default)
+    keys = [ species.name_backbone(x, checklistKey='7ddf754f-d193-4cc9-b351-99906754a03b')['usage']['key'] for x in splist ]
 
 Then, get a count of occurrence records for each taxon, and pull out
 number of records found for each taxon

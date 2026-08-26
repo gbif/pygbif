@@ -1,0 +1,115 @@
+interactions:
+- request:
+    body: '{"creator": "jwaller", "notification_address": ["jwaller@gbif.org"], "sendNotification":
+      true, "predicate": {"type": "or", "predicates": [{"type": "equals", "key": "KINGDOM_KEY",
+      "value": "5WZLD", "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b"}, {"type":
+      "equals", "key": "PHYLUM_KEY", "value": "5WZLH", "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b"},
+      {"type": "equals", "key": "CLASS_KEY", "value": "623M9", "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b"},
+      {"type": "equals", "key": "ORDER_KEY", "value": "623MD", "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b"},
+      {"type": "equals", "key": "FAMILY_KEY", "value": "623LY", "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b"},
+      {"type": "equals", "key": "GENUS_KEY", "value": "5WZ4Y", "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b"},
+      {"type": "equals", "key": "SPECIES_KEY", "value": "5WZLF", "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b"},
+      {"type": "equals", "key": "TAXON_KEY", "value": "623M5", "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b"}]},
+      "format": "SIMPLE_CSV", "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b"}'
+    headers:
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1137'
+      accept:
+      - application/json
+      content-type:
+      - application/json
+      user-agent:
+      - python-requests/2.31.0,pygbif/0.6.5
+    method: POST
+    uri: http://api.gbif.org/v1/occurrence/download/request
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAzMwMDY3MjPXNTIzsDAwMzA3sTQwNTI3BwBkoeIPFwAAAA==
+    headers:
+      Age:
+      - '0'
+      Cache-Control:
+      - public, max-age=3601
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '43'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 26 Aug 2026 05:55:45 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Vary:
+      - Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding
+      Via:
+      - 1.1 prodapicache2-vh.gbif.org (Varnish/9.0)
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Varnish:
+      - '118316369536'
+      X-XSS-Protection:
+      - '0'
+    status:
+      code: 201
+      message: Created
+- request:
+    body: 'false'
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '5'
+      Content-Type:
+      - application/json
+      user-agent:
+      - python-requests/2.31.0,pygbif/0.6.5
+    method: DELETE
+    uri: http://api.gbif.org/v1/occurrence/download/request/0037267-260806074905277
+  response:
+    body:
+      string: ''
+    headers:
+      Age:
+      - '0'
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 26 Aug 2026 05:55:46 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Vary:
+      - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      Via:
+      - 1.1 prodapicache2-vh.gbif.org (Varnish/9.0)
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Varnish:
+      - '118321055020'
+      X-XSS-Protection:
+      - '0'
+    status:
+      code: 204
+      message: No Content
+version: 1

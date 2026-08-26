@@ -38,9 +38,11 @@ Example usage:
     occ.download('decimalLatitude > 50')
     
     # Using custom taxonomy checklist
-    # By default, GBIF Backbone Taxonomy is used
-    # Specify checklistKey to use a different checklist (e.g., Catalogue of Life)
-    occ.download('taxonKey = 5WZLF', checklistKey='7ddf754f-d193-4cc9-b351-99906754a03b')
+    # By default, Catalogue of Life (COL) Extended Release is used
+    # Use alphanumeric COL keys directly
+    occ.download('taxonKey = 5WZLF')  # COL key (default)
+    # Or explicitly set checklistKey=None to use GBIF Backbone (deprecated)
+    occ.download('taxonKey = 3119195', checklistKey=None)
     
     occ.download_list(user = "sckott", limit = 5)
     occ.download_meta(key = "0000099-140929101555934")
@@ -64,8 +66,10 @@ Example usage:
     **Custom Taxonomy Checklists (checklistKey)**
     
     Users can specify the taxonomy to be included in occurrence downloads by 
-    adding the ``checklistKey`` parameter. By default, the GBIF Backbone Taxonomy 
-    will be used if no ``checklistKey`` is supplied.
+    adding the ``checklistKey`` parameter. By default, the Catalogue of Life (COL) 
+    Extended Release (7ddf754f-d193-4cc9-b351-99906754a03b) will be used if no 
+    ``checklistKey`` is supplied. Set ``checklistKey=None`` to use the deprecated 
+    GBIF Backbone Taxonomy instead.
     
     The ``checklistKey`` parameter accepts a UUID of a checklist from ChecklistBank
     and can be used in two ways:

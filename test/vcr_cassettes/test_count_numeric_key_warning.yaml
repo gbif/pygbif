@@ -1,0 +1,52 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - python-requests/2.31.0,pygbif/0.6.5
+    method: GET
+    uri: https://api.gbif.org/v1/occurrence/count?taxonKey=3329049
+  response:
+    body:
+      string: '1317'
+    headers:
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '1910'
+      Cache-Control:
+      - public, max-age=600
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '4'
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 21 Aug 2026 09:58:27 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Vary:
+      - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      Via:
+      - 1.1 prodapicache2-vh.gbif.org (Varnish/9.0)
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Varnish:
+      - 113002094459 113064937636
+      X-XSS-Protection:
+      - '0'
+    status:
+      code: 200
+      message: OK
+version: 1

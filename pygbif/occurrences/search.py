@@ -1,6 +1,10 @@
 import re
+import warnings
 
 from pygbif.gbifutils import gbif_baseurl, bool2str, requests_argset, gbif_GET
+
+# Sentinel value to detect if user explicitly provided checklistKey
+_DEFAULT_CHECKLIST = object()
 
 
 def search(
@@ -40,7 +44,7 @@ def search(
     hasGeospatialIssue=None,
     issue=None,
     q=None,
-    checklistKey=None,
+    checklistKey=_DEFAULT_CHECKLIST,
     spellCheck=None,
     mediatype=None,
     limit=300,
@@ -54,18 +58,18 @@ def search(
     """
     Search GBIF occurrences
 
-    :param taxonKey: [int] A GBIF occurrence identifier
+    :param taxonKey: [int/str] A taxon classification key (numeric for GBIF backbone, alphanumeric for COL)
     :param q: [str] Simple search parameter. The value for this parameter can be a simple word or a phrase.
     :param spellCheck: [bool] If ``True`` ask GBIF to check your spelling of the value passed to the ``search`` parameter.
         IMPORTANT: This only checks the input to the ``search`` parameter, and no others. Default: ``False``
     :param repatriated: [str] Searches for records whose publishing country is different to the country where the record was recorded in
-    :param kingdomKey: [int] Kingdom classification key
-    :param phylumKey: [int] Phylum classification key
-    :param classKey: [int] Class classification key
-    :param orderKey: [int] Order classification key
-    :param familyKey: [int] Family classification key
-    :param genusKey: [int] Genus classification key
-    :param subgenusKey: [int] Subgenus classification key
+    :param kingdomKey: [int/str] Kingdom classification key (numeric for GBIF backbone, alphanumeric for COL)
+    :param phylumKey: [int/str] Phylum classification key (numeric for GBIF backbone, alphanumeric for COL)
+    :param classKey: [int/str] Class classification key (numeric for GBIF backbone, alphanumeric for COL)
+    :param orderKey: [int/str] Order classification key (numeric for GBIF backbone, alphanumeric for COL)
+    :param familyKey: [int/str] Family classification key (numeric for GBIF backbone, alphanumeric for COL)
+    :param genusKey: [int/str] Genus classification key (numeric for GBIF backbone, alphanumeric for COL)
+    :param subgenusKey: [int/str] Subgenus classification key (numeric for GBIF backbone, alphanumeric for COL)
     :param scientificName: [str] A scientific name from the GBIF backbone. All included and synonym taxa are included in the search.
     :param datasetKey: [str] The occurrence dataset key (a uuid)
     :param catalogNumber: [str] An identifier of any form assigned by the source within a physical collection or digital dataset for the record which may not unique, but should be fairly unique in combination with the institution and collection code.
@@ -118,8 +122,12 @@ def search(
        (North America includes the Caribbean and reachies down and includes Panama), ``oceania``,
        or ``south_america``
     :param checklistKey: [str] This determines which taxonomy will be used for the search
-       in conjunction with other taxon keys or scientificName. If this is not specified, the GBIF backbone
-       taxonomy will be used. Example 2d59e5db-57ad-41ff-97d6-11f5fb264527
+       in conjunction with other taxon keys or scientificName. Defaults to the Catalogue of Life (COL)
+       checklist (7ddf754f-d193-4cc9-b351-99906754a03b). Set to ``None`` to use the GBIF backbone taxonomy.
+       Note: If you provide numeric (integer) taxonomy keys without explicitly setting checklistKey,
+       the function will automatically switch to GBIF backbone taxonomy and issue a deprecation warning,
+       as numeric keys are from the older GBIF backbone. Use pygbif.species.gbif_to_col() to migrate
+       your keys to COL alphanumeric format.
     :param fields: [str] Default (``all``) returns all fields. ``minimal`` returns just taxon name,
        key, latitude, and longitude. Or specify each field you want returned by name, e.g.
        ``fields = ['name','latitude','elevation']``.
@@ -153,6 +161,13 @@ def search(
       from pygbif import species
       key = species.name_backbone(name = 'Ursus americanus', rank='species')['usageKey']
       occurrences.search(taxonKey = key)
+
+      # Use COL (Catalogue of Life) with alphanumeric keys
+      # COL is now the default checklist, so alphanumeric keys work directly
+      occurrences.search(kingdomKey = '5WZLF', limit=20)  # COL Animalia key
+      
+      # To use GBIF backbone taxonomy instead, set checklistKey=None
+      occurrences.search(taxonKey = 3329049, checklistKey=None, limit=20)
 
       # Search by dataset key
       occurrences.search(datasetKey='7b5d6a48-f762-11e1-a439-00145eb45e9a', limit=20)
@@ -346,6 +361,29 @@ def search(
       ## in via **kwargs, e.g., set a timeout
       x = occurrences.search(timeout = 1)
     """
+    # Handle checklistKey default and detect if user explicitly provided it
+    if checklistKey is _DEFAULT_CHECKLIST:
+        user_provided_checklistkey = False
+        checklistKey = "7ddf754f-d193-4cc9-b351-99906754a03b"  # Default to COL
+    else:
+        user_provided_checklistkey = True
+    
+    # Check if any taxonomy keys are numeric (integers)
+    # If so and user didn't explicitly provide checklistKey, switch to GBIF Backbone
+    taxonomy_keys = [taxonKey, kingdomKey, phylumKey, classKey, orderKey, familyKey, genusKey, subgenusKey]
+    has_numeric_key = any(isinstance(k, int) for k in taxonomy_keys if k is not None)
+    
+    if has_numeric_key and not user_provided_checklistkey:
+        # Automatically switch to GBIF Backbone for numeric keys
+        checklistKey = None
+        warnings.warn(
+            "Numeric taxonomy keys detected. Automatically switching to GBIF Backbone taxonomy. "
+            "GBIF Backbone taxonomy is outdated. Please migrate to COL Extended Release with alphanumeric keys. "
+            "Use pygbif.species.gbif_to_col() to convert your numeric GBIF keys to COL alphanumeric keys.",
+            DeprecationWarning,
+            stacklevel=2
+        )
+    
     url = gbif_baseurl + "occurrence/search"
     args = {
         "taxonKey": taxonKey,

@@ -27,11 +27,11 @@ def name_backbone(
    exclude=None,
    strict=None,
    verbose=None,
-   checklistKey=None,    
+   checklistKey="7ddf754f-d193-4cc9-b351-99906754a03b",
    **kwargs
 ):
    """
-   Match names to the GBIF backbone taxonomy.
+   Match names to the COL (Catalogue of Life) Extended Release taxonomy.
 
    :param scientificName: [str]
       Full scientific name potentially with authorship. (Required)
@@ -92,7 +92,9 @@ def name_backbone(
    :param verbose: [bool], optional
       If set to True, shows alternative matches which were considered but then rejected.
    :param checklistKey: [str], optional
-      The key of a checklist to use. Default is the GBIF Backbone taxonomy.
+      The UUID of a checklist to use for name matching. Defaults to COL Extended Release
+      ("7ddf754f-d193-4cc9-b351-99906754a03b"). Set to None to use the GBIF Backbone taxonomy
+      (deprecated, use COL instead).
 
    ``name_backbone()`` return a dictionary with the following keys: 
    ``['usage', 'classification', 'diagnostics', 'synonym']`` 
@@ -119,8 +121,8 @@ def name_backbone(
    Higher rank matches will still be returned if the match is exact.
 
    To match names against a specific checklist, you can use the `checklistKey` parameter.
-   This allows you to specify a checklist from which the name should be matched. If no checklistKey is provided,
-   the GBIF Backbone Taxonomy is used by default.
+   By default, names are matched against COL Extended Release. To use the legacy GBIF Backbone
+   taxonomy (deprecated), set checklistKey=None.
 
    For more information, see the GBIF API documentation:
    https://techdocs.gbif.org/en/openapi/v1/species#/Searching%20names/matchNames
@@ -128,8 +130,12 @@ def name_backbone(
    Usage::
 
        from pygbif import species
+       # Match using COL Extended Release (default)
        species.name_backbone(scientificName="Helianthus annuus", kingdom="Plantae")
        species.name_backbone(scientificName="Poa", taxonRank="GENUS", family="Poaceae")
+
+       # Match using legacy GBIF Backbone taxonomy (deprecated)
+       species.name_backbone(scientificName="Helianthus annuus", kingdom="Plantae", checklistKey=None)
 
        # Verbose - gives back alternatives
        species.name_backbone(scientificName="Helianthus annuus", kingdom="Plantae", verbose=True)
@@ -150,8 +156,9 @@ def name_backbone(
        species.name_backbone(scientificName="Calopteryx splendens (Harris, 1780)")
        species.name_backbone(scientificName="Oenanthe L.")
 
-       # Match using an alternative checklist 
-       species.name_backbone(scientificName="Calopteryx splendens", checklistKey="7ddf754f-d193-4cc9-b351-99906754a03b")
+       # Match using a different checklist
+       species.name_backbone(scientificName="Calopteryx splendens", checklistKey="other-checklist-uuid")
+       # Note: Only COL Extended Release and legacy GBIF Backbone Taxonomy are currently supported
    """
    url = "https://api.gbif.org/v2/" + "species/match"
    args = {
