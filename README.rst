@@ -28,7 +28,7 @@ Development version
 
 .. code-block:: console
 
-    [sudo] pip install git+git://github.com/gbif/pygbif.git#egg=pygbif
+    pip install git+https://github.com/gbif/pygbif.git
 
 
 `pygbif` is split up into modules for each of the major groups of API methods.
@@ -37,6 +37,9 @@ Development version
 * Species - Taxonomic names
 * Occurrences - Occurrence data, including the download API
 * Maps - Maps, get raster maps from GBIF as png or mvt
+* Literature - Literature indexed by GBIF
+* Collection - Collections in GRSciColl
+* Institution - Institutions in GRSciColl
 
 You can import the entire library, or each module individually as needed.
 
@@ -102,6 +105,7 @@ occurrences module API:
 * `download_meta`
 * `download_list`
 * `download_get`
+* `download_cancel`
 * `download_citation`
 * `download_describe`
 * `download_sql`

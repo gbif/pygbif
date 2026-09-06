@@ -21,6 +21,7 @@ occurrence module API:
 * `download_meta`
 * `download_list`
 * `download_get`
+* `download_cancel`
 * `download_sql`
 * `download_describe`
 * `download_citation`
@@ -76,6 +77,7 @@ occurrences API
 .. automethod:: occurrences.download_meta
 .. automethod:: occurrences.download_list
 .. automethod:: occurrences.download_get
+.. automethod:: occurrences.download_cancel
 .. automethod:: occurrences.download_sql
 .. automethod:: occurrences.download_describe
 .. automethod:: occurrences.download_citation

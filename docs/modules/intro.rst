@@ -10,6 +10,9 @@ pygbif modules
 * Species - Taxonomic names
 * Occurrences - Occurrence data, including the download API
 * Maps - Make maps
+* Literature - Literature indexed by GBIF
+* Collection - Collections in GRSciColl
+* Institution - Institutions in GRSciColl
 
 You can import the entire library, or each module individually as needed.
 
