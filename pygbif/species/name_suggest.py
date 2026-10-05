@@ -49,7 +49,13 @@ def name_suggest(q=None, datasetKey=None, rank=None, limit=100, offset=None, **k
     )
     
     url = gbif_baseurl + "species/suggest"
-    args = {"q": q, "rank": rank, "offset": offset, "limit": limit}
+    args = {
+        "q": q,
+        "datasetKey": datasetKey,
+        "rank": rank,
+        "offset": offset,
+        "limit": limit,
+    }
     return gbif_GET(url, args, **kwargs)
 
 
