@@ -20,7 +20,7 @@ First, get COL Extended Release alphanumeric keys (recommended)
     splist = ['Cyanocitta stelleri', 'Junco hyemalis', 'Aix sponsa',
       'Ursus americanus', 'Pinus conorta', 'Poa annuus']
     # Using COL Extended Release (default)
-    keys = [ species.name_backbone(x, checklistKey='7ddf754f-d193-4cc9-b351-99906754a03b')['usage']['key'] for x in splist ]
+    keys = [ species.name_backbone(x)['usage']['key'] for x in splist ]
 
 Then, get a count of occurrence records for each taxon, and pull out
 number of records found for each taxon
