@@ -1,10 +1,18 @@
 """Tests for occurrences module - search methods"""
 import vcr
 import warnings
+import pygbif
 from pygbif import occurrences
 
 keyz = ["count", "facets", "results", "endOfRecords", "limit", "offset"]
 x = "https://orcid.org/0000-0003-1691-239X"
+
+
+def test_top_level_search_is_occurrences_search():
+    assert pygbif.search is occurrences.search
+    assert pygbif.literature.search.__module__ == "pygbif.literature.search"
+    assert pygbif.collection.search.__module__ == "pygbif.collection.search"
+    assert pygbif.institution.search.__module__ == "pygbif.institution.search"
 
 
 @vcr.use_cassette("test/vcr_cassettes/test_search.yaml")
