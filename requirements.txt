@@ -1,7 +1,7 @@
 requests>2.7
 geojson_rewind
 geomet
-appdirs>=1.4.3
+appdirs>=1.4.4
 matplotlib
 sphinx_issues
 requests-cache>=1.0.0
