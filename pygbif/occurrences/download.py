@@ -51,10 +51,16 @@ def _parse_args(x):
         else:
             return {"type": "in", "key": key, "values": json.loads(value_list.group(0))}
     pred_type = operator_lkup.get(tmp[1])
+    value = tmp[2]
+    if key in TAXON_KEYS:
+        try:
+            value = json.loads(value)
+        except json.JSONDecodeError:
+            pass
     return {
         "type": pred_type,
         "key": key,
-        "value": tmp[2],
+        "value": value,
     }  # does not work for in, within, geodistance, not, like, isnull and isnotnull predicate values
 
 
@@ -93,12 +99,8 @@ def _has_numeric_taxon_keys(queries):
     :return: True if numeric taxon keys are detected, False otherwise
     """
     def is_numeric(value):
-        """Check if a value is numeric (int or string representation of int)"""
-        if isinstance(value, int):
-            return True
-        if isinstance(value, str):
-            return value.isdigit()
-        return False
+        """Check if a taxon key was supplied as an integer, not a string."""
+        return type(value) is int
     
     def check_predicate_dict(pred):
         """Recursively check a predicate dictionary for numeric taxon keys"""
@@ -159,7 +161,7 @@ def _has_numeric_taxon_keys(queries):
                             # Only warn if ALL values are numeric (not mixed)
                             list_content = list_match.group(1)
                             # Extract individual values (split by comma, strip quotes/spaces)
-                            values = [v.strip().strip('"').strip("'") for v in list_content.split(',')]
+                            values = [v.strip() for v in list_content.split(',')]
                             # Check if all non-empty values are numeric
                             if values and all(v.isdigit() for v in values if v):
                                 return True
@@ -204,7 +206,7 @@ def _inject_checklist_into_predicates(predicate, root_checklistKey):
                 # Check if ALL values are numeric (not just some)
                 # Mixed values are ambiguous, so we default to COL XR
                 values_list = predicate["values"]
-                all_numeric = all(str(v).isdigit() for v in values_list) if values_list else False
+                all_numeric = all(type(v) is int for v in values_list) if values_list else False
                 
                 if all_numeric and values_list:
                     # ALL values are numeric -> use GBIF Backbone
@@ -214,8 +216,8 @@ def _inject_checklist_into_predicates(predicate, root_checklistKey):
                     predicate["checklistKey"] = "7ddf754f-d193-4cc9-b351-99906754a03b"
             # Handle single value predicates (equals, etc.)
             elif "value" in predicate:
-                value = str(predicate.get("value", ""))
-                if value.isdigit():
+                value = predicate.get("value")
+                if type(value) is int:
                     # Numeric value -> use GBIF Backbone
                     predicate["checklistKey"] = "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c"
                 else:

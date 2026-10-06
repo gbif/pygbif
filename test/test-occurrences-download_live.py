@@ -428,7 +428,7 @@ class TestDownloadLive:
                         {
                             "type": "equals",
                             "key": "TAXON_KEY",
-                            "value": "3119195"  # Numeric Plantae key
+                            "value": 3119195  # Numeric Plantae key
                         }
                     ]
                 },
@@ -510,7 +510,7 @@ class TestDownloadLive:
             # Check numeric TAXON_KEY (no explicit checklistKey) got GBIF Backbone auto-injected
             numeric_taxon_pred = first_or["predicates"][3]
             assert numeric_taxon_pred["key"] == "TAXON_KEY"
-            assert numeric_taxon_pred["value"] == "3119195"
+            assert numeric_taxon_pred["value"] == 3119195
             assert "checklistKey" in numeric_taxon_pred
             assert numeric_taxon_pred["checklistKey"] == "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c"
             
@@ -566,7 +566,7 @@ class TestDownloadLive:
                 {
                     "type": "in",
                     "key": "SPECIES_KEY",
-                    "values": ["2435098", "3119195"]  # All numeric
+                    "values": [2435098, 3119195]  # Integer values
                 },
                 # 3. IN predicate with explicit checklistKey (should be preserved)
                 {
@@ -624,7 +624,7 @@ class TestDownloadLive:
             species_in_pred = predicates[1]
             assert species_in_pred["type"] == "in"
             assert species_in_pred["key"] == "SPECIES_KEY"
-            assert species_in_pred["values"] == ["2435098", "3119195"]
+            assert species_in_pred["values"] == [2435098, 3119195]
             assert "checklistKey" in species_in_pred
             assert species_in_pred["checklistKey"] == "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c"  # GBIF Backbone
             
@@ -696,7 +696,7 @@ class TestDownloadLive:
         query = {
             "type": "in",
             "key": "SPECIES_KEY",
-            "values": ["2435098", "3119195", "212"]
+            "values": [2435098, 3119195, 212]
         }
         
         with warnings.catch_warnings(record=True) as w:
@@ -725,7 +725,7 @@ class TestDownloadLive:
             pred = payload["predicate"]
             assert pred["type"] == "in"
             assert pred["key"] == "SPECIES_KEY"
-            assert pred["values"] == ["2435098", "3119195", "212"]
+            assert pred["values"] == [2435098, 3119195, 212]
             assert "checklistKey" in pred
             assert pred["checklistKey"] == "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c"  # GBIF Backbone
             

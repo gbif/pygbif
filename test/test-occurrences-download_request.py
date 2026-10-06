@@ -424,7 +424,7 @@ class TestDownload(unittest.TestCase):
             query = {
                 "type": "equals",
                 "key": "TAXON_KEY",
-                "value": "7264332"
+                "value": 7264332
             }
             
             dl_key, payload = download(
@@ -443,6 +443,70 @@ class TestDownload(unittest.TestCase):
             self.assertEqual(payload["checklistKey"], "7ddf754f-d193-4cc9-b351-99906754a03b")  # COL at root
             self.assertIn("checklistKey", payload["predicate"])
             self.assertEqual(payload["predicate"]["checklistKey"], "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c")
+
+    @patch('requests.post', side_effect=dummypost)
+    def test_integer_in_taxon_key_uses_gbif_with_warning(self, mock_post):
+        queries = [
+            {"type": "in", "key": "TAXON_KEY", "values": [745]},
+            "taxonKey in [745]",
+        ]
+
+        with warnings.catch_warnings(record=True) as caught_warnings:
+            warnings.simplefilter("always")
+
+            for query in queries:
+                _, payload = download(
+                    query,
+                    user="dummy",
+                    email="dummy",
+                    pwd="dummy",
+                )
+
+                predicate = payload["predicate"]
+                if predicate["type"] == "and":
+                    predicate = predicate["predicates"][0]
+                self.assertEqual(predicate["values"], [745])
+                self.assertEqual(predicate["checklistKey"], "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c")
+
+        self.assertEqual(len(caught_warnings), len(queries))
+        self.assertTrue(
+            all(issubclass(warning.category, DeprecationWarning) for warning in caught_warnings)
+        )
+
+    @patch('requests.post', side_effect=dummypost)
+    def test_numeric_string_taxon_key_uses_col_without_warning(self, mock_post):
+        """Digit-only taxon keys supplied as strings are COL keys, not GBIF keys."""
+        queries = [
+            {"type": "equals", "key": "TAXON_KEY", "value": "745"},
+            'taxonKey = "745"',
+            {"type": "in", "key": "TAXON_KEY", "values": ["745"]},
+            'taxonKey in ["745"]',
+        ]
+
+        with warnings.catch_warnings(record=True) as caught_warnings:
+            warnings.simplefilter("always")
+
+            for query in queries:
+                _, payload = download(
+                    query,
+                    user="dummy",
+                    email="dummy",
+                    pwd="dummy",
+                )
+
+                self.assertEqual(payload["checklistKey"], "7ddf754f-d193-4cc9-b351-99906754a03b")
+                predicate = payload["predicate"]
+                if predicate["type"] == "and":
+                    predicate = predicate["predicates"][0]
+                if predicate["type"] == "in":
+                    self.assertEqual(predicate["values"], ["745"])
+                else:
+                    self.assertEqual(predicate["value"], "745")
+                self.assertEqual(predicate["checklistKey"], "7ddf754f-d193-4cc9-b351-99906754a03b")
+
+        self.assertFalse(
+            any(issubclass(warning.category, DeprecationWarning) for warning in caught_warnings)
+        )
 
     @patch('requests.post', side_effect=dummypost)
     def test_multiple_predicates_with_numeric_key(self, mock_post):
@@ -478,7 +542,7 @@ class TestDownload(unittest.TestCase):
             query = {
                 "type": "equals",
                 "key": "TAXON_KEY",
-                "value": "3119195",  # Numeric key
+                "value": 3119195,
                 "checklistKey": "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c"  # Explicit GBIF Backbone
             }
             
