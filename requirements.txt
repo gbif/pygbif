@@ -6,10 +6,8 @@ matplotlib
 sphinx_issues
 requests-cache>=1.0.0
 shapely>=1.5.13
-# The commit introducing the following line and the version for vcrpy can be reverted
-# once https://github.com/kevin1024/vcrpy/issues/688 is fixed
-urllib3==1.26.14
-vcrpy==4.2.1
+urllib3<2
+vcrpy>=4.3.1,<5
 pytest
 pytest-cov
 codecov
