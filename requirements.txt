@@ -7,7 +7,7 @@ sphinx_issues
 requests-cache>=1.3.3
 shapely>=1.5.13
 urllib3<2
-vcrpy>=4.3.1,<5
+vcrpy>=8.3.0,<9
 pytest
 pytest-cov
 codecov
