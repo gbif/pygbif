@@ -281,18 +281,6 @@ def download(
         warning, since numeric keys require the GBIF Backbone but this taxonomy is 
         deprecated and will not receive updates.
         
-        **Two ways checklistKey is used:**
-        
-        1. **Root-level (Global)**: Added at the root level of the download request
-           to set the taxonomy backbone for all predicates globally.
-           
-        2. **Predicate-level (Automatic)**: Automatically injected into each predicate
-           that uses taxon keys (TAXON_KEY, SPECIES_KEY, KINGDOM_KEY, etc.) to tell
-           GBIF which taxonomy the keys belong to. You can also manually include
-           checklistKey within predicates for fine-grained control.
-        
-        See https://www.gbif.org/developer/occurrence#download for more information.
-
     Argument passed have to be passed as characters (e.g., ``country = US``),
     with a space between key (``country``), operator (``=``), and value (``US``).
     See the ``type`` parameter for possible options for the operator.
@@ -458,8 +446,15 @@ def download(
         # Or specify a different checklist explicitly:
         occ.download('taxonKey = 5WZLF', checklistKey='7ddf754f-d193-4cc9-b351-99906754a03b')
         
-        # The checklistKey parameter can be combined with any query
+        # checklistKey still selects the taxonomy for a download with no taxon filter
+        # Omitting checklistKey uses the default COL Extended Release:
         occ.download(['country = US', 'basisOfRecord = PRESERVED_SPECIMEN'])
+
+        # This is equivalent to setting the COL checklistKey explicitly:
+        occ.download(
+            ['country = US', 'basisOfRecord = PRESERVED_SPECIMEN'],
+            checklistKey='7ddf754f-d193-4cc9-b351-99906754a03b'
+        )
         
         # You can also manually specify checklistKey at the predicate level if needed
         # (though this is now done automatically for taxon-related predicates)
