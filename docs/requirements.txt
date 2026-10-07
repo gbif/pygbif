@@ -1,4 +1,4 @@
-requests>2.7
+requests>=2.34.2
 geojson_rewind
 geomet
 appdirs>=1.4.4
