@@ -37,3 +37,6 @@ docs/_build/
 # scratch files
 scratch.py
 
+# copilot instructions (local only)
+.github/copilot-instructions.md
+

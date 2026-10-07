@@ -1,5 +1,63 @@
 interactions:
 - request:
+    body: '{"creator": "jwaller", "notification_address": ["jwaller@gbif.org"], "sendNotification":
+      true, "predicate": {"type": "and", "predicates": [{"type": "equals", "key":
+      "TAXON_KEY", "value": "5WZLF", "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b"}]},
+      "format": "SIMPLE_CSV", "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b"}'
+    headers:
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '334'
+      accept:
+      - application/json
+      content-type:
+      - application/json
+      user-agent:
+      - python-requests/2.31.0,pygbif/0.6.5
+    method: POST
+    uri: http://api.gbif.org/v1/occurrence/download/request
+  response:
+    body:
+      string: !!binary |
+        H4sIAAAAAAAAAzMwMDY3MTLVNTIzsDAwMzA3sTQwNTI3BwC27apNFwAAAA==
+    headers:
+      Age:
+      - '0'
+      Cache-Control:
+      - public, max-age=3601
+      Connection:
+      - keep-alive
+      Content-Encoding:
+      - gzip
+      Content-Length:
+      - '43'
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 26 Aug 2026 08:23:55 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Vary:
+      - Origin, Access-Control-Request-Method, Access-Control-Request-Headers, Accept-Encoding
+      Via:
+      - 1.1 prodapicache2-vh.gbif.org (Varnish/9.0)
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Varnish:
+      - '118322207047'
+      X-XSS-Protection:
+      - '0'
+    status:
+      code: 201
+      message: Created
+- request:
     body: 'false'
     headers:
       Accept:
@@ -13,9 +71,9 @@ interactions:
       Content-Type:
       - application/json
       user-agent:
-      - python-requests/2.31.0,pygbif/0.6.6
+      - python-requests/2.31.0,pygbif/0.6.5
     method: DELETE
-    uri: http://api.gbif.org/v1/occurrence/download/request/0003970-140910143529206
+    uri: http://api.gbif.org/v1/occurrence/download/request/0037425-260806074905277
   response:
     body:
       string: ''
@@ -27,7 +85,7 @@ interactions:
       Connection:
       - keep-alive
       Date:
-      - Fri, 14 Nov 2025 10:42:23 GMT
+      - Wed, 26 Aug 2026 08:23:55 GMT
       Expires:
       - '0'
       Pragma:
@@ -35,13 +93,13 @@ interactions:
       Vary:
       - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
       Via:
-      - 1.1 varnish (Varnish/6.6)
+      - 1.1 prodapicache2-vh.gbif.org (Varnish/9.0)
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
       - DENY
       X-Varnish:
-      - '793610877'
+      - '118416082823'
       X-XSS-Protection:
       - '0'
     status:

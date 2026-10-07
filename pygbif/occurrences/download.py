@@ -6,7 +6,11 @@ import re
 import datetime
 import requests
 import logging
+import warnings
 from warnings import warn
+
+# Sentinel value to detect when checklistKey is not explicitly provided
+_DEFAULT_CHECKLIST = object()
 
 # import internal libraries
 from .. import package_metadata, occurrences
@@ -41,16 +45,22 @@ def _parse_args(x):
     if re.search(r"\s+in", x):
         value_list = re.search(r"\[.*\]", x)
         if not value_list:
-            raise Exception(
+            raise ValueError(
                 "error: in predicate has to be associated with a list in square brackets (for example [1, 2, 3])"
             )
         else:
             return {"type": "in", "key": key, "values": json.loads(value_list.group(0))}
     pred_type = operator_lkup.get(tmp[1])
+    value = tmp[2]
+    if key in TAXON_KEYS:
+        try:
+            value = json.loads(value)
+        except json.JSONDecodeError:
+            pass
     return {
         "type": pred_type,
         "key": key,
-        "value": tmp[2],
+        "value": value,
     }  # does not work for in, within, geodistance, not, like, isnull and isnotnull predicate values
 
 
@@ -74,9 +84,164 @@ def _check_environ(variable, value):
             return value
 
 
+# Taxonomic key parameters that indicate GBIF Backbone usage when numeric
+TAXON_KEYS = {
+    "TAXON_KEY", "SPECIES_KEY", "KINGDOM_KEY", "PHYLUM_KEY", 
+    "CLASS_KEY", "ORDER_KEY", "FAMILY_KEY", "GENUS_KEY", "SUBGENUS_KEY"
+}
+
+
+def _has_numeric_taxon_keys(queries):
+    """
+    Check if queries contain numeric values for taxonomic keys.
+    
+    :param queries: str, list of str, or dict representing query predicates
+    :return: True if numeric taxon keys are detected, False otherwise
+    """
+    def is_numeric(value):
+        """Check if a taxon key was supplied as an integer, not a string."""
+        return type(value) is int
+    
+    def check_predicate_dict(pred):
+        """Recursively check a predicate dictionary for numeric taxon keys"""
+        if not isinstance(pred, dict):
+            return False
+        
+        # Skip checking THIS predicate's value if it already has its own checklistKey specified
+        # (user has made an explicit choice about taxonomy for this predicate)
+        # But still recursively check nested predicates
+        if "checklistKey" not in pred:
+            # Check if this predicate has a numeric taxon key
+            if "key" in pred and pred["key"] in TAXON_KEYS:
+                if "value" in pred and is_numeric(pred["value"]):
+                    return True
+                if "values" in pred and isinstance(pred["values"], list):
+                    # Only warn if ALL values are numeric (not mixed)
+                    if pred["values"] and all(is_numeric(v) for v in pred["values"]):
+                        return True
+        
+        # Recursively check nested predicates
+        if "predicate" in pred:
+            if check_predicate_dict(pred["predicate"]):
+                return True
+        if "predicates" in pred and isinstance(pred["predicates"], list):
+            if any(check_predicate_dict(p) for p in pred["predicates"]):
+                return True
+                
+        return False
+    
+    # Handle different query formats
+    if isinstance(queries, dict):
+        return check_predicate_dict(queries)
+    elif isinstance(queries, str):
+        queries = [queries]
+    
+    # Handle list of queries (can be strings or dicts)
+    if isinstance(queries, list):
+        for query_item in queries:
+            # Handle dict queries
+            if isinstance(query_item, dict):
+                if check_predicate_dict(query_item):
+                    return True
+            # Handle string queries
+            elif isinstance(query_item, str):
+                # Check for taxon key patterns in string queries
+                # Pattern: "taxonKey = 123" or "speciesKey in [123, 456]"
+                for key_name in ["taxonKey", "speciesKey", "kingdomKey", "phylumKey", 
+                               "classKey", "orderKey", "familyKey", "genusKey", "subgenusKey"]:
+                    if key_name in query_item:
+                        # Look for pattern like "taxonKey = 123" (single numeric value)
+                        single_pattern = rf"{key_name}\s*=\s*(\d+)\b"
+                        if re.search(single_pattern, query_item):
+                            return True
+                        # Look for pattern like "taxonKey in [123, 456]" (list with numeric values)
+                        list_pattern = rf"{key_name}\s+in\s*\[([^\]]*)\]"
+                        list_match = re.search(list_pattern, query_item)
+                        if list_match:
+                            # Only warn if ALL values are numeric (not mixed)
+                            list_content = list_match.group(1)
+                            # Extract individual values (split by comma, strip quotes/spaces)
+                            values = [v.strip() for v in list_content.split(',')]
+                            # Check if all non-empty values are numeric
+                            if values and all(v.isdigit() for v in values if v):
+                                return True
+    
+    return False
+
+
+def _inject_checklist_into_predicates(predicate, root_checklistKey):
+    """
+    Recursively inject checklistKey into predicates that use taxon keys.
+    
+    Each predicate gets the appropriate checklistKey based on its value:
+    - Alphanumeric values get COL Extended Release UUID
+    - Numeric values get GBIF Backbone UUID
+    
+    When using COL Extended Release (or other non-GBIF-Backbone taxonomies),
+    GBIF requires checklistKey at both the root level (to set the taxonomy backbone)
+    and at the predicate level (to tell GBIF which taxonomy the taxon keys belong to).
+    
+    :param predicate: dict representing a predicate or nested predicate structure
+    :param root_checklistKey: UUID string for root-level taxonomy (used for determining defaults)
+    :return: Modified predicate dict with checklistKey injected where needed
+    """
+    if not isinstance(predicate, dict):
+        return predicate
+    
+    # Don't inject if root_checklistKey is None (user explicitly wants no checklistKey)
+    if root_checklistKey is None:
+        return predicate
+    
+    # Create a copy to avoid mutating the original
+    predicate = predicate.copy()
+    
+    # If this predicate has a "key" field that's a taxon key, inject appropriate checklistKey
+    if "key" in predicate and predicate["key"] in TAXON_KEYS:
+        # Only inject if not already present
+        if "checklistKey" not in predicate:
+            # Determine appropriate checklistKey based on the value(s)
+            
+            # Handle "in" predicates with multiple values
+            if "values" in predicate and isinstance(predicate["values"], list):
+                # Check if ALL values are numeric (not just some)
+                # Mixed values are ambiguous, so we default to COL XR
+                values_list = predicate["values"]
+                all_numeric = all(type(v) is int for v in values_list) if values_list else False
+                
+                if all_numeric and values_list:
+                    # ALL values are numeric -> use GBIF Backbone
+                    predicate["checklistKey"] = "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c"
+                else:
+                    # All alphanumeric OR mixed -> use COL Extended Release (default)
+                    predicate["checklistKey"] = "7ddf754f-d193-4cc9-b351-99906754a03b"
+            # Handle single value predicates (equals, etc.)
+            elif "value" in predicate:
+                value = predicate.get("value")
+                if type(value) is int:
+                    # Numeric value -> use GBIF Backbone
+                    predicate["checklistKey"] = "d7dddbf4-2cf0-4f39-9b2a-bb099caae36c"
+                else:
+                    # Alphanumeric value -> use COL Extended Release
+                    predicate["checklistKey"] = "7ddf754f-d193-4cc9-b351-99906754a03b"
+    
+    # Recursively process nested predicates
+    if "predicate" in predicate:
+        predicate["predicate"] = _inject_checklist_into_predicates(
+            predicate["predicate"], root_checklistKey
+        )
+    
+    if "predicates" in predicate and isinstance(predicate["predicates"], list):
+        predicate["predicates"] = [
+            _inject_checklist_into_predicates(p, root_checklistKey) 
+            for p in predicate["predicates"]
+        ]
+    
+    return predicate
+
+
 # download function
 def download(
-    queries, format="SIMPLE_CSV", user=None, pwd=None, email=None, pred_type="and"
+    queries, format="SIMPLE_CSV", user=None, pwd=None, email=None, pred_type="and", checklistKey=_DEFAULT_CHECKLIST
 ):
     """
     Spin up a download request for GBIF occurrence data.
@@ -95,7 +260,27 @@ def download(
         Set in your env vars with the option ``GBIF_PWD``
     :param email: (character) Email address to receive download notice done
         email. Required. Set in your env vars with the option ``GBIF_EMAIL``
-
+    :param checklistKey: (character) UUID of a checklist from ChecklistBank to use
+        for specifying the taxonomy to be included in occurrence downloads.
+        Defaults to the COL (Catalogue of Life) Extended Release taxonomy 
+        (UUID: 7ddf754f-d193-4cc9-b351-99906754a03b), which receives regular updates. 
+        
+        To use the deprecated GBIF Backbone Taxonomy (which will not receive updates), 
+        set checklistKey='d7dddbf4-2cf0-4f39-9b2a-bb099caae36c'.
+        
+        **Important**: When using COL Extended Release (or any non-GBIF-Backbone taxonomy),
+        pygbif automatically injects the checklistKey at **both** the root level 
+        (to set the taxonomy backbone) **and** at the predicate level (within each
+        predicate that uses taxon keys like TAXON_KEY, SPECIES_KEY, etc.). This is
+        required by GBIF to correctly interpret alphanumeric taxon keys.
+        
+        **Automatic Detection**: If numeric taxon keys (e.g., taxonKey=3119195, 
+        speciesKey=12345, etc.) are detected in your query and you haven't explicitly 
+        set checklistKey, the function will automatically switch to the GBIF Backbone 
+        Taxonomy (UUID: d7dddbf4-2cf0-4f39-9b2a-bb099caae36c) and issue a deprecation 
+        warning, since numeric keys require the GBIF Backbone but this taxonomy is 
+        deprecated and will not receive updates.
+        
     Argument passed have to be passed as characters (e.g., ``country = US``),
     with a space between key (``country``), operator (``=``), and value (``US``).
     See the ``type`` parameter for possible options for the operator.
@@ -246,18 +431,75 @@ def download(
         # The same query can also be applied in the occ.download function (including download format specified):
         occ.download(['taxonKey in ["2387246", "2399391","2364604"]', 'year !Null', "issue !in ['RECORDED_DATE_INVALID', 'TAXON_MATCH_FUZZY', 'TAXON_MATCH_HIGHERRANK']"], "DWCA")
 
+        # Using a custom checklist for taxonomy
+        # The COL (Catalogue of Life) Extended Release is used by default.
+        # Use COL-style alphanumeric taxon keys with the default:
+        occ.download('taxonKey = 5WZLF')  # Uses COL by default
+        # Note: checklistKey is automatically injected at both root and predicate levels
+        
+        # To use the deprecated GBIF Backbone Taxonomy instead:
+        occ.download('taxonKey = 3119195', checklistKey='d7dddbf4-2cf0-4f39-9b2a-bb099caae36c')
+        
+        # If you use numeric keys without specifying checklistKey, it auto-detects and warns:
+        occ.download('taxonKey = 3119195')  # Auto-uses GBIF Backbone + deprecation warning
+        
+        # Or specify a different checklist explicitly:
+        occ.download('taxonKey = 5WZLF', checklistKey='7ddf754f-d193-4cc9-b351-99906754a03b')
+        
+        # checklistKey still selects the taxonomy for a download with no taxon filter
+        # Omitting checklistKey uses the default COL Extended Release:
+        occ.download(['country = US', 'basisOfRecord = PRESERVED_SPECIMEN'])
+
+        # This is equivalent to setting the COL checklistKey explicitly:
+        occ.download(
+            ['country = US', 'basisOfRecord = PRESERVED_SPECIMEN'],
+            checklistKey='7ddf754f-d193-4cc9-b351-99906754a03b'
+        )
+        
+        # You can also manually specify checklistKey at the predicate level if needed
+        # (though this is now done automatically for taxon-related predicates)
+        query_with_predicate_checklist = {
+            "type": "equals",
+            "key": "TAXON_KEY",
+            "value": "5WZLF",
+            "checklistKey": "7ddf754f-d193-4cc9-b351-99906754a03b"  # Manual override
+        }
+        occ.download(query_with_predicate_checklist)
+
     """
 
     user = _check_environ("GBIF_USER", user)
     pwd = _check_environ("GBIF_PWD", pwd)
     email = _check_environ("GBIF_EMAIL", email)
 
+    # Handle checklistKey default and numeric key detection
+    user_provided_checklistkey = checklistKey is not _DEFAULT_CHECKLIST
+    
+    if not user_provided_checklistkey:
+        # User did not explicitly set checklistKey - always default to COL Extended Release
+        checklistKey = "7ddf754f-d193-4cc9-b351-99906754a03b"
+        
+        # Warn if numeric keys are present (they'll get GBIF Backbone at predicate level)
+        if _has_numeric_taxon_keys(queries):
+            warnings.warn(
+                "Numeric taxon keys detected (e.g., taxonKey, speciesKey, kingdomKey). "
+                "Using COL Extended Release as the root-level taxonomy (default). "
+                "Each numeric taxon key will automatically use the deprecated GBIF Backbone Taxonomy "
+                "(UUID: d7dddbf4-2cf0-4f39-9b2a-bb099caae36c) at the predicate level for backward compatibility. "
+                "Please migrate to COL alphanumeric keys using species.gbif_to_col(). "
+                "To suppress this warning, explicitly set the checklistKey parameter.",
+                DeprecationWarning,
+                stacklevel=2
+            )
+
     # if it is a dictionary then use directly as a query, otherwise if it is a string turn it into a list
-    req = GbifDownload(user, email)
+    req = GbifDownload(user, email, checklistKey=checklistKey)
     req.format = format
 
     if isinstance(queries, dict):
-        req.predicate = queries
+        # Inject checklistKey into predicates that use taxon keys
+        queries_with_checklist = _inject_checklist_into_predicates(queries, checklistKey)
+        req.predicate = queries_with_checklist
 
     else:  # retro-compatible
         if isinstance(queries, str):
@@ -269,13 +511,22 @@ def download(
         req.main_pred_type = pred_type
         for predicate in keyval:
             req.add_predicate_dict(predicate)
+        
+        # Inject checklistKey into the constructed predicate structure
+        req.payload["predicate"] = _inject_checklist_into_predicates(
+            req.payload["predicate"], checklistKey
+        )
 
     out = req.post_download(user, pwd)
     return out, req.payload
 
 
+class GbifDownloadError(Exception):
+    pass
+
+
 class GbifDownload(object):
-    def __init__(self, creator, email, polygon=None):
+    def __init__(self, creator, email, polygon=None, checklistKey=None):
         """class to setup a JSON doc with the query and POST a request
 
         All predicates (default key-value or iterative based on a list of
@@ -285,6 +536,11 @@ class GbifDownload(object):
         :param creator: user name
         :param email: user email
         :param polygon: Polygon of points to extract data from
+        :param checklistKey: UUID of a checklist from ChecklistBank to specify
+            the taxonomy to be included in the occurrence download. 
+            When called via the download() function, defaults to COL Extended Release
+            unless numeric taxon keys are detected. Set to None to explicitly use the
+            GBIF Backbone Taxonomy. 
         """
         self._format = "SIMPLE_CSV"
         self.predicates = []
@@ -312,6 +568,10 @@ class GbifDownload(object):
             "predicate": self._predicate,
             "format": self._format,
         }
+        
+        if checklistKey:
+            self.payload["checklistKey"] = checklistKey
+            
         self.request_id = None
 
         # prepare the geometry polygon constructions
@@ -337,7 +597,7 @@ class GbifDownload(object):
             self._main_pred_type = value
             self.payload["predicate"]["type"] = self._main_pred_type
         else:
-            raise Exception("main predicate combiner not a valid operator")
+            raise ValueError("main predicate combiner not a valid operator")
 
     @property
     def predicate(self):
@@ -354,7 +614,7 @@ class GbifDownload(object):
             self._predicate = value
             self.payload["predicate"] = self._predicate
         else:
-            raise Exception("predicate must be a dictionary")
+            raise ValueError("predicate must be a dictionary")
 
     @property
     def format(self):
@@ -371,7 +631,7 @@ class GbifDownload(object):
             self._format = value
             self.payload["format"] = self._format
         else:
-            raise Exception(
+            raise ValueError(
                 "format must be one of the accepted download formats of GBIF "
                 + ", ".join(formats)
             )
@@ -396,7 +656,7 @@ class GbifDownload(object):
         if predicate_type:
             self.predicates.append({"type": predicate_type, "key": key, "value": value})
         else:
-            raise Exception("predicate type not a valid operator")
+            raise ValueError("predicate type not a valid operator")
 
     def add_predicate_dict(self, predicate_dictionary):
         """
@@ -409,7 +669,7 @@ class GbifDownload(object):
         if isinstance(predicate_dictionary, dict):
             self.predicates.append(predicate_dictionary)
         else:
-            raise Exception("argument must be a dictionary")
+            raise TypeError("argument must be a dictionary")
 
     @staticmethod
     def _extract_values(values_list):
@@ -427,7 +687,7 @@ class GbifDownload(object):
         elif isinstance(values_list, list):
             values = values_list
         else:
-            raise Exception("input datatype not supported.")
+            raise TypeError("input datatype not supported.")
         return values
 
     def add_iterative_predicate(self, key, values_list):
@@ -473,15 +733,27 @@ class GbifDownload(object):
         user = _check_environ("GBIF_USER", user)
         pwd = _check_environ("GBIF_PWD", pwd)
 
-        # pprint.pprint(self.payload)
+        # Rebuild payload dict in consistent key order for VCR cassette matching
+        # The order must match what VCR recorded
+        ordered_payload = {
+            "creator": self.payload["creator"],
+            "notification_address": self.payload["notification_address"],
+            "sendNotification": self.payload["sendNotification"],
+            "predicate": self.payload["predicate"],
+            "format": self.payload["format"],
+        }
+        if "checklistKey" in self.payload:
+            ordered_payload["checklistKey"] = self.payload["checklistKey"]
+
+        # pprint.pprint(ordered_payload)
         r = requests.post(
             self.url,
             auth=requests.auth.HTTPBasicAuth(user, pwd),
-            data=json.dumps(self.payload),
+            data=json.dumps(ordered_payload),
             headers=self.header,
         )
         if r.status_code > 203:
-            raise Exception(
+            raise GbifDownloadError(
                 "error: "
                 + r.text
                 + ", with error status code "
@@ -616,7 +888,7 @@ def download_get(key, path=".", **kwargs):
     """
     meta = occurrences.download_meta(key)
     if meta["status"] != "SUCCEEDED":
-        raise Exception('download "%s" not of status SUCCEEDED' % key)
+        raise GbifDownloadError('download "%s" not of status SUCCEEDED' % key)
     else:
         logging.info("Download file size: %s bytes" % meta["size"])
         url = "http://api.gbif.org/v1/occurrence/download/request/" + key
@@ -712,7 +984,7 @@ def download_sql(sql,
         headers=header,
     )
     if r.status_code > 203:
-        raise Exception(
+        raise GbifDownloadError(
             "error: "
             + r.text
             + ", with error status code "

@@ -36,6 +36,14 @@ Example usage:
     occ.download('basisOfRecord = PRESERVED_SPECIMEN')
     occ.download('taxonKey = 3119195')
     occ.download('decimalLatitude > 50')
+    
+    # Using custom taxonomy checklist
+    # By default, Catalogue of Life (COL) Extended Release is used
+    # Use alphanumeric COL keys directly
+    occ.download('taxonKey = 5WZLF')  # COL key (default)
+    # Set checklistKey=None to use GBIF Backbone (deprecated)
+    occ.download('taxonKey = 3119195', checklistKey=None)
+    
     occ.download_list(user = "sckott", limit = 5)
     occ.download_meta(key = "0000099-140929101555934")
     occ.download_get("0000066-140928181241064")
@@ -53,7 +61,6 @@ Example usage:
         export GBIF_PWD="your_gbif_password"
 
     You can also pass credentials directly via ``user=`` and ``pwd=`` arguments.
-
 
 occurrences API
 ===============

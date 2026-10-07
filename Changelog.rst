@@ -1,10 +1,15 @@
 Changelog
 =========
-0.6.6 (2025-11-14)
+
+0.7.0 (2026-08-26)
 ------------------
-- updated matching in `occurrences.name_backbone` to api v2 :issue:`176` 
-- added checklistKey support to `occurrences.search` :issue:`178`
-- added support for `collection.search` and `institution.search` 
+- **BREAKING CHANGE**: ``occurrences.search``, ``occurrences.count``, ``occurrences.count_datasets``, and ``maps.map`` now default to using Catalogue of Life (COL) taxonomy instead of GBIF Backbone Taxonomy. Set ``checklistKey=None`` to use GBIF backbone.
+- added support for alphanumeric taxonomy keys (e.g., ``kingdomKey``, ``phylumKey``, etc.) in ``occurrences.search`` to support COL's alphanumeric identifiers
+- added automatic detection of numeric taxonomy keys in ``occurrences.search``: when numeric (integer) keys are provided without an explicit ``checklistKey``, the function now automatically switches to GBIF Backbone taxonomy and issues a deprecation warning, encouraging migration to COL alphanumeric keys
+- preserve ``pygbif.search`` as an alias for ``occurrences.search`` and expose literature, collection, and institution search functions through their module namespaces
+- added ``species.gbif_to_col()`` function to convert GBIF Backbone numeric taxonomy keys to COL Extended Release alphanumeric keys, facilitating migration from GBIF Backbone to COL
+- ``species.name_lookup()``, ``species.name_suggest()``, and ``species.name_usage()`` now issue ``DeprecationWarning`` because they primarily use the outdated GBIF Backbone Taxonomy; use the ``datasetKey`` parameter to query another checklist
+- added support for ``checklistKey`` parameter in ``occurrences.download`` to specify taxonomy for download content. When provided, uses a specific checklist from ChecklistBank instead of the GBIF Backbone Taxonomy. See https://www.gbif.org/developer/occurrence#download for more information.
 
 0.6.5 (2024-10-28)
 ------------------

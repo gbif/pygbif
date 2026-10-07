@@ -1,0 +1,77 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - python-requests/2.31.0,pygbif/0.6.5
+    method: GET
+    uri: https://api.gbif.org/v1/occurrence/search?taxonKey=3329049&limit=1&offset=0
+  response:
+    body:
+      string: "{\"offset\":0,\"limit\":1,\"endOfRecords\":false,\"count\":1317,\"results\":[{\"key\":5893917282,\"datasetKey\":\"963a6b96-4d22-4428-86e4-afee52cf4a8e\",\"publishingOrgKey\":\"1a4e6112-b3af-402e-b29f-c2ade2167f72\",\"datasetCategory\":[\"CitizenScience\"],\"installationKey\":\"f9c0c41b-6da4-4be4-b917-a6f7710f3dbc\",\"hostingOrganizationKey\":\"1a4e6112-b3af-402e-b29f-c2ade2167f72\",\"publishingCountry\":\"DK\",\"protocol\":\"DWC_ARCHIVE\",\"lastCrawled\":\"2026-07-11T00:08:15.608+00:00\",\"lastParsed\":\"2026-07-18T23:51:23.584+00:00\",\"crawlId\":312,\"extensions\":{\"http://rs.gbif.org/terms/1.0/Multimedia\":[{\"http://purl.org/dc/terms/identifier\":\"https://arter.dk/media/0f906c4a-71d9-480f-830b-b34a00ccf16b.jpg\",\"http://purl.org/dc/terms/type\":\"StillImage\",\"http://purl.org/dc/terms/license\":\"https://creativecommons.org/licenses/by/4.0/\"},{\"http://purl.org/dc/terms/identifier\":\"https://arter.dk/media/569117ed-3917-4e04-ad2e-b34a00ccf503.jpg\",\"http://purl.org/dc/terms/type\":\"StillImage\",\"http://purl.org/dc/terms/license\":\"https://creativecommons.org/licenses/by/4.0/\"},{\"http://purl.org/dc/terms/identifier\":\"https://arter.dk/media/efedd727-63da-4282-9dc3-b34a00ccf1dc.jpg\",\"http://purl.org/dc/terms/type\":\"StillImage\",\"http://purl.org/dc/terms/license\":\"https://creativecommons.org/licenses/by/4.0/\"}]},\"basisOfRecord\":\"HUMAN_OBSERVATION\",\"occurrenceStatus\":\"PRESENT\",\"classifications\":{\"7ddf754f-d193-4cc9-b351-99906754a03b\":{\"usage\":{\"key\":\"LMN82\",\"name\":\"Amanita
+        muscaria (L. ex Fr.) Hooker\",\"rank\":\"SPECIES\",\"authorship\":\"(L. ex
+        Fr.) Hooker\",\"genericName\":\"Amanita\",\"specificEpithet\":\"muscaria\",\"formattedName\":\"<i>Amanita</i>
+        <i>muscaria</i> (L. ex Fr.) Hooker\"},\"acceptedUsage\":{\"key\":\"5TYZ9\",\"name\":\"Amanita
+        muscaria (L.) Lam.\",\"rank\":\"SPECIES\",\"code\":\"BOTANICAL\",\"authorship\":\"(L.)
+        Lam.\",\"genericName\":\"Amanita\",\"specificEpithet\":\"muscaria\",\"formattedName\":\"<i>Amanita</i>
+        <i>muscaria</i> (L.) Lam.\"},\"taxonomicStatus\":\"SYNONYM\",\"classification\":[{\"key\":\"CS5HF\",\"name\":\"Eukaryota\",\"rank\":\"DOMAIN\"},{\"key\":\"F\",\"name\":\"Fungi\",\"rank\":\"KINGDOM\"},{\"key\":\"BM\",\"name\":\"Basidiomycota\",\"rank\":\"PHYLUM\"},{\"key\":\"7C\",\"name\":\"Agaricomycetes\",\"rank\":\"CLASS\"},{\"key\":\"N8\",\"name\":\"Agaricales\",\"rank\":\"ORDER\"},{\"key\":\"68Y\",\"name\":\"Amanitaceae\",\"rank\":\"FAMILY\"},{\"key\":\"T7Z\",\"name\":\"Amanita\",\"rank\":\"GENUS\"},{\"key\":\"5TYZ9\",\"name\":\"Amanita
+        muscaria\",\"rank\":\"SPECIES\"}],\"issues\":[\"TAXON_ID_NOT_FOUND\"]},\"d7dddbf4-2cf0-4f39-9b2a-bb099caae36c\":{\"usage\":{\"key\":\"3329049\",\"name\":\"Amanita
+        muscaria (L.) Hook.\",\"rank\":\"SPECIES\",\"code\":\"BOTANICAL\",\"authorship\":\"(L.)
+        Hook.\",\"genericName\":\"Amanita\",\"specificEpithet\":\"muscaria\",\"formattedName\":\"<i>Amanita</i>
+        <i>muscaria</i> (L.) Hook.\"},\"acceptedUsage\":{\"key\":\"8168319\",\"name\":\"Amanita
+        muscaria (L.) Lam.\",\"rank\":\"SPECIES\",\"code\":\"BOTANICAL\",\"authorship\":\"(L.)
+        Lam.\",\"genericName\":\"Amanita\",\"specificEpithet\":\"muscaria\",\"formattedName\":\"<i>Amanita</i>
+        <i>muscaria</i> (L.) Lam.\"},\"taxonomicStatus\":\"SYNONYM\",\"classification\":[{\"key\":\"5\",\"name\":\"Fungi\",\"rank\":\"KINGDOM\"},{\"key\":\"34\",\"name\":\"Basidiomycota\",\"rank\":\"PHYLUM\"},{\"key\":\"186\",\"name\":\"Agaricomycetes\",\"rank\":\"CLASS\"},{\"key\":\"1499\",\"name\":\"Agaricales\",\"rank\":\"ORDER\"},{\"key\":\"4171\",\"name\":\"Amanitaceae\",\"rank\":\"FAMILY\"},{\"key\":\"6005964\",\"name\":\"Amanita\",\"rank\":\"GENUS\"},{\"key\":\"8168319\",\"name\":\"Amanita
+        muscaria\",\"rank\":\"SPECIES\"}],\"issues\":[\"TAXON_ID_NOT_FOUND\"]}},\"taxonKey\":3329049,\"kingdomKey\":5,\"phylumKey\":34,\"classKey\":186,\"orderKey\":1499,\"familyKey\":4171,\"genusKey\":6005964,\"speciesKey\":8168319,\"acceptedTaxonKey\":8168319,\"scientificName\":\"Amanita
+        muscaria (L.) Hook.\",\"scientificNameAuthorship\":\"(L.) Hook.\",\"acceptedScientificName\":\"Amanita
+        muscaria (L.) Lam.\",\"kingdom\":\"Fungi\",\"phylum\":\"Basidiomycota\",\"order\":\"Agaricales\",\"family\":\"Amanitaceae\",\"genus\":\"Amanita\",\"species\":\"Amanita
+        muscaria\",\"genericName\":\"Amanita\",\"specificEpithet\":\"muscaria\",\"taxonRank\":\"SPECIES\",\"taxonomicStatus\":\"SYNONYM\",\"decimalLatitude\":57.268642,\"decimalLongitude\":9.655252,\"coordinateUncertaintyInMeters\":4.0,\"continent\":\"EUROPE\",\"gadm\":{\"level0\":{\"gid\":\"DNK\",\"name\":\"Denmark\"},\"level1\":{\"gid\":\"DNK.3_1\",\"name\":\"Nordjylland\"},\"level2\":{\"gid\":\"DNK.3.5_1\",\"name\":\"Jammerbugt\"}},\"year\":2025,\"month\":8,\"day\":31,\"eventDate\":\"2025-08-31\",\"startDayOfYear\":243,\"endDayOfYear\":243,\"issues\":[\"CONTINENT_DERIVED_FROM_COORDINATES\",\"TAXON_ID_NOT_FOUND\"],\"modified\":\"2025-12-17T13:05:38.946+00:00\",\"lastInterpreted\":\"2026-07-18T23:51:23.584+00:00\",\"license\":\"http://creativecommons.org/licenses/by/4.0/legalcode\",\"isSequenced\":false,\"identifiers\":[{\"identifier\":\"31737679\"}],\"media\":[{\"type\":\"StillImage\",\"license\":\"http://creativecommons.org/licenses/by/4.0/\",\"identifier\":\"https://arter.dk/media/0f906c4a-71d9-480f-830b-b34a00ccf16b.jpg\"},{\"type\":\"StillImage\",\"license\":\"http://creativecommons.org/licenses/by/4.0/\",\"identifier\":\"https://arter.dk/media/569117ed-3917-4e04-ad2e-b34a00ccf503.jpg\"},{\"type\":\"StillImage\",\"license\":\"http://creativecommons.org/licenses/by/4.0/\",\"identifier\":\"https://arter.dk/media/efedd727-63da-4282-9dc3-b34a00ccf1dc.jpg\"}],\"facts\":[],\"relations\":[],\"isInCluster\":false,\"recordedBy\":\"Frederik
+        Ravndal\",\"identifiedBy\":\"Frederik Ravndal\",\"dnaSequenceID\":[],\"nucleotideSequence\":[],\"geodeticDatum\":\"WGS84\",\"class\":\"Agaricomycetes\",\"countryCode\":\"DK\",\"recordedByIDs\":[],\"identifiedByIDs\":[],\"gbifRegion\":\"EUROPE\",\"country\":\"Denmark\",\"publishedByGbifRegion\":\"EUROPE\",\"identifier\":\"31737679\",\"http://unknown.org/crawl_attempt\":\"322\",\"dynamicProperties\":\"{\\\"Substrate\\\":\\\"\\\"}\",\"http://unknown.org/status\":\"not_reviewed\",\"gbifID\":\"5893917282\",\"language\":\"da\",\"occurrenceID\":\"https://arter.dk//fund/31737679\",\"taxonID\":\"MSTSNM:Arter:81345\",\"catalogNumber\":\"Arter_31737679\",\"vernacularName\":\"R\xF8d
+        fluesvamp\",\"institutionCode\":\"SGAV-and-NHMD\",\"eventTime\":\"14:25:19.816+02:00\",\"bibliographicCitation\":\"Arter.dk
+        (Agency for Green Transition and Aquatic Environment & Natural History Museum
+        of Denmark)\"}],\"facets\":[]}"
+    headers:
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '123'
+      Cache-Control:
+      - public, max-age=600
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '5866'
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 21 Aug 2026 07:14:37 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Vary:
+      - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      Via:
+      - 1.1 prodapicache2-vh.gbif.org (Varnish/9.0)
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Varnish:
+      - 112893630892 112900216464
+      X-Varnish-RLG:
+      - '250'
+      X-Varnish-RLI:
+      - '18'
+      X-XSS-Protection:
+      - '0'
+    status:
+      code: 200
+      message: OK
+version: 1

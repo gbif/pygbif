@@ -17,7 +17,12 @@ GBIF occurrences APIs methods
 * `download_list`: Lists the downloads created by a user
 * `download_get`: Get a download from GBIF
 * `download_cancel`: Cancel a download from GBIF
-* `citation`: Get citation from a download key
+* `download_citation`: Get citation from a download key
+* `download_stats`: Get download statistics
+* `download_stats_user_country`: Get download counts by user country
+* `download_stats_records_by_dataset`: Get downloaded records counts by dataset
+* `download_stats_by_dataset`: Get download counts by dataset
+* `download_stats_by_source`: Get download statistics by source
 """
 
 from .search import search
@@ -39,5 +44,13 @@ from .download import (
     download_cancel,
     download_describe,
     download_sql,
-    download_citation
+    download_citation,
+    GbifDownloadError,
+)
+from .download_stats import (
+    download_stats,
+    download_stats_user_country,
+    download_stats_records_by_dataset,
+    download_stats_by_dataset,
+    download_stats_by_source,
 )

@@ -1,0 +1,52 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      user-agent:
+      - python-requests/2.31.0,pygbif/0.6.5
+    method: GET
+    uri: https://api.gbif.org/v1/occurrence/download/statistics?publishingOrgKey=e2e717bf-551a-4917-bdc9-4fa0f342c530&limit=5&offset=0
+  response:
+    body:
+      string: '{"offset":0,"limit":5,"endOfRecords":false,"count":300,"results":[{"datasetKey":"4fa7b334-ce0d-4e88-aaae-2e0c138d049e","totalRecords":407209861031,"numberDownloads":7255,"year":2026,"month":2},{"datasetKey":"7f6dd0f7-9ed4-49c0-bb71-b2a9c7fed9f1","totalRecords":34779843,"numberDownloads":4115,"year":2026,"month":2},{"datasetKey":"4fa7b334-ce0d-4e88-aaae-2e0c138d049e","totalRecords":356868745208,"numberDownloads":6570,"year":2026,"month":1},{"datasetKey":"7f6dd0f7-9ed4-49c0-bb71-b2a9c7fed9f1","totalRecords":29824927,"numberDownloads":3121,"year":2026,"month":1},{"datasetKey":"4fa7b334-ce0d-4e88-aaae-2e0c138d049e","totalRecords":304769971273,"numberDownloads":7062,"year":2025,"month":12}]}'
+    headers:
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      Cache-Control:
+      - public, max-age=3601
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 24 Mar 2026 10:48:44 GMT
+      Expires:
+      - '0'
+      Pragma:
+      - no-cache
+      Transfer-Encoding:
+      - chunked
+      Vary:
+      - Origin, Access-Control-Request-Method, Access-Control-Request-Headers
+      Via:
+      - 1.1 varnish (Varnish/6.6)
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - DENY
+      X-Varnish:
+      - '688294208'
+      X-XSS-Protection:
+      - '0'
+    status:
+      code: 200
+      message: OK
+version: 1

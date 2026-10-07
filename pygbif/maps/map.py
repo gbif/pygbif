@@ -1,12 +1,16 @@
 import os
 import hashlib
 import re
+import warnings
 
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 from appdirs import user_cache_dir
 
 from pygbif.gbifutils import requests_argset, has, gbif_GET_map
+
+# Sentinel value to detect if user explicitly provided checklistKey
+_DEFAULT_CHECKLIST = object()
 
 
 def map(
@@ -26,6 +30,7 @@ def map(
     datasetKey=None,
     year=None,
     basisOfRecord=None,
+    checklistKey=_DEFAULT_CHECKLIST,
     **kwargs
 ):
     """
@@ -61,7 +66,7 @@ def map(
         128, 256, 512.
     :param style: [str] for raster tiles, choose from the available styles.
         Defaults to classic.point.
-    :param taxonKey: [int] A GBIF occurrence identifier
+    :param taxonKey: [int/str] A taxon classification key (numeric for GBIF backbone, alphanumeric for COL)
     :param datasetKey: [str] The occurrence dataset key (a uuid)
     :param country: [str] The 2-letter country code (as per ISO-3166-1) of 
         the country in which the occurrence was recorded. See here
@@ -84,6 +89,14 @@ def map(
         whereas ``1991,1990`` wouldn't work)
     :param publishingCountry: [str] The 2-letter country code (as per 
         ISO-3166-1) of the country in which the occurrence was recorded.
+    :param checklistKey: [str] The UUID of the checklist (taxonomy) to use. 
+        Defaults to the Catalogue of Life (COL) Extended Release 
+        (7ddf754f-d193-4cc9-b351-99906754a03b). Set to ``None`` to use the 
+        GBIF backbone taxonomy.
+        Note: If you provide a numeric (integer) taxonKey without explicitly setting 
+        checklistKey, the function will automatically switch to GBIF backbone taxonomy 
+        and issue a deprecation warning. Use pygbif.species.gbif_to_col() to migrate 
+        your keys to COL alphanumeric format.
 
     :return: An object of class GbifMap
 
@@ -143,6 +156,26 @@ def map(
         if style not in map_styles:
             raise ValueError("'style' not in allowed set, see docs")
 
+    # Handle checklistKey default and detect if user explicitly provided it
+    if checklistKey is _DEFAULT_CHECKLIST:
+        user_provided_checklistkey = False
+        checklistKey = "7ddf754f-d193-4cc9-b351-99906754a03b"  # Default to COL
+    else:
+        user_provided_checklistkey = True
+
+    # Check if taxonKey is numeric (integer)
+    # If so and user didn't explicitly provide checklistKey, switch to GBIF Backbone
+    if taxonKey is not None and isinstance(taxonKey, int) and not user_provided_checklistkey:
+        # Automatically switch to GBIF Backbone for numeric keys
+        checklistKey = None
+        warnings.warn(
+            "Numeric taxonKey detected. Automatically switching to GBIF Backbone taxonomy. "
+            "GBIF Backbone taxonomy is outdated. Please migrate to COL Extended Release with alphanumeric keys. "
+            "Use pygbif.species.gbif_to_col() to convert your numeric GBIF keys to COL alphanumeric keys.",
+            DeprecationWarning,
+            stacklevel=2
+        )
+
     maps_baseurl = "https://api.gbif.org"
     url = maps_baseurl + "/v2/map/occurrence/%s/%s/%s/%s%s"
     url = url % (source, z, x, y, format)
@@ -160,6 +193,7 @@ def map(
         "datasetKey": datasetKey,
         "year": year,
         "basisOfRecord": basisOfRecord,
+        "checklistKey": checklistKey,
     }
     kw = {key: kwargs[key] for key in kwargs if key not in requests_argset}
     if kw is not None:
