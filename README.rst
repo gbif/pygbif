@@ -122,7 +122,8 @@ Example usage:
     occ.download_get("0000066-140928181241064")
     occ.download_citation("0002526-241107131044228")
     occ.download_describe("simpleCsv")
-    occ.download_sql("SELECT gbifid,countryCode FROM occurrence WHERE genusKey = 2435098")
+    # SQL downloads use COL XR taxonomy keys by default
+    occ.download_sql("SELECT gbifid,countryCode FROM occurrence WHERE classKey = 'V2'")
 
 .. note::
     Download endpoints require GBIF credentials.
