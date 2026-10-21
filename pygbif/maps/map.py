@@ -214,7 +214,8 @@ class GbifMap(object):
     
     - response: the response from the requests library
     - path: the path to the image
-    - img: the image data, of class matplotlib AxesImage
+    - img: the image data, of class matplotlib AxesImage, or None for
+        vector tiles and HTTP 204 responses with no content
     - plot(): a method to plot the image with matplotlib
     """
 
@@ -223,7 +224,9 @@ class GbifMap(object):
         self.response = x
         self.path = self.__make_path()
         self.__write_file()
-        if has(self.response.headers["Content-Type"], "png"):
+        if self.response.status_code != 204 and has(
+            self.response.headers["Content-Type"], "png"
+        ):
             self.img = self.__prep_plot()
         else:
             self.img = None
