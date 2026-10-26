@@ -12,4 +12,4 @@ pytest
 pytest-cov
 codecov
 sphinx_rtd_theme
-sphinx==7.2.6
+sphinx==9.2.0
